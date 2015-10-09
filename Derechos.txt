@@ -1,0 +1,25 @@
+
+Uso Básico y Remoto de OpenBSD
+
+Vladimir Támara Patiño (vtamara@pasosdeJesus.org)
+
+Este documento y sus fuentes son obra de amor cedidas al dominio
+público desde 2004. Se trata de la versión 1.4 actualizada por última
+vez en 27/03/2007 para que correspondan a OpenBSD 3.9. No se ofrece
+garantía alguna, por el contrario se aprecia que se envíen
+correcciones y sugerencias al autor. Este escrito se dedica a Dios:
+`Alaba mi alma la grandeza del Señor'
+
+Agradecemos los aportes de Carolina Pinzón, Marly Mier Rinaldy y
+wiroal.
+
+La versión publicada más reciente está disponible como HTML, PDF,
+PostScript comprimido y HTML comprimido. También están publicadas sus
+fuentes en DocBook comprimidas y la versión de desarrollo está en el
+repositorio CVS de Structio.
+
+Resumen
+
+Estas notas buscan ayudar a usuarios que desean emplear por primera
+vez un sistema tipo Unix seguro como OpenBSD.
+

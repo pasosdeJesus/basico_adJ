@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 id="soporte">
+	<title>Soporte</title>
+       
+	<sect2 id="documentacion">
+		<title>Documentación</title>	
+
+		<para>Por favor adopte la política LBM (Leer el Bendito Manual).  
+			La documentación de adJ es:
+			<itemizedlist>
+				<listitem>
+					<para>
+			 <ulink url="http://structio.sf.net/guias/basico_adJ"></ulink>	utilización básica local y remota.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						<ulink url="http://structio.sf.net/guias/usuario_OpenBSD"></ulink>	instalación y uso más avanzado como plataforma de escritorio y desarrollo.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						<ulink url="http://structio.sf.net/guias/servidor_OpenBSD"></ulink>	
+						configuración como cortafuegos y servidor.
+					</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		<para>Como adJ es una distribución de OpenBSD los documentos
+			para ese sistema operativo también aplican. Sin embargo 
+			buena parte de la documentación se encuentra 
+			solo en inglés, recomendamos:
+			<itemizedlist>
+				<listitem>
+					<para>El manual oficial de cada comando, controlador y archivo de configuración puede leerse con el comando <command>man</command>. Tal manual consta de varias secciones:  1 comandos generales, 2 llamadas al sistema y números de error, 3 librerías de C, 4 archivos especiales y soporte de hardware, 5 formatos de archivos, 6 juegos, 7 miscelanea, 8 operación y mantenimiento del sistema,  9 kernel.  Puede ver por ejemplo la introducción a la sección 6 con <literal>man 6 intro</literal>.  En Internet también consultarse este manual en <ulink url="http://www.openbsd.org/cgi-bin/man.cgi"></ulink> </para>
+				</listitem>
+				<listitem>
+					<para><ulink url="http://www.openbsd.org/faq/index.html ">Documentation and Frequently Asked Questions</ulink></para>
+				</listitem>
+			</itemizedlist>
+
+			Entre los sitios donde se documentan configuraciones o se evalúan algunas herramientas: <ulink url="http://dhobsd.pasosdeJesus.org"></ulink>, <ulink url="http://www.openbsdcolombia.org"></ulink>, <ulink url="https://calomel.org/"></ulink>
+		</para>
+		<para>
+			Para realizar preguntas por correo electrónico recomendamos la lista de distribución OpenBSD-Colombia <ulink url="http://groups.google.com/group/OpenBSD-Colombia?hl=es"></ulink>. 
+		</para>
+	</sect2>
+	<sect2 id="canal-silc">
+		<title>Canal SILC</title>	
+
+     <para>Para dar soporte  en el uso de Aprendiendo de Jesús empleamos
+	     el canal <literal>soporte-adJ</literal>, en el servidor
+	     SILC de <literal>www.nocheyniebla.org</literal> </para>
+
+
+ <sect3 id="silc">
+     <title>El protocolo SILC</title>
+
+     <para>SILC es un protocolo de teleconferencia inspirado
+	     en IRC, pero que transmite los mensajes cifrados a un 
+	     servidor que replica los mensajes a los clientes conectados.  
+	     Un usuario que se conecte a un servidor, decide a que canales 
+	     de los disponibles unirse o puede crear uno nuevo al que otros
+	     usuarios podrían unirse.  Todo lo que
+	     alguno de los miembros de un canal escriba en el canal, será
+	     transmitido a todos los que se hayan unido a ese canal.
+	     SILC también soporta canales privados, canales con clave, el 
+	     envío de mensajes de texto cifrados
+	     a individuos así como transmisión de información multimedia
+	     (por ejemplo un tablero gráfico colaborativo). Puede 
+	     verse más en <ulink url="silcnet.org"></ulink> 
+     </para>
+
+     <para>Para emplear el servicio debe utilizarse un cliente de
+	     silc, en caso de que cuente con un escritorio gráfico recomendamos
+	     <command>pidgin</command>, o de contar con un interprete
+	     de comandos el programa <command>silc</command>
+	     incluido en el paquete <command>silc-client</command>
+     </para>
+
+</sect3>
+
+ <sect3 id="configurar-pidgin">
+     <title>Configuración y uso de Pidgin</title>
+	<para> <command>Pidgin</command>  es un programa de mensajería
+		instantánea que permite iniciar sesiones sobre varias 
+		redes de mensajería al mismo tiempo.
+	</para>
+
+	<para> Corre sobre sistemas operativos OpenBSD, Linux, Mac OS X
+	       	y Windows. 
+		Es compatible con las siguientes redes de mensajería: AIM, 
+		ICQ, Google Talk, Jabber/XMPP, MSN Messenger, Yahoo!, 
+		Bonjour, Gadu-Gadu, IRC, Novell GroupWise Messenger, QQ, 
+		Lotus Sametime, SILC, SIMPLE, MySpaceIM y Zephyr.
+	</para>
+
+	<para> Soporta transferencia de archivos, mensajes de ausencia, iconos,
+	      	emoticones personalizados y notificaciones de escribir.
+	</para>
+
+
+<itemizedlist>
+                <listitem>
+			<para>Puede iniciar con el botón derecho sobre 
+				el escritorio en el menú Internet->Pidgin o 
+				desde una terminal escribiendo
+				<filename>pidgin</filename>.
+ <informalfigure>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+                    <imagedata fileref="pidgin1.eps"
+                scale="40" align="center" format="EPS"></imagedata>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="pidgin1.png" format="PNG" 
+                align="center"></imagedata>
+            </imageobject>
+            <textobject>
+                    <phrase>Al ejecutar <command>pidgin</command>
+              </phrase>
+            </textobject>
+        </mediaobject>
+      </screenshot>
+    </informalfigure>
+    </para>
+                </listitem>
+
+                <listitem>
+    <para>  Presionamos botón del ratón sobre <command>Add</command> para adicionar una cuenta. En <command>Protocol</command> elegimos el protocolo <command>SILC</command>.
+    </para>
+
+ <informalfigure>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+                    <imagedata fileref="pidgin2.eps"
+                scale="40" align="center" format="EPS"></imagedata>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="pidgin2.png" format="PNG" 
+                align="center"></imagedata>
+            </imageobject>
+            <textobject>
+                    <phrase>Elegimos el protocolo <command>silc</command>
+              </phrase>
+            </textobject>
+        </mediaobject>
+      </screenshot>
+    </informalfigure>
+                </listitem>
+
+
+                <listitem>
+			<para>
+En <command>Screen name</command> colocamos el nombre con el que se vamos a 
+identificarnos(En el ejemplo, hernan).
+En <command>Network</command> digitamos 
+<filename>www.nocheyniebla.org</filename>. 
+                        </para>
+
+ <informalfigure>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+                    <imagedata fileref="pidgin3.eps"
+                scale="40" align="center" format="EPS"></imagedata>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="pidgin3.png" format="PNG" 
+                align="center"></imagedata>
+            </imageobject>
+            <textobject>
+                    <phrase>Configuración básica </phrase>
+            </textobject>
+        </mediaobject>
+      </screenshot>
+    </informalfigure>
+                </listitem>
+                <listitem>
+			<para>  En la parte superior izquierda, presionamos botón del ratón sobre <command>Advanced</command>. </para>
+				<para>	En <command>Connect server</command> digitamos nuevamente <filename>www.nocheyniebla.org</filename>. Además señalamos las dos primeras opciones  y la última opción. Presionamos sobre <command>Save</command>.
+	</para>
+
+ <informalfigure>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+                    <imagedata fileref="pidgin4.eps"
+                scale="40" align="center" format="EPS"></imagedata>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="pidgin4.png" format="PNG" 
+                align="center"></imagedata>
+            </imageobject>
+            <textobject>
+                    <phrase> Configuración avanzada</phrase>
+            </textobject>
+        </mediaobject>
+      </screenshot>
+    </informalfigure>
+
+
+                </listitem>
+                <listitem>
+			<para>  Al presionar botón del ratón sobre <command>Buddies</command> nos muestra el menú y presionamos sobre <command>Join a chat</command>.
+
+                        </para>
+
+
+ <informalfigure>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+                    <imagedata fileref="pidgin5.eps"
+                scale="40" align="center" format="EPS"></imagedata>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="pidgin5.png" format="PNG" 
+                align="center"></imagedata>
+            </imageobject>
+            <textobject>
+                    <phrase> </phrase>
+            </textobject>
+        </mediaobject>
+      </screenshot>
+    </informalfigure>
+
+                </listitem>
+                <listitem>
+			<para>  Al presionar el botón del ratón sobre <command>Join a Chat</command> nos muestra un menú. En <command>Channel</command> digitamos <filename>soporte-adJ</filename>.
+                                
+                        </para>
+
+
+ <informalfigure>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+                    <imagedata fileref="pidgin6.eps"
+                scale="40" align="center" format="EPS"></imagedata>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="pidgin6.png" format="PNG" 
+                align="center"></imagedata>
+            </imageobject>
+            <textobject>
+		    <phrase>Entrando al canal <command>soporte-adJ</command> 
+              </phrase>
+            </textobject>
+        </mediaobject>
+      </screenshot>
+    </informalfigure>
+
+                </listitem>
+                <listitem>
+			<para>Finalmente,  en la parte inferior derecha presionamos el botón del ratón sobre <command>join</command>. Y ya podemos empezar a comunicarnos.
+                                
+                        </para>
+			
+ <informalfigure>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+                    <imagedata fileref="pidgin7.eps"
+                scale="40" align="center" format="EPS"></imagedata>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="pidgin7.png" format="PNG" 
+                align="center"></imagedata>
+            </imageobject>
+            <textobject>
+                    <phrase> Conectados a través de Pidgin y el protocolo SILC </phrase>
+            </textobject>
+        </mediaobject>
+      </screenshot>
+    </informalfigure>
+
+		    </listitem>
+	    </itemizedlist>
+ 
+    </sect3>
+    <sect3 id="silc-texto">
+	    <title>Cliente SILC tipo texto</title>
+	    <para>Si prefiere emplear un cliente de silc tipo texto,
+		    inicie una sesión con:
+		    <screen>
+silc -c www.nocheyniebla.org
+		    </screen>
+ <informalfigure>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+                    <imagedata fileref="silc.eps"
+                scale="40" align="center" format="EPS"></imagedata>
+            </imageobject>
+            <imageobject>
+              <imagedata fileref="silc.png" format="PNG" 
+                align="center"></imagedata>
+            </imageobject>
+            <textobject>
+                    <phrase>Al ejecutar <command>pidgin</command>
+              </phrase>
+            </textobject>
+        </mediaobject>
+      </screenshot>
+    </informalfigure>
+
+		    Una vez conectado puede dar comandos iniciados
+		    con el símbolo '/', por ejemplo:
+		    <variablelist>
+			    <varlistentry><term><command>/help</command></term>
+				    <listitem><para>presenta ayuda sobre comandos disponibles.</para></listitem>
+			    </varlistentry>
+			    <varlistentry><term><command>/quit</command></term>
+				    <listitem><para>Para salir del cliente.
+				    </para></listitem>
+			    </varlistentry>
+
+			    <varlistentry><term><command>/join soporte-adJ</command></term>
+				    <listitem><para>Para unirse al canal <command>soporte-adJ</command>
+				    </para></listitem>
+			    </varlistentry>
+			    <varlistentry><term><command>/list</command></term>
+				    <listitem><para>Lista de canales disponibles
+				    </para></listitem>
+			    </varlistentry>
+			    <varlistentry><term><command>/users soporte-adJ</command></term>
+				    <listitem><para>Lista usuarios conectados al canal <command>soporte-adJ</command>
+				    </para></listitem>
+			    </varlistentry>
+			    <varlistentry><term><command>/smgs pablo Me ayudas?</command></term>
+				    <listitem><para>Envía "Me ayudas?" como mensaje privado y firmado para el usuario pablo.
+				    </para></listitem>
+			    </varlistentry>
+
+		    </variablelist>
+
+	    </para>
+    </sect3>
+    </sect2>
+
+
+
+
+</sect1>

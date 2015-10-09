@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 id="formatos">
+	<title>Formatos de archivos</title>
+	<para>Para descargar un archivo de Internet en un directorio
+		de su cuenta puede usar:
+		<screen>
+ftp http://el.servidor.net/la/ruta/elarchivo.ext
+		</screen>
+		Con este método puede descargar archivos con los protocolos
+		ftp o http.
+		Otra posibilidad es emplear alguno de los programas
+		<command role="plataforma">wget</command>, 
+		<command role="plataforma">curl</command> o
+		<command role="plataforma">w3mir</command> que le permiten 
+		descargar
+		más de un archivo a la vez (o sitios web completos), y
+		manejan más protocolos (e.g https).
+	</para>
+
+	<para>
+		La forma de emplear un archivo que descargue, depende
+		del formato en el que esté. El formato usualmente
+		se identifica con la extensión (i.e las últimas letras
+		que están después de un punto).
+		<itemizedlist>
+			<listitem>
+<para><literal>.txt</literal> Se trata de un texto plano. Típicamente
+	estará codificado en ASCII.  En DOS/Windows los textos planos 
+	indican fin de línea con dos caracteres: Retorno de 
+	carro<footnote><para>El caracter retorno de carro tiene código ASCII 
+			13, suele llamarse CR (Carriage Return) y diversos 
+			programas y lenguajes lo denotan con 
+			'\n'.</para></footnote> y
+nueva línea<footnote><para>El caracter nueva línea tiene código ASCII
+10, también se llama LF (Line Feed) y diversos programas y lenguajes lo
+denotan con '\r'.</para></footnote>, mientras que en sistemas tipo
+Unix basta se usa sólo el caracter nueva línea.  Para convertir textos
+DOS/Windows a Unix puede emplear:
+<screen>
+$ cp carta.txt carta.txt.bak
+$ tr -d "\r" &lt; carta.txt.bak &gt; carta.txt
+</screen>
+<!--y para convertir de Unix a DOS/Windows
+<screen>
+$ cp carta.txt carta.txt.bak
+$ sed -e "s/$/\r/g" carta.txt.bak > carta.txt
+</screen> -->
+Si el texto que tiene emplea una codificación que no sea ASCII (por ejemplo 
+Unicode, UTF-8, MAC, Código de Página 850) o requiere convertir de ASCII a otra 
+codificación puede emplear el programa <command role="plataforma">recode</command>. 
+Por ejemplo para convertir carta.txt de ASCII a UTF-8<footnote><para>UTF-8
+es una de las posibles formas de codificar Unicode en ASCII.  Los caracteres
+Unicode con un ASCII equivalente con código menor de 127 tienen la misma 
+representación en UTF-8.  Otros caracteres Unicode emplean una secuencia
+de dos o más caracteres ASCII para su codificación. </para></footnote>:
+<screen>
+recode txt..utf-8 carta.txt
+</screen> 
+</para>
+			</listitem>			
+			<listitem><para><literal>.gz</literal> 
+Es un archivo comprimido con
+<command role="plataforma">gzip</command>.  Suponiendo que fuera
+<filename>archivo.txt.gz</filename> (cuya extensión sugiere un texto
+comprimido con <literal>gzip</literal>), lo descomprime con:
+	<screen>
+gzip -d archivo.txt.gz
+	</screen>
+	De forma análoga para comprimir el archivo <filename>nombres.sql</filename>
+	puede emplear:
+	<screen>
+gzip nombres.sql
+	</screen>
+	Nota: <literal>gzip</literal> no comprime archivos muy pequeños 
+	(digamos 10 bytes):
+</para></listitem>
+			
+			<listitem><para><literal>.tar.gz</literal> 
+			Se trata de un archivo empaquetado con la utilidad
+			<command>tar</command> y después comprimido con el
+			algoritmo de <command>gzip</command>.  Para 
+			descomprimirlo y desempaquetarlo en el directorio
+			en el que esté trabajando:
+			<screen>
+tar xvfz archivo.tar.gz
+			</screen>
+			Si cuenta con un archivo con extensión 
+			<literal>.tar</literal> para desempaquetarlo basta:
+			<screen>
+tar xvf archivo.tar
+			</screen>
+			</para></listitem>
+		</itemizedlist>
+	</para>
+	<sect2 id="lr-formatos">
+	  <title>Lecturas recomendadas</title>
+
+	  <para>
+		  La página del manual:  <command>man tar</command>
+	  </para>
+	</sect2>
+
+      </sect1>

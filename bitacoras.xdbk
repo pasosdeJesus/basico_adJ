@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 id="bitacoras">
+  <title>Bitácoras</title>
+
+  <para>Una de las labores típicas de un administrador de un sistema OpenBSD
+	  es revisar bitácoras del sistema en búsqueda de fallas de seguridad.
+	  En la mayoría de las veces se trata de ataques a través de internet, 
+	  ataques que buscan entre otras cosas: acceder a nuestras máquinas 
+	  para sacar información y  modificarla, o usar nuestra máquina para que 
+	  realice trabajos que el atacante quiere hacer, generalmente 
+	  maliciosos.</para>
+  <para>
+	  OpenBSD deja un registro muy completo en archivos de 
+	  <filename>/var/log</filename> conocidas como bitácoras.  Algunas
+	  son:
+	  <itemizedlist>
+		  <listitem>
+			  <para><filename>authlog</filename>: Muestra los 
+				  accesos de los usuarios permitidos y 
+				  rechazados
+			  </para>
+		  </listitem>
+		  <listitem>
+			  <para><filename>secure</filename>:  Muestra los 
+				  comandos de los administradores sudo
+			  </para>
+		  </listitem>
+		  <listitem>
+			  <para> <filename>daemon</filename>:  Los programas 
+				  que están corriendo en la máquina</para>
+		  </listitem>
+	  </itemizedlist>
+
+	  Como el sistema hace rotación de bitácoras periódicamente, en el 
+	  mismo directorio también se encuentra archivadas algunas bitácoras 
+	  anteriores, comprimidas (terminan con nombres como
+	  <filename>.0.gz</filename>).
+  </para>
+
+  <para>
+	  Estos
+	  archivos pueden analizarse con algunas herramientas básicas como:
+	  <variablelist>
+		  <varlistentry><term><command>less</command></term>
+			  <listitem>
+				  <para>Examinar una archivo.  En <command>less</command> la tecla <keycap>G</keycap> (mayúscula) lo lleva al final
+				  del archivo.</para>
+			  </listitem>
+		  </varlistentry>
+		  <varlistentry><term><command>grep</command></term>
+			  <listitem><para>Muestra cadenas en un archivo</para></listitem>
+		  </varlistentry>
+		  <varlistentry><term><command>find</command></term>
+			  <listitem><para>Busca una cadena en un archivo o directorio</para></listitem>
+		  </varlistentry>
+		  <varlistentry><term><command>wc</command></term>
+			  <listitem><para>Cuenta palabras/líneas/caracteres en una archivo</para></listitem>
+		  </varlistentry>
+		  <varlistentry><term><command>dig</command></term>
+			  <listitem><para>Muestra información de un dominio</para></listitem>
+		  </varlistentry>
+		  <varlistentry><term><command>geoiplookup</command></term>
+			  <listitem><para>Muestra localización de una IP. No es muy precisa</para></listitem>
+		  </varlistentry>
+		  <varlistentry><term><command>gzip</command></term>
+			  <listitem><para>Descomprime archivos</para></listitem>
+		  </varlistentry>
+	  </variablelist>
+	  
+</para>
+
+<para>
+	A continuación un ejemplo de auditoria de la bitácora <filename>auth</filename>:
+
+<orderedlist>
+	<listitem>
+		<para>Como usuario root (<xref linkend="administra"></xref>) 
+			hacer una copia de las bitácoras de 
+			<filename>/var/log</filename> en un directorio 
+			personal y descomprimir bitácoras comprimidas.
+			<screen>
+cd
+mkdir audita          # Crea un directorio para copiar
+cd audita             # Pasa al directorio creado
+mkdir 30sep2006       # Crear un directorio con la fecha
+cd 30sep2006	      # Pasa al directorio creado
+cp -rf /var/log/* .   # Copia todas las bitácoras (debe ser root)
+gzip -d *.gz          # Descomprime bitácoras comprimidas
+			</screen>
+</para>
+	</listitem>
+	<listitem>
+		<para>Revisar la bitácora a fin de determinar puntos 
+			críticos:
+			<screen>
+less authlog
+			</screen>	
+			buscando líneas como
+			<screen>
+invalid user test from 211.157.113.89
+			</screen>
+			que revelan intento desde una IP por ingresar como usuario <literal>test</literal> (que no existe en el sistema).
+		</para>
+	</listitem>
+	<listitem>
+		<para>Para ver las líneas en las que aparece una cadena en 
+			especial, una IP por ejemplo puede usarse:
+				<screen>
+grep "211.157.113.89" authlog
+				</screen>
+				De forma que podemos ver datos importantes 
+				relacionados con la IP como fecha y  hora.  En 
+				el caso de <filename>auth</filename> 
+				la IP corresponde a direcciones desde donde se
+				hacen intentos de ingreso).
+		</para>
+	</listitem>
+	<listitem>
+		<para>Para mostrar cuántas veces está esa IP en ese archivo:
+			<screen>
+grep "211.157.113.89" authlog | wc -l
+			</screen>
+		</para>
+	</listitem>
+	<listitem>
+		<para>Para determinar en qué archivos de la bitácora 
+			hay información de esta IP 
+			<screen>
+find . -exec grep -l "211.157.113.89" {} ';'
+			</screen>
+		</para>
+	</listitem>
+	<listitem>
+		<para>Para determinar ubicación geográfica de una IP y
+			datos sobre el dominio asociado:
+			<screen>
+geoiplookup  211.157.113.89
+dig -x 211.157.113.89
+			</screen>
+			El primero indica China, el segundo 
+			<literal>mail.chinacomm.com.cn</literal>. Con el
+			segundo ya podemos buscar información sobre
+			el registro DNS de <literal>chinacomm.com.cn</literal>:
+			<screen>
+whois chinacomm.com.cn
+			</screen>
+			donde encontromos una dirección de correo:
+			<literal>wjy@chncomm.com</literal>
+		</para>
+	</listitem>
+	<listitem>
+		<para>Si se ubica el dominio de la IP de donde proviene un 
+			ataque, así como una dirección de correo, se 
+			recomienda enviar un mensaje en inglés a tal
+			dirección y/o por ejemplo a las cuentas
+			<literal>webmaster</literal> y <literal>root</literal>
+			informando sobre el incidente con un tema como:
+			<screen>
+Attempt to login at &SERVIDOR; from your IP on 16.Aug.2006 at 7:10:41
+			</screen>
+		</para>
+	</listitem>
+</orderedlist>
+
+		</para>
+
+	<sect2 id="lr-bitacoras">
+	  <title>Lecturas recomendadas</title>
+
+	  <para>
+		  <itemizedlist>
+			  <listitem>
+				  <para>
+		  Todas las herramientas mencionadas <command>less</command>, 
+		  <command>find</command>, <command>grep</command>, 
+		  <command>wc</command> tienen sus respectivos manuales, 
+		  los cuales se pueden consultar con <command>man</command>,
+		  por ejemplo
+		  <screen>
+man grep 
+		  </screen>
+				  </para>
+			  </listitem>
+	  </itemizedlist>
+	  </para>
+	</sect2>
+
+      </sect1>

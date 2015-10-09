@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 id="medios">
+	<title>Uso de medios de almacenamiento</title>
+	<para>En <xref linkend="conceptos"></xref> se
+		definió archivo y sistema de archivos de manera general,
+		en esta sección se aplican esos conceptos para utilizar
+		USB y CD-ROM. 
+	</para>
+	<para>En sistemas tipo Unix como adJ es necesario montar 
+		los medios de almacenamientos en algún directorio del
+		sistema de archivos para poderlos emplear y desmontarlos
+		una vez no se requieren más.  En adJ
+		los directorios donde se montan USBs y CD-ROMs son
+		<filename>/mnt/usb</filename> y 
+		<filename>/mnt/cdrom</filename> respectivamente.  
+		Ni el montaje, ni el desmontaje se realizan automáticamente, 
+		sino por orden expresa del usuario.  
+	</para>
+	<sect2 id="montar-grafico">
+		<title>Montaje y desmontaje en ambiente gráfico</title>
+	<para>Para montar una unidad de USB debe bastar desde el
+		menú de fluxbox (botón derecho del ratón sobre
+		el escritorio) elegir <menuchoice><guimenu>Dispositivo</guimenu><guimenuitem>Montar USB</guimenuitem></menuchoice> (se emplea el
+		análogo para montar un CD-ROM). 
+		<informalfigure><screenshot><mediaobject>
+		<imageobject><imagedata fileref="montar.eps" format="EPS" scale="40" align="center"></imagedata></imageobject>
+		<imageobject><imagedata fileref="montar.png" format="PNG" align="center"></imagedata></imageobject>
+		</mediaobject></screenshot></informalfigure>
+	
+		Una vez lo haga 
+		podrá ver el manejador 
+		de archivos <literal>xfe</literal> ubicado en 
+		el directorio donde queda montado el medio.
+
+		<informalfigure><screenshot><mediaobject>
+		<imageobject><imagedata fileref="xfecdrom.eps" format="EPS" scale="40" align="center"></imagedata></imageobject>
+		<imageobject><imagedata fileref="xfecdrom.png" format="PNG" align="center"></imagedata></imageobject>
+		</mediaobject></screenshot></informalfigure>
+	</para>
+	<para>Al montar estos medios, el dueño es el usuario administrador
+		que se especificó durante la instalación de adJ. Este
+		podrá leer de los medios y en el caso de USB es quien
+		podrá escribir.
+	</para>
+
+	<para>Una vez termine de emplear el medio de alamacenamiento
+		desmontelo también desde el menú de fluxbox
+		<menuchoice><guimenu>Dispositivo</guimenu><guimenuitem>Desmontar USB</guimenuitem></menuchoice> 
+	</para>
+	</sect2>
+	<sect2 id="montar-terminal">
+		<title>Montaje y desmontaje desde interprete de comandos</title>
+		<para>Para montar la USB debe bastar ejecutar desde
+			una terminal:
+			<screen>
+mount /mnt/usb
+			</screen>
+			El CD-ROM se monta de la misma forma cambiando
+			<literal>usb</literal> por <literal>cdrom</literal>.
+		</para>
+		<para>Para demonstar la USB basta:
+			<screen>
+umount /mnt/usb
+			</screen>
+			y para demonstar un CD-ROM:
+			<screen>
+umount /mnt/cdrom
+			</screen>
+		</para>
+	</sect2>
+
+	&xfe;
+	&partcifradas;
+
+	<sect2 id="medios-lr1">
+	  <title>Lecturas recomendadas</title>
+
+	  <para>Páginas del manual <citerefentry><refentrytitle>mount</refentrytitle><manvolnum>8</manvolnum></citerefentry> y  <citerefentry><refentrytitle>umount</refentrytitle><manvolnum>8</manvolnum></citerefentry>
+	  </para>
+	</sect2>
+
+      </sect1>

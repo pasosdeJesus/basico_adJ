@@ -1,0 +1,52 @@
+
+BASICO
+* Conceptos básicos
+	Usuario (cambio de clave)
+	Licencias. Ideologías, productividad sin asaltar fe ---preferimos obras
+		dedicadas a Dios, con respecto sólo a licencias DP 
+		después BSD y MIT después
+		LGPL, GPL sin ateismo y después otras.
+	Aplicación - ejercicios
+* Uso de medios de almacenamiento
+	* Desde interprete de comandos, alternativa gráfica con menús y xfe.
+	CD-ROM
+		- escritura con xcdroast
+		- escritura con cdrecord
+	* Particiones cifradas
+		* Cambio de clave
+* Uso de editores de texto
+	* mg
+	* vim
+* Personalización
+	* Fluxbox
+* Transferencia de información desde y hacia otros computadores
+	* scp
+	* Alternativa con FileZilla.  Debe servir para quienes lo usan desde 
+		Windows o Linux para enviar a servidor.
+		- A partición encriptada
+* Preparación de documentos 
+	* LaTeX
+	* DocBook
+	* OpenOffice
+* Labores básicas de administración
+	* Usuarios
+	* Bitácoras
+
+Entre BÁSICO y USUARIO deberían cubrirse o mencionarse todos los 
+	paquetes gráficos incluidos en adJ.  Pasan a Usuario los que requieren
+	más experiencia.
+
+USUARIO
+
+	Instalación
+	Paquetes
+	tmux
+
+SERVIDOR
+	Servicios y seguridad
+
+
+DESARROLLO
+ 	* vim para editar documentación
+ 	* vim para programar 
+	

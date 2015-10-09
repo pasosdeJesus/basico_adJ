@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect2 id="xfw">
+	<title>Editor <command>xfw</command></title>
+	<para><command>xfw</command> es un editor de texto simple para
+		el sistema X-Window, es decir opera en modo gráfico. 
+		Viene incluido con el administrador de archivos xfe (ver 
+		<xref linkend="xfe"></xref>) desarrollado por Roland Baudin.
+	</para>
+	<para>Se inicia desde el menú de fluxbox (botón derecho sobre 
+	el escritorio), desde 
+	<menuchoice><guimenu>Oficina</guimenu><guimenuitem>xfw</guimenuitem></menuchoice>
+	o bien desde un interprete de comandos con 
+	<screen>
+xfw
+	</screen>
+	o si por ejemplo desea abrir el archivo carta.txt que 
+	está en el directorio actual:
+	<screen>
+xfw carta.txt
+	</screen>
+</para>
+<para>
+	Como se presenta en la figura es una aplicación gráfica típica con 
+	una barra de menús,
+	una barra de herramientas, una barra de estado y por supuesto
+	el área para escribir textos que tendrá un cursor que indica
+	la siguiente posición donde escribirá cuando presione una tecla.  
+	En la barra de estado se índica el número de línea y el número de 
+	columna en la que está el cursor para ingresar textos.  Así
+	mismo el número total de líneas del texto que está editando y
+	el estado de inserción (INS) o sobreescritura (OVR) que puede cambiar con
+	la tecla <keycap>INS</keycap> o marcando en el menú
+	<menuchoice><guimenu>Preferencias</guimenu><guimenuitem>Sobreescribir</guimenuitem></menuchoice>.  
+		
+	<informalfigure>
+	<screenshot><mediaobject><imageobject>
+				<imagedata fileref="xfw-p.eps" format="EPS" scale="40" align="center"></imagedata></imageobject>
+			<imageobject><imagedata fileref="xfw-p.png" format="PNG" align="center"></imagedata></imageobject>
+			<textobject><phrase>Uso de Xfe para manejar paquetes en adJ</phrase></textobject></mediaobject>
+	</screenshot>
+</informalfigure>
+
+          </para>
+</sect2>

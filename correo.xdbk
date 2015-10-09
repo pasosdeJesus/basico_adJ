@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 id="correo">
+	<title>Correo electrónico</title>
+	<para>
+	El correo que reciba en un servidor OpenBSD puede consultarlo
+	por lo menos de tres formas:
+	<itemizedlist>
+		<listitem>
+			<para>Empleando un agente de usuario para
+				leer correo (o cliente de correo o MUA)
+				que soporte alguno de los protocolos
+				soportados (podrían ser POP3, IMAP, IMAP-SSL
+				y POP3S) y configurándolo para extraer/examinar 
+				correo del servidor.   
+			</para>
+		</listitem>
+		<listitem>
+			<para>Ingresando con <command>ssh</command>
+				al servidor al cual llega el correo
+			       	y consultándolo localmente
+				con un cliente de correo o MUA.  Dos programas
+				típicos para esto que operan en modo texto
+				en sistemas tipo Unix como OpenBSD son 
+				<command role="plataforma">mail</command> y 
+				<command role="plataforma">mutt</command>.
+			</para>
+		</listitem>
+		<listitem>
+			<para>Empleando un webmail desde un navegador.</para>
+		</listitem>
+	</itemizedlist>
+</para>
+<para>Otra posibilidad que tiene es reenviar el correo a otro servidor,
+	lo cual puede lograr fácilmente creando un archivo 
+	<filename>~/.forward</filename> en el cual basta que ponga
+        la dirección a la cual quiere reenviar el correo que reciba.</para>
+
+<para>Con respecto a protocolos para extraer/examinar correos, algunas 
+	diferencias entre los mencionados son:
+	<table frame='all'><title>Escritorio gráfico</title>
+ <tgroup cols='2' align='left' colsep='1' rowsep='1'>
+  <thead>
+   <row>
+	   <entry>Protocolo</entry><entry>Encripción SSL</entry><entry>Carpetas</entry><entry>Saca correo del servidor</entry>
+   </row>
+	 </thead>
+	 <tbody>
+		 <row><entry>POP3</entry><entry>No</entry><entry>No</entry><entry>Si</entry></row>
+		 <row><entry>POP3S</entry><entry>Si</entry><entry>No</entry><entry>Si</entry></row>
+		 <row><entry>IMAP</entry><entry>No</entry><entry>Si</entry><entry>No</entry></row>
+		 <row><entry>IMAP-SSL</entry><entry>Si</entry><entry>Si</entry><entry>No</entry></row>
+</tbody></tgroup></table>
+En resumen si desea sacar su correo del servidor prefiera POP3S, pero si
+prefiere dejar su correo en el servidor (para accederlo desde varias
+localizaciones) prefiera IMAP-SSL.
+</para>
+<para>Fuera de esos protocolos para extraer/examinar correo en servidores,
+el protocolo SMTP permite enviar correo a través de un servidor. </para>
+<para>En cuanto a clientes de correos para el web (webmails), hay varios
+	(e.g squirrelmail, horde), prefiera emplearlos desde computadores
+	sin virus ni spyware y sobre el protocolo HTTPS  (i.e la dirección
+	a la que se conecta desde su navegador de comenzar con
+	<literal>https://</literal>).
+</para>
+<para>
+	En el resto de esta guía se presenta la forma de configuración
+	de algunos MUA usando el protocolo IMAP-SSL y el uso básico
+	del MUA <command>mutt</command> 
+	(tomado de <xref linkend="AALinux"></xref>).
+</para>
+
+<sect2 id="uso-mua-grafico">
+	   <title>Uso de agentes de usuario para leer correo gráfico</title>
+	   <para>
+		   Hay diversos agentes de usuario para leer correo 
+		   gráficos, tanto de fuentes abiertas 
+		(Mozilla Thunderbird, Evolution) como de fuentes cerradas
+		(Outlook).  Típicamente soportan extracción de
+		correo de la cola local o extracción/consulta desde 
+		un servidor remoto con POP3, POP3S, IMAP o IMAP-SSL.
+	</para>
+	<para>Cada uno tiene diálogos propios para configurar el protocolo,
+		los servidores y otros detalles.
+	</para>
+	<sect3 id="thunderbird">
+		<title>Mozilla Thunderbird</title>
+	<para>
+	Por ejemplo, en el caso de Thunderbird configure una nueva cuenta
+	de correo (Archivo/Nuevo/Cuenta) empleando los datos del servidor
+	que usa.  Para el dominio &SERVIDOR; puede usar
+	como servidor de correo: <literal>correo2.&SERVIDOR;</literal> 
+	e IMAP-SSL.
+
+      <informalfigure> 
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+		    <imagedata fileref="imaps-1-thunderbird.eps"
+		scale="40" align="center" format="EPS"></imagedata>
+            </imageobject>
+	    <imageobject>
+	      <imagedata fileref="imaps-1-thunderbird.png" format="PNG" 
+		align="center"></imagedata>
+	    </imageobject>
+	    <textobject>
+		    <phrase>Configuración de IMAP en Thunderbird</phrase>
+	    </textobject>
+	</mediaobject>
+      </screenshot>
+    </informalfigure>
+
+    Después de la configuración básica de IMAP, ingrese a la configuración
+    de la cuenta y del servidor para activar IMAP-SSL:
+  
+    <informalfigure> 
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+		    <imagedata fileref="imaps-2-thunderbird.eps"
+		scale="40" align="center" format="EPS"></imagedata>
+            </imageobject>
+	    <imageobject>
+	      <imagedata fileref="imaps-2-thunderbird.png" format="PNG" 
+		align="center"></imagedata>
+	    </imageobject>
+	    <textobject>
+		    <phrase>Configuración de IMAP-SSL en Thunderbird</phrase>
+	    </textobject>
+	</mediaobject>
+      </screenshot>
+    </informalfigure>
+
+    Finalmente configure el servidor de salida de correo (protocolo SMTP).
+
+    <informalfigure> 
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+		    <imagedata fileref="imaps-3-thunderbird.eps"
+		scale="40" align="center" format="EPS"></imagedata>
+            </imageobject>
+	    <imageobject>
+	      <imagedata fileref="imaps-3-thunderbird.png" format="PNG" 
+		align="center"></imagedata>
+	    </imageobject>
+	    <textobject>
+		    <phrase>Configuración de servidor SMTP en Thunderbird</phrase>
+	    </textobject>
+	</mediaobject>
+      </screenshot>
+    </informalfigure>
+
+   </para>
+	</sect3>
+	<sect3 id="evolution">
+		<title>Evolution</title>
+   <para>Otro cliente de correo que se puede configurar para extraer
+	   correo con POP3 seguro es evolution. A continuación se
+	   presenta una de las pantallas de configuración del mismo:
+      <informalfigure> 
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+		    <imagedata fileref="evolution.eps"
+		scale="40" align="center" format="EPS"></imagedata>
+            </imageobject>
+	    <imageobject>
+		    <imagedata fileref="evolution.png" format="PNG" 
+		align="center"></imagedata>
+	    </imageobject>
+	    <textobject>
+		    <phrase>Configuración de POP3S en Evolution</phrase>
+	    </textobject>
+	</mediaobject>
+      </screenshot>
+    </informalfigure>
+
+	  </para>
+	</sect3>
+
+   </sect2>
+
+
+    <sect2 id="mutt-y-procmail">
+	    <title><literal>mutt</literal> y <literal>procmail</literal></title>
+
+	    <informalfigure>
+		    <screenshot><mediaobject><imageobject>
+					    <imagedata fileref="mutt.eps" format="EPS" scale="40" align="center"></imagedata></imageobject>
+				    <imageobject><imagedata fileref="mutt.png" format="PNG" align="center"></imagedata></imageobject>
+				    <textobject><phrase>Cliente de correo mutt</phrase></textobject></mediaobject>
+		    </screenshot>
+	    </informalfigure>
+
+	    <para>
+      <application>mutt</application> es un MUA que opera en
+      modo texto, fácil de manejar y altamente configurable.
+      Opcionalmente, si en el servidor donde ejecute <command>mutt</command>
+      también está <command role="plataforma">procmail</command>, podrá 
+      automatizar bastante la organización de su correo electrónico.  </para>
+      <para>Al iniciar <command>mutt</command> presenta los correos que 
+	estén en su casilla, le permite desplazarse de uno a otro con 
+	flechas o con las letras <keycap>j</keycap> y <keycap>k</keycap>
+	(cómo en <application>vi</application>), podrá consultar uno con 
+	<keycap>Enter</keycap>, salir con <keycap>q</keycap>, ver ayuda sobre
+	comandos con <keycap>?</keycap>, eliminar uno con <keycap>d</keycap>, 
+	iniciar un correo (o continuar editando algún correo pospuesto) con 
+	<keycap>m</keycap>. Una vez esté viendo un correo puede responder con 
+	<keycap>r</keycap>, reenviarlo con <keycap>f</keycap> o pasarlo como 
+	entrada a un comando con <keycap>|</keycap>. Cuando componga un 
+	mensaje puede posponer, puede poner adjuntos (con <keycap>a</keycap>) 
+	o emplear programas como PGP o GPG para firmar o encriptar sus 
+	mensajes (con <keycap>p</keycap>).  
+</para>
+	<para>Para organizar los correos que 
+	reciba, puede emplear carpetas, para pasar de una carpeta a otra emplee 
+	<keycap>c</keycap>, para organizar una carpeta (por fecha, emisor, 
+	destinatario, tamaño, tema o hilos) emplee <keycap>o</keycap>. Si 
+	ordena una  carpeta por hilos, podrá emplear otros comandos como 
+	<keycap>Ctrl-D</keycap> para borrar un hilo completo, 
+	<keycap>Ctrl-P</keycap> para pasar al anterior, 
+	<keycap>Ctrl-N</keycap> para pasar al siguiente.</para>
+      <para><application>mutt</application> puede configurarse en el 
+	archivo <filename>~/.muttrc</filename>. Un ejemplo se presenta a 
+	continuación (las líneas iniciadas con # son comentarios):
+<screen>
+# Para establecer una dirección en la que se prefieren respuestas
+my_hdr Reply-To: &NOMEUSUARIO;
+set reply_to=yes
+unset reply_self
+
+# Para emplear vim como editor de mensajes y editar el encabezado también
+set edit_headers=yes
+set editor=vim
+
+# Para establecer algunas carpetas
+mailboxes =/var/mail/&EUSUARIO;
+mailboxes =/home/&EUSUARIO;/Mail/tareas
+mailboxes =/home/&EUSUARIO;/Mail/familia
+mailboxes =/home/&EUSUARIO;/Mail/paz
+</screen>
+    </para>
+
+    <sect3 id="l10n-mutt">
+	    <title>Localización</title>
+	    <para>
+		    Es posible localizar mutt al español, lo recomendable es
+		    emplear en el sistema operativo el locale apropiado para
+		    su país con codificación UTF-8 y una terminal
+		    que soporte UTF-8.
+		    En tal caso mutt podrá enviar correos con esta 
+		    codificación y presentar correos con tal codificación, 
+		    agregando las siguientes líneas a su archivo 
+		    <filename>~/.muttrc</filename> 
+		    (que se espera codificado en UTF-8, ver 
+		    <xref linkend="editor-vi"></xref>):
+		    <screen>
+set config_charset=utf-8
+set locale=es_CO.UTF-8
+my_hdr Content-Type: text/plain\; charset=UTF-8\; format=flowed
+my_hdr Content-Transfer-Encoding: 8bit
+</screen>
+    	</para>
+    </sect3>
+    <sect3 id="procmail">
+	    <title>Procmail</title>
+    <para>Si desea que su correo sea automáticamente organizado en 
+    carpetas, cuando llegue puede emplear <application>procmail</application>
+    y sincronizarlo con su configuración de <application>mutt</application>.
+    <application>procmail</application> puede manejar automáticamente todo 
+    correo que reciba en una cuenta y realizar con este las acciones que 
+    usted describa. Para que separe automáticamente los correos en las
+    carpetas del ejemplo anterior, debe configurar y crear varios archivos. 
+    Cree la carpeta <filename>~/.procmail</filename>, en ella el archivo 
+    <filename>rc.maillists</filename> con la configuración de
+    los patrones por buscar en los correos y la carpeta en la que deben 
+    quedar:</para>
+<screen>
+:0:
+* ^FROM.*fip@ideaspaz.org.*
+paz
+
+:0:
+* ^TO.*colombia-paz@colnodo.apc.org.*
+paz
+
+:0:
+* ^TO.*colombia@derechos.net.*
+paz
+
+:0:
+* ^TOstructio.*
+tareas
+</screen>
+    <para>La última línea indica que deben dejarse correos enviados a 
+      direcciones que incluyan la palabra <literal>structio</literal> en 
+      la carpeta <literal>tareas</literal>; mientras que las que
+      van a las otras direcciones mostradas, irán a la carpeta
+      <literal>paz</literal> .</para>
+    <para>El archivo <filename>~/.procmailrc</filename> debe contener algo 
+    como:</para>
+
+<screen>
+LINEBUF=4096
+VERBOSE=off
+MAILDIR=$HOME/Mail/
+FORMAIL=/usr/local/bin/formail
+SENDMAIL=/usr/sbin/sendmail
+PMDIR=$HOME/.procmail
+LOGFILE=$PMDIR/log
+INCLUDERC=$PMDIR/rc.maillists
+</screen>
+
+    <para>La línea <command>LOGFILE=$PMDIR/log</command> indica que debe 
+    registrarse toda acción de <application>procmail</application> en 
+    <filename>~/.procmail/log</filename>. Después de configurar este 
+    servicio puede ser mejor quitarla.
+    </para>
+
+    <para>
+    Si en su sistema <application>procmail</application> fue configurado 
+    para ser llamado por el MTA, no tendrá que hacer más (e.g en la 
+    configuración por defecto de exim así ocurre). Si su MTA no fue
+    configurado para ejecutar <application>procmail</application> puede 
+    crear el archivo <filename>~/.forward</filename> con:</para>
+
+<screen>
+"|IFS=' ' &amp;&amp; exec /usr/bin/procmail -f- || exit 75 "
+</screen>
+
+    </sect3>
+
+    <sect3 id="fetchmail">
+		  <title>fetchmail</title>
+		  <para>Este programa, para sistemas tipo UNIX, le permite 
+			  descargar el correo
+			  de uno o más servidores empleando protocolos 
+			  POP3, POP3S, IMAP o IMAP-SSL y dejarlos en la cola
+			  de correos local de su computador para 
+			  examinarlos posteriormente con <command>mutt</command> 
+			  o con algún MUA gráfico, configurado para leer correo
+			  local.
+		  </para>
+		  <para>A continuación se presenta un ejemplo del 
+			  archivo de configuración 
+			  <filename>~/.fetchmailrc</filename> para
+			  extraer correo del servidor
+			  <literal>correo2.&SERVIDOR;</literal> 
+			  con el protocolo IMAP-SSL, suponiendo
+			  que tanto en el computador que recibe como
+			 en el servidor el usuario es &EUSUARIO;:
+			  <screen>
+set postmaster "postmaster"
+set bouncemail
+set properties ""
+
+poll correo2.&SERVIDOR; port 993 with proto IMAP 
+no dns
+user &EUSUARIO; there is &EUSUARIO; here 
+ssl
+			  </screen>
+
+			  Con esta configuración puede iniciarse la extracción
+			  de correo ejecutando:
+			  <screen>
+fetchmail -a
+			  </screen>
+			 </para>
+	  </sect3>
+
+  </sect2>
+	<sect2 id="lr-correo">
+	  <title>Lecturas recomendadas</title>
+
+	  <para>
+		  <itemizedlist>
+			  <listitem>
+				  <para>
+Puede consultar más sobre <command>mutt</command> con 
+<command>man mutt</command>, 
+y en el manual HTML disponible en
+<filename>/usr/local/share/doc/mutt/html</filename>.
+				  </para>
+			  </listitem>
+			  <listitem>
+				  <para>Puede ver más sobre el archivo
+<filename>.forward</filename> (que puede usar también para ejecutar
+un programa cada vez que llega un correo) con
+<command>man forward</command></para>
+			  </listitem>
+		  </itemizedlist>
+	  </para>
+	</sect2>
+
+
+      </sect1>

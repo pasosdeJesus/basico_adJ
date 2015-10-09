@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 id="uso-de-ssh">
+	<title>Más formas de uso de ssh</title>
+
+	<para>
+		El protocolo <command>ssh</command> además de
+		permitirle conectarse a servidores en modo texto
+		(ver <xref linkend="ssh"></xref>)
+		le permite iniciar aplicaciones gráficas que se ejecuten
+		en el servidor, 
+		hacer redireccionamiento de puertos y 
+		conectarse sin necesidad de dar clave
+		(dando una clave sólo una vez en su computador).
+	</para>
+
+	<sect2 id="ssh-grafico">
+		<title>Abrir programas con interfaz gráfica</title>
+	<para>Es posible ejecutar aplicaciones gráficas en
+		el servidor y ver las ventanas gráficas en otro
+		computador.  Para esto es necesario:
+		<orderedlist>
+			<listitem>
+				<para>
+					Que en el archivo de configuración 
+					<filename>/etc/ssh/sshd_config</filename>
+del servidor esté habilitada la opción:
+		<screen>
+X11Forwarding yes
+		</screen>
+</para>
+			</listitem>
+			<listitem>
+				<para>Que en el computador
+donde se desea ver la información esté instalado un
+servidor de X-Window.
+				</para>
+			</listitem>
+		</orderedlist>
+		En el caso de sistemas
+		tipo Unix basta con tener X-Window instalado (si ve el
+		modo gráfico es porque ya está instalado).   
+		Para otros sistemas operativos puede ser posible encontrar
+		un servidor de X-Window, por ejemplo para
+		Windows, puede emplear Cygwin-X 
+		(<ulink url="http://x.cygwin.com"/>) o Xming 
+		(<ulink url="http://www.straightrunning.com/XmingNotes/"></ulink>).
+	</para>
+	<para>Una vez esté ejecutándo el servidor de X-Window en su
+		computador entre al servidor usando
+		<command>ssh</command> con opción para hacer reenvío
+		de X11.   De esta manera toda la información gráfica
+		enviada por el servidor viajará por el canal seguro que
+		ssh establece cuando se conecta al servidor.
+		En el caso de OpenSSH esto se indica con la opción 
+		<option>-X</option>, i.e se debe conectar con:
+		<screen>
+ssh -X &EUSUARIO;@&SERVIDOR;
+		</screen>
+		En el caso de <command>putty</command> en el dialogo
+		de configuración que aparece antes de iniciar la conexión,
+		en el menú Connection->SSH->X11 marque 
+		'Enable X11 forwarding'.
+	</para>
+  <informalfigure>
+	<screenshot><mediaobject><imageobject>
+	<imagedata fileref="putty-x11.eps" format="EPS" scale="40" align="center"></imagedata></imageobject>
+	<imageobject><imagedata fileref="putty-x11.png" format="PNG" align="center"></imagedata></imageobject>
+	<textobject><phrase>Reenvío de X11 en <command>putty</command></phrase></textobject></mediaobject>
+	</screenshot>
+  </informalfigure>
+
+
+	<para>Una vez haga esto, las aplicaciones gráficas que inicie
+		en la sesión ssh que inició, se verán en su computador.
+		Pruebe por ejemplo con:
+		<screen>
+xeyes
+		</screen>
+	</para>
+	</sect2>
+
+	<sect2 id="ssh-tunel">
+		<title>Tunel reenviando un puerto</title>
+	<para>
+		Puede usar <command>ssh</command> también para crear un túnel
+		entre un puerto local y un puerto accequible desde el
+		servidor al cual se conecta.   Por ejemplo si en una
+		organización tienen un cortafuegos conectado a Internet 
+		(digamos que es &SERVIDOR;) y 
+		en la red interna cuentan con un servidor web SSL
+		(por ejemplo <literal>base</literal>),
+		podría establecerse un túnel desde un computador fuera
+		de la organización y el servidor privado,
+		ingresando al cortafuegos con:
+		<screen>
+			ssh -L10443:base:443 &EUSUARIO;@&SERVIDOR;
+		</screen>
+
+		donde <literal>base</literal> es el nombre del servidor al 
+		interior de la organización y 443 es el número de puerto de 
+		HTTPS (protocolo HTTP sobre SSL, es decir conexiones web 
+		encriptadas).
+	</para>
+	<para>Si emplea <command>putty</command> debe especificar 
+		esta información en el diálogo de configuración Connection->SSH->Tunnels como se presenta a continuación presionando el botón
+		Add para adicionar el túnel a la región `Forwarded ports'.
+	</para>
+  <informalfigure>
+	<screenshot><mediaobject><imageobject>
+	<imagedata fileref="putty-tunnel.eps" format="EPS" scale="40" align="center"></imagedata></imageobject>
+	<imageobject><imagedata fileref="putty-tunnel.png" format="PNG" align="center"></imagedata></imageobject>
+	<textobject><phrase>Configuración de túnel en <command>putty</command></phrase></textobject></mediaobject>
+	</screenshot>
+  </informalfigure>
+
+
+	<para>
+
+		Una vez inicie la conexión debe digitar la clave 
+		del usuario en el cortafuegos.  Con lo cual
+		quedará establecido un túnel entre el puerto 10443 del
+		computador local y el puerto 443 del servidor 
+		<literal>base</literal>.
+		Este túnel puede usarse ingresando en un navegador la 
+		dirección:
+		<screen>
+https://127.0.0.1:10443
+		</screen>
+		</para>
+	</sect2>
+
+    <sect2 id="ssh-tunel-dinamico">
+		<title>Tunel con protocolo SOCKS</title>
+	<para>
+        Otra forma de realizar un tunel, pero sin limitarlo a un puerto
+        es empleando un servidor SOCKS incluido 
+        con el programa ssh y configurando su navegador para emplearlo.</para>
+    <para>Primero debe establecer la conexión indicando el puerto que usará
+        para el servidor socks con la opción -D, por ejemplo:
+			<screen>
+			ssh -D8080 &EUSUARIO;@&SERVIDOR;
+		</screen>
+
+        donde <literal>8080</literal> es el número de puerto donde
+        correrá el servidor SOCKS en su computador.
+	</para>
+	<para>Si emplea <command>putty</command> debe especificar 
+        esta información en el diálogo de configuración 
+        <menuchoice><guimenu>Connection</guimenu><guimenuitem>SSH</guimenuitem><guimenuitem>Tunnels</guimenuitem></menuchoice>, marcando Dynamic y escribiendo
+       un puerto como 8080 en "Local Port,"   y proceder a conectarse al servidor.
+   </para>
+   <para>A continuación debe configurar su navegador para que utilice
+       ese servidor SOCKs en su propio computador en el puerto que específico
+       (8080 en este ejemplo).  En el caso de Firefox puede hacerlo
+       desde <menuchoice><guimenu>Editar</guimenu><guimenuitem>Preferencias</guimenuitem><guimenuitem>Avanzado</guimenuitem><guimenuitem>Red</guimenuitem><guimenuitem>Configurar</guimenuitem></menuchoice>  especificar en servidor Socks 127.0.0.1 y en puerto 8080.  
+   Una vez acepte toda navegación que intente realizar se hará por el servidor 
+   al cual se conectó.  Si por ejemplo ese servidor tiene acceso en una red 
+   interna  a un servidor con IP 192.168.1.2 puede emplear esa URL en su 
+   navegador y llegará a ese computador en la red interna donde está
+   el servidor.
+</para>
+	</sect2>
+
+
+	
+	<sect2 id="lr-uso-ssh">
+	  <title>Lecturas recomendadas</title>
+
+	  <para>
+		  Puede aprender sobre <command>ssh</command> examinado
+		  la especificación del protocolo en
+		  uno de los borradores de la especificación temporal 
+		  "SSH Protocol Architecture" (<ulink url="http://www.ietf.org/internet-drafts/draft-ietf-secsh-architecture-13.txt"/>).
+	  </para>
+	  <para>
+		  Hay información sobre la implementación
+		  OpenSSH en <ulink url="http://www.openssh.org"/>.
+	  </para>
+	</sect2>
+
+      </sect1>

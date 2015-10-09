@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sect2 id="xfe">
+
+<title>Administrador de archivos <command>Xfe</command></title>
+<para>
+	Con este sencillo programa podrá administrar archivos y directorios, 
+	es decir crear, copiar, renombrar, crear enlaces, cambiar permisos 
+	e incluso hacer estas operaciones como superusuario. 
+</para>
+<para>
+	Entre las características del porte de adJ destacamos, las siguientes 
+	adaptadas y 
+	traducidas de la ayuda oficial --que podrá consultar desde el 
+	menu <menuchoice><guimenu>Ayuda</guimenu></menuchoice>:
+	<itemizedlist>
+
+<listitem><para>
+	Interfaz gráfica de usuario muy rápida con cuatro formas de administrar archivos: un panel; árbol y panel; dos páneles; árbol y dos paneles.
+</para></listitem>
+<listitem><para>
+		Soporta codificación UTF-8 y se ha traducido a 20 idiomas (incluyendo español de Colombia).   Puede presentar la interfaz con caracteres no latinos (como chino o japónes) siempre y cuando configure un tipo de letra que soporte Unicode desde el menú Editar/Preferencias/Tipo de letra
+</para></listitem>
+<listitem><para>
+		Incluye las siguientes aplicaciones: Editor de texto (X File Write, xfw, ver
+		<xref linkend="xfw"></xref>), 
+		Visor de texto (X File View, xfv), Visor de imágenes (X File Image, xfi), 
+		Visor/Instalador/Desinstalador de paquetes (rpm o deb) (X File Package, xfp).
+</para></listitem>
+<listitem><para>
+La interfaz gráfica soporta temas con posibilidad de cambiar colores, íconos y apariencia. Cuenta con Barras de herramientas, Marcadores e Historial.
+</para></listitem>
+<listitem><para>
+		Papelera para operaciones de eliminación de archivos.  Se ubica en <filename>~/local/share/Trash/files</filename>
+</para></listitem>
+<listitem><para>
+		Permite realizar operaciones como superusuario, bien iniciando 
+		desde una terminal con:
+		<screen>
+sudo xfe
+		</screen>
+		o si está bien configurado puede inicarse una ventan 
+		superusuario desde el menu 
+<menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Ventana superusuario nueva</guimenuitem></menuchoice>.
+</para></listitem>
+<listitem><para>
+Maneja paquetes de OpenBSD: seleccionando cualquier archivo y pulsando
+botón derecho podrá elegir en el menú emergente 
+<menuchoice><guimenu>Consultar Paquetes</guimenu></menuchoice>
+que buscará el paquete que contiene el archivo seleccionado.
+Si selecciona un paquete y pulsa el botón derecho, en el 
+menú emergente podrá elegir
+<menuchoice><guimenu>Ver el contenido del paquete</guimenu></menuchoice>
+Si usa una ventana superusuario de Xfe
+también podrá instalarlo/actualizarlo o desinstalarlo, pulsando botón 
+derecho sobre
+el paquete y eligiendo en el menú emergente
+<menuchoice><guimenu>Instalar/Actualizar</guimenu></menuchoice>
+o
+<menuchoice><guimenu>Desistalar</guimenu></menuchoice>
+respectivamente.
+</para>
+<informalfigure>
+	<screenshot><mediaobject><imageobject>
+				<imagedata fileref="xfepaq.eps" format="EPS" scale="40" align="center"></imagedata></imageobject>
+			<imageobject><imagedata fileref="xfepaq.png" format="PNG" align="center"></imagedata></imageobject>
+			<textobject><phrase>Uso de Xfe para manejar paquetes en adJ</phrase></textobject></mediaobject>
+	</screenshot>
+</informalfigure>
+</listitem>
+<listitem><para>
+Permite comprimir en formatos tar, compress, zip, gzip, bzip2, xz y 7zip y descomprimir de formatos tar, compress, zip, gzip, bzip2, xz, lzh, rar, ace, arj y 7zip
+</para></listitem>
+<listitem><para>
+Usable: barras de progreso o cuadros de diálogo para operaciones de archivo demoradas, vista previa con miniaturas, atajos de teclado configurables, asociaciones de archivos, operaciones de arrastrar y soltar, ayudas emergentes con las propiedades de los archivos.
+</para></listitem>
+<listitem><para>
+En listados y en el árbol de directorios puede seleccionar varios elementos y al hacer pulsación derecha se abrirá un menú contextual sobre los elementos seleccionados.   En los panels <keycap>Ctrl</keycap> + pulsación derecha abrirá un menú contextual con otras operaciones.
+</para></listitem>
+</itemizedlist>
+</para>
+
+
+<sect3><title>Atajos de teclado predeterminados</title>
+	<para>
+Los atajos de teclado pueden personalizarse en el cuadro de diálogo Preferencias. Los predeterminados para todas la aplicaciones integradas se listan a continuación (vea otros atajos de teclado partículares de cada Aplicación en el menú Ayuda).
+<itemizedlist>
+<listitem><para>
+<keycap>Ctrl-A</keycap>:  Seleccionar todo
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-C</keycap>:  Copiar al portapapeles
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-F</keycap>:  Buscar
+</para></listitem>
+<listitem><para>
+<keycap>Mayúscula-Ctrl-G</keycap>:  Buscar anterior
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-G</keycap>:  Buscar siguiente
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-H</keycap>:  Ir al directorio personal
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-I</keycap>:  Invertir selección
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-O</keycap>:  Abrir archivo
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-P</keycap>:  Imprimir ficha
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-Q</keycap>:  Salir de la aplicación
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-V</keycap>:  Pegar desde el portapapeles
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-W</keycap>:  Cerrar ventana
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-X</keycap>:  Cortar al portapapeles
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-Z</keycap>:  Deseleccionar todo
+</para></listitem>
+<listitem><para>
+<keycap>F1</keycap>:  Mostrar ayuda
+</para></listitem>
+<listitem><para>
+<keycap>F2</keycap>:  Crear un archivo nuevo
+</para></listitem>
+<listitem><para>
+<keycap>F7</keycap>:  Crear un directorio nuevo
+</para></listitem>
+<listitem><para>
+<keycap>F10</keycap>:  Listado con iconos grandes
+</para></listitem>
+<listitem><para>
+<keycap>F11</keycap>:  Listado con iconos pequeños
+</para></listitem>
+<listitem><para>
+<keycap>F12</keycap>:  Listado detallado de archivos
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-F6</keycap>:  Alternar mostrar archivos ocultos
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-F7</keycap>:  Alternar mostrar miniaturas
+</para></listitem>
+<listitem><para>
+<keycap>Mayúscula-F2</keycap>:  Ir al directorio de trabajo
+</para></listitem>
+<listitem><para>
+<keycap>Retroceso</keycap>:  Ir al directorio superior
+</para></listitem>
+<listitem><para>
+<keycap>Ctrl-Retroceso</keycap>:  Ir al directorio anterior
+</para></listitem>
+<listitem><para>
+<keycap>Mayúscula-Retroceso</keycap>:  Ir al directorio siguiente
+</para></listitem>
+</itemizedlist>
+</para>
+	
+</sect3>
+
+</sect2>

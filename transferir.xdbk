@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect1 id="transferir">
+	<title>Transferencia de información a y desde el servidor</title>
+
+	<para>Hay diversos métodos para transferir información entre
+		el servidor y otros computadores, uno de los más seguros
+		consiste en emplear una conexión encriptada como las
+		ofrecidas por <command>ssh</command>.  Para emplear este
+		método desde el servidor OpenBSD (o otro sistema tipo
+		Unix que cuente con OpenSSH) se puede usar bien
+		<command role="plataforma">scp</command> desde la
+		línea de comandos o el programa
+		<application>filezilla</application>.
+	</para>
+
+	&filezilla;
+
+	<sect2 id="scp">
+		<title>Uso básico de scp</title>
+	<para>Si por ejemplo desea transferir  el archivo 
+		<filename>ideas.txt</filename> del servidor
+		OpenBSD <literal>&SERVIDOR;</literal> a otro servidor tipo 
+		Unix que tenga instalado y configurado ssh (digamos
+		<literal>comp.trabajo.net</literal>), a la cuenta de un
+		usuario <filename>&EUSUARIO2;</filename>, en el
+		directorio <filename>personal</filename>:
+		<screen>
+$ scp ideas.txt &EUSUARIO2;@comp.trabajo.net:personal
+		</screen>
+	</para>
+
+	<para>Si desea transmitir el archivo 
+	<filename>metodo.txt</filename> del directorio
+	<filename>personal</filename> del servidor 
+	<literal>comp.trabajo.net</literal> al directorio en el que
+	está ubicado en <literal>&SERVIDOR;</literal>:
+		<screen>
+$ scp &EUSUARIO;2@comp.trabajo.net:personal/metodo.txt .
+		</screen>
+		Note que <command>scp</command> es similar a 
+		<command>cp</command> (pues permite copiar
+		un archivo fuente en uno destino<footnote><para>Incluso
+			<command>scp</command> implementa la funcionalidad
+			de <command>cp</command> al permitir copiar localmente
+			un archivo.</para></footnote>) sólo que 
+		el archivo fuente o el archivo destino pueden estar
+		en otra máquina.
+	</para>
+
+	<para>Dado que Windows no tiene un servidor <command>ssh</command> 
+		por defecto, es
+		posible transmitir archivos a y desde sistemas Windows
+		sólo desde el computador con Windows usando un programa
+		como <command>winscp</command> (disponible en
+		<ulink url="http://winscp.sf.net"/> o 
+		<command>pscp</command> que se distribuye junto con 
+		<command>putty</command> 
+		(<xref linkend="conceptos"/>).
+	</para>
+	</sect2>
+
+	<sect2 id="lr-transferir">
+	  <title>Lecturas recomendadas</title>
+
+	  <para>Para aprender más sobre <command>scp</command> 
+		recomendamos la página del manual.
+	  </para>
+	</sect2>
+
+      </sect1>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sect2 id="personaliza-ksh">
+	<title>Personalización del interprete de comandos <command>ksh</command></title>
+
+  <para>Es función del intérprete de comandos recibir comandos que el
+	  usuario ingrese por el teclado (o en general por
+	  <emphasis>entrada estándar</emphasis>) y ejecutar los programas 
+	  apropiados.   Dada la importancia y frecuencia de esta labor,
+	  los interpretes de comandos (y en particular 
+	  <filename>/bin/ksh</filename>) suelen ser altamente personalizables
+	  a los gustos de cada usuario. 
+  </para>
+
+  <sect3 id="ejecucion-de-programas">
+	  <title>Ejecución de Programas</title>
+	  <para>
+   Desde un intérprete de comandos un usuario puede
+	teclear bien nombres de programas o bien comandos del intérprete
+	de comandos.   
+   Los programas por ejecutar se especifican dando la ruta
+	completa de su ubicación en el sistema de archivos, o en caso de
+	no dar ruta se buscan en orden en los directorios especificados
+	en la variable de ambiente <literal>PATH</literal>.  Por ejemplo
+	si teclea:
+	<screen>
+$ banner Jesus
+	</screen>
+	El interprete de comandos identifica que está intentando ejecutar
+	<command role="plataforma">banner</command> (para presentar en 
+	grande una cadena) y que le pasa como primer parámetro 
+	<filename>Jesus</filename>.  
+	Como <command>banner</command> no
+	es un comando interno del interprete de comandos busca un 
+	archivo con permiso de ejecución en las rutas indicadas en la
+	variable <literal>PATH</literal>, si el valor de tal variable
+	fuera <literal>/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin</literal>
+	el interprete de comandos buscaría primero en <filename>/bin</filename>,
+	después en <filename>/usr/X11R6/bin</filename> y así sucesivamente
+	para encontrarlo en <filename>/usr/bin</filename>.  Entonces 
+	pasaría el control a un programa del sistema operativo que
+	se encarga de cargar y ejecutar el programa pasándole los
+	parámetros que reciba (tal programa es 
+	<command role="plataforma">/usr/libexec/ld.so</command>).  El
+	ejemplo anterior es equivalente a
+	<screen>
+$ /usr/bin/banner Jesus
+	</screen>
+	puede verificar que <command>banner</command> es un programa
+	ubicado en el directorio <filename>/usr/bin</filename> con:
+	<screen>
+$ ls -l /usr/bin/b*
+	</screen>
+	que mostrará todos los archivos de ese directorio que
+	comiencen con la letra b.
+</para>
+</sect3>
+<sect3 id="variables-de-ambiente">
+	<title>Variables de ambiente</title>
+
+    <para>Puede personalizar algunos detalles del intérprete de 
+	    comandos o de algunos programas empleando variables de ambiente.  
+	    Las variables de ambiente son palabras que tienen asociadas
+	    un valor, por ejemplo puede examinar el valor de la variable 
+	    de ambiente <literal>PATH</literal> con:
+	    <screen>
+echo $PATH
+	    </screen>
+	    y puede modificarlo con:
+	    <screen>
+export PATH=/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin
+	    </screen>
+	    Si en su directorio personal a instalado programas en el
+	    subdirectorio <filename>bin</filename> y desea agregar la ruta 
+	    a la variable <literal>PATH</literal> puede usar:
+	    <screen>
+export PATH=$PATH:/home/$EUSER;/bin/
+	    </screen>
+    </para>
+</sect3>
+<sect3 id="variables-de-ambiente-interprete">
+	<title>Variables de ambiente del interprete de comandos</title>
+    <para>Cada programa emplea sus propias variables de ambiente, en
+	    particular el interprete de comandos.  Recomendamos el uso de 
+	    <command>ksh</command> como interprete de comandos por ser liviano 
+	    y estándar en sistemas OpenBSD.
+	Con este intérprete de comandos, puede establecerse el valor
+	de la variable de ambiente <literal>VISUAL</literal> con:
+	<screen>
+$ export VISUAL=vi
+	</screen>
+	Esta variable es usada por <command>ksh</command> para determinar 
+	qué secuencias de teclas utilizar para dar órdenes especiales desde
+	la línea de comandos.   El valor <literal>vi</literal> indica que
+	se usen las teclas que se usan con el editor <command>vi</command>
+	(por ejemplo en modo comandos, es decir después de oprimir 
+	<literal>ESC</literal>, 
+	pueden usarse <literal>k</literal> para ir a la instrucción 
+	anterior de la historia, <literal>j</literal> para ir a la siguiente,
+	<literal>?</literal> seguido de una cadena para buscar un comando
+	en la historia que incluya la cadena, <literal>0</literal> para ir
+	al comienzo de la línea, <literal>$</literal> para ir al final 
+	de la linea, <literal>i</literal> para insertar en la posición
+	del cursor y salir del modo comandos).  Si prefiere otra forma
+	de interacción emplee:
+	<screen>
+export VISUAL=gmacs
+	</screen>
+</para>
+<para>
+	Otra variable usado por diversos programas es <literal>TERM</literal>
+	que permite establecer el tipo de terminal que se está usando.
+	por ejemplo: 
+	<screen>
+$ export TERM=xterm-color
+	</screen>
+	que permite presentar colores si trabaja directamente
+	en el sistema OpenBSD con X-Window o
+	<screen>
+$ export TERM=wsvt25
+	</screen>
+	que permite presentar colores si emplea la consola tipo texto
+	en un PC ordinario o si se conecta con 
+	<application>putty</application> (por ejemplo cuando ingresa
+	a <application>vim</application>).
+</para>
+</sect3>
+
+<sect3 id="configuracion-por-defecto">
+	<title>Configuración por defecto de sesiones con <application>ksh</application></title>
+
+	<para>Notará que el valor de las variables de ambiente que fije durante 
+		una sesión se perderá cuando termine la sesión.   
+		Para lograr una configuración más perdurable puede establecer la
+		variable de ambiente a un archivo ejecutado por el interprete 
+		de comandos automáticamente cada vez que inicia una sesión.  
+		En el caso del intérprete
+<command>ksh</command> tal archivo es <filename>~/.profile</filename>.
+Un ejemplo de un archivo <filename>~/.profile</filename> es:
+<screen>
+alias vi=vim
+export VISUAL=vi
+export PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin:/usr/local/sbin:.
+if (test "$TERM" = "xterm") then {
+        export TERM=xterm-color
+else {
+	export TERM=wsvt25
+}fi;
+which colorls > /dev/null
+if (test "$?" == "0") then {
+	export CLICOLOR=1
+	alias ls=colorls
+} fi;
+export  PKG_PATH=ftp://rt.fm/pub/OpenBSD/&VER-OPENBSD;/packages/i386
+export PS1="\h$ "
+export LANG="es_CO.UTF-8"
+</screen>
+
+El comando <literal>alias vi=vim</literal> indica que cada vez que
+se ejecute el comando <command role="plataforma">vi</command> se llame al
+programa <command role="plataforma">vim</command> 
+(ver <xref linkend="editor-vi"></xref>). 
+Note que también se establecen las variables de ambiente
+<itemizedlist>
+	<listitem>
+		<para><literal>VISUAL</literal> modo de edición en 
+			<command>ksh</command>.</para>
+	</listitem>
+	<listitem>
+		<para><literal>PATH</literal> que establece rutas en la cual
+			buscar programas (se separan unas de otras con
+			dos puntos).
+		</para>
+	</listitem>
+	<listitem>
+		<para><literal>TERM</literal> que establece el tipo
+			de terminal que está usando. Desde terminales
+			gráficas será <literal>xterm</literal> o
+			<literal>xterm-color</literal>, mientras que
+			desde consolas tipo texto típicamente será
+			<literal>vt220</literal> o <literal>wsvt25</literal>.</para>
+	</listitem>
+	<listitem>
+		<para><literal>PKG_PATH</literal> que establece ruta
+			en la cual buscar paquetes por instalar --usado por
+	administradores de sistemas OpenBSD.	</para>
+	</listitem>
+	<listitem>
+		<para><literal>LANG</literal> define el locale, es decir las 
+			identificaciones culturales y de idioma para un área 
+			geográfica.
+	</para>
+	</listitem>
+	<listitem>
+		<para><literal>PS1</literal> que establece el
+			símbolo de espera de comandos principal 
+			de <command>ksh</command>, 
+			el valor de este ejemplo ("\h$ ") establece un
+			símbolo de espera de comandos que presenta el 
+			nombre de la máquina seguido
+		del símbolo pesos y un espacio.</para>
+	</listitem>
+</itemizedlist>
+</para>
+</sect3>
+
+<sect3 id="colorls">
+	<title>colorls</title>
+<para>
+	En el ejemplo presentado si está instalado el programa
+	<command>colorls</command> (del paquete <literal>colorls</literal>), 
+	este se define como alias para el comando <command>ls</command>, 
+	de forma que la lista de archivos se presente con colores. Esto
+	ocurrirá desde consolas tipo texto.  Si está usando OpenBSD con 
+	X-Window y <command>xterm</command>, además de lo anterior necesita 
+	agregar a su archivo <filename>~/.Xdefaults</filename> (o crearlo
+	si no existe):
+	<screen>
+// Con base en http://dentarg.starkast.net/files/configs/dot.zshrc
+XTerm*color0:                   #000000
+XTerm*color1:                   #bf7276
+XTerm*color2:                   #86af80
+XTerm*color3:                   #968a38
+XTerm*color4:                   #3673b5
+XTerm*color5:                   #9a70b2
+XTerm*color6:                   #7abecc
+XTerm*color7:                   #dbdbdb
+XTerm*color8:                   #6692af
+XTerm*color9:                   #e5505f
+XTerm*color10:                  #87bc87
+XTerm*color11:                  #e0d95c
+XTerm*color12:                  #1b85d6
+XTerm*color13:                  #ad73ba
+XTerm*color14:                  #338eaa
+XTerm*color15:                  #f4f4f4
+XTerm*colorBD:                  #ffffff
+XTerm*foreground:               #000000
+XTerm*background:               #ffffff
+XTerm*font:                     shine2.se
+XTerm*boldMode:                 false
+XTerm*scrollBar:                false
+XTerm*colorMode:                on
+XTerm*dynamicColors:            on
+XTerm*highlightSelection:       true
+XTerm*eightBitInput:            false
+XTerm*metaSendsEscape:          false
+XTerm*oldXtermFKeys:            true
+	</screen>
+</para>
+</sect3>
+	<sect3 id="lr2">
+	  <title>Lecturas recomendadas</title>
+
+	  <para>Puede ver detalles de las variables de ambiente empleadas
+		  por <application>ksh</application> con
+		  <command>man ksh</command></para>
+	  <para>
+	    La configuración de colores es tomada de una respuesta de Steve
+	Jones en una lista de correo, está disponible en 
+	<ulink url="http://mailman.theapt.org/pipermail/openbsd-newbies/2004-April/001806.html"/>.
+	  </para>
+	</sect3>
+
+</sect2>
