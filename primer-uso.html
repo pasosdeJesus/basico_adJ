@@ -14,7 +14,7 @@
 	  <code class="literal">File system is clean</code> o un chequeo de
 	  la imagen.  En caso de dar una clave equivocada, continuará la
 	  secuencia de arranque pero no podrá acceder a los directorios 
-	  cifrados<sup>[<a name="idp953543536" href="#ftn.idp953543536">5</a>]</sup>.</p><p>Después se iniciará un escritorio gráfico (X-Window)
+	  cifrados<sup>[<a name="idp2890773744" href="#ftn.idp2890773744">5</a>]</sup>.</p><p>Después se iniciará un escritorio gráfico (X-Window)
 	  y un aplicación (<code class="literal">xdm</code>) que pide su usuario y 
 	  su clave para iniciar una sesión</p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="xdm.png" align="middle" alt="xdm solicitando nombre de cuenta y clave"></div></div></div><p>Si no instaló X-Window verá una consola virtual tipo texto, como
 	  la del arranque.  Por defecto hay 4 consolas virtuales tipo 
@@ -55,14 +55,14 @@
 	    (<span class="guimenu">Documentos</span>), 
     </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="primerflux.png" align="middle" alt="Escritorio fluxbox con navegador Chrome"></div></div></div><p> Por el menú Oficina puede elegir LibreOffice que es el paquete de fuentes 
 	abiertas con aplicaciones de oficina. La gráfica muestra la interfaz de 
-	LibreOffice.org  Writer<sup>[<a name="idm548635152" href="#ftn.idm548635152">6</a>]</sup> ---con el que puede abrir y guardar en el formato
+	LibreOffice.org  Writer<sup>[<a name="idp2431586800" href="#ftn.idp2431586800">6</a>]</sup> ---con el que puede abrir y guardar en el formato
 	de MS-Word. 
 </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="openoffice_writer.png" align="middle" alt="LibreOffice Writer
 	      "></div></div></div><p>También puede trabajar con la hoja de cálculo 
-	    Calc<sup>[<a name="idm242661904" href="#ftn.idm242661904">7</a>]</sup>, 
+	    Calc<sup>[<a name="idp2431587824" href="#ftn.idp2431587824">7</a>]</sup>, 
 	    que le permite abrir y guardar en el formato de Excel.</p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="openoffice_calc.png" align="middle" alt="LibreOffice.org Calc 
               "></div></div></div><p>Puede elaborar presentaciones y abrir las que se han
-    hecho con PowerPoint con Impress<sup>[<a name="idm548634128" href="#ftn.idm548634128">8</a>]</sup>.</p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="openoffice_presentacion.png" align="middle" alt="Presentación 
+    hecho con PowerPoint con Impress<sup>[<a name="idm92657680" href="#ftn.idm92657680">8</a>]</sup>.</p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="openoffice_presentacion.png" align="middle" alt="Presentación 
 	      "></div></div></div><p>Puede acceder a la documentación para adJ  a través del menú de 
 	    fluxbox. Los tutoriales incluidos son: Uso básico,
 	    uso como sistema de escritorio y uso como servidor 
@@ -136,7 +136,7 @@ sudo cdio cdplay
     conectado, comparando la llave pública de esa máquina con alguna de las 
     que conozca, si es la primera vez que se
     conecta a ese sitio, <span><strong class="command">ssh</strong></span> le pedirá confirmar la nueva 
-    llave pública<sup>[<a name="idp1724009840" href="#ftn.idp1724009840">9</a>]</sup>.  
+    llave pública<sup>[<a name="idp1808754416" href="#ftn.idp1808754416">9</a>]</sup>.  
 Después le pedirá su clave en ese servidor (o si ha 
 configurado autenticación con llaves simétricas pedirá su clave RSA/DSA
 o incluso nada si ha configurado un agente que maneje sus llaves
@@ -149,15 +149,15 @@ OpenSSH)
     haya configurado, se ejecutarán los archivos de comandos de inicio y 
     quedará en el 
     interprete de comandos que esté configurado en su cuenta.
-  </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp953543536" href="#idp953543536">5</a>] </sup>Una vez
+  </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp2890773744" href="#idp2890773744">5</a>] </sup>Una vez
 			  en operación puede volver a dar estas claves ejecutando el 
 			  archivo <code xmlns="" class="filename">/etc/rc.local</code> desde
-			  un interprete de comandos, o desde el menú de Fluxbox Dispositivos-&gt;Reiniciar Servicios Faltantes</p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm548635152" href="#idm548635152">6</a>] </sup>Desde la línea de comandos
+			  un interprete de comandos, o desde el menú de Fluxbox Dispositivos-&gt;Reiniciar Servicios Faltantes</p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp2431586800" href="#idp2431586800">6</a>] </sup>Desde la línea de comandos
 			puede iniciar Writer con <code xmlns="" class="literal">/usr/local/bin/swriter</code> 
 			o puede abrir LibreOffice completo con 
-			<code xmlns="" class="literal">/usr/local/bin/soffice</code></p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm242661904" href="#idm242661904">7</a>] </sup>Desde la línea de comandos puede iniciar
-			    Calc con <code xmlns="" class="literal">/usr/local/bin/scalc</code></p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm548634128" href="#idm548634128">8</a>] </sup>Desde la línea de 
-		    comandos inicia Impress con <code xmlns="" class="literal">/usr/local/bin/simpress</code>.</p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp1724009840" href="#idp1724009840">9</a>] </sup>
+			<code xmlns="" class="literal">/usr/local/bin/soffice</code></p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp2431587824" href="#idp2431587824">7</a>] </sup>Desde la línea de comandos puede iniciar
+			    Calc con <code xmlns="" class="literal">/usr/local/bin/scalc</code></p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm92657680" href="#idm92657680">8</a>] </sup>Desde la línea de 
+		    comandos inicia Impress con <code xmlns="" class="literal">/usr/local/bin/simpress</code>.</p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp1808754416" href="#idp1808754416">9</a>] </sup>
 Si la llave de la máquina a la que se conecta ha cambiado (por ejemplo
 si se instaló otro sistema operativo o se actualizó sin 
 cuidado), para que el cliente de ssh reconozca la nueva
