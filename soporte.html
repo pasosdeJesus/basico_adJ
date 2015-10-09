@@ -1,0 +1,89 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>4. Soporte</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="conceptos.html" title="3. Conceptos básicos"><link rel="next" href="medios.html" title="5. Uso de medios de almacenamiento"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4. Soporte</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="conceptos.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="medios.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="soporte"></a>4. Soporte</h2></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="documentacion"></a>4.1. Documentación</h3></div></div></div><p>Por favor adopte la política LBM (Leer el Bendito Manual).  
+			La documentación de adJ es:
+			</p><div class="itemizedlist"><ul type="disc"><li><p>
+			 <a href="http://structio.sf.net/guias/basico_adJ" target="_top">http://structio.sf.net/guias/basico_adJ</a>	utilización básica local y remota.
+					</p></li><li><p>
+						<a href="http://structio.sf.net/guias/usuario_OpenBSD" target="_top">http://structio.sf.net/guias/usuario_OpenBSD</a>	instalación y uso más avanzado como plataforma de escritorio y desarrollo.
+					</p></li><li><p>
+						<a href="http://structio.sf.net/guias/servidor_OpenBSD" target="_top">http://structio.sf.net/guias/servidor_OpenBSD</a>	
+						configuración como cortafuegos y servidor.
+					</p></li></ul></div><p>
+		</p><p>Como adJ es una distribución de OpenBSD los documentos
+			para ese sistema operativo también aplican. Sin embargo 
+			buena parte de la documentación se encuentra 
+			solo en inglés, recomendamos:
+			</p><div class="itemizedlist"><ul type="disc"><li><p>El manual oficial de cada comando, controlador y archivo de configuración puede leerse con el comando <span><strong class="command">man</strong></span>. Tal manual consta de varias secciones:  1 comandos generales, 2 llamadas al sistema y números de error, 3 librerías de C, 4 archivos especiales y soporte de hardware, 5 formatos de archivos, 6 juegos, 7 miscelanea, 8 operación y mantenimiento del sistema,  9 kernel.  Puede ver por ejemplo la introducción a la sección 6 con <code class="literal">man 6 intro</code>.  En Internet también consultarse este manual en <a href="http://www.openbsd.org/cgi-bin/man.cgi" target="_top">http://www.openbsd.org/cgi-bin/man.cgi</a> </p></li><li><p><a href="http://www.openbsd.org/faq/index.html%20" target="_top">Documentation and Frequently Asked Questions</a></p></li></ul></div><p>
+
+			Entre los sitios donde se documentan configuraciones o se evalúan algunas herramientas: <a href="http://dhobsd.pasosdeJesus.org" target="_top">http://dhobsd.pasosdeJesus.org</a>, <a href="http://www.openbsdcolombia.org" target="_top">http://www.openbsdcolombia.org</a>, <a href="https://calomel.org/" target="_top">https://calomel.org/</a>
+		</p><p>
+			Para realizar preguntas por correo electrónico recomendamos la lista de distribución OpenBSD-Colombia <a href="http://groups.google.com/group/OpenBSD-Colombia?hl=es" target="_top">http://groups.google.com/group/OpenBSD-Colombia?hl=es</a>. 
+		</p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="canal-silc"></a>4.2. Canal SILC</h3></div></div></div><p>Para dar soporte  en el uso de Aprendiendo de Jesús empleamos
+	     el canal <code class="literal">soporte-adJ</code>, en el servidor
+	     SILC de <code class="literal">www.nocheyniebla.org</code> </p><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="silc"></a>4.2.1. El protocolo SILC</h4></div></div></div><p>SILC es un protocolo de teleconferencia inspirado
+	     en IRC, pero que transmite los mensajes cifrados a un 
+	     servidor que replica los mensajes a los clientes conectados.  
+	     Un usuario que se conecte a un servidor, decide a que canales 
+	     de los disponibles unirse o puede crear uno nuevo al que otros
+	     usuarios podrían unirse.  Todo lo que
+	     alguno de los miembros de un canal escriba en el canal, será
+	     transmitido a todos los que se hayan unido a ese canal.
+	     SILC también soporta canales privados, canales con clave, el 
+	     envío de mensajes de texto cifrados
+	     a individuos así como transmisión de información multimedia
+	     (por ejemplo un tablero gráfico colaborativo). Puede 
+	     verse más en <a href="silcnet.org" target="_top">silcnet.org</a> 
+     </p><p>Para emplear el servicio debe utilizarse un cliente de
+	     silc, en caso de que cuente con un escritorio gráfico recomendamos
+	     <span><strong class="command">pidgin</strong></span>, o de contar con un interprete
+	     de comandos el programa <span><strong class="command">silc</strong></span>
+	     incluido en el paquete <span><strong class="command">silc-client</strong></span>
+     </p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="configurar-pidgin"></a>4.2.2. Configuración y uso de Pidgin</h4></div></div></div><p> <span><strong class="command">Pidgin</strong></span>  es un programa de mensajería
+		instantánea que permite iniciar sesiones sobre varias 
+		redes de mensajería al mismo tiempo.
+	</p><p> Corre sobre sistemas operativos OpenBSD, Linux, Mac OS X
+	       	y Windows. 
+		Es compatible con las siguientes redes de mensajería: AIM, 
+		ICQ, Google Talk, Jabber/XMPP, MSN Messenger, Yahoo!, 
+		Bonjour, Gadu-Gadu, IRC, Novell GroupWise Messenger, QQ, 
+		Lotus Sametime, SILC, SIMPLE, MySpaceIM y Zephyr.
+	</p><p> Soporta transferencia de archivos, mensajes de ausencia, iconos,
+	      	emoticones personalizados y notificaciones de escribir.
+	</p><div class="itemizedlist"><ul type="disc"><li><p>Puede iniciar con el botón derecho sobre 
+				el escritorio en el menú Internet-&gt;Pidgin o 
+				desde una terminal escribiendo
+				<code class="filename">pidgin</code>.
+ </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="pidgin1.png" align="middle" alt="Al ejecutar pidgin
+              "></div></div></div><p>
+    </p></li><li><p>  Presionamos botón del ratón sobre <span><strong class="command">Add</strong></span> para adicionar una cuenta. En <span><strong class="command">Protocol</strong></span> elegimos el protocolo <span><strong class="command">SILC</strong></span>.
+    </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="pidgin2.png" align="middle" alt="Elegimos el protocolo silc
+              "></div></div></div></li><li><p>
+En <span><strong class="command">Screen name</strong></span> colocamos el nombre con el que se vamos a 
+identificarnos(En el ejemplo, hernan).
+En <span><strong class="command">Network</strong></span> digitamos 
+<code class="filename">www.nocheyniebla.org</code>. 
+                        </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="pidgin3.png" align="middle" alt="Configuración básica "></div></div></div></li><li><p>  En la parte superior izquierda, presionamos botón del ratón sobre <span><strong class="command">Advanced</strong></span>. </p><p>	En <span><strong class="command">Connect server</strong></span> digitamos nuevamente <code class="filename">www.nocheyniebla.org</code>. Además señalamos las dos primeras opciones  y la última opción. Presionamos sobre <span><strong class="command">Save</strong></span>.
+	</p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="pidgin4.png" align="middle" alt=" Configuración avanzada"></div></div></div></li><li><p>  Al presionar botón del ratón sobre <span><strong class="command">Buddies</strong></span> nos muestra el menú y presionamos sobre <span><strong class="command">Join a chat</strong></span>.
+
+                        </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="pidgin5.png" align="middle" alt=" "></div></div></div></li><li><p>  Al presionar el botón del ratón sobre <span><strong class="command">Join a Chat</strong></span> nos muestra un menú. En <span><strong class="command">Channel</strong></span> digitamos <code class="filename">soporte-adJ</code>.
+                                
+                        </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="pidgin6.png" align="middle" alt="Entrando al canal soporte-adJ 
+              "></div></div></div></li><li><p>Finalmente,  en la parte inferior derecha presionamos el botón del ratón sobre <span><strong class="command">join</strong></span>. Y ya podemos empezar a comunicarnos.
+                                
+                        </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="pidgin7.png" align="middle" alt=" Conectados a través de Pidgin y el protocolo SILC "></div></div></div></li></ul></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="silc-texto"></a>4.2.3. Cliente SILC tipo texto</h4></div></div></div><p>Si prefiere emplear un cliente de silc tipo texto,
+		    inicie una sesión con:
+		    </p><pre class="screen">
+silc -c www.nocheyniebla.org
+		    </pre><p>
+ </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="silc.png" align="middle" alt="Al ejecutar pidgin
+              "></div></div></div><p>
+
+		    Una vez conectado puede dar comandos iniciados
+		    con el símbolo '/', por ejemplo:
+		    </p><div class="variablelist"><dl><dt><span class="term"><span><strong class="command">/help</strong></span></span></dt><dd><p>presenta ayuda sobre comandos disponibles.</p></dd><dt><span class="term"><span><strong class="command">/quit</strong></span></span></dt><dd><p>Para salir del cliente.
+				    </p></dd><dt><span class="term"><span><strong class="command">/join soporte-adJ</strong></span></span></dt><dd><p>Para unirse al canal <span><strong class="command">soporte-adJ</strong></span>
+				    </p></dd><dt><span class="term"><span><strong class="command">/list</strong></span></span></dt><dd><p>Lista de canales disponibles
+				    </p></dd><dt><span class="term"><span><strong class="command">/users soporte-adJ</strong></span></span></dt><dd><p>Lista usuarios conectados al canal <span><strong class="command">soporte-adJ</strong></span>
+				    </p></dd><dt><span class="term"><span><strong class="command">/smgs pablo Me ayudas?</strong></span></span></dt><dd><p>Envía "Me ayudas?" como mensaje privado y firmado para el usuario pablo.
+				    </p></dd></dl></div><p>
+
+	    </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="conceptos.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="medios.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">3. Conceptos básicos </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 5. Uso de medios de almacenamiento</td></tr></table></div></body></html>

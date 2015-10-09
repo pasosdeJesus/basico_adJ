@@ -1,0 +1,165 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2. Primer uso de adJ</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="next" href="conceptos.html" title="3. Conceptos básicos"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Primer uso de adJ</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="index.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="conceptos.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="primer-uso"></a>2. Primer uso de adJ</h2></div></div></div><p>Un servidor adJ puede operarse tanto directamente 
+	  (sentado frente al computador donde se instaló y
+	  configuró), como remotamente por ejemplo con 
+	  <code class="literal">ssh</code>.  
+	  En esta sección cubrimos ambos escenarios.
+  </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="arranque"></a>2.1. Arranque</h3></div></div></div><p> Al iniciar un computador con adJ el núcleo de OpenBSD 
+		    detectará el 
+		    hardware, iniciará los procesos básicos y ejecutará
+		    los archivos de arranque.  Típicamente
+		    la distribución adJ solicitará una o más claves
+		    de cifrado de imágenes cifradas que se montan 
+		    durante el arranque.
+	    </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="consola.png" align="middle" alt="xdm solicitando nombre de cuenta y clave"></div></div></div><p>Al dar la clave de cifrado correcta debe ver el mensaje
+	  <code class="literal">File system is clean</code> o un chequeo de
+	  la imagen.  En caso de dar una clave equivocada, continuará la
+	  secuencia de arranque pero no podrá acceder a los directorios 
+	  cifrados<sup>[<a name="idp2181802096" href="#ftn.idp2181802096">5</a>]</sup>.</p><p>Después se iniciará un escritorio gráfico (X-Window)
+	  y un aplicación (<code class="literal">xdm</code>) que pide su usuario y 
+	  su clave para iniciar una sesión</p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="xdm.png" align="middle" alt="xdm solicitando nombre de cuenta y clave"></div></div></div><p>Si no instaló X-Window verá una consola virtual tipo texto, como
+	  la del arranque.  Por defecto hay 4 consolas virtuales tipo 
+	  texto a las cuales
+	  pasa con las secuencias de teclas 
+	  <span><strong class="keycap">Ctrl-Alt-F1</strong></span>,
+	  <span><strong class="keycap">Ctrl-Alt-F2</strong></span>, 
+	  <span><strong class="keycap">Ctrl-Alt-F3</strong></span> y <span><strong class="keycap">Ctrl-Alt-F4</strong></span>. 
+	  La secuencia <span><strong class="keycap">Ctrl-Alt-F5</strong></span> lo dejará en el 
+	  entorno gráfico.
+  </p><p>
+	  Las instrucciones para operación remota (<a href="primer-uso.html#ssh" title="2.3. Conexión con ssh">Sección 2.3, “Conexión con <span class="application">ssh</span>”</a>)
+	  le servirán para operar directamente en una consola virtual,
+	  una vez se autentique con su usuario y clave.
+  </p><p>En entorno gráfico si se autentica correctamente 
+	  se iniciará el administrador de ventanas <code class="literal">fluxbox</code>
+	  que se presenta brevemente en la siguiente sección.
+  </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="fluxbox"></a>2.2. Operación con fluxbox</h3></div></div></div><p><span><strong class="command">Fluxbox</strong></span> es un estético administrador de ventanas, 
+	  muy liviano y por lo tanto veloz.  Administra decoración de 
+	  ventanas, espacios de trabajo, tiene un 
+		menú 
+		general (que ve pulsando el botón derecho sobre el escritorio),
+	       	una barra de 
+		herramientas 
+		y un lanzador de aplicaciones.  A continuación se presenta
+		el escritorio con el menú que aparece al presionar el botón 
+		derecho sobre el escritorio.
+	</p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="fluxbox_inicio.png" align="middle" alt="Menú inicial
+	      "></div></div></div><p> Observe las distintas posibilidades del menú.
+	    Puede navegar en Internet utilizando 
+	    <span class="application">chrome</span> o 
+	    <span class="application">midori</span>.  
+	    En el navegador <span class="application">chrome</span> se
+	    abrirá la traducción de los Evangelios incluida 
+	    (menú 
+	    <span class="guimenu">Espiritualidad</span>-&gt;<span class="guimenuitem">Evangelios de Dominio Público</span>), 
+	    así como la documentación 
+	    (<span class="guimenu">Documentos</span>), 
+    </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="primerflux.png" align="middle" alt="Escritorio fluxbox con navegador Chrome"></div></div></div><p> Por el menú Oficina puede elegir LibreOffice que es el paquete de fuentes 
+	abiertas con aplicaciones de oficina. La gráfica muestra la interfaz de 
+	LibreOffice.org  Writer<sup>[<a name="idp3032780912" href="#ftn.idp3032780912">6</a>]</sup> ---con el que puede abrir y guardar en el formato
+	de MS-Word. 
+</p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="openoffice_writer.png" align="middle" alt="LibreOffice Writer
+	      "></div></div></div><p>También puede trabajar con la hoja de cálculo 
+	    Calc<sup>[<a name="idp3032783472" href="#ftn.idp3032783472">7</a>]</sup>, 
+	    que le permite abrir y guardar en el formato de Excel.</p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="openoffice_calc.png" align="middle" alt="LibreOffice.org Calc 
+              "></div></div></div><p>Puede elaborar presentaciones y abrir las que se han
+    hecho con PowerPoint con Impress<sup>[<a name="idp2655543792" href="#ftn.idp2655543792">8</a>]</sup>.</p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="openoffice_presentacion.png" align="middle" alt="Presentación 
+	      "></div></div></div><p>Puede acceder a la documentación para adJ  a través del menú de 
+	    fluxbox. Los tutoriales incluidos son: Uso básico,
+	    uso como sistema de escritorio y uso como servidor 
+	    y cortafuegos. 
+    </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="documentacion.png" align="middle" alt="Documentación
+	      "></div></div></div><p>Para reproducir CDs de audio puede utilizar <span class="application">xcdplayer</span>  
+	    cuya interfaz gráfica se presenta a continuación.
+    </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="xcdplayer.png" align="middle" alt=" Interfaz gráfica de xcdplayer
+	      "></div></div></div><p>Sin embargo en caso de que su reproductor de CD no esté
+	    conectado a una salida de audio, <span class="application">xcdplayer</span>
+	    no será útil.  Pero en tal caso puede escuchar un CD
+	    de audio, abriendo una terminal y tecleando:
+	    </p><pre class="screen">
+sudo cdio cdplay
+	    </pre><p>
+    </p><p>Desde el menú otros puede acceder a 
+	    <code class="literal">plan</code> y 
+	    <code class="literal">vim</code>. El primero de los cuales
+	    es un calendario que permite programar actividades.
+	    Mientras que <code class="literal">vim</code> es un clásico y ágil editor 
+	    en ambientes 
+	    tipo UNIX (ver <a href="ediciontexto.html#editor-vi" title="7.3. Editor vi">Sección 7.3, “Editor <span><strong class="command">vi</strong></span>”</a>).
+    </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="plan.png" align="middle" alt="plan
+	      "></div></div></div><p>Por el menú de fluxbox puede configurar  Estilos del sistema. 
+	    La imagen muestra el Estilo de sistema Meta. 
+    </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="fluxbox_menu.png" align="middle" alt=" Estilos del sistema
+	      "></div></div></div><p>Elija el Estilo del sistema que más le guste. Por ejemplo, este 
+	    Estilo del sistema, llamado Makro.
+    </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="estilo1.png" align="middle" alt="Ejemplo de Estilo de sistema
+	      "></div></div></div><p>
+	    La figura anterior presenta también un interprete de comandos,
+	    que puede iniciar desde el menú eligiendo 
+	    <code class="literal">xterm</code>, aunque también puede emplear uno
+	    desde las consolas virtuales después de autenticarse.
+    </p><p>En sistemas operativos tipos Unix es usual emplear un interprete 
+	    de comandos para interactuar.    Su operación es la misma
+	    bien inicie desde el ambiente gráfico o en una consola virtual
+	    o remotamente como se explica en la siguiente sección.  Aunque
+	    ciertamente un interprete de comandos exige más memoria
+	    y atención del usuario, también le dará más opciones,
+	    más agilidad y la posibilidad de plena operación remota.
+    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="ssh"></a>2.3. Conexión con <span class="application">ssh</span></h3></div></div></div><p>
+    Dado que la interacción con un interprete de comandos se basa en comandos
+    ingresados por teclado y respuestas tipo texto, estos intérpretes
+    hacen muy efectiva la operación remota.   La operación remota
+    puede hacerse de forma segura con el protocolo SSH 2, empleando el servidor OpenSSH
+    del servidor y un cliente de ssh en el computador desde el cual
+    hará la conexión (la ventaja de este protocolo es que además
+    de requerir autenticación, verifica
+    autenticidad del servidor al cual se conecta y sólo transmite información
+    cifrada --lo cual hace muy difícil descifrarla a un tercero que pueda 
+    llegar a interceptar la comunicación).
+  </p><p>
+    Si realiza la conexión desde un sistema tipo Unix, recomendamos
+    que emplee el cliente de OpenSSH, si se conecta desde un sistema tipo
+    Windows puede emplear el programa <span><strong class="command">putty</strong></span>
+    (descarguelo de
+    <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_top">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a>).  
+
+    </p><p>
+    En el primer caso puede iniciar la conexión con:
+    </p><pre class="screen">
+      $ ssh juan@practica.pasosdeJesus.org
+    </pre><p>
+    remplazando <code class="literal">juan</code> por el login que tenga 
+    en el sistema. 
+    Note que con el símbolo $, representamos el símbolo del sistema (del
+    inglés prompt) --no debe teclearlo.</p><p> 
+    La conexión con <span class="application">putty</span> se ejemplifica a continuación:
+  </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="putty1.png" align="middle" alt="Configuración de putty"></div></div></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Aviso]" src="./warning.png"></td><th align="left">Aviso</th></tr><tr><td align="left" valign="top"><p>Con Putty asegúrese de emplear el protocolo SSH 2.</p></td></tr></table></div><p><span><strong class="command">ssh</strong></span> autenticará la máquina a la cual se está 
+    conectado, comparando la llave pública de esa máquina con alguna de las 
+    que conozca, si es la primera vez que se
+    conecta a ese sitio, <span><strong class="command">ssh</strong></span> le pedirá confirmar la nueva 
+    llave pública<sup>[<a name="idp1062023024" href="#ftn.idp1062023024">9</a>]</sup>.  
+Después le pedirá su clave en ese servidor (o si ha 
+configurado autenticación con llaves simétricas pedirá su clave RSA/DSA
+o incluso nada si ha configurado un agente que maneje sus llaves
+RSA/DSA i.e <span><strong class="command">ssh-agent</strong></span> en el caso de 
+OpenSSH)
+    para finalmente dejarlo en una sesión en modo texto.
+  </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject" align="center"><img src="putty2.png" align="middle" alt="Inicio de una sesión con putty en pasosdeJesus.org"></div></div></div><p>
+    Al iniciar la sesión podrá
+    ver el mensaje del día (motd -- message of the day) que el administrador 
+    haya configurado, se ejecutarán los archivos de comandos de inicio y 
+    quedará en el 
+    interprete de comandos que esté configurado en su cuenta.
+  </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp2181802096" href="#idp2181802096">5</a>] </sup>Una vez
+			  en operación puede volver a dar estas claves ejecutando el 
+			  archivo <code xmlns="" class="filename">/etc/rc.local</code> desde
+			  un interprete de comandos, o desde el menú de Fluxbox Dispositivos-&gt;Reiniciar Servicios Faltantes</p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp3032780912" href="#idp3032780912">6</a>] </sup>Desde la línea de comandos
+			puede iniciar Writer con <code xmlns="" class="literal">/usr/local/bin/swriter</code> 
+			o puede abrir LibreOffice completo con 
+			<code xmlns="" class="literal">/usr/local/bin/soffice</code></p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp3032783472" href="#idp3032783472">7</a>] </sup>Desde la línea de comandos puede iniciar
+			    Calc con <code xmlns="" class="literal">/usr/local/bin/scalc</code></p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp2655543792" href="#idp2655543792">8</a>] </sup>Desde la línea de 
+		    comandos inicia Impress con <code xmlns="" class="literal">/usr/local/bin/simpress</code>.</p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp1062023024" href="#idp1062023024">9</a>] </sup>
+Si la llave de la máquina a la que se conecta ha cambiado (por ejemplo
+si se instaló otro sistema operativo o se actualizó sin 
+cuidado), para que el cliente de ssh reconozca la nueva
+clave debe primero borrar la llave anterior del archivo 
+<code xmlns="" class="filename">~/.ssh/known_hosts</code></p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="index.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="conceptos.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 3. Conceptos básicos</td></tr></table></div></body></html>

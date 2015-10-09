@@ -1,0 +1,111 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>14. Bitácoras</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="administra.html" title="13. Labores básicas de administración"><link rel="next" href="novedades.html" title="A. Novedades"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">14. Bitácoras</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="administra.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="novedades.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="bitacoras"></a>14. Bitácoras</h2></div></div></div><p>Una de las labores típicas de un administrador de un sistema OpenBSD
+	  es revisar bitácoras del sistema en búsqueda de fallas de seguridad.
+	  En la mayoría de las veces se trata de ataques a través de internet, 
+	  ataques que buscan entre otras cosas: acceder a nuestras máquinas 
+	  para sacar información y  modificarla, o usar nuestra máquina para que 
+	  realice trabajos que el atacante quiere hacer, generalmente 
+	  maliciosos.</p><p>
+	  OpenBSD deja un registro muy completo en archivos de 
+	  <code class="filename">/var/log</code> conocidas como bitácoras.  Algunas
+	  son:
+	  </p><div class="itemizedlist"><ul type="disc"><li><p><code class="filename">authlog</code>: Muestra los 
+				  accesos de los usuarios permitidos y 
+				  rechazados
+			  </p></li><li><p><code class="filename">secure</code>:  Muestra los 
+				  comandos de los administradores sudo
+			  </p></li><li><p> <code class="filename">daemon</code>:  Los programas 
+				  que están corriendo en la máquina</p></li></ul></div><p>
+
+	  Como el sistema hace rotación de bitácoras periódicamente, en el 
+	  mismo directorio también se encuentra archivadas algunas bitácoras 
+	  anteriores, comprimidas (terminan con nombres como
+	  <code class="filename">.0.gz</code>).
+  </p><p>
+	  Estos
+	  archivos pueden analizarse con algunas herramientas básicas como:
+	  </p><div class="variablelist"><dl><dt><span class="term"><span><strong class="command">less</strong></span></span></dt><dd><p>Examinar una archivo.  En <span><strong class="command">less</strong></span> la tecla <span><strong class="keycap">G</strong></span> (mayúscula) lo lleva al final
+				  del archivo.</p></dd><dt><span class="term"><span><strong class="command">grep</strong></span></span></dt><dd><p>Muestra cadenas en un archivo</p></dd><dt><span class="term"><span><strong class="command">find</strong></span></span></dt><dd><p>Busca una cadena en un archivo o directorio</p></dd><dt><span class="term"><span><strong class="command">wc</strong></span></span></dt><dd><p>Cuenta palabras/líneas/caracteres en una archivo</p></dd><dt><span class="term"><span><strong class="command">dig</strong></span></span></dt><dd><p>Muestra información de un dominio</p></dd><dt><span class="term"><span><strong class="command">geoiplookup</strong></span></span></dt><dd><p>Muestra localización de una IP. No es muy precisa</p></dd><dt><span class="term"><span><strong class="command">gzip</strong></span></span></dt><dd><p>Descomprime archivos</p></dd></dl></div><p>
+	  
+</p><p>
+	A continuación un ejemplo de auditoria de la bitácora <code class="filename">auth</code>:
+
+</p><div class="orderedlist"><ol type="1"><li><p>Como usuario root (<a href="administra.html" title="13. Labores básicas de administración">Sección 13, “Labores básicas de administración”</a>) 
+			hacer una copia de las bitácoras de 
+			<code class="filename">/var/log</code> en un directorio 
+			personal y descomprimir bitácoras comprimidas.
+			</p><pre class="screen">
+cd
+mkdir audita          # Crea un directorio para copiar
+cd audita             # Pasa al directorio creado
+mkdir 30sep2006       # Crear un directorio con la fecha
+cd 30sep2006	      # Pasa al directorio creado
+cp -rf /var/log/* .   # Copia todas las bitácoras (debe ser root)
+gzip -d *.gz          # Descomprime bitácoras comprimidas
+			</pre><p>
+</p></li><li><p>Revisar la bitácora a fin de determinar puntos 
+			críticos:
+			</p><pre class="screen">
+less authlog
+			</pre><p>	
+			buscando líneas como
+			</p><pre class="screen">
+invalid user test from 211.157.113.89
+			</pre><p>
+			que revelan intento desde una IP por ingresar como usuario <code class="literal">test</code> (que no existe en el sistema).
+		</p></li><li><p>Para ver las líneas en las que aparece una cadena en 
+			especial, una IP por ejemplo puede usarse:
+				</p><pre class="screen">
+grep "211.157.113.89" authlog
+				</pre><p>
+				De forma que podemos ver datos importantes 
+				relacionados con la IP como fecha y  hora.  En 
+				el caso de <code class="filename">auth</code> 
+				la IP corresponde a direcciones desde donde se
+				hacen intentos de ingreso).
+		</p></li><li><p>Para mostrar cuántas veces está esa IP en ese archivo:
+			</p><pre class="screen">
+grep "211.157.113.89" authlog | wc -l
+			</pre><p>
+		</p></li><li><p>Para determinar en qué archivos de la bitácora 
+			hay información de esta IP 
+			</p><pre class="screen">
+find . -exec grep -l "211.157.113.89" {} ';'
+			</pre><p>
+		</p></li><li><p>Para determinar ubicación geográfica de una IP y
+			datos sobre el dominio asociado:
+			</p><pre class="screen">
+geoiplookup  211.157.113.89
+dig -x 211.157.113.89
+			</pre><p>
+			El primero indica China, el segundo 
+			<code class="literal">mail.chinacomm.com.cn</code>. Con el
+			segundo ya podemos buscar información sobre
+			el registro DNS de <code class="literal">chinacomm.com.cn</code>:
+			</p><pre class="screen">
+whois chinacomm.com.cn
+			</pre><p>
+			donde encontromos una dirección de correo:
+			<code class="literal">wjy@chncomm.com</code>
+		</p></li><li><p>Si se ubica el dominio de la IP de donde proviene un 
+			ataque, así como una dirección de correo, se 
+			recomienda enviar un mensaje en inglés a tal
+			dirección y/o por ejemplo a las cuentas
+			<code class="literal">webmaster</code> y <code class="literal">root</code>
+			informando sobre el incidente con un tema como:
+			</p><pre class="screen">
+Attempt to login at practica.pasosdeJesus.org from your IP on 16.Aug.2006 at 7:10:41
+			</pre><p>
+		</p></li></ol></div><p>
+
+		</p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lr-bitacoras"></a>14.1. Lecturas recomendadas</h3></div></div></div><p>
+		  </p><div class="itemizedlist"><ul type="disc"><li><p>
+		  Todas las herramientas mencionadas <span><strong class="command">less</strong></span>, 
+		  <span><strong class="command">find</strong></span>, <span><strong class="command">grep</strong></span>, 
+		  <span><strong class="command">wc</strong></span> tienen sus respectivos manuales, 
+		  los cuales se pueden consultar con <span><strong class="command">man</strong></span>,
+		  por ejemplo
+		  </p><pre class="screen">
+man grep 
+		  </pre><p>
+				  </p></li></ul></div><p>
+	  </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="administra.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="novedades.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">13. Labores básicas de administración </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> A. Novedades</td></tr></table></div></body></html>

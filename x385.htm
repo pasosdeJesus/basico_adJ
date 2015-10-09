@@ -1,0 +1,662 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Soporte</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Conceptos básicos"
+HREF="x256.htm"><LINK
+REL="NEXT"
+TITLE="Uso de medios de almacenamiento"
+HREF="x580.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x256.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x580.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="soporte"
+>Soporte</A
+></H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="documentacion"
+>Documentación</A
+></H2
+><P
+>Por favor adopte la política LBM (Leer el Bendito Manual).  
+			La documentación de adJ es:
+			<P
+></P
+><UL
+><LI
+><P
+>&#13;			 <A
+HREF="http://structio.sf.net/guias/basico_adJ"
+TARGET="_top"
+>http://structio.sf.net/guias/basico_adJ</A
+>	utilización básica local y remota.
+					</P
+></LI
+><LI
+><P
+>&#13;						<A
+HREF="http://structio.sf.net/guias/usuario_OpenBSD"
+TARGET="_top"
+>http://structio.sf.net/guias/usuario_OpenBSD</A
+>	instalación y uso más avanzado como plataforma de escritorio y desarrollo.
+					</P
+></LI
+><LI
+><P
+>&#13;						<A
+HREF="http://structio.sf.net/guias/servidor_OpenBSD"
+TARGET="_top"
+>http://structio.sf.net/guias/servidor_OpenBSD</A
+>	
+						configuración como cortafuegos y servidor.
+					</P
+></LI
+></UL
+>
+		</P
+><P
+>Como adJ es una distribución de OpenBSD los documentos
+			para ese sistema operativo también aplican. Sin embargo 
+			buena parte de la documentación se encuentra 
+			solo en inglés, recomendamos:
+			<P
+></P
+><UL
+><LI
+><P
+>El manual oficial de cada comando, controlador y archivo de configuración puede leerse con el comando <B
+CLASS="command"
+>man</B
+>. Tal manual consta de varias secciones:  1 comandos generales, 2 llamadas al sistema y números de error, 3 librerías de C, 4 archivos especiales y soporte de hardware, 5 formatos de archivos, 6 juegos, 7 miscelanea, 8 operación y mantenimiento del sistema,  9 kernel.  Puede ver por ejemplo la introducción a la sección 6 con <TT
+CLASS="literal"
+>man 6 intro</TT
+>.  En Internet también consultarse este manual en <A
+HREF="http://www.openbsd.org/cgi-bin/man.cgi"
+TARGET="_top"
+>http://www.openbsd.org/cgi-bin/man.cgi</A
+> </P
+></LI
+><LI
+><P
+><A
+HREF="http://www.openbsd.org/faq/index.html "
+TARGET="_top"
+>Documentation and Frequently Asked Questions</A
+></P
+></LI
+></UL
+>
+
+			Entre los sitios donde se documentan configuraciones o se evalúan algunas herramientas: <A
+HREF="http://dhobsd.pasosdeJesus.org"
+TARGET="_top"
+>http://dhobsd.pasosdeJesus.org</A
+>, <A
+HREF="http://www.openbsdcolombia.org"
+TARGET="_top"
+>http://www.openbsdcolombia.org</A
+>, <A
+HREF="https://calomel.org/"
+TARGET="_top"
+>https://calomel.org/</A
+>
+		</P
+><P
+>&#13;			Para realizar preguntas por correo electrónico recomendamos la lista de distribución OpenBSD-Colombia <A
+HREF="http://groups.google.com/group/OpenBSD-Colombia?hl=es"
+TARGET="_top"
+>http://groups.google.com/group/OpenBSD-Colombia?hl=es</A
+>. 
+		</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="canal-silc"
+>Canal SILC</A
+></H2
+><P
+>Para dar soporte  en el uso de Aprendiendo de Jesús empleamos
+	     el canal <TT
+CLASS="literal"
+>soporte-adJ</TT
+>, en el servidor
+	     SILC de <TT
+CLASS="literal"
+>www.nocheyniebla.org</TT
+> </P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="silc"
+>El protocolo SILC</A
+></H3
+><P
+>SILC es un protocolo de teleconferencia inspirado
+	     en IRC, pero que transmite los mensajes cifrados a un 
+	     servidor que replica los mensajes a los clientes conectados.  
+	     Un usuario que se conecte a un servidor, decide a que canales 
+	     de los disponibles unirse o puede crear uno nuevo al que otros
+	     usuarios podrían unirse.  Todo lo que
+	     alguno de los miembros de un canal escriba en el canal, será
+	     transmitido a todos los que se hayan unido a ese canal.
+	     SILC también soporta canales privados, canales con clave, el 
+	     envío de mensajes de texto cifrados
+	     a individuos así como transmisión de información multimedia
+	     (por ejemplo un tablero gráfico colaborativo). Puede 
+	     verse más en <A
+HREF="silcnet.org"
+TARGET="_top"
+>silcnet.org</A
+> 
+     </P
+><P
+>Para emplear el servicio debe utilizarse un cliente de
+	     silc, en caso de que cuente con un escritorio gráfico recomendamos
+	     <B
+CLASS="command"
+>pidgin</B
+>, o de contar con un interprete
+	     de comandos el programa <B
+CLASS="command"
+>silc</B
+>
+	     incluido en el paquete <B
+CLASS="command"
+>silc-client</B
+>
+     </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="configurar-pidgin"
+>Configuración y uso de Pidgin</A
+></H3
+><P
+> <B
+CLASS="command"
+>Pidgin</B
+>  es un programa de mensajería
+		instantánea que permite iniciar sesiones sobre varias 
+		redes de mensajería al mismo tiempo.
+	</P
+><P
+> Corre sobre sistemas operativos OpenBSD, Linux, Mac OS X
+	       	y Windows. 
+		Es compatible con las siguientes redes de mensajería: AIM, 
+		ICQ, Google Talk, Jabber/XMPP, MSN Messenger, Yahoo!, 
+		Bonjour, Gadu-Gadu, IRC, Novell GroupWise Messenger, QQ, 
+		Lotus Sametime, SILC, SIMPLE, MySpaceIM y Zephyr.
+	</P
+><P
+> Soporta transferencia de archivos, mensajes de ausencia, iconos,
+	      	emoticones personalizados y notificaciones de escribir.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>Puede iniciar con el botón derecho sobre 
+				el escritorio en el menú Internet-&#62;Pidgin o 
+				desde una terminal escribiendo
+				<TT
+CLASS="filename"
+>pidgin</TT
+>.
+ <DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN438"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="pidgin1.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+>
+    </P
+></LI
+><LI
+><P
+>  Presionamos botón del ratón sobre <B
+CLASS="command"
+>Add</B
+> para adicionar una cuenta. En <B
+CLASS="command"
+>Protocol</B
+> elegimos el protocolo <B
+CLASS="command"
+>SILC</B
+>.
+    </P
+><DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN453"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="pidgin2.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+></LI
+><LI
+><P
+>&#13;En <B
+CLASS="command"
+>Screen name</B
+> colocamos el nombre con el que se vamos a 
+identificarnos(En el ejemplo, hernan).
+En <B
+CLASS="command"
+>Network</B
+> digitamos 
+<TT
+CLASS="filename"
+>www.nocheyniebla.org</TT
+>. 
+                        </P
+><DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN468"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="pidgin3.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+></LI
+><LI
+><P
+>  En la parte superior izquierda, presionamos botón del ratón sobre <B
+CLASS="command"
+>Advanced</B
+>. </P
+><P
+>	En <B
+CLASS="command"
+>Connect server</B
+> digitamos nuevamente <TT
+CLASS="filename"
+>www.nocheyniebla.org</TT
+>. Además señalamos las dos primeras opciones  y la última opción. Presionamos sobre <B
+CLASS="command"
+>Save</B
+>.
+	</P
+><DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN484"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="pidgin4.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+></LI
+><LI
+><P
+>  Al presionar botón del ratón sobre <B
+CLASS="command"
+>Buddies</B
+> nos muestra el menú y presionamos sobre <B
+CLASS="command"
+>Join a chat</B
+>.
+
+                        </P
+><DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN497"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="pidgin5.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+></LI
+><LI
+><P
+>  Al presionar el botón del ratón sobre <B
+CLASS="command"
+>Join a Chat</B
+> nos muestra un menú. En <B
+CLASS="command"
+>Channel</B
+> digitamos <TT
+CLASS="filename"
+>soporte-adJ</TT
+>.
+                                
+                        </P
+><DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN511"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="pidgin6.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+></LI
+><LI
+><P
+>Finalmente,  en la parte inferior derecha presionamos el botón del ratón sobre <B
+CLASS="command"
+>join</B
+>. Y ya podemos empezar a comunicarnos.
+                                
+                        </P
+><DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN524"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="pidgin7.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="silc-texto"
+>Cliente SILC tipo texto</A
+></H3
+><P
+>Si prefiere emplear un cliente de silc tipo texto,
+		    inicie una sesión con:
+		    <PRE
+CLASS="screen"
+>&#13;silc -c www.nocheyniebla.org
+		    </PRE
+>
+ <DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN537"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="silc.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+>
+
+		    Una vez conectado puede dar comandos iniciados
+		    con el símbolo '/', por ejemplo:
+		    <P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="command"
+>/help</B
+></DT
+><DD
+><P
+>presenta ayuda sobre comandos disponibles.</P
+></DD
+><DT
+><B
+CLASS="command"
+>/quit</B
+></DT
+><DD
+><P
+>Para salir del cliente.
+				    </P
+></DD
+><DT
+><B
+CLASS="command"
+>/join soporte-adJ</B
+></DT
+><DD
+><P
+>Para unirse al canal <B
+CLASS="command"
+>soporte-adJ</B
+>
+				    </P
+></DD
+><DT
+><B
+CLASS="command"
+>/list</B
+></DT
+><DD
+><P
+>Lista de canales disponibles
+				    </P
+></DD
+><DT
+><B
+CLASS="command"
+>/users soporte-adJ</B
+></DT
+><DD
+><P
+>Lista usuarios conectados al canal <B
+CLASS="command"
+>soporte-adJ</B
+>
+				    </P
+></DD
+><DT
+><B
+CLASS="command"
+>/smgs pablo Me ayudas?</B
+></DT
+><DD
+><P
+>Envía "Me ayudas?" como mensaje privado y firmado para el usuario pablo.
+				    </P
+></DD
+></DL
+></DIV
+>
+
+	    </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x256.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x580.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Conceptos básicos</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Uso de medios de almacenamiento</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

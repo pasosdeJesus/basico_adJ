@@ -1,0 +1,593 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Conceptos básicos</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Primer uso de adJ"
+HREF="x41.htm"><LINK
+REL="NEXT"
+TITLE="Soporte"
+HREF="x385.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x41.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x385.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="conceptos"
+>Conceptos básicos</A
+></H1
+><P
+>Los conceptos y herramientas presentados desde esta sección se
+	  asimilan mejor practicando.  Procure ejecirtarlos desde un
+	  interprete de comandos (bien operando directamente un sistema
+	  tipo Unix o bien ingresando remotamente desde otro sistema
+	  como se explicó, <A
+HREF="x41.htm"
+>la sección de nombre <I
+>Primer uso de adJ</I
+></A
+>). </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="definiciones-iniciales"
+>Definiciones iniciales</A
+></H2
+><P
+>Un <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>archivo</I
+></SPAN
+> es información delimitada 
+		      y con atributos que ayudan a identificarla como 
+		      nombre, fecha de creación y ubicación.  Se ubica en 
+		      alguna ruta o sitio del sistema de archivos. 	      	 </P
+><P
+>Un <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>programa</I
+></SPAN
+> es un archivo con 
+		      instrucciones que pueden ser 
+		      efectuadas por el computador.   La secuencia de 
+		      instrucciones determina lo que hará el programa.
+	      </P
+><P
+>El <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>formato de un archivo</I
+></SPAN
+> es la 
+		      manera como está organizada la información para que
+		      pueda ser empleada con facilidad por el programa
+		      con el que fue creado.  
+		      Por ejemplo un archivo de nombre 
+		      <TT
+CLASS="literal"
+>carta.odt</TT
+> posiblemente se trate de
+		      una carta escrita en formato de Open Document Format
+		      (lo sugieren las últimas letras .odt).
+		      Para verla debe usarse un programa que entienda ese
+		      formato, uno entre otros es LibreOffice.</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="interprete-de-comandos"
+>Intérprete de comandos</A
+></H2
+><P
+>El intérprete de comandos le permite usar varios comandos 
+    internos, así como ejecutar programas.  Es común que los comandos o
+    programas requieran algo de información como suministro (i.e
+    parámetros o argumentos), así como opciones que modifiquen el 
+    comportamiento por defecto. Tal información suele darse a 
+    continuación del nombre del comando, separando un dato o una opción de 
+    otra con espacios.
+    Si es una de las primeras veces que ingresa al sistema, recomendamos 
+    los siguientes comandos/programas:
+    <P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="command"
+>man man</B
+></DT
+><DD
+><P
+>El programa <B
+CLASS="command"
+>man</B
+> permite 
+			ver un tema del manual del sistema.  Puede recibir 
+			como parámetro el tema sobre el cual desea ver la 
+			documentación. Así que <B
+CLASS="command"
+>man man</B
+> 
+			presenta la documentación del
+	    comando <B
+CLASS="command"
+>man</B
+>.  Entre los temas posibles
+	    puede emplear el nombre de un programa instalado o de
+	    una función de la librería del sistema.</P
+></DD
+><DT
+><B
+CLASS="command"
+>passwd</B
+></DT
+><DD
+><P
+>Permite cambiar su clave en el sistema. Por favor
+	      escoja una buena clave que no aparezca en diccionario de idioma
+	      alguno, preferiblemente que tenga mayúsculas y minúsculas, así
+	      como números y/o caracteres de puntuación.  Sugerimos las claves
+	      generadas con programas especializados como <B
+CLASS="command"
+>apg</B
+>.
+	      Tenga en cuenta que si su clave llega a ser descubierta por
+	      un tercero, él/ella podría actuar a nombre suyo.
+	  </P
+></DD
+></DL
+></DIV
+>
+      <P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="command"
+>chfn</B
+></DT
+><DD
+><P
+>Le permite cambiar datos personales y el intérprete de
+	      comandos que desea por defecto (sugerimos 
+	      <B
+CLASS="command"
+>/bin/ksh</B
+>)</P
+></DD
+></DL
+></DIV
+>
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="sistema-de-archivos"
+>Sistema de Archivos</A
+></H2
+><P
+>&#13;	En Unix la información se organiza en archivos dentro de directorios
+	del sistema de archivos. El directorio inicial o raíz se denota por
+	/, los nombres de archivos o directorios pueden especificarse indicando
+	la ruta completa desde la raíz, por ejemplo el archivo
+	<TT
+CLASS="filename"
+>/usr/bin/awk</TT
+> está en el directorio de nombre
+	<TT
+CLASS="filename"
+>bin</TT
+> que a su vez está en un directorio de
+	nombre <TT
+CLASS="filename"
+>usr</TT
+> el cual es un subdirectorio del
+	directorio raíz <TT
+CLASS="filename"
+>/</TT
+>.   Cada usuario del sistema
+	tiene además de su login y clave, un directorio que llamamos
+	<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>directorio personal</I
+></SPAN
+> cuya ruta normalmente es
+	de la forma <TT
+CLASS="filename"
+>/home/juan</TT
+>.
+      </P
+><DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN303"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="arbol-archivos.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+><P
+>&#13;	El intérprete de comandos que emplee tendrá como parte de su estado
+	un directorio de trabajo, un símbolo de espera de ordenes y variables 
+	de entorno.  La manera de ver y alterar estos datos depende del 
+	intérprete de comandos que
+	emplee, nos limitaremos al intérprete de comandos <B
+CLASS="command"
+>ksh</B
+>
+	(que tiene bastantes cosas en común con otros intérpretes de 
+	comandos como <B
+CLASS="command"
+>bash</B
+>).
+      </P
+><P
+>&#13;	Podrá
+	examinar el directorio de trabajo con <B
+CLASS="command"
+>pwd</B
+>, listar
+	algunas variables de ambiente (las exportadas) con
+	<B
+CLASS="command"
+>export</B
+> y modificar el símbolo de espera de ordenes
+	con la variable de
+	ambiente <TT
+CLASS="literal"
+>PS1</TT
+>.
+      </P
+><P
+>A continuación se listan algunos comandos/programas relacionados con el
+	sistema de archivos y un mínimo del uso de cada uno. Sugerimos que mire la 
+	documentación que corresponde a cada uno (e.g para ver documentación
+	del programa <B
+CLASS="command"
+>ls</B
+> ejecute desde un 
+	intérprete
+	de comandos <B
+CLASS="command"
+>man ls</B
+>):</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="command"
+>pwd</B
+></DT
+><DD
+><P
+>Muestra directorio de trabajo.</P
+></DD
+><DT
+><B
+CLASS="command"
+>ls</B
+></DT
+><DD
+><P
+>Muestra listado de archivos y
+	      directorios. Sin parámetros muestra los del directorio de
+	      trabajo. Como parámetro puede indicarse la ruta del directorio
+	      del cual se desea ver el contenido y con la opción 
+	      <CODE
+CLASS="option"
+>-l</CODE
+> presenta
+	      atributos adicionales de cada archivo.</P
+></DD
+><DT
+><B
+CLASS="command"
+>mkdir public_html</B
+></DT
+><DD
+><P
+>Permite crear un directorio (en este 
+	      caso <TT
+CLASS="filename"
+>public_html</TT
+>), si no se especifica
+	      la ruta completa <B
+CLASS="command"
+>mkdir</B
+> 
+	      lo crea en el directorio de trabajo.</P
+></DD
+><DT
+><B
+CLASS="command"
+>cd public_html</B
+></DT
+><DD
+><P
+>Para cambiarse a otro directorio (en este caso
+			  al directorio <TT
+CLASS="filename"
+>public_html</TT
+> que
+			  es subdirectorio del directorio de trabajo). 
+			  Sin parámetros,
+	      <B
+CLASS="command"
+>cd</B
+> cambia al directorio personal.
+	  </P
+></DD
+><DT
+><B
+CLASS="command"
+>cp traido/index.htm public_html/index.html</B
+></DT
+><DD
+><P
+>El programa <B
+CLASS="command"
+>cp</B
+> permite copiar
+	      uno o más archivos.  En el ejemplo presentado el archivo
+	      <TT
+CLASS="filename"
+>index.htm</TT
+> del subdirectorio
+	      <TT
+CLASS="filename"
+>traido</TT
+> es copiado en el subdirectorio
+	      <TT
+CLASS="filename"
+>public_html</TT
+> con el nombre 
+	      <TT
+CLASS="filename"
+>index.html</TT
+>.  Note que ambos subdirectorios
+	      son subdirectorios del directorio de trabajo y que debe
+	      existir el archivo <TT
+CLASS="filename"
+>traido/index.htm</TT
+>.
+	      Pueden copiarse también directorios junto con subdirectorios
+	      usando la opción <CODE
+CLASS="option"
+>-r</CODE
+>, por ejemplo:
+	      <PRE
+CLASS="screen"
+>&#13;		cp -r traido/* public_html/
+	      </PRE
+>
+	      que copia todos los archivos y subdirectorios del directorio
+	      <TT
+CLASS="filename"
+>traido</TT
+> de manera recursiva al directorio
+	      <TT
+CLASS="filename"
+>public_html</TT
+>.
+	  </P
+></DD
+><DT
+><B
+CLASS="command"
+>rm traido/index.htm</B
+></DT
+><DD
+><P
+>Que elimina el archivo 
+	      <TT
+CLASS="filename"
+>traido/index.html</TT
+>.  Pueden eliminarse
+	      directorios con todo su contenido de forma recursiva con
+	      la opción <CODE
+CLASS="option"
+>-rf</CODE
+> del programa <B
+CLASS="command"
+>rm</B
+>.</P
+></DD
+><DT
+><B
+CLASS="command"
+>mv traido/juan.htm traido/pedro.html</B
+></DT
+><DD
+><P
+>El programa <B
+CLASS="command"
+>mv</B
+> moverá (o en este caso renombra) el archivo
+	      <TT
+CLASS="filename"
+>traido/juan.htm</TT
+> a
+	      <TT
+CLASS="filename"
+>traido/pedro.html</TT
+>.</P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lr1"
+>Lecturas recomendadas</A
+></H2
+><P
+>Páginas <B
+CLASS="command"
+>man</B
+> de los 11 comandos/programas
+	  introducidos en este capítulo.</P
+><P
+>&#13;	    Se han tomado porciones de la sección "<B
+CLASS="command"
+>telnet</B
+> y 
+	    <B
+CLASS="command"
+>ssh</B
+>" de <A
+HREF="b2006.htm#AALinux"
+>[AALinux]</A
+>
+	    http://structio.sourceforge.net/guias/AA_Linux_colegio
+	  </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x41.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x385.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Primer uso de adJ</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Soporte</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

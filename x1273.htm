@@ -1,0 +1,396 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Transferencia de información a y desde el servidor</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Primeras páginas HTML"
+HREF="x1236.htm"><LINK
+REL="NEXT"
+TITLE="Más formas de uso de ssh"
+HREF="x1342.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x1236.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1342.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="transferir"
+>Transferencia de información a y desde el servidor</A
+></H1
+><P
+>Hay diversos métodos para transferir información entre
+		el servidor y otros computadores, uno de los más seguros
+		consiste en emplear una conexión encriptada como las
+		ofrecidas por <B
+CLASS="command"
+>ssh</B
+>.  Para emplear este
+		método desde el servidor OpenBSD (o otro sistema tipo
+		Unix que cuente con OpenSSH) se puede usar bien
+		<B
+CLASS="command"
+>scp</B
+> desde la
+		línea de comandos o el programa
+		<SPAN
+CLASS="application"
+>filezilla</SPAN
+>.
+	</P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="filezilla"
+>Filezilla</A
+></H2
+><P
+> <B
+CLASS="command"
+>filezilla</B
+>  le permite transmitir
+	     archivos a un servidor.
+	</P
+><P
+>Puede usarse sobre sistemas operativos OpenBSD, Linux, Mac OS X
+	       	y Windows. 
+		Soporta los protocolo FTP, SFTP y FTP sobre SSL.
+	</P
+><P
+> Una  vez instalado ejecútelo y configure la primera vez 
+		la conexión a su servidor desde el menú 
+		<SPAN
+CLASS="guimenu"
+>Archivo</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Gestor de Sitios</SPAN
+>.
+		Del siguiente ejemplo adapte el nombre del servidor y 
+		de usuario.
+	</P
+><DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN1288"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="filezillaconexion.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+><P
+> Una vez configurada la encontrará al abrir FileZilla e ingresar a Archivos-&#62;Sitios.  Cuando elija Conectar se iniciará una conexión encriptada, con un intercambio inicial de llaves que debe aceptar, después aparecerán paneles como los siguientes:
+    </P
+><DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN1299"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="filezilla.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+><P
+>&#13;Note que al lado izquierdo están las carpetas y archivos de su computador local, mientras que al lado derecho están las carpetas y archivos del servidor.  Para transmitir un archivo de uno a otro basta que lo arrastre.
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="scp"
+>Uso básico de scp</A
+></H2
+><P
+>Si por ejemplo desea transferir  el archivo 
+		<TT
+CLASS="filename"
+>ideas.txt</TT
+> del servidor
+		OpenBSD <TT
+CLASS="literal"
+>practica.pasosdeJesus.org</TT
+> a otro servidor tipo 
+		Unix que tenga instalado y configurado ssh (digamos
+		<TT
+CLASS="literal"
+>comp.trabajo.net</TT
+>), a la cuenta de un
+		usuario <TT
+CLASS="filename"
+>mateo</TT
+>, en el
+		directorio <TT
+CLASS="filename"
+>personal</TT
+>:
+		<PRE
+CLASS="screen"
+>&#13;$ scp ideas.txt mateo@comp.trabajo.net:personal
+		</PRE
+>
+	</P
+><P
+>Si desea transmitir el archivo 
+	<TT
+CLASS="filename"
+>metodo.txt</TT
+> del directorio
+	<TT
+CLASS="filename"
+>personal</TT
+> del servidor 
+	<TT
+CLASS="literal"
+>comp.trabajo.net</TT
+> al directorio en el que
+	está ubicado en <TT
+CLASS="literal"
+>practica.pasosdeJesus.org</TT
+>:
+		<PRE
+CLASS="screen"
+>&#13;$ scp juan2@comp.trabajo.net:personal/metodo.txt .
+		</PRE
+>
+		Note que <B
+CLASS="command"
+>scp</B
+> es similar a 
+		<B
+CLASS="command"
+>cp</B
+> (pues permite copiar
+		un archivo fuente en uno destino<A
+NAME="AEN1327"
+HREF="#FTN.AEN1327"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+>) sólo que 
+		el archivo fuente o el archivo destino pueden estar
+		en otra máquina.
+	</P
+><P
+>Dado que Windows no tiene un servidor <B
+CLASS="command"
+>ssh</B
+> 
+		por defecto, es
+		posible transmitir archivos a y desde sistemas Windows
+		sólo desde el computador con Windows usando un programa
+		como <B
+CLASS="command"
+>winscp</B
+> (disponible en
+		<A
+HREF="http://winscp.sf.net"
+TARGET="_top"
+>http://winscp.sf.net</A
+> o 
+		<B
+CLASS="command"
+>pscp</B
+> que se distribuye junto con 
+		<B
+CLASS="command"
+>putty</B
+> 
+		(<A
+HREF="x256.htm"
+>la sección de nombre <I
+>Conceptos básicos</I
+></A
+>).
+	</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lr-transferir"
+>Lecturas recomendadas</A
+></H2
+><P
+>Para aprender más sobre <B
+CLASS="command"
+>scp</B
+> 
+		recomendamos la página del manual.
+	  </P
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN1327"
+HREF="x1273.htm#AEN1327"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Incluso
+			<B
+CLASS="command"
+>scp</B
+> implementa la funcionalidad
+			de <B
+CLASS="command"
+>cp</B
+> al permitir copiar localmente
+			un archivo.</P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x1236.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1342.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Primeras páginas HTML</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Más formas de uso de ssh</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

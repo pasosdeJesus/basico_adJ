@@ -1,0 +1,1157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Edicion de textos</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Personalización"
+HREF="x817.htm"><LINK
+REL="NEXT"
+TITLE="Primeras páginas HTML"
+HREF="x1236.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x817.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1236.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="ediciontexto"
+>Edicion de textos</A
+></H1
+><P
+>Un editor de texto le permite redactar textos simples
+		  y guardarlos en un formato simple (o plano).
+	  </P
+><P
+>A medida que administre su sistema adJ, notará que
+		  es más y más necesaria la labor de editar textos.
+		  La primera vez posiblemente querrá usar el editor
+		  más gráfico y sencillo: <TT
+CLASS="literal"
+>xfw</TT
+>.  Pero si no
+		  tiene un entorno gráfica puede emplear 
+		  <TT
+CLASS="literal"
+>mg</TT
+>, y si desea 
+		  eficiencia posiblemente le servirá <TT
+CLASS="literal"
+>vim</TT
+>.
+	  </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="xfw"
+>Editor <B
+CLASS="command"
+>xfw</B
+></A
+></H2
+><P
+><B
+CLASS="command"
+>xfw</B
+> es un editor de texto simple para
+		el sistema X-Window, es decir opera en modo gráfico. 
+		Viene incluido con el administrador de archivos xfe (ver 
+		<A
+HREF="x580.htm#xfe"
+>la sección de nombre <I
+>Administrador de archivos <B
+CLASS="command"
+>Xfe</B
+></I
+></A
+>) desarrollado por Roland Baudin.
+	</P
+><P
+>Se inicia desde el menú de fluxbox (botón derecho sobre 
+	el escritorio), desde 
+	<SPAN
+CLASS="guimenu"
+>Oficina</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>xfw</SPAN
+>
+	o bien desde un interprete de comandos con 
+	<PRE
+CLASS="screen"
+>&#13;xfw
+	</PRE
+>
+	o si por ejemplo desea abrir el archivo carta.txt que 
+	está en el directorio actual:
+	<PRE
+CLASS="screen"
+>&#13;xfw carta.txt
+	</PRE
+>
+</P
+><P
+>&#13;	Como se presenta en la figura es una aplicación gráfica típica con 
+	una barra de menús,
+	una barra de herramientas, una barra de estado y por supuesto
+	el área para escribir textos que tendrá un cursor que indica
+	la siguiente posición donde escribirá cuando presione una tecla.  
+	En la barra de estado se índica el número de línea y el número de 
+	columna en la que está el cursor para ingresar textos.  Así
+	mismo el número total de líneas del texto que está editando y
+	el estado de inserción (INS) o sobreescritura (OVR) que puede cambiar con
+	la tecla <B
+CLASS="keycap"
+>INS</B
+> o marcando en el menú
+	<SPAN
+CLASS="guimenu"
+>Preferencias</SPAN
+>-&gt;<SPAN
+CLASS="guimenuitem"
+>Sobreescribir</SPAN
+>.  
+		
+	<DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN979"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="xfw-p.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+>
+
+          </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="mg"
+>Editor <B
+CLASS="command"
+>mg</B
+></A
+></H2
+><P
+><B
+CLASS="command"
+>mg</B
+> es un editor de texto simple,
+	       pequeño, veloz y portable con
+		fuentes en el dominio público, mantenidas por el equipo
+		de desarrollo de OpenBSD y que opera en la terminal. 
+		Las combinaciones de teclas que emplea como comandos 
+		provienen del editor Emacs, aunque  mg no está vinculado
+		con el proyecto GNU.
+	</P
+><P
+>Desde un interprete de órdenes lo inicia con <B
+CLASS="command"
+>mg</B
+>
+		o puede a continuación especificar uno o más archivos
+		por editar. 
+	</P
+><P
+>&#13;	       	Por ejemplo las fuentes de esta breve documentación
+		lucen como se presenta a continuación. 
+	<DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN996"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="mg.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+>
+
+ 
+		Notara que mg no soporta UTF-8, así que su propósito es
+		hacer breves ediciones a archivos de configuración cuando
+		no puede usar <TT
+CLASS="literal"
+>xfw</TT
+> o por ejemplo 
+		<TT
+CLASS="literal"
+>vim</TT
+>.
+	</P
+><P
+>&#13;		Notará que los caracteres que digite estando en mg 
+	 	serán introducidos en el buffer que esté operando,
+		y que podrá usar las flechas para desplazarse. 
+		Los comandos más típicos se dan combinando la tecla 
+		Control simultaneamente con una y después con otra tecla.
+	        Por ejemplo para guardar use Control X y después
+		Control s.  Esto suele denotarse en la documentación
+		de mg con: C-x C-s
+	</P
+><P
+>&#13;		Por ejemplo para cambiar la IP de una tarjeta de red
+		con dispositivo re0 usaría:
+		<PRE
+CLASS="screen"
+>&#13;			mg /etc/hostname.re0
+		</PRE
+>
+		Alli podría ingresar por ejemplo
+		<PRE
+CLASS="screen"
+>&#13;			inet 192.168.1.1 255.255.255.0 NONE
+		</PRE
+>
+		Guarda con C-x C-s y sale con C-x C-c.
+
+
+         </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="editor-vi"
+>Editor <B
+CLASS="command"
+>vi</B
+></A
+></H2
+><P
+><B
+CLASS="command"
+>vi</B
+> es un clásico editor
+		en ambientes tipo UNIX cuya prioridad es la eficiencia.
+		Por lo mismo no requiere el uso de ratón sino de breves
+		comandos que a medida que se memoricen y usen harán
+		más rápida la edición de textos.
+	</P
+><P
+>Para editar un archivo (digamos <TT
+CLASS="filename"
+>ma.txt</TT
+>)
+      con el editor <B
+CLASS="command"
+>vi</B
+>, teclee desde un
+      intérprete de comandos:
+<PRE
+CLASS="screen"
+>&#13;$ vi ma.txt
+</PRE
+>
+
+</P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="modos"
+>Modos de vi</A
+></H3
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="comando"
+>Modo comando</A
+></H4
+><P
+> Cuando <B
+CLASS="command"
+>vi</B
+> cargue, se observará en la pantalla una parte del archivo de texto que va a editar. Al arrancar <B
+CLASS="command"
+>vi</B
+>, está en un modo especial llamado <TT
+CLASS="filename"
+>modo comando</TT
+> ó <TT
+CLASS="filename"
+>modo normal</TT
+> . Esto significa, por ejemplo,  que si presiona <B
+CLASS="keycap"
+>l</B
+> en el teclado, en vez de introducir una <B
+CLASS="keycap"
+>l</B
+> en la posición actual del cursor, el cursor se va a mover un caracter a la derecha. En este modo, los caracteres del teclado sirven para enviar comandos a  <B
+CLASS="command"
+>vi</B
+>.
+
+</P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="cursor"
+>Comandos de movimiento - Movimientos del cursor</A
+></H4
+><P
+> 
+
+		Para mover el cursor, pulse las teclas: <B
+CLASS="keycap"
+>h</B
+> (mueve a la izquierda), <B
+CLASS="keycap"
+>j</B
+> (mueve hacia abajo), <B
+CLASS="keycap"
+>k</B
+> (mueve hacia arriba),  <B
+CLASS="keycap"
+>l</B
+> (mueve a la derecha). 
+
+      </P
+><P
+> 
+		Las teclas <B
+CLASS="keycap"
+>h</B
+>, <B
+CLASS="keycap"
+>j</B
+>, 
+		<B
+CLASS="keycap"
+>k</B
+> y <B
+CLASS="keycap"
+>l</B
+> son prácticas porque 
+		una vez acostumbrado a ellas, será capaz de moverse por el 
+		archivo sin tener que retirar los dedos de la posición
+		natural del teclado.
+
+      </P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="insertar"
+>Modo inserción</A
+></H4
+><P
+> Este modo es para introducir texto, es decir lo que vaya tecleando podrá verlo en la pantalla, en el lugar donde estaba el cursor. Veamos algunas utilidades para este modo:
+
+</P
+><P
+>Puede insertar texto con varias teclas: </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="keycap"
+>i</B
+></DT
+><DD
+><P
+>Inserta texto antes del caracter sobre el cual
+		       está el cursor.</P
+></DD
+><DT
+><B
+CLASS="keycap"
+>a</B
+></DT
+><DD
+><P
+>Inserta texto después del caracter sobre el cual está el
+	cursor.</P
+></DD
+><DT
+><B
+CLASS="keycap"
+>I</B
+></DT
+><DD
+><P
+>Inserta texto al comienzo de la línea en la que está el cursor.
+	</P
+></DD
+><DT
+><B
+CLASS="keycap"
+>A</B
+></DT
+><DD
+><P
+>Inserta texto al final de la línea en la que está el
+	cursor.
+	</P
+></DD
+><DT
+><B
+CLASS="keycap"
+>o</B
+></DT
+><DD
+><P
+>Abre espacio para una nueva línea después de la línea en
+	 la que está el cursor y permite insertar texto en la nueva
+	 línea.</P
+></DD
+><DT
+><B
+CLASS="keycap"
+>O</B
+></DT
+><DD
+><P
+>Análogo al anterior, pero abre espacio en la línea
+	anterior.</P
+></DD
+></DL
+></DIV
+><P
+>Tecla en vi para insertar texto
+      antes del caracter sobre el que está el cursor.</P
+><A
+NAME="AEN1080"
+></A
+><P
+>Tecla en vi que permite pasar de
+      modo edición a modo comando.</P
+><P
+>Tecla en vi que permite
+      ir al comienzo de la línea en la que está el cursor.</P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="borrar"
+>Edición de texto - Borrar</A
+></H4
+><P
+>&#13;			Debemos estar en <B
+CLASS="command"
+>modo  comandos</B
+>. Pulsar  <B
+CLASS="keycap"
+>ESC</B
+> para pasar de  <B
+CLASS="command"
+>modo inserción</B
+> a <B
+CLASS="command"
+>modo  comandos</B
+>.   
+
+		</P
+><P
+>&#13;		Mover el cursor y colocarlo sobre el caracter que va ser borrado y pulsar <B
+CLASS="command"
+>x</B
+>. 
+		</P
+><P
+> Digitar <B
+CLASS="command"
+> dw</B
+> para borrar hasta el final de la palabra. Y digitando <B
+CLASS="command"
+> dd </B
+> se borra la línea entera.
+
+	  </P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="deshacer"
+>Deshacer cambios</A
+></H4
+><P
+>&#13;			Si por alguna razón desea deshacer los cambios 
+			realizados en el texto, estando en modo normal,	pulse  
+			<B
+CLASS="keycap"
+>u</B
+> para deshacer el último cambio. 
+			Con <B
+CLASS="keycap"
+>U</B
+> se deshace todos los cambios 
+			realizados en la línea actual. 
+		</P
+></DIV
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="guardar-salir"
+>Otros comandos - Guardar y salir</A
+></H3
+><P
+>&#13;	     Pulse la tecla <B
+CLASS="keycap"
+>ESC</B
+> (para asegurarse de que está en modo normal).
+</P
+><P
+>&#13;	Escriba <B
+CLASS="keycap"
+> :q! </B
+>y ejecute  <B
+CLASS="keycap"
+>ENTER</B
+>
+	para salir de vi sin guardar ningún cambio que se haya hecho.
+
+</P
+><P
+> Para guardar los cambios realizados y salir, escriba <B
+CLASS="keycap"
+> :wq</B
+> y ejecute <B
+CLASS="command"
+> ENTER</B
+>.
+</P
+><P
+> Para guardar los cambios realizados sin  salir de <B
+CLASS="command"
+>vi</B
+> y seguir trabajando, escriba <B
+CLASS="keycap"
+> :w</B
+> y ejecute <B
+CLASS="command"
+> ENTER</B
+>.
+</P
+><P
+>&#13;	Estando en el modo normal, pulsamos el comando <B
+CLASS="keycap"
+>:</B
+> 
+	para pasar al <B
+CLASS="command"
+>modo línea de comandos</B
+> y el cursor 
+	se traslada a la última línea de la pantalla.  Allí escribimos el 
+	nombre del comando y pulsamos 
+	<B
+CLASS="keycap"
+> ENTER</B
+> para ejecutarlo.
+</P
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+BORDER="1"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="CENTER"
+><B
+>Aviso</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+><P
+>&#13;	     <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Recuerde</I
+></SPAN
+>: Para pasar de <B
+CLASS="command"
+>modo inserción</B
+> a <B
+CLASS="command"
+>modo  comando</B
+> pulsamos la tecla <B
+CLASS="keycap"
+>ESC</B
+>.  Puede desplazarse sobre el archivo, empleando las flechas, PgUp, PgDn ó bien para mantener los dedos mejor posicionados en el teclado puede emplear las teclas
+      <B
+CLASS="keycap"
+>h</B
+>,
+      <B
+CLASS="keycap"
+>j</B
+>, <B
+CLASS="keycap"
+>k</B
+> y
+      <B
+CLASS="keycap"
+>l</B
+>, como lo vimos anteriormente.
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="particular-vim"
+><B
+CLASS="command"
+>vim</B
+></A
+></H3
+><P
+>En su sistema puede haber diversas versiones de
+      <B
+CLASS="command"
+>vi</B
+>, recomendamos
+      <B
+CLASS="command"
+>vim</B
+> que ofrece extensa ayuda y cuenta
+      con varias extensiones. </P
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="visual"
+>Modo visual - Copiar, cortar y pegar</A
+></H4
+><P
+> En el  <B
+CLASS="command"
+> modo visual </B
+> ''resaltamos" el texto para ser eliminado o copiado para luego pegarlo. 
+
+</P
+><P
+>&#13;                   Asegúrese que esté en modo comandos. Pulse <B
+CLASS="keycap"
+> v </B
+> para entrar en modo visual. Mueva el cursor con las teclas de desplazamiento para resaltar o remarcar el texto a copiar.
+
+  </P
+><P
+>&#13;                     Pulse <B
+CLASS="keycap"
+> y </B
+> para copiar la sección remarcada. Si desea cortar digite <B
+CLASS="keycap"
+> d </B
+>.
+
+		                </P
+><P
+>&#13;		Ahora ubica el cursor en el lugar donde desea insertar el texto copiado o cortado y pulsa  <B
+CLASS="keycap"
+> p </B
+>  para insertar el texto, después del cursor.
+         </P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="otras"
+>Otras características de <B
+CLASS="command"
+>vim</B
+></A
+></H4
+><P
+>&#13;     <P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Digrafos</DT
+><DD
+><P
+>Útil para producir caracteres del español, si el teclado
+	 o la configuración del mismo no lo permiten.  Presione
+	 <B
+CLASS="keycap"
+>Control-K</B
+> y después una secuencia de dos
+	 teclas de acuerdo al caracter, e.g 'a produce á, n? produce
+	 ñ, u: produce ü, !I produce ¡, ?I produce ¿.  Pueden verse
+	 otros caracteres con el comando <TT
+CLASS="literal"
+>:digraphs</TT
+>.
+	</P
+></DD
+><DT
+>Resaltado de sintaxis</DT
+><DD
+><P
+>Permite ver con colores que resaltan la sintaxis de 
+	algunos 
+	tipos de archivos (por ejemplo fuentes de DocBook, C, LaTeX).  
+	Se activa con <TT
+CLASS="literal"
+>:syntax enable</TT
+>.
+	Para que se vean los colores de este editor, asegúrese
+	de que su variable de ambiente <TT
+CLASS="literal"
+>TERM</TT
+>
+	tenga el valor de una terminal que soporte color, por ejemplo
+	las terminales gráficas soportan
+	<TT
+CLASS="literal"
+>xterm-color</TT
+> y desde consolas tipo texto
+	por ejemplo <TT
+CLASS="literal"
+>VT220</TT
+>.
+		 Vea como establecer
+		la variable <TT
+CLASS="literal"
+>TERM</TT
+> en cada inicio de
+		sesión en <A
+HREF="x817.htm"
+>la sección de nombre <I
+>Personalización</I
+></A
+>.
+	</P
+></DD
+><DT
+>Indentación automática</DT
+><DD
+><P
+>Permite indentar automáticamente diversos tipos
+			      de archivos como XML, C, LaTeX, XSLT. Se 
+			      activa con <TT
+CLASS="literal"
+>:filetype indent on</TT
+>.
+	        Para modificar tal indentación
+		pueden establecerse variables de 
+		<B
+CLASS="command"
+>vim</B
+>, bien en la sesión abierta, 
+		bien en <TT
+CLASS="filename"
+>~/.vimrc</TT
+> o bien en 
+		cada archivo.  Para
+		fijar una configuración particular que se tome al editar
+		cierto archivo, basta agregar al comienzo una línea 
+		(puede ser un comentario en el caso de lenguajes de 
+		programación) como:
+		<PRE
+CLASS="screen"
+>&#13;/* vim: set expandtab tabstop=4 shiftwidth=4 foldmethod=marker: */
+		</PRE
+>
+		      </P
+></DD
+><DT
+>Numeración de líneas</DT
+><DD
+><P
+>Pueden verse el número de cada línea con
+			      <B
+CLASS="command"
+>:set number</B
+> y esta
+			      característica se deshabilita con
+			      <B
+CLASS="command"
+>:set nonumber</B
+>.
+		      </P
+></DD
+><DT
+>Archivo de configuración</DT
+><DD
+><P
+>Cada usuario puede tener sus propias 
+	configuraciones en el archivo <TT
+CLASS="filename"
+>~/.vimrc</TT
+>, 
+	que consta de líneas con comandos  o comentarios.  Los 
+	comandos no deben iniciar con ':' y los comentarios se 
+	colocan en líneas completas o al final de una línea iniciando 
+	con comillas. Por ejemplo:
+			      <PRE
+CLASS="screen"
+>&#13;" Este es un ejemplo de archivo de configuración para vim
+syntax enable
+filetype on
+filetype plugin on
+filetype indent on
+	</PRE
+>
+</P
+><P
+>Puede resultar instructivo que copie y examine un archivo de 
+	ejemplo distribuido con <B
+CLASS="command"
+>vim</B
+> así:
+		<PRE
+CLASS="screen"
+>&#13;$ cp /usr/local/share/vim/vim63/vimrc_example.vim ~/.vimrc
+		</PRE
+>
+	</P
+></DD
+></DL
+></DIV
+>
+    <DIV
+CLASS="informalfigure"
+><P
+></P
+><A
+NAME="AEN1191"
+></A
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="vim.png"
+ALIGN="center"></P
+></DIV
+><P
+></P
+></DIV
+>
+
+    </P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="vim-locale"
+>Locale en vim</A
+></H4
+><P
+>&#13;	<B
+CLASS="command"
+>vim</B
+>
+	empleará el locale establecido en la variable de ambiente
+	<TT
+CLASS="literal"
+>LANG</TT
+> (ver <A
+HREF="x817.htm#locale"
+>la sección de nombre <I
+>Locale</I
+></A
+>).
+	Sin embargo si prefiere también puede establecer idioma
+	de los mensajes que presenta, así como codificación de
+	la terminal y de los archivos.
+</P
+><P
+>&#13;Puede establecer el idioma de los mensajes que vim presenta con el comando 
+<TT
+CLASS="literal"
+>:language</TT
+>, por ejemplo para establecer español de Colombia,
+desde el modo comandos teclee:
+<PRE
+CLASS="screen"
+>&#13;:language es_CO
+</PRE
+>
+Puede establecer esta configuración por defecto agregando el comando al 
+archivo <TT
+CLASS="filename"
+>~/.vimrc</TT
+>.
+</P
+><P
+>&#13;	<B
+CLASS="command"
+>vim</B
+> puede emplear codificaciones diferentes 
+	para la terminal y para los 
+archivos, ambos se establecen con la variable <TT
+CLASS="literal"
+>encoding</TT
+> (o 
+<TT
+CLASS="literal"
+>enc</TT
+>) y cada uno en particular con 
+<TT
+CLASS="literal"
+>termencoding</TT
+> (o <TT
+CLASS="literal"
+>tenc</TT
+>) y 
+<TT
+CLASS="literal"
+>fileencoding</TT
+> (o <TT
+CLASS="literal"
+>fenc</TT
+>). 
+Los valores típicos para codificar español son latin1 (que 
+corresponde a codificicación en un byte ISO8859-1) o
+utf8 (que corresopnde a codificación multibyte UTF-8).  
+Por ejmplo para establecer la codificación de la termina
+en UTF-8, desde modo comando teclee:
+<PRE
+CLASS="screen"
+>&#13;:set tenc=utf8
+</PRE
+>
+</P
+><P
+>&#13;	Típicamente <B
+CLASS="command"
+>vim</B
+> detectará 
+	la codificación de los archivos que edite, o empleará
+	su codificación preferida en archivos nuevos.
+	Puede deshabilitarse la autodetección dejando vacía
+	la variable <TT
+CLASS="literal"
+>fileencoding</TT
+> (lo
+	cual no recomendamos).  La forma recomendada y
+	por defecto en <B
+CLASS="command"
+>vim</B
+> es emplear
+	una terminal que soporte la codificación especificada en 
+	LANG y dejar que <B
+CLASS="command"
+>vim</B
+> la emplee y que
+	autodetecte la codificación de archivos. 
+	Si no opera de esta forma puede intentar agregar
+	a su archivo <TT
+CLASS="filename"
+>~/.vimrc</TT
+>:
+	<PRE
+CLASS="screen"
+>&#13;set encoding&#38;           " terminal charset: follows current locale 
+set fileencoding&#38;       " auto-sensed charset of current buffer  
+	</PRE
+>
+	    </P
+></DIV
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="lr-vim"
+>Lecturas recomendadas</A
+></H3
+><P
+>&#13;                  Puede aprender sobre <B
+CLASS="command"
+>vim</B
+> y su
+                  configuración en el manual de este programa que se
+                  consulta presionando la tecla <TT
+CLASS="literal"
+>F1</TT
+>.
+                  Esta documentación también está disponible en
+                  Internet en:
+                  <A
+HREF="http://vimdoc.sourceforge.net/htmldoc/usr_toc.html"
+TARGET="_top"
+>http://vimdoc.sourceforge.net/htmldoc/usr_toc.html</A
+>
+	  </P
+><P
+>&#13;		  Hay numerosos archivos de comando (scripts) para
+		  <B
+CLASS="command"
+>vim</B
+> en
+		  <A
+HREF="http://www.vim.org/scripts/index.php"
+TARGET="_top"
+>http://www.vim.org/scripts/index.php</A
+>
+          </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x817.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1236.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Personalización</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Primeras páginas HTML</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
