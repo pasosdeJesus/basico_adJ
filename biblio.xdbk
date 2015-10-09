@@ -17,16 +17,16 @@
 	url="http://structio.sourceforge.net">http://structio.sourceforge.net</ulink> Feb/2003 </bibliomisc>
   </bibliomixed>
 
-  <bibliomixed id="usuario_OpenBSD">
+  <bibliomixed id="usuario_adJ">
 	  <title>La distribución Aprendiendo de Jesús de OpenBSD como Sistema de Escritorio</title>
-	  <bibliomisc><ulink
-			  url="http://structio.sourceforge.net/guias/usuario_OpenBSD">http://structio.sourceforge.net/guias/usuario_OpenBSD</ulink> &ANIO-ACT; </bibliomisc>
+	<bibliomisc><ulink
+			url="http://pasosdeJesus.github.io/usuario_adJ">http://pasosdeJesus.github.io/usuario_adJ</ulink> &ANIO-ACT; </bibliomisc>
   </bibliomixed>
 
-  <bibliomixed id="servidor_OpenBSD">
+  <bibliomixed id="servidor_adJ">
 	  <title>La distribución Aprendiendo de Jesús de OpenBSD como Servidor y Cortafuegos</title>
 	<bibliomisc><ulink
-			  url="http://structio.sourceforge.net/guias/servidor_OpenBSD">http://structio.sourceforge.net/guias/servidor_OpenBSD</ulink> &ANIO-ACT; </bibliomisc>
+			url="http://pasosdeJesus.github.io/servidor_adJ">http://pasosdeJesus.github.io/servidor_adJ</ulink> &ANIO-ACT; </bibliomisc>
   </bibliomixed>
 
 
