@@ -1,11 +1,11 @@
-##3. Conceptos básicos##{#conceptos_básicos}
+##3. Conceptos básicos {#conceptos_básicos}
 
 Los conceptos y herramientas presentados desde esta sección se asimilan mejor practicando. 
 Procure ejecirtarlos desde un interprete de comandos (bien operando directamente un sistema tipo Unix o
 bien ingresando remotamente desde otro sistema como se explicó, 
 [Sección 2, “Primer uso de adJ”)](http://socrates.io/#Agp1DEK).
 
-###3.1. Definiciones iniciales###{#definiciones_iniciales}
+###3.1. Definiciones iniciales### {#definiciones_iniciales}
 
 Un *archivo* es información delimitada y con atributos que ayudan a identificarla como nombre, 
 fecha de creación y ubicación. Se ubica en alguna ruta o sitio del sistema de archivos.
