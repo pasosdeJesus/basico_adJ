@@ -1,8 +1,8 @@
-##9. Transferencia de información a y desde el servidor###{transferencia_de_informacion_a_y_desde_el_servidor}
+##9. Transferencia de información a y desde el servidor {#transferencia_de_informacion_a_y_desde_el_servidor}
 
 Hay diversos métodos para transferir información entre el servidor y otros computadores, uno de los más seguros consiste en emplear una conexión encriptada como las ofrecidas por **ssh**. Para emplear este método desde el servidor OpenBSD (o otro sistema tipo Unix que cuente con OpenSSH) se puede usar bien **scp** desde la línea de comandos o el programa filezilla.
 
-###9.1. Filezilla####{filezilla}
+###9.1. Filezilla {#filezilla}
 
 **filezilla** le permite transmitir archivos a un servidor.
 
@@ -18,7 +18,7 @@ Una vez configurada la encontrará al abrir FileZilla e ingresar a Archivos->Sit
               
 Note que al lado izquierdo están las carpetas y archivos de su computador local, mientras que al lado derecho están las carpetas y archivos del servidor. Para transmitir un archivo de uno a otro basta que lo arrastre.
 
-###9.2. Uso básico de scp####{uso_basico_de_scp}
+###9.2. Uso básico de scp {#uso_basico_de_scp}
 
 Si por ejemplo desea transferir el archivo ```ideas.txt``` del servidor OpenBSD ```practica.pasosdeJesus.org``` a otro servidor tipo Unix que tenga instalado y configurado ssh (digamos ```comp.trabajo.net```), a la cuenta de un usuario ```mateo```, en el directorio ```personal```:
 
@@ -34,6 +34,6 @@ Note que **scp** es similar a **cp** (pues permite copiar un archivo fuente en u
 
 Dado que Windows no tiene un servidor **ssh** por defecto, es posible transmitir archivos a y desde sistemas Windows sólo desde el computador con Windows usando un programa como **winscp** (disponible en http://winscp.sf.net o **pscp** que se distribuye junto con **putty** ([Sección 3, “Conceptos básicos”](http://socrates.io/#KaOWf1G)).
 
-###9.3. Lecturas recomendadas####{lecturas_recomendadas}
+###9.3. Lecturas recomendadas {#lecturas_recomendadas}
 
 Para aprender más sobre **scp** recomendamos la página del manual.

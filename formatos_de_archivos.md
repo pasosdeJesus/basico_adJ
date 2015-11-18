@@ -1,4 +1,4 @@
-##11. Formatos de archivos###{formatos_de_archivos}
+##11. Formatos de archivos {#formatos_de_archivos}
 
 Para descargar un archivo de Internet en un directorio de su cuenta puede usar:
 ```
@@ -29,7 +29,7 @@ Nota: ```gzip``` no comprime archivos muy pequeños (digamos 10 bytes):
 Si cuenta con un archivo con extensión .```tar``` para desempaquetarlo basta:
 ```tar xvf archivo.tar```
 			
-###11.1. Lecturas recomendadas####{lecturas_recomendadas}
+###11.1. Lecturas recomendadas {#lecturas_recomendadas}
 
 La página del manual: **man tar**
 

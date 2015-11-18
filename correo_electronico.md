@@ -1,4 +1,4 @@
-##12. Correo electrónico##"{correo_electronico}
+##12. Correo electrónico {#correo_electronico}
 
 El correo que reciba en un servidor OpenBSD puede consultarlo por lo menos de tres formas:
 
@@ -28,13 +28,13 @@ En cuanto a clientes de correos para el web (webmails), hay varios (e.g squirrel
 
 En el resto de esta guía se presenta la forma de configuración de algunos MUA usando el protocolo IMAP-SSL y el uso básico del MUA **mutt** (tomado de [AALinux](http://socrates.io/#UqCo8Cb)).
 
-###12.1. Uso de agentes de usuario para leer correo gráfico###
+###12.1. Uso de agentes de usuario para leer correo gráfico
 
 Hay diversos agentes de usuario para leer correo gráficos, tanto de fuentes abiertas (Mozilla Thunderbird, Evolution) como de fuentes cerradas (Outlook). Típicamente soportan extracción de correo de la cola local o extracción/consulta desde un servidor remoto con POP3, POP3S, IMAP o IMAP-SSL.
 
 Cada uno tiene diálogos propios para configurar el protocolo, los servidores y otros detalles.
 
-###12.1.1. Mozilla Thunderbird####{mozilla_thunderbird}
+###12.1.1. Mozilla Thunderbird {#mozilla_thunderbird}
 
 Por ejemplo, en el caso de Thunderbird configure una nueva cuenta de correo (Archivo/Nuevo/Cuenta) empleando los datos del servidor que usa. Para el dominio practica.pasosdeJesus.org puede usar como servidor de correo: ```correo2.practica.pasosdeJesus.org``` e IMAP-SSL.
 
@@ -46,7 +46,7 @@ Finalmente configure el servidor de salida de correo (protocolo SMTP).
 
 ![Configuración de servidor SMTP en Thunderbird](http://structio.sourceforge.net/guias/basico_OpenBSD/imaps-3-thunderbird.png)
 
-###12.1.2. Evolution####{evolution}
+###12.1.2. Evolution {#evolution}
 
 Otro cliente de correo que se puede configurar para extraer correo con POP3 seguro es evolution. A continuación se presenta una de las pantallas de configuración del mismo:
 

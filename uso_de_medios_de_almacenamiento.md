@@ -1,4 +1,4 @@
-##5. Uso de medios de almacenamiento###{uso_de_medios_de_almacenamiento}
+##5. Uso de medios de almacenamiento {#uso_de_medios_de_almacenamiento}
 
 En [Sección 3, “Conceptos básicos”](http://socrates.io/#KaOWf1G) se definió archivo y sistema de archivos de manera 
 general, en esta sección se aplican esos conceptos para utilizar USB y CD-ROM.
@@ -7,7 +7,7 @@ archivos para poderlos emplear y desmontarlos una vez no se requieren más. En a
 USBs y CD-ROMs son ```/mnt/usb y /mnt/cdrom``` respectivamente. Ni el montaje, ni el desmontaje se realizan 
 automáticamente, sino por orden expresa del usuario.
 
-##5.1. Montaje y desmontaje en ambiente gráfico###{montaje_y_desmontaje_en_ambiente_gráfico}
+##5.1. Montaje y desmontaje en ambiente gráfico {#montaje_y_desmontaje_en_ambiente_gráfico}
 
 Para montar una unidad de USB debe bastar desde el menú de fluxbox (botón derecho del ratón sobre el escritorio) elegir Dispositivo->Montar USB (se emplea el análogo para montar un CD-ROM).
 
@@ -21,7 +21,7 @@ Este podrá leer de los medios y en el caso de USB es quien podrá escribir.
 Una vez termine de emplear el medio de alamacenamiento desmontelo también desde el menú de fluxbox 
 Dispositivo->Desmontar USB
 
-##5.2. Montaje y desmontaje desde interprete de comandos###{montaje_y_desmontaje_desde_interprete_de_comandos}
+##5.2. Montaje y desmontaje desde interprete de comandos {#montaje_y_desmontaje_desde_interprete_de_comandos}
 
 Para montar la USB debe bastar ejecutar desde una terminal:
 ```mount /mnt/usb```
@@ -31,7 +31,7 @@ Para demonstar la USB basta:
 y para demonstar un CD-ROM:
 ```umount /mnt/cdrom```
             
-##5.3. Administrador de archivos Xfe###{administrador_de_archivos}
+##5.3. Administrador de archivos Xfe {#administrador_de_archivos}
  
 Con este sencillo programa podrá administrar archivos y directorios, es decir crear, copiar, renombrar, crear 
 enlaces, cambiar permisos e incluso hacer estas operaciones como superusuario.
@@ -67,7 +67,7 @@ nueva.
   abrirá un menú contextual sobre los elementos seleccionados. En los panels **Ctrl +** pulsación derecha abrirá un 
   menú contextual con otras operaciones.
  
-##5.3.1. Atajos de teclado predeterminados###{atajos_de_teclado_predeterminados}
+##5.3.1. Atajos de teclado predeterminados {#atajos_de_teclado_predeterminados}
 
 Los atajos de teclado pueden personalizarse en el cuadro de diálogo Preferencias. Los predeterminados para todas 
 la aplicaciones integradas se listan a continuación (vea otros atajos de teclado partículares de cada Aplicación 
@@ -100,7 +100,7 @@ en el menú Ayuda).
   - **Mayúscula-Retroceso**: Ir al directorio siguiente
 #Falta link de [Sección 7.1, “Editor xfw”#
 
- ##5.4. Particiones cifradas###{particiones_cifradas}
+ ##5.4. Particiones cifradas {#particiones_cifradas}
 
 adJ soporta por defecto 2 particiones cifradas que se montan en  ```/var/postgresql ``` y  ```/var/www/resbase ```. La clave de cifrado debe suministrarse durante el arranque, y sólo si esta es correcta podrá ver el contenido de esas carpetas y escribir (si durante el arranque no le solicita clave de cifrado faltó activar particiones cifradas en la instalación --aunque podrá hacerlo actualizando adJ). Así que puede verificar si la clave fue correcta examinando esas rutas bien con xfe o bien desde un interprete de comandos:
   - xfe: Inicie **xfe**, asegurese de ver Árbol y Panel desde el menú Ver. En el Árbol de directorios de 
@@ -133,6 +133,6 @@ Montar la USB
  ```sudo mount /mnt/usb ```
  ```sudo cp /mnt/usb/fuentes.txt /var/www/resbase ```
 
-##5.5. Lecturas recomendadas###{lecturas_recomendadas}
+##5.5. Lecturas recomendadas {#lecturas_recomendadas}
 
 Páginas del manual [mount(8)](http://socrates.io/#Gjmxv9k) y [umount(8)](http://socrates.io/#Gjmxv9k)

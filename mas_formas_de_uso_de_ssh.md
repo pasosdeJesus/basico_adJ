@@ -1,8 +1,8 @@
-##10. Más formas de uso de ssh##{mas_formas_de_uso_de_ssh}
+##10. Más formas de uso de ssh {#mas_formas_de_uso_de_ssh}
 
 El protocolo **ssh** además de permitirle conectarse a servidores en modo texto (ver [Sección 2.3, “Conexión con ssh”](http://socrates.io/#FVtw1ub)) le permite iniciar aplicaciones gráficas que se ejecuten en el servidor, hacer redireccionamiento de puertos y conectarse sin necesidad de dar clave (dando una clave sólo una vez en su computador).
 
-###10.1. Abrir programas con interfaz gráfica####{abrir_programas_con_interfaz_grafica}
+###10.1. Abrir programas con interfaz gráfica {#abrir_programas_con_interfaz_grafica}
 
 Es posible ejecutar aplicaciones gráficas en el servidor y ver las ventanas gráficas en otro computador. Para esto es necesario:
 
@@ -42,7 +42,7 @@ Una vez inicie la conexión debe digitar la clave del usuario en el cortafuegos.
 
 ```https://127.0.0.1:10443```
 		
-###10.3. Tunel con protocolo SOCKS####{tunel_con_protocolo_sock}
+###10.3. Tunel con protocolo SOCKS {#tunel_con_protocolo_sock}
 
 Otra forma de realizar un tunel, pero sin limitarlo a un puerto es empleando un servidor SOCKS incluido con el programa ssh y configurando su navegador para emplearlo.
 
@@ -56,7 +56,7 @@ Si emplea **putty** debe especificar esta información en el diálogo de configu
 
 A continuación debe configurar su navegador para que utilice ese servidor SOCKs en su propio computador en el puerto que específico (8080 en este ejemplo). En el caso de Firefox puede hacerlo desde Editar->Preferencias->Avanzado->Red->Configurar especificar en servidor Socks 127.0.0.1 y en puerto 8080. Una vez acepte toda navegación que intente realizar se hará por el servidor al cual se conectó. Si por ejemplo ese servidor tiene acceso en una red interna a un servidor con IP 192.168.1.2 puede emplear esa URL en su navegador y llegará a ese computador en la red interna donde está el servidor.
 
-###10.4. Lecturas recomendadas####{lecturas_recomendadas}
+###10.4. Lecturas recomendadas {#lecturas_recomendadas}
 
 Puede aprender sobre **ssh** examinado la especificación del protocolo en uno de los borradores de la especificación temporal "SSH Protocol Architecture" (https://tools.ietf.org/html/draft-ietf-secsh-architecture-22).
 

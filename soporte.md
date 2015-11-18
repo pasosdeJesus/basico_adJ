@@ -1,6 +1,6 @@
-##4. Soporte###{soporte}
+##4. Soporte {#soporte}
 
-###4.1. Documentación####{documentación}
+###4.1. Documentación {#documentación}
 
 Por favor adopte la política LBM (Leer el Bendito Manual). La documentación de adJ es:
 [http://socrates.io/#Xgal1o2](http://socrates.io/#Xgal1o2)
@@ -20,12 +20,12 @@ Sin embargo buena parte de la documentación se encuentra solo en inglés, recom
 Entre los sitios donde se documentan configuraciones o se evalúan algunas herramientas: http://dhobsd.pasosdeJesus.org, http://www.openbsdcolombia.org, https://calomel.org/
 Para realizar preguntas por correo electrónico recomendamos la lista de distribución OpenBSD-Colombia http://groups.google.com/group/OpenBSD-Colombia?hl=es.
 
-###4.2. Canal SILC####{canal_silc}
+###4.2. Canal SILC {#canal_silc}
 
 Para dar soporte en el uso de Aprendiendo de Jesús empleamos el canal ```soporte-adJ```, en el servidor 
 SILC de ```www.nocheyniebla.org```
 
-###4.2.1. El protocolo SILC####{el_protocolo_silc}
+###4.2.1. El protocolo SILC {#el_protocolo_silc}
 
 SILC es un protocolo de teleconferencia inspirado en IRC, pero que transmite los mensajes cifrados a un 
 servidor que replica los mensajes a los clientes conectados. Un usuario que se conecte a un servidor, 
@@ -38,7 +38,7 @@ colaborativo). Puede verse más en [silcnet.org](http://silcnet.org/)
 Para emplear el servicio debe utilizarse un cliente de silc, en caso de que cuente con un escritorio gráfico 
 recomendamos **pidgin**, o de contar con un interprete de comandos el programa **silc** incluido en 
 
-###4.2.2. Configuración y uso de Pidgin####{configuración_y_uso_de_Pidgin}
+###4.2.2. Configuración y uso de Pidgin {#configuración_y_uso_de_Pidgin}
 **Pidgin** es un programa de mensajería instantánea que permite iniciar sesiones sobre varias redes de 
 mensajería al mismo tiempo.
 Corre sobre sistemas operativos OpenBSD, Linux, Mac OS X y Windows. Es compatible con las siguientes redes 
@@ -69,7 +69,7 @@ escribir.
  ![Conectados a través de Pidgin y el protocolo SILC](http://structio.sourceforge.net/guias/basico_
  OpenBSD/pidgin7.png)
  
-##4.2.3. Cliente SILC tipo texto###{cliente_SILC_tipo_texto}
+##4.2.3. Cliente SILC tipo texto {#cliente_SILC_tipo_texto}
 
 Si prefiere emplear un cliente de silc tipo texto, inicie una sesión con:
 ```silc -c www.nocheyniebla.org```

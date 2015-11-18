@@ -1,4 +1,4 @@
-##13. Labores básicas de administración###{labores_basicas_de_administracion}
+##13. Labores básicas de administración {#labores_basicas_de_administracion}
 
 Un sistema OpenBSD se administra desde la cuenta ```root``` o bien con ayuda del programa ```sudo```.
 
@@ -16,7 +16,7 @@ Si **sudo** se configura para permitir su utilización por parte de usuarios que
 
 Toda acción que realice con el programa **sudo**, así como cambios de un usuario a otro, quedarán registradas en la bitácora ```/var/log/secure```
 
-###13.1. Manejo de usuarios####{manejo_de_usuarios}
+###13.1. Manejo de usuarios {#manejo_de_usuarios}
 
 Entre las labores del administrador está agregar, eliminar y modificar información de usuarios del sistema.
 
@@ -89,7 +89,7 @@ Es posible modificar información de los usuarios de diversas formas:
 
   - Con el comando **chfn usuario** podrá modificar algunos datos del perfil del usuario.
 
-##13.2. Bitácoras###{bitacoras}
+##13.2. Bitácoras {#bitacoras}
 
 Una de las labores típicas de un administrador de un sistema OpenBSD es revisar bitácoras del sistema en búsqueda de fallas de seguridad. En la mayoría de las veces se trata de ataques a través de internet, ataques que buscan entre otras cosas: acceder a nuestras máquinas para sacar información y modificarla, o usar nuestra máquina para que realice trabajos que el atacante quiere hacer, generalmente maliciosos.
 
