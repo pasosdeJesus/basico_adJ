@@ -7,3 +7,5 @@
 [usuario_OpenBSD] La distribución Aprendiendo de Jesús de OpenBSD como Sistema de Escritorio http://structio.sourceforge.net/guias/usuario_OpenBSD 2015
 
 [servidor_OpenBSD] La distribución Aprendiendo de Jesús de OpenBSD como Servidor y Cortafuegos http://structio.sourceforge.net/guias/servidor_OpenBSD 2015
+
+xx
