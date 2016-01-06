@@ -27,7 +27,7 @@ la forma de presentar:
   que es suficiente para el español en codificaciones ISO-8859-1, ISO-8859-15 y UTF-8 (aunque no basta para otros 
   lenguajes soportados por UNICODE).
   - La forma de presentar números y valores monetarios será la particular de la región geográfica elegida. En adJ empleamos una implementación mejorada con base en la de FreeBSD que soporta especialmente bien todos los paises de latinoamérica.
-  - También la forma de presentar fecha y hora se ve afectada por el locale así como por la zona horaria. Aún no soportado en adJ.
+  - También la forma de presentar fecha y hora se ve afectada por el locale así como por la zona horaria.
 
 ##6.2. Personalización del interprete de comandos ksh {#personalización_del_interprete_de_comandos_ksh}
 
