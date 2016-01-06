@@ -57,6 +57,7 @@ y puede modificarlo con:
 /usr/sbin*
 Si en su directorio personal a instalado programas en el subdirectorio bin y desea agregar la ruta a la variable 
 PATH puede usar:
+
 *export PATH=$PATH:/home/$EUSER;/bin/*
 	    
 ##6.2.3. Variables de ambiente del interprete de comandos {#variables_de_ambiente_del_interprete_de_comandos}
