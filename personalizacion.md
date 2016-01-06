@@ -42,6 +42,7 @@ Desde un intérprete de comandos un usuario puede teclear bien nombres de progra
 El interprete de comandos identifica que está intentando ejecutar **banner** (para presentar en grande una cadena) y que le pasa como primer parámetro Jesus. Como **banner** no es un comando interno del interprete de comandos busca un archivo con permiso de ejecución en las rutas indicadas en la variable PATH, si el valor de tal variable fuera /bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin el interprete de comandos buscaría primero en /bin, después en /usr/X11R6/bin y así sucesivamente para encontrarlo en /usr/bin. Entonces pasaría el control a un programa del sistema operativo que se encarga de cargar y ejecutar el programa pasándole los parámetros que reciba (tal programa es **/usr/libexec/ld.so**). El ejemplo anterior es equivalente a
 *$ /usr/bin/banner Jesus*
 puede verificar que **banner** es un programa ubicado en el directorio /usr/bin con:
+
 *$ ls -l /usr/bin/b**
 que mostrará todos los archivos de ese directorio que comiencen con la letra b.
 
