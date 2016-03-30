@@ -180,7 +180,7 @@ En el primer caso puede iniciar la conexión con:
 
     
 
-reemplazando juan por el login que tenga en el sistema. Note que con el símbolo $, representamos el símbolo del sistema (del inglés prompt) --no debe teclearlo.
+reemplazando juan por el login que tenga en el sistema y www2.pasosdeJesus.org por el nombre del servidor. Note que con el símbolo $, representamos el símbolo del sistema (del inglés prompt) --no debe teclearlo.
 
  
 
