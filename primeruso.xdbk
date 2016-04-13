@@ -263,7 +263,7 @@
 	    no será útil.  Pero en tal caso puede escuchar un CD
 	    de audio, abriendo una terminal y tecleando:
 	    <screen>
-sudo cdio cdplay
+doas cdio cdplay
 	    </screen>
     </para>
 

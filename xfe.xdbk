@@ -37,7 +37,7 @@ La interfaz gráfica soporta temas con posibilidad de cambiar colores, íconos y
 		Permite realizar operaciones como superusuario, bien iniciando 
 		desde una terminal con:
 		<screen>
-sudo xfe
+doas xfe
 		</screen>
 		o si está bien configurado puede inicarse una ventan 
 		superusuario desde el menu 

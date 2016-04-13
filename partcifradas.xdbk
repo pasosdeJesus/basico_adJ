@@ -49,7 +49,7 @@ ls /var/www/resbase
 	<menuchoice><guimenu>Dispositivo</guimenu><guimenuitem>Iniciar Servicios Faltantes</guimenuitem></menuchoice> o desde un interprete de comandos
 	teclee
 	<screen>
-sudo sh /etc/rc.local
+doas sh /etc/rc.local
 	</screen>
 	Procedimiento que volverá a pedir clave de cifrado en caso de que haya
 	hecho falta.
@@ -66,10 +66,10 @@ sudo sh /etc/rc.local
 	<menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Ventana superusuario nueva</guimenuitem></menuchoice> o iniciar una desde la terminal
 	con 
 	<screen>
-sudo xfe
+doas xfe
 	</screen>
 	Desde una terminal basta preceder las instrucciones con 
-	<command>sudo</command>.
+	<command>doas</command>.
 </para>
 <para>
 	Por ejemplo para copiar un archivo <filename>fuentes.txt</filename> 
@@ -105,8 +105,8 @@ sudo xfe
 	</itemizedlist>
 	El mismo procedimiento desde un interprete de comandos lo realiza con:
 	<screen>
-sudo mount /mnt/usb
-sudo cp /mnt/usb/fuentes.txt /var/www/resbase
+doas mount /mnt/usb
+doas cp /mnt/usb/fuentes.txt /var/www/resbase
 	</screen>
 </para>
 	

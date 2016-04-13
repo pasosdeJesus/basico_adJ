@@ -4,7 +4,7 @@
 
   <para>Un sistema OpenBSD se administra desde la cuenta 
 	  <literal>root</literal> o bien con ayuda del programa
-	  <literal>sudo</literal>.</para>
+	  <literal>doas</literal>.</para>
   <para>  Desde las diversas cuentas del sistema
 	  que estén en el grupo <literal>wheel</literal>
 	  es posible pasar a la cuenta <literal>root</literal> con el comando:
@@ -15,17 +15,19 @@ $ su -
   	</para>
 
   	<para>
-	  Si <command>sudo</command> se configura para permitir su utilización
+	  Si <command>doas</command> se configura para permitir su utilización
 	  por parte de usuarios que estén en el grupo <literal>wheel</literal>,
 	  podrán ejecutarse comandos como si se tratara de la cuenta 
-	  <literal>root</literal> precediéndolos con <command>sudo</command>.
+	  <literal>root</literal> precediéndolos con <command>doas</command>.
 	  Por ejemplo para listar el directorio del usuario 
 	  <literal>root</literal>:
 	  <screen>
-$ sudo ls /root
+$ doas ls /root
 	  </screen>
-	  <warning><para>Toda acción que realice con el programa <command>sudo</command>, así como cambios de un usuario a otro, quedarán registradas en 
-			  la bitácora <filename>/var/log/secure</filename>
+	  <warning><para>
+Toda acción que realice con el programa 
+<command>doas</command>, así como cambios de un usuario a otro, quedarán 
+registradas en la bitácora <filename>/var/log/secure</filename>
 	  </para></warning>
   </para>
 
