@@ -1,4 +1,4 @@
-##8. Primeras páginas HTML###{primeras_paginas_html}
+## Primeras páginas HTML {#primeras_paginas_html}
 
 Las páginas web deben ubicarse en un directorio destinado para esto (el cual debe haber sido configurado por el administrador con ese propósito en el servidor web), generalmente es el subdirectorio ```public_html``` de su directorio personal (e.g /home/juan/public_html). Tal directorio y sus archivos deben tener permiso de lectura para todos, y el directorio debe tener permiso de ejecución para todos. Puede asegurarse de esto con:
 ```
@@ -58,6 +58,6 @@ Al abrirla con un navegador se ve algo como:
 ![Visualización de página HTML](http://structio.sourceforge.net/guias/basico_OpenBSD/html1.png)
 
 
-##8.1. Lecturas recomendadas###{lecturas_recomendadas}
+### Lecturas recomendadas {#lecturas_recomendadas}
 
 Puede aprender sobre HTML por ejemplo en: http://www.w3.org/MarkU

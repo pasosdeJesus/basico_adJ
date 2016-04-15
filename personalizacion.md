@@ -1,10 +1,10 @@
-##6. Personalización {#personalización}
+## Personalización {#personalización}
 
 Como usuario puede personalizar diversos aspectos de su interacción con el sistema completo y con cada programa 
 (como **fluxbox, xfe** y el interprete de comandos). En esta sección presentamos la personalización del locale y 
 algunas formas de personalizar el interprete de comandos **ksh**.
 
-##6.1. Locale {#locale}
+### Locale {#locale}
 
 Un locale define una codificación y formas de presentar información típicas de una región geográfica 
 (números, valores monetarios, fechas, horas, idioma y cotejación u ordenamiento lexicográfico del mismo). adJ 
@@ -29,13 +29,13 @@ la forma de presentar:
   - La forma de presentar números y valores monetarios será la particular de la región geográfica elegida. En adJ empleamos una implementación mejorada con base en la de FreeBSD que soporta especialmente bien todos los paises de latinoamérica.
   - También la forma de presentar fecha y hora se ve afectada por el locale así como por la zona horaria.
 
-##6.2. Personalización del interprete de comandos ksh {#personalización_del_interprete_de_comandos_ksh}
+### Personalización del interprete de comandos ksh {#personalización_del_interprete_de_comandos_ksh}
 
 Es función del intérprete de comandos recibir comandos que el usuario ingrese por el teclado (o en general por 
 entrada estándar) y ejecutar los programas apropiados. Dada la importancia y frecuencia de esta labor, los 
 interpretes de comandos (y en particular /bin/ksh) 
 suelen ser altamente personalizables a los gustos de cada usuario.
-##6.2.1. Ejecución de Programas {#ejecución_de_programas}
+#### Ejecución de Programas {#ejecución_de_programas}
 
 Desde un intérprete de comandos un usuario puede teclear bien nombres de programas o bien comandos del intérprete de comandos. Los programas por ejecutar se especifican dando la ruta completa de su ubicación en el sistema de archivos, o en caso de no dar ruta se buscan en orden en los directorios especificados en la variable de ambiente PATH. Por ejemplo si teclea:
 *$ banner Jesus*
@@ -46,7 +46,7 @@ puede verificar que **banner** es un programa ubicado en el directorio /usr/bin 
 *$ ls -l /usr/bin/b**
 que mostrará todos los archivos de ese directorio que comiencen con la letra b.
 
-##6.2.2. Variables de ambiente {#variables_de_ambiente}
+#### Variables de ambiente {#variables_de_ambiente}
 
 Puede personalizar algunos detalles del intérprete de comandos o de algunos programas empleando variables de 
 ambiente. Las variables de ambiente son palabras que tienen asociadas un valor, por ejemplo puede examinar el 
@@ -60,7 +60,7 @@ PATH puede usar:
 
 *export PATH=$PATH:/home/$EUSER;/bin/*
 	    
-##6.2.3. Variables de ambiente del interprete de comandos {#variables_de_ambiente_del_interprete_de_comandos}
+#### Variables de ambiente del interprete de comandos {#variables_de_ambiente_del_interprete_de_comandos}
 
 Cada programa emplea sus propias variables de ambiente, en particular el interprete de comandos. Recomendamos el 
 uso de **ksh** como interprete de comandos por ser liviano y estándar en sistemas OpenBSD. Con este intérprete de 
@@ -87,7 +87,7 @@ ingresa a vim).
   establece un 
   un símbolo de espera de comandos que presenta el nombre de la máquina seguido del símbolo pesos y un espacio.
   
-  ##6.2.5. colorls {#colorls}
+#### colorls {#colorls}
 
 En el ejemplo presentado si está instalado el programa **colorls** (del paquete colorls), este se define como 
 alias para el comando ls, de forma que la lista de archivos se presente con colores. Esto ocurrirá desde consolas 
@@ -127,7 +127,7 @@ XTerm*eightBitInput:            false
 XTerm*metaSendsEscape:          false
 XTerm*oldXtermFKeys:            true
 ``
-##6.2.6. Lecturas recomendadas {#lLecturas_recomendadas}
+#### Lecturas recomendadas {#lLecturas_recomendadas}
 
 Puede ver detalles de las variables de ambiente empleadas por ksh con **man ksh**
 La configuración de colores es tomada de una respuesta de Steve Jones en una lista de correo, está disponible 

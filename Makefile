@@ -1,5 +1,5 @@
-# Reglas para generar HTML, PostScript y PDF de usuario_adJ
-# Basadas en infraestructura de dominio público de repasa 
+# Reglas para generar HTML, PostScript y PDF de basico_adJ
+# Basadas en infraestructura de dominio público de repasa
 #   (http://structio.sourceforge.net/repasa)
 
 include Make.inc
@@ -8,10 +8,11 @@ include Make.inc
 
 EXT_DOCBOOK=xdbk
 
-SOURCES=basico_adJ-4.1.2.xdbk s.xdbk 
+SOURCES=$(PROYECTO).$(EXT_DOCBOOK) s.xdbk
 # Listado de fuentes XML. Preferiblmente en el orden de inclusión.
 
-IMAGES=img/fluxbox-xfig.png img/home.png img/prev.png img/toc-minus.png img/blank.png img/important.png img/toc-plus.png img/caution.png img/next.png img/tip.png img/up.png img/draft.png img/note.png img/toc-blank.png img/warning.png img/instala1.png img/instala2.png img/instala3.png img/instala4.png img/instala5.png img/instala6.png img/ejlatex.png img/xiphos.png img/gimp.png img/inkscape.png img/insadJ1.png img/insadJ1.png img/insadJ2.png img/insadJ3.png img/insadJ4.png img/insadJ5.png img/insadJ6.png img/insadJ7.png img/audacious.png img/audacity.png img/gnumeric.png
+IMAGES=img/primerflux.png img/putty1.png img/putty2.png img/pop3s-mozilla.png img/evolution.png img/mutt.png img/vim.png img/html1.png img/home.png img/prev.png img/toc-minus.png img/blank.png img/important.png img/toc-plus.png img/caution.png img/next.png img/tip.png img/up.png img/draft.png img/note.png img/toc-blank.png img/warning.png img/arbol-archivos.png img/putty-tunnel.png img/putty-x11.png img/imaps-1-thunderbird.png img/imaps-2-thunderbird.png img/imaps-3-thunderbird.png img/fluxbox_inicio.png img/mozilla_firefox.png img/espiritualidad.png img/openoffice_writer.png img/openoffice_calc.png img/openoffice_presentacion.png img/documentacion.png img/multimedia.png img/mplayer.png img/xcdplayer.png img/otros.png img/plan.png img/vim1.png img/fluxbox_menu.png img/estilo1.png img/partencr.png img/xdm.png img/consola.png img/pidgin1.png img/pidgin2.png img/pidgin3.png img/pidgin4.png img/pidgin5.png img/pidgin6.png img/pidgin7.png img/silc.png img/filezillaconexion.png img/filezilla.png img/xfecdrom.png img/montar.png img/xfepaq.png img/xfw-p.png img/mg.png
+
 # Listado de imagenes, preferiblemente en formato PNG
 
 HTML_DIR=html
@@ -31,12 +32,12 @@ DSSSL_PRINT=estilo.dsl\#print
 
 DSSSL_HTML=estilo.dsl\#html
 # Hoja de estilo DSSSL para generar HTML en reglas por defecto
-#
+
 OTHER_HTML=
 
 PRECVS=guias/
 
-INDEX=indice.$(EXT_DOCBOOK)
+INDEX=genindice.$(EXT_DOCBOOK)
 # Si habrá un índice, nombre del archivo con el que debe generarse (incluirlo al final del documento).
 
 
@@ -48,13 +49,13 @@ GENDIST=Derechos.txt $(SOURCES) $(IMAGES)
 ACTHOST=git@github.com:pasosdeJesus/
 # Sitio en Internet donde actualizar. Método indicado por $(ACT_PROC) de confv.sh
 
-ACTDIR=usuario_adJ
+ACTDIR=basico_adJ
 # Directorio en $(ACTHOST) por actualizar
 
 #USER=$(LOGNAME),structio
 # Usuario en $(ACTHOST).  Si es el mismo que en la máquina local comentar.
 
-GENACT=ghtodo $(PROYECTO)-$(PRY_VERSION)_html.tar.gz #$(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).ps.gz $(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).pdf 
+GENACT=ghtodo $(PROYECTO)-$(PRY_VERSION)_html.tar.gz $(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).ps.gz $(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).pdf 
 # Dependencias por cumplir antes de actualizar sitio en Internet al publicar
 
 FILESACT=$(PROYECTO)-$(PRY_VERSION).tar.gz $(PROYECTO)-$(PRY_VERSION)_html.tar.gz $(HTML_DIR)/* #$(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).ps.gz $(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).pdf 
@@ -68,12 +69,13 @@ cvstodo: distcvs
 	(cd $(PROYECTO)-$(PRY_VERSION); ./conf.sh; make $(PROYECTO)-$(PRY_VERSION)_html.tar.gz)
 	cp $(PROYECTO)-$(PRY_VERSION)/$(PROYECTO)-$(PRY_VERSION)_html.tar.gz .
 
+
 ghtodo: distgh
 	(cd $(PROYECTO)-$(PRY_VERSION); ./conf.sh; make $(PROYECTO)-$(PRY_VERSION)_html.tar.gz)
 	cp $(PROYECTO)-$(PRY_VERSION)/$(PROYECTO)-$(PRY_VERSION)_html.tar.gz .
 
 repasa:
-	DEF=$(PROYECTO).def CLA=$(PROYECTO).cla SEC=$(PROYECTO).sec DESC="Información extraida de: $(PRY_DESC)" FECHA="$(FECHA_ACT)" BIBLIO="$(URLSITE)" TIPO_DERECHOS="Dominio público" TIEMPO_DERECHOS="$(MES_ACT)" DERECHOS="Información cedida al dominio público. Sin garantías." AUTORES="Vladimir Támara" IDSIGNIFICADO="adJ_usuario" awk -f herram/db2rep $(SOURCES)
+	DEF=$(PROYECTO).def CLA=$(PROYECTO).cla SEC=$(PROYECTO).sec DESC="Información extraida de: $(PROYECTO) $(PRY_VERSION)" FECHA="$(FECHA_ACT)" BIBLIO="$(URLSITE)" TIPO_DERECHOS="Dominio público" TIEMPO_DERECHOS="$(MES_ACT)" DERECHOS="Información cedida al dominio público. Sin garantías." AUTORES="Vladimir Támara" IDSIGNIFICADO="adJ_basico" $(AWK) -f herram/db2rep $(SOURCES)
 
 # Para usar DocBook
 include herram/comdocbook.mak
@@ -83,10 +85,9 @@ include herram/comdist.mak
 
 # Elimina hasta configuración
 limpiadist: limpiamas
-	rm -f confv.sh confv.xml Make.inc personaliza.ent
+	rm -f confv.sh confv.ent Make.inc personaliza.ent
 	rm -rf $(HTML_DIR)
 	rm -rf $(PRINT_DIR)
-
 
 # Elimina archivos generables
 limpiamas: limpia
@@ -107,34 +108,25 @@ limpia:
 
 Derechos.txt: $(PROYECTO).$(EXT_DOCBOOK)
 	make html/index.html
-	$(W3M) $(W3M_OPT) -dump html/index.html | awk -f herram/conthtmldoc.awk > Derechos.txt
+	$(W3M) %(W3M_OPT) -dump html/index.html | awk -f herram/conthtmldoc.awk > Derechos.txt
 
 instala:
-	mkdir -p $(DESTDIR)$(INSDOC)
+	@mkdir -p $(DESTDIR)$(INSDOC)
 	install html/*html html/*png $(DESTDIR)$(INSDOC)
 	if (test -f $(PRINT_DIR)/$(PROYECTO).ps) then { install imp/*ps $(DESTDIR)$(INSDOC); } fi;
 
-repasa:
-	DEF=$(PROYECTO).def CLA=$(PROYECTO).cla SEC=$(PROYECTO).sec DESC="Información extraida de: $(PRY_DESC)" FECHA="$(FECHA_ACT)" BIBLIO="$(URLSITE)" TIPO_DERECHOS="Dominio público" TIEMPO_DERECHOS="$(MES_ACT)" DERECHOS="Información cedida al dominio público. Sin garantías." AUTORES="Vladimir Támara" IDSIGNIFICADO="openbsd_usuario" awk -f herram/db2rep $(SOURCES)
+xfe.xdbk.pre: /usr/ports/mystuff/x11/xfe/files/es_CO.po
+	perl -f herram/ayudaxfe2db.pl /usr/ports/mystuff/x11/xfe/files/es_CO.po > xfe.xdbk.pre
 
-
-programas.xdbk: infoversion.ent
-	if (test -f /home/$(LOGNAME)/comp/adJ/Contenido.txt) then { cp /home/$(LOGNAME)/comp/adJ/Contenido.txt Contenido.txt ; recode utf8..latin1 Contenido.txt; } else { touch Contenido.txt; } fi;
-	awk -f herram/convContenido.awk Contenido.txt > programas.xdbk; 
 
 infoversion.ent:
 	if (test -f ../servidor_adJ/infoversion.ent) then { \
 		cp ../servidor_adJ/infoversion.ent .; \
 	} fi;
+
 PANDOC=/home/vtamara/.cabal/bin/pandoc 
 
-FUENTESMD= conceptos_basicos.md correo_electronico.md edicion_de_textos.md \
-	formatos_de_archivos.md introduccion.md \
-	labores_basicas_de_administracion.md \
-	mas_formas_de_uso_de_ssh.md novedades.md personalizacion.md \
-	primer_uso_de_adJ.md primeras_paginas_html.md \
-	soporte.md transferencia_de_informacion_a_y_desde_el_servidor.md \
-	uso_de_medios_de_almacenamiento.md bibliografia.md
+FUENTESMD=introduccion.md primer_uso_de_adJ.md conceptos_basicos.md soporte.md uso_de_medios_de_almacenamiento.md personalizacion.md edicion_de_textos.md primeras_paginas_html.md transferencia_de_informacion_a_y_desde_el_servidor.md mas_formas_de_uso_de_ssh.md correo_electronico.md novedades.md
 
 s.xdbk: $(FUENTESMD)
 	$(PANDOC) -t docbook -o s.xdbk $(FUENTESMD)

@@ -1,8 +1,8 @@
-##2. Primer uso de adJ {#primer_uso_de_adJ}
+## Primer uso de adJ {#primer_uso_de_adJ}
 
 Un servidor adJ puede operarse tanto directamente (sentado frente al computador donde se instaló y configuró), como remotamente por ejemplo con ```ssh```. En esta sección cubrimos ambos escenarios.
 
-###2.1. Arranque   {#arranque}
+### Arranque   {#arranque}
 
 Al iniciar un computador con adJ el núcleo de OpenBSD detectará el hardware, iniciará los procesos básicos y ejecutará los archivos de arranque. Típicamente la distribución adJ llama claves de imágenes cifradas. (En las imagénes cifradas se almacena los archivos que el usuario quiera cifrar. Para poder guardar y recuperar los archivos se debe dar una clave.) que se montan durante el arranque.
 Un computador con adJ siempre arranca con Interfaz de texto y pide clave. 
@@ -31,7 +31,7 @@ En entorno gráfico si se autentica correctamente se iniciará el administrador 
 
  
 
-###2.2. Operación con fluxbox {#operación_con_fluxbox}
+### Operación con fluxbox {#operación_con_fluxbox}
 
  
 

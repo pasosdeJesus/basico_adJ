@@ -1,4 +1,4 @@
-##1. Introducción {#introduccion}
+## Introducción {#introduccion}
 
 Un sistema operativo es un programa que facilita tanto a una persona como a otros programas
 la utilización de un computador. OpenBSD y Linux son sistemas operativos tipo Unix; este tipo

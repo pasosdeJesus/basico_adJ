@@ -1,11 +1,11 @@
-##3. Conceptos básicos {#conceptos_básicos}
+## Conceptos básicos {#conceptos_básicos}
 
 Los conceptos y herramientas presentados desde esta sección se asimilan mejor practicando. 
 Procure ejecirtarlos desde un interprete de comandos (bien operando directamente un sistema tipo Unix o
 bien ingresando remotamente desde otro sistema como se explicó, 
 [Sección 2, “Primer uso de adJ”)](http://socrates.io/#Agp1DEK).
 
-###3.1. Definiciones iniciales {#definiciones_iniciales}
+### Definiciones iniciales {#definiciones_iniciales}
 
 Un *archivo* es información delimitada y con atributos que ayudan a identificarla como nombre, 
 fecha de creación y ubicación. Se ubica en alguna ruta o sitio del sistema de archivos.
@@ -18,7 +18,7 @@ Por ejemplo un archivo de nombre ```carta.odt``` posiblemente se trate de una ca
 formato de Open Document Format (lo sugieren las últimas letras .odt). 
 Para verla debe usarse un programa que entienda ese formato, uno entre otros es LibreOffice.
 
-###3.2. Intérprete de comandos {#intérprete_de_comandos}
+### Intérprete de comandos {#intérprete_de_comandos}
 
 El intérprete de comandos le permite usar varios comandos internos, así como ejecutar programas. 
 Es común que los comandos o programas requieran algo de información como suministro 
@@ -36,7 +36,7 @@ nombre de un programa instalado o de una función de la librería del sistema.
 **chfn**
 : Le permite cambiar datos personales y el intérprete de comandos que desea por defecto (sugerimos /**bin/ksh**)
 
-###3.3. Sistema de Archivos
+### Sistema de Archivos
 
 En Unix la información se organiza en archivos dentro de directorios del sistema de archivos. 
 El directorio inicial o raíz se denota por /, los nombres de archivos o directorios pueden especificarse 

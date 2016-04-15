@@ -1,10 +1,10 @@
-##7. Edicion de textos {#edicion_de_textos}
+## Edicion de textos {#edicion_de_textos}
 
 Un editor de texto le permite redactar textos simples y guardarlos en un formato simple (o plano).
 
 A medida que administre su sistema adJ, notará que es más y más necesaria la labor de editar textos. La primera vez posiblemente querrá usar el editor más gráfico y sencillo: ```xfw```. Pero si no tiene un entorno gráfica puede emplear ```mg```, y si desea eficiencia posiblemente le servirá ```vim```.
 
-###7.1. Editor xfw {#editor_ xfw}
+### Editor xfw {#editor_ xfw}
 
 **xfw** es un editor de texto simple para el sistema X-Window, es decir opera en modo gráfico. Viene incluido con el administrador de archivos xfe (ver [Sección 5.3, “Administrador de archivos Xfe”](http://socrates.io/#rwavSvQ)) desarrollado por Roland Baudin.
 
@@ -20,7 +20,7 @@ Como se presenta en la figura es una aplicación gráfica típica con una barra 
 
 ![Uso de Xfe para manejar paquetes en adJ](http://structio.sourceforge.net/guias/basico_OpenBSD/xfw-p.png)
 
-###7.2. Editor mg {#editor_mg}
+### Editor mg {#editor_mg}
 
 **mg** es un editor de texto simple, pequeño, veloz y portable con fuentes en el dominio público, mantenidas por el equipo de desarrollo de OpenBSD y que opera en la terminal. Las combinaciones de teclas que emplea como comandos provienen del editor Emacs, aunque mg no está vinculado con el proyecto GNU.
 
@@ -44,7 +44,7 @@ Alli podría ingresar por ejemplo
 		
 Guarda con C-x C-s y sale con C-x C-c.
 
-##7.3. Editor vi {#editor_vi}
+### Editor vi {#editor_vi}
 
 **vi** es un clásico editor en ambientes tipo UNIX cuya prioridad es la eficiencia. Por lo mismo no requiere el uso de ratón sino de breves comandos que a medida que se memoricen y usen harán más rápida la edición de textos.
 
@@ -52,19 +52,19 @@ Para editar un archivo (digamos ```ma.txt```) con el editor vi, teclee desde un 
 
 ```$ vi ma.txt```
 
-###7.3.1. Modos de vi {#modos_de_vi}
+#### Modos de vi {#modos_de_vi}
 
-###7.3.1.1. Modo comando {#modo_comando}
+##### Modo comando {#modo_comando}
 
 Cuando **vi** cargue, se observará en la pantalla una parte del archivo de texto que va a editar. Al arrancar **vi**, está en un modo especial llamado ```modo comando``` ó ```modo normal``` . Esto significa, por ejemplo, que si presiona **l** en el teclado, en vez de introducir una **l** en la posición actual del cursor, el cursor se va a mover un caracter a la derecha. En este modo, los caracteres del teclado sirven para enviar comandos a **vi**.
 
-###7.3.1.2. Comandos de movimiento - Movimientos del cursor###
+##### Comandos de movimiento - Movimientos del cursor###
 
 Para mover el cursor, pulse las teclas: **h** (mueve a la izquierda), **j** (mueve hacia abajo), **k** (mueve hacia arriba), **l** (mueve a la derecha).
 
 Las teclas **h**, **j**, **k** y **l** son prácticas porque una vez acostumbrado a ellas, será capaz de moverse por el archivo sin tener que retirar los dedos de la posición natural del teclado.
 
-###7.3.1.3. Modo inserción {#modo_insercion}
+##### Modo inserción {#modo_insercion}
 
 Este modo es para introducir texto, es decir lo que vaya tecleando podrá verlo en la pantalla, en el lugar donde estaba el cursor. Veamos algunas utilidades para este modo:
 
@@ -94,7 +94,7 @@ Puede insertar texto con varias teclas:
 
   - Análogo al anterior, pero abre espacio en la línea anterior.
 
-###7.3.1.4 Edición de texto - Borrar {#edicion_de_texto_borrar}
+##### Edición de texto - Borrar {#edicion_de_texto_borrar}
 
 Debemos estar en **modo comandos**. Pulsar **ESC** para pasar de **modo inserción** a **modo comandos**.
 
@@ -102,11 +102,11 @@ Mover el cursor y colocarlo sobre el caracter que va ser borrado y pulsar **x**.
 
 Digitar **dw** para borrar hasta el final de la palabra. Y digitando **dd** se borra la línea entera.
 
-###7.3.1.5. Deshacer cambios {#deshacer_cambios}
+##### Deshacer cambios {#deshacer_cambios}
 
 Si por alguna razón desea deshacer los cambios realizados en el texto, estando en modo normal,	pulse **u** para deshacer el último cambio. Con **U** se deshace todos los cambios realizados en la línea actual.
 
-###7.3.2. Otros comandos - Guardar y salir {#otros_comandos_guardar_y_salir}
+##### Otros comandos - Guardar y salir {#otros_comandos_guardar_y_salir}
 
 Pulse la tecla **ESC** (para asegurarse de que está en modo normal).
 
@@ -122,11 +122,11 @@ Estando en el modo normal, pulsamos el comando : para pasar al **modo línea de 
 
 Recuerde: Para pasar de **modo inserción** a **modo comando** pulsamos la tecla **ESC**. Puede desplazarse sobre el archivo, empleando las flechas, PgUp, PgDn ó bien para mantener los dedos mejor posicionados en el teclado puede emplear las teclas **h**, **j**, **k** y **l**, como lo vimos anteriormente.
 
-###7.3.3. vim {#vim}
+#### vim {#vim}
 
 En su sistema puede haber diversas versiones de **vi**, recomendamos **vim** que ofrece extensa ayuda y cuenta con varias extensiones.
 
-###7.3.3.1. Modo visual - Copiar, cortar y pegar {#modo_visual_copiar_cortar_y_pegar}
+##### Modo visual - Copiar, cortar y pegar {#modo_visual_copiar_cortar_y_pegar}
 
 En el **modo visual** ''resaltamos" el texto para ser eliminado o copiado para luego pegarlo.
 
@@ -136,7 +136,7 @@ Pulse **y** para copiar la sección remarcada. Si desea cortar digite **d** .
 
 Ahora ubica el cursor en el lugar donde desea insertar el texto copiado o cortado **y** pulsa **p** para insertar el texto, después del cursor.
 
-###7.3.3.2. Otras características de vim {#otras_caracteristicas_de_vim}
+##### Otras características de vim {#otras_caracteristicas_de_vim}
 
 Digrafos
 
@@ -171,7 +171,7 @@ Puede resultar instructivo que copie y examine un archivo de ejemplo distribuido
 		
 ![Sesión de vim](http://structio.sourceforge.net/guias/basico_OpenBSD/vim.png)
 
-###7.3.3.3. Locale en vim {#locale_en_vim}
+##### Locale en vim {#locale_en_vim}
 
 **vim** empleará el locale establecido en la variable de ambiente LANG (ver [Sección 6.1, “Locale”](http://socrates.io/#T9dIynC)). Sin embargo si prefiere también puede establecer idioma de los mensajes que presenta, así como codificación de la terminal y de los archivos.
 
@@ -188,7 +188,7 @@ Típicamente **vim** detectará la codificación de los archivos que edite, o em
 set encoding&           " terminal charset: follows current locale 
 set fileencoding&       " auto-sensed charset of current buffer```  
 	
-###7.3.4. Lecturas recomendadas {#lecturas_recomendadas}
+#### Lecturas recomendadas {#lecturas_recomendadas}
 
 Puede aprender sobre **vim** y su configuración en el manual de este programa que se consulta presionando la tecla ```F1```. Esta documentación también está disponible en Internet en: http://vimdoc.sourceforge.net/htmldoc/usr_toc.html
 
