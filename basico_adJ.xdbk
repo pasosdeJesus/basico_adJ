@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "/usr/local/share/xml/docbook/4.2/docbookx.dtd"[
+
+<!ENTITY % confv SYSTEM "confv.ent">
+<!ENTITY % personaliza SYSTEM "personaliza.ent">
+<!ENTITY % infoversion SYSTEM "infoversion.ent">
+%confv;
+%personaliza;
+%infoversion;
+
+<!ENTITY s SYSTEM "s.xdbk">
+
+<!--ENTITY indice SYSTEM "genindice.xdbk"-->
+]> 
+
+<article lang="es">
+  <title>&PRY-DESC;</title>
+  <articleinfo>
+    <authorgroup>
+      <author>
+	      
+	     <firstname>Vladimir</firstname>
+	<surname>Támara Patiño (vtamara@pasosdeJesus.org)</surname>
+</author> 
+      <author>
+	<firstname>Hernán</firstname>
+	<surname>Quishpe (ahquishpe@gmail.com)</surname>
+      </author> 
+
+      <author>
+	<firstname>Blanca</firstname>
+	<surname>Acosta (blanca@pasosdeJesus.org)</surname>
+      </author> 
+
+    </authorgroup>
+    
+    <abstract>
+      <para>Estas notas buscan ayudar a usuarios que desean emplear
+	      por primera vez el sistema seguro adJ.  
+      </para>
+    </abstract>
+
+    <legalnotice>
+	    <para>Este documento y sus fuentes son obra de amor
+		    cedidas al dominio público desde 2004. 
+		    Esta es la versión &PRY-VERSION; de este documento, 
+actualizada por última vez en &FECHA-ACT; para que corresponda a 
+la distribución adJ de OpenBSD &VER-OPENBSD;.
+	No se ofrece garantía alguna, por el contrario se aprecia que se 
+	envíen correcciones y sugerencias al autor.  Este escrito se 
+	dedica a Dios: `Alaba mi alma la grandeza del Señor'</para>
+<para>Agradecemos los aportes de Carolina Pinzón, Marly Mier Rinaldy, 
+	William Rozo (wiroal@riseup.net), 
+	Hector Jimenez (h3.hector@gmail.com).</para>
+<para>
+	La versión publicada más reciente está tanto
+	<ulink url="&URLSITE;">en línea</ulink>  como
+	<ulink url="&PROYECTO;-&PRY-VERSION;_html.tar.gz">en archivo comprimido</ulink> 
+	y como <ulink url="http://adJ.pasosdeJesus.org/pub/AprendiendoDeJesus/&PRY-VERSION;/paquetes/&PROYECTO;-&PRY-VERSION;.tar.gz">paquete para adJ/OpenBSD</ulink>.
+	<!--, como <ulink
+	  url="&URLSITE;/&PROYECTO;-&PRY-VERSION;.ps.gz">PostScript
+	  comprimido</ulink> y como 
+  <ulink url="&URLSITE;/&PROYECTO;-&PRY-VERSION;.pdf">PDF</ulink>. -->
+	Sus fuentes en DocBook están disponibles en 
+	<ulink url="https://github.com/pasosdeJesus/&PROYECTO;/">https://github.com/pasosdeJesus/&PROYECTO;/</ulink>.
+      </para>
+    </legalnotice>
+
+  </articleinfo>
+  
+  &s;
+
+</article>
