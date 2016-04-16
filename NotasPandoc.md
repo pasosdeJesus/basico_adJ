@@ -15,4 +15,12 @@
   generará un ancla editor-vim, para que el ancla sea editor_vim usar solo
   ## Editor vim {#editor_vim}
 
+Convenciones
+
+* Lo que se digita debe quedar entre ```
+
+* Nombres o términos que se definen en negrillas, entre **
+
+* Términos en inglés en itálicas entre *
+
 
