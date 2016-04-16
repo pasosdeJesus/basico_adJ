@@ -20,9 +20,12 @@ Toda acción que realice con el programa **sudo**, así como cambios de un usuar
 
 Entre las labores del administrador está agregar, eliminar y modificar información de usuarios del sistema.
 
-El administrador puede agregar usuarios con el comando ```adduser```. Su uso típico se esboza a continuación[^16]
+El administrador puede agregar usuarios con el comando ```adduser```. Su uso típico se esboza a continuación[^admin.1]
 
-[^16] Tenga en cuenta que la primera vez que ejecute adduser tras instalar un sistema OpenBSD, este programa preguntará valores por defecto por emplear durante la creación de cuentas.
+[^admin.1]: Tenga en cuenta que la primera vez que ejecute adduser tras 
+	instalar un sistema OpenBSD, este programa preguntará valores por 
+	defecto por emplear durante la creación de cuentas.
+
 ```
 # adduser
 ...

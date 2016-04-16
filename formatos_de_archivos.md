@@ -8,11 +8,11 @@ Con este método puede descargar archivos con los protocolos ftp o http. Otra po
 
 La forma de emplear un archivo que descargue, depende del formato en el que esté. El formato usualmente se identifica con la extensión (i.e las últimas letras que están después de un punto).
 
-  - .```txt``` Se trata de un texto plano. Típicamente estará codificado en ASCII. En DOS/Windows los textos planos indican fin de línea con dos caracteres: Retorno de carro[^11] y nueva línea[^12], mientras que en sistemas tipo Unix basta se usa sólo el caracter nueva línea. Para convertir textos DOS/Windows a Unix puede emplear:
+  - .```txt``` Se trata de un texto plano. Típicamente estará codificado en ASCII. En DOS/Windows los textos planos indican fin de línea con dos caracteres: Retorno de carro[^formatos.1] y nueva línea[^formatos.2], mientras que en sistemas tipo Unix basta se usa sólo el caracter nueva línea. Para convertir textos DOS/Windows a Unix puede emplear:
 ```
 $ cp carta.txt carta.txt.bak
 $ tr -d "\r" < carta.txt.bak > carta.txt```
-Si el texto que tiene emplea una codificación que no sea ASCII (por ejemplo Unicode, UTF-8, MAC, Código de Página 850) o requiere convertir de ASCII a otra codificación puede emplear el programa **recode**. Por ejemplo para convertir carta.txt de ASCII a UTF-8[^13]:
+Si el texto que tiene emplea una codificación que no sea ASCII (por ejemplo Unicode, UTF-8, MAC, Código de Página 850) o requiere convertir de ASCII a otra codificación puede emplear el programa **recode**. Por ejemplo para convertir carta.txt de ASCII a UTF-8[^formatos.3]:
 ```recode txt..utf-8 carta.txt```
 
   -  .```gz``` Es un archivo comprimido con **gzip**. Suponiendo que fuera ```archivo.txt.gz``` (cuya extensión sugiere un texto comprimido con ```gzip```), lo descomprime con:
@@ -33,8 +33,15 @@ Si cuenta con un archivo con extensión .```tar``` para desempaquetarlo basta:
 
 La página del manual: **man tar**
 
-[^11] El caracter retorno de carro tiene código ASCII 13, suele llamarse CR (Carriage Return) y diversos programas y lenguajes lo denotan con '\n'.
+[^formatos.1]: El caracter retorno de carro tiene código ASCII 13, suele 
+	llamarse CR (*Carriage Return*) y diversos programas y lenguajes lo 
+	denotan con '\n'.
 
-[^12] El caracter nueva línea tiene código ASCII 10, también se llama LF (Line Feed) y diversos programas y lenguajes lo denotan con '\r'.
+[^formatos.2]: El caracter nueva línea tiene código ASCII 10, también se llama 
+	LF (*Line Feed*) y diversos programas y lenguajes lo denotan con '\r'.
 
-[^13] UTF-8 es una de las posibles formas de codificar Unicode en ASCII. Los caracteres Unicode con un ASCII equivalente con código menor de 127 tienen la misma representación en UTF-8. Otros caracteres Unicode emplean una secuencia de dos o más caracteres ASCII para su codificación.
+[^formatos.3]: UTF-8 es una de las posibles formas de codificar Unicode en 
+	ASCII. Los caracteres Unicode con un ASCII equivalente con código menor 
+	de 127 tienen la misma representación en UTF-8. Otros caracteres 
+	Unicode emplean una secuencia de dos o más caracteres ASCII para su 
+	codificación.

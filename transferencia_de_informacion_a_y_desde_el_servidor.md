@@ -28,9 +28,10 @@ Si desea transmitir el archivo metodo.txt del directorio personal del servidor `
 
 ```$ scp juan2@comp.trabajo.net:personal/metodo.txt``` .
 		
-Note que **scp** es similar a **cp** (pues permite copiar un archivo fuente en uno destino[^12]) sólo que el archivo fuente o el archivo destino pueden estar en otra máquina.
+Note que **scp** es similar a **cp** (pues permite copiar un archivo fuente en uno destino[^transferencia.1]) sólo que el archivo fuente o el archivo destino pueden estar en otra máquina.
 
-[^12] Incluso scp implementa la funcionalidad de cp al permitir copiar localmente un archivo.
+[^transferencia.1]: Incluso scp implementa la funcionalidad de cp al permitir 
+	copiar localmente un archivo.
 
 Dado que Windows no tiene un servidor **ssh** por defecto, es posible transmitir archivos a y desde sistemas Windows sólo desde el computador con Windows usando un programa como **winscp** (disponible en http://winscp.sf.net o **pscp** que se distribuye junto con **putty** ([Sección 3, “Conceptos básicos”](http://socrates.io/#KaOWf1G)).
 
