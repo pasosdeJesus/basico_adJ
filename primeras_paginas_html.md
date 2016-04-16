@@ -55,9 +55,9 @@ Para elaborar su primera página HTML, puede basarse en la siguiente página que
 		
 Al abrirla con un navegador se ve algo como:
 
-![Visualización de página HTML](http://structio.sourceforge.net/guias/basico_OpenBSD/html1.png)
+![Visualización de página HTML](img/html1.png)
 
 
-### Lecturas recomendadas {#lecturas_recomendadas}
+### Lecturas recomendadas {#lecturas_recomendadas_html}
 
 Puede aprender sobre HTML por ejemplo en: http://www.w3.org/MarkU

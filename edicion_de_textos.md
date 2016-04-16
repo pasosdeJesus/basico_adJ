@@ -18,7 +18,7 @@ o si por ejemplo desea abrir el archivo carta.txt que está en el directorio act
 	
 Como se presenta en la figura es una aplicación gráfica típica con una barra de menús, una barra de herramientas, una barra de estado y por supuesto el área para escribir textos que tendrá un cursor que indica la siguiente posición donde escribirá cuando presione una tecla. En la barra de estado se índica el número de línea y el número de columna en la que está el cursor para ingresar textos. Así mismo el número total de líneas del texto que está editando y el estado de inserción (INS) o sobreescritura (OVR) que puede cambiar con la tecla **INS** o marcando en el menú Preferencias->Sobreescribir.
 
-![Uso de Xfe para manejar paquetes en adJ](http://structio.sourceforge.net/guias/basico_OpenBSD/xfw-p.png)
+![Uso de Xfe para manejar paquetes en adJ](img/xfw-p.png)
 
 ### Editor ```mg``` {#editor_mg}
 
@@ -28,7 +28,7 @@ Desde un interprete de órdenes lo inicia con **mg** o puede a continuación esp
 
 Por ejemplo las fuentes de esta breve documentación lucen como se presenta a continuación.
 
-![mg editando esta documentación](http://structio.sourceforge.net/guias/basico_OpenBSD/mg.png)
+![mg editando esta documentación](img/mg.png)
 
 Notara que mg no soporta UTF-8, así que su propósito es hacer breves ediciones a archivos de configuración cuando no puede usar ```xfw``` o por ejemplo ```vim```.
 
@@ -44,7 +44,7 @@ Alli podría ingresar por ejemplo
 		
 Guarda con C-x C-s y sale con C-x C-c.
 
-### Editor ```vi``` {#editor_vi}
+### Editor vi {#editor_vi}
 
 **vi** es un clásico editor en ambientes tipo UNIX cuya prioridad es la eficiencia. Por lo mismo no requiere el uso de ratón sino de breves comandos que a medida que se memoricen y usen harán más rápida la edición de textos.
 
@@ -52,7 +52,7 @@ Para editar un archivo (digamos ```ma.txt```) con el editor vi, teclee desde un 
 
 ```$ vi ma.txt```
 
-#### Modos de ```vi``` {#modos_de_vi}
+#### Modos de vi {#modos_de_vi}
 
 ##### Modo comando {#modo_comando}
 
@@ -118,7 +118,7 @@ Para guardar los cambios realizados sin salir de **vi** y seguir trabajando, esc
 
 Estando en el modo normal, pulsamos el comando : para pasar al **modo línea de comandos** y el cursor se traslada a la última línea de la pantalla. Allí escribimos el nombre del comando y pulsamos **ENTER** para ejecutarlo.
 
-![Aviso](http://structio.sourceforge.net/guias/basico_OpenBSD/warning.png)	**Aviso**
+![Aviso](img/warning.png)	**Aviso**
 
 Recuerde: Para pasar de **modo inserción** a **modo comando** pulsamos la tecla **ESC**. Puede desplazarse sobre el archivo, empleando las flechas, PgUp, PgDn ó bien para mantener los dedos mejor posicionados en el teclado puede emplear las teclas **h**, **j**, **k** y **l**, como lo vimos anteriormente.
 
@@ -169,7 +169,7 @@ Puede resultar instructivo que copie y examine un archivo de ejemplo distribuido
 ```
 	$ cp /usr/local/share/vim/vim63/vimrc_example.vim ~/.vimrc```
 		
-![Sesión de vim](http://structio.sourceforge.net/guias/basico_OpenBSD/vim.png)
+![Sesión de vim](img/vim.png)
 
 ##### Locale en vim {#locale_en_vim}
 
@@ -188,7 +188,7 @@ Típicamente **vim** detectará la codificación de los archivos que edite, o em
 set encoding&           " terminal charset: follows current locale 
 set fileencoding&       " auto-sensed charset of current buffer```  
 	
-#### Lecturas recomendadas {#lecturas_recomendadas}
+#### Lecturas recomendadas {#lecturas_recomendadas_edicion_de_textos}
 
 Puede aprender sobre **vim** y su configuración en el manual de este programa que se consulta presionando la tecla ```F1```. Esta documentación también está disponible en Internet en: http://vimdoc.sourceforge.net/htmldoc/usr_toc.html
 

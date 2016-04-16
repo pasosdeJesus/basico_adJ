@@ -29,7 +29,7 @@ Nota: ```gzip``` no comprime archivos muy pequeños (digamos 10 bytes):
 Si cuenta con un archivo con extensión .```tar``` para desempaquetarlo basta:
 ```tar xvf archivo.tar```
 			
-### Lecturas recomendadas {#lecturas_recomendadas}
+### Lecturas recomendadas {#lecturas_recomendadas_formato_de_archivos}
 
 La página del manual: **man tar**
 

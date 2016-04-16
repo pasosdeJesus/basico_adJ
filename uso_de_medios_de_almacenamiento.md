@@ -11,11 +11,11 @@ automáticamente, sino por orden expresa del usuario.
 
 Para montar una unidad de USB debe bastar desde el menú de fluxbox (botón derecho del ratón sobre el escritorio) elegir Dispositivo->Montar USB (se emplea el análogo para montar un CD-ROM).
 
-![](http://structio.sourceforge.net/guias/basico_OpenBSD/montar.png)
+![](img/montar.png)
 
 
 Una vez lo haga podrá ver el manejador de archivos ```xfe``` ubicado en el directorio donde queda montado el medio.
-![](http://structio.sourceforge.net/guias/basico_OpenBSD/xfecdrom.png)
+![](img/xfecdrom.png)
 Al montar estos medios, el dueño es el usuario administrador que se especificó durante la instalación de adJ. 
 Este podrá leer de los medios y en el caso de USB es quien podrá escribir.
 Una vez termine de emplear el medio de alamacenamiento desmontelo también desde el menú de fluxbox 
@@ -57,7 +57,7 @@ nueva.
   paquete y pulsa el botón derecho, en el menú emergente podrá elegir Ver el contenido del paquete Si usa una 
   ventana superusuario de Xfe también podrá   instalarlo/actualizarlo o desinstalarlo, pulsando botón derecho sobre 
   el paquete y eligiendo en el menú emergente Instalar/Actualizar o Desistalar respectivamente.
- ![Uso de Xfe para manejar paquetes en adJ](http://structio.sourceforge.net/guias/basico_OpenBSD/xfepaq.png)
+ ![Uso de Xfe para manejar paquetes en adJ](img/xfepaq.png)
   - Permite comprimir en formatos tar, compress, zip, gzip, bzip2, xz y 7zip y descomprimir de formatos tar, 
   compress, zip, gzip, bzip2, xz, lzh, rar, ace, arj y 7zip
    - Usable: barras de progreso o cuadros de diálogo para operaciones de archivo demoradas, vista previa con 
@@ -133,6 +133,6 @@ Montar la USB
  ```sudo mount /mnt/usb ```
  ```sudo cp /mnt/usb/fuentes.txt /var/www/resbase ```
 
-### Lecturas recomendadas {#lecturas_recomendadas}
+### Lecturas recomendadas 
 
 Páginas del manual [mount(8)](http://socrates.io/#Gjmxv9k) y [umount(8)](http://socrates.io/#Gjmxv9k)

@@ -20,7 +20,7 @@ ssh -X juan@practica.pasosdeJesus.org```
 		
 En el caso de **putty** en el dialogo de configuración que aparece antes de iniciar la conexión, en el menú Connection->SSH->X11 marque 'Enable X11 forwarding'.
 
-![Reenvío de X11 en putty](http://structio.sourceforge.net/guias/basico_OpenBSD/putty-x11.png)
+![Reenvío de X11 en putty](img/putty-x11.png)
 
 Una vez haga esto, las aplicaciones gráficas que inicie en la sesión ssh que inició, se verán en su computador. Pruebe por ejemplo con:
 
@@ -36,7 +36,7 @@ donde ```base``` es el nombre del servidor al interior de la organización y 443
 
 Si emplea **putty** debe especificar esta información en el diálogo de configuración Connection->SSH->Tunnels como se presenta a continuación presionando el botón Add para adicionar el túnel a la región `Forwarded ports'.
 
-![Configuración de túnel en putty](http://structio.sourceforge.net/guias/basico_OpenBSD/putty-tunnel.png)
+![Configuración de túnel en putty](img/putty-tunnel.png)
 
 Una vez inicie la conexión debe digitar la clave del usuario en el cortafuegos. Con lo cual quedará establecido un túnel entre el puerto 10443 del computador local y el puerto 443 del servidor ```base```. Este túnel puede usarse ingresando en un navegador la dirección:
 
@@ -56,7 +56,7 @@ Si emplea **putty** debe especificar esta información en el diálogo de configu
 
 A continuación debe configurar su navegador para que utilice ese servidor SOCKs en su propio computador en el puerto que específico (8080 en este ejemplo). En el caso de Firefox puede hacerlo desde Editar->Preferencias->Avanzado->Red->Configurar especificar en servidor Socks 127.0.0.1 y en puerto 8080. Una vez acepte toda navegación que intente realizar se hará por el servidor al cual se conectó. Si por ejemplo ese servidor tiene acceso en una red interna a un servidor con IP 192.168.1.2 puede emplear esa URL en su navegador y llegará a ese computador en la red interna donde está el servidor.
 
-### Lecturas recomendadas {#lecturas_recomendadas}
+### Lecturas recomendadas {#lecturas_recomendadas_ssh}
 
 Puede aprender sobre **ssh** examinado la especificación del protocolo en uno de los borradores de la especificación temporal "SSH Protocol Architecture" (https://tools.ietf.org/html/draft-ietf-secsh-architecture-22).
 

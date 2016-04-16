@@ -38,19 +38,19 @@ Cada uno tiene diálogos propios para configurar el protocolo, los servidores y 
 
 Por ejemplo, en el caso de Thunderbird configure una nueva cuenta de correo (Archivo/Nuevo/Cuenta) empleando los datos del servidor que usa. Para el dominio practica.pasosdeJesus.org puede usar como servidor de correo: ```correo2.practica.pasosdeJesus.org``` e IMAP-SSL.
 
-![Configuración de IMAP en Thunderbird](http://structio.sourceforge.net/guias/basico_OpenBSD/imaps-1-thunderbird.png)
+![Configuración de IMAP en Thunderbird](img/imaps-1-thunderbird.png)
 Después de la configuración básica de IMAP, ingrese a la configuración de la cuenta y del servidor para activar IMAP-SSL:
 
-![Configuración de IMAP-SSL en Thunderbird](http://structio.sourceforge.net/guias/basico_OpenBSD/imaps-2-thunderbird.png)
+![Configuración de IMAP-SSL en Thunderbird](img/imaps-2-thunderbird.png)
 Finalmente configure el servidor de salida de correo (protocolo SMTP).
 
-![Configuración de servidor SMTP en Thunderbird](http://structio.sourceforge.net/guias/basico_OpenBSD/imaps-3-thunderbird.png)
+![Configuración de servidor SMTP en Thunderbird](img/imaps-3-thunderbird.png)
 
 #### Evolution {#evolution}
 
 Otro cliente de correo que se puede configurar para extraer correo con POP3 seguro es evolution. A continuación se presenta una de las pantallas de configuración del mismo:
 
-![Configuración de POP3S en Evolution](http://structio.sourceforge.net/guias/basico_OpenBSD/evolution.png)
+![Configuración de POP3S en Evolution](img/evolution.png)
 
 ### mutt y procmail
 

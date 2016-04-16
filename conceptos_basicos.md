@@ -44,7 +44,7 @@ indicando la ruta completa desde la raíz, por ejemplo el archivo ``` /usr/bin/a
 directorio de nombre bin que a su vez está en un directorio de nombre ```usr``` el cual es un subdirectorio 
 del directorio raíz /. Cada usuario del sistema tiene además de su login y clave, un directorio que 
 llamamos *directorio personal* cuya ruta normalmente es de la forma ```/home/juan```.
-![Sistema de archivos](http://structio.sourceforge.net/guias/basico_OpenBSD/arbol-archivos.png)
+![Sistema de archivos](img/arbol-archivos.png)
 El intérprete de comandos que emplee tendrá como parte de su estado un directorio de trabajo, 
 un símbolo de espera de ordenes y variables de entorno. La manera de ver y alterar estos datos 
 depende del intérprete de comandos que emplee, nos limitaremos al intérprete de comandos **ksh** 

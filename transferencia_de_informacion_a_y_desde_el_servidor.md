@@ -10,11 +10,11 @@ Puede usarse sobre sistemas operativos OpenBSD, Linux, Mac OS X y Windows. Sopor
 
 Una vez instalado ejecútelo y configure la primera vez la conexión a su servidor desde el menú Archivo->Gestor de Sitios. Del siguiente ejemplo adapte el nombre del servidor y de usuario.
 
-![Configuración de una conexión con filezilla](http://structio.sourceforge.net/guias/basico_OpenBSD/filezillaconexion.png)
+![Configuración de una conexión con filezilla](img/filezillaconexion.png)
               
 Una vez configurada la encontrará al abrir FileZilla e ingresar a Archivos->Sitios. Cuando elija Conectar se iniciará una conexión encriptada, con un intercambio inicial de llaves que debe aceptar, después aparecerán paneles como los siguientes:
 
-![filezilla en operación](http://structio.sourceforge.net/guias/basico_OpenBSD/filezilla.png)
+![filezilla en operación](img/filezilla.png)
               
 Note que al lado izquierdo están las carpetas y archivos de su computador local, mientras que al lado derecho están las carpetas y archivos del servidor. Para transmitir un archivo de uno a otro basta que lo arrastre.
 
@@ -34,6 +34,6 @@ Note que **scp** es similar a **cp** (pues permite copiar un archivo fuente en u
 
 Dado que Windows no tiene un servidor **ssh** por defecto, es posible transmitir archivos a y desde sistemas Windows sólo desde el computador con Windows usando un programa como **winscp** (disponible en http://winscp.sf.net o **pscp** que se distribuye junto con **putty** ([Sección 3, “Conceptos básicos”](http://socrates.io/#KaOWf1G)).
 
-### Lecturas recomendadas {#lecturas_recomendadas}
+### Lecturas recomendadas 
 
 Para aprender más sobre **scp** recomendamos la página del manual.

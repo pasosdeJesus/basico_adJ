@@ -12,7 +12,7 @@ Si **sudo** se configura para permitir su utilización por parte de usuarios que
 
 ```$ sudo ls /root```
 	  
-![Aviso](http://structio.sourceforge.net/guias/basico_OpenBSD/warning.png)	Aviso
+![Aviso](img/warning.png)	Aviso
 
 Toda acción que realice con el programa **sudo**, así como cambios de un usuario a otro, quedarán registradas en la bitácora ```/var/log/secure```
 

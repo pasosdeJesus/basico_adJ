@@ -48,22 +48,22 @@ Soporta transferencia de archivos, mensajes de ausencia, iconos, emoticones pers
 escribir.
   - Puede iniciar con el botón derecho sobre el escritorio en el menú Internet->Pidgin o desde una terminal 
   escribiendo ```pidgin```.
-![Al ejecutar pidgin](http://structio.sourceforge.net/guias/basico_OpenBSD/pidgin2.png)
+![Al ejecutar pidgin](img/pidgin2.png)
   - Presionamos botón del ratón sobre **Add** para adicionar una cuenta. En **Protocol** elegimos el 
   protocolo **SILC**.
-![Elegimos el protocolo silc](http://structio.sourceforge.net/guias/basico_OpenBSD/pidgin2.png)
+![Elegimos el protocolo silc](img/pidgin2.png)
   - En **Screen name** colocamos el nombre con el que se vamos a identificarnos(En el ejemplo, hernan). 
   En **Network** digitamos ```www.nocheyniebla.org```.
-![Configuración básica](http://structio.sourceforge.net/guias/basico_OpenBSD/pidgin3.png) 
+![Configuración básica](img/pidgin3.png) 
   - En la parte superior izquierda, presionamos botón del ratón sobre **Advanced**.
   - En **Connect server** digitamos nuevamente ```www.nocheyniebla.org```. Además señalamos las dos primeras 
   opciones y la última opción. Presionamos sobre **Save**.
- ![Configuración avanzada](http://structio.sourceforge.net/guias/basico_OpenBSD/pidgin4.png)
+ ![Configuración avanzada](img/pidgin4.png)
   - Al presionar botón del ratón sobre **Buddies** nos muestra el menú y presionamos sobre **Join a chat**.
-![](http://structio.sourceforge.net/guias/basico_OpenBSD/pidgin5.png)
+![](img/pidgin5.png)
   - Al presionar el botón del ratón sobre **Join a Chat** nos muestra un menú. En **Channel** digitamos 
   ```soporte-adJ```.
-![Entrando al canal soporte-adJ](http://structio.sourceforge.net/guias/basico_OpenBSD/pidgin6.png)
+![Entrando al canal soporte-adJ](img/pidgin6.png)
   - Finalmente, en la parte inferior derecha presionamos el botón del ratón sobre **join**. Y ya podemos empezar 
   a comunicarnos.
  ![Conectados a través de Pidgin y el protocolo SILC](http://structio.sourceforge.net/guias/basico_
@@ -73,7 +73,7 @@ escribir.
 
 Si prefiere emplear un cliente de silc tipo texto, inicie una sesión con:
 ```silc -c www.nocheyniebla.org```
-![Al ejecutar pidgin](http://structio.sourceforge.net/guias/basico_OpenBSD/silc.png)
+![Al ejecutar pidgin](img/silc.png)
 Una vez conectado puede dar comandos iniciados con el símbolo '/', por ejemplo:
 **/help**:
 - presenta ayuda sobre comandos disponibles.
