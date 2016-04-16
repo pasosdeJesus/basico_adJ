@@ -26,7 +26,7 @@ Una vez haga esto, las aplicaciones gráficas que inicie en la sesión ssh que i
 
 ```xeyes```
 
-### Tunel reenviando un puerto###
+### Tunel reenviando un puerto {#tunel_reenviando_un_puerto}
 
 Puede usar **ssh** también para crear un túnel entre un puerto local y un puerto accequible desde el servidor al cual se conecta. Por ejemplo si en una organización tienen un cortafuegos conectado a Internet (digamos que es practica.pasosdeJesus.org) y en la red interna cuentan con un servidor web SSL (por ejemplo ```base```), podría establecerse un túnel desde un computador fuera de la organización y el servidor privado, ingresando al cortafuegos con:
 ```

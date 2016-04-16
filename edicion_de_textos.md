@@ -4,7 +4,7 @@ Un editor de texto le permite redactar textos simples y guardarlos en un formato
 
 A medida que administre su sistema adJ, notará que es más y más necesaria la labor de editar textos. La primera vez posiblemente querrá usar el editor más gráfico y sencillo: ```xfw```. Pero si no tiene un entorno gráfica puede emplear ```mg```, y si desea eficiencia posiblemente le servirá ```vim```.
 
-### Editor xfw {#editor_ xfw}
+### Editor ```xfw``` {#editor_xfw}
 
 **xfw** es un editor de texto simple para el sistema X-Window, es decir opera en modo gráfico. Viene incluido con el administrador de archivos xfe (ver [Sección 5.3, “Administrador de archivos Xfe”](http://socrates.io/#rwavSvQ)) desarrollado por Roland Baudin.
 
@@ -20,7 +20,7 @@ Como se presenta en la figura es una aplicación gráfica típica con una barra 
 
 ![Uso de Xfe para manejar paquetes en adJ](http://structio.sourceforge.net/guias/basico_OpenBSD/xfw-p.png)
 
-### Editor mg {#editor_mg}
+### Editor ```mg``` {#editor_mg}
 
 **mg** es un editor de texto simple, pequeño, veloz y portable con fuentes en el dominio público, mantenidas por el equipo de desarrollo de OpenBSD y que opera en la terminal. Las combinaciones de teclas que emplea como comandos provienen del editor Emacs, aunque mg no está vinculado con el proyecto GNU.
 
@@ -44,7 +44,7 @@ Alli podría ingresar por ejemplo
 		
 Guarda con C-x C-s y sale con C-x C-c.
 
-### Editor vi {#editor_vi}
+### Editor ```vi``` {#editor_vi}
 
 **vi** es un clásico editor en ambientes tipo UNIX cuya prioridad es la eficiencia. Por lo mismo no requiere el uso de ratón sino de breves comandos que a medida que se memoricen y usen harán más rápida la edición de textos.
 
@@ -52,7 +52,7 @@ Para editar un archivo (digamos ```ma.txt```) con el editor vi, teclee desde un 
 
 ```$ vi ma.txt```
 
-#### Modos de vi {#modos_de_vi}
+#### Modos de ```vi``` {#modos_de_vi}
 
 ##### Modo comando {#modo_comando}
 
@@ -106,7 +106,7 @@ Digitar **dw** para borrar hasta el final de la palabra. Y digitando **dd** se b
 
 Si por alguna razón desea deshacer los cambios realizados en el texto, estando en modo normal,	pulse **u** para deshacer el último cambio. Con **U** se deshace todos los cambios realizados en la línea actual.
 
-##### Otros comandos - Guardar y salir {#otros_comandos_guardar_y_salir}
+#### Otros comandos - Guardar y salir {#otros_comandos_guardar_y_salir}
 
 Pulse la tecla **ESC** (para asegurarse de que está en modo normal).
 

@@ -8,7 +8,7 @@ algunas formas de personalizar el interprete de comandos **ksh**.
 
 Un locale define una codificación y formas de presentar información típicas de una región geográfica 
 (números, valores monetarios, fechas, horas, idioma y cotejación u ordenamiento lexicográfico del mismo). adJ 
-viene configurado por defecto con el locale es-CO.UTF-8 es decir en español, para Colombia y con codificación UTF-8. 
+viene configurado por omisión con el locale es-CO.UTF-8 es decir en español, para Colombia y con codificación UTF-8. 
 En UTF-8 puede codificarse UNICODE, que a su vez permite representar todos los lenguajes escritos --la mayoría de 
 lenguajes occidentales, incluyendo el español, también puede codificarse con ISO8859-1 o con ISO8859-15 que es 
 prácticamente el mismo pero con el símbolo de euro.
@@ -35,6 +35,7 @@ Es función del intérprete de comandos recibir comandos que el usuario ingrese 
 entrada estándar) y ejecutar los programas apropiados. Dada la importancia y frecuencia de esta labor, los 
 interpretes de comandos (y en particular /bin/ksh) 
 suelen ser altamente personalizables a los gustos de cada usuario.
+
 #### Ejecución de Programas {#ejecución_de_programas}
 
 Desde un intérprete de comandos un usuario puede teclear bien nombres de programas o bien comandos del intérprete de comandos. Los programas por ejecutar se especifican dando la ruta completa de su ubicación en el sistema de archivos, o en caso de no dar ruta se buscan en orden en los directorios especificados en la variable de ambiente PATH. Por ejemplo si teclea:
@@ -82,10 +83,53 @@ que permite presentar colores si emplea la consola tipo texto en un PC ordinario
 (por ejemplo cuando símbolo de esper|a de comandos que presenta el nombre de la máquina seguido del símbolo pesos 
 y un espacio.
 ingresa a vim).
-  - LANG define el locale, es decir las identificaciones culturales y de idioma para un área geográfica.
-  - PS1 que establece el símbolo de espera de comandos principal de **ksh**, el valor de este ejemplo ("\h$ ") 
-  establece un 
-  un símbolo de espera de comandos que presenta el nombre de la máquina seguido del símbolo pesos y un espacio.
+
+#### Configuración por defecto de sesiones con ksh
+
+Notará que el valor de las variables de ambiente que fije durante una sesión 
+se perderá cuando termine la sesión. Para lograr una configuración más 
+perdurable puede establecer la variable de ambiente a un archivo ejecutado 
+por el interprete de comandos automáticamente cada vez que inicia una sesión. 
+En el caso del intérprete ksh tal archivo es ```~/.profile```. 
+Un ejemplo de un archivo ```~/.profile``` es:
+
+```
+alias vi=vim
+export VISUAL=vi
+export PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin:/usr/local/sbin:.
+if (test "$TERM" = "xterm") then {
+        export TERM=xterm-color
+else {
+	export TERM=wsvt25
+}fi;
+which colorls > /dev/null
+if (test "$?" == "0") then {
+	export CLICOLOR=1
+	alias ls=colorls
+} fi;
+export  PKG_PATH=ftp://rt.fm/pub/OpenBSD/5.7/packages/i386
+export PS1="\h$ "
+export LANG="es_CO.UTF-8"
+```
+
+El comando alias ```vi=vim``` indica que cada vez que se ejecute el comando 
+```vi``` se llame al programa vim (ver Sección 7.3, “Editor vi”). Note que 
+también se establecen las variables de ambiente
+
+  - ```VISUAL``` modo de edición en ksh.
+  - ```PATH``` que establece rutas en la cual buscar programas (se separan 
+	unas de otras con dos puntos).
+  - ```TERM``` que establece el tipo de terminal que está usando. Desde 
+	terminales gráficas será xterm o xterm-color, mientras que desde 
+	consolas tipo texto típicamente será vt220 o wsvt25.
+  - ```PKG_PATH``` que establece ruta en la cual buscar paquetes por instalar 
+	--usado por administradores de sistemas OpenBSD.
+  - ```LANG``` define el locale, es decir las identificaciones culturales y de 
+	idioma para un área geográfica.
+  - ```PS1``` que establece el símbolo de espera de comandos principal de 
+	**ksh**, el valor de este ejemplo ("\h$ ") establece un símbolo de 
+	espera de comandos que presenta el nombre de la máquina seguido del 
+	símbolo pesos y un espacio.
   
 #### colorls {#colorls}
 
@@ -127,6 +171,7 @@ XTerm*eightBitInput:            false
 XTerm*metaSendsEscape:          false
 XTerm*oldXtermFKeys:            true
 ``
+
 #### Lecturas recomendadas {#lLecturas_recomendadas}
 
 Puede ver detalles de las variables de ambiente empleadas por ksh con **man ksh**

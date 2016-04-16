@@ -1,41 +1,66 @@
 ## Primer uso de adJ {#primer_uso_de_adJ}
 
-Un servidor adJ puede operarse tanto directamente (sentado frente al computador donde se instaló y configuró), como remotamente por ejemplo con ```ssh```. En esta sección cubrimos ambos escenarios.
+Un servidor adJ puede operarse tanto directamente (sentado frente al computador 
+donde se instaló y configuró), como remotamente por ejemplo con ```ssh```. 
+En esta sección cubrimos ambos escenarios.
 
 ### Arranque   {#arranque}
 
-Al iniciar un computador con adJ el núcleo de OpenBSD detectará el hardware, iniciará los procesos básicos y ejecutará los archivos de arranque. Típicamente la distribución adJ llama claves de imágenes cifradas. (En las imagénes cifradas se almacena los archivos que el usuario quiera cifrar. Para poder guardar y recuperar los archivos se debe dar una clave.) que se montan durante el arranque.
-Un computador con adJ siempre arranca con Interfaz de texto y pide clave. 
+Al iniciar un computador con adJ el núcleo de OpenBSD comenzará con una
+interfaz de texto, detectará el hardware (se ven letras con fondo azul), 
+iniciará los procesos básicos (se ven letras con fondo negro) 
+y ejecutará los archivos de arranque. 
 
-![Interfaz de texto](http://structio.sourceforge.net/guias/basico_OpenBSD/consola.png)
-![Interfaz gráfica](http://s20.postimg.org/5fqvyk749/Captura_de_pantalla_de_2015_10_22_09_31_32.jpg?noCache=1445524364)
+Típicamente la distribución adJ pide claves de imágenes cifradas[^1] 
+que se montan durante el arranque.
 
-[^5]XWindow es un sistema estandarizado para manejo de las aplicaciones gráficas en los sistemas operativos de la familia de los Unix
+[^1]: En las imagénes cifradas se almacena los archivos que el usuario quiera 
+cifrar. Para poder guardar y recuperar los archivos se debe dar una clave 
 
-[^6]XDM  es un gestor de pantalla que presenta al usuario con una pantalla de autenticación (login) que solicita el nombre de usuario y su contraseña
+![Interfaz de texto](img/consola.png)
 
-Al dar la clave de cifrado correcta debe ver el mensaje ```File system is clean``` o un chequeo de la imagen. En caso de dar una clave equivocada, continuará la secuencia de arranque pero no podrá acceder a los directorios cifrados[^7].
+Al dar la clave de cifrado correcta debe ver el mensaje 
+```File system is clean``` o un chequeo de la imagen. 
+En caso de dar una clave equivocada, continuará la secuencia de arranque 
+pero no podrá acceder a los directorios cifrados[^2].
 
-[^7] Una vez en operación puede volver a dar estas claves ejecutando el archivo /etc/rc.local desde un interprete de comandos, o desde el menú de Fluxbox Dispositivos->Reiniciar Servicios Faltantes
+[^2]: Una vez en operación puede volver a dar estas claves ejecutando 
+```doas sh /etc/rc.local``` desde un interprete de comandos, o desde el menú de 
+Fluxbox Dispositivos->Reiniciar Servicios Faltantes
 
-Después se iniciará un escritorio gráfico (X-Window) y un aplicación (```xdm```) que pide su usuario y su clave para iniciar una sesión
+
+Después se iniciará un escritorio gráfico (X-Window[^3]) y un aplicación 
+(```xdm```[^4]) que pide su usuario y su clave para iniciar una sesión:
+
+[^3]: X-Window es un sistema estandarizado para manejo de las aplicaciones 
+gráficas en los sistemas operativos de la familia de los Unix
+
+[^4]: ```xdm```  es un gestor de pantalla que presenta al usuario con una 
+pantalla de autenticación (*login*) que solicita el nombre de usuario y 
+su contraseña
 
 ![xdm solicitando nombre de cuenta y clave](http://structio.sourceforge.net/guias/basico_OpenBSD/xdm.png)
 
-Si no instaló X-Window verá una consola virtual tipo texto, como la del arranque. Por defecto hay 4 consolas virtuales tipo texto a las cuales pasa con las secuencias de teclas **Ctrl-Alt-F1, Ctrl-Alt-F2, Ctrl-Alt-F3 y Ctrl-Alt-F4**. La secuencia **Ctrl-Alt-F5** lo dejará en el entorno gráfico.
+Si durante la instalación, no se instaló X-Window o no se ha configurado
+para iniciar durante el arranque, lo que verá será una consola virtual tipo 
+texto, como la del arranque.  
+Por defecto hay 4 consolas virtuales tipo texto a las cuales pasa con las 
+secuencias de teclas 
+**Ctrl-Alt-F1, Ctrl-Alt-F2, Ctrl-Alt-F3 y Ctrl-Alt-F4**. 
+La secuencia **Ctrl-Alt-F5** lo dejará en el entorno gráfico.
 
-Las instrucciones para operación remota [(Sección 2.3, “Conexión con ssh”)](http://socrates.io/#FVtw1ub) le servirán para operar directamente en una consola virtual, una vez se autentique con su usuario y clave.
+Las instrucciones para operación remota 
+[(Conexión con ssh)](conexion_con_ssh) le servirán para operar directamente 
+en una consola virtual, una vez se autentique con su usuario y clave.
 
-En entorno gráfico si se autentica correctamente se iniciará el administrador de ventanas ```fluxbox``` que se presenta brevemente en la siguiente sección.
-#arreglar la imagen de interfaz gráfica#
+En entorno gráfico si se autentica correctamente se iniciará el administrador 
+de ventanas ```fluxbox``` que se presenta brevemente en la siguiente sección.
 
  
-
 ### Operación con fluxbox {#operación_con_fluxbox}
 
- 
-
-**Fluxbox** es un estético administrador de ventanas, muy liviano y por lo tanto veloz. Administra decoración de ventanas, espacios de trabajo, tiene un menú general (que ve pulsando el botón derecho sobre el escritorio), una barra de herramientas y un lanzador de aplicaciones. A continuación se presenta el escritorio con el menú que aparece al presionar el botón derecho sobre el escritorio.
+**Fluxbox** es un estético administrador de ventanas, muy liviano y por lo 
+tanto veloz. Administra decoración de ventanas, espacios de trabajo, tiene un menú general (que ve pulsando el botón derecho sobre el escritorio), una barra de herramientas y un lanzador de aplicaciones. A continuación se presenta el escritorio con el menú que aparece al presionar el botón derecho sobre el escritorio.
 
  
 
@@ -158,7 +183,8 @@ La figura anterior presenta también un interprete de comandos, que puede inicia
  
 
 En sistemas operativos tipos Unix es usual emplear un interprete de comandos para interactuar. Su operación es la misma bien inicie desde el ambiente gráfico o en una consola virtual o remotamente como se explica en la siguiente sección. Aunque ciertamente un interprete de comandos exige más memoria y atención del usuario, también le dará más opciones, más agilidad y la posibilidad de plena operación remota.
-##2.3. Conexión con ssh {#conexión_con_ssh}
+
+### Conexión con ssh {#conexión_con_ssh}
 
  
 

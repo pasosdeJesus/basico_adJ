@@ -126,7 +126,7 @@ infoversion.ent:
 
 PANDOC=/home/vtamara/.cabal/bin/pandoc 
 
-FUENTESMD=introduccion.md primer_uso_de_adJ.md conceptos_basicos.md soporte.md uso_de_medios_de_almacenamiento.md personalizacion.md edicion_de_textos.md primeras_paginas_html.md transferencia_de_informacion_a_y_desde_el_servidor.md mas_formas_de_uso_de_ssh.md correo_electronico.md novedades.md
+FUENTESMD=introduccion.md primer_uso_de_adJ.md conceptos_basicos.md soporte.md uso_de_medios_de_almacenamiento.md personalizacion.md edicion_de_textos.md primeras_paginas_html.md transferencia_de_informacion_a_y_desde_el_servidor.md mas_formas_de_uso_de_ssh.md formatos_de_archivos.md correo_electronico.md labores_basicas_de_administracion.md novedades.md
 
 s.xdbk: $(FUENTESMD)
 	$(PANDOC) -t docbook -o s.xdbk $(FUENTESMD)

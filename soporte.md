@@ -69,7 +69,7 @@ escribir.
  ![Conectados a través de Pidgin y el protocolo SILC](http://structio.sourceforge.net/guias/basico_
  OpenBSD/pidgin7.png)
  
-### Cliente SILC tipo texto {#cliente_silc_tipo_texto}
+#### Cliente SILC tipo texto {#cliente_silc_tipo_texto}
 
 Si prefiere emplear un cliente de silc tipo texto, inicie una sesión con:
 ```silc -c www.nocheyniebla.org```

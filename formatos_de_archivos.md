@@ -1,4 +1,4 @@
-##11. Formatos de archivos {#formatos_de_archivos}
+## Formatos de archivos {#formatos_de_archivos}
 
 Para descargar un archivo de Internet en un directorio de su cuenta puede usar:
 ```
@@ -29,7 +29,7 @@ Nota: ```gzip``` no comprime archivos muy pequeños (digamos 10 bytes):
 Si cuenta con un archivo con extensión .```tar``` para desempaquetarlo basta:
 ```tar xvf archivo.tar```
 			
-###11.1. Lecturas recomendadas {#lecturas_recomendadas}
+### Lecturas recomendadas {#lecturas_recomendadas}
 
 La página del manual: **man tar**
 
@@ -38,5 +38,3 @@ La página del manual: **man tar**
 [^12] El caracter nueva línea tiene código ASCII 10, también se llama LF (Line Feed) y diversos programas y lenguajes lo denotan con '\r'.
 
 [^13] UTF-8 es una de las posibles formas de codificar Unicode en ASCII. Los caracteres Unicode con un ASCII equivalente con código menor de 127 tienen la misma representación en UTF-8. Otros caracteres Unicode emplean una secuencia de dos o más caracteres ASCII para su codificación.
-
-#Las lista cogen solo el primer párrafo y los otros quedan desde la margen normal#

@@ -75,7 +75,8 @@ directorio public_html.
 **mv traido/juan.htm traido/pedro.html**
   - El programa **mv** moverá (o en este caso renombra) el archivo ```traido/juan.htm a traido/pedro.html```.
 
-**3.4. Lecturas recomendadas**
+### Lecturas recomendadas
+
 Páginas **man** de los 11 comandos/programas introducidos en este capítulo.
 Se han tomado porciones de la sección "telnet y ssh" de 
 [AALinux](http://structio.sourceforge.net/guias/AA_Linux_colegio/)

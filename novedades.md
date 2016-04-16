@@ -1,4 +1,4 @@
-##A. Novedades {#novedades}
+## Novedades {#novedades}
 
 Versión 5.6
 
