@@ -40,10 +40,11 @@ Otros sistemas se han enfocado en usabilidad para usuarios sin experiencia
 	refiere a inspecciones de las fuentes que buscan garantizar ausencia de 
 	vulnerabilidades.
 
-[^intro.4]: Código cifrado fuerte: Es una comunicación secreta. Es una manera de 
-	guardar información para que no todo el mundo tenga acceso directo a 
-	ella. Cifrar es transformar información para hacerla ilegible, 
-	buscando garantizar confidencialidad. Tipicamente se requiere una clave 
+[^intro.4]: Criptografía fuerte: Se refiere a una comunicación secreta. 
+        Es una manera de guardar información para que no todo el mundo tenga 
+	acceso directo a ella. Cifrar es transformar información para 
+	hacerla ilegible, buscando garantizar confidencialidad. 
+	Tipicamente se requiere una clave 
 	para cifrar. Un ejemplo de un cifrado débil llamado Cesar es aumentar 
 	cierta cantidad fija a cada carácter del mensaje por cifrar, podemos 
 	pensar que la cantidad que se aumente es la clave. Por ejemplo el 

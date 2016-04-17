@@ -8,7 +8,22 @@
 %personaliza;
 %infoversion;
 
-<!ENTITY s SYSTEM "s.xdbk">
+<!ENTITY introduccion SYSTEM "introduccion.xdbk">
+<!ENTITY primer_uso_de_adJ SYSTEM "primer_uso_de_adJ.xdbk">
+<!ENTITY conceptos_basicos SYSTEM "conceptos_basicos.xdbk">
+<!ENTITY soporte SYSTEM "soporte.xdbk">
+<!ENTITY uso_de_medios_de_almacenamiento SYSTEM "uso_de_medios_de_almacenamiento.xdbk">
+<!ENTITY personalizacion SYSTEM "personalizacion.xdbk">
+<!ENTITY edicion_de_textos SYSTEM "edicion_de_textos.xdbk">
+<!ENTITY primeras_paginas_html SYSTEM "primeras_paginas_html.xdbk">
+<!ENTITY transferencia_de_informacion_a_y_desde_el_servidor SYSTEM "transferencia_de_informacion_a_y_desde_el_servidor.xdbk">
+<!ENTITY mas_formas_de_uso_de_ssh SYSTEM "mas_formas_de_uso_de_ssh.xdbk">
+<!ENTITY formatos_de_archivos SYSTEM "formatos_de_archivos.xdbk">
+<!ENTITY correo_electronico SYSTEM "correo_electronico.xdbk">
+<!ENTITY labores_basicas_de_administracion SYSTEM "labores_basicas_de_administracion.xdbk">
+<!ENTITY novedades SYSTEM "novedades.xdbk">
+  
+
 
 <!--ENTITY indice SYSTEM "genindice.xdbk"-->
 ]> 
@@ -68,6 +83,19 @@ la distribución adJ de OpenBSD &VER-OPENBSD;.
 
   </articleinfo>
   
-  &s;
+  &introduccion;
+  &primer_uso_de_adJ;
+  &conceptos_basicos;
+  &soporte;
+  &uso_de_medios_de_almacenamiento;
+  &personalizacion;
+  &edicion_de_textos;
+  &primeras_paginas_html;
+  &transferencia_de_informacion_a_y_desde_el_servidor;
+  &mas_formas_de_uso_de_ssh;
+  &formatos_de_archivos;
+  &correo_electronico;
+  &labores_basicas_de_administracion;
+  &novedades;
 
 </article>

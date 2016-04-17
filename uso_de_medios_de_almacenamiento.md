@@ -7,7 +7,7 @@ archivos para poderlos emplear y desmontarlos una vez no se requieren más. En a
 USBs y CD-ROMs son ```/mnt/usb y /mnt/cdrom``` respectivamente. Ni el montaje, ni el desmontaje se realizan 
 automáticamente, sino por orden expresa del usuario.
 
-### Montaje y desmontaje en ambiente gráfico {#montaje_y_desmontaje_en_ambiente_gráfico}
+### Montaje y desmontaje en ambiente gráfico {#montaje_y_desmontaje_en_ambiente_grafico}
 
 Para montar una unidad de USB debe bastar desde el menú de fluxbox (botón derecho del ratón sobre el escritorio) elegir Dispositivo->Montar USB (se emplea el análogo para montar un CD-ROM).
 
@@ -24,14 +24,20 @@ Dispositivo->Desmontar USB
 ### Montaje y desmontaje desde interprete de comandos {#montaje_y_desmontaje_desde_interprete_de_comandos}
 
 Para montar la USB debe bastar ejecutar desde una terminal:
-```mount /mnt/usb```
+```
+mount /mnt/usb
+```
 El CD-ROM se monta de la misma forma cambiando ```usb``` por ```cdrom```.
 Para demonstar la USB basta:
-```umount /mnt/usb```
+```
+umount /mnt/usb
+```
 y para demonstar un CD-ROM:
-```umount /mnt/cdrom```
+```
+umount /mnt/cdrom
+```
             
-### Administrador de archivos Xfe {#administrador_de_archivos}
+### Administrador de archivos Xfe {#administrador_de_archivos_xfe}
  
 Con este sencillo programa podrá administrar archivos y directorios, es decir crear, copiar, renombrar, crear 
 enlaces, cambiar permisos e incluso hacer estas operaciones como superusuario.
@@ -42,14 +48,16 @@ Entre las características del porte de adJ destacamos, las siguientes adaptadas
    - Soporta codificación UTF-8 y se ha traducido a 20 idiomas (incluyendo español de Colombia). Puede presentar la 
   interfaz con caracteres no latinos (como chino o japónes) siempre y cuando configure un tipo de letra que soporte 
   Unicode desde el menú Editar/Preferencias/Tipo de letra
-   - Incluye las siguientes aplicaciones: Editor de texto (X File Write, xfw, ver [Sección 7.1, “Editor xfw”]()), 
+   - Incluye las siguientes aplicaciones: Editor de texto (X File Write, xfw, ver [xref](#editor_xfw)), 
    Visor de texto (X File View, xfv), Visor de imágenes (X File Image, xfi), Visor/Instalador/Desinstalador de 
    paquetes (rpm o deb) (X File Package, xfp).
    - La interfaz gráfica soporta temas con posibilidad de cambiar colores, íconos y apariencia. Cuenta con Barras 
    de herramientas, Marcadores e Historial.
    - Papelera para operaciones de eliminación de archivos. Se ubica en ```~/local/share/Trash/files```
    - Permite realizar operaciones como superusuario, bien iniciando de`sde una terminal con:
-```sudo xfe```      
+```
+sudo xfe
+```
 o si está bien configurado puede inicarse una ventan superusuario desde el menu Herramientas->Ventana superusuario 
 nueva.
    - Maneja paquetes de OpenBSD: seleccionando cualquier archivo y pulsando botón derecho podrá elegir en el menú 
@@ -98,7 +106,6 @@ en el menú Ayuda).
   - **Retroceso**: Ir al directorio superior
   - **Ctrl-Retroceso**: Ir al directorio anterior
   - **Mayúscula-Retroceso**: Ir al directorio siguiente
-#Falta link de [Sección 7.1, “Editor xfw”#
 
 ### Particiones cifradas {#particiones_cifradas}
 
@@ -133,6 +140,6 @@ Montar la USB
  ```sudo mount /mnt/usb ```
  ```sudo cp /mnt/usb/fuentes.txt /var/www/resbase ```
 
-### Lecturas recomendadas 
+### Lecturas recomendadas {#lecturas_recomendadas_medios}
 
-Páginas del manual [mount(8)](http://socrates.io/#Gjmxv9k) y [umount(8)](http://socrates.io/#Gjmxv9k)
+Páginas del manual mount (8) y umount (8)

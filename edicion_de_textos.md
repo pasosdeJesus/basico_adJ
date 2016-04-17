@@ -4,23 +4,27 @@ Un editor de texto le permite redactar textos simples y guardarlos en un formato
 
 A medida que administre su sistema adJ, notará que es más y más necesaria la labor de editar textos. La primera vez posiblemente querrá usar el editor más gráfico y sencillo: ```xfw```. Pero si no tiene un entorno gráfica puede emplear ```mg```, y si desea eficiencia posiblemente le servirá ```vim```.
 
-### Editor ```xfw``` {#editor_xfw}
+### Editor xfw {#editor_xfw}
 
-**xfw** es un editor de texto simple para el sistema X-Window, es decir opera en modo gráfico. Viene incluido con el administrador de archivos xfe (ver [Sección 5.3, “Administrador de archivos Xfe”](http://socrates.io/#rwavSvQ)) desarrollado por Roland Baudin.
+**xfw** es un editor de texto simple para el sistema X-Window, es decir opera en modo gráfico. Viene incluido con el administrador de archivos xfe (ver [xref](#administrador_de_archivos_xfe)) desarrollado por Roland Baudin.
 
 Se inicia desde el menú de fluxbox (botón derecho sobre el escritorio), desde Oficina->xfw o bien desde un interprete de comandos con
 
-```xfw```
+```
+xfw
+```
 	
 o si por ejemplo desea abrir el archivo carta.txt que está en el directorio actual:
 
-```xfw carta.txt```
+```
+xfw carta.txt
+```
 	
 Como se presenta en la figura es una aplicación gráfica típica con una barra de menús, una barra de herramientas, una barra de estado y por supuesto el área para escribir textos que tendrá un cursor que indica la siguiente posición donde escribirá cuando presione una tecla. En la barra de estado se índica el número de línea y el número de columna en la que está el cursor para ingresar textos. Así mismo el número total de líneas del texto que está editando y el estado de inserción (INS) o sobreescritura (OVR) que puede cambiar con la tecla **INS** o marcando en el menú Preferencias->Sobreescribir.
 
 ![Uso de Xfe para manejar paquetes en adJ](img/xfw-p.png)
 
-### Editor ```mg``` {#editor_mg}
+### Editor mg {#editor_mg}
 
 **mg** es un editor de texto simple, pequeño, veloz y portable con fuentes en el dominio público, mantenidas por el equipo de desarrollo de OpenBSD y que opera en la terminal. Las combinaciones de teclas que emplea como comandos provienen del editor Emacs, aunque mg no está vinculado con el proyecto GNU.
 
@@ -50,7 +54,9 @@ Guarda con C-x C-s y sale con C-x C-c.
 
 Para editar un archivo (digamos ```ma.txt```) con el editor vi, teclee desde un intérprete de comandos:
 
-```$ vi ma.txt```
+```
+$ vi ma.txt
+```
 
 #### Modos de vi {#modos_de_vi}
 
@@ -144,7 +150,7 @@ Digrafos
 
 Resaltado de sintaxis
 
-  - Permite ver con colores que resaltan la sintaxis de algunos tipos de archivos (por ejemplo fuentes de DocBook, C, LaTeX). Se activa con ```:syntax enable```. Para que se vean los colores de este editor, asegúrese de que su variable de ambiente ```TERM``` tenga el valor de una terminal que soporte color, por ejemplo las terminales gráficas soportan ```xterm-color``` y desde consolas tipo texto por ejemplo ```VT220```. Vea como establecer la variable ```TERM``` en cada inicio de sesión en [Sección 6, “Personalización”](http://socrates.io/#T9dIynC).
+  - Permite ver con colores que resaltan la sintaxis de algunos tipos de archivos (por ejemplo fuentes de DocBook, C, LaTeX). Se activa con ```:syntax enable```. Para que se vean los colores de este editor, asegúrese de que su variable de ambiente ```TERM``` tenga el valor de una terminal que soporte color, por ejemplo las terminales gráficas soportan ```xterm-color``` y desde consolas tipo texto por ejemplo ```VT220```. Vea como establecer la variable ```TERM``` en cada inicio de sesión en [xref](#personalizacion).
 
 Indentación automática
  
@@ -173,7 +179,7 @@ Puede resultar instructivo que copie y examine un archivo de ejemplo distribuido
 
 ##### Locale en vim {#locale_en_vim}
 
-**vim** empleará el locale establecido en la variable de ambiente LANG (ver [Sección 6.1, “Locale”](http://socrates.io/#T9dIynC)). Sin embargo si prefiere también puede establecer idioma de los mensajes que presenta, así como codificación de la terminal y de los archivos.
+**vim** empleará el locale establecido en la variable de ambiente LANG (ver [xref](#locale)). Sin embargo si prefiere también puede establecer idioma de los mensajes que presenta, así como codificación de la terminal y de los archivos.
 
 Puede establecer el idioma de los mensajes que vim presenta con el comando ```:language```, por ejemplo para establecer español de Colombia, desde el modo comandos teclee:
 ```

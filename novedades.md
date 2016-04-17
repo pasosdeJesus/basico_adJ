@@ -1,12 +1,22 @@
 ## Novedades {#novedades}
 
+Cada versión cubre la respectiva versión de adJ.
+
+Versión 5.8
+
+  - Fuentes de esta guía migradas a Markdown por Blanca Acosta.
+  
+Versión 5.7
+
+  - Guía migrada a <http://pasosdeJesus.github.io/basico_adJ/index.html> y fuentes a <https://github.com/pasosdeJesus/basico_adJ/>
+
 Versión 5.6
 
-  - Nueva [Sección 7.2, “Editor **mg**”](http://socrates.io/#cf045jI).
+  - Nueva [xref](#editor_mg).
 
 Versión 5.5
 
-  - Nueva [Sección 7.1, “Editor **xfw**”](http://socrates.io/#cf045jI).
+  - Nueva [xref](#editor_xfw).
 
 Versión 5.4
 
@@ -14,61 +24,49 @@ Versión 5.4
 
 Versión 5.3
 
-  - Nueva [Sección 5.4, “Particiones cifradas”](http://socrates.io/#I6eW0fQ).
+  - Nueva [xref](#particiones_cifradas).
 
-  - [Sección 5.3, “Administrador de archivos **Xfe**”](http://socrates.io/#I6eW0fQ) renovada.
+  - [xref](#administrador_de_archivos_xfe) renovada.
 
   - Fuentes en UTF-8.
 
 Versión 5.2
 
-  - Nueva [Sección 6.1, “Locale”](http://socrates.io/#T9dIynC).
+  - Nueva [xref](#locale).
 
-  - Nueva [Sección 5.3, “Administrador de archivos **Xfe**”](http://socrates.io/#I6eW0fQ).
+  - Nueva [xref](#administrador_de_archivos_xfe).
 
-  - Agregada información sobre localización en [Sección 12.2, “mutt y procmail”](http://socrates.io/#vBCyQ5C) y [Sección 7.3, “Editor **vi**”](http://socrates.io/#cvHf98X).
+  - Agregada información sobre localización en [xref](#mutt_y_procmail) y [xref](#editor_vi).
 
 Versión 5.1
 
-  - Nueva [Sección 5, “Uso de medios de almacenamiento”](http://socrates.io/#Gjmxv9k).
+  - Nueva [xref](#uso_de_medios_de_almacenamiento).
 
 Versión 4.9
 
-  - Tuneles dinámicos con ssh ([Sección 10.3, “Tunel con protocolo SOCKS”](http://socrates.io/#VyAPsC0)).
-
-  - Cubre Aprendiendo de Jesús 4.9
+  - Tuneles dinámicos con ssh ([xref](#tunel_con_protocolo_socks)).
 
 Versión 4.8
 
-  - Sección sobre filezilla ([Sección 9.1, “Filezilla”](http://socrates.io/#QvlirQp)).
-
-  - Cubre Aprendiendo de Jesús 4.8
+  - Sección sobre filezilla ([xref](#filezilla)).
 
 Versión 4.7
 
-  - Sección sobre documentación ([Sección 4, “Soporte”](http://socrates.io/#WAAzjD9)).
-
-  - Cubre Aprendiendo de Jesús 4.7
+  - Sección sobre documentación ([xref](#soporte)).
 
 Versión 4.6
 
-  - Sección sobre soporte en canal SILC ([Sección 4, “Soporte”](http://socrates.io/#WAAzjD9)).
+  - Sección sobre soporte en canal SILC ([xref](#soporte)).
 
   - Definiciones iniciales.
 
-  - Cubre Aprendiendo de Jesús 4.6
-
 Versión 4.4
 
-  - Capítulo sobre **vim** renovado.
-
-  - Cubre Aprendiendo de Jesús 4.4
+  - Capítulo sobre **vim** renovado [xref](#vim).
 
 Versión 4.3
 
   - Documenta arranque y primer uso como usuario local.
-
-  - Cubre Aprendiendo de Jesús 4.3
 
 Versión 1.4.2
 

@@ -1,4 +1,4 @@
-## Personalización {#personalización}
+## Personalización {#personalizacion}
 
 Como usuario puede personalizar diversos aspectos de su interacción con el sistema completo y con cada programa 
 (como **fluxbox, xfe** y el interprete de comandos). En esta sección presentamos la personalización del locale y 
@@ -13,10 +13,14 @@ En UTF-8 puede codificarse UNICODE, que a su vez permite representar todos los l
 lenguajes occidentales, incluyendo el español, también puede codificarse con ISO8859-1 o con ISO8859-15 que es 
 prácticamente el mismo pero con el símbolo de euro.
 Los locales se ubican en el directorio ```/usr/shar/locale``` y puede examinar los más comunes con
-```locale -a```
+```
+locale -a
+```
 Elija el locale más apropiado para su país. Recomendamos que emplee codificación UTF-8 y que establezca el locale 
 en sus archivos ```~/.fluxbox/startup``` y ```~/.profile``` agregando o cambiando la línea:
-```export LANG=es_CO.UTF-8```
+```
+export LANG=es_CO.UTF-8
+```
 Los programas estándares emplearan esta variable (y otras asociadas) para determinar el locale y modificaran 
 la forma de presentar:
   - Los mensajes, menús y ayudas para que sean en su idioma. En adJ esto se soporta via el porte **gettext**.
@@ -29,14 +33,14 @@ la forma de presentar:
   - La forma de presentar números y valores monetarios será la particular de la región geográfica elegida. En adJ empleamos una implementación mejorada con base en la de FreeBSD que soporta especialmente bien todos los paises de latinoamérica.
   - También la forma de presentar fecha y hora se ve afectada por el locale así como por la zona horaria.
 
-### Personalización del interprete de comandos ksh {#personalización_del_interprete_de_comandos_ksh}
+### Personalización del interprete de comandos ksh {#personalizacion_del_interprete_de_comandos_ksh}
 
 Es función del intérprete de comandos recibir comandos que el usuario ingrese por el teclado (o en general por 
 entrada estándar) y ejecutar los programas apropiados. Dada la importancia y frecuencia de esta labor, los 
 interpretes de comandos (y en particular /bin/ksh) 
 suelen ser altamente personalizables a los gustos de cada usuario.
 
-#### Ejecución de Programas {#ejecución_de_programas}
+#### Ejecución de Programas {#ejecucion_de_programas}
 
 Desde un intérprete de comandos un usuario puede teclear bien nombres de programas o bien comandos del intérprete de comandos. Los programas por ejecutar se especifican dando la ruta completa de su ubicación en el sistema de archivos, o en caso de no dar ruta se buscan en orden en los directorios especificados en la variable de ambiente PATH. Por ejemplo si teclea:
 *$ banner Jesus*
@@ -137,7 +141,9 @@ En el ejemplo presentado si está instalado el programa **colorls** (del paquete
 alias para el comando ls, de forma que la lista de archivos se presente con colores. Esto ocurrirá desde consolas 
 tipo texto. Si está usando OpenBSD con X-Window y **xterm**, además de lo anterior necesita agregar a su 
 archivo ~/.Xdefaults (o crearlo si no existe):```
-```// Con base en
+
+```
+// Con base en
 http://dentarg.starkast.net/files/configs/dot.zshrc
 
 XTerm*color0:                   #000000
@@ -170,7 +176,7 @@ XTerm*highlightSelection:       true
 XTerm*eightBitInput:            false
 XTerm*metaSendsEscape:          false
 XTerm*oldXtermFKeys:            true
-``
+```
 
 #### Lecturas recomendadas {#lLecturas_recomendadas}
 

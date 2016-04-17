@@ -20,12 +20,15 @@ cifrar. Para poder guardar y recuperar los archivos se debe dar una clave
 ![Interfaz de texto](img/consola.png)
 
 Al dar la clave de cifrado correcta debe ver el mensaje 
-```File system is clean``` o un chequeo de la imagen. 
+ ```File system is clean``` o un chequeo de la imagen. 
 En caso de dar una clave equivocada, continuará la secuencia de arranque 
 pero no podrá acceder a los directorios cifrados[^primer.2].
 
 [^primer.2]: Una vez en operación puede volver a dar estas claves ejecutando 
-```doas sh /etc/rc.local``` desde un interprete de comandos, o desde el menú de 
+```
+doas sh /etc/rc.local
+```
+desde un interprete de comandos, o desde el menú de 
 Fluxbox Dispositivos->Reiniciar Servicios Faltantes
 
 
@@ -57,7 +60,7 @@ En entorno gráfico si se autentica correctamente se iniciará el administrador
 de ventanas ```fluxbox``` que se presenta brevemente en la siguiente sección.
 
  
-### Operación con fluxbox {#operación_con_fluxbox}
+### Operación con fluxbox {#operacion_con_fluxbox}
 
 **Fluxbox** es un estético administrador de ventanas, muy liviano y por lo 
 tanto veloz. Administra decoración de ventanas, espacios de trabajo, tiene un 
@@ -119,12 +122,14 @@ Sin embargo en caso de que su reproductor de CD no esté conectado a una salida
 de audio, **xcdplayer** no será útil. Pero en tal caso puede escuchar un CD de 
 audio, abriendo una terminal y tecleando:
 
-```doas cdio cdplay```
+```
+doas cdio cdplay
+```
 
 Desde el menú otros puede acceder a **plan** y **vim**. El primero de los 
 cuales es un calendario que permite programar actividades. 
 Mientras que **vim** es un clásico y ágil editor de texto en ambientes tipo 
-UNIX  [(ver “Editor vi)](#editor_vi)
+UNIX  [xref](#editor_vi)
 
 ![plan](img/plan.png)
 
@@ -174,7 +179,7 @@ $ ssh juan@www2.pasosdeJesus.org
 ```
 
 reemplazando ```juan``` por el login que tenga en el sistema y 
-```www2.pasosdeJesus.org``` por el nombre del servidor. 
+ ```www2.pasosdeJesus.org``` por el nombre del servidor. 
 Note que con el símbolo ```$```, representamos el símbolo del sistema 
 (del inglés *prompt*) --no debe teclearlo.
 
@@ -195,7 +200,7 @@ con llaves simétricas pedirá su clave RSA/DSA o incluso nada si ha configurado
 un agente que maneje sus llaves RSA/DSA i.e **ssh-agent** en el caso de OpenSSH)
 para finalmente dejarlo en una sesión en modo texto.
 
-[^primer.8] Si la llave de la máquina a la que se conecta ha cambiado 
+[^primer.8]: Si la llave de la máquina a la que se conecta ha cambiado 
 	(por ejemplo si se instaló otro sistema operativo o se actualizó sin 
 	cuidado), para que el cliente de ssh reconozca la nueva clave debe 
 	primero borrar la llave anterior del archivo ```~/.ssh/known_hosts```

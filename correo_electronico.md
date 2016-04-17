@@ -52,7 +52,7 @@ Otro cliente de correo que se puede configurar para extraer correo con POP3 segu
 
 ![Configuración de POP3S en Evolution](img/evolution.png)
 
-### mutt y procmail
+### mutt y procmail {#mutt_y_procmail}
 
 Cliente de correo mutt
 
@@ -169,7 +169,7 @@ puede ser mejor quitarla.
 Si en su sistema procmail fue configurado para ser llamado por el MTA, no 
 tendrá que hacer más (e.g en la configuración por defecto de exim así ocurre). 
 Si su MTA no fue configurado para ejecutar procmail puede crear el archivo 
-```~/.forward``` con:
+ ```~/.forward``` con:
 
 ```
 "|IFS=' ' && exec /usr/bin/procmail -f- || exit 75 "
@@ -183,10 +183,10 @@ en la cola de correos local de su computador para examinarlos posteriormente
 con mutt o con algún MUA gráfico, configurado para leer correo local.
 
 A continuación se presenta un ejemplo del archivo de configuración 
-```~/.fetchmailrc``` para extraer correo del servidor 
-```correo2.practica.pasosdeJesus.org``` con el protocolo IMAP-SSL, suponiendo 
+ ```~/.fetchmailrc``` para extraer correo del servidor 
+ ```correo2.practica.pasosdeJesus.org``` con el protocolo IMAP-SSL, suponiendo 
 que tanto en el computador que recibe como en el servidor el usuario es 
-```juan```:
+ ```juan```:
 
 ```
 set postmaster "postmaster"
@@ -205,7 +205,7 @@ Con esta configuración puede iniciarse la extracción de correo ejecutando:
 fetchmail -a
 ```
 			  
-### Lecturas recomendadas
+### Lecturas recomendadas {#lecturas_recomendadas_correo}
 
 Puede consultar más sobre ```mutt``` con ```man mutt```, y en el manual HTML 
 disponible en ```/usr/local/share/doc/mutt/html```.

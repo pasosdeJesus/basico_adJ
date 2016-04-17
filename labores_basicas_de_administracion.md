@@ -4,13 +4,17 @@ Un sistema OpenBSD se administra desde la cuenta ```root``` o bien con ayuda del
 
 Desde las diversas cuentas del sistema que estén en el grupo ```wheel``` es posible pasar a la cuenta root con el comando:
 
-```$ su -```		  
+```
+$ su -
+```
 	  
 Tipicamente al pasar a la cuenta root el prompt cambiará a ```#```.
 
 Si **sudo** se configura para permitir su utilización por parte de usuarios que estén en el grupo ```wheel```, podrán ejecutarse comandos como si se tratara de la cuenta ```root``` precediéndolos con **sudo**. Por ejemplo para listar el directorio del usuario ```root```:
 
-```$ sudo ls /root```
+```
+$ sudo ls /root
+```
 	  
 ![Aviso](img/warning.png)	Aviso
 
@@ -84,7 +88,9 @@ Un directorio personal
 
 Para eliminar un usuario y su directorio personal:
 
-```userdel -r juan```
+```
+userdel -r juan
+```
 		  
 Es posible modificar información de los usuarios de diversas formas:
 
@@ -138,17 +144,21 @@ Estos archivos pueden analizarse con algunas herramientas básicas como:
 
 A continuación un ejemplo de auditoria de la bitácora auth:
 
-  1. Como usuario root ([Sección 13, “Labores básicas de administración”](http://socrates.io/#t44kVR7)) hacer una copia de las bitácoras de ```/var/log``` en un directorio personal y descomprimir bitácoras comprimidas.
-```cd
+  1. Como usuario root ([xref](#labores_basicas_de_administracion)) hacer una copia de las bitácoras de ```/var/log``` en un directorio personal y descomprimir bitácoras comprimidas.
+```
+cd
 mkdir audita          # Crea un directorio para copiar
 cd audita             # Pasa al directorio creado
 mkdir 30sep2006       # Crear un directorio con la fecha
 cd 30sep2006	      # Pasa al directorio creado
 cp -rf /var/log/* .   # Copia todas las bitácoras (debe ser root)
-gzip -d *.gz          # Descomprime bitácoras comprimidas```
+gzip -d *.gz          # Descomprime bitácoras comprimidas
+```
 			
   2. Revisar la bitácora a fin de determinar puntos críticos:
-```less authlog```
+```
+less authlog
+```
 			
    buscando líneas como
    ```
@@ -177,7 +187,8 @@ dig -x 211.157.113.89```
 			
 	El primero indica China, el segundo mail.chinacomm.com.cn. Con el segundo ya podemos buscar información sobre el registro DNS de chinacomm.com.cn:
 ```
-	whois chinacomm.com.cn```
+whois chinacomm.com.cn
+```
 			
 	donde encontromos una dirección de correo: ```wjy@chncomm.com```
 
@@ -185,7 +196,7 @@ dig -x 211.157.113.89```
 
 	Attempt to login at practica.pasosdeJesus.org from your IP on ```16.Aug.2006 at 7:10:41```
 			
-### Lecturas recomendadas###
+### Lecturas recomendadas {#lecturas_recomendadas_admin}
 
   - Documentación del sistema **man adduser, man userdel**
 
@@ -196,4 +207,6 @@ dig -x 211.157.113.89```
 
 Todas las herramientas mencionadas **less**, **find**, **grep**, **wc** tienen sus respectivos manuales, los cuales se pueden consultar con **man**, por ejemplo
 
-```man grep``` 
+```
+man grep
+```

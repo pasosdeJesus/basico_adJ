@@ -1,6 +1,6 @@
 ## Soporte {#soporte}
 
-### Documentación {#documentación}
+### Documentación {#documentacion}
 
 Por favor adopte la política LBM (Leer el Bendito Manual). La documentación de adJ es:
 [http://socrates.io/#Xgal1o2](http://socrates.io/#Xgal1o2)
@@ -38,7 +38,7 @@ colaborativo). Puede verse más en [silcnet.org](http://silcnet.org/)
 Para emplear el servicio debe utilizarse un cliente de silc, en caso de que cuente con un escritorio gráfico 
 recomendamos **pidgin**, o de contar con un interprete de comandos el programa **silc** incluido en 
 
-#### Configuración y uso de Pidgin {#configuración_y_uso_de_pidgin}
+#### Configuración y uso de Pidgin {#configuracion_y_uso_de_pidgin}
 **Pidgin** es un programa de mensajería instantánea que permite iniciar sesiones sobre varias redes de 
 mensajería al mismo tiempo.
 Corre sobre sistemas operativos OpenBSD, Linux, Mac OS X y Windows. Es compatible con las siguientes redes 
@@ -72,7 +72,10 @@ escribir.
 #### Cliente SILC tipo texto {#cliente_silc_tipo_texto}
 
 Si prefiere emplear un cliente de silc tipo texto, inicie una sesión con:
-```silc -c www.nocheyniebla.org```
+```
+silc -c www.nocheyniebla.org
+```
+
 ![Al ejecutar pidgin](img/silc.png)
 Una vez conectado puede dar comandos iniciados con el símbolo '/', por ejemplo:
 **/help**:

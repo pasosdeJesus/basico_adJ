@@ -13,21 +13,32 @@ La forma de emplear un archivo que descargue, depende del formato en el que est�
 $ cp carta.txt carta.txt.bak
 $ tr -d "\r" < carta.txt.bak > carta.txt```
 Si el texto que tiene emplea una codificación que no sea ASCII (por ejemplo Unicode, UTF-8, MAC, Código de Página 850) o requiere convertir de ASCII a otra codificación puede emplear el programa **recode**. Por ejemplo para convertir carta.txt de ASCII a UTF-8[^formatos.3]:
-```recode txt..utf-8 carta.txt```
+
+```
+recode txt..utf-8 carta.txt
+```
 
   -  .```gz``` Es un archivo comprimido con **gzip**. Suponiendo que fuera ```archivo.txt.gz``` (cuya extensión sugiere un texto comprimido con ```gzip```), lo descomprime con:
-```gzip -d archivo.txt.gz```
+```
+gzip -d archivo.txt.gz
+```
 
 De forma análoga para comprimir el archivo nombres.```sql``` puede emplear:
-```gzip nombres.sql```
+```
+gzip nombres.sql
+```
 	
 Nota: ```gzip``` no comprime archivos muy pequeños (digamos 10 bytes):
 
   - .```tar.gz``` Se trata de un archivo empaquetado con la utilidad **tar** y después comprimido con el algoritmo de **gzip**. Para descomprimirlo y desempaquetarlo en el directorio en el que esté trabajando:
-```tar xvfz archivo.tar.gz```
+```
+tar xvfz archivo.tar.gz
+```
 			
 Si cuenta con un archivo con extensión .```tar``` para desempaquetarlo basta:
-```tar xvf archivo.tar```
+```
+tar xvf archivo.tar
+```
 			
 ### Lecturas recomendadas {#lecturas_recomendadas_formato_de_archivos}
 

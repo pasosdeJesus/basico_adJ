@@ -1,10 +1,10 @@
-## Conceptos básicos {#conceptos_básicos}
+## Conceptos básicos {#conceptos_basicos}
 
 Los conceptos y herramientas presentados desde esta sección se asimilan mejor 
 practicando. 
 Procure ejecirtarlos desde un interprete de comandos (bien operando 
 directamente un sistema tipo Unix o bien ingresando remotamente desde otro 
-sistema como se explicó, [(ver “Primer uso de adJ”)](#primer_uso_de_adJ).
+sistema como se explicó, (ver [xref](#primer_uso_de_adJ)).
 
 ### Definiciones iniciales {#definiciones_iniciales}
 
@@ -22,7 +22,7 @@ se trate de una carta escrita en formato de Open Document Format
 Para verla debe usarse un programa que entienda ese formato, uno entre otros 
 es LibreOffice.
 
-### Intérprete de comandos {#intérprete_de_comandos}
+### Intérprete de comandos {#interprete_de_comandos}
 
 El intérprete de comandos le permite usar varios comandos internos, así 
 como ejecutar programas. 
@@ -133,6 +133,7 @@ directorios con todo su contenido de forma recursiva con la opción
 
 Páginas ```man``` de los 11 comandos/programas introducidos en este capítulo.
 Se han tomado porciones de la sección "telnet y ssh" de 
+[@fenner2012a]
 [AALinux](http://structio.sourceforge.net/guias/AA_Linux_colegio/)
 
 

@@ -10,9 +10,10 @@ La dirección (o URL) que se emplee para ver sus páginas desde un navegador dep
 
 Si desde un navegador emplea una dirección, pero sin especificar un nombre de archivo, el servidor buscará y presentará la información de un archivo por defecto. Tal archivo usualmente es ```index.html``` o ```index.php```. Así por ejemplo al emplear el URL ```http://practica.pasosdeJesus.org/~juan``` desde un navegador, se presentaría la misma información del URL: ```http://practica.pasosdeJesus.org/~juan/index.html```.
 
-Para ubicar las páginas web en el directorio apropiado, puede bien transferirlas desde otro computador (ver [Sección 9, “Transferencia de información a y desde el servidor”](http://socrates.io/#QvlirQp))	o bien crearlas directamente en el servidor (por ejemplo con el editor **vim** que de configurarse apropiadamente le facilitará la edición de HTML --ver [Sección 7.3.3, “vim”](http://socrates.io/#9EwxGG8)).
+Para ubicar las páginas web en el directorio apropiado, puede bien transferirlas desde otro computador (ver [xref](#transferencia_de_informacion_a_y_desde_el_servidor)) o bien crearlas directamente en el servidor (por ejemplo con el editor **vim** que de configurarse apropiadamente le facilitará la edición de HTML --ver [xref](#vim)).
 
 Para elaborar su primera página HTML, puede basarse en la siguiente página que ejemplifica cómo cambiar estilo de letra, colores, tamaño, párrafos, cambios de línea y encabezados.
+
 ```
 <html>
 	<head>
@@ -51,10 +52,10 @@ Para elaborar su primera página HTML, puede basarse en la siguiente página que
 	       	otras maravillas le doy hoy
 		y para siempre <font size="+4">gracias a Dios!</font>.
 	</body>
-</html>```
-		
-Al abrirla con un navegador se ve algo como:
+</html>
+```
 
+Al abrirla con un navegador se ve algo como:
 ![Visualización de página HTML](img/html1.png)
 
 
