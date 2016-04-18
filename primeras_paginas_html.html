@@ -1,0 +1,91 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>8. Primeras páginas HTML</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="edicion_de_textos.html" title="7. Edicion de textos"><link rel="next" href="transferencia_de_informacion_a_y_desde_el_servidor.html" title="9. Transferencia de información a y desde el servidor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">8. Primeras páginas HTML</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="edicion_de_textos.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="transferencia_de_informacion_a_y_desde_el_servidor.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="primeras_paginas_html"></a>8. Primeras páginas HTML</h2></div></div></div><p>
+    Las páginas web deben ubicarse en un directorio destinado para esto
+    (el cual debe haber sido configurado por el administrador con ese
+    propósito en el servidor web), generalmente es el subdirectorio
+    <code class="literal">public_html</code> de su directorio personal (e.g
+    /home/juan/public_html). Tal directorio y sus archivos deben tener
+    permiso de lectura para todos, y el directorio debe tener permiso de
+    ejecución para todos. Puede asegurarse de esto con:
+  </p><pre class="programlisting">
+$ cd ~
+$ chmod -R a+r public_html
+$ chmod a+x public_html
+$ chmod a+x .
+</pre><p>
+    La dirección (o URL) que se emplee para ver sus páginas desde un
+    navegador depende de la forma como se haya configurado el servidor
+    web (y eventualmente el DNS). Por ejemplo para ver el archivo
+    <code class="literal">objetivo.html</code> después de que lo haya ubicado en
+    el directorio apropiado del servidor
+    <code class="literal">practica.pasosdeJesus.org</code> podría ser una
+    dirección como
+    <code class="literal">http://practica.pasosdeJesus.org/~juan/objetivo.html</code>
+    o
+    <code class="literal">http://practica.pasosdeJesus.org/juan/objetivo.html</code>
+    o si tiene un dominio ya configurado, algo como
+    <code class="literal">http://www.midominio.org/objetivo.html</code>.
+  </p><p>
+    Si desde un navegador emplea una dirección, pero sin especificar un
+    nombre de archivo, el servidor buscará y presentará la información
+    de un archivo por defecto. Tal archivo usualmente es
+    <code class="literal">index.html</code> o <code class="literal">index.php</code>. Así
+    por ejemplo al emplear el URL
+    <code class="literal">http://practica.pasosdeJesus.org/~juan</code> desde un
+    navegador, se presentaría la misma información del URL:
+    <code class="literal">http://practica.pasosdeJesus.org/~juan/index.html</code>.
+  </p><p>
+    Para ubicar las páginas web en el directorio apropiado, puede bien
+    transferirlas desde otro computador (ver
+    <a href="transferencia_de_informacion_a_y_desde_el_servidor.html" title="9. Transferencia de información a y desde el servidor">Sección 9, “Transferencia de información a y desde el servidor”</a>)
+    o bien crearlas directamente en el servidor (por ejemplo con el
+    editor <span class="strong"><strong>vim</strong></span> que de configurarse
+    apropiadamente le facilitará la edición de HTML --ver
+    <a href="edicion_de_textos.html#vim" title="7.3.3. vim">Sección 7.3.3, “vim”</a>).
+  </p><p>
+    Para elaborar su primera página HTML, puede basarse en la siguiente
+    página que ejemplifica cómo cambiar estilo de letra, colores,
+    tamaño, párrafos, cambios de línea y encabezados.
+  </p><pre class="programlisting">
+&lt;html&gt;
+    &lt;head&gt;&lt;title&gt;
+        Página de agradecimiento
+    &lt;/title&gt;&lt;/head&gt;
+
+    &lt;body bgcolor="#FFFFFF"&gt;
+        &lt;h1&gt;Página de agradecimiento&lt;/h1&gt;
+        &lt;i&gt;Gracias a nuestro Padre Creador, Todo poderoso.&lt;/i&gt;
+        Yo no he creado nada, personalmente no creo que ser humano 
+        alguno haya creado este universo, más bien los humanos 
+        hemos transformado lo que ya está creado.
+        &lt;p&gt;
+        Se que nuestra carne dura poco, le creo a mi maestro único
+        &lt;font color="red"&gt;Jesús&lt;/font&gt; y 
+        de Él entiendo que nuestros espíritus son eternos.&lt;br&gt;
+        Yo creo que nuestros espíritus fueron creados por Dios,
+        así como este universo, que Él creó como nuestra escuela,
+        para que vivamos y aprendamos con amor, respeto, humildad
+        y preparemos nuestros espíritus para la eternidad más cerca a
+        Dios. Para eso creo que nos toca hacer nuestras tareas sin
+        excusas, tareas que nos pone nuestro &lt;b&gt;Creador&lt;/b&gt; 
+        (i.e. la voluntad de Dios).   Como nuestro Padre nos regaló 
+        libertad podemos escoger por desobedecerle y no hacer nuestras 
+        tareas, pero seremos nosotros mismos los perjudicados si 
+        decidimos no aprender.  ¿Habrá mayor castigo que estar
+        lejos de Dios que es la fuente del amor, de la verdad, de la
+        justicia, del bien y de la vida?
+        &lt;p&gt;
+        Por la vida que nos ha regalado Dios, por esta
+        escuela tan linda y grande, por la oportunidad de
+        aprender, por nuestro maestro Jesús y el Espíritu
+        Santo que nos ayuda a hacer las tareas, y por tantas
+            otras maravillas le doy hoy
+        y para siempre &lt;font size="+4"&gt;gracias a Dios!&lt;/font&gt;.
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre><p>
+    Al abrirla con un navegador se ve algo como:
+  </p><div class="figure"><a name="idm726991216"></a><p class="title"><b>Figura 21. Visualización de página HTML</b></p><div class="mediaobject"><img src="img/html1.png" alt="Visualización de página
+      HTML"></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_html"></a>8.1. Lecturas recomendadas</h3></div></div></div><p>
+      Puede aprender sobre HTML por ejemplo en:
+      <a href="http://www.w3.org/MarkUp" target="_top">http://www.w3.org/MarkUp</a>
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="edicion_de_textos.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="transferencia_de_informacion_a_y_desde_el_servidor.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">7. Edicion de textos </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 9. Transferencia de información a y desde el servidor</td></tr></table></div></body></html>

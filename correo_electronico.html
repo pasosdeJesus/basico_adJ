@@ -1,0 +1,269 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>12. Correo electrónico</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="formatos_de_archivos.html" title="11. Formatos de archivos"><link rel="next" href="labores_basicas_de_administracion.html" title="13. Labores básicas de administración"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">12. Correo electrónico</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="formatos_de_archivos.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="labores_basicas_de_administracion.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="correo_electronico"></a>12. Correo electrónico</h2></div></div></div><p>
+    El correo que reciba en un servidor OpenBSD puede consultarlo por lo
+    menos de tres formas:
+  </p><div class="itemizedlist"><ul type="disc"><li><p>
+        Empleando un agente de usuario para leer correo (o cliente de
+        correo o MUA) que soporte alguno de los protocolos soportados
+        (podrían ser POP3, IMAP, IMAP-SSL y POP3S) y configurándolo para
+        extraer/examinar correo del servidor.
+      </p></li><li><p>
+        Ingresando con <span class="strong"><strong>ssh</strong></span> al
+        servidor al cual llega el correo y consultándolo localmente con
+        un cliente de correo o MUA. Dos programas típicos para esto que
+        operan en modo texto en sistemas tipo Unix como OpenBSD son
+        <span class="strong"><strong>mail</strong></span> y
+        <span class="strong"><strong>mutt</strong></span>.
+      </p></li><li><p>
+        Empleando un webmail desde un navegador.
+      </p></li></ul></div><p>
+    Otra posibilidad que tiene es reenviar el correo a otro servidor, lo
+    cual puede lograr fácilmente creando un archivo
+    <code class="literal">~/.forward</code> en el cual basta que ponga la
+    dirección a la cual quiere reenviar el correo que reciba.
+  </p><p>
+    Con respecto a protocolos para extraer/examinar correos, algunas
+    diferencias entre los mencionados son:
+  </p><div class="informaltable"><table border="1"><colgroup><col align="center"><col align="center"><col align="center"><col align="center"></colgroup><thead><tr><th align="center">
+            Protocolo
+          </th><th align="center">
+            Cifrado SSL
+          </th><th align="center">
+            Carpetas
+          </th><th align="center">
+            Saca correo del servidor
+          </th></tr></thead><tbody><tr><td align="center">
+            POP3
+          </td><td align="center">
+            No
+          </td><td align="center">
+            No
+          </td><td align="center">
+            Si
+          </td></tr><tr><td align="center">
+            POP3S
+          </td><td align="center">
+            Si
+          </td><td align="center">
+            No
+          </td><td align="center">
+            Si
+          </td></tr><tr><td align="center">
+            IMAP
+          </td><td align="center">
+            No
+          </td><td align="center">
+            Si
+          </td><td align="center">
+            No
+          </td></tr><tr><td align="center">
+            IMAP-SSL
+          </td><td align="center">
+            Si
+          </td><td align="center">
+            Si
+          </td><td align="center">
+            No
+          </td></tr></tbody></table></div><p>
+    En resumen si desea sacar su correo del servidor prefiera POP3S,
+    pero si prefiere dejar su correo en el servidor (para accederlo
+    desde varias localizaciones) prefiera IMAP-SSL.
+  </p><p>
+    Fuera de esos protocolos para extraer/examinar correo en servidores,
+    el protocolo SMTP permite enviar correo a través de un servidor.
+  </p><p>
+    En cuanto a clientes de correos para el web (webmails), hay varios
+    (e.g squirrelmail, horde), prefiera emplearlos desde computadores
+    sin virus ni spyware y sobre el protocolo HTTPS
+    (<code class="literal">i.e</code> la dirección a la que se conecta desde su
+    navegador de comenzar con <code class="literal">https://</code>).
+  </p><p>
+    En el resto de esta guía se presenta la forma de configuración de
+    algunos MUA usando el protocolo IMAP-SSL y el uso básico del MUA
+    <span class="strong"><strong>mutt</strong></span> (tomado de
+    <a href="bibliografia.html" title="15. Bibliografía">AALinux</a>).
+  </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="correo_grafico"></a>12.1. Uso de agentes de usuario para leer correo gráfico</h3></div></div></div><p>
+      Hay diversos agentes de usuario para leer correo gráficos, tanto
+      de fuentes abiertas (Mozilla Thunderbird, Evolution) como de
+      fuentes cerradas (Outlook). Típicamente soportan extracción de
+      correo de la cola local o extracción/consulta desde un servidor
+      remoto con POP3, POP3S, IMAP o IMAP-SSL.
+    </p><p>
+      Cada uno tiene diálogos propios para configurar el protocolo, los
+      servidores y otros detalles.
+    </p><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="mozilla_thunderbird"></a>12.1.1. Mozilla Thunderbird</h4></div></div></div><p>
+        Por ejemplo, en el caso de Thunderbird configure una nueva
+        cuenta de correo (Archivo/Nuevo/Cuenta) empleando los datos del
+        servidor que usa. Para el dominio
+        <code class="literal">practica.pasosdeJesus.org</code> puede usar como
+        servidor de correo:
+        <code class="literal">correo2.practica.pasosdeJesus.org</code> e IMAP-SSL.
+      </p><div class="figure"><a name="idm1551005296"></a><p class="title"><b>Figura 26. Configuración de IMAP en Thunderbird</b></p><div class="mediaobject"><img src="img/imaps-1-thunderbird.png" alt="Configuración de IMAP en
+          Thunderbird"></div></div><p>
+        Después de la configuración básica de IMAP, ingrese a la
+        configuración de la cuenta y del servidor para activar IMAP-SSL:
+      </p><div class="figure"><a name="idm2003858160"></a><p class="title"><b>Figura 27. Configuración de IMAP-SSL en Thunderbird</b></p><div class="mediaobject"><img src="img/imaps-2-thunderbird.png" alt="Configuración de IMAP-SSL en
+          Thunderbird"></div></div><p>
+        Finalmente configure el servidor de salida de correo (protocolo
+        SMTP).
+      </p><div class="figure"><a name="idm153616496"></a><p class="title"><b>Figura 28. Configuración de servidor SMTP en Thunderbird</b></p><div class="mediaobject"><img src="img/imaps-3-thunderbird.png" alt="Configuración de servidor SMTP en
+          Thunderbird"></div></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="evolution"></a>12.1.2. Evolution</h4></div></div></div><p>
+        Otro cliente de correo que se puede configurar para extraer
+        correo con POP3 seguro es evolution. A continuación se presenta
+        una de las pantallas de configuración del mismo:
+      </p><div class="figure"><a name="idm1551006192"></a><p class="title"><b>Figura 29. Configuración de POP3S en Evolution</b></p><div class="mediaobject"><img src="img/evolution.png" alt="Configuración de POP3S en
+          Evolution"></div></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="mutt_y_procmail"></a>12.2. mutt y procmail</h3></div></div></div><div class="figure"><a name="idm1168585328"></a><p class="title"><b>Figura 30. Cliente de correo mutt</b></p><div class="mediaobject"><img src="img/mutt.png" alt="Cliente de correo mutt"></div></div><p>
+      <code class="literal">mutt</code> es un MUA que opera en modo texto, fácil
+      de manejar y altamente configurable. Opcionalmente, si en el
+      servidor donde ejecute <code class="literal">mutt</code> también está
+      <code class="literal">procmail</code>, podrá automatizar bastante la
+      organización de su correo electrónico.
+    </p><p>
+      Al iniciar <code class="literal">mutt</code> presenta los correos que estén
+      en su casilla, le permite desplazarse de uno a otro con flechas o
+      con las letras <code class="literal">j</code> y <code class="literal">k</code> (cómo
+      en vi), podrá consultar uno con <code class="literal">Retorno</code>, salir
+      con <code class="literal">q</code>, ver ayuda sobre comandos con
+      <code class="literal">?</code>, eliminar uno con <code class="literal">d</code>,
+      iniciar un correo (o continuar editando algún correo pospuesto)
+      con <code class="literal">m</code>. Una vez esté viendo un correo puede
+      responder con <code class="literal">r</code>, reenviarlo con
+      <code class="literal">f</code> o pasarlo como entrada a un comando con
+      <code class="literal">|</code>. Cuando componga un mensaje puede posponer,
+      puede poner adjuntos (con <code class="literal">a</code>) o emplear
+      programas como PGP o GPG para firmar o encriptar sus mensajes (con
+      <code class="literal">p</code>).
+    </p><p>
+      Para organizar los correos que reciba, puede emplear carpetas,
+      para pasar de una carpeta a otra emplee <code class="literal">c</code>, para
+      organizar una carpeta (por fecha, emisor, destinatario, tamaño,
+      tema o hilos) emplee o. Si ordena una carpeta por hilos, podrá
+      emplear otros comandos como <code class="literal">Ctrl-D</code> para borrar
+      un hilo completo, <code class="literal">Ctrl-P</code> para pasar al
+      anterior, <code class="literal">Ctrl-N</code> para pasar al siguiente.
+    </p><p>
+      mutt puede configurarse en el archivo
+      <code class="literal">~/.muttrc</code>. Un ejemplo se presenta a
+      continuación (las líneas iniciadas con # son comentarios):
+    </p><pre class="programlisting">
+# Para establecer una dirección en la que se prefieren respuestas
+my_hdr Reply-To: Juan Valdez
+set reply_to=yes
+unset reply_self
+
+# Para emplear vim como editor de mensajes y editar el encabezado también
+set edit_headers=yes
+set editor=vim
+
+# Para establecer algunas carpetas
+mailboxes =/var/mail/juan
+mailboxes =/home/juan/Mail/tareas
+mailboxes =/home/juan/Mail/familia
+mailboxes =/home/juan/Mail/paz
+</pre><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="localizaci%C3%B3n"></a>12.2.1. Localización</h4></div></div></div><p>
+        Es posible localizar mutt al español, lo recomendable es emplear
+        en el sistema operativo el locale apropiado para su país con
+        codificación UTF-8 y una terminal que soporte UTF-8. En tal caso
+        mutt podrá enviar correos con esta codificación y presentar
+        correos con tal codificación, agregando las siguientes líneas a
+        su archivo <code class="literal">~/.muttrc</code> (que se espera
+        codificado en UTF-8, ver Sección 7.3, “Editor vi”):
+      </p><pre class="programlisting">
+set config_charset=utf-8
+set locale=es_CO.UTF-8
+my_hdr Content-Type: text/plain\; charset=UTF-8\; format=flowed
+my_hdr Content-Transfer-Encoding: 8bit
+</pre></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="procmail"></a>12.2.2. Procmail</h4></div></div></div><p>
+        Si desea que su correo sea automáticamente organizado en
+        carpetas, cuando llegue puede emplear procmail y sincronizarlo
+        con su configuración de mutt. procmail puede manejar
+        automáticamente todo correo que reciba en una cuenta y realizar
+        con este las acciones que usted describa. Para que separe
+        automáticamente los correos en las carpetas del ejemplo
+        anterior, debe configurar y crear varios archivos. Cree la
+        carpeta <code class="literal">~/.procmail</code>, en ella el archivo
+        r<code class="literal">c.maillists</code> con la configuración de los
+        patrones por buscar en los correos y la carpeta en la que deben
+        quedar:
+      </p><pre class="programlisting">
+:0:
+* ^FROM.*fip@ideaspaz.org.*
+paz
+
+:0:
+* ^TO.*colombia-paz@colnodo.apc.org.*
+paz
+
+:0:
+* ^TO.*colombia@derechos.net.*
+paz
+
+:0:
+* ^TOstructio.*
+tareas
+</pre><p>
+        La última línea indica que deben dejarse correos enviados a
+        direcciones que incluyan la palabra structio en la carpeta
+        tareas; mientras que las que van a las otras direcciones
+        mostradas, irán a la carpeta paz .
+      </p><p>
+        El archivo <code class="literal">~/.procmailrc</code> debe contener algo
+        como:
+      </p><pre class="programlisting">
+LINEBUF=4096
+VERBOSE=off
+MAILDIR=$HOME/Mail/
+FORMAIL=/usr/local/bin/formail
+SENDMAIL=/usr/sbin/sendmail
+PMDIR=$HOME/.procmail
+LOGFILE=$PMDIR/log
+INCLUDERC=$PMDIR/rc.maillists
+</pre><p>
+        La línea <code class="literal">LOGFILE=$PMDIR/log</code> indica que debe
+        registrarse toda acción de procmail en
+        <code class="literal">~/.procmail/log</code>. Después de configurar este
+        servicio puede ser mejor quitarla.
+      </p><p>
+        Si en su sistema procmail fue configurado para ser llamado por
+        el MTA, no tendrá que hacer más (e.g en la configuración por
+        defecto de exim así ocurre). Si su MTA no fue configurado para
+        ejecutar procmail puede crear el archivo
+        <code class="literal">~/.forward</code> con:
+      </p><pre class="programlisting">
+"|IFS=' ' &amp;&amp; exec /usr/bin/procmail -f- || exit 75 "
+</pre></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="fetchmail"></a>12.2.3. fetchmail</h4></div></div></div><p>
+        Este programa, para sistemas tipo UNIX, le permite descargar el
+        correo de uno o más servidores empleando protocolos POP3, POP3S,
+        IMAP o IMAP-SSL y dejarlos en la cola de correos local de su
+        computador para examinarlos posteriormente con mutt o con algún
+        MUA gráfico, configurado para leer correo local.
+      </p><p>
+        A continuación se presenta un ejemplo del archivo de
+        configuración <code class="literal">~/.fetchmailrc</code> para extraer
+        correo del servidor
+        <code class="literal">correo2.practica.pasosdeJesus.org</code> con el
+        protocolo IMAP-SSL, suponiendo que tanto en el computador que
+        recibe como en el servidor el usuario es
+        <code class="literal">juan</code>:
+      </p><pre class="programlisting">
+set postmaster "postmaster"
+set bouncemail
+set properties ""
+
+poll correo2.practica.pasosdeJesus.org port 993 with proto IMAP 
+no dns
+user juan there is juan here 
+ssl
+</pre><p>
+        Con esta configuración puede iniciarse la extracción de correo
+        ejecutando:
+      </p><pre class="programlisting">
+fetchmail -a
+</pre></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_correo"></a>12.3. Lecturas recomendadas</h3></div></div></div><p>
+      Puede consultar más sobre <code class="literal">mutt</code> con
+      <code class="literal">man mutt</code>, y en el manual HTML disponible en
+      <code class="literal">/usr/local/share/doc/mutt/html</code>.
+    </p><p>
+      Puede ver más sobre el archivo <code class="literal">.forward</code> (que
+      puede usar también para ejecutar un programa cada vez que llega un
+      correo) con <code class="literal">man forward</code>
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="formatos_de_archivos.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="labores_basicas_de_administracion.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">11. Formatos de archivos </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 13. Labores básicas de administración</td></tr></table></div></body></html>

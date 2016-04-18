@@ -1,0 +1,68 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>9. Transferencia de información a y desde el servidor</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="primeras_paginas_html.html" title="8. Primeras páginas HTML"><link rel="next" href="mas_formas_de_uso_de_ssh.html" title="10. Más formas de uso de ssh"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">9. Transferencia de información a y desde el servidor</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="primeras_paginas_html.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="mas_formas_de_uso_de_ssh.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="transferencia_de_informacion_a_y_desde_el_servidor"></a>9. Transferencia de información a y desde el servidor</h2></div></div></div><p>
+    Hay diversos métodos para transferir información entre el servidor y
+    otros computadores, uno de los más seguros consiste en emplear una
+    conexión cifrada como las ofrecidas por
+    <span class="strong"><strong>ssh</strong></span>. Para emplear este método
+    desde el servidor OpenBSD (o otro sistema tipo Unix que cuente con
+    OpenSSH) se puede usar bien <span class="strong"><strong>scp</strong></span>
+    desde la línea de comandos o el programa filezilla.
+  </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="filezilla"></a>9.1. Filezilla</h3></div></div></div><p>
+      <span class="strong"><strong>filezilla</strong></span> le permite transmitir
+      archivos a un servidor.
+    </p><p>
+      Puede usarse sobre sistemas operativos OpenBSD, Linux, Mac OS X y
+      Windows. Soporta los protocolo FTP, SFTP y FTP sobre SSL.
+    </p><p>
+      Una vez instalado ejecútelo y configure la primera vez la conexión
+      a su servidor desde el menú Archivo-&gt;Gestor de Sitios. Del
+      siguiente ejemplo adapte el nombre del servidor y de usuario.
+    </p><div class="figure"><a name="idm2708718320"></a><p class="title"><b>Figura 22. Configuración de una conexión con filezilla</b></p><div class="mediaobject"><img src="img/filezillaconexion.png" alt="Configuración de una conexión con
+        filezilla"></div></div><p>
+      Una vez configurada la encontrará al abrir FileZilla e ingresar a
+      Archivos-&gt;Sitios. Cuando elija Conectar se iniciará una
+      conexión encriptada, con un intercambio inicial de llaves que debe
+      aceptar, después aparecerán paneles como los siguientes:
+    </p><div class="figure"><a name="idm2708719728"></a><p class="title"><b>Figura 23. Paneles de Filezilla</b></p><div class="mediaobject"><img src="img/filezilla.png" alt="Paneles de Filezilla"></div></div><p>
+      Note que al lado izquierdo están las carpetas y archivos de su
+      computador local, mientras que al lado derecho están las carpetas
+      y archivos del servidor. Para transmitir un archivo de uno a otro
+      basta que lo arrastre.
+    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="uso_basico_de_scp"></a>9.2. Uso básico de scp</h3></div></div></div><p>
+      Si por ejemplo desea transferir el archivo
+      <code class="literal">ideas.txt</code> del servidor OpenBSD
+      <code class="literal">practica.pasosdeJesus.org</code> a otro servidor tipo
+      Unix que tenga instalado y configurado ssh (digamos
+      <code class="literal">comp.trabajo.net</code>), a la cuenta de un usuario
+      <code class="literal">mateo</code>, en el directorio
+      <code class="literal">personal</code>:
+    </p><pre class="programlisting">
+$ scp ideas.txt mateo@comp.trabajo.net:personal
+</pre><p>
+      Si desea transmitir el archivo metodo.txt del directorio personal
+      del servidor <code class="literal">comp.trabajo.net</code> al directorio en
+      el que está ubicado en
+      <code class="literal">practica.pasosdeJesus.org</code>:
+    </p><pre class="programlisting">
+$ scp juan2@comp.trabajo.net:personal/metodo.txt .
+</pre><p>
+      Note que <span class="strong"><strong>scp</strong></span> es similar a
+      <span class="strong"><strong>cp</strong></span> (pues permite copiar un
+      archivo fuente en uno destino<sup>[<a name="idm436070896" href="#ftn.idm436070896">13</a>]</sup>) sólo que el archivo fuente o el archivo destino
+      pueden estar en otra máquina.
+    </p><p>
+      Dado que Windows no tiene un servidor
+      <span class="strong"><strong>ssh</strong></span> por defecto, es posible
+      transmitir archivos a y desde sistemas Windows sólo desde el
+      computador con Windows usando un programa como
+      <span class="strong"><strong>winscp</strong></span> (disponible en
+      <a href="http://winscp.sf.net" target="_top">http://winscp.sf.net</a> o
+      <span class="strong"><strong>pscp</strong></span> que se distribuye junto
+      con <span class="strong"><strong>putty</strong></span>
+      (<a href="conceptos_basicos.html" title="3. Conceptos básicos">Sección 3, “Conceptos básicos”</a>).
+    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_transferencia"></a>9.3. Lecturas recomendadas</h3></div></div></div><p>
+      Para aprender más sobre <code class="literal">scp</code> recomendamos la
+      página del manual.
+    </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm436070896" href="#idm436070896">13</a>] </sup>
+          Incluso scp implementa la funcionalidad de cp al permitir
+          copiar localmente un archivo.
+        </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="primeras_paginas_html.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="mas_formas_de_uso_de_ssh.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">8. Primeras páginas HTML </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 10. Más formas de uso de ssh</td></tr></table></div></body></html>

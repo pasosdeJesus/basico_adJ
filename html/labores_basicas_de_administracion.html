@@ -1,0 +1,263 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>13. Labores básicas de administración</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="correo_electronico.html" title="12. Correo electrónico"><link rel="next" href="novedades.html" title="14. Novedades"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">13. Labores básicas de administración</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="correo_electronico.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="novedades.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="labores_basicas_de_administracion"></a>13. Labores básicas de administración</h2></div></div></div><p>
+    Un sistema adJ se administra desde la cuenta <code class="literal">root</code>
+    o bien con ayuda del programa <code class="literal">doas</code>.
+  </p><p>
+    Desde las diversas cuentas del sistema que estén en el grupo
+    <code class="literal">wheel</code> es posible pasar a la cuenta root con el
+    comando:
+  </p><pre class="programlisting">
+$ su -
+</pre><p>
+    Tipicamente al pasar a la cuenta root el prompt cambiará a
+    <code class="literal">#</code>.
+  </p><p>
+    Si <span class="strong"><strong>doas</strong></span> se configura para
+    permitir su utilización por parte de usuarios que estén en el grupo
+    <code class="literal">wheel</code> sin clave, podrán ejecutarse comandos como
+    si se tratara de la cuenta <code class="literal">root</code> precediéndolos
+    con <span class="strong"><strong>doas</strong></span>. Por ejemplo para listar
+    el directorio del usuario <code class="literal">root</code>:
+  </p><pre class="programlisting">
+$ doas ls /root
+</pre><p>
+    <span class="inlinemediaobject"><img src="img/warning.png"></span> Aviso: Toda acción que realice con el programa
+    <span class="strong"><strong>doas</strong></span>, así como cambios de un
+    usuario a otro, quedarán registradas en la bitácora
+    <code class="literal">/var/log/secure</code>
+  </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="manejo_de_usuarios"></a>13.1. Manejo de usuarios</h3></div></div></div><p>
+      Entre las labores del administrador está agregar, eliminar y
+      modificar información de usuarios del sistema.
+    </p><p>
+      El administrador puede agregar usuarios con el comando
+      <code class="literal">adduser</code>. Su uso típico se esboza a
+      continuación<sup>[<a name="idm893346928" href="#ftn.idm893346928">17</a>]</sup>
+    </p><pre class="programlisting">
+doas adduser
+...
+Enter username []: juan
+Enter full name []: Juan Valdez
+Enter shell csh ksh nologin sh [ksh]: 
+Uid [1003]: 
+Login group juan [juan]: 
+Login group is ``juan''. Invite juan into other groups: guest no 
+[no]: wheel
+Login class auth-defaults auth-ftp-defaults daemon default staff 
+[default]: staff
+Enter password []: 
+Enter password again []: 
+
+Name:        juan
+Password:    ****
+Fullname:    Juan Valdez
+Uid:         1003
+Gid:         1003 (juan)
+Groups:      juan wheel
+Login Class: staff
+HOME:        /home/juan
+Shell:       /bin/ksh
+OK? (y/n) [y]: 
+</pre><p>
+      Note que todo usuario del sistema tiene:
+    </p><div class="variablelist"><dl><dt><span class="term">
+          Una identificación
+        </span></dt><dd><p>
+            juan en el ejemplo recién presentado
+          </p></dd><dt><span class="term">
+          Un UID
+        </span></dt><dd><p>
+            Se trata de un número que lo identifica (1003 en el ejemplo)
+          </p></dd><dt><span class="term">
+          Un GID
+        </span></dt><dd><p>
+            O número que identifica al grupo principal al que pertenece
+            el usuario (1003 en el ejemplo).
+          </p></dd><dt><span class="term">
+          Un intérprete de comandos
+        </span></dt><dd><p>
+            Que será el que tendrá el usuario al iniciar nuevas sesiones
+            (en el ejemplo es /bin/ksh).
+          </p></dd><dt><span class="term">
+          Una clase de login
+        </span></dt><dd><p>
+            Que establecerá parámetros para la sesión, por ejemplo
+            límite en el uso de memoria y recursos. En el ejemplo es
+            <code class="literal">staff</code>, pero para usuarios que no vayan a
+            administrar el sistema se sugiere <code class="literal">default</code>
+          </p></dd><dt><span class="term">
+          Eventualmente uno o más grupos secundarios
+        </span></dt><dd><p>
+            Cada usuario fuera de su grupo principal puede pertenecer a
+            otros grupos. En este ejemplo, el usuario pertenecerá además
+            al grupo <code class="literal">wheel</code>, lo cual indica que hará
+            labores administrativas.
+          </p></dd><dt><span class="term">
+          Un directorio personal
+        </span></dt><dd><p>
+            Cuyo propietario será el usuario y quedará como directorio
+            de trabajo cada vez que inicie una sesión. En el ejemplo es
+            <code class="literal">/home/juan</code> (note que por defecto todos
+            los directorios de usuarios son subdirectorios de
+            <code class="literal">/home</code>).
+          </p></dd></dl></div><p>
+      Para eliminar un usuario y su directorio personal:
+    </p><pre class="programlisting">
+doas userdel -r juan
+</pre><p>
+      Es posible modificar información de los usuarios de diversas
+      formas:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+          Con el comando <code class="literal">vipw</code> que le permitirá
+          modificar directamente el archivo de claves y usuarios
+        </p></li><li><p>
+          Con el comando <code class="literal">chfn usuario</code> podrá modificar
+          algunos datos del perfil del usuario.
+        </p></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="bitacoras"></a>13.2. Bitácoras</h3></div></div></div><p>
+      Una de las labores típicas de un administrador de un sistema adJ
+      es revisar bitácoras del sistema en búsqueda de fallas de
+      seguridad. En la mayoría de las veces se trata de ataques a través
+      de internet, ataques que buscan entre otras cosas: acceder a
+      nuestras máquinas para sacar información y modificarla, o usar
+      nuestra máquina para que realice trabajos que el atacante quiere
+      hacer, generalmente maliciosos.
+    </p><p>
+      adJ deja un registro muy completo en archivos de
+      <code class="literal">/var/log</code> conocidos como bitácoras. Algunos son:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+          <code class="literal">authlog</code>: Muestra los accesos de los
+          usuarios permitidos y rechazados
+        </p></li><li><p>
+          <code class="literal">secure</code>: Muestra los comandos de los
+          administradores
+        </p></li><li><p>
+          <code class="literal">servicio</code>: Los programas que están corriendo
+          en la máquina
+        </p></li></ul></div><p>
+      Como el sistema hace rotación de bitácoras periódicamente, en el
+      mismo directorio también se encuentra archivadas algunas bitácoras
+      anteriores, comprimidas (terminan con nombres como
+      .<code class="literal">0.gz</code>).
+    </p><p>
+      Estos archivos pueden analizarse con algunas herramientas básicas
+      como:
+    </p><div class="variablelist"><dl><dt><span class="term">
+          <code class="literal">less</code>
+        </span></dt><dd><p>
+            Examinar una archivo. En <code class="literal">less</code> la tecla
+            <code class="literal">G</code> (mayúscula) lo lleva al final del
+            archivo.
+          </p></dd><dt><span class="term">
+          <code class="literal">grep</code>
+        </span></dt><dd><p>
+            Muestra cadenas en un archivo
+          </p></dd><dt><span class="term">
+          <code class="literal">find</code>
+        </span></dt><dd><p>
+            Busca una cadena en un archivo o directorio
+          </p></dd><dt><span class="term">
+          <code class="literal">wc</code>
+        </span></dt><dd><p>
+            Cuenta palabras/líneas/caracteres en una archivo
+          </p></dd><dt><span class="term">
+          <code class="literal">dig</code>
+        </span></dt><dd><p>
+            Muestra información de un dominio
+          </p></dd><dt><span class="term">
+          <code class="literal">geoiplookup</code>
+        </span></dt><dd><p>
+            Muestra localización de una IP. No es muy precisa
+          </p></dd><dt><span class="term">
+          <code class="literal">gzip</code>
+        </span></dt><dd><p>
+            Descomprime archivos
+          </p></dd></dl></div><p>
+      A continuación un ejemplo de auditoria de la bitácora
+      <code class="literal">auth</code>:
+    </p><div class="orderedlist"><ol type="1"><li><p>
+          Como usuario root hacer una copia de las bitácoras de
+          <code class="literal">/var/log</code> en un directorio personal y
+          descomprimir bitácoras comprimidas.
+        </p><pre class="programlisting">
+cd
+mkdir audita          # Crea un directorio para copiar
+cd audita             # Pasa al directorio creado
+mkdir 30sep2006       # Crear un directorio con la fecha
+cd 30sep2006          # Pasa al directorio creado
+cp -rf /var/log/* .   # Copia todas las bitácoras (debe ser root)
+gzip -d *.gz          # Descomprime bitácoras comprimidas
+</pre></li><li><p>
+          Revisar la bitácora a fin de determinar puntos críticos:
+        </p><pre class="programlisting">
+less authlog
+</pre><p>
+          buscando líneas como
+        </p><pre class="programlisting">
+invalid user test from 211.157.113.89
+</pre><p>
+          que revelan intento desde una IP por ingresar como usuario
+          <code class="literal">test</code> (que no existe en el sistema).
+        </p></li><li><p>
+          Para ver las líneas en las que aparece una cadena en especial,
+          una IP por ejemplo puede usarse:
+        </p><pre class="programlisting">
+grep "211.157.113.89" authlog
+</pre><p>
+          De forma que podemos ver datos importantes relacionados con la
+          IP como fecha y hora. En el caso de auth la IP corresponde a
+          direcciones desde donde se hacen intentos de ingreso).
+        </p></li><li><p>
+          Para mostrar cuántas veces está esa IP en ese archivo:
+        </p><pre class="programlisting">
+grep "211.157.113.89" authlog | wc -l
+</pre></li><li><p>
+          Para determinar en qué archivos de la bitácora hay información
+          de esta IP
+        </p><pre class="programlisting">
+find . -exec grep -l "211.157.113.89" {} ';'
+</pre></li><li><p>
+          Para determinar ubicación geográfica de una IP y datos sobre
+          el dominio asociado:
+        </p><pre class="programlisting">
+geoiplookup  211.157.113.89
+dig -x 211.157.113.89
+</pre><p>
+          El primero indica China, el segundo mail.chinacomm.com.cn. Con
+          el segundo ya podemos buscar información sobre el registro DNS
+          de chinacomm.com.cn:
+        </p><pre class="programlisting">
+whois chinacomm.com.cn
+</pre><p>
+          donde encontromos una dirección de correo:
+          <code class="literal">wjy@chncomm.com</code>
+        </p></li><li><p>
+          Si se ubica el dominio de la IP de donde proviene un ataque,
+          así como una dirección de correo, se recomienda enviar un
+          mensaje en inglés a tal dirección y/o por ejemplo a las
+          cuentas webmaster y root informando sobre el incidente con un
+          tema como:
+        </p><pre class="programlisting">
+Attempt to login at practica.pasosdeJesus.org from your IP on 16.Aug.2006 at 7:10:41
+</pre></li></ol></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_admin"></a>13.3. Lecturas recomendadas</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>
+          Documentación del sistema <span class="strong"><strong>man adduser,
+          man userdel</strong></span>
+        </p></li><li><p>
+          Para instalar y comenzar a administrar un sistema adJ
+          sugerimos <a href="bibliografia.html" title="15. Bibliografía">usuario_adJ</a>.
+        </p></li><li><p>
+          Para administrar un servidor adJ conectado a Internet
+          recomendamos <a href="bibliografia.html" title="15. Bibliografía">servidor_adJ</a>
+        </p></li></ul></div><p>
+      Todas las herramientas mencionadas
+      <span class="strong"><strong>less</strong></span>,
+      <span class="strong"><strong>find</strong></span>,
+      <span class="strong"><strong>grep</strong></span>,
+      <span class="strong"><strong>wc</strong></span> tienen sus respectivos
+      manuales, los cuales se pueden consultar con
+      <span class="strong"><strong>man</strong></span>, por ejemplo
+    </p><pre class="programlisting">
+man grep
+</pre></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm893346928" href="#idm893346928">17</a>] </sup>
+          Tenga en cuenta que la primera vez que ejecute
+          <code xmlns="" class="literal">adduser</code> tras instalar un sistema adJ, este
+          programa preguntará valores por defecto por emplear durante la
+          creación de cuentas.
+        </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="correo_electronico.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="novedades.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">12. Correo electrónico </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 14. Novedades</td></tr></table></div></body></html>
