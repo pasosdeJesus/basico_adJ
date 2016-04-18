@@ -11,13 +11,13 @@ computador).
 Es posible ejecutar aplicaciones gráficas en el servidor y ver las ventanas 
 gráficas en otro computador. Para esto es necesario:
 
-  1. Que en el archivo de configuración ```/etc/ssh/sshd_config``` del servidor 
+1. Que en el archivo de configuración ```/etc/ssh/sshd_config``` del servidor 
 	esté habilitada la opción:
 ```
 X11Forwarding yes
 ```
 		
-  2. Que en el computador donde se desea ver la información esté instalado un 
+2. Que en el computador donde se desea ver la información esté instalado un 
 	servidor de X-Window.
 
 En el caso de sistemas tipo Unix basta con tener X-Window instalado (si ve el 
