@@ -39,3 +39,6 @@ Convenciones para estas guías
 * Tenemos inconveniente para usar pandoc-citepro por lo que la bibliografía
   la estamos haciendo con [idlibro](#bibliografia) donde idlibro es uno
   de los mencionados en bibliografia.md
+
+* Para tablas nos ha ido mejor con pipe_tables descritas en 
+	http://pandoc.org/README.html#tables
