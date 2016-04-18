@@ -1,26 +1,50 @@
 ## Primeras páginas HTML {#primeras_paginas_html}
 
-Las páginas web deben ubicarse en un directorio destinado para esto (el cual debe haber sido configurado por el administrador con ese propósito en el servidor web), generalmente es el subdirectorio ```public_html``` de su directorio personal (e.g /home/juan/public_html). Tal directorio y sus archivos deben tener permiso de lectura para todos, y el directorio debe tener permiso de ejecución para todos. Puede asegurarse de esto con:
+Las páginas web deben ubicarse en un directorio destinado para esto (el cual 
+debe haber sido configurado por el administrador con ese propósito en el 
+servidor web), generalmente es el subdirectorio ```public_html``` de su 
+directorio personal (e.g /home/juan/public_html). Tal directorio y sus archivos 
+deben tener permiso de lectura para todos, y el directorio debe tener permiso 
+de ejecución para todos. Puede asegurarse de esto con:
 ```
 $ cd ~
 $ chmod -R a+r public_html
 $ chmod a+x public_html
-$ chmod a+x .```
-La dirección (o URL) que se emplee para ver sus páginas desde un navegador depende de la forma como se haya configurado el servidor web (y eventualmente el DNS). Por ejemplo para ver el archivo ```objetivo.html``` después de que lo haya ubicado en el directorio apropiado del ```servidor, practica.pasosdeJesus.org``` podría ser una dirección como ```http://practica.pasosdeJesus.org/~juan/objetivo.html``` o ```http://practica.pasosdeJesus.org/juan/objetivo.html``` o si tiene un dominio ya configurado, algo como ```http://www.midominio.org/objetivo.html```.
+$ chmod a+x .
+```
 
-Si desde un navegador emplea una dirección, pero sin especificar un nombre de archivo, el servidor buscará y presentará la información de un archivo por defecto. Tal archivo usualmente es ```index.html``` o ```index.php```. Así por ejemplo al emplear el URL ```http://practica.pasosdeJesus.org/~juan``` desde un navegador, se presentaría la misma información del URL: ```http://practica.pasosdeJesus.org/~juan/index.html```.
+La dirección (o URL) que se emplee para ver sus páginas desde un navegador 
+depende de la forma como se haya configurado el servidor web (y eventualmente 
+el DNS). Por ejemplo para ver el archivo ```objetivo.html``` después de que 
+lo haya ubicado en el directorio apropiado del 
+servidor ```practica.pasosdeJesus.org``` podría ser una dirección 
+como ```http://practica.pasosdeJesus.org/~juan/objetivo.html``` o 
+ ```http://practica.pasosdeJesus.org/juan/objetivo.html``` o si tiene un 
+dominio ya configurado, algo como ```http://www.midominio.org/objetivo.html```.
 
-Para ubicar las páginas web en el directorio apropiado, puede bien transferirlas desde otro computador (ver [xref](#transferencia_de_informacion_a_y_desde_el_servidor)) o bien crearlas directamente en el servidor (por ejemplo con el editor **vim** que de configurarse apropiadamente le facilitará la edición de HTML --ver [xref](#vim)).
+Si desde un navegador emplea una dirección, pero sin especificar un nombre de 
+archivo, el servidor buscará y presentará la información de un archivo por 
+defecto. Tal archivo usualmente es ```index.html``` o ```index.php```. 
+Así por ejemplo al emplear el URL ```http://practica.pasosdeJesus.org/~juan``` 
+desde un navegador, se presentaría la misma información del URL: 
+ ```http://practica.pasosdeJesus.org/~juan/index.html```.
 
-Para elaborar su primera página HTML, puede basarse en la siguiente página que ejemplifica cómo cambiar estilo de letra, colores, tamaño, párrafos, cambios de línea y encabezados.
+Para ubicar las páginas web en el directorio apropiado, puede bien 
+transferirlas desde otro computador 
+(ver [xref](#transferencia_de_informacion_a_y_desde_el_servidor)) 
+o bien crearlas directamente en el servidor (por ejemplo con el editor 
+**vim** que de configurarse apropiadamente le facilitará la edición de 
+HTML --ver [xref](#vim)).
+
+Para elaborar su primera página HTML, puede basarse en la siguiente página 
+que ejemplifica cómo cambiar estilo de letra, colores, tamaño, párrafos, 
+cambios de línea y encabezados.
 
 ```
 <html>
-	<head>
-    	<title>
-			Página de agradecimiento
-		</title>
-    </head>
+	<head><title>
+		Página de agradecimiento
+	</title></head>
 
 	<body bgcolor="#FFFFFF">
 		<h1>Página de agradecimiento</h1>
@@ -56,9 +80,11 @@ Para elaborar su primera página HTML, puede basarse en la siguiente página que
 ```
 
 Al abrirla con un navegador se ve algo como:
+
 ![Visualización de página HTML](img/html1.png)
 
 
 ### Lecturas recomendadas {#lecturas_recomendadas_html}
 
-Puede aprender sobre HTML por ejemplo en: http://www.w3.org/MarkU
+Puede aprender sobre HTML por ejemplo en: 
+<http://www.w3.org/MarkUp>
