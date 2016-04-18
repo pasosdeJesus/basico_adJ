@@ -1,33 +1,34 @@
 
 
-Convenciones Generales Markdown
+# Convenciones Generales Markdown
 
 * Para ver mejor las fuentes en diversos editores, cada línea debe tener
   máximo 80 caracteres.  En notas al pie, elementos de una lista  o en 
   definiciones  a partir de segunda línea dejar espacios para indentar
   y distinguir.
 
-* Lo que se digita debe quedar entre ```
+* Lo que se digita y rutas deben quedar entre \`\`\`.  Por ejemplo ```ls```
 
-* Nombres o términos que se definen en negrillas, entre **
+* Nombres o términos que se definen en negrillas, entre \*\*. Por ejemplo **cifrado** es ...
 
-* Términos en inglés en itálicas entre *
+* Términos en inglés en itálicas entre \*. Por ejemplo colchon (del inglès 
+ *buffer*)
 
 
-Convenciones para estas guías
+# Convenciones para estas guías
 
 * Usar Markdown genérico en lo posible pero cuando sea indispensable en la 
 	sintaxis de Pandoc, ver <http://pandoc.org>
 
 * Las imagenes dejarlas en el mismo repositorio en subdirectorio ```img```
-  y referenciar e.g img/xdm.png
+  y referenciar, por ejemplo ```[Pantallazo de XDM](img/xdm.png)```
 
 * Al procesar con Pandoc y DocBook las notas al pie se numerarán
   automáticamente, por eso  como identificador es mejor emplear 
   una palabra que distinga el capítulo seguido de un consecutivo dentro
-  del capítulo
+  del capítulo.  Por ejemplo ```[^conceptos.1]```
 
-* Un titulo de seccion así: ```## Editor \`\`\`vim\`\`\` {#editor_vim}```
+* Un titulo de seccion así: ```## Editor !```vim!``` {#editor_vim}```
   generará un ancla ```editor-vim```, para que el ancla sea 
   ```editor_vim``` usar solo ```## Editor vim {#editor_vim}```
   La referencia que preferimos es el título convirtiendo espacios en _, pasando
