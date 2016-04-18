@@ -4,7 +4,10 @@ Cada versión cubre la respectiva versión de adJ.
 
 Versión 5.8
 
+  - Uso de ```doas``` en lugar de ```sudo``` 
+	[xref](#labores_basicas_de_administracion)
   - Fuentes de esta guía migradas a Markdown por Blanca Acosta.
+
   
 Versión 5.7
 

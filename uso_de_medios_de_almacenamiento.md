@@ -75,7 +75,7 @@ y traducidas de la ayuda oficial --que podrá consultar desde el menu Ayuda:
 - Permite realizar operaciones como superusuario, bien iniciando de`sde una 
 	terminal con:
 ```
-sudo xfe
+doas xfe
 ```
 	o si está bien configurado puede inicarse una ventan superusuario desde 
 	el menu Herramientas->Ventana superusuario nueva.
@@ -166,7 +166,7 @@ desde el menú de Fluxbox (botón derecho sobre el escritorio) elija
 Dispositivo->Iniciar Servicios Faltantes o desde un interprete de comandos 
 teclee
 ```
-sudo sh /etc/rc.local
+doas sh /etc/rc.local
 ```
 Procedimiento que volverá a pedir clave de cifrado en caso de que haya 
 hecho falta.
@@ -199,10 +199,10 @@ USB, con una ventana de superusuario en xfe siga estos pasos:
 
 El mismo procedimiento desde un interprete de comandos lo realiza con:
 ```
-sudo mount /mnt/usb 
+doas mount /mnt/usb 
 ```
 ```
-sudo cp /mnt/usb/fuentes.txt /var/www/resbase 
+doas cp /mnt/usb/fuentes.txt /var/www/resbase 
 ```
 
 ### Lecturas recomendadas {#lecturas_recomendadas_medios}
