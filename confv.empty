@@ -66,6 +66,10 @@ REPASA_DOCBOOK_XSL_HTML="docbookrep_html.xsl"
 # Ruta de hojas XSLT de repasa para convertir de DocBook a HTML
 # 
 
+PANDOC=""
+# Pasa de markdown a docbook
+# http://pandoc.org/
+
 JADE=""
 # Motor para procesar hojas de estilo DSSSL
 # Instale jade o openjade (http://openjade.sourceforge.net)

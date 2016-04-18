@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" [
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "/usr/local/share/xml/docbook/4.2/docbookx.dtd"[
+
 <!ENTITY % confv SYSTEM "confv.ent">
 <!ENTITY % personaliza SYSTEM "personaliza.ent">
 <!ENTITY % infoversion SYSTEM "infoversion.ent">
@@ -7,31 +8,25 @@
 %personaliza;
 %infoversion;
 
-<!ENTITY novedades SYSTEM "novedades.xdbk">
-<!ENTITY intro SYSTEM "intro.xdbk">
-<!ENTITY primeruso SYSTEM "primeruso.xdbk">
-<!ENTITY conceptos SYSTEM "conceptos.xdbk">
-<!ENTITY medios SYSTEM "medios.xdbk">
-<!ENTITY xfe SYSTEM "xfe.xdbk">
-<!ENTITY partcifradas SYSTEM "partcifradas.xdbk">
-<!ENTITY locale SYSTEM "locale.xdbk">
-<!ENTITY personaliza-ksh SYSTEM "personaliza-ksh.xdbk">
-<!ENTITY html1 SYSTEM "html1.xdbk">
-<!ENTITY xfw SYSTEM "xfw.xdbk">
-<!ENTITY mg SYSTEM "mg.xdbk">
-<!ENTITY vi SYSTEM "vim.xdbk">
-<!ENTITY transferir SYSTEM "transferir.xdbk">
-<!ENTITY uso-ssh SYSTEM "uso-ssh.xdbk">
+<!ENTITY introduccion SYSTEM "introduccion.xdbk">
+<!ENTITY primer_uso_de_adJ SYSTEM "primer_uso_de_adJ.xdbk">
+<!ENTITY conceptos_basicos SYSTEM "conceptos_basicos.xdbk">
 <!ENTITY soporte SYSTEM "soporte.xdbk">
-<!ENTITY archivos SYSTEM "archivos.xdbk">
-<!ENTITY correo SYSTEM "correo.xdbk">
-<!ENTITY filezilla SYSTEM "filezilla.xdbk">
-<!ENTITY administra SYSTEM "administra.xdbk">
-<!ENTITY bitacoras SYSTEM "bitacoras.xdbk">
+<!ENTITY uso_de_medios_de_almacenamiento SYSTEM "uso_de_medios_de_almacenamiento.xdbk">
+<!ENTITY personalizacion SYSTEM "personalizacion.xdbk">
+<!ENTITY edicion_de_textos SYSTEM "edicion_de_textos.xdbk">
+<!ENTITY primeras_paginas_html SYSTEM "primeras_paginas_html.xdbk">
+<!ENTITY transferencia_de_informacion_a_y_desde_el_servidor SYSTEM "transferencia_de_informacion_a_y_desde_el_servidor.xdbk">
+<!ENTITY mas_formas_de_uso_de_ssh SYSTEM "mas_formas_de_uso_de_ssh.xdbk">
+<!ENTITY formatos_de_archivos SYSTEM "formatos_de_archivos.xdbk">
+<!ENTITY correo_electronico SYSTEM "correo_electronico.xdbk">
+<!ENTITY labores_basicas_de_administracion SYSTEM "labores_basicas_de_administracion.xdbk">
+<!ENTITY novedades SYSTEM "novedades.xdbk">
+<!ENTITY bibliografia SYSTEM "bibliografia.xdbk">
+  
 
-<!ENTITY biblio SYSTEM "biblio.xdbk">
 
-<!ENTITY indice SYSTEM "genindice.xdbk">
+<!--ENTITY indice SYSTEM "genindice.xdbk"-->
 ]> 
 
 <article lang="es">
@@ -39,12 +34,18 @@
   <articleinfo>
     <authorgroup>
       <author>
-	<firstname>Vladimir</firstname>
+	      
+	     <firstname>Vladimir</firstname>
 	<surname>Támara Patiño (vtamara@pasosdeJesus.org)</surname>
 </author> 
       <author>
 	<firstname>Hernán</firstname>
 	<surname>Quishpe (ahquishpe@gmail.com)</surname>
+      </author> 
+
+      <author>
+	<firstname>Blanca</firstname>
+	<surname>Acosta (blanca@pasosdeJesus.org)</surname>
       </author> 
 
     </authorgroup>
@@ -83,59 +84,20 @@ la distribución adJ de OpenBSD &VER-OPENBSD;.
 
   </articleinfo>
   
-  &intro;
-  &primeruso;
-  &conceptos;
+  &introduccion;
+  &primer_uso_de_adJ;
+  &conceptos_basicos;
   &soporte;
-  &medios;
-  <sect1 id="personalizacion">
-	  <title>Personalización</title>
-	  <para>
-	  Como usuario puede personalizar diversos aspectos de su
-	  interacción con el sistema completo y con cada programa
-	  (como <command>fluxbox</command>, 
-	  <command>xfe</command> y el interprete de comandos).
-	  En esta sección presentamos la personalización del 
-	  locale y algunas formas de personalizar el interprete
-	  de comandos <command>ksh</command>.
-	  
-  </para>
-  &locale;
-  &personaliza-ksh;
-  </sect1>
-  <sect1 id="ediciontexto">
-	  <title>Edicion de textos</title>
-	  <para>Un editor de texto le permite redactar textos simples
-		  y guardarlos en un formato simple (o plano).
-	  </para>
-	  <para>A medida que administre su sistema adJ, notará que
-		  es más y más necesaria la labor de editar textos.
-		  La primera vez posiblemente querrá usar el editor
-		  más gráfico y sencillo: <literal>xfw</literal>.  Pero si no
-		  tiene un entorno gráfica puede emplear 
-		  <literal>mg</literal>, y si desea 
-		  eficiencia posiblemente le servirá <literal>vim</literal>.
-	  </para>
-  &xfw;
-  &mg;
-  &vi;
-  </sect1>
-  &html1;
-  &transferir;
-  &uso-ssh;
-  &archivos;
-  &correo;
-  &administra;
-  &bitacoras;
+  &uso_de_medios_de_almacenamiento;
+  &personalizacion;
+  &edicion_de_textos;
+  &primeras_paginas_html;
+  &transferencia_de_informacion_a_y_desde_el_servidor;
+  &mas_formas_de_uso_de_ssh;
+  &formatos_de_archivos;
+  &correo_electronico;
+  &labores_basicas_de_administracion;
+  &novedades;
+  &bibliografia;
 
-  <appendix id="novedades">
-	<title>Novedades</title>
-	  <para>
-         &novedades;
-     </para>
-   </appendix>
-
-  &biblio;
-
-   <!-- &indice; -->
 </article>

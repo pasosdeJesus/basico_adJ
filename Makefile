@@ -8,10 +8,10 @@ include Make.inc
 
 EXT_DOCBOOK=xdbk
 
-SOURCES=$(PROYECTO).$(EXT_DOCBOOK) intro.xdbk primeruso.xdbk conceptos.xdbk \
-	soporte.xdbk medios.xdbk xfe.xdbk partcifradas.xdbk locale.xdbk \
-	personaliza-ksh.xdbk vim.xdbk correo.xdbk uso-ssh.xdbk xfw.xdbk \
-	mg.xdbk
+FUENTESDB=introduccion.xdbk primer_uso_de_adJ.xdbk conceptos_basicos.xdbk soporte.xdbk uso_de_medios_de_almacenamiento.xdbk personalizacion.xdbk edicion_de_textos.xdbk primeras_paginas_html.xdbk transferencia_de_informacion_a_y_desde_el_servidor.xdbk mas_formas_de_uso_de_ssh.xdbk formatos_de_archivos.xdbk correo_electronico.xdbk labores_basicas_de_administracion.xdbk novedades.xdbk bibliografia.xdbk
+
+
+SOURCES=$(PROYECTO).$(EXT_DOCBOOK) $(FUENTESDB)
 # Listado de fuentes XML. Preferiblmente en el orden de inclusión.
 
 IMAGES=img/primerflux.png img/putty1.png img/putty2.png img/pop3s-mozilla.png img/evolution.png img/mutt.png img/vim.png img/html1.png img/home.png img/prev.png img/toc-minus.png img/blank.png img/important.png img/toc-plus.png img/caution.png img/next.png img/tip.png img/up.png img/draft.png img/note.png img/toc-blank.png img/warning.png img/arbol-archivos.png img/putty-tunnel.png img/putty-x11.png img/imaps-1-thunderbird.png img/imaps-2-thunderbird.png img/imaps-3-thunderbird.png img/fluxbox_inicio.png img/mozilla_firefox.png img/espiritualidad.png img/openoffice_writer.png img/openoffice_calc.png img/openoffice_presentacion.png img/documentacion.png img/multimedia.png img/mplayer.png img/xcdplayer.png img/otros.png img/plan.png img/vim1.png img/fluxbox_menu.png img/estilo1.png img/partencr.png img/xdm.png img/consola.png img/pidgin1.png img/pidgin2.png img/pidgin3.png img/pidgin4.png img/pidgin5.png img/pidgin6.png img/pidgin7.png img/silc.png img/filezillaconexion.png img/filezilla.png img/xfecdrom.png img/montar.png img/xfepaq.png img/xfw-p.png img/mg.png
@@ -127,3 +127,16 @@ infoversion.ent:
 		cp ../servidor_adJ/infoversion.ent .; \
 	} fi;
 
+#PANDOC=/home/vtamara/.cabal/bin/pandoc 
+
+#introduccion.xdbk: introduccion.md
+
+.SUFFIXES: .md .xdbk
+.md.xdbk:
+	mkdir -p tmp
+	$(PANDOC) -t docbook -o tmp/$@ $<
+	sed -e "s/<link linkend=\"\([^\"]*\)\">xref<\/link>/<xref linkend=\"\1\"\/>/g" tmp/$@ > $@
+
+#contenido.xdbk: $(FUENTESMD)
+#	$(PANDOC) -t docbook -o pre-contenido.xdbk metadatos.yaml $(FUENTESMD)
+#	sed -e "s/<link linkend=\"\([^\"]*\)\">xref<\/link>/<xref linkend=\"\1\"\/>/g" pre-contenido.xdbk > contenido.xdbk
