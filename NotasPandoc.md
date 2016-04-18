@@ -5,11 +5,13 @@
 * Para ver mejor las fuentes en diversos editores, cada línea debe tener
   máximo 80 caracteres.  En notas al pie, elementos de una lista  o en 
   definiciones  a partir de segunda línea dejar espacios para indentar
-  y distinguir.
+  y distinguir.  Vea por ejemplo las fuentes de 
+  [un archivo en modo puro](https://raw.githubusercontent.com/pasosdeJesus/basico_adJ/master/labores_basicas_de_administracion.md).
 
 * Lo que se digita y rutas deben quedar entre \`\`\`.  Por ejemplo ```ls```
 
-* Nombres o términos que se definen en negrillas, entre \*\*. Por ejemplo **cifrado** es ...
+* Nombres o términos que se definen en negrillas, entre \*\*. 
+  Por ejemplo **cifrado** es ...
 
 * Términos en inglés en itálicas entre \*. Por ejemplo colchon (del inglès 
  *buffer*)
