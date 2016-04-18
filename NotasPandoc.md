@@ -28,7 +28,7 @@
   una palabra que distinga el capítulo seguido de un consecutivo dentro
   del capítulo.  Por ejemplo ```[^conceptos.1]```
 
-* Un titulo de seccion así: ```## Editor !```vim!``` {#editor_vim}```
+* Un titulo de seccion así: ```## Editor \```vim\``` {#editor_vim}```
   generará un ancla ```editor-vim```, para que el ancla sea 
   ```editor_vim``` usar solo ```## Editor vim {#editor_vim}```
   La referencia que preferimos es el título convirtiendo espacios en _, pasando
