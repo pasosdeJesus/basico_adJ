@@ -127,7 +127,7 @@ infoversion.ent:
 		cp ../servidor_adJ/infoversion.ent .; \
 	} fi;
 
-PANDOC=/home/vtamara/.cabal/bin/pandoc 
+#PANDOC=/home/vtamara/.cabal/bin/pandoc 
 
 #introduccion.xdbk: introduccion.md
 
