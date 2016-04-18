@@ -22,6 +22,7 @@
 <!ENTITY correo_electronico SYSTEM "correo_electronico.xdbk">
 <!ENTITY labores_basicas_de_administracion SYSTEM "labores_basicas_de_administracion.xdbk">
 <!ENTITY novedades SYSTEM "novedades.xdbk">
+<!ENTITY bibliografia SYSTEM "bibliografia.xdbk">
   
 
 
@@ -97,5 +98,6 @@ la distribución adJ de OpenBSD &VER-OPENBSD;.
   &correo_electronico;
   &labores_basicas_de_administracion;
   &novedades;
+  &bibliografia;
 
 </article>

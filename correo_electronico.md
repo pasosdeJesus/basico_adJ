@@ -26,7 +26,7 @@ Fuera de esos protocolos para extraer/examinar correo en servidores, el protocol
 
 En cuanto a clientes de correos para el web (webmails), hay varios (e.g squirrelmail, horde), prefiera emplearlos desde computadores sin virus ni spyware y sobre el protocolo HTTPS (```i.e``` la dirección a la que se conecta desde su navegador de comenzar con ```https://```).
 
-En el resto de esta guía se presenta la forma de configuración de algunos MUA usando el protocolo IMAP-SSL y el uso básico del MUA **mutt** (tomado de [AALinux](http://socrates.io/#UqCo8Cb)).
+En el resto de esta guía se presenta la forma de configuración de algunos MUA usando el protocolo IMAP-SSL y el uso básico del MUA **mutt** (tomado de [AALinux](#bibliografia).
 
 ### Uso de agentes de usuario para leer correo gráfico
 

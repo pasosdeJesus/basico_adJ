@@ -36,4 +36,6 @@ Convenciones para estas guías
   deje un enlace de la forma: [xref](#id_seccion), por ejemplo:
 	(ver [xref](#primer_uso_de_adJ))
 
-
+* Tenemos inconveniente para usar pandoc-citepro por lo que la bibliografía
+  la estamos haciendo con [idlibro](#bibliografia) donde idlibro es uno
+  de los mencionados en bibliografia.md

@@ -132,9 +132,7 @@ directorios con todo su contenido de forma recursiva con la opción
 ### Lecturas recomendadas
 
 Páginas ```man``` de los 11 comandos/programas introducidos en este capítulo.
-Se han tomado porciones de la sección "telnet y ssh" de 
-[@fenner2012a]
-[AALinux](http://structio.sourceforge.net/guias/AA_Linux_colegio/)
+Se han tomado porciones de la sección "telnet y ssh" de [AALinux](#bibliografia)
 
 
 

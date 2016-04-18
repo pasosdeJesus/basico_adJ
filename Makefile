@@ -8,7 +8,7 @@ include Make.inc
 
 EXT_DOCBOOK=xdbk
 
-FUENTESDB=introduccion.xdbk primer_uso_de_adJ.xdbk conceptos_basicos.xdbk soporte.xdbk uso_de_medios_de_almacenamiento.xdbk personalizacion.xdbk edicion_de_textos.xdbk primeras_paginas_html.xdbk transferencia_de_informacion_a_y_desde_el_servidor.xdbk mas_formas_de_uso_de_ssh.xdbk formatos_de_archivos.xdbk correo_electronico.xdbk labores_basicas_de_administracion.xdbk novedades.xdbk
+FUENTESDB=introduccion.xdbk primer_uso_de_adJ.xdbk conceptos_basicos.xdbk soporte.xdbk uso_de_medios_de_almacenamiento.xdbk personalizacion.xdbk edicion_de_textos.xdbk primeras_paginas_html.xdbk transferencia_de_informacion_a_y_desde_el_servidor.xdbk mas_formas_de_uso_de_ssh.xdbk formatos_de_archivos.xdbk correo_electronico.xdbk labores_basicas_de_administracion.xdbk novedades.xdbk bibliografia.xdbk
 
 
 SOURCES=$(PROYECTO).$(EXT_DOCBOOK) $(FUENTESDB)
@@ -134,7 +134,7 @@ PANDOC=/home/vtamara/.cabal/bin/pandoc
 .SUFFIXES: .md .xdbk
 .md.xdbk:
 	mkdir -p tmp
-	$(PANDOC) -t docbook --filter pandoc-citeproc -o tmp/$@ $<
+	$(PANDOC) -t docbook -o tmp/$@ $<
 	sed -e "s/<link linkend=\"\([^\"]*\)\">xref<\/link>/<xref linkend=\"\1\"\/>/g" tmp/$@ > $@
 
 #contenido.xdbk: $(FUENTESMD)

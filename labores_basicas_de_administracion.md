@@ -1,6 +1,6 @@
 ## Labores básicas de administración {#labores_basicas_de_administracion}
 
-Un sistema OpenBSD se administra desde la cuenta ```root``` o bien con ayuda del programa ```sudo```.
+Un sistema adJ se administra desde la cuenta ```root``` o bien con ayuda del programa ```sudo```.
 
 Desde las diversas cuentas del sistema que estén en el grupo ```wheel``` es posible pasar a la cuenta root con el comando:
 
@@ -27,7 +27,7 @@ Entre las labores del administrador está agregar, eliminar y modificar informac
 El administrador puede agregar usuarios con el comando ```adduser```. Su uso típico se esboza a continuación[^admin.1]
 
 [^admin.1]: Tenga en cuenta que la primera vez que ejecute adduser tras 
-	instalar un sistema OpenBSD, este programa preguntará valores por 
+	instalar un sistema adJ, este programa preguntará valores por 
 	defecto por emplear durante la creación de cuentas.
 
 ```
@@ -100,15 +100,15 @@ Es posible modificar información de los usuarios de diversas formas:
 
 ### Bitácoras {#bitacoras}
 
-Una de las labores típicas de un administrador de un sistema OpenBSD es revisar bitácoras del sistema en búsqueda de fallas de seguridad. En la mayoría de las veces se trata de ataques a través de internet, ataques que buscan entre otras cosas: acceder a nuestras máquinas para sacar información y modificarla, o usar nuestra máquina para que realice trabajos que el atacante quiere hacer, generalmente maliciosos.
+Una de las labores típicas de un administrador de un sistema adJ es revisar bitácoras del sistema en búsqueda de fallas de seguridad. En la mayoría de las veces se trata de ataques a través de internet, ataques que buscan entre otras cosas: acceder a nuestras máquinas para sacar información y modificarla, o usar nuestra máquina para que realice trabajos que el atacante quiere hacer, generalmente maliciosos.
 
-OpenBSD deja un registro muy completo en archivos de ```/var/log``` conocidas como bitácoras. Algunas son:
+adJ y OpenBSD dejan un registro muy completo en archivos de ```/var/log``` conocidas como bitácoras. Algunas son:
 
   - ```authlog```: Muestra los accesos de los usuarios permitidos y rechazados
 
   - ```secure```: Muestra los comandos de los administradores sudo
 
-  - ```daemon```: Los programas que están corriendo en la máquina
+  - ```servicio```: Los programas que están corriendo en la máquina
 
 Como el sistema hace rotación de bitácoras periódicamente, en el mismo directorio también se encuentra archivadas algunas bitácoras anteriores, comprimidas (terminan con nombres como .```0.gz```).
 
@@ -200,10 +200,10 @@ whois chinacomm.com.cn
 
   - Documentación del sistema **man adduser, man userdel**
 
-  - Para instalar y comenzar a administrar un sistema OpenBSD sugerimos [usuario_OpenBSD](http://socrates.io/#UqCo8Cb).
+  - Para instalar y comenzar a administrar un sistema adJ sugerimos [usuario_adJ](#bibliografia).
 
-  - Para administrar un servidor OpenBSD conectado a Internet recomendamos 
-  [servidor_OpenBSD](http://socrates.io/#UqCo8Cb)
+  - Para administrar un servidor adJ conectado a Internet recomendamos 
+  [servidor_adJ](#bibliografia)
 
 Todas las herramientas mencionadas **less**, **find**, **grep**, **wc** tienen sus respectivos manuales, los cuales se pueden consultar con **man**, por ejemplo
 
