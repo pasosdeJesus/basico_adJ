@@ -1,6 +1,7 @@
 ## Personalización {#personalizacion}
 
-Como usuario puede personalizar diversos aspectos de su interacción con el sistema completo y con cada programa 
+Como usuario puede personalizar diversos aspectos de su interacción con el 
+sistema completo y con cada programa 
 (como **fluxbox, xfe** y el interprete de comandos). En esta sección presentamos la personalización del locale y 
 algunas formas de personalizar el interprete de comandos **ksh**.
 
