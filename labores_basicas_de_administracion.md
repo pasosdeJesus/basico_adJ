@@ -73,20 +73,28 @@ Un UID
 : Se trata de un número que lo identifica (1003 en el ejemplo)
 
 Un GID
-: O número que identifica al grupo principal al que pertenece el usuario (1003 en el ejemplo).
+: O número que identifica al grupo principal al que pertenece el usuario 
+	(1003 en el ejemplo).
 
 Un intérprete de comandos
-: Que será el que tendrá el usuario al iniciar nuevas sesiones (en el ejemplo es /bin/ksh).
+: Que será el que tendrá el usuario al iniciar nuevas sesiones 
+	(en el ejemplo es /bin/ksh).
 
 Una clase de login
-: Que establecerá parámetros para la sesión, por ejemplo límite en el uso de memoria y recursos. En el ejemplo es ```staff```, pero para usuarios que no vayan a administrar el sistema se sugiere ```default```
+: Que establecerá parámetros para la sesión, por ejemplo límite en el uso 
+	de memoria y recursos. En el ejemplo es ```staff```, pero para 
+	usuarios que no vayan a administrar el sistema se sugiere ```default```
 
 Eventualmente uno o más grupos secundarios
-: Cada usuario fuera de su grupo principal puede pertenecer a otros grupos. En este ejemplo, el usuario pertenecerá además al grupo ```wheel```, lo cual indica que hará labores administrativas.
+: Cada usuario fuera de su grupo principal puede pertenecer a otros grupos. 
+	En este ejemplo, el usuario pertenecerá además al grupo ```wheel```, 
+	lo cual indica que hará labores administrativas.
 
 Un directorio personal
-: Cuyo propietario será el usuario y quedará como directorio de trabajo cada vez que inicie una sesión. En el ejemplo es ```/home/juan``` (note que por defecto todos los directorios de usuarios son subdirectorios de ```/home```).
-
+: Cuyo propietario será el usuario y quedará como directorio de trabajo cada 
+	vez que inicie una sesión. En el ejemplo es ```/home/juan``` 
+	(note que por defecto todos los directorios de usuarios son 
+	subdirectorios de ```/home```).
 
 Para eliminar un usuario y su directorio personal:
 
@@ -96,9 +104,11 @@ doas userdel -r juan
 		  
 Es posible modificar información de los usuarios de diversas formas:
 
-- Con el comando ```vipw``` que le permitirá modificar directamente el archivo de claves y usuarios
+- Con el comando ```vipw``` que le permitirá modificar directamente el archivo 
+  de claves y usuarios
 
-- Con el comando ```chfn usuario``` podrá modificar algunos datos del perfil del usuario.
+- Con el comando ```chfn usuario``` podrá modificar algunos datos del perfil 
+  del usuario.
 
 
 ### Bitácoras {#bitacoras}
@@ -126,7 +136,8 @@ comprimidas (terminan con nombres como .```0.gz```).
 Estos archivos pueden analizarse con algunas herramientas básicas como:
 
 ```less```
-: Examinar una archivo. En ```less``` la tecla ```G``` (mayúscula) lo lleva al final del archivo.
+: Examinar una archivo. En ```less``` la tecla ```G``` (mayúscula) lo lleva al 
+	final del archivo.
 
 ```grep```
 : Muestra cadenas en un archivo
@@ -164,7 +175,7 @@ gzip -d *.gz          # Descomprime bitácoras comprimidas
 ```
 less authlog
 ```
-   buscando líneas como
+	buscando líneas como
 ```
 invalid user test from 211.157.113.89
 ```
@@ -219,7 +230,7 @@ Attempt to login at practica.pasosdeJesus.org from your IP on 16.Aug.2006 at 7:1
 - Documentación del sistema **man adduser, man userdel**
 
 - Para instalar y comenzar a administrar un sistema adJ 
-	sugerimos [usuario_adJ](#bibliografia).
+  sugerimos [usuario_adJ](#bibliografia).
 
 - Para administrar un servidor adJ conectado a Internet recomendamos 
   [servidor_adJ](#bibliografia)
@@ -227,6 +238,8 @@ Attempt to login at practica.pasosdeJesus.org from your IP on 16.Aug.2006 at 7:1
 Todas las herramientas mencionadas **less**, **find**, **grep**, **wc** tienen 
 sus respectivos manuales, los cuales se pueden consultar con **man**, 
 por ejemplo
+
 ```
 man grep
 ```
+
