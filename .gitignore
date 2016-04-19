@@ -2,7 +2,7 @@
 *.swp
 html/*html
 html/*htm
-html/*png
+html/img/*png
 HTML.index.m
 Make.inc
 basico_adJ-4.1.2.xdbk
