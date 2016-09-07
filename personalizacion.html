@@ -15,9 +15,7 @@
     </p><p>
       En UTF-8 puede codificarse UNICODE, que a su vez permite
       representar todos los lenguajes escritos --la mayoría de lenguajes
-      occidentales, incluyendo el español, también puede codificarse con
-      ISO8859-1 o con ISO8859-15 que es prácticamente el mismo pero con
-      el símbolo de euro.
+      occidentales, incluyendo el español.
     </p><p>
       Los locales se ubican en el directorio
       <code class="literal">/usr/shar/locale</code> y puede examinar los más
@@ -42,7 +40,7 @@ export LANG=es_CO.UTF-8
         </p></li><li><p>
           La codificación de caracteres para que sea la que prefiere. En
           adJ se emplea el soporte de LC_CTYPE de OpenBSD que es
-          suficiente entre otros para ISO-8859-1, ISO8859-15 y UTF-8.
+          suficiente para UTF-8.
         </p></li><li><p>
           Los ordenamientos alfabéticos serán apropiados para su idioma
           (por ejemplo en español la á lexicograficamente equivale a la
@@ -223,8 +221,12 @@ export LANG="es_CO.UTF-8"
           </p></li></ul></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="colorls"></a>6.2.5. colorls</h4></div></div></div><p>
         En el ejemplo presentado si está instalado el programa
         <code class="literal">colorls</code> (del paquete colorls), este se define
-        como alias para el comando
-        <code class="literal">ls``, de forma  que la lista de archivos se presente con colores. Esto ocurrirá desde consolas  tipo texto. Si está usando OpenBSD con X-Window y</code>xterm<code class="literal">, además de lo  anterior necesita agregar a su archivo</code>~/.Xdefaults``
+        como alias para el comando <code class="literal">ls</code>, de forma que
+        la lista de archivos se presente con colores y como ha sido
+        modificado para adJ presentará orden correcto en español. Esto
+        ocurrirá desde consolas tipo texto. Si está usando OpenBSD con
+        X-Window y <code class="literal">xterm</code>, además de lo anterior
+        necesita agregar a su archivo `<code class="literal">~/.Xdefaults</code>
         (o crearlo si no existe):
       </p><pre class="programlisting">
 // Con base en http://dentarg.starkast.net/files/configs/dot.zshrc
