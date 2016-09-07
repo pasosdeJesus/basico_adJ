@@ -46,7 +46,7 @@ Si desea transmitir el archivo metodo.txt del directorio personal del
 servidor ```comp.trabajo.net``` al directorio en el que está ubicado en 
 ```practica.pasosdeJesus.org```:
 
-```sh
+```
 $ scp juan2@comp.trabajo.net:personal/metodo.txt .
 ```
 		

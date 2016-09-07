@@ -94,7 +94,7 @@ limpiadist: limpiamas
 
 # Elimina archivos generables
 limpiamas: limpia
-	rm -f img/*.eps img/*.ps
+	rm -rf img/*.eps img/*.ps
 	rm -f $(PROYECTO)-$(PRY_VERSION).tar.gz
 	rm -f genindice.xdbk genindice.xdbk.m genindice.xml.m HTML.index.m
 	rm -rf $(PROYECTO)-$(PRY_VERSION)
@@ -105,7 +105,7 @@ limpiamas: limpia
 
 # Elimina backups y archivos temporales
 limpia:
-	rm -f *bak *~ *tmp confaux.tmp $(PROYECTO)-$(PRY_VERSION)_html.tar.gz
+	rm -rf *bak *~ *tmp confaux.tmp $(PROYECTO)-$(PRY_VERSION)_html.tar.gz
 	rm -f $(PROYECTO)-4.1.*
 
 

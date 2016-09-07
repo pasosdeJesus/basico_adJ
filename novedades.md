@@ -2,6 +2,10 @@
 
 Cada versión cubre la respectiva versión de adJ.
 
+Versión 5.9
+
+  - Más formatos comprimidos (.bz2, .rar, .7z) [xref](#formatos_de_archivos)
+
 Versión 5.8
 
   - Uso de ```doas``` en lugar de ```sudo``` 
