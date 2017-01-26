@@ -20,7 +20,7 @@
 # Convenciones para estas guías
 
 * Usar Markdown genérico en lo posible pero cuando sea indispensable en la 
-	sintaxis de Pandoc, ver <http://pandoc.org>
+  sintaxis de Pandoc, ver <http://pandoc.org>
 
 * Las imagenes dejarlas en el mismo repositorio en subdirectorio ```img```
   y referenciar, por ejemplo ```[Pantallazo de XDM](img/xdm.png)```
