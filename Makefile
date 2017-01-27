@@ -130,16 +130,3 @@ infoversion.ent:
 		cp ../servidor_adJ/infoversion.ent .; \
 	} fi;
 
-#PANDOC=/home/vtamara/.cabal/bin/pandoc 
-
-#introduccion.xdbk: introduccion.md
-
-.SUFFIXES: .md .xdbk
-.md.xdbk:
-	mkdir -p tmp
-	$(PANDOC) -t docbook -o tmp/$@ $<
-	sed -e "s/<link linkend=\"\([^\"]*\)\">xref<\/link>/<xref linkend=\"\1\"\/>/g" tmp/$@ > $@
-
-#contenido.xdbk: $(FUENTESMD)
-#	$(PANDOC) -t docbook -o pre-contenido.xdbk metadatos.yaml $(FUENTESMD)
-#	sed -e "s/<link linkend=\"\([^\"]*\)\">xref<\/link>/<xref linkend=\"\1\"\/>/g" pre-contenido.xdbk > contenido.xdbk
