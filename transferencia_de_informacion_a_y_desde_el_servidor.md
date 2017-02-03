@@ -2,10 +2,62 @@
 ## Transferencia de información a y desde el servidor {#transferencia_de_informacion_a_y_desde_el_servidor}
 
 Hay diversos métodos para transferir información entre el servidor y otros 
-computadores, uno de los más seguros consiste en emplear una conexión cifrada 
-como las ofrecidas por **ssh**. Para emplear este método desde el servidor 
-OpenBSD (o otro sistema tipo Unix que cuente con OpenSSH) se puede usar 
-bien **scp** desde la línea de comandos o el programa filezilla.
+computadores.  
+
+Puede descargar información típicamente con los protocolos **http** y 
+**ftp** que transmiten la información sin cifrar, esto puede lograrlo con
+```ftp```, ```curl``` o ```wget```.
+  
+Para descargar información cifrada emplee el protocolo **https** con
+los mismos ```ftp```, ```curl``` o ```wget```.
+
+Para enviar y recibir información cifrada utilice el protocolo 
+**ssh** (o su protocolo asociado **sftp**).  Para emplear este método 
+desde un sistema adJ/OpenBSD (o otro sistema tipo Unix que cuente con 
+OpenSSH) se puede usar bien ```scp``` desde la línea de comandos o el 
+programa ```filezilla```.
+
+### ftp {#ftp}
+
+Si tiene una URL para los protocolos http, https o ftp basta que
+la escriba a continuación de ftp en una terminal y este descargará
+el enlace.  
+Por ejemplo las fuentes de este manual están en
+```http://pasosdejesus.github.io/basico_adJ/basico_adJ-&VER-OPENBSD;_html.tar.gz``` (que usa protocolo http como indica el comienzo del URL)
+podrá descargarlas al directorio de trabajo con:
+
+```
+	ftp http://pasosdejesus.github.io/basico_adJ/basico_adJ-&VER-OPENBSD;_html.tar.gz
+``` 
+Para descargar con protocolo https (soportado por github.io):
+```
+	ftp https://pasosdejesus.github.io/basico_adJ/basico_adJ-&VER-OPENBSD;_html.tar.gz
+```
+Y a manera de ejemplo de descarga mediante protocolo ftp (archivo
+de respuestas frecuentes sobre OpenBSD):
+```
+	ftp ftp://ftp3.usa.openbsd.org/pub/OpenBSD/doc/obsd-faq.txt
+```
+
+
+### curl {#curl}
+
+Los mismos ejemplos de la sección anterior con ```curl``` serían:
+```
+	curl -O http://pasosdejesus.github.io/basico_adJ/basico_adJ-&VER-OPENBSD;_html.tar.gz
+	curl -O https://pasosdejesus.github.io/basico_adJ/basico_adJ-&VER-OPENBSD;_html.tar.gz
+	curl -O ftp://ftp3.usa.openbsd.org/pub/OpenBSD/doc/obsd-faq.txt
+``` 
+
+
+### wget {#wget}
+
+Los mismos ejemplos de la sección anterior con ```wget``` serían:
+```
+	wget http://pasosdejesus.github.io/basico_adJ/basico_adJ-&VER-OPENBSD;_html.tar.gz
+	wget https://pasosdejesus.github.io/basico_adJ/basico_adJ-&VER-OPENBSD;_html.tar.gz
+	wget ftp://ftp3.usa.openbsd.org/pub/OpenBSD/doc/obsd-faq.txt
+``` 
 
 ### Filezilla {#filezilla}
 

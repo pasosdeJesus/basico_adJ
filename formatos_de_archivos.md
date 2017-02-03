@@ -1,17 +1,8 @@
 ## Formatos de archivos {#formatos_de_archivos}
 
-Para descargar un archivo de Internet en un directorio de su cuenta puede usar:
-```
-ftp http://el.servidor.net/la/ruta/elarchivo.ext
-```
-		
-Con este método puede descargar archivos con los protocolos ftp o http. 
-Otra posibilidad es emplear alguno de los programas **wget**, **curl** o 
-**w3mir** que le permiten descargar más de un archivo a la vez 
-(o sitios web completos).
-
-La forma de emplear un archivo que descargue, depende del formato en el que 
-esté. El formato usualmente se identifica con la extensión (i.e las últimas 
+La forma de emplear un archivo que copie, cree o descargue , depende 
+del formato en el que esté. 
+El formato usualmente se identifica con la extensión (i.e las últimas 
 letras que están después de un punto).
 
 - ```.txt``` Se trata de un texto plano. Típicamente estará codificado en 
@@ -71,7 +62,7 @@ bzip2 archivo.pdf
 unrar archivo.rar
 ```
 
-- ```.7z``` Uno o más archivos comprimidos y empaquetados con **7-Zip*.
+- ```.7z``` Uno o más archivos comprimidos y empaquetados con **7-Zip**.
 	Descomprime y desempaqueta por ejemplo con:
 ```
 7z x archivo.7z

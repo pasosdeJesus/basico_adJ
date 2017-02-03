@@ -4,7 +4,7 @@ Cada versión cubre la respectiva versión de adJ.
 
 Versión 6.0
 
-  - 
+  - Programas para descargar [xref](#ftp), [xref](#curl), [xref](#wget)
 
 Versión 5.9
 

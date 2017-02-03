@@ -72,9 +72,10 @@ escritorio.
 ![Menú inicial](img/fluxbox_inicio.png)
 
 Observe las distintas posibilidades del menú. Puede navegar en Internet 
-utilizando chrome o midori. En el navegador chrome se abrirá la traducción de 
-los Evangelios incluida (menú Espiritualidad->Evangelios de Dominio Público), 
-así como la documentación (Documentos),
+utilizando chrome o midori. 
+
+Si elije __Espiritualidad->Evangelios de Dominio Público__ podrá
+consultar en chrome una traducción de los evangelios.
 
 ![Escritorio fluxbox con navegador Chrome](img/primerflux.png)
 

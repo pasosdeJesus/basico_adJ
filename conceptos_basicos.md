@@ -96,8 +96,8 @@ adicionales de cada archivo.
 
 ```mkdir public_html```
 
-: Permite crear un directorio (en este caso public_html), si no se especifica 
-la ruta completa **mkdir** lo crea en el directorio de trabajo.
+: Permite crear un directorio (en este caso ```public_html```), si no se 
+especifica la ruta completa **mkdir** lo crea en el directorio de trabajo.
 
 ```cd public_html```
 
@@ -107,8 +107,8 @@ cambia al directorio personal.
 
 ```cp traido/index.htm public_html/index.html```
 : El programa ```cp``` permite copiar uno o más archivos. En el ejemplo 
-presentado el archivo index.htm del subdirectorio traido es copiado en el 
-subdirectorio public_html con el nombre index.html. Note que ambos 
+presentado el archivo ```index.htm``` del subdirectorio traido es copiado 
+en el subdirectorio public_html con el nombre index.html. Note que ambos 
 subdirectorios son subdirectorios del directorio  de trabajo y que debe 
 existir el archivo ```traido/index.htm```. Pueden copiarse también directorios  
 junto con subdirectorios usando la opción ```-r```, por ejemplo:
@@ -116,7 +116,7 @@ junto con subdirectorios usando la opción ```-r```, por ejemplo:
     cp -r traido/* public_html/
 ```
 que copia todos los archivos y subdirectorios del directorio traido de manera recursiva al 
-directorio public_html.
+directorio ```public_html```.
 
 ```rm traido/index.htm```
 
