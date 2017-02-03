@@ -72,7 +72,7 @@
       directorio que llamamos <span class="emphasis"><em>directorio personal</em></span>
       cuya ruta normalmente es de la forma
       <code class="literal">/home/juan</code>.
-    </p><div class="figure"><a name="idm3153527024"></a><p class="title"><b>Figura 15. Sistema de archivos</b></p><div class="mediaobject"><img src="img/arbol-archivos.png" alt="Sistema de archivos"></div></div><p>
+    </p><div class="figure"><a name="idp132117744"></a><p class="title"><b>Figura 15. Sistema de archivos</b></p><div class="mediaobject"><img src="img/arbol-archivos.png" alt="Sistema de archivos"></div></div><p>
       El intérprete de comandos que emplee tendrá como parte de su
       estado un directorio de trabajo, un símbolo de espera de ordenes y
       variables de entorno. La manera de ver y alterar estos datos
@@ -106,10 +106,10 @@
           </p></dd><dt><span class="term">
           <code class="literal">mkdir public_html</code>
         </span></dt><dd><p>
-            Permite crear un directorio (en este caso public_html), si
-            no se especifica la ruta completa
-            <span class="strong"><strong>mkdir</strong></span> lo crea en el
-            directorio de trabajo.
+            Permite crear un directorio (en este caso
+            <code class="literal">public_html</code>), si no se especifica la ruta
+            completa <span class="strong"><strong>mkdir</strong></span> lo crea en
+            el directorio de trabajo.
           </p></dd><dt><span class="term">
           <code class="literal">cd public_html</code>
         </span></dt><dd><p>
@@ -119,12 +119,13 @@
             <code class="literal">cd</code> cambia al directorio personal.
           </p></dd><dt><span class="term">
           <code class="literal">cp traido/index.htm public_html/index.html</code>
-        </span></dt><dd><div class="literallayout"><p>El programa <code class="literal">cp</code> permite copiar uno o más archivos. En el ejemplo presentado el archivo index.htm del subdirectorio traido es copiado en el subdirectorio public_html con el nombre index.html. Note que ambos subdirectorios son subdirectorios del directorio de trabajo y que debe existir el archivo <code class="literal">traido/index.htm</code>. Pueden copiarse también directorios<br>
+        </span></dt><dd><div class="literallayout"><p>El programa <code class="literal">cp</code> permite copiar uno o más archivos. En el ejemplo presentado el archivo <code class="literal">index.htm</code> del subdirectorio traido es copiado en el subdirectorio public_html con el nombre index.html. Note que ambos subdirectorios son subdirectorios del directorio de trabajo y que debe existir el archivo <code class="literal">traido/index.htm</code>. Pueden copiarse también directorios<br>
 junto con subdirectorios usando la opción <code class="literal">-r</code>, por ejemplo:</p></div><pre class="programlisting">
 cp -r traido/* public_html/
 </pre><p>
             que copia todos los archivos y subdirectorios del directorio
-            traido de manera recursiva al directorio public_html.
+            traido de manera recursiva al directorio
+            <code class="literal">public_html</code>.
           </p></dd><dt><span class="term">
           <code class="literal">rm traido/index.htm</code>
         </span></dt><dd><p>
