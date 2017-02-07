@@ -20,8 +20,9 @@ programa ```filezilla```.
 ### ftp {#ftp}
 
 Si tiene una URL para los protocolos http, https o ftp basta que
-la escriba a continuación de ftp en una terminal y este descargará
-el enlace.  
+la escriba como parámetro de la orden ```ftp``` en una terminal 
+y este descargará el enlace.  
+
 Por ejemplo las fuentes de este manual están en
 ```http://pasosdejesus.github.io/basico_adJ/basico_adJ-&VER-OPENBSD;_html.tar.gz``` (que usa protocolo http como indica el comienzo del URL)
 podrá descargarlas al directorio de trabajo con:
@@ -33,8 +34,8 @@ Para descargar con protocolo https (soportado por github.io):
 ```
 	ftp https://pasosdejesus.github.io/basico_adJ/basico_adJ-&VER-OPENBSD;_html.tar.gz
 ```
-Y a manera de ejemplo de descarga mediante protocolo ftp (archivo
-de respuestas frecuentes sobre OpenBSD):
+Y a manera de ejemplo para descargar un documento de respuestas frecuentes 
+sobre OpenBSD mediante el protocolo ftp:
 ```
 	ftp ftp://ftp3.usa.openbsd.org/pub/OpenBSD/doc/obsd-faq.txt
 ```
