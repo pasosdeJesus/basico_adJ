@@ -46,6 +46,15 @@ tar xvfz archivo.tar.gz
 ```
 tar xvf archivo.tar
 ```
+   	Para empaquetar un directorio digamos ./cartas en formato tar emplearía:
+```
+tar cvf cartas.tar ./cartas
+```
+	Y si además lo desea comprimir:
+```
+tar cvfz cartas.tar.gz ./cartas
+```
+
 - ```.bz2``` Se trata de uno o más archivos comprimidos con **bzip2**.
 	Se descomprime con:
 ```
