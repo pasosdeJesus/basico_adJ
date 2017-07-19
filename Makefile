@@ -94,7 +94,7 @@ limpiadist: limpiamas
 
 # Elimina archivos generables
 limpiamas: limpia
-	rm -f img/*.eps img/*.ps
+	rm -rf img/*.eps img/*.ps
 	rm -f $(PROYECTO)-$(PRY_VERSION).tar.gz
 	rm -f genindice.xdbk genindice.xdbk.m genindice.xml.m HTML.index.m
 	rm -rf $(PROYECTO)-$(PRY_VERSION)
@@ -105,7 +105,7 @@ limpiamas: limpia
 
 # Elimina backups y archivos temporales
 limpia:
-	rm -f *bak *~ *tmp confaux.tmp $(PROYECTO)-$(PRY_VERSION)_html.tar.gz
+	rm -rf *bak *~ *tmp confaux.tmp $(PROYECTO)-$(PRY_VERSION)_html.tar.gz
 	rm -f $(PROYECTO)-4.1.*
 
 
@@ -130,16 +130,3 @@ infoversion.ent:
 		cp ../servidor_adJ/infoversion.ent .; \
 	} fi;
 
-#PANDOC=/home/vtamara/.cabal/bin/pandoc 
-
-#introduccion.xdbk: introduccion.md
-
-.SUFFIXES: .md .xdbk
-.md.xdbk:
-	mkdir -p tmp
-	$(PANDOC) -t docbook -o tmp/$@ $<
-	sed -e "s/<link linkend=\"\([^\"]*\)\">xref<\/link>/<xref linkend=\"\1\"\/>/g" tmp/$@ > $@
-
-#contenido.xdbk: $(FUENTESMD)
-#	$(PANDOC) -t docbook -o pre-contenido.xdbk metadatos.yaml $(FUENTESMD)
-#	sed -e "s/<link linkend=\"\([^\"]*\)\">xref<\/link>/<xref linkend=\"\1\"\/>/g" pre-contenido.xdbk > contenido.xdbk

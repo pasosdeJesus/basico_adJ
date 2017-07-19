@@ -73,7 +73,7 @@ Soporta transferencia de archivos, mensajes de ausencia, iconos, emoticones
 personalizados y notificaciones de escribir.
 
 - Puede iniciar con el botón derecho sobre el escritorio en el menú 
-	Internet->Pidgin o desde una terminal escribiendo ```pidgin```.
+	__Internet->Pidgin__ o desde una terminal escribiendo ```pidgin```.
 ![Al ejecutar pidgin](img/pidgin2.png)
 
 - Presionamos botón del ratón sobre **Add** para adicionar una cuenta. 

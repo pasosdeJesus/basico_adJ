@@ -15,8 +15,7 @@ y con codificación UTF-8.
 
 En UTF-8 puede codificarse UNICODE, que a su vez permite representar todos los 
 lenguajes escritos --la mayoría de lenguajes occidentales, incluyendo el 
-español, también puede codificarse con ISO8859-1 o con ISO8859-15 que es 
-prácticamente el mismo pero con el símbolo de euro.
+español.
 
 Los locales se ubican en el directorio ```/usr/shar/locale``` y puede examinar 
 los más comunes con
@@ -36,8 +35,8 @@ determinar el locale y modificaran la forma de presentar:
 - Los mensajes, menús y ayudas para que sean en su idioma. En adJ esto se 
 	soporta via el porte **gettext**.
 - La codificación de caracteres para que sea la que prefiere. En adJ se 
-	emplea el soporte de LC_CTYPE de OpenBSD que es suficiente entre otros 
-	para ISO-8859-1, ISO8859-15 y UTF-8.
+	emplea el soporte de LC_CTYPE de OpenBSD que es suficiente
+	para UTF-8.
 - Los ordenamientos alfabéticos serán apropiados para su idioma (por ejemplo 
 	en español la á lexicograficamente equivale a la a, y la ñ está entre 
 	la n y la o). En adJ se emplea una implementación mejorada sobre la de 
@@ -199,8 +198,9 @@ también se establecen las variables de ambiente
 #### colorls {#colorls}
 
 En el ejemplo presentado si está instalado el programa ```colorls``` (del 
-paquete colorls), este se define como alias para el comando ```ls``, de forma 
-que la lista de archivos se presente con colores. Esto ocurrirá desde consolas 
+paquete colorls), este se define como alias para el comando ```ls```, de forma 
+que la lista de archivos se presente con colores y como ha sido modificado
+para adJ presentará orden correcto en español. Esto ocurrirá desde consolas 
 tipo texto. Si está usando OpenBSD con X-Window y ```xterm```, además de lo 
 anterior necesita agregar a su archivo ```~/.Xdefaults`` (o crearlo 
 si no existe):

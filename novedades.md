@@ -2,6 +2,18 @@
 
 Cada versión cubre la respectiva versión de adJ.
 
+Versión 6.1
+  - Mejora a formato tar, agradecimiento a Daniel Cardona 
+    <dcardona@cinep.org.co>.  [xref](#formatos_de_archivos)
+
+Versión 6.0
+
+  - Programas para descargar [xref](#ftp), [xref](#curl), [xref](#wget)
+
+Versión 5.9
+
+  - Más formatos comprimidos (.bz2, .rar, .7z) [xref](#formatos_de_archivos)
+
 Versión 5.8
 
   - Uso de ```doas``` en lugar de ```sudo``` 
