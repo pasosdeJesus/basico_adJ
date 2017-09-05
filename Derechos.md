@@ -1,6 +1,6 @@
 # Nota sobre derechos de reproducción
 
-Vladimir Támara Patiño (vtamara@pasosdeJesus.org). 2015
+Vladimir Támara Patiño (vtamara@pasosdeJesus.org). 2004
 
 Este documento y sus fuentes son obra de amor cedidas al dominio
 público de acuerdo a la legislación colombiana desde 2004. 
@@ -11,6 +11,6 @@ correcciones y sugerencias al autor. Este escrito se dedica a Dios:
 
 Agradecemos los aportes de Carolina Pinzón, Marly Mier Rinaldy y
 wiroal, Hernan Quishpe, Blanca Inés Acosta y Daniel Cardona. Así
-mismo agradecemos al CINEP/PPP por algunos aportes desde su Base de
-Conocimiento (sección auditabitacoras).
+mismo agradecemos al CINEP/PPP por algunos aportes de dominio público
+desde la Base de Conocimiento de la Oficina de TI (sección auditabitacoras).
 
