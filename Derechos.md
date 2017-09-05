@@ -1,17 +1,16 @@
-# Nota sobre derechos de reproducción
+# Nota sobre derechos de reproducciÃ³n
 
-Vladimir Támara Patiño (vtamara@pasosdeJesus.org). 2015
-Blanca Inés Acosta (blanca@pasosdeJesus.org). 2015
+Vladimir TÃ¡mara PatiÃ±o (vtamara@pasosdeJesus.org). 2015
 
 Este documento y sus fuentes son obra de amor cedidas al dominio
-público de acuerdo a la legislación colombiana desde 2004. 
+pÃºblico de acuerdo a la legislaciÃ³n colombiana desde 2004. 
 
-Se trata de la versión 5.8 actualizada por última
-vez en 18/11/2015 para que correspondan a adJ 5.8. No se ofrece
-garantía alguna, por el contrario se aprecia que se envíen
+No se ofrece garantÃ­a alguna, por el contrario se aprecia que se envÃ­en
 correcciones y sugerencias al autor. Este escrito se dedica a Dios:
-`Alaba mi alma la grandeza del Señor'
+`Alaba mi alma la grandeza del SeÃ±or'
 
-Agradecemos los aportes de Carolina Pinzón, Marly Mier Rinaldy y
-wiroal.
+Agradecemos los aportes de Carolina PinzÃ³n, Marly Mier Rinaldy y
+wiroal, Hernan Quishpe, Blanca InÃ©s Acosta y Daniel Cardona. AsÃ­
+mismo agradecemos al CINEP/PPP por algunos aportes desde su Base de
+Conocimiento (secciÃ³n auditabitacoras).
 
