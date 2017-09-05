@@ -25,15 +25,15 @@
       una terminal y este descargará el enlace.
     </p><p>
       Por ejemplo las fuentes de este manual están en
-      <code class="literal">http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.0_html.tar.gz</code>
+      <code class="literal">http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.1_html.tar.gz</code>
       (que usa protocolo http como indica el comienzo del URL) podrá
       descargarlas al directorio de trabajo con:
     </p><pre class="programlisting">
-    ftp http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.0_html.tar.gz
+    ftp http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.1_html.tar.gz
 </pre><p>
       Para descargar con protocolo https (soportado por github.io):
     </p><pre class="programlisting">
-    ftp https://pasosdejesus.github.io/basico_adJ/basico_adJ-6.0_html.tar.gz
+    ftp https://pasosdejesus.github.io/basico_adJ/basico_adJ-6.1_html.tar.gz
 </pre><p>
       Y a manera de ejemplo para descargar un documento de respuestas
       frecuentes sobre OpenBSD mediante el protocolo ftp:
@@ -43,15 +43,15 @@
       Los mismos ejemplos de la sección anterior con
       <code class="literal">curl</code> serían:
     </p><pre class="programlisting">
-    curl -O http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.0_html.tar.gz
-    curl -O https://pasosdejesus.github.io/basico_adJ/basico_adJ-6.0_html.tar.gz
+    curl -O http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.1_html.tar.gz
+    curl -O https://pasosdejesus.github.io/basico_adJ/basico_adJ-6.1_html.tar.gz
     curl -O ftp://ftp3.usa.openbsd.org/pub/OpenBSD/doc/obsd-faq.txt
 </pre></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="wget"></a>9.3. wget</h3></div></div></div><p>
       Los mismos ejemplos de la sección anterior con
       <code class="literal">wget</code> serían:
     </p><pre class="programlisting">
-    wget http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.0_html.tar.gz
-    wget https://pasosdejesus.github.io/basico_adJ/basico_adJ-6.0_html.tar.gz
+    wget http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.1_html.tar.gz
+    wget https://pasosdejesus.github.io/basico_adJ/basico_adJ-6.1_html.tar.gz
     wget ftp://ftp3.usa.openbsd.org/pub/OpenBSD/doc/obsd-faq.txt
 </pre></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="filezilla"></a>9.4. Filezilla</h3></div></div></div><p>
       <span class="strong"><strong>filezilla</strong></span> le permite transmitir
@@ -63,13 +63,13 @@
       Una vez instalado ejecútelo y configure la primera vez la conexión
       a su servidor desde el menú Archivo-&gt;Gestor de Sitios. Del
       siguiente ejemplo adapte el nombre del servidor y de usuario.
-    </p><div class="figure"><a name="idm2875587088"></a><p class="title"><b>Figura 22. Configuración de una conexión con filezilla</b></p><div class="mediaobject"><img src="img/filezillaconexion.png" alt="Configuración de una conexión con
+    </p><div class="figure"><a name="idp665892912"></a><p class="title"><b>Figura 22. Configuración de una conexión con filezilla</b></p><div class="mediaobject"><img src="img/filezillaconexion.png" alt="Configuración de una conexión con
         filezilla"></div></div><p>
       Una vez configurada la encontrará al abrir FileZilla e ingresar a
       Archivos-&gt;Sitios. Cuando elija Conectar se iniciará una
       conexión encriptada, con un intercambio inicial de llaves que debe
       aceptar, después aparecerán paneles como los siguientes:
-    </p><div class="figure"><a name="idm2087709072"></a><p class="title"><b>Figura 23. Paneles de Filezilla</b></p><div class="mediaobject"><img src="img/filezilla.png" alt="Paneles de Filezilla"></div></div><p>
+    </p><div class="figure"><a name="idm3217667408"></a><p class="title"><b>Figura 23. Paneles de Filezilla</b></p><div class="mediaobject"><img src="img/filezilla.png" alt="Paneles de Filezilla"></div></div><p>
       Note que al lado izquierdo están las carpetas y archivos de su
       computador local, mientras que al lado derecho están las carpetas
       y archivos del servidor. Para transmitir un archivo de uno a otro
@@ -94,7 +94,7 @@ $ scp ideas.txt mateo@comp.trabajo.net:personal
     </p><p>
       Note que <span class="strong"><strong>scp</strong></span> es similar a
       <span class="strong"><strong>cp</strong></span> (pues permite copiar un
-      archivo fuente en uno destino<sup>[<a name="idm1907446544" href="#ftn.idm1907446544">13</a>]</sup>) sólo que el archivo fuente o el archivo destino
+      archivo fuente en uno destino<sup>[<a name="idm2321878096" href="#ftn.idm2321878096">13</a>]</sup>) sólo que el archivo fuente o el archivo destino
       pueden estar en otra máquina.
     </p><p>
       Dado que Windows no tiene un servidor
@@ -109,7 +109,7 @@ $ scp ideas.txt mateo@comp.trabajo.net:personal
     </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_transferencia"></a>9.6. Lecturas recomendadas</h3></div></div></div><p>
       Para aprender más sobre <code class="literal">scp</code> recomendamos la
       página del manual.
-    </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm1907446544" href="#idm1907446544">13</a>] </sup>
+    </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2321878096" href="#idm2321878096">13</a>] </sup>
           Incluso scp implementa la funcionalidad de cp al permitir
           copiar localmente un archivo.
         </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="primeras_paginas_html.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="mas_formas_de_uso_de_ssh.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">8. Primeras páginas HTML </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 10. Más formas de uso de ssh</td></tr></table></div></body></html>
