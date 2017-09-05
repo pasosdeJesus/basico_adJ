@@ -3,8 +3,11 @@
 Cada versión cubre la respectiva versión de adJ.
 
 Versión 6.1
-  - Mejora a formato tar, agradecimiento a Daniel Cardona 
-    <dcardona@cinep.org.co>.  [xref](#formatos_de_archivos)
+
+  - Ampliada sección sobre bitácoras [xref](#auditabitacoras)
+
+  - Mejorada explicación de formato tar, agradecimiento a Daniel Cardona 
+    	<dcardona@cinep.org.co>.  [xref](#formatos_de_archivos)
 
 Versión 6.0
 

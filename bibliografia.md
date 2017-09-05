@@ -4,7 +4,8 @@
 
 [AALinux] Aprendiendo a aprender Linux: Guías para colegios con plataforma de referencia S-Helio 1.1 http://structio.sourceforge.net Feb/2003 {#AALinux}
 
-[usuario_OpenBSD] La distribución Aprendiendo de Jesús de OpenBSD como Sistema de Escritorio http://structio.sourceforge.net/guias/usuario_OpenBSD 2015 {#usuario_OpenBSD}
+[usuario_adJ] La distribución Aprendiendo de Jesús de OpenBSD como Sistema de Escritorio  <http://pasosdeJesus.github.io/usuario_adJ> &ANIO-ACT; {#usuario_adJ}
 
-[servidor_OpenBSD] La distribución Aprendiendo de Jesús de OpenBSD como Servidor y Cortafuegos http://structio.sourceforge.net/guias/servidor_OpenBSD 2015 {#servidor_OpenBSD}
+[servidor_adJ] La distribución Aprendiendo de Jesús de OpenBSD como Servidor y Cortafuegos <http://pasosdeJesus.github.io/servidor_adJ> &ANIO-ACT; {#servidor_adJ}
+
 

@@ -114,24 +114,58 @@ Es posible modificar información de los usuarios de diversas formas:
 ### Bitácoras {#bitacoras}
 
 Una de las labores típicas de un administrador de un sistema adJ es revisar 
-bitácoras del sistema en búsqueda de fallas de seguridad. En la mayoría de las 
-veces se trata de ataques a través de internet, ataques que buscan entre otras 
-cosas: acceder a nuestras máquinas para sacar información y modificarla, o usar 
-nuestra máquina para que realice trabajos que el atacante quiere hacer, 
-generalmente maliciosos.
+bitácoras del sistema en búsqueda de vulneracioens de seguridad. 
+En la mayoría de las veces se trata de ataques a través de internet, 
+ataques que buscan entre otras cosas: acceder a servidores para sacar 
+información y modificarla, o usar servidores para que realicen trabajos 
+que el atacante quiere hacer, generalmente maliciosos.
 
-adJ deja un registro muy completo en archivos de ```/var/log``` 
+adJ/OpenBSD deja un registro muy completo en archivos de ```/var/log``` 
 conocidos como bitácoras. Algunos son:
 
 - ```authlog```: Muestra los accesos de los usuarios permitidos y rechazados
 
-- ```secure```: Muestra los comandos de los administradores 
+- ```secure```: Muestra los comandos ejecutados por administradores 
 
 - ```servicio```: Los programas que están corriendo en la máquina
 
 Como el sistema hace rotación de bitácoras periódicamente, en el mismo 
-directorio también se encuentra archivadas algunas bitácoras anteriores, 
+directorio también se encuentra archivadas algunas bitácoras recientes, 
 comprimidas (terminan con nombres como .```0.gz```).
+
+#### Análisis simple con la herramienta `auditabitacoras` y reportar una IP {#auditabitacoras}
+
+adJ incluye un sencillo analizador de bitácoras que se inicia con:
+
+```
+	doas auditabitacoras
+```
+
+Que creará un directorio con copia de las bitácoras y el
+informe del análisis. El nombre del directorio será la fecha
+de ejecuión y se ubicará en `/var/adJ/auditabiracoras`
+
+Por ejemplo si la fecha es 2017-06-27 el reporte quedará en 
+`/var/adJ/auditabitacoras/20170627/auditabitacoras.txt`
+
+Se trata de un análisis a los archivos con prefijo `/var/log/auth` 
+(que junto con otras bitácoras quedarán copiadas en el directorio creado).  
+Debe prestar especial atención a posibles ataques dirigidos a un usuario real 
+del cortafuegos (o de la red) para reportar y bloquear.
+
+La IP que esté haciendo más ataques a cuentas genéricas (e.g root) 
+reportarla por ejemplo en <https://www.abuseipdb.com> en las categorías
+ssh y ataque de fuerza bruta.
+
+Tal IP se puede bloquear agregando en el archivo `/etc/pf.conf` al final 
+unas líneas del estilo:
+
+```
+	# IP de China reportada el 28 de Junio en https://www.abuseipdb.com/check/58.218.198.142
+	block quick on egress from 58.218.198.142
+```
+
+#### Ejemplo de análisis usando herramientas UNIX {#ejemplo_bitacoras}
 
 Estos archivos pueden analizarse con algunas herramientas básicas como:
 
