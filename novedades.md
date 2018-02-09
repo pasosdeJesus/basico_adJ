@@ -2,6 +2,11 @@
 
 Cada versión cubre la respectiva versión de adJ.
 
+Versión 6.2
+
+  - Actualizado montaje de USB [xref](#montaje_y_desmontaje_desde_interprete_de_comandos)
+
+
 Versión 6.1
 
   - Ampliada sección sobre bitácoras [xref](#auditabitacoras)

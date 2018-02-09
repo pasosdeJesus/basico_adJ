@@ -33,16 +33,16 @@ desde el menú de fluxbox Dispositivo->Desmontar USB
 
 Para montar la USB debe bastar ejecutar desde una terminal:
 ```
-mount /mnt/usb
+doas mount /mnt/usb
 ```
 El CD-ROM se monta de la misma forma cambiando ```usb``` por ```cdrom```.
 Para demonstar la USB basta:
 ```
-umount /mnt/usb
+doas umount /mnt/usb
 ```
 y para demonstar un CD-ROM:
 ```
-umount /mnt/cdrom
+doas umount /mnt/cdrom
 ```
             
 ### Administrador de archivos Xfe {#administrador_de_archivos_xfe}
@@ -139,14 +139,14 @@ en el menú Ayuda).
 
 ### Particiones cifradas {#particiones_cifradas}
 
-adJ soporta por defecto 2 particiones cifradas que se montan en  
-```/var/postgresql ``` y  ```/var/www/resbase ```. La clave de cifrado debe 
-suministrarse durante el arranque, y sólo si esta es correcta podrá ver el 
-contenido de esas carpetas y escribir (si durante el arranque no le solicita 
-clave de cifrado faltó activar particiones cifradas en la instalación --aunque 
-podrá hacerlo actualizando adJ). Así que puede verificar si la clave 
-fue correcta examinando esas rutas bien con xfe o bien desde un interprete de 
-comandos:
+adJ soporta por defecto 2 particiones cifradas que se montan 
+en  ```/var/postgresql ``` y  ```/var/www/resbase ```. 
+La clave de cifrado debe suministrarse durante el arranque, y sólo si esta es 
+correcta podrá ver el contenido de esas carpetas y escribir (si durante el 
+arranque no le solicita clave de cifrado faltó activar particiones cifradas 
+en la instalación --aunque podrá hacerlo actualizando adJ). 
+Así que puede verificar si la clave fue correcta examinando esas rutas bien 
+con xfe o bien desde un interprete de comandos:
 
 - xfe: Inicie **xfe**, asegurese de ver Árbol y Panel desde el menú Ver. 
 	En el Árbol de directorios de la izquierda elija el directorio raiz 
