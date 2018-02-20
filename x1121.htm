@@ -1,0 +1,543 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Transferencia de información a y desde el servidor</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Primeras páginas HTML"
+HREF="x1087.htm"><LINK
+REL="NEXT"
+TITLE="Más formas de uso de ssh"
+HREF="x1212.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x1087.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1212.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="transferencia_de_informacion_a_y_desde_el_servidor"
+>Transferencia de información a y desde el servidor</A
+></H1
+><P
+>&#13;    Hay diversos métodos para transferir información entre el servidor y
+    otros computadores.
+  </P
+><P
+>&#13;    Puede descargar información típicamente con los protocolos
+    <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>http</B
+></SPAN
+> y
+    <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ftp</B
+></SPAN
+> que transmiten la información
+    sin cifrar, esto puede lograrlo con <TT
+CLASS="literal"
+>ftp</TT
+>,
+    <TT
+CLASS="literal"
+>curl</TT
+> o <TT
+CLASS="literal"
+>wget</TT
+>.
+  </P
+><P
+>&#13;    Para descargar información cifrada emplee el protocolo
+    <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>https</B
+></SPAN
+> con los mismos
+    <TT
+CLASS="literal"
+>ftp</TT
+>, <TT
+CLASS="literal"
+>curl</TT
+> o
+    <TT
+CLASS="literal"
+>wget</TT
+>.
+  </P
+><P
+>&#13;    Para enviar y recibir información cifrada utilice el protocolo
+    <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ssh</B
+></SPAN
+> (o su protocolo asociado
+    <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>sftp</B
+></SPAN
+>). Para emplear este método
+    desde un sistema adJ/OpenBSD (o otro sistema tipo Unix que cuente
+    con OpenSSH) se puede usar bien <TT
+CLASS="literal"
+>scp</TT
+> desde la
+    línea de comandos o el programa <TT
+CLASS="literal"
+>filezilla</TT
+>.
+  </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ftp"
+>ftp</A
+></H2
+><P
+>&#13;      Si tiene una URL para los protocolos http, https o ftp basta que
+      la escriba como parámetro de la orden <TT
+CLASS="literal"
+>ftp</TT
+> en
+      una terminal y este descargará el enlace.
+    </P
+><P
+>&#13;      Por ejemplo las fuentes de este manual están en
+      <TT
+CLASS="literal"
+>http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.2_html.tar.gz</TT
+>
+      (que usa protocolo http como indica el comienzo del URL) podrá
+      descargarlas al directorio de trabajo con:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;    ftp http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.2_html.tar.gz
+</PRE
+><P
+>&#13;      Para descargar con protocolo https (soportado por github.io):
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;    ftp https://pasosdejesus.github.io/basico_adJ/basico_adJ-6.2_html.tar.gz
+</PRE
+><P
+>&#13;      Y a manera de ejemplo para descargar un documento de respuestas
+      frecuentes sobre OpenBSD mediante el protocolo ftp:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;    ftp ftp://ftp3.usa.openbsd.org/pub/OpenBSD/doc/obsd-faq.txt
+</PRE
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="curl"
+>curl</A
+></H2
+><P
+>&#13;      Los mismos ejemplos de la sección anterior con
+      <TT
+CLASS="literal"
+>curl</TT
+> serían:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;    curl -O http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.2_html.tar.gz
+    curl -O https://pasosdejesus.github.io/basico_adJ/basico_adJ-6.2_html.tar.gz
+    curl -O ftp://ftp3.usa.openbsd.org/pub/OpenBSD/doc/obsd-faq.txt
+</PRE
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="wget"
+>wget</A
+></H2
+><P
+>&#13;      Los mismos ejemplos de la sección anterior con
+      <TT
+CLASS="literal"
+>wget</TT
+> serían:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;    wget http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.2_html.tar.gz
+    wget https://pasosdejesus.github.io/basico_adJ/basico_adJ-6.2_html.tar.gz
+    wget ftp://ftp3.usa.openbsd.org/pub/OpenBSD/doc/obsd-faq.txt
+</PRE
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="filezilla"
+>Filezilla</A
+></H2
+><P
+>&#13;      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>filezilla</B
+></SPAN
+> le permite transmitir
+      archivos a un servidor.
+    </P
+><P
+>&#13;      Puede usarse sobre sistemas operativos OpenBSD, Linux, Mac OS X y
+      Windows. Soporta los protocolo FTP, SFTP y FTP sobre SSL.
+    </P
+><P
+>&#13;      Una vez instalado ejecútelo y configure la primera vez la conexión
+      a su servidor desde el menú Archivo-&#62;Gestor de Sitios. Del
+      siguiente ejemplo adapte el nombre del servidor y de usuario.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN1167"
+></A
+><P
+><B
+>Figura 22. Configuración de una conexión con filezilla</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/filezillaconexion.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Una vez configurada la encontrará al abrir FileZilla e ingresar a
+      Archivos-&#62;Sitios. Cuando elija Conectar se iniciará una
+      conexión encriptada, con un intercambio inicial de llaves que debe
+      aceptar, después aparecerán paneles como los siguientes:
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN1175"
+></A
+><P
+><B
+>Figura 23. Paneles de Filezilla</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/filezilla.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Note que al lado izquierdo están las carpetas y archivos de su
+      computador local, mientras que al lado derecho están las carpetas
+      y archivos del servidor. Para transmitir un archivo de uno a otro
+      basta que lo arrastre.
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="uso_basico_de_scp"
+>Uso básico de scp</A
+></H2
+><P
+>&#13;      Si por ejemplo desea transferir el archivo
+      <TT
+CLASS="literal"
+>ideas.txt</TT
+> del servidor OpenBSD
+      <TT
+CLASS="literal"
+>practica.pasosdeJesus.org</TT
+> a otro servidor tipo
+      Unix que tenga instalado y configurado ssh (digamos
+      <TT
+CLASS="literal"
+>comp.trabajo.net</TT
+>), a la cuenta de un usuario
+      <TT
+CLASS="literal"
+>mateo</TT
+>, en el directorio
+      <TT
+CLASS="literal"
+>personal</TT
+>:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;$ scp ideas.txt mateo@comp.trabajo.net:personal
+</PRE
+><P
+>&#13;      Si desea transmitir el archivo metodo.txt del directorio personal
+      del servidor <TT
+CLASS="literal"
+>comp.trabajo.net</TT
+> al directorio en
+      el que está ubicado en
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;</PRE
+><P
+>&#13;      $ scp juan2@comp.trabajo.net:personal/metodo.txt . ```
+    </P
+><P
+>&#13;      Note que <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>scp</B
+></SPAN
+> es similar a
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>cp</B
+></SPAN
+> (pues permite copiar un
+      archivo fuente en uno destino<A
+NAME="AEN1199"
+HREF="#FTN.AEN1199"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+>) sólo que el archivo fuente o el archivo destino
+      pueden estar en otra máquina.
+    </P
+><P
+>&#13;      Dado que Windows no tiene un servidor
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ssh</B
+></SPAN
+> por defecto, es posible
+      transmitir archivos a y desde sistemas Windows sólo desde el
+      computador con Windows usando un programa como
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>winscp</B
+></SPAN
+> (disponible en
+      <A
+HREF="http://winscp.sf.net"
+TARGET="_top"
+>http://winscp.sf.net</A
+> o
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>pscp</B
+></SPAN
+> que se distribuye junto
+      con <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>putty</B
+></SPAN
+>
+      (<A
+HREF="x228.htm"
+>la sección de nombre <I
+>Conceptos básicos</I
+></A
+>).
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas_recomendadas_transferencia"
+>Lecturas recomendadas</A
+></H2
+><P
+>&#13;      Para aprender más sobre <TT
+CLASS="literal"
+>scp</TT
+> recomendamos la
+      página del manual.
+    </P
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN1199"
+HREF="x1121.htm#AEN1199"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;          Incluso scp implementa la funcionalidad de cp al permitir
+          copiar localmente un archivo.
+        </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x1087.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1212.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Primeras páginas HTML</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Más formas de uso de ssh</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

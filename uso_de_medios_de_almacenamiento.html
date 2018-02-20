@@ -14,7 +14,7 @@
       (botón derecho del ratón sobre el escritorio) elegir
       Dispositivo-&gt;Montar USB (se emplea el análogo para montar un
       CD-ROM).
-    </p><div class="figure"><a name="idm1577523792"></a><p class="title"><b>Figura 17. Menu Dispositivo-&gt;Montar USB</b></p><div class="mediaobject"><img src="img/montar.png" alt="Menu Dispositivo-&gt;Montar
+    </p><div class="figure"><a name="idm960567000"></a><p class="title"><b>Figura 17. Menu Dispositivo-&gt;Montar USB</b></p><div class="mediaobject"><img src="img/montar.png" alt="Menu Dispositivo-&gt;Montar
         USB"></div></div><div class="literallayout"><p>Una vez lo haga podrá ver el manejador de archivos <code class="literal">xfe</code> ubicado en el directorio donde queda montado el medio.<br>
 <span class="inlinemediaobject"><img src="img/xfecdrom.png"></span></p></div><p>
       Al montar estos medios, el dueño es el usuario administrador que
@@ -25,17 +25,17 @@
     </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="montaje_y_desmontaje_desde_interprete_de_comandos"></a>5.2. Montaje y desmontaje desde interprete de comandos</h3></div></div></div><p>
       Para montar la USB debe bastar ejecutar desde una terminal:
     </p><pre class="programlisting">
-mount /mnt/usb
+doas mount /mnt/usb
 </pre><p>
       El CD-ROM se monta de la misma forma cambiando
       <code class="literal">usb</code> por <code class="literal">cdrom</code>. Para
       demonstar la USB basta:
     </p><pre class="programlisting">
-umount /mnt/usb
+doas umount /mnt/usb
 </pre><p>
       y para demonstar un CD-ROM:
     </p><pre class="programlisting">
-umount /mnt/cdrom
+doas umount /mnt/cdrom
 </pre></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="administrador_de_archivos_xfe"></a>5.3. Administrador de archivos Xfe</h3></div></div></div><p>
       Con este sencillo programa podrá administrar archivos y
       directorios, es decir crear, copiar, renombrar, crear enlaces,
@@ -179,8 +179,17 @@ doas xfe
           </p></li><li><p>
             <span class="strong"><strong>Mayúscula-Retroceso</strong></span>: Ir
             al directorio siguiente
-          </p></li></ul></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="particiones_cifradas"></a>5.4. Particiones cifradas</h3></div></div></div><div class="literallayout"><p>adJ soporta por defecto 2 particiones cifradas que se montan en<br>
-<code class="literal">/var/postgresql</code> y <code class="literal">/var/www/resbase</code>. La clave de cifrado debe suministrarse durante el arranque, y sólo si esta es correcta podrá ver el contenido de esas carpetas y escribir (si durante el arranque no le solicita clave de cifrado faltó activar particiones cifradas en la instalación --aunque podrá hacerlo actualizando adJ). Así que puede verificar si la clave fue correcta examinando esas rutas bien con xfe o bien desde un interprete de comandos:</p></div><div class="itemizedlist"><ul type="disc"><li><div class="literallayout"><p>xfe: Inicie <span class="strong"><strong>xfe</strong></span>, asegurese de ver Árbol y Panel desde el menú Ver. En el Árbol de directorios de la izquierda elija el directorio raiz (primero marcado con /) con doble pulsación del botón izquierdo, bajé para elejir var, a continuación <code class="literal">www</code> y a continuación<br>
+          </p></li></ul></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="particiones_cifradas"></a>5.4. Particiones cifradas</h3></div></div></div><p>
+      adJ soporta por defecto 2 particiones cifradas que se montan en
+      <code class="literal">/var/postgresql</code> y
+      <code class="literal">/var/www/resbase</code>. La clave de cifrado debe
+      suministrarse durante el arranque, y sólo si esta es correcta
+      podrá ver el contenido de esas carpetas y escribir (si durante el
+      arranque no le solicita clave de cifrado faltó activar particiones
+      cifradas en la instalación --aunque podrá hacerlo actualizando
+      adJ). Así que puede verificar si la clave fue correcta examinando
+      esas rutas bien con xfe o bien desde un interprete de comandos:
+    </p><div class="itemizedlist"><ul type="disc"><li><div class="literallayout"><p>xfe: Inicie <span class="strong"><strong>xfe</strong></span>, asegurese de ver Árbol y Panel desde el menú Ver. En el Árbol de directorios de la izquierda elija el directorio raiz (primero marcado con /) con doble pulsación del botón izquierdo, bajé para elejir var, a continuación <code class="literal">www</code> y a continuación<br>
 <code class="literal">resbase</code>.</p></div></li><li><p>
           Interpete de comandos: Inicide una terminal y teclee
         </p><pre class="programlisting">
