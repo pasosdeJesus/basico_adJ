@@ -1,5 +1,5 @@
 # Reglas para generar HTML, PostScript y PDF de basico_adJ
-# Basadas en infraestructura de dominio público de repasa
+# Basadas en infraestructura de dominio pÃºblico de repasa
 #   (http://structio.sourceforge.net/repasa)
 
 include Make.inc
@@ -12,14 +12,14 @@ FUENTESDB=introduccion.xdbk primer_uso_de_adJ.xdbk conceptos_basicos.xdbk soport
 
 
 SOURCES=$(PROYECTO).$(EXT_DOCBOOK) $(FUENTESDB)
-# Listado de fuentes XML. Preferiblmente en el orden de inclusión.
+# Listado de fuentes XML. Preferiblmente en el orden de inclusiÃ³n.
 
 IMAGES=img/primerflux.png img/putty1.png img/putty2.png img/pop3s-mozilla.png img/evolution.png img/mutt.png img/vim.png img/html1.png img/home.png img/prev.png img/toc-minus.png img/blank.png img/important.png img/toc-plus.png img/caution.png img/next.png img/tip.png img/up.png img/draft.png img/note.png img/toc-blank.png img/warning.png img/arbol-archivos.png img/putty-tunnel.png img/putty-x11.png img/imaps-1-thunderbird.png img/imaps-2-thunderbird.png img/imaps-3-thunderbird.png img/fluxbox_inicio.png img/mozilla_firefox.png img/espiritualidad.png img/openoffice_writer.png img/openoffice_calc.png img/openoffice_presentacion.png img/documentacion.png img/multimedia.png img/mplayer.png img/xcdplayer.png img/otros.png img/plan.png img/vim1.png img/fluxbox_menu.png img/estilo1.png img/partencr.png img/xdm.png img/consola.png img/pidgin1.png img/pidgin2.png img/pidgin3.png img/pidgin4.png img/pidgin5.png img/pidgin6.png img/pidgin7.png img/silc.png img/filezillaconexion.png img/filezilla.png img/xfecdrom.png img/montar.png img/xfepaq.png img/xfw-p.png img/mg.png
 
 # Listado de imagenes, preferiblemente en formato PNG
 
 HTML_DIR=html
-# Directorio en el que se generará información en HTML (con reglas por defecto)
+# Directorio en el que se generarÃ¡ informaciÃ³n en HTML (con reglas por defecto)
 
 HTML_TARGET=$(HTML_DIR)/index.html
 # Nombre del HTML principal (debe coincidir con el especificado en estilohtml.xsl)
@@ -41,22 +41,22 @@ OTHER_HTML=
 PRECVS=guias/
 
 INDEX=genindice.$(EXT_DOCBOOK)
-# Si habrá un índice, nombre del archivo con el que debe generarse (incluirlo al final del documento).
+# Si habrÃ¡ un Ã­ndice, nombre del archivo con el que debe generarse (incluirlo al final del documento).
 
 
 # Variables requeridas por comdist.mk
 
 GENDIST=Derechos.txt $(SOURCES) $(IMAGES)
-# Dependencias por cumplir antes de generar distribución
+# Dependencias por cumplir antes de generar distribuciÃ³n
 
 ACTHOST=git@github.com:pasosdeJesus/
-# Sitio en Internet donde actualizar. Método indicado por $(ACT_PROC) de confv.sh
+# Sitio en Internet donde actualizar. MÃ©todo indicado por $(ACT_PROC) de confv.sh
 
 ACTDIR=basico_adJ
 # Directorio en $(ACTHOST) por actualizar
 
 #USER=$(LOGNAME),structio
-# Usuario en $(ACTHOST).  Si es el mismo que en la máquina local comentar.
+# Usuario en $(ACTHOST).  Si es el mismo que en la mÃ¡quina local comentar.
 
 GENACT=ghtodo $(PROYECTO)-$(PRY_VERSION)_html.tar.gz $(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).ps.gz $(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).pdf 
 # Dependencias por cumplir antes de actualizar sitio en Internet al publicar
@@ -78,15 +78,15 @@ ghtodo: distgh
 	cp $(PROYECTO)-$(PRY_VERSION)/$(PROYECTO)-$(PRY_VERSION)_html.tar.gz .
 
 repasa:
-	DEF=$(PROYECTO).def CLA=$(PROYECTO).cla SEC=$(PROYECTO).sec DESC="Información extraida de: $(PROYECTO) $(PRY_VERSION)" FECHA="$(FECHA_ACT)" BIBLIO="$(URLSITE)" TIPO_DERECHOS="Dominio público" TIEMPO_DERECHOS="$(MES_ACT)" DERECHOS="Información cedida al dominio público. Sin garantías." AUTORES="Vladimir Támara" IDSIGNIFICADO="adJ_basico" $(AWK) -f herram/db2rep $(SOURCES)
+	DEF=$(PROYECTO).def CLA=$(PROYECTO).cla SEC=$(PROYECTO).sec DESC="InformaciÃ³n extraida de: $(PROYECTO) $(PRY_VERSION)" FECHA="$(FECHA_ACT)" BIBLIO="$(URLSITE)" TIPO_DERECHOS="Dominio pÃºblico" TIEMPO_DERECHOS="$(MES_ACT)" DERECHOS="InformaciÃ³n cedida al dominio pÃºblico. Sin garantÃ­as." AUTORES="Vladimir TÃ¡mara" IDSIGNIFICADO="adJ_basico" $(AWK) -f herram_confsh/db2rep $(SOURCES)
 
 # Para usar DocBook
-include herram/comdocbook.mak
+include herram_confsh/comdocbook.mak
 
-# Para crear distribución de fuentes y publicar en Internet
-include herram/comdist.mak
+# Para crear distribuciÃ³n de fuentes y publicar en Internet
+include herram_confsh/comdist.mak
 
-# Elimina hasta configuración
+# Elimina hasta configuraciÃ³n
 limpiadist: limpiamas
 	rm -f confv.sh confv.ent Make.inc personaliza.ent
 	rm -rf $(HTML_DIR)
@@ -111,7 +111,7 @@ limpia:
 
 Derechos.txt: $(PROYECTO).$(EXT_DOCBOOK)
 	make html/index.html
-	$(W3M) %(W3M_OPT) -dump html/index.html | awk -f herram/conthtmldoc.awk > Derechos.txt
+	$(W3M) %(W3M_OPT) -dump html/index.html | awk -f herram_confsh/conthtmldoc.awk > Derechos.txt
 
 instala:
 	@mkdir -p $(DESTDIR)$(INSDOC)/img/
