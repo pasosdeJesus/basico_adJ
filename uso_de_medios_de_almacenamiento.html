@@ -14,7 +14,7 @@
       (botón derecho del ratón sobre el escritorio) elegir
       Dispositivo-&gt;Montar USB (se emplea el análogo para montar un
       CD-ROM).
-    </p><div class="figure"><a name="idp366707112"></a><p class="title"><b>Figura 17. Menu Dispositivo-&gt;Montar USB</b></p><div class="mediaobject"><img src="img/montar.png" alt="Menu Dispositivo-&gt;Montar
+    </p><div class="figure"><a name="idp328094888"></a><p class="title"><b>Figura 17. Menu Dispositivo-&gt;Montar USB</b></p><div class="mediaobject"><img src="img/montar.png" alt="Menu Dispositivo-&gt;Montar
         USB"></div></div><div class="literallayout"><p>Una vez lo haga podrá ver el manejador de archivos <code class="literal">xfe</code> ubicado en el directorio donde queda montado el medio.<br>
 <span class="inlinemediaobject"><img src="img/xfecdrom.png"></span></p></div><p>
       Al montar estos medios, el dueño es el usuario administrador que
@@ -22,7 +22,7 @@
       los medios y en el caso de USB es quien podrá escribir. Una vez
       termine de emplear el medio de alamacenamiento desmontelo también
       desde el menú de fluxbox Dispositivo-&gt;Desmontar USB
-    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="montaje_y_desmontaje_desde_interprete_de_comandos"></a>5.2. Montaje y desmontaje desde interprete de comandos</h3></div></div></div><p>
+    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="montaje_y_desmontaje_desde_interprete_de_ordenes"></a>5.2. Montaje y desmontaje desde intérprete de ordenes</h3></div></div></div><p>
       Para montar la USB debe bastar ejecutar desde una terminal:
     </p><pre class="programlisting">
 doas mount /mnt/usb
@@ -188,10 +188,10 @@ doas xfe
       arranque no le solicita clave de cifrado faltó activar particiones
       cifradas en la instalación --aunque podrá hacerlo actualizando
       adJ). Así que puede verificar si la clave fue correcta examinando
-      esas rutas bien con xfe o bien desde un interprete de comandos:
+      esas rutas bien con xfe o bien desde un intérprete de ordenes:
     </p><div class="itemizedlist"><ul type="disc"><li><div class="literallayout"><p>xfe: Inicie <span class="strong"><strong>xfe</strong></span>, asegurese de ver Árbol y Panel desde el menú Ver. En el Árbol de directorios de la izquierda elija el directorio raiz (primero marcado con /) con doble pulsación del botón izquierdo, bajé para elejir var, a continuación <code class="literal">www</code> y a continuación<br>
 <code class="literal">resbase</code>.</p></div></li><li><p>
-          Interpete de comandos: Inicide una terminal y teclee
+          Intérpete de ordenes: Inicide una terminal y teclee
         </p><pre class="programlisting">
 ls /var/www/resbase
 </pre></li></ul></div><p>
@@ -201,8 +201,8 @@ ls /var/www/resbase
       <code class="literal">/var/postgresql</code> es posible que haya dado mal la
       clave de cifrado en el arranque, en tal caso desde el menú de
       Fluxbox (botón derecho sobre el escritorio) elija
-      Dispositivo-&gt;Iniciar Servicios Faltantes o desde un interprete
-      de comandos teclee
+      Dispositivo-&gt;Iniciar Servicios Faltantes o desde un intérprete
+      de ordenes teclee
     </p><pre class="programlisting">
 doas sh /etc/rc.local
 </pre><p>
@@ -240,7 +240,7 @@ doas xfe
           Sobre el directorio resbase en el árbol de directorios pulsar
           el botón derecho y del menú emergente elegir Pegar.
         </p></li></ul></div><p>
-      El mismo procedimiento desde un interprete de comandos lo realiza
+      El mismo procedimiento desde un intérprete de ordenes lo realiza
       con:
     </p><pre class="programlisting">
 doas mount /mnt/usb 

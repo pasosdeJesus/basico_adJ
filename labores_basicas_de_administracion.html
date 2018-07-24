@@ -3,8 +3,8 @@
     o bien con ayuda del programa <code class="literal">doas</code>.
   </p><p>
     Desde las diversas cuentas del sistema que estén en el grupo
-    <code class="literal">wheel</code> es posible pasar a la cuenta root con el
-    comando:
+    <code class="literal">wheel</code> es posible pasar a la cuenta root con la
+    orden:
   </p><pre class="programlisting">
 $ su -
 </pre><p>
@@ -13,7 +13,7 @@ $ su -
   </p><p>
     Si <span class="strong"><strong>doas</strong></span> se configura para
     permitir su utilización por parte de usuarios que estén en el grupo
-    <code class="literal">wheel</code> sin clave, podrán ejecutarse comandos como
+    <code class="literal">wheel</code> sin clave, podrán ejecutarse ordenes como
     si se tratara de la cuenta <code class="literal">root</code> precediéndolos
     con <span class="strong"><strong>doas</strong></span>. Por ejemplo para listar
     el directorio del usuario <code class="literal">root</code>:
@@ -28,9 +28,9 @@ $ doas ls /root
       Entre las labores del administrador está agregar, eliminar y
       modificar información de usuarios del sistema.
     </p><p>
-      El administrador puede agregar usuarios con el comando
+      El administrador puede agregar usuarios con la orden
       <code class="literal">adduser</code>. Su uso típico se esboza a
-      continuación<sup>[<a name="idp966608808" href="#ftn.idp966608808">17</a>]</sup>
+      continuación<sup>[<a name="idp52750632" href="#ftn.idp52750632">17</a>]</sup>
     </p><pre class="programlisting">
 doas adduser
 ...
@@ -72,7 +72,7 @@ OK? (y/n) [y]:
             O número que identifica al grupo principal al que pertenece
             el usuario (1003 en el ejemplo).
           </p></dd><dt><span class="term">
-          Un intérprete de comandos
+          Un intérprete de ordenes
         </span></dt><dd><p>
             Que será el que tendrá el usuario al iniciar nuevas sesiones
             (en el ejemplo es /bin/ksh).
@@ -106,10 +106,10 @@ doas userdel -r juan
       Es posible modificar información de los usuarios de diversas
       formas:
     </p><div class="itemizedlist"><ul type="disc"><li><p>
-          Con el comando <code class="literal">vipw</code> que le permitirá
+          Con la orden <code class="literal">vipw</code> que le permitirá
           modificar directamente el archivo de claves y usuarios
         </p></li><li><p>
-          Con el comando <code class="literal">chfn usuario</code> podrá modificar
+          Con la orden <code class="literal">chfn usuario</code> podrá modificar
           algunos datos del perfil del usuario.
         </p></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="bitacoras"></a>13.2. Bitácoras</h3></div></div></div><p>
       Una de las labores típicas de un administrador de un sistema adJ
@@ -126,7 +126,7 @@ doas userdel -r juan
           <code class="literal">authlog</code>: Muestra los accesos de los
           usuarios permitidos y rechazados
         </p></li><li><p>
-          <code class="literal">secure</code>: Muestra los comandos ejecutados por
+          <code class="literal">secure</code>: Muestra las ordenes ejecutadas por
           administradores
         </p></li><li><p>
           <code class="literal">servicio</code>: Los programas que están corriendo
@@ -281,7 +281,7 @@ Attempt to login at practica.pasosdeJesus.org from your IP on 16.Aug.2006 at 7:1
       <span class="strong"><strong>man</strong></span>, por ejemplo
     </p><pre class="programlisting">
 man grep
-</pre></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp966608808" href="#idp966608808">17</a>] </sup>
+</pre></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp52750632" href="#idp52750632">17</a>] </sup>
           Tenga en cuenta que la primera vez que ejecute
           <code xmlns="" class="literal">adduser</code> tras instalar un sistema adJ, este
           programa preguntará valores por defecto por emplear durante la

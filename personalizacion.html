@@ -2,8 +2,8 @@
     Como usuario puede personalizar diversos aspectos de su interacción
     con el sistema completo y con cada programa (como
     <span class="strong"><strong>fluxbox, xfe</strong></span> y el interprete de
-    comandos). En esta sección presentamos la personalización del locale
-    y algunas formas de personalizar el interprete de comandos
+    ordenes). En esta sección presentamos la personalización del locale
+    y algunas formas de personalizar el interprete de ordenes
     <span class="strong"><strong>ksh</strong></span>.
   </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="locale"></a>6.1. Locale</h3></div></div></div><p>
       Un locale define una codificación y formas de presentar
@@ -57,16 +57,16 @@ export LANG=es_CO.UTF-8
         </p></li><li><p>
           También la forma de presentar fecha y hora se ve afectada por
           el locale así como por la zona horaria.
-        </p></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="personalizacion_del_interprete_de_comandos_ksh"></a>6.2. Personalización del interprete de comandos ksh</h3></div></div></div><p>
-      Es función del intérprete de comandos recibir comandos que el
+        </p></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="personalizacion_del_interprete_de_ordenes_ksh"></a>6.2. Personalización del interprete de ordenes ksh</h3></div></div></div><p>
+      Es función del intérprete de ordenes recibir ordenes que el
       usuario ingrese por el teclado (o en general por entrada estándar)
       y ejecutar los programas apropiados. Dada la importancia y
-      frecuencia de esta labor, los interpretes de comandos (y en
+      frecuencia de esta labor, los interpretes de ordenes (y en
       particular <code class="literal">/bin/ksh</code>) suelen ser altamente
       personalizables a los gustos de cada usuario.
     </p><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="ejecucion_de_programas"></a>6.2.1. Ejecución de Programas</h4></div></div></div><p>
-        Desde un intérprete de comandos un usuario puede teclear bien
-        nombres de programas o bien comandos del intérprete de comandos.
+        Desde un intérprete de ordenes un usuario puede teclear bien
+        nombres de programas o bien ordenes del intérprete de ordenes.
         Los programas por ejecutar se especifican dando la ruta completa
         de su ubicación en el sistema de archivos, o en caso de no dar
         ruta se buscan en orden en los directorios especificados en la
@@ -74,15 +74,15 @@ export LANG=es_CO.UTF-8
       </p><pre class="programlisting">
 $ banner Jesus
 </pre><p>
-        El interprete de comandos identifica que está intentando
-        ejecutar <code class="literal">banner</code> (para presentar en grande una
-        cadena) y que le pasa como primer parámetro Jesus. Como
-        <code class="literal">banner</code> no es un comando interno del
-        interprete de comandos busca un archivo con permiso de ejecución
-        en las rutas indicadas en la variable <code class="literal">PATH</code>,
-        si el valor de tal variable fuera
+        El intérprete de ordenes identifica que está intentando ejecutar
+        <code class="literal">banner</code> (para presentar en grande una cadena)
+        y que le pasa como primer parámetro Jesus. Como
+        <code class="literal">banner</code> no es una orden interno del intérprete
+        de ordenes busca un archivo con permiso de ejecución en las
+        rutas indicadas en la variable <code class="literal">PATH</code>, si el
+        valor de tal variable fuera
         <code class="literal">/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin</code>
-        el interprete de comandos buscaría primero en
+        el intérprete de ordenes buscaría primero en
         <code class="literal">/bin</code>, después en
         <code class="literal">/usr/X11R6/bin</code> y así sucesivamente para
         encontrarlo en <code class="literal">/usr/bin</code>. Entonces pasaría el
@@ -101,7 +101,7 @@ $ ls -l /usr/bin/b*
         que mostrará todos los archivos de ese directorio que comiencen
         con la letra b.
       </p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="variables_de_ambiente"></a>6.2.2. Variables de ambiente</h4></div></div></div><p>
-        Puede personalizar algunos detalles del intérprete de comandos o
+        Puede personalizar algunos detalles del intérprete de ordenes o
         de algunos programas empleando variables de ambiente. Las
         variables de ambiente son palabras que tienen asociadas un
         valor, por ejemplo puede examinar el valor de la variable de
@@ -118,12 +118,12 @@ export PATH=/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/loc
         puede usar:
       </p><pre class="programlisting">
 export PATH=$PATH:/home/$EUSER;/bin/
-</pre></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="variables_de_ambiente_del_interprete_de_comandos"></a>6.2.3. Variables de ambiente del interprete de comandos</h4></div></div></div><p>
+</pre></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="variables_de_ambiente_del_interprete_de_ordenes"></a>6.2.3. Variables de ambiente del intérprete de ordenes</h4></div></div></div><p>
         Cada programa emplea sus propias variables de ambiente, en
-        particular el interprete de comandos. Recomendamos el uso de
+        particular el intérprete de ordenes. Recomendamos el uso de
         <span class="strong"><strong>ksh</strong></span> como interprete de
-        comandos por ser liviano y estándar en sistemas OpenBSD. Con
-        este intérprete de comandos, puede establecerse el valor de la
+        ordenes por ser liviano y estándar en sistemas OpenBSD. Con este
+        intérprete de ordenes, puede establecerse el valor de la
         variable de ambiente <code class="literal">VISUAL</code> con:
       </p><pre class="programlisting">
 $ export VISUAL=vi
@@ -131,19 +131,19 @@ $ export VISUAL=vi
         Esta variable es usada por
         <span class="strong"><strong>ksh</strong></span> para determinar qué
         secuencias de teclas utilizar para dar órdenes especiales desde
-        la línea de comandos. El valor <code class="literal">vi</code> indica que
+        la línea de ordenes. El valor <code class="literal">vi</code> indica que
         se usen las teclas que se usan con el editor vi (por ejemplo en
-        modo comandos, es decir después de oprimir
+        modo ordenes, es decir después de oprimir
         <span class="strong"><strong>ESC</strong></span>, pueden usarse
         <span class="strong"><strong>k</strong></span> para ir a la instrucción
         anterior de la historia, <span class="strong"><strong>j</strong></span>
         para ir a la siguiente, <span class="strong"><strong>?</strong></span>
-        seguido de una cadena para buscar un comando en la historia que
+        seguido de una cadena para buscar una orden en la historia que
         incluya la cadena, <span class="strong"><strong>0</strong></span> para ir
         al comienzo de la línea, <span class="strong"><strong>$</strong></span>
         para ir al final de la linea,
         <span class="strong"><strong>i</strong></span> para insertar en la
-        posición del cursor y salir del modo comandos). Si prefiere otra
+        posición del cursor y salir del modo ordenes). Si prefiere otra
         forma de interacción emplee:
       </p><pre class="programlisting">
 export VISUAL=gmacs
@@ -166,8 +166,8 @@ $ export TERM=wsvt25
         Notará que el valor de las variables de ambiente que fije
         durante una sesión se perderá cuando termine la sesión. Para
         lograr una configuración más perdurable puede establecer la
-        variable de ambiente a un archivo ejecutado por el interprete de
-        comandos automáticamente cada vez que inicia una sesión. En el
+        variable de ambiente a un archivo ejecutado por el intérprete de
+        ordenes automáticamente cada vez que inicia una sesión. En el
         caso del intérprete ksh tal archivo es
         <code class="literal">~/.profile</code>. Un ejemplo de un archivo
         <code class="literal">~/.profile</code> es:
@@ -189,9 +189,9 @@ export  PKG_PATH=ftp://rt.fm/pub/OpenBSD/5.7/packages/i386
 export PS1="\h$ "
 export LANG="es_CO.UTF-8"
 </pre><p>
-        El comando alias <code class="literal">vi=vim</code> indica que cada vez
-        que se ejecute el comando <code class="literal">vi</code> se llame al
-        programa vim (ver Sección 7.3, “Editor vi”). Note que también se
+        La orden alias <code class="literal">vi=vim</code> indica que cada vez que
+        se ejecute la orden <code class="literal">vi</code> se llame al programa
+        vim (ver Sección 7.3, “Editor vi”). Note que también se
         establecen las variables de ambiente
       </p><div class="itemizedlist"><ul type="disc" compact><li><p>
             <code class="literal">VISUAL</code> modo de edición en ksh.
@@ -213,16 +213,15 @@ export LANG="es_CO.UTF-8"
             geográfica.
           </p></li><li><p>
             <code class="literal">PS1</code> que establece el símbolo de espera de
-            comandos principal de
-            <span class="strong"><strong>ksh</strong></span>, el valor de este
-            ejemplo ("\h$ ") establece un símbolo de espera de
-            comandos que presenta el nombre de la máquina seguido del
-            símbolo pesos y un espacio.
+            ordenes principal de <span class="strong"><strong>ksh</strong></span>,
+            el valor de este ejemplo ("\h$ ") establece un
+            símbolo de espera de ordenes que presenta el nombre de la
+            máquina seguido del símbolo pesos y un espacio.
           </p></li></ul></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="colorls"></a>6.2.5. colorls</h4></div></div></div><p>
         En el ejemplo presentado si está instalado el programa
         <code class="literal">colorls</code> (del paquete colorls), este se define
-        como alias para el comando <code class="literal">ls</code>, de forma que
-        la lista de archivos se presente con colores y como ha sido
+        como alias para la orden <code class="literal">ls</code>, de forma que la
+        lista de archivos se presente con colores y como ha sido
         modificado para adJ presentará orden correcto en español. Esto
         ocurrirá desde consolas tipo texto. Si está usando OpenBSD con
         X-Window y <code class="literal">xterm</code>, además de lo anterior

@@ -1,7 +1,7 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>3. Conceptos básicos</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="primer_uso_de_adJ.html" title="2. Primer uso de adJ"><link rel="next" href="soporte.html" title="4. Soporte"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Conceptos básicos</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="primer_uso_de_adJ.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="soporte.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="conceptos_basicos"></a>3. Conceptos básicos</h2></div></div></div><p>
     Los conceptos y herramientas presentados desde esta sección se
     asimilan mejor practicando. Procure ejecirtarlos desde un interprete
-    de comandos (bien operando directamente un sistema tipo Unix o bien
+    de ordenes (bien operando directamente un sistema tipo Unix o bien
     ingresando remotamente desde otro sistema como se explicó, (ver
     <a href="primer_uso_de_adJ.html" title="2. Primer uso de adJ">Sección 2, “Primer uso de adJ”</a>).
   </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="definiciones_iniciales"></a>3.1. Definiciones iniciales</h3></div></div></div><p>
@@ -21,16 +21,15 @@
       sugieren las últimas letras <code class="literal">.odt</code>). Para verla
       debe usarse un programa que entienda ese formato, uno entre otros
       es LibreOffice.
-    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="interprete_de_comandos"></a>3.2. Intérprete de comandos</h3></div></div></div><p>
-      El intérprete de comandos le permite usar varios comandos
-      internos, así como ejecutar programas. Es común que los comandos o
-      programas requieran algo de información como suministro (i.e
-      parámetros o argumentos), así como opciones que modifiquen el
-      comportamiento por defecto. Tal información suele darse a
-      continuación del nombre del comando, separando un dato o una
-      opción de otra con espacios. Si es una de las primeras veces que
-      ingresa al sistema, recomendamos los siguientes
-      comandos/programas:
+    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="interprete_de_ordenes"></a>3.2. Intérprete de ordenes</h3></div></div></div><p>
+      El intérprete de ordenes le permite usar varias ordenes internos,
+      así como ejecutar programas. Es común que las ordenes o programas
+      requieran algo de información como suministro (i.e parámetros o
+      argumentos), así como opciones que modifiquen el comportamiento
+      por defecto. Tal información suele darse a continuación del nombre
+      de la orden, separando un dato o una opción de otra con espacios.
+      Si es una de las primeras veces que ingresa al sistema,
+      recomendamos los siguientes ordenes/programas:
     </p><div class="variablelist"><dl><dt><span class="term">
           <span class="strong"><strong>man man</strong></span>
         </span></dt><dd><p>
@@ -38,7 +37,7 @@
             ver un tema del manual del sistema. Puede recibir como
             parámetro el tema sobre el cual desea ver la documentación.
             Así que <span class="strong"><strong>man man</strong></span> presenta
-            la documentación del comando
+            la documentación de la orden
             <span class="strong"><strong>man</strong></span>. Entre los temas
             posibles puede emplear el nombre de un programa instalado o
             de una función de la librería del sistema.
@@ -57,7 +56,7 @@
           <span class="strong"><strong>chfn</strong></span>
         </span></dt><dd><p>
             Le permite cambiar datos personales y el intérprete de
-            comandos que desea por defecto (sugerimos
+            ordenes que desea por defecto (sugerimos
             /<span class="strong"><strong>bin/ksh</strong></span>)
           </p></dd></dl></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="sistema-de-archivos"></a>3.3. Sistema de Archivos</h3></div></div></div><p>
       En Unix la información se organiza en archivos dentro de
@@ -72,25 +71,25 @@
       directorio que llamamos <span class="emphasis"><em>directorio personal</em></span>
       cuya ruta normalmente es de la forma
       <code class="literal">/home/juan</code>.
-    </p><div class="figure"><a name="idp4025122728"></a><p class="title"><b>Figura 15. Sistema de archivos</b></p><div class="mediaobject"><img src="img/arbol-archivos.png" alt="Sistema de archivos"></div></div><p>
-      El intérprete de comandos que emplee tendrá como parte de su
-      estado un directorio de trabajo, un símbolo de espera de ordenes y
+    </p><div class="figure"><a name="idm1964977112"></a><p class="title"><b>Figura 15. Sistema de archivos</b></p><div class="mediaobject"><img src="img/arbol-archivos.png" alt="Sistema de archivos"></div></div><p>
+      El intérprete de ordenes que emplee tendrá como parte de su estado
+      un directorio de trabajo, un símbolo de espera de ordenes y
       variables de entorno. La manera de ver y alterar estos datos
-      depende del intérprete de comandos que emplee, nos limitaremos al
-      intérprete de comandos <span class="strong"><strong>ksh</strong></span> (que
-      tiene bastantes cosas en común con otros intérpretes de comandos
+      depende del intérprete de ordenes que emplee, nos limitaremos al
+      intérprete de ordenes <span class="strong"><strong>ksh</strong></span> (que
+      tiene bastantes cosas en común con otros intérpretes de ordenes
       como <span class="strong"><strong>bash</strong></span>).
     </p><p>
       Podrá examinar el directorio de trabajo con
       <code class="literal">pwd</code>, listar algunas variables de ambiente (las
       exportadas) con <span class="strong"><strong>export</strong></span> y
       modificar el símbolo de espera de ordenes con la variable de
-      ambiente <code class="literal">PS1</code>. A continuación se listan algunos
-      comandos/programas relacionados con el sistema de archivos y un
+      ambiente <code class="literal">PS1</code>. A continuación se listan algunas
+      ordenes/programas relacionados con el sistema de archivos y un
       mínimo del uso de cada uno. Sugerimos que mire la documentación
       que corresponde a cada uno (e.g para ver documentación del
       programa <span class="strong"><strong>ls</strong></span> ejecute desde un
-      intérprete de comandos <span class="strong"><strong>man ls</strong></span>):
+      intérprete de ordenes <span class="strong"><strong>man ls</strong></span>):
     </p><div class="variablelist"><dl><dt><span class="term">
           <code class="literal">pwd</code>
         </span></dt><dd><p>
@@ -140,7 +139,7 @@ cp -r traido/* public_html/
             renombra) el archivo
             <code class="literal">traido/juan.htm a traido/pedro.html</code>.
           </p></dd></dl></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas-recomendadas"></a>3.4. Lecturas recomendadas</h3></div></div></div><p>
-      Páginas <code class="literal">man</code> de los 11 comandos/programas
+      Páginas <code class="literal">man</code> de las 11 ordenes /programas
       introducidos en este capítulo. Se han tomado porciones de la
       sección "telnet y ssh" de
       <a href="bibliografia.html" title="15. Bibliografía">AALinux</a>

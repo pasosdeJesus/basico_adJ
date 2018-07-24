@@ -82,8 +82,8 @@ CLASS="emphasis"
 >fluxbox, xfe</B
 ></SPAN
 > y el interprete de
-    comandos). En esta sección presentamos la personalización del locale
-    y algunas formas de personalizar el interprete de comandos
+    ordenes). En esta sección presentamos la personalización del locale
+    y algunas formas de personalizar el interprete de ordenes
     <SPAN
 CLASS="strong"
 ><B
@@ -202,14 +202,14 @@ CLASS="sect2"
 ><H2
 CLASS="sect2"
 ><A
-NAME="personalizacion_del_interprete_de_comandos_ksh"
->Personalización del interprete de comandos ksh</A
+NAME="personalizacion_del_interprete_de_ordenes_ksh"
+>Personalización del interprete de ordenes ksh</A
 ></H2
 ><P
->&#13;      Es función del intérprete de comandos recibir comandos que el
+>&#13;      Es función del intérprete de ordenes recibir ordenes que el
       usuario ingrese por el teclado (o en general por entrada estándar)
       y ejecutar los programas apropiados. Dada la importancia y
-      frecuencia de esta labor, los interpretes de comandos (y en
+      frecuencia de esta labor, los interpretes de ordenes (y en
       particular <TT
 CLASS="literal"
 >/bin/ksh</TT
@@ -225,8 +225,8 @@ NAME="ejecucion_de_programas"
 >Ejecución de Programas</A
 ></H3
 ><P
->&#13;        Desde un intérprete de comandos un usuario puede teclear bien
-        nombres de programas o bien comandos del intérprete de comandos.
+>&#13;        Desde un intérprete de ordenes un usuario puede teclear bien
+        nombres de programas o bien ordenes del intérprete de ordenes.
         Los programas por ejecutar se especifican dando la ruta completa
         de su ubicación en el sistema de archivos, o en caso de no dar
         ruta se buscan en orden en los directorios especificados en la
@@ -237,27 +237,27 @@ CLASS="programlisting"
 >&#13;$ banner Jesus
 </PRE
 ><P
->&#13;        El interprete de comandos identifica que está intentando
-        ejecutar <TT
-CLASS="literal"
->banner</TT
-> (para presentar en grande una
-        cadena) y que le pasa como primer parámetro Jesus. Como
+>&#13;        El intérprete de ordenes identifica que está intentando ejecutar
         <TT
 CLASS="literal"
 >banner</TT
-> no es un comando interno del
-        interprete de comandos busca un archivo con permiso de ejecución
-        en las rutas indicadas en la variable <TT
+> (para presentar en grande una cadena)
+        y que le pasa como primer parámetro Jesus. Como
+        <TT
+CLASS="literal"
+>banner</TT
+> no es una orden interno del intérprete
+        de ordenes busca un archivo con permiso de ejecución en las
+        rutas indicadas en la variable <TT
 CLASS="literal"
 >PATH</TT
->,
-        si el valor de tal variable fuera
+>, si el
+        valor de tal variable fuera
         <TT
 CLASS="literal"
 >/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin</TT
 >
-        el interprete de comandos buscaría primero en
+        el intérprete de ordenes buscaría primero en
         <TT
 CLASS="literal"
 >/bin</TT
@@ -310,7 +310,7 @@ NAME="variables_de_ambiente"
 >Variables de ambiente</A
 ></H3
 ><P
->&#13;        Puede personalizar algunos detalles del intérprete de comandos o
+>&#13;        Puede personalizar algunos detalles del intérprete de ordenes o
         de algunos programas empleando variables de ambiente. Las
         variables de ambiente son palabras que tienen asociadas un
         valor, por ejemplo puede examinar el valor de la variable de
@@ -345,12 +345,12 @@ CLASS="sect3"
 ><H3
 CLASS="sect3"
 ><A
-NAME="variables_de_ambiente_del_interprete_de_comandos"
->Variables de ambiente del interprete de comandos</A
+NAME="variables_de_ambiente_del_interprete_de_ordenes"
+>Variables de ambiente del intérprete de ordenes</A
 ></H3
 ><P
 >&#13;        Cada programa emplea sus propias variables de ambiente, en
-        particular el interprete de comandos. Recomendamos el uso de
+        particular el intérprete de ordenes. Recomendamos el uso de
         <SPAN
 CLASS="strong"
 ><B
@@ -358,8 +358,8 @@ CLASS="emphasis"
 >ksh</B
 ></SPAN
 > como interprete de
-        comandos por ser liviano y estándar en sistemas OpenBSD. Con
-        este intérprete de comandos, puede establecerse el valor de la
+        ordenes por ser liviano y estándar en sistemas OpenBSD. Con este
+        intérprete de ordenes, puede establecerse el valor de la
         variable de ambiente <TT
 CLASS="literal"
 >VISUAL</TT
@@ -379,12 +379,12 @@ CLASS="emphasis"
 ></SPAN
 > para determinar qué
         secuencias de teclas utilizar para dar órdenes especiales desde
-        la línea de comandos. El valor <TT
+        la línea de ordenes. El valor <TT
 CLASS="literal"
 >vi</TT
 > indica que
         se usen las teclas que se usan con el editor vi (por ejemplo en
-        modo comandos, es decir después de oprimir
+        modo ordenes, es decir después de oprimir
         <SPAN
 CLASS="strong"
 ><B
@@ -413,7 +413,7 @@ CLASS="emphasis"
 >?</B
 ></SPAN
 >
-        seguido de una cadena para buscar un comando en la historia que
+        seguido de una cadena para buscar una orden en la historia que
         incluya la cadena, <SPAN
 CLASS="strong"
 ><B
@@ -436,7 +436,7 @@ CLASS="emphasis"
 >i</B
 ></SPAN
 > para insertar en la
-        posición del cursor y salir del modo comandos). Si prefiere otra
+        posición del cursor y salir del modo ordenes). Si prefiere otra
         forma de interacción emplee:
       </P
 ><PRE
@@ -481,8 +481,8 @@ NAME="configuración-por-defecto-de-sesiones-con-ksh"
 >&#13;        Notará que el valor de las variables de ambiente que fije
         durante una sesión se perderá cuando termine la sesión. Para
         lograr una configuración más perdurable puede establecer la
-        variable de ambiente a un archivo ejecutado por el interprete de
-        comandos automáticamente cada vez que inicia una sesión. En el
+        variable de ambiente a un archivo ejecutado por el intérprete de
+        ordenes automáticamente cada vez que inicia una sesión. En el
         caso del intérprete ksh tal archivo es
         <TT
 CLASS="literal"
@@ -513,15 +513,15 @@ export PS1="\h$ "
 export LANG="es_CO.UTF-8"
 </PRE
 ><P
->&#13;        El comando alias <TT
+>&#13;        La orden alias <TT
 CLASS="literal"
 >vi=vim</TT
-> indica que cada vez
-        que se ejecute el comando <TT
+> indica que cada vez que
+        se ejecute la orden <TT
 CLASS="literal"
 >vi</TT
-> se llame al
-        programa vim (ver Sección 7.3, “Editor vi”). Note que también se
+> se llame al programa
+        vim (ver Sección 7.3, “Editor vi”). Note que también se
         establecen las variables de ambiente
       </P
 ><P
@@ -582,17 +582,16 @@ CLASS="literal"
 CLASS="literal"
 >PS1</TT
 > que establece el símbolo de espera de
-            comandos principal de
-            <SPAN
+            ordenes principal de <SPAN
 CLASS="strong"
 ><B
 CLASS="emphasis"
 >ksh</B
 ></SPAN
->, el valor de este
-            ejemplo ("\h$ ") establece un símbolo de espera de
-            comandos que presenta el nombre de la máquina seguido del
-            símbolo pesos y un espacio.
+>,
+            el valor de este ejemplo ("\h$ ") establece un
+            símbolo de espera de ordenes que presenta el nombre de la
+            máquina seguido del símbolo pesos y un espacio.
           </P
 ></LI
 ></UL
@@ -611,11 +610,11 @@ NAME="colorls"
 CLASS="literal"
 >colorls</TT
 > (del paquete colorls), este se define
-        como alias para el comando <TT
+        como alias para la orden <TT
 CLASS="literal"
 >ls</TT
->, de forma que
-        la lista de archivos se presente con colores y como ha sido
+>, de forma que la
+        lista de archivos se presente con colores y como ha sido
         modificado para adJ presentará orden correcto en español. Esto
         ocurrirá desde consolas tipo texto. Si está usando OpenBSD con
         X-Window y <TT
