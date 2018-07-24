@@ -2,9 +2,14 @@
 
 Cada versión cubre la respectiva versión de adJ.
 
+Version 6.3
+
+  - Diversos renombramientos para mejorar español (e.g orden en lugar de 
+    comando)
+
 Versión 6.2
 
-  - Actualizado montaje de USB [xref](#montaje_y_desmontaje_desde_interprete_de_comandos)
+  - Actualizado montaje de USB [xref](#montaje_y_desmontaje_desde_interprete_de_ordenes)
 
 
 Versión 6.1

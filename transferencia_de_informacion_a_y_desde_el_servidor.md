@@ -14,7 +14,7 @@ los mismos ```ftp```, ```curl``` o ```wget```.
 Para enviar y recibir información cifrada utilice el protocolo 
 **ssh** (o su protocolo asociado **sftp**).  Para emplear este método 
 desde un sistema adJ/OpenBSD (o otro sistema tipo Unix que cuente con 
-OpenSSH) se puede usar bien ```scp``` desde la línea de comandos o el 
+OpenSSH) se puede usar bien ```scp``` desde la línea de ordenes o el 
 programa ```filezilla```.
 
 ### ftp {#ftp}

@@ -23,7 +23,7 @@
   sintaxis de Pandoc, ver <http://pandoc.org>
 
 * Las imagenes dejarlas en el mismo repositorio en subdirectorio ```img```
-  y referenciar, por ejemplo ```[Pantallazo de XDM](img/xdm.png)```
+  y referenciar, por ejemplo ```[Pantallazo de xenodm](img/xenodm.png)```
 
 * Al procesar con Pandoc y DocBook las notas al pie se numerarán
   automáticamente, por eso  como identificador es mejor emplear 

@@ -2,7 +2,7 @@
 
 Los conceptos y herramientas presentados desde esta sección se asimilan mejor 
 practicando. 
-Procure ejecirtarlos desde un interprete de comandos (bien operando 
+Procure ejecirtarlos desde un interprete de ordenes (bien operando 
 directamente un sistema tipo Unix o bien ingresando remotamente desde otro 
 sistema como se explicó, (ver [xref](#primer_uso_de_adJ)).
 
@@ -22,22 +22,22 @@ se trate de una carta escrita en formato de Open Document Format
 Para verla debe usarse un programa que entienda ese formato, uno entre otros 
 es LibreOffice.
 
-### Intérprete de comandos {#interprete_de_comandos}
+### Intérprete de ordenes {#interprete_de_ordenes}
 
-El intérprete de comandos le permite usar varios comandos internos, así 
+El intérprete de ordenes le permite usar varias ordenes internos, así 
 como ejecutar programas. 
-Es común que los comandos o programas requieran algo de información como 
+Es común que las ordenes o programas requieran algo de información como 
 suministro (i.e parámetros o argumentos), así como opciones que modifiquen 
 el comportamiento por defecto. 
-Tal información suele darse a continuación del nombre del comando, separando 
+Tal información suele darse a continuación del nombre de la orden, separando 
 un dato o una opción de otra con espacios. Si es una de las primeras veces 
-que ingresa al sistema, recomendamos los siguientes comandos/programas:
+que ingresa al sistema, recomendamos los siguientes ordenes/programas:
 
 **man man**
 
 :   El programa **man** permite ver un tema del manual del sistema. Puede 
 recibir como parámetro el tema sobre el cual desea ver la documentación. 
-Así que **man man** presenta la documentación del comando **man**. 
+Así que **man man** presenta la documentación de la orden **man**. 
 Entre los temas posibles puede emplear el nombre de un programa instalado o 
 de una función de la librería del sistema.  
 
@@ -52,7 +52,7 @@ Tenga en cuenta que si su clave llega a ser descubierta por un tercero,
 
 **chfn**
 
-: Le permite cambiar datos personales y el intérprete de comandos que desea 
+: Le permite cambiar datos personales y el intérprete de ordenes que desea 
 por defecto (sugerimos /**bin/ksh**)
 
 ### Sistema de Archivos
@@ -69,19 +69,19 @@ llamamos *directorio personal* cuya ruta normalmente es de la forma
 
 ![Sistema de archivos](img/arbol-archivos.png)
 
-El intérprete de comandos que emplee tendrá como parte de su estado un 
+El intérprete de ordenes que emplee tendrá como parte de su estado un 
 directorio de trabajo, un símbolo de espera de ordenes y variables de entorno. 
-La manera de ver y alterar estos datos depende del intérprete de comandos que 
-emplee, nos limitaremos al intérprete de comandos **ksh** (que tiene bastantes 
-cosas en común con otros intérpretes de comandos como **bash**).
+La manera de ver y alterar estos datos depende del intérprete de ordenes que 
+emplee, nos limitaremos al intérprete de ordenes **ksh** (que tiene bastantes 
+cosas en común con otros intérpretes de ordenes como **bash**).
 
 Podrá examinar el directorio de trabajo con ```pwd```, listar algunas variables 
 de ambiente (las exportadas) con **export** y modificar el símbolo de espera 
 de ordenes con la variable de ambiente ```PS1```.
-A continuación se listan algunos comandos/programas relacionados con el 
+A continuación se listan algunas ordenes/programas relacionados con el 
 sistema de archivos y un mínimo del uso de cada uno. Sugerimos que mire la 
 documentación que corresponde a cada uno (e.g para ver documentación del 
-programa **ls** ejecute desde un intérprete de comandos **man ls**):
+programa **ls** ejecute desde un intérprete de ordenes **man ls**):
 
 ```pwd```
 
@@ -131,7 +131,7 @@ directorios con todo su contenido de forma recursiva con la opción
 
 ### Lecturas recomendadas
 
-Páginas ```man``` de los 11 comandos/programas introducidos en este capítulo.
+Páginas ```man``` de las 11 ordenes /programas introducidos en este capítulo.
 Se han tomado porciones de la sección "telnet y ssh" de [AALinux](#bibliografia)
 
 

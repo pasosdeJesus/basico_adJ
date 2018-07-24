@@ -28,23 +28,23 @@ pero no podrá acceder a los directorios cifrados[^primer.2].
 ```
 doas sh /etc/rc.local
 ```
-desde un interprete de comandos, o desde el menú de 
+desde un intérprete de ordenes, o desde el menú de 
 Fluxbox Dispositivos->Reiniciar Servicios Faltantes
 
 
 Después se iniciará un escritorio gráfico (X-Window[^primer.3]) y un aplicación 
-(```xdm```[^primer.4]) que pide su usuario y su clave para iniciar una sesión:
+(```xenodm```[^primer.4]) que pide su usuario y su clave para iniciar una sesión:
 
 [^primer.3]: X-Window es un sistema estandarizado para manejo de las aplicaciones 
 gráficas en los sistemas operativos de la familia de los Unix
 
-[^primer.4]: ```xdm```  es un gestor de pantalla que presenta al usuario con una 
+[^primer.4]: ```xenodm```  es un gestor de pantalla que presenta al usuario con una 
 pantalla de autenticación (*login*) que solicita el nombre de usuario y 
 su contraseña
 
-![xdm solicitando nombre de cuenta y clave](img/xdm.png)
+![xenodm solicitando nombre de cuenta y clave](img/xenodm.png)
 
-Si durante la instalación, no se instaló XWindow o no se ha configurado
+Si durante la instalación, no se instaló X-Window o no se ha configurado
 para iniciar durante el arranque, lo que verá será una consola virtual tipo 
 texto, como la del arranque.  
 Por defecto hay 4 consolas virtuales tipo texto a las cuales pasa con las 
@@ -86,7 +86,7 @@ en el formato de MS-Word.
  
 ![LibreOffice Writer](img/openoffice_writer.png)
 
-[^primer.5]: Desde la línea de comandos puede iniciar Writer con 
+[^primer.5]: Desde la línea de ordenes puede iniciar Writer con 
 	```/usr/local/bin/swriter``` o puede abrir LibreOffice completo con 
 	```/usr/local/bin/soffice```
 
@@ -96,7 +96,7 @@ abrir y guardar en el formato de Excel.
 
 ![LibreOffice.org Calc](img/openoffice_calc.png)
 
-[^primer.6]: Desde la línea de comandos puede iniciar Calc con 
+[^primer.6]: Desde la línea de ordenes puede iniciar Calc con 
 	```/usr/local/bin/scalc```
               
 Puede elaborar presentaciones y abrir las que se han hecho con PowerPoint con 
@@ -105,7 +105,7 @@ Impress[^primer.7].
 
 ![Presentación](img/openoffice_presentacion.png)
 
-[^primer.7]: Desde la línea de comandos inicia Impress con 
+[^primer.7]: Desde la línea de ordenes inicia Impress con 
 	```/usr/local/bin/simpress.```
  
 Puede acceder a la documentación para adJ a través del menú de fluxbox. 
@@ -144,21 +144,21 @@ se presenta este el estilo llamado **Makro**.
 
 ![Ejemplo de Estilo de sistema](img/estilo1.png)
 
-La figura anterior presenta también un interprete de comandos, que puede 
+La figura anterior presenta también un intérprete de ordenes, que puede 
 iniciar desde el menú eligiendo xterm, aunque también puede emplear uno 
 desde las consolas virtuales después de autenticarse.
 
  
-En sistemas operativos tipos Unix es usual emplear un interprete de comandos 
+En sistemas operativos tipos Unix es usual emplear un intérprete de ordenes 
 para interactuar. Su operación es la misma bien inicie desde el ambiente 
 gráfico o en una consola virtual o remotamente como se explica en la siguiente 
-sección. Aunque ciertamente un interprete de comandos exige más memoria 
+sección. Aunque ciertamente un intérprete de ordenes exige más memoria 
 y atención del usuario, también le dará más opciones, más agilidad y 
 la posibilidad de plena operación remota.
 
 ### Conexión con ssh {#conexion_con_ssh}
 
-Dado que la interacción con un interprete de comandos se basa en comandos 
+Dado que la interacción con un intérprete de ordenes se basa en ordenes 
 ingresados por teclado y respuestas tipo texto, estos intérpretes hacen muy 
 efectiva la operación remota. La operación remota puede hacerse de forma segura 
 con el protocolo SSH 2, empleando el servidor OpenSSH del servidor y un 
@@ -210,8 +210,8 @@ para finalmente dejarlo en una sesión en modo texto.
 
 Al iniciar la sesión podrá ver el mensaje del día (**motd** --
  *message of the day*) 
-que el administrador haya configurado, se ejecutarán los archivos de comandos 
-de inicio y quedará en el interprete de comandos que esté configurado en su 
+que el administrador haya configurado, se ejecutarán los archivos de ordenes 
+de inicio y quedará en el intérprete de ordenes que esté configurado en su 
 cuenta.
 
  

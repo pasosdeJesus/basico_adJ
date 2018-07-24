@@ -4,16 +4,16 @@ Un sistema adJ se administra desde la cuenta ```root``` o bien con ayuda del
 programa ```doas```.
 
 Desde las diversas cuentas del sistema que estén en el grupo ```wheel``` es 
-posible pasar a la cuenta root con el comando:
+posible pasar a la cuenta root con la orden:
 
-```
+```sh
 $ su -
 ```
 	  
 Tipicamente al pasar a la cuenta root el prompt cambiará a ```#```.
 
 Si **doas** se configura para permitir su utilización por parte de usuarios 
-que estén en el grupo ```wheel``` sin clave, podrán ejecutarse comandos como 
+que estén en el grupo ```wheel``` sin clave, podrán ejecutarse ordenes como 
 si se tratara de la cuenta ```root``` precediéndolos con **doas**. 
 Por ejemplo para listar el directorio del usuario ```root```:
 
@@ -30,7 +30,7 @@ $ doas ls /root
 Entre las labores del administrador está agregar, eliminar y modificar 
 información de usuarios del sistema.
 
-El administrador puede agregar usuarios con el comando ```adduser```. 
+El administrador puede agregar usuarios con la orden ```adduser```. 
 Su uso típico se esboza a continuación[^admin.1]
 
 [^admin.1]: Tenga en cuenta que la primera vez que ejecute ```adduser``` tras 
@@ -76,7 +76,7 @@ Un GID
 : O número que identifica al grupo principal al que pertenece el usuario 
 	(1003 en el ejemplo).
 
-Un intérprete de comandos
+Un intérprete de ordenes 
 : Que será el que tendrá el usuario al iniciar nuevas sesiones 
 	(en el ejemplo es /bin/ksh).
 
@@ -104,10 +104,10 @@ doas userdel -r juan
 		  
 Es posible modificar información de los usuarios de diversas formas:
 
-- Con el comando ```vipw``` que le permitirá modificar directamente el archivo 
+- Con la orden ```vipw``` que le permitirá modificar directamente el archivo 
   de claves y usuarios
 
-- Con el comando ```chfn usuario``` podrá modificar algunos datos del perfil 
+- Con la orden ```chfn usuario``` podrá modificar algunos datos del perfil 
   del usuario.
 
 
@@ -125,7 +125,7 @@ conocidos como bitácoras. Algunos son:
 
 - ```authlog```: Muestra los accesos de los usuarios permitidos y rechazados
 
-- ```secure```: Muestra los comandos ejecutados por administradores 
+- ```secure```: Muestra las ordenes ejecutadas por administradores 
 
 - ```servicio```: Los programas que están corriendo en la máquina
 

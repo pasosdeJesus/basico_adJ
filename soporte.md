@@ -15,9 +15,9 @@ Como adJ es una distribución de OpenBSD los documentos para ese sistema
 operativo también aplican.  Sin embargo buena parte de la documentación se 
 encuentra solo en inglés, recomendamos:
 
-* El manual oficial de cada comando, controlador y archivo de configuración 
-	puede leerse con el comando ```man```.  Tal manual consta de varias 
-	secciones: 1 comandos generales, 2 llamadas al sistema y números de 
+* El manual oficial de cada orden, controlador y archivo de configuración 
+	puede leerse con la orden ```man```.  Tal manual consta de varias 
+	secciones: 1 ordenes generales, 2 llamadas al sistema y números de 
 	error, 3 librerías de C, 4 archivos especiales y soporte de hardware, 
 	5 formatos de archivos, 6 juegos, 7 miscelanea, 8 operación y 
 	mantenimiento del sistema, 9 kernel. Puede ver por ejemplo la 
@@ -59,13 +59,13 @@ en <http://silcnet.org/>
 
 Para emplear el servicio debe utilizarse un cliente de silc, en caso de que 
 cuente con un escritorio gráfico recomendamos **pidgin**, o de contar con un 
-interprete de comandos el programa **silc** incluido en 
+interprete de ordenes el programa **silc** incluido en 
 
 #### Configuración y uso de Pidgin {#configuracion_y_uso_de_pidgin}
 
 **Pidgin** es un programa de mensajería instantánea que permite iniciar 
 sesiones sobre varias redes de mensajería al mismo tiempo.
-Corre sobre sistemas operativos OpenBSD, Linux, Mac OS X y Windows. 
+Corre sobre sistemas operativos OpenBSD, Linux, macOS y Windows. 
 Es compatible con las siguientes redes de mensajería: AIM, ICQ, Google Talk, 
 Jabber/XMPP, MSN Messenger, Yahoo!, Bonjour, Gadu-Gadu, IRC, Novell 
 GroupWise Messenger, QQ, Lotus Sametime, SILC, SIMPLE, MySpaceIM y Zephyr.
@@ -115,10 +115,10 @@ silc -c www.nocheyniebla.org
 ```
 ![Al ejecutar pidgin](img/silc.png)
 
-Una vez conectado puede dar comandos iniciados con el símbolo '/', por ejemplo:
+Una vez conectado puede dar ordenes iniciados con el símbolo '/', por ejemplo:
 
 **/help**
-: presenta ayuda sobre comandos disponibles.
+: presenta ayuda sobre ordenes disponibles.
 
 **/quit**
 : Para salir del cliente.

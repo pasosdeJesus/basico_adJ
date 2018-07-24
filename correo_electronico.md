@@ -93,11 +93,11 @@ electrónico.
 Al iniciar ```mutt``` presenta los correos que estén en su casilla, le permite 
 desplazarse de uno a otro con flechas o con las letras ```j``` y ```k``` 
 (cómo en vi), podrá consultar uno con ```Retorno```, salir con ```q```, 
-ver ayuda sobre comandos con ```?```, 
+ver ayuda sobre ordenes con ```?```, 
 eliminar uno con ```d```, iniciar un correo (o continuar editando algún correo 
 pospuesto) con ```m```. 
 Una vez esté viendo un correo puede responder con ```r```, 
-reenviarlo con ```f``` o pasarlo como entrada a un comando con ```|```. 
+reenviarlo con ```f``` o pasarlo como entrada a una orden con ```|```. 
 Cuando componga un mensaje puede posponer, puede poner adjuntos (con ```a```) 
 o emplear programas como PGP o GPG para firmar o encriptar sus mensajes 
 (con ```p```).
@@ -105,7 +105,7 @@ o emplear programas como PGP o GPG para firmar o encriptar sus mensajes
 Para organizar los correos que reciba, puede emplear carpetas, para pasar de 
 una carpeta a otra emplee ```c```, para organizar una carpeta (por fecha, 
 emisor, destinatario, tamaño, tema o hilos) emplee o. 
-Si ordena una carpeta por hilos, podrá emplear otros comandos como ```Ctrl-D``` 
+Si ordena una carpeta por hilos, podrá emplear otras ordenes como ```Ctrl-D``` 
 para borrar un hilo completo, ```Ctrl-P``` para pasar al anterior, ```Ctrl-N``` 
 para pasar al siguiente.
 
