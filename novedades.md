@@ -2,6 +2,8 @@
 
 Cada versión cubre la respectiva versión de adJ.
 
+Version 6.4
+
 Version 6.3
 
   - Diversos renombramientos para mejorar español (e.g orden en lugar de 
