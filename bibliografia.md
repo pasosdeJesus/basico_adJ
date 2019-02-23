@@ -1,4 +1,4 @@
-#Bibliografía {#bibliografia}
+# Bibliografía {#bibliografia}
 
 [bdp] Traducción de los evangelios de dominio público y abierta a mejoras http://de.geocities.com/nuestroamigojesus/bdp" 2004 {#bdp}
 

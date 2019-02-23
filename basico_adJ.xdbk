@@ -97,7 +97,18 @@ la distribución adJ de OpenBSD &VER-OPENBSD;.
   &formatos_de_archivos;
   &correo_electronico;
   &labores_basicas_de_administracion;
-  &novedades;
-  &bibliografia;
+  <appendix id="novedades">
+	   <title>Novedades</title>
+     <para>
+       &novedades;
+     </para>
+   </appendix>  
 
+   <appendix id="bibliografia">
+	   <title>Bibliografía</title>
+     <para>
+   	&bibliografia;
+     </para>
+   </appendix>  
+   
 </article>
