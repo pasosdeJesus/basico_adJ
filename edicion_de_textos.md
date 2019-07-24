@@ -203,11 +203,12 @@ Digrafos
 	del mismo no lo permiten. Presione **Control-K** y después una 
 	secuencia de dos teclas de acuerdo al caracter, e.g 'a produce á, 
 	n? produce ñ, u: produce ü, !I produce ¡, ?I produce ¿. 
-	Pueden verse otros caracteres con la orden:```digraphs```.
+	Pueden verse otros caracteres desde la línea de ordenes con 
+ 	```:digraphs```.
 
 Resaltado de sintaxis
 : Permite ver con colores que resaltan la sintaxis de algunos tipos de archivos 
-	(por ejemplo fuentes de DocBook, C, LaTeX). Se activa con 
+	(por ejemplo fuentes de Ruby, C, Javascript). Se activa con 
 	```:syntax enable```. Para que se vean los colores de este editor, 
 	asegúrese de que su variable de ambiente ```TERM``` tenga el valor de 
 	una terminal que soporte color, por ejemplo las terminales gráficas 
@@ -217,9 +218,10 @@ Resaltado de sintaxis
 
 Indentación automática
 : Permite indentar automáticamente diversos tipos de archivos como XML, C, 
-	LaTeX, XSLT. Se activa con ```:filetype indent on```. Para modificar 
-	tal indentación pueden establecerse variables de **vim**, bien en la 
-	sesión abierta, bien en ```~/.vimrc``` o bien en cada archivo. 
+	Ruby, Javascript. Se activa con ```:filetype indent on```. Para 
+	modificar tal indentación pueden establecerse variables de **vim**, 
+	bien en la sesión abierta, bien en ```~/.vimrc``` o bien en cada 
+	archivo. 
 	Para fijar una configuración particular que se tome al editar cierto 
 	archivo, basta agregar al comienzo una línea (puede ser un comentario 
 	en el caso de lenguajes de programación) como:
@@ -275,13 +277,13 @@ cada uno en particular con ```termencoding``` (o ```tenc```) y
 ```fileencoding``` (o ```fenc```). 
 Los valores típicos para codificar español son latin1 (que corresponde a 
 codificicación en un byte ISO8859-1) o utf8 (que corresponde a codificación 
-multibyte UTF-8). Por ejmplo para establecer la codificación de la termina en 
-UTF-8, desde modo ordenes teclee:
+multibyte UTF-8 --tipicamente 4 bytes). Por ejemplo para establecer la 
+codificación de la termina en UTF-8, desde modo ordenes teclee:
 ```
 :set tenc=utf8
 ```
 
-Típicamente **vim** detectará la codificación de los archivos que edite, o 
+**vim** detectará la codificación de los archivos que edite, o 
 empleará su codificación preferida en archivos nuevos. Puede deshabilitarse 
 la autodetección dejando vacía la variable ```fileencoding``` (lo cual no 
 recomendamos). La forma recomendada y por defecto en vim es emplear una 
