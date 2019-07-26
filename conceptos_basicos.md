@@ -51,7 +51,8 @@ Tenga en cuenta que si su clave llega a ser descubierta por un tercero,
 él/ella podría actuar a nombre suyo.
 
 **apg**
-Creador de contraseñas seguras
+
+: Creador de contraseñas seguras
 
 **chfn**
 
