@@ -50,6 +50,9 @@ Sugerimos las claves generadas con programas especializados como **apg**.
 Tenga en cuenta que si su clave llega a ser descubierta por un tercero, 
 él/ella podría actuar a nombre suyo.
 
+**apg**
+Creador de contraseñas seguras
+
 **chfn**
 
 : Le permite cambiar datos personales y el intérprete de ordenes que desea 
