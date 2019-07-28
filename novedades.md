@@ -1,6 +1,7 @@
 Version 6.5
 
 :  - Retirada sección sobre SILC
+   - Nueva [xref](#rsync) 
 
 Version 6.4
 
