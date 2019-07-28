@@ -1,0 +1,880 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Uso de medios de almacenamiento</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Soporte"
+HREF="x351.htm"><LINK
+REL="NEXT"
+TITLE="Personalización"
+HREF="x579.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x351.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x579.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="uso_de_medios_de_almacenamiento"
+>Uso de medios de almacenamiento</A
+></H1
+><P
+>&#13;    En <A
+HREF="x231.htm"
+>la sección de nombre <I
+>Conceptos básicos</I
+></A
+> se definió archivo
+    y sistema de archivos de manera general, en esta sección se aplican
+    esos conceptos para utilizar USB y CD-ROM. En sistemas tipo Unix
+    como adJ es necesario montar los medios de almacenamientos en algún
+    directorio del sistema de archivos para poderlos emplear y
+    desmontarlos una vez no se requieren más. En adJ los directorios
+    donde se montan USBs y CD-ROMs son <TT
+CLASS="literal"
+>/mnt/usb</TT
+> y
+    <TT
+CLASS="literal"
+>/mnt/cdrom</TT
+> respectivamente. Ni el montaje, ni el
+    desmontaje se realizan automáticamente, sino por orden expresa del
+    usuario.
+  </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="montaje_y_desmontaje_en_entorno_grafico"
+>Montaje y desmontaje en entorno gráfico</A
+></H2
+><P
+>&#13;      Para montar una unidad de USB debe bastar desde el menú de fluxbox
+      (botón derecho del ratón sobre el escritorio) elegir
+      Dispositivo-&#62;Montar USB (se emplea el análogo para montar un
+      CD-ROM).
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN397"
+></A
+><P
+><B
+>Figura 16. Menu Dispositivo-&#62;Montar USB</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/montar.png"></P
+></DIV
+></DIV
+><P
+CLASS="literallayout"
+>Una&nbsp;vez&nbsp;lo&nbsp;haga&nbsp;podrá&nbsp;ver&nbsp;el&nbsp;manejador&nbsp;de&nbsp;archivos&nbsp;<TT
+CLASS="literal"
+>xfe</TT
+>&nbsp;ubicado&nbsp;en&nbsp;el&nbsp;directorio&nbsp;donde&nbsp;queda&nbsp;montado&nbsp;el&nbsp;medio.<br>
+<SPAN
+CLASS="inlinemediaobject"
+><IMG
+SRC="img/xfecdrom.png"></SPAN
+></P
+><P
+>&#13;      Al montar estos medios, el dueño es el usuario administrador que
+      se especificó durante la instalación de adJ. Este podrá leer de
+      los medios y en el caso de USB es quien podrá escribir. Una vez
+      termine de emplear el medio de alamacenamiento desmontelo también
+      desde el menú de fluxbox Dispositivo-&#62;Desmontar USB
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="montaje_y_desmontaje_desde_interprete_de_ordenes"
+>Montaje y desmontaje desde intérprete de ordenes</A
+></H2
+><P
+>&#13;      Para montar la USB debe bastar ejecutar desde una terminal:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;doas mount /mnt/usb
+</PRE
+><P
+>&#13;      El CD-ROM se monta de la misma forma cambiando
+      <TT
+CLASS="literal"
+>usb</TT
+> por <TT
+CLASS="literal"
+>cdrom</TT
+>. Para
+      demonstar la USB basta:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;doas umount /mnt/usb
+</PRE
+><P
+>&#13;      y para demonstar un CD-ROM:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;doas umount /mnt/cdrom
+</PRE
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="administrador_de_archivos_xfe"
+>Administrador de archivos Xfe</A
+></H2
+><P
+>&#13;      Con este sencillo programa podrá administrar archivos y
+      directorios, es decir crear, copiar, renombrar, crear enlaces,
+      cambiar permisos e incluso hacer estas operaciones como
+      superusuario. Entre las características del porte de adJ
+      destacamos, las siguientes adaptadas y traducidas de la ayuda
+      oficial --que podrá consultar desde el menu Ayuda:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+>&#13;          Interfaz gráfica de usuario muy rápida con cuatro formas de
+          administrar archivos: un panel; árbol y panel; dos páneles;
+          árbol y dos paneles.
+        </P
+></LI
+><LI
+><P
+>&#13;          Soporta codificación UTF-8 y se ha traducido a 20 idiomas
+          (incluyendo español de Colombia). Puede presentar la interfaz
+          con caracteres no latinos (como chino o japónes) siempre y
+          cuando configure un tipo de letra que soporte Unicode desde el
+          menú Editar/Preferencias/Tipo de letra
+        </P
+></LI
+><LI
+><P
+>&#13;          Incluye las siguientes aplicaciones: Editor de texto (X File
+          Write, xfw, ver <A
+HREF="x707.htm#editor_xfw"
+>la sección de nombre <I
+>Editor xfw</I
+></A
+>), Visor
+          de texto (X File View, xfv), Visor de imágenes (X File Image,
+          xfi), Visor/Instalador/Desinstalador de paquetes (rpm o deb)
+          (X File Package, xfp).
+        </P
+></LI
+><LI
+><P
+>&#13;          La interfaz gráfica soporta temas con posibilidad de cambiar
+          colores, íconos y apariencia. Cuenta con Barras de
+          herramientas, Marcadores e Historial.
+        </P
+></LI
+><LI
+><P
+>&#13;          Papelera para operaciones de eliminación de archivos. Se ubica
+          en <TT
+CLASS="literal"
+>~/local/share/Trash/files</TT
+>
+        </P
+></LI
+><LI
+><P
+>&#13;          Permite realizar operaciones como superusuario, bien iniciando
+          de`sde una terminal con:
+        </P
+><PRE
+CLASS="programlisting"
+>&#13;doas xfe
+</PRE
+><P
+>&#13;          o si está bien configurado puede inicarse una ventan
+          superusuario desde el menu Herramientas-&#62;Ventana
+          superusuario nueva.
+        </P
+></LI
+><LI
+><P
+>&#13;          Maneja paquetes de OpenBSD: seleccionando cualquier archivo y
+          pulsando botón derecho podrá elegir en el menú emergente
+          Consultar Paquetes que buscará el paquete que contiene el
+          archivo seleccionado. Si selecciona un paquete y pulsa el
+          botón derecho, en el menú emergente podrá elegir Ver el
+          contenido del paquete Si usa una ventana superusuario de Xfe
+          también podrá instalarlo/actualizarlo o desinstalarlo,
+          pulsando botón derecho sobre el paquete y eligiendo en el menú
+          emergente Instalar/Actualizar o Desistalar respectivamente.
+          <SPAN
+CLASS="inlinemediaobject"
+><IMG
+SRC="img/xfepaq.png"></SPAN
+>
+        </P
+></LI
+><LI
+><P
+>&#13;          Permite comprimir en formatos tar, compress, zip, gzip, bzip2,
+          xz y 7zip y descomprimir de formatos tar, compress, zip, gzip,
+          bzip2, xz, lzh, rar, ace, arj y 7zip
+        </P
+></LI
+><LI
+><P
+>&#13;          Usable: barras de progreso o cuadros de diálogo para
+          operaciones de archivo demoradas, vista previa con miniaturas,
+          atajos de teclado configurables, asociaciones de archivos,
+          operaciones de arrastrar y soltar, ayudas emergentes con las
+          propiedades de los archivos.
+        </P
+></LI
+><LI
+><P
+>&#13;          En listados y en el árbol de directorios puede seleccionar
+          varios elementos y al hacer pulsación derecha se abrirá un
+          menú contextual sobre los elementos seleccionados. En los
+          panels <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl +</B
+></SPAN
+> pulsación
+          derecha abrirá un menú contextual con otras operaciones.
+        </P
+></LI
+></UL
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="atajos_de_teclado_predeterminados"
+>Atajos de teclado predeterminados</A
+></H3
+><P
+>&#13;        Los atajos de teclado pueden personalizarse en el cuadro de
+        diálogo Preferencias. Los predeterminados para todas la
+        aplicaciones integradas se listan a continuación (vea otros
+        atajos de teclado partículares de cada Aplicación en el menú
+        Ayuda).
+      </P
+><P
+></P
+><UL
+COMPACT="COMPACT"
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-A</B
+></SPAN
+>: Seleccionar todo
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-C</B
+></SPAN
+>: Copiar al
+            portapapeles
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-F</B
+></SPAN
+>: Buscar
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Mayúscula-Ctrl-G</B
+></SPAN
+>: Buscar
+            anterior
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-G</B
+></SPAN
+>: Buscar siguiente
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-H</B
+></SPAN
+>: Ir al directorio
+            personal
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-I</B
+></SPAN
+>: Invertir
+            selección
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-O</B
+></SPAN
+>: Abrir archivo
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-P</B
+></SPAN
+>: Imprimir ficha
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-Q</B
+></SPAN
+>: Salir de la
+            aplicación
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-V</B
+></SPAN
+>: Pegar desde el
+            portapapeles
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-W</B
+></SPAN
+>: Cerrar ventana
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-X</B
+></SPAN
+>: Cortar al
+            portapapeles
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-Z</B
+></SPAN
+>: Deseleccionar
+            todo
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>F1</B
+></SPAN
+>: Mostrar ayuda
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>F2</B
+></SPAN
+>: Crear un archivo
+            nuevo
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>F7</B
+></SPAN
+>: Crear un directorio
+            nuevo
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>F10</B
+></SPAN
+>: Listado con iconos
+            grandes
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>F11</B
+></SPAN
+>: Listado con iconos
+            pequeños
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>F12</B
+></SPAN
+>: Listado detallado de
+            archivos
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-F6</B
+></SPAN
+>: Alternar mostrar
+            archivos ocultos
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-F7</B
+></SPAN
+>: Alternar mostrar
+            miniaturas
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Mayúscula-F2</B
+></SPAN
+>: Ir al
+            directorio de trabajo
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Retroceso</B
+></SPAN
+>: Ir al
+            directorio superior
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-Retroceso</B
+></SPAN
+>: Ir al
+            directorio anterior
+          </P
+></LI
+><LI
+><P
+>&#13;            <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Mayúscula-Retroceso</B
+></SPAN
+>: Ir
+            al directorio siguiente
+          </P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="particiones_cifradas"
+>Particiones cifradas</A
+></H2
+><P
+>&#13;      adJ soporta por omisión 2 particiones cifradas que se montan en
+      <TT
+CLASS="literal"
+>/var/postgresql</TT
+> y
+      <TT
+CLASS="literal"
+>/var/www/resbase</TT
+>. La clave de cifrado debe
+      suministrarse durante el arranque, y sólo si esta es correcta
+      podrá ver el contenido de esas carpetas y escribir (si durante el
+      arranque no le solicita clave de cifrado faltó activar particiones
+      cifradas en la instalación --aunque podrá hacerlo actualizando
+      adJ). Así que puede verificar si la clave fue correcta examinando
+      esas rutas bien con xfe o bien desde un intérprete de ordenes:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+CLASS="literallayout"
+>xfe:&nbsp;Inicie&nbsp;<SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>xfe</B
+></SPAN
+>,&nbsp;asegurese&nbsp;de&nbsp;ver&nbsp;Árbol&nbsp;y&nbsp;Panel&nbsp;desde&nbsp;el&nbsp;menú&nbsp;Ver.&nbsp;En&nbsp;el&nbsp;Árbol&nbsp;de&nbsp;directorios&nbsp;de&nbsp;la&nbsp;izquierda&nbsp;elija&nbsp;el&nbsp;directorio&nbsp;raiz&nbsp;(primero&nbsp;marcado&nbsp;con&nbsp;/)&nbsp;con&nbsp;doble&nbsp;pulsación&nbsp;del&nbsp;botón&nbsp;izquierdo,&nbsp;bajé&nbsp;para&nbsp;elejir&nbsp;var,&nbsp;a&nbsp;continuación&nbsp;<TT
+CLASS="literal"
+>www</TT
+>&nbsp;y&nbsp;a&nbsp;continuación<br>
+<TT
+CLASS="literal"
+>resbase</TT
+>.</P
+></LI
+><LI
+><P
+>&#13;          Intérpete de ordenes: Inicide una terminal y teclee
+        </P
+><PRE
+CLASS="programlisting"
+>&#13;ls /var/www/resbase
+</PRE
+></LI
+></UL
+><P
+>&#13;      Allí debe ver directorios como AD o anexos o copias de respaldo o
+      dependiendo de la configuración de su servidor, una carpeta para
+      cada usuario. Si no ve información en este directorio ni en
+      <TT
+CLASS="literal"
+>/var/postgresql</TT
+> es posible que haya dado mal la
+      clave de cifrado en el arranque, en tal caso desde el menú de
+      Fluxbox (botón derecho sobre el escritorio) elija
+      Dispositivo-&#62;Iniciar Servicios Faltantes o desde un intérprete
+      de ordenes teclee
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;doas sh /etc/rc.local
+</PRE
+><P
+>&#13;      Procedimiento que volverá a pedir clave de cifrado en caso de que
+      haya hecho falta.
+    </P
+><P
+>&#13;      Dependiendo de la configuración de su sistema, si ve directorios
+      para cada usuario en <TT
+CLASS="literal"
+>/var/www/resbase</TT
+> usted
+      podrá leer y escribir sólo en su carpeta.
+    </P
+><P
+>&#13;      Un superusuario podrá copiar o examinar información en todas las
+      carpetas. Con xfe puede asegurar que su ventana es de superusuario
+      ejecutando desde una terminal:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;doas xfe
+</PRE
+><P
+>&#13;      Desde una terminal basta preceder las instrucciones con
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>doas</B
+></SPAN
+>.
+    </P
+><P
+>&#13;      Por ejemplo para copiar un archivo <TT
+CLASS="literal"
+>fuentes.txt</TT
+>
+      que está en una USB, con una ventana de superusuario en xfe siga
+      estos pasos:
+    </P
+><P
+></P
+><UL
+COMPACT="COMPACT"
+><LI
+><P
+>&#13;          Montar la USB
+        </P
+></LI
+><LI
+><P
+>&#13;          Ir al directorio <TT
+CLASS="literal"
+>/mnt/usb</TT
+> empleando el
+          árbol de directorios
+        </P
+></LI
+><LI
+><P
+>&#13;          Buscar el archivo por copiar, elegirlo, pulsar botón derecho y
+          en el menú emergente elegir Copiar.
+        </P
+></LI
+><LI
+><P
+>&#13;          Ubicar el directorio <TT
+CLASS="literal"
+>/var/www/resbase</TT
+>
+          empleando el árbol de directorios de xfe
+        </P
+></LI
+><LI
+><P
+>&#13;          Sobre el directorio resbase en el árbol de directorios pulsar
+          el botón derecho y del menú emergente elegir Pegar.
+        </P
+></LI
+></UL
+><P
+>&#13;      El mismo procedimiento desde un intérprete de ordenes lo realiza
+      con:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;doas mount /mnt/usb 
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;doas cp /mnt/usb/fuentes.txt /var/www/resbase 
+</PRE
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas_recomendadas_medios"
+>Lecturas recomendadas</A
+></H2
+><P
+>&#13;      Páginas del manual mount (8) y umount (8)
+    </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x351.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x579.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Soporte</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Personalización</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

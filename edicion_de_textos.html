@@ -36,7 +36,7 @@ xfw carta.txt
       el estado de inserción (INS) o sobreescritura (OVR) que puede
       cambiar con la tecla <span class="strong"><strong>INS</strong></span> o
       marcando en el menú Preferencias-&gt;Sobreescribir.
-    </p><div class="figure"><a name="idp394884264"></a><p class="title"><b>Figura 18. Uso de Xfe para manejar paquetes en adJ</b></p><div class="mediaobject"><img src="img/xfw-p.png" alt="Uso de Xfe para manejar paquetes en
+    </p><div class="figure"><a name="idp2221868920"></a><p class="title"><b>Figura 17. Uso de Xfe para manejar paquetes en adJ</b></p><div class="mediaobject"><img src="img/xfw-p.png" alt="Uso de Xfe para manejar paquetes en
         adJ"></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="editor_mg"></a>7.2. Editor mg</h3></div></div></div><p>
       <span class="strong"><strong>mg</strong></span> es un editor de texto
       simple, pequeño, veloz y portable con fuentes en el dominio
@@ -51,7 +51,7 @@ xfw carta.txt
     </p><p>
       Por ejemplo las fuentes de esta breve documentación lucen como se
       presenta a continuación.
-    </p><div class="figure"><a name="idp793458088"></a><p class="title"><b>Figura 19. mg editando esta documentación</b></p><div class="mediaobject"><img src="img/mg.png" alt="mg editando esta
+    </p><div class="figure"><a name="idp369445752"></a><p class="title"><b>Figura 18. mg editando esta documentación</b></p><div class="mediaobject"><img src="img/mg.png" alt="mg editando esta
         documentación"></div></div><p>
       Notara que mg no soporta UTF-8, así que su propósito es hacer
       breves ediciones a archivos de configuración cuando no puede usar
@@ -80,9 +80,9 @@ inet 192.168.1.1 255.255.255.0 NONE
       <span class="strong"><strong>C-x C-c</strong></span>.
     </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="editor_vi"></a>7.3. Editor vi</h3></div></div></div><p>
       <span class="strong"><strong>vi</strong></span> es un clásico editor en
-      ambientes tipo UNIX cuya prioridad es la eficiencia. Por lo mismo
-      no requiere el uso de ratón sino de breves ordenes que a medida
-      que se memoricen y usen harán más rápida la edición de textos.
+      entorno tipo UNIX cuya prioridad es la eficiencia. Por lo mismo no
+      requiere el uso de ratón sino de breves ordenes que a medida que
+      se memoricen y usen harán más rápida la edición de textos.
     </p><p>
       Para editar un archivo (digamos <code class="literal">ma.txt</code>) con el
       editor vi, teclee desde un intérprete de ordenes:
@@ -239,17 +239,17 @@ $ vi ma.txt
                 <span class="strong"><strong>Control-K</strong></span> y después
                 una secuencia de dos teclas de acuerdo al caracter, e.g
                 'a produce á, n? produce ñ, u: produce ü, !I produce ¡,
-                ?I produce ¿. Pueden verse otros caracteres con la
-                orden:<code class="literal">digraphs</code>.
+                ?I produce ¿. Pueden verse otros caracteres desde la
+                línea de ordenes con <code class="literal">:digraphs</code>.
               </p></dd><dt><span class="term">
               Resaltado de sintaxis
             </span></dt><dd><p>
                 Permite ver con colores que resaltan la sintaxis de
-                algunos tipos de archivos (por ejemplo fuentes de
-                DocBook, C, LaTeX). Se activa con
+                algunos tipos de archivos (por ejemplo fuentes de Ruby,
+                C, Javascript). Se activa con
                 <code class="literal">:syntax enable</code>. Para que se vean los
                 colores de este editor, asegúrese de que su variable de
-                ambiente <code class="literal">TERM</code> tenga el valor de una
+                entorno <code class="literal">TERM</code> tenga el valor de una
                 terminal que soporte color, por ejemplo las terminales
                 gráficas soportan <code class="literal">xterm-color</code> y desde
                 consolas tipo texto por ejemplo
@@ -260,7 +260,7 @@ $ vi ma.txt
               Indentación automática
             </span></dt><dd><p>
                 Permite indentar automáticamente diversos tipos de
-                archivos como XML, C, LaTeX, XSLT. Se activa con
+                archivos como XML, C, Ruby, Javascript. Se activa con
                 <code class="literal">:filetype indent on</code>. Para modificar
                 tal indentación pueden establecerse variables de
                 <span class="strong"><strong>vim</strong></span>, bien en la
@@ -293,9 +293,9 @@ filetype indent on
                 <span class="strong"><strong>vim</strong></span> así:
               </p><pre class="programlisting">
 $ cp /usr/local/share/vim/vim63/vimrc_example.vim ~/.vimrc
-</pre></dd></dl></div><div class="figure"><a name="idp623626280"></a><p class="title"><b>Figura 20. Sesión de vim</b></p><div class="mediaobject"><img src="img/vim.png" alt="Sesión de vim"></div></div></div><div class="sect4" lang="es"><div class="titlepage"><div><div><h5 class="title"><a name="locale_en_vim"></a>7.3.3.3. Locale en vim</h5></div></div></div><p>
+</pre></dd></dl></div><div class="figure"><a name="idp1450391544"></a><p class="title"><b>Figura 19. Sesión de vim</b></p><div class="mediaobject"><img src="img/vim.png" alt="Sesión de vim"></div></div></div><div class="sect4" lang="es"><div class="titlepage"><div><div><h5 class="title"><a name="locale_en_vim"></a>7.3.3.3. Locale en vim</h5></div></div></div><p>
           <span class="strong"><strong>vim</strong></span> empleará el locale
-          establecido en la variable de ambiente LANG (ver
+          establecido en la variable de entorno LANG (ver
           <a href="personalizacion.html#locale" title="6.1. Locale">Sección 6.1, “Locale”</a>). Sin embargo si prefiere
           también puede establecer idioma de los mensajes que presenta,
           así como codificación de la terminal y de los archivos.
@@ -306,7 +306,7 @@ $ cp /usr/local/share/vim/vim63/vimrc_example.vim ~/.vimrc
         </p><pre class="programlisting">
 :language es_CO
 </pre><p>
-          Puede establecer esta configuración por defecto agregando la
+          Puede establecer esta configuración por omisión agregando la
           orden al archivo <code class="literal">~/.vimrc</code>.
         </p><p>
           <span class="strong"><strong>vim</strong></span> puede emplear
@@ -318,21 +318,22 @@ $ cp /usr/local/share/vim/vim63/vimrc_example.vim ~/.vimrc
           <code class="literal">fenc</code>). Los valores típicos para codificar
           español son latin1 (que corresponde a codificicación en un
           byte ISO8859-1) o utf8 (que corresponde a codificación
-          multibyte UTF-8). Por ejmplo para establecer la codificación
-          de la termina en UTF-8, desde modo ordenes teclee:
+          multibyte UTF-8 --tipicamente 4 bytes). Por ejemplo para
+          establecer la codificación de la termina en UTF-8, desde modo
+          ordenes teclee:
         </p><pre class="programlisting">
 :set tenc=utf8
 </pre><p>
-          Típicamente <span class="strong"><strong>vim</strong></span> detectará
-          la codificación de los archivos que edite, o empleará su
+          <span class="strong"><strong>vim</strong></span> detectará la
+          codificación de los archivos que edite, o empleará su
           codificación preferida en archivos nuevos. Puede
           deshabilitarse la autodetección dejando vacía la variable
           <code class="literal">fileencoding</code> (lo cual no recomendamos). La
-          forma recomendada y por defecto en vim es emplear una terminal
-          que soporte la codificación especificada en LANG y dejar que
-          vim la emplee y que autodetecte la codificación de archivos.
-          Si no opera de esta forma puede intentar agregar a su archivo
-          <code class="literal">~/.vimrc</code>:
+          forma recomendada y por omisión en <code class="literal">vim</code> es
+          emplear una terminal que soporte la codificación especificada
+          en LANG y dejar que vim la emplee y que autodetecte la
+          codificación de archivos. Si no opera de esta forma puede
+          intentar agregar a su archivo <code class="literal">~/.vimrc</code>:
         </p><pre class="programlisting">
 set encoding&amp;           " terminal charset: follows current locale 
 set fileencoding&amp;       " auto-sensed charset of current buffer

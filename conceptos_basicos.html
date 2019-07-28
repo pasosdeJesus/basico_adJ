@@ -26,7 +26,7 @@
       así como ejecutar programas. Es común que las ordenes o programas
       requieran algo de información como suministro (i.e parámetros o
       argumentos), así como opciones que modifiquen el comportamiento
-      por defecto. Tal información suele darse a continuación del nombre
+      por omisión. Tal información suele darse a continuación del nombre
       de la orden, separando un dato o una opción de otra con espacios.
       Si es una de las primeras veces que ingresa al sistema,
       recomendamos los siguientes ordenes/programas:
@@ -56,7 +56,7 @@
           <span class="strong"><strong>chfn</strong></span>
         </span></dt><dd><p>
             Le permite cambiar datos personales y el intérprete de
-            ordenes que desea por defecto (sugerimos
+            ordenes que desea por omisión (sugerimos
             /<span class="strong"><strong>bin/ksh</strong></span>)
           </p></dd></dl></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="sistema-de-archivos"></a>3.3. Sistema de Archivos</h3></div></div></div><p>
       En Unix la información se organiza en archivos dentro de
@@ -71,7 +71,7 @@
       directorio que llamamos <span class="emphasis"><em>directorio personal</em></span>
       cuya ruta normalmente es de la forma
       <code class="literal">/home/juan</code>.
-    </p><div class="figure"><a name="idm906094424"></a><p class="title"><b>Figura 15. Sistema de archivos</b></p><div class="mediaobject"><img src="img/arbol-archivos.png" alt="Sistema de archivos"></div></div><p>
+    </p><div class="figure"><a name="idp2085127672"></a><p class="title"><b>Figura 15. Sistema de archivos</b></p><div class="mediaobject"><img src="img/arbol-archivos.png" alt="Sistema de archivos"></div></div><p>
       El intérprete de ordenes que emplee tendrá como parte de su estado
       un directorio de trabajo, un símbolo de espera de ordenes y
       variables de entorno. La manera de ver y alterar estos datos
@@ -81,10 +81,10 @@
       como <span class="strong"><strong>bash</strong></span>).
     </p><p>
       Podrá examinar el directorio de trabajo con
-      <code class="literal">pwd</code>, listar algunas variables de ambiente (las
+      <code class="literal">pwd</code>, listar algunas variables de entorno (las
       exportadas) con <span class="strong"><strong>export</strong></span> y
       modificar el símbolo de espera de ordenes con la variable de
-      ambiente <code class="literal">PS1</code>. A continuación se listan algunas
+      entorno <code class="literal">PS1</code>. A continuación se listan algunas
       ordenes/programas relacionados con el sistema de archivos y un
       mínimo del uso de cada uno. Sugerimos que mire la documentación
       que corresponde a cada uno (e.g para ver documentación del

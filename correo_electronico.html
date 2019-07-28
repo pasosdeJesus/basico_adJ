@@ -97,21 +97,21 @@
         <code class="literal">practica.pasosdeJesus.org</code> puede usar como
         servidor de correo:
         <code class="literal">correo2.practica.pasosdeJesus.org</code> e IMAP-SSL.
-      </p><div class="figure"><a name="idm3209319256"></a><p class="title"><b>Figura 26. Configuración de IMAP en Thunderbird</b></p><div class="mediaobject"><img src="img/imaps-1-thunderbird.png" alt="Configuración de IMAP en
+      </p><div class="figure"><a name="idm489611912"></a><p class="title"><b>Figura 25. Configuración de IMAP en Thunderbird</b></p><div class="mediaobject"><img src="img/imaps-1-thunderbird.png" alt="Configuración de IMAP en
           Thunderbird"></div></div><p>
         Después de la configuración básica de IMAP, ingrese a la
         configuración de la cuenta y del servidor para activar IMAP-SSL:
-      </p><div class="figure"><a name="idm3209318744"></a><p class="title"><b>Figura 27. Configuración de IMAP-SSL en Thunderbird</b></p><div class="mediaobject"><img src="img/imaps-2-thunderbird.png" alt="Configuración de IMAP-SSL en
+      </p><div class="figure"><a name="idm489610888"></a><p class="title"><b>Figura 26. Configuración de IMAP-SSL en Thunderbird</b></p><div class="mediaobject"><img src="img/imaps-2-thunderbird.png" alt="Configuración de IMAP-SSL en
           Thunderbird"></div></div><p>
         Finalmente configure el servidor de salida de correo (protocolo
         SMTP).
-      </p><div class="figure"><a name="idm3358493912"></a><p class="title"><b>Figura 28. Configuración de servidor SMTP en Thunderbird</b></p><div class="mediaobject"><img src="img/imaps-3-thunderbird.png" alt="Configuración de servidor SMTP en
+      </p><div class="figure"><a name="idp637909240"></a><p class="title"><b>Figura 27. Configuración de servidor SMTP en Thunderbird</b></p><div class="mediaobject"><img src="img/imaps-3-thunderbird.png" alt="Configuración de servidor SMTP en
           Thunderbird"></div></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="evolution"></a>12.1.2. Evolution</h4></div></div></div><p>
         Otro cliente de correo que se puede configurar para extraer
         correo con POP3 seguro es evolution. A continuación se presenta
         una de las pantallas de configuración del mismo:
-      </p><div class="figure"><a name="idm2655700696"></a><p class="title"><b>Figura 29. Configuración de POP3S en Evolution</b></p><div class="mediaobject"><img src="img/evolution.png" alt="Configuración de POP3S en
-          Evolution"></div></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="mutt_y_procmail"></a>12.2. mutt y procmail</h3></div></div></div><div class="figure"><a name="idm507023704"></a><p class="title"><b>Figura 30. Cliente de correo mutt</b></p><div class="mediaobject"><img src="img/mutt.png" alt="Cliente de correo mutt"></div></div><p>
+      </p><div class="figure"><a name="idm1025929352"></a><p class="title"><b>Figura 28. Configuración de POP3S en Evolution</b></p><div class="mediaobject"><img src="img/evolution.png" alt="Configuración de POP3S en
+          Evolution"></div></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="mutt_y_procmail"></a>12.2. mutt y procmail</h3></div></div></div><div class="figure"><a name="idm1025928584"></a><p class="title"><b>Figura 29. Cliente de correo mutt</b></p><div class="mediaobject"><img src="img/mutt.png" alt="Cliente de correo mutt"></div></div><p>
       <code class="literal">mutt</code> es un MUA que opera en modo texto, fácil
       de manejar y altamente configurable. Opcionalmente, si en el
       servidor donde ejecute <code class="literal">mutt</code> también está
@@ -225,8 +225,8 @@ INCLUDERC=$PMDIR/rc.maillists
       </p><p>
         Si en su sistema procmail fue configurado para ser llamado por
         el MTA, no tendrá que hacer más (e.g en la configuración por
-        defecto de exim así ocurre). Si su MTA no fue configurado para
-        ejecutar procmail puede crear el archivo
+        omisión de <code class="literal">exim</code> así ocurre). Si su MTA no fue
+        configurado para ejecutar procmail puede crear el archivo
         <code class="literal">~/.forward</code> con:
       </p><pre class="programlisting">
 "|IFS=' ' &amp;&amp; exec /usr/bin/procmail -f- || exit 75 "
