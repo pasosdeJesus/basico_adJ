@@ -47,7 +47,7 @@ su contraseña
 Si durante la instalación, no se instaló X-Window o no se ha configurado
 para iniciar durante el arranque, lo que verá será una consola virtual tipo 
 texto, como la del arranque.  
-Por defecto hay 4 consolas virtuales tipo texto a las cuales pasa con las 
+Por omisión hay 4 consolas virtuales tipo texto a las cuales pasa con las 
 secuencias de teclas 
 **Ctrl-Alt-F1, Ctrl-Alt-F2, Ctrl-Alt-F3 y Ctrl-Alt-F4**. 
 La secuencia **Ctrl-Alt-F5** lo dejará en el entorno gráfico.
@@ -129,7 +129,7 @@ doas cdio cdplay
 
 Desde el menú otros puede acceder a **plan** y **vim**. El primero de los 
 cuales es un calendario que permite programar actividades. 
-Mientras que **vim** es un clásico y ágil editor de texto en ambientes tipo 
+Mientras que **vim** es un clásico y ágil editor de texto en entornos tipo 
 UNIX  [xref](#editor_vi)
 
 ![plan](img/plan.png)
@@ -150,7 +150,7 @@ desde las consolas virtuales después de autenticarse.
 
  
 En sistemas operativos tipos Unix es usual emplear un intérprete de ordenes 
-para interactuar. Su operación es la misma bien inicie desde el ambiente 
+para interactuar. Su operación es la misma bien inicie desde el entorno
 gráfico o en una consola virtual o remotamente como se explica en la siguiente 
 sección. Aunque ciertamente un intérprete de ordenes exige más memoria 
 y atención del usuario, también le dará más opciones, más agilidad y 

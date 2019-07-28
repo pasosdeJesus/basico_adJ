@@ -1,3 +1,7 @@
+Version 6.5
+
+:  - Retirada sección sobre SILC
+
 Version 6.4
 
 :  - Mejorado formato

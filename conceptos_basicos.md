@@ -28,7 +28,7 @@ El intérprete de ordenes le permite usar varias ordenes internos, así
 como ejecutar programas. 
 Es común que las ordenes o programas requieran algo de información como 
 suministro (i.e parámetros o argumentos), así como opciones que modifiquen 
-el comportamiento por defecto. 
+el comportamiento por omisión. 
 Tal información suele darse a continuación del nombre de la orden, separando 
 un dato o una opción de otra con espacios. Si es una de las primeras veces 
 que ingresa al sistema, recomendamos los siguientes ordenes/programas:
@@ -53,7 +53,7 @@ Tenga en cuenta que si su clave llega a ser descubierta por un tercero,
 **chfn**
 
 : Le permite cambiar datos personales y el intérprete de ordenes que desea 
-por defecto (sugerimos /**bin/ksh**)
+por omisión (sugerimos /**bin/ksh**)
 
 ### Sistema de Archivos
 
@@ -75,9 +75,9 @@ La manera de ver y alterar estos datos depende del intérprete de ordenes que
 emplee, nos limitaremos al intérprete de ordenes **ksh** (que tiene bastantes 
 cosas en común con otros intérpretes de ordenes como **bash**).
 
-Podrá examinar el directorio de trabajo con ```pwd```, listar algunas variables 
-de ambiente (las exportadas) con **export** y modificar el símbolo de espera 
-de ordenes con la variable de ambiente ```PS1```.
+Podrá examinar el directorio de trabajo con ```pwd```, listar algunas 
+variables de entorno (las exportadas) con **export** y modificar el 
+símbolo de espera de ordenes con la variable de entorno ```PS1```.
 A continuación se listan algunas ordenes/programas relacionados con el 
 sistema de archivos y un mínimo del uso de cada uno. Sugerimos que mire la 
 documentación que corresponde a cada uno (e.g para ver documentación del 

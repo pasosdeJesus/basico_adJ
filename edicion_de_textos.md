@@ -78,7 +78,7 @@ Guardar con **C-x C-s** y salir con **C-x C-c**.
 
 ### Editor vi {#editor_vi}
 
-**vi** es un clásico editor en ambientes tipo UNIX cuya prioridad es la 
+**vi** es un clásico editor en entorno tipo UNIX cuya prioridad es la 
 eficiencia. Por lo mismo no requiere el uso de ratón sino de breves ordenes 
 que a medida que se memoricen y usen harán más rápida la edición de textos.
 
@@ -210,7 +210,7 @@ Resaltado de sintaxis
 : Permite ver con colores que resaltan la sintaxis de algunos tipos de archivos 
 	(por ejemplo fuentes de Ruby, C, Javascript). Se activa con 
 	```:syntax enable```. Para que se vean los colores de este editor, 
-	asegúrese de que su variable de ambiente ```TERM``` tenga el valor de 
+	asegúrese de que su variable de entorno ```TERM``` tenga el valor de 
 	una terminal que soporte color, por ejemplo las terminales gráficas 
 	soportan ```xterm-color``` y desde consolas tipo texto por ejemplo 
 	```VT220```. Vea como establecer la variable ```TERM``` en cada inicio 
@@ -256,7 +256,7 @@ $ cp /usr/local/share/vim/vim63/vimrc_example.vim ~/.vimrc
 
 ##### Locale en vim {#locale_en_vim}
 
-**vim** empleará el locale establecido en la variable de ambiente LANG 
+**vim** empleará el locale establecido en la variable de entorno LANG 
 (ver [xref](#locale)). Sin embargo si prefiere también puede establecer idioma 
 de los mensajes que presenta, así como codificación de la terminal y de los 
 archivos.
@@ -268,7 +268,7 @@ modo ordenes teclee:
 :language es_CO
 ```
 
-Puede establecer esta configuración por defecto agregando la orden al 
+Puede establecer esta configuración por omisión agregando la orden al 
 archivo ```~/.vimrc```.
 
 **vim** puede emplear codificaciones diferentes para la terminal y para los 
@@ -286,7 +286,7 @@ codificación de la termina en UTF-8, desde modo ordenes teclee:
 **vim** detectará la codificación de los archivos que edite, o 
 empleará su codificación preferida en archivos nuevos. Puede deshabilitarse 
 la autodetección dejando vacía la variable ```fileencoding``` (lo cual no 
-recomendamos). La forma recomendada y por defecto en vim es emplear una 
+recomendamos). La forma recomendada y por omisión en `vim` es emplear una 
 terminal que soporte la codificación especificada en LANG y dejar que vim la 
 emplee y que autodetecte la codificación de archivos. Si no opera de esta 
 forma puede intentar agregar a su archivo ```~/.vimrc```:

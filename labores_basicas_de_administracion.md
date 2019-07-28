@@ -35,7 +35,7 @@ Su uso típico se esboza a continuación[^admin.1]
 
 [^admin.1]: Tenga en cuenta que la primera vez que ejecute ```adduser``` tras 
 	instalar un sistema adJ, este programa preguntará valores por 
-	defecto por emplear durante la creación de cuentas.
+	omisión por emplear durante la creación de cuentas.
 
 ```
 doas adduser
@@ -93,7 +93,7 @@ Eventualmente uno o más grupos secundarios
 Un directorio personal
 : Cuyo propietario será el usuario y quedará como directorio de trabajo cada 
 	vez que inicie una sesión. En el ejemplo es ```/home/juan``` 
-	(note que por defecto todos los directorios de usuarios son 
+	(note que por omisión todos los directorios de usuarios son 
 	subdirectorios de ```/home```).
 
 Para eliminar un usuario y su directorio personal:

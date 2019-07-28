@@ -64,7 +64,7 @@ Desde un intérprete de ordenes un usuario puede teclear bien nombres de
 programas o bien ordenes del intérprete de ordenes. Los programas por 
 ejecutar se especifican dando la ruta completa de su ubicación en el sistema 
 de archivos, o en caso de no dar ruta se buscan en orden en los directorios 
-especificados en la variable de ambiente PATH. Por ejemplo si teclea:
+especificados en la variable de entorno `PATH`. Por ejemplo si teclea:
 ```
 $ banner Jesus
 ```
@@ -148,7 +148,7 @@ $ export TERM=wsvt25
 que permite presentar colores si emplea la consola tipo texto en un PC 
 ordinario o si se conecta con putty (por ejemplo cuando ingresa a vim).
 
-#### Configuración por defecto de sesiones con ksh
+#### Configuración por omisión de sesiones con ksh
 
 Notará que el valor de las variables de ambiente que fije durante una sesión 
 se perderá cuando termine la sesión. Para lograr una configuración más 

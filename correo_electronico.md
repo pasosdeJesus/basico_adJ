@@ -196,7 +196,8 @@ procmail en ```~/.procmail/log```. Después de configurar este servicio
 puede ser mejor quitarla.
 
 Si en su sistema procmail fue configurado para ser llamado por el MTA, no 
-tendrá que hacer más (e.g en la configuración por defecto de exim así ocurre). 
+tendrá que hacer más (e.g en la configuración por omisión de `exim` así 
+ocurre). 
 Si su MTA no fue configurado para ejecutar procmail puede crear el archivo 
  ```~/.forward``` con:
 

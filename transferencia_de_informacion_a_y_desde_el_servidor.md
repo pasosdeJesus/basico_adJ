@@ -110,7 +110,7 @@ pueden estar en otra máquina.
 [^transferencia.1]: Incluso scp implementa la funcionalidad de cp al permitir 
 	copiar localmente un archivo.
 
-Dado que Windows no tiene un servidor **ssh** por defecto, es posible 
+Dado que Windows no tiene un servidor **ssh** por omisión, es posible 
 transmitir archivos a y desde sistemas Windows sólo desde el computador con 
 Windows usando un programa como **winscp** (disponible en <http://winscp.sf.net> 
 o **pscp** que se distribuye junto con **putty** ([xref](#conceptos_basicos)).

@@ -10,7 +10,7 @@ donde se montan USBs y CD-ROMs son ```/mnt/usb``` y ```/mnt/cdrom```
 respectivamente. Ni el montaje, ni el desmontaje se realizan automáticamente, 
 sino por orden expresa del usuario.
 
-### Montaje y desmontaje en ambiente gráfico {#montaje_y_desmontaje_en_ambiente_grafico}
+### Montaje y desmontaje en entorno gráfico {#montaje_y_desmontaje_en_entorno_grafico}
 
 Para montar una unidad de USB debe bastar desde el menú de fluxbox (botón 
 derecho del ratón sobre el escritorio) elegir Dispositivo->Montar USB (se 
@@ -139,7 +139,7 @@ en el menú Ayuda).
 
 ### Particiones cifradas {#particiones_cifradas}
 
-adJ soporta por defecto 2 particiones cifradas que se montan 
+adJ soporta por omisión 2 particiones cifradas que se montan 
 en  ```/var/postgresql ``` y  ```/var/www/resbase ```. 
 La clave de cifrado debe suministrarse durante el arranque, y sólo si esta es 
 correcta podrá ver el contenido de esas carpetas y escribir (si durante el 
