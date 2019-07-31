@@ -52,7 +52,9 @@ Tenga en cuenta que si su clave llega a ser descubierta por un tercero,
 
 **apg**
 
-: Creador de contraseñas seguras
+: Creador de contraseñas seguras, el cual se puede utilizar con o sin parametro
+por ejemplo (apg -n 1 -m 16 -x 17 -a 1), esto nos creara la siguiente contraseña
+67+GVNBX`<$70%5', Oe&>XY<83h&d`}2j
 
 **chfn**
 
