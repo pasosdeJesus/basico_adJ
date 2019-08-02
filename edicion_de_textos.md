@@ -36,6 +36,23 @@ cambiar con la tecla **INS** o marcando en el menú Preferencias->Sobreescribir.
 
 ![Uso de Xfe para manejar paquetes en adJ](img/xfw-p.png)
 
+### Editor emacs {#editor_emacs}
+
+**emacs** es un editor de texto muy poderoso perteneciente al grupo GNU, una de 
+sus grandes caracteristicas es el reconocimiento de formatos entre ellos muchos
+lenguajes de progrmacion.Por otro lado otra de sus caracteristicas es su facilidad
+de configuracion y personalizacion, lo cual permite crear nuevos mandos y asignar 
+combinaciones de teclas.
+
+Algunos de sus comandos son:
+C-x C-f : apertura de un archivo
+C-x C-c : salimos de emacs
+C-x C-s : guardamos el archivo
+C-x 2 : dividimos la pantalla en dos en horizontal
+C-x 3 : dividimos la pantalla en vertical
+C-x o : nos movemos entre las pantallas
+C-v : desplazarnos "1 página" hacia delante
+
 ### Editor mg {#editor_mg}
 
 **mg** es un editor de texto simple, pequeño, veloz y portable con fuentes 
