@@ -50,6 +50,14 @@ Sugerimos las claves generadas con programas especializados como **apg**.
 Tenga en cuenta que si su clave llega a ser descubierta por un tercero, 
 él/ella podría actuar a nombre suyo.
 
+**apg**
+
+: Creador de contraseñas seguras, el cual se puede utilizar con o sin parametro
+por ejemplo (apg -n 1 -m 16 -x 17 -a 1),en donde **n** es el nuero de contraseñas que 
+queremos crear, **m** es la longitud minima de caracteres que va a tener la contraseña
+y **x** la longitud maxima y por ultimo la letra **a** es la que se encarga del algoritmo, esto nos creara una contraseña como:
+67+GVNBX`<$70%5', Oe&>XY<83h&d`}2j, para mayor informacion tambien se puede consultar el manual con **man apg**.
+
 **chfn**
 
 : Le permite cambiar datos personales y el intérprete de ordenes que desea 

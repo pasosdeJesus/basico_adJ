@@ -21,6 +21,8 @@ $ tr -d "\r" < carta.txt.bak > carta.txt
 ```
 recode txt..utf-8 carta.txt
 ```
+```.odp```archivo depresentacion de diapositivas.
+```.xbk```archivos comprimidos
 
 - ```.gz``` Es un archivo comprimido con **gzip**. Suponiendo que 
 	fuera ```archivo.txt.gz``` (cuya extensión sugiere un texto comprimido 

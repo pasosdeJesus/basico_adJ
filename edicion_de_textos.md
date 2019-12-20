@@ -36,6 +36,23 @@ cambiar con la tecla **INS** o marcando en el menú Preferencias->Sobreescribir.
 
 ![Uso de Xfe para manejar paquetes en adJ](img/xfw-p.png)
 
+### Editor emacs {#editor_emacs}
+
+**emacs** es un editor de texto muy poderoso perteneciente al grupo GNU, una de 
+sus grandes caracteristicas es el reconocimiento de formatos entre ellos muchos
+lenguajes de progrmacion.Por otro lado otra de sus caracteristicas es su facilidad
+de configuracion y personalizacion, lo cual permite crear nuevos mandos y asignar 
+combinaciones de teclas.
+
+Algunos de sus comandos son:
+C-x C-f : apertura de un archivo
+C-x C-c : salimos de emacs
+C-x C-s : guardamos el archivo
+C-x 2 : dividimos la pantalla en dos en horizontal
+C-x 3 : dividimos la pantalla en vertical
+C-x o : nos movemos entre las pantallas
+C-v : desplazarnos "1 página" hacia delante
+
 ### Editor mg {#editor_mg}
 
 **mg** es un editor de texto simple, pequeño, veloz y portable con fuentes 
@@ -58,7 +75,7 @@ por ejemplo ```vim```.
 
 Notará que los caracteres que digite estando en mg serán introducidos en el 
 buffer que esté operando, y que podrá usar las flechas para desplazarse. 
-Las ordenes más típicos se dan combinando la tecla Control simultaneamente 
+Las ordenes más típicas se dan combinando la tecla Control simultaneamente 
 con una y después con otra tecla. Por ejemplo para guardar use 
 **Control x** y después **Control s**. Esto suele denotarse en la documentación 
 de mg con: **C-x C-s**
@@ -75,6 +92,15 @@ inet 192.168.1.1 255.255.255.0 NONE
 ```
 		
 Guardar con **C-x C-s** y salir con **C-x C-c**.
+...
+
+Otras opciones disponibles en **mg** son las siguientes:
+Ir a la linea que deseemos con **+ numero_linea**,de la misma manera podemos devolvernos de la siguinete manera **+ -2**.
+Desactivar la opcion de archivos de respaldo con **mg -n**
+Abrir lineas en modo lectura con la opcion **mg -R**
+Comando de shell con **!**
+Crear directorio con el signo **+**
+Salir de la ventana con **q**.
 
 ### Editor vi {#editor_vi}
 
