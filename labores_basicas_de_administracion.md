@@ -10,7 +10,7 @@ posible pasar a la cuenta root con la orden:
 $ su -
 ```
 	  
-Tipicamente al pasar a la cuenta root el prompt cambiará a ```#```.
+Típicamente al pasar a la cuenta root el prompt cambiará a ```#```.
 
 Si **doas** se configura para permitir su utilización por parte de usuarios 
 que estén en el grupo ```wheel``` sin clave, podrán ejecutarse ordenes como 
@@ -114,7 +114,7 @@ Es posible modificar información de los usuarios de diversas formas:
 ### Bitácoras {#bitacoras}
 
 Una de las labores típicas de un administrador de un sistema adJ es revisar 
-bitácoras del sistema en búsqueda de vulneracioens de seguridad. 
+bitácoras del sistema en búsqueda de vulneraciones de seguridad. 
 En la mayoría de las veces se trata de ataques a través de internet, 
 ataques que buscan entre otras cosas: acceder a servidores para sacar 
 información y modificarla, o usar servidores para que realicen trabajos 
@@ -143,7 +143,7 @@ adJ incluye un sencillo analizador de bitácoras que se inicia con:
 
 Que creará un directorio con copia de las bitácoras y el
 informe del análisis. El nombre del directorio será la fecha
-de ejecuión y se ubicará en `/var/adJ/auditabiracoras`
+de ejecución y se ubicará en `/var/adJ/auditabiracoras`
 
 Por ejemplo si la fecha es 2017-06-27 el reporte quedará en 
 `/var/adJ/auditabitacoras/20170627/auditabitacoras.txt`
@@ -191,7 +191,7 @@ Estos archivos pueden analizarse con algunas herramientas básicas como:
 ```gzip```
 : Descomprime archivos
 
-A continuación un ejemplo de auditoria de la bitácora ```auth```:
+A continuación un ejemplo de auditoría de la bitácora ```auth```:
 
   1. Como usuario root hacer una copia de las bitácoras de ```/var/log``` 
 	en un directorio personal y descomprimir bitácoras comprimidas.
@@ -249,7 +249,7 @@ dig -x 211.157.113.89
 ```
 whois chinacomm.com.cn
 ```
-	donde encontromos una dirección de correo: ```wjy@chncomm.com```
+	donde encontramos una dirección de correo: ```wjy@chncomm.com```
 
   7. Si se ubica el dominio de la IP de donde proviene un ataque, así como una 
 	dirección de correo, se recomienda enviar un mensaje en inglés a tal 

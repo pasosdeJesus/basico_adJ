@@ -37,7 +37,7 @@ Fuera de esos protocolos para extraer/examinar correo en servidores, el
 protocolo SMTP permite enviar correo a través de un servidor.
 
 En cuanto a clientes de correos para el web (webmails), hay varios 
-(e.g squirrelmail, horde), prefiera emplearlos desde computadores sin virus 
+(e.g roundcubemail), prefiera emplearlos desde computadores sin virus 
 ni spyware y sobre el protocolo HTTPS (```i.e``` la dirección a la que se 
 conecta desde su navegador de comenzar con ```https://```).
 
@@ -99,7 +99,7 @@ pospuesto) con ```m```.
 Una vez esté viendo un correo puede responder con ```r```, 
 reenviarlo con ```f``` o pasarlo como entrada a una orden con ```|```. 
 Cuando componga un mensaje puede posponer, puede poner adjuntos (con ```a```) 
-o emplear programas como PGP o GPG para firmar o encriptar sus mensajes 
+o emplear programas como PGP o GPG para firmar o cifrar sus mensajes 
 (con ```p```).
 
 Para organizar los correos que reciba, puede emplear carpetas, para pasar de 

@@ -48,7 +48,7 @@ inició, se verán en su computador. Pruebe por ejemplo con:
 xeyes
 ```
 
-### Tunel reenviando un puerto {#tunel_reenviando_un_puerto}
+### Túnel reenviando un puerto {#tunel_reenviando_un_puerto}
 
 Puede usar **ssh** también para crear un túnel entre un puerto local y un 
 puerto accequible desde el servidor al cual se conecta. Por ejemplo si en una 
@@ -76,9 +76,9 @@ local y el puerto 443 del servidor ```base```. Este túnel puede usarse
 ingresando en un navegador la dirección: ```https://127.0.0.1:10443```
 
 		
-### Tunel con protocolo SOCKS {#tunel_con_protocolo_socks}
+### Túnel con protocolo SOCKS {#tunel_con_protocolo_socks}
 
-Otra forma de realizar un tunel, pero sin limitarlo a un puerto es empleando 
+Otra forma de realizar un túnel, pero sin limitarlo a un puerto es empleando 
 un servidor SOCKS incluido con el programa ssh y configurando su navegador 
 para emplearlo.
 

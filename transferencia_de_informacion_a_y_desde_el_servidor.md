@@ -17,7 +17,7 @@ desde un sistema adJ/OpenBSD (o otro sistema tipo Unix que cuente con
 OpenSSH) se puede usar bien ```scp``` desde la línea de ordenes o el 
 programa ```filezilla```.
 
-También puede mantener sincrónia entre directorios de un par de servidores
+También puede mantener sincronía entre directorios de un par de servidores
 con el programa `rsync`.
 
 
@@ -78,7 +78,7 @@ adapte el nombre del servidor y de usuario.
 ![Configuración de una conexión con filezilla](img/filezillaconexion.png)
               
 Una vez configurada la encontrará al abrir FileZilla e ingresar a 
-Archivos->Sitios. Cuando elija Conectar se iniciará una conexión encriptada, 
+Archivos->Sitios. Cuando elija Conectar se iniciará una conexión cifrada, 
 con un intercambio inicial de llaves que debe aceptar, después aparecerán 
 paneles como los siguientes:
 
@@ -126,7 +126,7 @@ transmitiendo sólo la información que sea diferente.
 
 Aunque es posible emplearlo con un protocolo propio (también llamado `rsync`),
 este sólo es recomendable para datos públicos porque no es cifrado.  Por
-lo mismo la operación típica de rsync es sobre el protocol ssh.
+lo mismo la operación típica de rsync es sobre el protocolo ssh.
 
 Por ejemplo si en el servidor con ip 10.11.12.13 tiene una
 carpeta /var/micopia/  que necesita traer a un servidor en el que está
@@ -138,7 +138,7 @@ rsync -rvz 10.11.12.13:/var/micopia/* .
 ```
 
 La orden anterior realizará una conexión ssh (por lo que debe 
-operar sseh en el servidor `10.11.12.13`) para copiar todo el contenido
+operar ssh en el servidor `10.11.12.13`) para copiar todo el contenido
 de `/var/micoopia/` del servidor remoto al directorio actual, y lo que hará 
 cada una de las opciones `-rvz` es:
 

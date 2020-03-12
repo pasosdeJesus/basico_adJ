@@ -14,7 +14,7 @@ y ejecutará los archivos de arranque.
 Típicamente la distribución adJ pide claves de imágenes cifradas[^primer.1] 
 que se montan durante el arranque.
 
-[^primer.1]: En las imagénes cifradas se almacena los archivos que el usuario quiera 
+[^primer.1]: En las imágenes cifradas se almacena los archivos que el usuario quiera 
 cifrar. Para poder guardar y recuperar los archivos se debe dar una clave 
 
 ![Interfaz de texto](img/consola.png)
@@ -159,7 +159,7 @@ la posibilidad de plena operación remota.
 ### Conexión con ssh {#conexion_con_ssh}
 
 Dado que la interacción con un intérprete de ordenes se basa en ordenes 
-ingresados por teclado y respuestas tipo texto, estos intérpretes hacen muy 
+ingresadas por teclado y respuestas tipo texto, estos intérpretes hacen muy 
 efectiva la operación remota. La operación remota puede hacerse de forma segura 
 con el protocolo SSH 2, empleando el servidor OpenSSH del servidor y un 
 cliente de ssh en el computador desde el cual hará la conexión (la ventaja 
@@ -170,7 +170,7 @@ llegar a interceptar la comunicación).
 
 Si realiza la conexión desde un sistema tipo Unix, recomendamos que emplee el 
 cliente de OpenSSH, si se conecta desde un sistema tipo Windows puede emplear 
-el programa **putty** (descarguelo de 
+el programa **putty** (descárguelo de 
 [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html]).
 
 En el primer caso puede iniciar la conexión con:
@@ -190,7 +190,9 @@ La conexión con putty se ejemplifica a continuación:
 ![Configuración de putty](img/putty1.png)
  
 ![Aviso](img/warning.png) Aviso: Con Putty asegúrese de emplear el 
-	protocolo SSH 2.
+	protocolo SSH 2 y para ver bien algunos caracteres es
+	posible que en Window->Translation deba elegir traducción
+	de Latin1 o ISO-8895-1.
  
 **ssh** autenticará la máquina a la cual se está conectado, comparando la llave 
 pública de esa máquina con alguna de las que conozca, si es la primera vez que 

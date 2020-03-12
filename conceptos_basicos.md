@@ -2,7 +2,7 @@
 
 Los conceptos y herramientas presentados desde esta sección se asimilan mejor 
 practicando. 
-Procure ejecirtarlos desde un interprete de ordenes (bien operando 
+Procure ejercitarlos desde un interprete de ordenes (bien operando 
 directamente un sistema tipo Unix o bien ingresando remotamente desde otro 
 sistema como se explicó, (ver [xref](#primer_uso_de_adJ)).
 

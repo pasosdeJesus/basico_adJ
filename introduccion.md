@@ -44,7 +44,7 @@ Otros sistemas se han enfocado en usabilidad para usuarios sin experiencia
         Es una manera de guardar información para que no todo el mundo tenga 
 	acceso directo a ella. Cifrar es transformar información para 
 	hacerla ilegible, buscando garantizar confidencialidad. 
-	Tipicamente se requiere una clave 
+	Típicamente se requiere una clave 
 	para cifrar. Un ejemplo de un cifrado débil llamado Cesar es aumentar 
 	cierta cantidad fija a cada carácter del mensaje por cifrar, podemos 
 	pensar que la cantidad que se aumente es la clave. Por ejemplo el 

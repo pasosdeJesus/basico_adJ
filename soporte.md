@@ -7,7 +7,8 @@ de adJ es:
 
 * Este documento (<http://pasosdejesus.github.io/basico_adJ>) que cubre utilización básica local y remota.
 * [usuario_adJ](#bibliografia), <http://pasosdejesus.github.io/usuario_adJ> 
-	instalación y uso más avanzado como platafora de escritorio y desarrollo
+	instalación y uso más avanzado como plataforma de escritorio 
+	y desarrollo
 * [servidor_adJ](#bibliografia), <http://pasosdejesus.github.io/servidor_adJ> 
 	como cortafuegos y servidor.
 
@@ -19,7 +20,7 @@ encuentra solo en inglés, recomendamos:
 	puede leerse con la orden ```man```.  Tal manual consta de varias 
 	secciones: 1 ordenes generales, 2 llamadas al sistema y números de 
 	error, 3 librerías de C, 4 archivos especiales y soporte de hardware, 
-	5 formatos de archivos, 6 juegos, 7 miscelanea, 8 operación y 
+	5 formatos de archivos, 6 juegos, 7 miscelánea, 8 operación y 
 	mantenimiento del sistema, 9 kernel. Puede ver por ejemplo la 
 	introducción a la sección 6 con man 6 intro. En Internet también 
 	puede consultar este manual en <http://www.openbsd.org/cgi-bin/man.cgi>

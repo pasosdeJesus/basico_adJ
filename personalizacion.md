@@ -17,7 +17,7 @@ En UTF-8 puede codificarse UNICODE, que a su vez permite representar todos los
 lenguajes escritos --la mayoría de lenguajes occidentales, incluyendo el 
 español.
 
-Los locales se ubican en el directorio ```/usr/shar/locale``` y puede examinar 
+Los locales se ubican en el directorio ```/usr/share/locale``` y puede examinar 
 los más comunes con
 ```
 locale -a
@@ -33,12 +33,12 @@ Los programas estándares emplearan esta variable (y otras asociadas) para
 determinar el locale y modificaran la forma de presentar:
 
 - Los mensajes, menús y ayudas para que sean en su idioma. En adJ esto se 
-	soporta via el porte **gettext**.
+	soporta vía el porte **gettext**.
 - La codificación de caracteres para que sea la que prefiere. En adJ se 
 	emplea el soporte de LC_CTYPE de OpenBSD que es suficiente
 	para UTF-8.
 - Los ordenamientos alfabéticos serán apropiados para su idioma (por ejemplo 
-	en español la á lexicograficamente equivale a la a, y la ñ está entre 
+	en español la á lexicográficamente equivale a la a, y la ñ está entre 
 	la n y la o). En adJ se emplea una implementación mejorada sobre la de 
 	FreeBSD que es suficiente para el español en codificaciones 
 	ISO-8859-1, ISO-8859-15 y UTF-8 (aunque no basta para otros lenguajes 
@@ -46,7 +46,7 @@ determinar el locale y modificaran la forma de presentar:
 - La forma de presentar números y valores monetarios será la particular de la 
 	región geográfica elegida. En adJ empleamos una implementación mejorada 
 	con base en la de FreeBSD que soporta especialmente bien todos los 
-	paises de latinoamérica.
+	países de latinoamérica.
 - También la forma de presentar fecha y hora se ve afectada por el locale así 
 	como por la zona horaria.
 

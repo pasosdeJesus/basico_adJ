@@ -71,7 +71,7 @@ Versión 5.1
 
 Versión 4.9
 
-:  - Tuneles dinámicos con ssh ([xref](#tunel_con_protocolo_socks)).
+:  - Túneles dinámicos con ssh ([xref](#tunel_con_protocolo_socks)).
 
 Versión 4.8
 
@@ -101,7 +101,7 @@ Versión 1.4.2
 
 Versión 1.4
 
-:  - Tuneles con SSH. Inicialmente contribuida por Carolina Pinzón.
+:  - Túneles con SSH. Inicialmente contribuida por Carolina Pinzón.
  - Revisión de Bitácoras. Inicialmente contribuido por wiroal.
  - Utilización de **colorls**
  - Corrección de fallas menores

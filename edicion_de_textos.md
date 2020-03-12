@@ -1,4 +1,4 @@
-## Edicion de textos {#edicion_de_textos}
+## Edición de textos {#edicion_de_textos}
 
 Un editor de texto le permite redactar textos simples y guardarlos en un formato
 simple (o plano).
@@ -58,7 +58,7 @@ por ejemplo ```vim```.
 
 Notará que los caracteres que digite estando en mg serán introducidos en el 
 buffer que esté operando, y que podrá usar las flechas para desplazarse. 
-Las ordenes más típicos se dan combinando la tecla Control simultaneamente 
+Las ordenes más típicos se dan combinando la tecla Control simultáneamente 
 con una y después con otra tecla. Por ejemplo para guardar use 
 **Control x** y después **Control s**. Esto suele denotarse en la documentación 
 de mg con: **C-x C-s**
@@ -69,7 +69,7 @@ usaría:
 mg /etc/hostname.re0
 ```
 		
-Alli podría ingresar por ejemplo
+Allí podría ingresar por ejemplo
 ```
 inet 192.168.1.1 255.255.255.0 NONE
 ```
@@ -96,7 +96,7 @@ Cuando **vi** cargue, se observará en la pantalla una parte del archivo de
 texto que va a editar. Al arrancar **vi**, está en un modo especial llamado 
 **modo ordenes** ó **modo normal** . Esto significa, por ejemplo, que si 
 presiona **l** en el teclado, en vez de introducir una **l** en la posición 
-actual del cursor, el cursor se va a mover un caracter a la derecha. En este 
+actual del cursor, el cursor se va a mover un carácter a la derecha. En este 
 modo, los caracteres del teclado sirven para enviar ordenes a **vi**.
 
 ##### Ordenes de movimiento - Movimientos del cursor {#ordenes_movimiento}
@@ -118,10 +118,10 @@ utilidades para este modo:
 Puede insertar texto con varias teclas:
 
 **i**
-: Inserta texto antes del caracter sobre el cual está el cursor.
+: Inserta texto antes del carácter sobre el cual está el cursor.
 
 **a**
-: Inserta texto después del caracter sobre el cual está el cursor.
+: Inserta texto después del carácter sobre el cual está el cursor.
 
 **I**
 : Inserta texto al comienzo de la línea en la que está el cursor.
@@ -198,7 +198,7 @@ cortado **y** pulsa **p** para insertar el texto, después del cursor.
 
 ##### Otras características de vim {#otras_caracteristicas_de_vim}
 
-Digrafos
+Dígrafos
 : Útil para producir caracteres del español, si el teclado o la configuración 
 	del mismo no lo permiten. Presione **Control-K** y después una 
 	secuencia de dos teclas de acuerdo al caracter, e.g 'a produce á, 
@@ -277,7 +277,7 @@ cada uno en particular con ```termencoding``` (o ```tenc```) y
 ```fileencoding``` (o ```fenc```). 
 Los valores típicos para codificar español son latin1 (que corresponde a 
 codificicación en un byte ISO8859-1) o utf8 (que corresponde a codificación 
-multibyte UTF-8 --tipicamente 4 bytes). Por ejemplo para establecer la 
+multibyte UTF-8 --típicamente 4 bytes). Por ejemplo para establecer la 
 codificación de la termina en UTF-8, desde modo ordenes teclee:
 ```
 :set tenc=utf8
@@ -291,8 +291,8 @@ terminal que soporte la codificación especificada en LANG y dejar que vim la
 emplee y que autodetecte la codificación de archivos. Si no opera de esta 
 forma puede intentar agregar a su archivo ```~/.vimrc```:
 ```
-set encoding&           " terminal charset: follows current locale 
-set fileencoding&       " auto-sensed charset of current buffer
+set encoding&           " juego de caracteres de la terminal: sigue locale
+set fileencoding&       " juego de caracteres determinado automáticamente
 ```  
 	
 #### Lecturas recomendadas {#lecturas_recomendadas_edicion_de_textos}
