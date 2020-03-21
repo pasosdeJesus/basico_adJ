@@ -153,16 +153,22 @@ Puede probar el uso de sesiones de esta forma:
 Ya en tmux, puede enviar ordenes a tmux comenzando con la secuencia de teclas 
 Control-b, por ejemplo  para crear una ventana emplee Control-b y después
 la letra `c` (minúscula).
+
+
 Notará en la parte inferior izquierda indicadores de 2 ventanas
 abiertas (una con `[0]` y la otra con `[1]`). 
 Pase a la segunda ventana (con índice 1) con Control-b 1 y a la primera
 con Control-b 0.
+
+![tmux con 6 ventanas. Visualizando la cuarta, con índice 3.](img/tmux-v.png)
 
 Para dividir una ventana (o panel) en 2 paneles separados por una línea 
 vertical en la mitad use `Control-b %` y para dividir en 2 con una línea 
 horizontal use `Control-b "`.  Pase al panel de la derecha con
 `Control-b →``, pase al panel de la izquierda con `Control-b ←`,
 al de arriba con `Control-b ↑` y al de abajo con `Control-b ↓`
+
+![Ventana de tmux dividida en 3 paneles](img/tmux-p.png)
 
 
 ### Lecturas recomendadas
