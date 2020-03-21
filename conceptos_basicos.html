@@ -1,6 +1,6 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>3. Conceptos básicos</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="primer_uso_de_adJ.html" title="2. Primer uso de adJ"><link rel="next" href="soporte.html" title="4. Soporte"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Conceptos básicos</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="primer_uso_de_adJ.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="soporte.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="conceptos_basicos"></a>3. Conceptos básicos</h2></div></div></div><p>
     Los conceptos y herramientas presentados desde esta sección se
-    asimilan mejor practicando. Procure ejecirtarlos desde un interprete
+    asimilan mejor practicando. Procure ejercitarlos desde un interprete
     de ordenes (bien operando directamente un sistema tipo Unix o bien
     ingresando remotamente desde otro sistema como se explicó, (ver
     <a href="primer_uso_de_adJ.html" title="2. Primer uso de adJ">Sección 2, “Primer uso de adJ”</a>).
@@ -71,7 +71,7 @@
       directorio que llamamos <span class="emphasis"><em>directorio personal</em></span>
       cuya ruta normalmente es de la forma
       <code class="literal">/home/juan</code>.
-    </p><div class="figure"><a name="idp2085127672"></a><p class="title"><b>Figura 15. Sistema de archivos</b></p><div class="mediaobject"><img src="img/arbol-archivos.png" alt="Sistema de archivos"></div></div><p>
+    </p><div class="figure"><a name="idm192317576"></a><p class="title"><b>Figura 15. Sistema de archivos</b></p><div class="mediaobject"><img src="img/arbol-archivos.png" alt="Sistema de archivos"></div></div><p>
       El intérprete de ordenes que emplee tendrá como parte de su estado
       un directorio de trabajo, un símbolo de espera de ordenes y
       variables de entorno. La manera de ver y alterar estos datos
@@ -101,7 +101,11 @@
             muestra los del directorio de trabajo. Como parámetro puede
             indicarse la ruta del directorio del cual se desea ver el
             contenido y con la opción <code class="literal">-l</code> presenta
-            atributos adicionales de cada archivo.
+            atributos adicionales de cada archivo (por ejemplo los
+            directorios inician con <code class="literal">d</code> mientras que
+            los archivos con <code class="literal">-</code>. También puede dar
+            como parámetro una ruta por listar (si no da una se lista el
+            directorio de trabajo).
           </p></dd><dt><span class="term">
           <code class="literal">mkdir public_html</code>
         </span></dt><dd><p>
@@ -138,7 +142,51 @@ cp -r traido/* public_html/
             El programa <code class="literal">mv</code> moverá (o en este caso
             renombra) el archivo
             <code class="literal">traido/juan.htm a traido/pedro.html</code>.
-          </p></dd></dl></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas-recomendadas"></a>3.4. Lecturas recomendadas</h3></div></div></div><p>
+          </p></dd></dl></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="tmux"></a>3.4. tmux</h3></div></div></div><p>
+      Para operar desde la terminal con más versatilidad es muy útil
+      <code class="literal">tmux</code> que introduce conceptos de sesiones,
+      ventanas y paneles que permiten operar muy efectivamente.
+    </p><div class="itemizedlist"><ul type="disc" compact><li><p>
+          Las sesiones le permiten retomara el trabajo que estaba
+          haciendo previamente.
+        </p></li><li><p>
+          Las ventanas permiten operar en varios interpretes de ordenes
+          que ocupan el espacio completo donde visualiza la terminal.
+        </p></li><li><p>
+          Los paneles dividien una ventan en más áreas para ver
+          simultaneamente varios interpretes de ordenes.
+        </p></li></ul></div><p>
+      Puede probar el uso de sesiones de esta forma: 1. Abra una
+      terminal e inice tmux con <code class="literal">tmux</code> 2. Escribe por
+      ejemplo <code class="literal">echo Hola mundo</code> y pulse Enter, que debe
+      imprimir en pantalla Hola Mundo 3. Cierre la terminal --por la
+      forma de operación de tmux esto no terminará la sesión que inició
+      4. Abra otra terminal e inice tmux pero indicando que se una a una
+      sesión existente con <code class="literal">tmux -a</code>. Debería poder ver
+      su sesión de terminal con Hola Mundo.
+    </p><p>
+      Ya en tmux, puede enviar ordenes a tmux comenzando con la
+      secuencia de teclas Control-b, por ejemplo para crear una ventana
+      emplee Control-b y después la letra <code class="literal">c</code>
+      (minúscula).
+    </p><p>
+      Notará en la parte inferior izquierda indicadores de 2 ventanas
+      abiertas (una con <code class="literal">[0]</code> y la otra con
+      <code class="literal">[1]</code>). Pase a la segunda ventana (con índice 1)
+      con Control-b 1 y a la primera con Control-b 0.
+    </p><div class="figure"><a name="idp2478507000"></a><p class="title"><b>Figura 16. tmux con 6 ventanas. Visualizando la cuarta, con índice
+      3.</b></p><div class="mediaobject"><img src="img/tmux-v.png" alt="tmux con 6 ventanas. Visualizando la cuarta,
+        con índice 3."></div></div><p>
+      Para dividir una ventana (o panel) en 2 paneles separados por una
+      línea vertical en la mitad use <code class="literal">Control-b %</code> y
+      para dividir en 2 con una línea horizontal use
+      <code class="literal">Control-b "</code>. Pase al panel de la derecha
+      con
+      <code class="literal">Control-b →``, pase al panel de la izquierda con</code>Control-b
+      ←<code class="literal">, al de arriba con</code>Control-b
+      ↑<code class="literal">y al de abajo con</code>Control-b ↓`
+    </p><div class="figure"><a name="idp1443469176"></a><p class="title"><b>Figura 17. Ventana de tmux dividida en 3 paneles</b></p><div class="mediaobject"><img src="img/tmux-p.png" alt="Ventana de tmux dividida en 3
+        paneles"></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas-recomendadas"></a>3.5. Lecturas recomendadas</h3></div></div></div><p>
       Páginas <code class="literal">man</code> de las 11 ordenes /programas
       introducidos en este capítulo. Se han tomado porciones de la
       sección "telnet y ssh" de

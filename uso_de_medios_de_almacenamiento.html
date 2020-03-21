@@ -14,13 +14,13 @@
       (botón derecho del ratón sobre el escritorio) elegir
       Dispositivo-&gt;Montar USB (se emplea el análogo para montar un
       CD-ROM).
-    </p><div class="figure"><a name="idm620536712"></a><p class="title"><b>Figura 16. Menu Dispositivo-&gt;Montar USB</b></p><div class="mediaobject"><img src="img/montar.png" alt="Menu Dispositivo-&gt;Montar
+    </p><div class="figure"><a name="idp795862520"></a><p class="title"><b>Figura 18. Menú Dispositivo-&gt;Montar USB</b></p><div class="mediaobject"><img src="img/montar.png" alt="Menú Dispositivo-&gt;Montar
         USB"></div></div><div class="literallayout"><p>Una vez lo haga podrá ver el manejador de archivos <code class="literal">xfe</code> ubicado en el directorio donde queda montado el medio.<br>
 <span class="inlinemediaobject"><img src="img/xfecdrom.png"></span></p></div><p>
       Al montar estos medios, el dueño es el usuario administrador que
       se especificó durante la instalación de adJ. Este podrá leer de
       los medios y en el caso de USB es quien podrá escribir. Una vez
-      termine de emplear el medio de alamacenamiento desmontelo también
+      termine de emplear el medio de almacenamiento desmóntelo también
       desde el menú de fluxbox Dispositivo-&gt;Desmontar USB
     </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="montaje_y_desmontaje_desde_interprete_de_ordenes"></a>5.2. Montaje y desmontaje desde intérprete de ordenes</h3></div></div></div><p>
       Para montar la USB debe bastar ejecutar desde una terminal:
@@ -29,11 +29,11 @@ doas mount /mnt/usb
 </pre><p>
       El CD-ROM se monta de la misma forma cambiando
       <code class="literal">usb</code> por <code class="literal">cdrom</code>. Para
-      demonstar la USB basta:
+      desmontar la USB basta:
     </p><pre class="programlisting">
 doas umount /mnt/usb
 </pre><p>
-      y para demonstar un CD-ROM:
+      y para desmontar un CD-ROM:
     </p><pre class="programlisting">
 doas umount /mnt/cdrom
 </pre></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="administrador_de_archivos_xfe"></a>5.3. Administrador de archivos Xfe</h3></div></div></div><p>
@@ -42,15 +42,15 @@ doas umount /mnt/cdrom
       cambiar permisos e incluso hacer estas operaciones como
       superusuario. Entre las características del porte de adJ
       destacamos, las siguientes adaptadas y traducidas de la ayuda
-      oficial --que podrá consultar desde el menu Ayuda:
+      oficial --que podrá consultar desde el menú Ayuda:
     </p><div class="itemizedlist"><ul type="disc"><li><p>
           Interfaz gráfica de usuario muy rápida con cuatro formas de
-          administrar archivos: un panel; árbol y panel; dos páneles;
+          administrar archivos: un panel; árbol y panel; dos paneles;
           árbol y dos paneles.
         </p></li><li><p>
           Soporta codificación UTF-8 y se ha traducido a 20 idiomas
           (incluyendo español de Colombia). Puede presentar la interfaz
-          con caracteres no latinos (como chino o japónes) siempre y
+          con caracteres no latinos (como chino o japonés) siempre y
           cuando configure un tipo de letra que soporte Unicode desde el
           menú Editar/Preferencias/Tipo de letra
         </p></li><li><p>
@@ -61,19 +61,19 @@ doas umount /mnt/cdrom
           (X File Package, xfp).
         </p></li><li><p>
           La interfaz gráfica soporta temas con posibilidad de cambiar
-          colores, íconos y apariencia. Cuenta con Barras de
+          colores, iconos y apariencia. Cuenta con Barras de
           herramientas, Marcadores e Historial.
         </p></li><li><p>
           Papelera para operaciones de eliminación de archivos. Se ubica
           en <code class="literal">~/local/share/Trash/files</code>
         </p></li><li><p>
           Permite realizar operaciones como superusuario, bien iniciando
-          de`sde una terminal con:
+          desde una terminal con:
         </p><pre class="programlisting">
 doas xfe
 </pre><p>
-          o si está bien configurado puede inicarse una ventan
-          superusuario desde el menu Herramientas-&gt;Ventana
+          o si está bien configurado puede iniciarse una ventan
+          superusuario desde el menú Herramientas-&gt;Ventana
           superusuario nueva.
         </p></li><li><p>
           Maneja paquetes de OpenBSD: seleccionando cualquier archivo y
@@ -84,7 +84,7 @@ doas xfe
           contenido del paquete Si usa una ventana superusuario de Xfe
           también podrá instalarlo/actualizarlo o desinstalarlo,
           pulsando botón derecho sobre el paquete y eligiendo en el menú
-          emergente Instalar/Actualizar o Desistalar respectivamente.
+          emergente Instalar/Actualizar o Desinstalar respectivamente.
           <span class="inlinemediaobject"><img src="img/xfepaq.png"></span>
         </p></li><li><p>
           Permite comprimir en formatos tar, compress, zip, gzip, bzip2,
@@ -100,13 +100,13 @@ doas xfe
           En listados y en el árbol de directorios puede seleccionar
           varios elementos y al hacer pulsación derecha se abrirá un
           menú contextual sobre los elementos seleccionados. En los
-          panels <span class="strong"><strong>Ctrl +</strong></span> pulsación
+          paneles <span class="strong"><strong>Ctrl +</strong></span> pulsación
           derecha abrirá un menú contextual con otras operaciones.
         </p></li></ul></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="atajos_de_teclado_predeterminados"></a>5.3.1. Atajos de teclado predeterminados</h4></div></div></div><p>
         Los atajos de teclado pueden personalizarse en el cuadro de
         diálogo Preferencias. Los predeterminados para todas la
         aplicaciones integradas se listan a continuación (vea otros
-        atajos de teclado partículares de cada Aplicación en el menú
+        atajos de teclado particulares de cada Aplicación en el menú
         Ayuda).
       </p><div class="itemizedlist"><ul type="disc" compact><li><p>
             <span class="strong"><strong>Ctrl-A</strong></span>: Seleccionar todo
@@ -189,9 +189,9 @@ doas xfe
       cifradas en la instalación --aunque podrá hacerlo actualizando
       adJ). Así que puede verificar si la clave fue correcta examinando
       esas rutas bien con xfe o bien desde un intérprete de ordenes:
-    </p><div class="itemizedlist"><ul type="disc"><li><div class="literallayout"><p>xfe: Inicie <span class="strong"><strong>xfe</strong></span>, asegurese de ver Árbol y Panel desde el menú Ver. En el Árbol de directorios de la izquierda elija el directorio raiz (primero marcado con /) con doble pulsación del botón izquierdo, bajé para elejir var, a continuación <code class="literal">www</code> y a continuación<br>
+    </p><div class="itemizedlist"><ul type="disc"><li><div class="literallayout"><p>xfe: Inicie <span class="strong"><strong>xfe</strong></span>, asegúrese de ver Árbol y Panel desde el menú Ver. En el Árbol de directorios de la izquierda elija el directorio raíz (primero marcado con /) con doble pulsación del botón izquierdo, bajé para elegir var, a continuación <code class="literal">www</code> y a continuación<br>
 <code class="literal">resbase</code>.</p></div></li><li><p>
-          Intérpete de ordenes: Inicide una terminal y teclee
+          Intérprete de ordenes: Inicie una terminal y teclee
         </p><pre class="programlisting">
 ls /var/www/resbase
 </pre></li></ul></div><p>

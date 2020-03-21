@@ -13,7 +13,7 @@ TITLE="Primer uso de adJ"
 HREF="x39.htm"><LINK
 REL="NEXT"
 TITLE="Soporte"
-HREF="x351.htm"></HEAD
+HREF="x393.htm"></HEAD
 ><BODY
 CLASS="sect1"
 BGCOLOR="#FFFFFF"
@@ -55,7 +55,7 @@ WIDTH="10%"
 ALIGN="right"
 VALIGN="bottom"
 ><A
-HREF="x351.htm"
+HREF="x393.htm"
 ACCESSKEY="N"
 >Siguiente</A
 ></TD
@@ -74,7 +74,7 @@ NAME="conceptos_basicos"
 ></H1
 ><P
 >&#13;    Los conceptos y herramientas presentados desde esta sección se
-    asimilan mejor practicando. Procure ejecirtarlos desde un interprete
+    asimilan mejor practicando. Procure ejercitarlos desde un interprete
     de ordenes (bien operando directamente un sistema tipo Unix o bien
     ingresando remotamente desde otro sistema como se explicó, (ver
     <A
@@ -392,7 +392,17 @@ CLASS="literal"
 CLASS="literal"
 >-l</TT
 > presenta
-            atributos adicionales de cada archivo.
+            atributos adicionales de cada archivo (por ejemplo los
+            directorios inician con <TT
+CLASS="literal"
+>d</TT
+> mientras que
+            los archivos con <TT
+CLASS="literal"
+>-</TT
+>. También puede dar
+            como parámetro una ruta por listar (si no da una se lista el
+            directorio de trabajo).
           </P
 ></DD
 ><DT
@@ -519,6 +529,144 @@ CLASS="sect2"
 ><H2
 CLASS="sect2"
 ><A
+NAME="tmux"
+>tmux</A
+></H2
+><P
+>&#13;      Para operar desde la terminal con más versatilidad es muy útil
+      <TT
+CLASS="literal"
+>tmux</TT
+> que introduce conceptos de sesiones,
+      ventanas y paneles que permiten operar muy efectivamente.
+    </P
+><P
+></P
+><UL
+COMPACT="COMPACT"
+><LI
+><P
+>&#13;          Las sesiones le permiten retomara el trabajo que estaba
+          haciendo previamente.
+        </P
+></LI
+><LI
+><P
+>&#13;          Las ventanas permiten operar en varios interpretes de ordenes
+          que ocupan el espacio completo donde visualiza la terminal.
+        </P
+></LI
+><LI
+><P
+>&#13;          Los paneles dividien una ventan en más áreas para ver
+          simultaneamente varios interpretes de ordenes.
+        </P
+></LI
+></UL
+><P
+>&#13;      Puede probar el uso de sesiones de esta forma: 1. Abra una
+      terminal e inice tmux con <TT
+CLASS="literal"
+>tmux</TT
+> 2. Escribe por
+      ejemplo <TT
+CLASS="literal"
+>echo Hola mundo</TT
+> y pulse Enter, que debe
+      imprimir en pantalla Hola Mundo 3. Cierre la terminal --por la
+      forma de operación de tmux esto no terminará la sesión que inició
+      4. Abra otra terminal e inice tmux pero indicando que se una a una
+      sesión existente con <TT
+CLASS="literal"
+>tmux -a</TT
+>. Debería poder ver
+      su sesión de terminal con Hola Mundo.
+    </P
+><P
+>&#13;      Ya en tmux, puede enviar ordenes a tmux comenzando con la
+      secuencia de teclas Control-b, por ejemplo para crear una ventana
+      emplee Control-b y después la letra <TT
+CLASS="literal"
+>c</TT
+>
+      (minúscula).
+    </P
+><P
+>&#13;      Notará en la parte inferior izquierda indicadores de 2 ventanas
+      abiertas (una con <TT
+CLASS="literal"
+>[0]</TT
+> y la otra con
+      <TT
+CLASS="literal"
+>[1]</TT
+>). Pase a la segunda ventana (con índice 1)
+      con Control-b 1 y a la primera con Control-b 0.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN368"
+></A
+><P
+><B
+>Figura 16. tmux con 6 ventanas. Visualizando la cuarta, con índice
+      3.</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/tmux-v.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Para dividir una ventana (o panel) en 2 paneles separados por una
+      línea vertical en la mitad use <TT
+CLASS="literal"
+>Control-b %</TT
+> y
+      para dividir en 2 con una línea horizontal use
+      <TT
+CLASS="literal"
+>Control-b "</TT
+>. Pase al panel de la derecha
+      con
+      <TT
+CLASS="literal"
+>Control-b →``, pase al panel de la izquierda con</TT
+>Control-b
+      ←<TT
+CLASS="literal"
+>, al de arriba con</TT
+>Control-b
+      ↑<TT
+CLASS="literal"
+>y al de abajo con</TT
+>Control-b ↓`
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN381"
+></A
+><P
+><B
+>Figura 17. Ventana de tmux dividida en 3 paneles</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/tmux-p.png"></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
 NAME="lecturas-recomendadas"
 >Lecturas recomendadas</A
 ></H2
@@ -530,7 +678,7 @@ CLASS="literal"
       introducidos en este capítulo. Se han tomado porciones de la
       sección "telnet y ssh" de
       <A
-HREF="a1862.htm"
+HREF="a1911.htm"
 >AALinux</A
 >
     </P
@@ -570,7 +718,7 @@ WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
 ><A
-HREF="x351.htm"
+HREF="x393.htm"
 ACCESSKEY="N"
 >Siguiente</A
 ></TD

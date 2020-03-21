@@ -8,7 +8,7 @@
   </p><pre class="programlisting">
 $ su -
 </pre><p>
-    Tipicamente al pasar a la cuenta root el prompt cambiará a
+    Típicamente al pasar a la cuenta root el prompt cambiará a
     <code class="literal">#</code>.
   </p><p>
     Si <span class="strong"><strong>doas</strong></span> se configura para
@@ -30,7 +30,7 @@ $ doas ls /root
     </p><p>
       El administrador puede agregar usuarios con la orden
       <code class="literal">adduser</code>. Su uso típico se esboza a
-      continuación<sup>[<a name="idm1187827976" href="#ftn.idm1187827976">17</a>]</sup>
+      continuación<sup>[<a name="idp731099768" href="#ftn.idp731099768">17</a>]</sup>
     </p><pre class="programlisting">
 doas adduser
 ...
@@ -113,7 +113,7 @@ doas userdel -r juan
           algunos datos del perfil del usuario.
         </p></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="bitacoras"></a>13.2. Bitácoras</h3></div></div></div><p>
       Una de las labores típicas de un administrador de un sistema adJ
-      es revisar bitácoras del sistema en búsqueda de vulneracioens de
+      es revisar bitácoras del sistema en búsqueda de vulneraciones de
       seguridad. En la mayoría de las veces se trata de ataques a través
       de internet, ataques que buscan entre otras cosas: acceder a
       servidores para sacar información y modificarla, o usar servidores
@@ -144,8 +144,9 @@ doas userdel -r juan
     doas auditabitacoras
 </pre><p>
         Que creará un directorio con copia de las bitácoras y el informe
-        del análisis. El nombre del directorio será la fecha de ejecuión
-        y se ubicará en <code class="literal">/var/adJ/auditabiracoras</code>
+        del análisis. El nombre del directorio será la fecha de
+        ejecución y se ubicará en
+        <code class="literal">/var/adJ/auditabiracoras</code>
       </p><p>
         Por ejemplo si la fecha es 2017-06-27 el reporte quedará en
         <code class="literal">/var/adJ/auditabitacoras/20170627/auditabitacoras.txt</code>
@@ -195,7 +196,7 @@ Debe prestar especial atención a posibles ataques dirigidos a un usua
           </span></dt><dd><p>
               Descomprime archivos
             </p></dd></dl></div><p>
-        A continuación un ejemplo de auditoria de la bitácora
+        A continuación un ejemplo de auditoría de la bitácora
         <code class="literal">auth</code>:
       </p><div class="orderedlist"><ol type="1"><li><p>
             Como usuario root hacer una copia de las bitácoras de
@@ -252,7 +253,7 @@ dig -x 211.157.113.89
           </p><pre class="programlisting">
 whois chinacomm.com.cn
 </pre><p>
-            donde encontromos una dirección de correo:
+            donde encontramos una dirección de correo:
             <code class="literal">wjy@chncomm.com</code>
           </p></li><li><p>
             Si se ubica el dominio de la IP de donde proviene un ataque,
@@ -281,7 +282,7 @@ Attempt to login at practica.pasosdeJesus.org from your IP on 16.Aug.2006 at 7:1
       <span class="strong"><strong>man</strong></span>, por ejemplo
     </p><pre class="programlisting">
 man grep
-</pre></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm1187827976" href="#idm1187827976">17</a>] </sup>
+</pre></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp731099768" href="#idp731099768">17</a>] </sup>
           Tenga en cuenta que la primera vez que ejecute
           <code xmlns="" class="literal">adduser</code> tras instalar un sistema adJ, este
           programa preguntará valores por omisión por emplear durante la

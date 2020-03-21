@@ -1,0 +1,712 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Transferencia de información a y desde el servidor</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Primeras páginas HTML"
+HREF="x1015.htm"><LINK
+REL="NEXT"
+TITLE="Más formas de uso de ssh"
+HREF="x1190.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x1015.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1190.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="transferencia_de_informacion_a_y_desde_el_servidor"
+>Transferencia de información a y desde el servidor</A
+></H1
+><P
+>&#13;    Hay diversos métodos para transferir información entre el servidor y
+    otros computadores.
+  </P
+><P
+>&#13;    Puede descargar información típicamente con los protocolos
+    <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>http</B
+></SPAN
+> y
+    <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ftp</B
+></SPAN
+> que transmiten la información
+    sin cifrar, esto puede lograrlo con <TT
+CLASS="literal"
+>ftp</TT
+>,
+    <TT
+CLASS="literal"
+>curl</TT
+> o <TT
+CLASS="literal"
+>wget</TT
+>.
+  </P
+><P
+>&#13;    Para descargar información cifrada emplee el protocolo
+    <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>https</B
+></SPAN
+> con los mismos
+    <TT
+CLASS="literal"
+>ftp</TT
+>, <TT
+CLASS="literal"
+>curl</TT
+> o
+    <TT
+CLASS="literal"
+>wget</TT
+>.
+  </P
+><P
+>&#13;    Para enviar y recibir información cifrada utilice el protocolo
+    <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ssh</B
+></SPAN
+> (o su protocolo asociado
+    <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>sftp</B
+></SPAN
+>). Para emplear este método
+    desde un sistema adJ/OpenBSD (o otro sistema tipo Unix que cuente
+    con OpenSSH) se puede usar bien <TT
+CLASS="literal"
+>scp</TT
+> desde la
+    línea de ordenes o el programa <TT
+CLASS="literal"
+>filezilla</TT
+>.
+  </P
+><P
+>&#13;    También puede mantener sincronía entre directorios de un par de
+    servidores con el programa <TT
+CLASS="literal"
+>rsync</TT
+>.
+  </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ftp"
+>ftp</A
+></H2
+><P
+>&#13;      Si tiene una URL para los protocolos http, https o ftp basta que
+      la escriba como parámetro de la orden <TT
+CLASS="literal"
+>ftp</TT
+> en
+      una terminal y este descargará el enlace.
+    </P
+><P
+>&#13;      Por ejemplo las fuentes de este manual están en
+      <TT
+CLASS="literal"
+>http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.6_html.tar.gz</TT
+>
+      (que usa protocolo http como indica el comienzo del URL) podrá
+      descargarlas al directorio de trabajo con:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;    ftp http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.6_html.tar.gz
+</PRE
+><P
+>&#13;      Para descargar con protocolo https (soportado por github.io):
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;    ftp https://pasosdejesus.github.io/basico_adJ/basico_adJ-6.6_html.tar.gz
+</PRE
+><P
+>&#13;      Y a manera de ejemplo para descargar un documento de respuestas
+      frecuentes sobre OpenBSD mediante el protocolo ftp:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;    ftp ftp://ftp3.usa.openbsd.org/pub/OpenBSD/doc/obsd-faq.txt
+</PRE
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="curl"
+>curl</A
+></H2
+><P
+>&#13;      Los mismos ejemplos de la sección anterior con
+      <TT
+CLASS="literal"
+>curl</TT
+> serían:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;    curl -O http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.6_html.tar.gz
+    curl -O https://pasosdejesus.github.io/basico_adJ/basico_adJ-6.6_html.tar.gz
+    curl -O ftp://ftp3.usa.openbsd.org/pub/OpenBSD/doc/obsd-faq.txt
+</PRE
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="wget"
+>wget</A
+></H2
+><P
+>&#13;      Los mismos ejemplos de la sección anterior con
+      <TT
+CLASS="literal"
+>wget</TT
+> serían:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;    wget http://pasosdejesus.github.io/basico_adJ/basico_adJ-6.6_html.tar.gz
+    wget https://pasosdejesus.github.io/basico_adJ/basico_adJ-6.6_html.tar.gz
+    wget ftp://ftp3.usa.openbsd.org/pub/OpenBSD/doc/obsd-faq.txt
+</PRE
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="filezilla"
+>Filezilla</A
+></H2
+><P
+>&#13;      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>filezilla</B
+></SPAN
+> le permite transmitir
+      archivos a un servidor.
+    </P
+><P
+>&#13;      Puede usarse sobre sistemas operativos OpenBSD, Linux, Mac OS X y
+      Windows. Soporta los protocolo FTP, SFTP y FTP sobre SSL.
+    </P
+><P
+>&#13;      Una vez instalado ejecútelo y configure la primera vez la conexión
+      a su servidor desde el menú Archivo-&#62;Gestor de Sitios. Del
+      siguiente ejemplo adapte el nombre del servidor y de usuario.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN1097"
+></A
+><P
+><B
+>Figura 23. Configuración de una conexión con filezilla</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/filezillaconexion.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Una vez configurada la encontrará al abrir FileZilla e ingresar a
+      Archivos-&#62;Sitios. Cuando elija Conectar se iniciará una
+      conexión cifrada, con un intercambio inicial de llaves que debe
+      aceptar, después aparecerán paneles como los siguientes:
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN1105"
+></A
+><P
+><B
+>Figura 24. Paneles de Filezilla</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/filezilla.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Note que al lado izquierdo están las carpetas y archivos de su
+      computador local, mientras que al lado derecho están las carpetas
+      y archivos del servidor. Para transmitir un archivo de uno a otro
+      basta que lo arrastre.
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="uso_basico_de_scp"
+>Uso básico de scp</A
+></H2
+><P
+>&#13;      Si por ejemplo desea transferir el archivo
+      <TT
+CLASS="literal"
+>ideas.txt</TT
+> del servidor OpenBSD
+      <TT
+CLASS="literal"
+>practica.pasosdeJesus.org</TT
+> a otro servidor tipo
+      Unix que tenga instalado y configurado ssh (digamos
+      <TT
+CLASS="literal"
+>comp.trabajo.net</TT
+>), a la cuenta de un usuario
+      <TT
+CLASS="literal"
+>mateo</TT
+>, en el directorio
+      <TT
+CLASS="literal"
+>personal</TT
+>:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;$ scp ideas.txt mateo@comp.trabajo.net:personal
+</PRE
+><P
+>&#13;      Si desea transmitir el archivo metodo.txt del directorio personal
+      del servidor <TT
+CLASS="literal"
+>comp.trabajo.net</TT
+> al directorio en
+      el que está ubicado en
+      <TT
+CLASS="literal"
+>practica.pasosdeJesus.org</TT
+>:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;$ scp juan2@comp.trabajo.net:personal/metodo.txt .
+</PRE
+><P
+>&#13;      Note que <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>scp</B
+></SPAN
+> es similar a
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>cp</B
+></SPAN
+> (pues permite copiar un
+      archivo fuente en uno destino<A
+NAME="AEN1129"
+HREF="#FTN.AEN1129"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+>) sólo que el archivo fuente o el archivo destino
+      pueden estar en otra máquina.
+    </P
+><P
+>&#13;      Dado que Windows no tiene un servidor
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ssh</B
+></SPAN
+> por omisión, es posible
+      transmitir archivos a y desde sistemas Windows sólo desde el
+      computador con Windows usando un programa como
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>winscp</B
+></SPAN
+> (disponible en
+      <A
+HREF="http://winscp.sf.net"
+TARGET="_top"
+>http://winscp.sf.net</A
+> o
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>pscp</B
+></SPAN
+> que se distribuye junto
+      con <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>putty</B
+></SPAN
+>
+      (<A
+HREF="x231.htm"
+>la sección de nombre <I
+>Conceptos básicos</I
+></A
+>).
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="rsync"
+>Uso básico de <TT
+CLASS="literal"
+>rsync</TT
+></A
+></H2
+><P
+>&#13;      rsync busca sincronizar un par de directorios en servidores
+      diferente transmitiendo sólo la información que sea diferente.
+    </P
+><P
+>&#13;      Aunque es posible emplearlo con un protocolo propio (también
+      llamado <TT
+CLASS="literal"
+>rsync</TT
+>), este sólo es recomendable para
+      datos públicos porque no es cifrado. Por lo mismo la operación
+      típica de rsync es sobre el protocolo ssh.
+    </P
+><P
+>&#13;      Por ejemplo si en el servidor con ip 10.11.12.13 tiene una carpeta
+      /var/micopia/ que necesita traer a un servidor en el que está
+      operando (digamos a la carpeta local /home/juan/micopia/):
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;cd /home/juan/micopia/
+rsync -rvz 10.11.12.13:/var/micopia/* .
+</PRE
+><P
+>&#13;      La orden anterior realizará una conexión ssh (por lo que debe
+      operar ssh en el servidor <TT
+CLASS="literal"
+>10.11.12.13</TT
+>) para
+      copiar todo el contenido de <TT
+CLASS="literal"
+>/var/micoopia/</TT
+> del
+      servidor remoto al directorio actual, y lo que hará cada una de
+      las opciones <TT
+CLASS="literal"
+>-rvz</TT
+> es:
+    </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>r</TT
+></DT
+><DD
+><P
+>&#13;            Modo recursivo, es decir transmitirá subdirectorios y su
+            contenido.
+          </P
+></DD
+><DT
+><TT
+CLASS="literal"
+>v</TT
+></DT
+><DD
+><P
+>&#13;            Modo verboso, es decir presentará una línea por cada archivo
+            que transmita
+          </P
+></DD
+><DT
+><TT
+CLASS="literal"
+>z</TT
+></DT
+><DD
+><P
+>&#13;            Modo comprimido, es decir antes de transmitir cada archivo,
+            lo comprimirá para disminuir el tiempo de transferencia
+          </P
+></DD
+></DL
+></DIV
+><P
+>&#13;      El método anterior no transmitirá archivos de configuración (los
+      que empiezan con .) y requiere ubicarse primero en el directorio
+      destino. Podría desde cualquier directorio con:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;rsync -rvz 10.11.12.13:/var/micopia/ /home/juan/micopia/ 
+</PRE
+><P
+>&#13;      Note que es importante terminar las rutas fuente y destino con
+      barra <TT
+CLASS="literal"
+>/</TT
+>, no hacerlo transmitiría el directorio.
+      Por ejemplo si ejecuta:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;rsync -rvz 10.11.12.13:/var/micopia /home/juan/micopia/ 
+</PRE
+><P
+>&#13;      Terminará con los datos que esperaba en la ruta
+      <TT
+CLASS="literal"
+>/home/juan/micopia/micopia/</TT
+>
+    </P
+><P
+>&#13;      Si tiene permiso de superusuario en el servidor destino y además
+      del modo recursivo necesita mantener enlaces (opción -l), archivos
+      especiales (-D), fecha (-t), dueño (opciones -o para dueño y -g
+      para grupo) y permisos (-p) será más útil la opción archivo (-a)
+      que abrevia todos esos:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;rsync -avz 10.11.12.13:/var/micopia/ /home/juan/micopia/ 
+</PRE
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas_recomendadas_transferencia"
+>Lecturas recomendadas sobre transferencia de archivos</A
+></H2
+><P
+></P
+><UL
+COMPACT="COMPACT"
+><LI
+><P
+>&#13;          Página del manual de <TT
+CLASS="literal"
+>curl</TT
+>
+        </P
+></LI
+><LI
+><P
+>&#13;          Página del manual de <TT
+CLASS="literal"
+>wget</TT
+>
+        </P
+></LI
+><LI
+><P
+>&#13;          Página del manual de <TT
+CLASS="literal"
+>scp</TT
+>
+        </P
+></LI
+><LI
+><P
+>&#13;          Página del manual de <TT
+CLASS="literal"
+>rsync</TT
+>
+        </P
+></LI
+></UL
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN1129"
+HREF="x1049.htm#AEN1129"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;          Incluso scp implementa la funcionalidad de cp al permitir
+          copiar localmente un archivo.
+        </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x1015.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1190.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Primeras páginas HTML</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Más formas de uso de ssh</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
