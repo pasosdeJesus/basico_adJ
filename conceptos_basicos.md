@@ -145,6 +145,7 @@ muy efectivamente.
   varios interpretes de ordenes.
 
 Puede probar el uso de sesiones de esta forma:
+
 1. Abra una terminal e inice tmux con `tmux`
 2. Escribe por ejemplo `echo Hola mundo` y pulse Enter, que debe imprimir en pantalla Hola Mundo
 3. Cierre la terminal  --por la forma de operación de tmux esto no terminará la sesión que inició
@@ -165,7 +166,7 @@ con Control-b 0.
 Para dividir una ventana (o panel) en 2 paneles separados por una línea 
 vertical en la mitad use `Control-b %` y para dividir en 2 con una línea 
 horizontal use `Control-b "`.  Pase al panel de la derecha con
-`Control-b →``, pase al panel de la izquierda con `Control-b ←`,
+`Control-b →`, pase al panel de la izquierda con `Control-b ←`,
 al de arriba con `Control-b ↑` y al de abajo con `Control-b ↓`
 
 ![Ventana de tmux dividida en 3 paneles](img/tmux-p.png)
@@ -173,7 +174,7 @@ al de arriba con `Control-b ↑` y al de abajo con `Control-b ↓`
 
 ### Lecturas recomendadas
 
-Páginas ```man``` de las 11 ordenes /programas introducidos en este capítulo.
+Páginas ```man``` de las órdenes /programas introducidos en este capítulo.
 Se han tomado porciones de la sección "telnet y ssh" de [AALinux](#bibliografia)
 
 
