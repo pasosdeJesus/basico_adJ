@@ -131,6 +131,3 @@ infoversion.ent:
 		cp ../servidor_adJ/infoversion.ent .; \
 	} fi;
 
-aspell: imp/basico_adJ.txt
-	aspell -p basico_adJ.ispell  -l es -c imp/basico_adJ.txt
-
