@@ -1,3 +1,7 @@
+Version 6.6
+
+:  - Nueva [xref](#tmux) 
+
 Version 6.5
 
 :  - Retirada sección sobre SILC

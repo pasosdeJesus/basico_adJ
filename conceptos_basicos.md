@@ -92,7 +92,9 @@ programa **ls** ejecute desde un intérprete de ordenes **man ls**):
 : Muestra listado de archivos y directorios. Sin parámetros muestra los del 
 directorio de trabajo. Como parámetro puede indicarse la ruta del directorio 
 del cual se desea ver el contenido y con la opción ```-l``` presenta atributos 
-adicionales de cada archivo.
+adicionales de cada archivo (por ejemplo los directorios inician con `d`
+mientras que los archivos con `-`.  También puede dar como parámetro
+una ruta por listar (si no da una se lista el directorio de trabajo).
 
 ```mkdir public_html```
 
@@ -128,6 +130,40 @@ directorios con todo su contenido de forma recursiva con la opción
 
 : El programa ```mv``` moverá (o en este caso renombra) el archivo 
 ```traido/juan.htm a traido/pedro.html```.
+
+### tmux
+
+Para operar desde la terminal con más versatilidad es muy útil `tmux`
+que introduce conceptos de sesiones, ventanas y paneles que permiten operar
+muy efectivamente. 
+
+* Las sesiones le permiten retomara el trabajo que estaba haciendo 
+  previamente.
+* Las ventanas permiten operar en varios interpretes de ordenes que ocupan
+  el espacio completo donde visualiza la terminal.
+* Los paneles dividien una ventan en más áreas para ver simultaneamente
+  varios interpretes de ordenes.
+
+Puede probar el uso de sesiones de esta forma:
+1. Abra una terminal e inice tmux con `tmux`
+2. Escribe por ejemplo `echo Hola mundo` y pulse Enter, que debe imprimir en pantalla Hola Mundo
+3. Cierre la terminal  --por la forma de operación de tmux esto no terminará la sesión que inició
+4. Abra otra terminal e inice tmux pero indicando que se una a una sesión existente con `tmux -a`.  Debería poder ver su sesión de terminal con Hola Mundo.
+
+Ya en tmux, puede enviar ordenes a tmux comenzando con la secuencia de teclas 
+Control-b, por ejemplo  para crear una ventana emplee Control-b y después
+la letra `c` (minúscula).
+Notará en la parte inferior izquierda indicadores de 2 ventanas
+abiertas (una con `[0]` y la otra con `[1]`). 
+Pase a la segunda ventana (con índice 1) con Control-b 1 y a la primera
+con Control-b 0.
+
+Para dividir una ventana (o panel) en 2 paneles separados por una línea 
+vertical en la mitad use `Control-b %` y para dividir en 2 con una línea 
+horizontal use `Control-b "`.  Pase al panel de la derecha con
+`Control-b →``, pase al panel de la izquierda con `Control-b ←`,
+al de arriba con `Control-b ↑` y al de abajo con `Control-b ↓`
+
 
 ### Lecturas recomendadas
 
