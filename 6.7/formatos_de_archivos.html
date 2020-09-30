@@ -6,7 +6,7 @@
         <code class="literal">.txt</code> Se trata de un texto plano. Típicamente
         estará codificado en ASCII. En DOS/Windows los textos planos
         indican fin de línea con dos caracteres: Retorno de
-        carro<sup>[<a name="idm1968903808" href="#ftn.idm1968903808">14</a>]</sup> y nueva línea<sup>[<a name="idm427319040" href="#ftn.idm427319040">15</a>]</sup>, mientras que en sistemas tipo Unix basta se usa
+        carro<sup>[<a name="idm1154127872" href="#ftn.idm1154127872">14</a>]</sup> y nueva línea<sup>[<a name="idm1550230016" href="#ftn.idm1550230016">15</a>]</sup>, mientras que en sistemas tipo Unix basta se usa
         sólo el caracter nueva línea. Para convertir textos DOS/Windows
         a Unix puede emplear:
       </p><pre class="programlisting">
@@ -17,7 +17,7 @@ $ tr -d "\r" &lt; carta.txt.bak &gt; carta.txt
         (por ejemplo Unicode, UTF-8, MAC, Código de Página 850) o
         requiere convertir de ASCII a otra codificación puede emplear el
         programa <span class="strong"><strong>recode</strong></span>. Por ejemplo
-        para convertir carta.txt de ASCII a UTF-8<sup>[<a name="idm3097354880" href="#ftn.idm3097354880">16</a>]</sup>:
+        para convertir carta.txt de ASCII a UTF-8<sup>[<a name="idp998275456" href="#ftn.idp998275456">16</a>]</sup>:
       </p><pre class="programlisting">
 recode txt..utf-8 carta.txt
 </pre></li><li><p>
@@ -92,15 +92,15 @@ unrar archivo.rar
 7z a -mhe=on -pSecreta /tmp/resultado.7z archivo1.pdf archivo2.pdf
 </pre></li></ul></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_formato_de_archivos"></a>9.1. Lecturas recomendadas</h3></div></div></div><p>
       La página del manual: <code class="literal">man tar</code>
-    </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm1968903808" href="#idm1968903808">14</a>] </sup>
+    </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm1154127872" href="#idm1154127872">14</a>] </sup>
             El caracter retorno de carro tiene código ASCII 13, suele
             llamarse CR (<span xmlns="" class="emphasis"><em>Carriage Return</em></span>) y
             diversos programas y lenguajes lo denotan con ''.
-          </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm427319040" href="#idm427319040">15</a>] </sup>
+          </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm1550230016" href="#idm1550230016">15</a>] </sup>
             El caracter nueva línea tiene código ASCII 10, también se
             llama LF (<span xmlns="" class="emphasis"><em>Line Feed</em></span>) y diversos
             programas y lenguajes lo denotan con ''.
-          </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm3097354880" href="#idm3097354880">16</a>] </sup>
+          </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp998275456" href="#idp998275456">16</a>] </sup>
             UTF-8 es una de las posibles formas de codificar Unicode en
             ASCII. Los caracteres Unicode con un ASCII equivalente con
             código menor de 127 tienen la misma representación en UTF-8.
