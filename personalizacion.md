@@ -252,8 +252,8 @@ una lista de correo, está disponible en
 
 ### Uso de zsh como interprete de ordenes {#zsh}
 
-zsh se instala por omisión desde adJ 6.7, primero verifique que está 
-instalado en su adJ con:
+zsh se instala por omisión desde adJ 6.7. Puede verificar que
+ya está instalado en su adJ con:
 
       zsh
 
@@ -279,17 +279,19 @@ Como se indica en la página del manual `zshroadmap`:
 
 Para la interacción con el usuario zsh utiliza el Editor de Líneas de Zsh ZLE,
 que le permitirá entre otras:
-1. cambiar el modo de uso del teclado. El modo emacs
+
+1. Cambiar el modo de uso del teclado. El modo emacs
    es más simple si no conoce vi, se puede elegir con `bindkey -e` (y el modo
    vi se elije con `bindkey -v`)
-2. Un historial de las ordenes que ha dado que puede navegar con flecha arriba y
-   flecha abajo
-3. La característica de completación le permite teclear solo parte de una
-   palabra y que el interprete le complete el resto.  zsh tiene un sistema
-   programable de completación en el que practicamente cualquier cosa puede ser
-   fuente de completación dependiendo del contexto.
-4. zsh es programable, incluye muchas funciones útiles que puede revisar en 
-   el directorio  `/usr/local/share/zsh/5.8/functions/Misc/`, no deje de 
+2. Contar con un historial de las ordenes que ha dado que puede navegar con 
+   flecha arriba y flecha abajo
+3. Completar automáticamente palabras cundo usted digita parte de la misma
+   y presiona TAB. zsh tiene un sistema programable de completación en el 
+   que practicamente cualquier cosa puede ser fuente de completación 
+   dependiendo del contexto.
+4. Programar `zsh` y ya incluye muchas funciones útiles contribuidas por
+   usuarios, las cuales puede revisar en el directorio  
+  `/usr/local/share/zsh/5.8/functions/Misc/`, no deje de 
    probar `. /usr/local/share/zsh/5.8/functions/Misc/tetriscurses`
 
 
