@@ -1,0 +1,289 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2. Personalización</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="uso_de_medios_de_almacenamiento.html" title="4. Uso de medios de almacenamiento"><link rel="next" href="edicion_de_textos.html" title="5. Edición de textos"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Personalización</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="uso_de_medios_de_almacenamiento.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="edicion_de_textos.html">Siguiente</a></td></tr></table><hr></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idp409076736"></a>2. Personalización</h2></div></div></div><p>
+    Como usuario puede personalizar diversos aspectos de su interacción
+    con el sistema completo y con cada programa (como
+    <span class="strong"><strong>fluxbox, xfe</strong></span> y el interprete de
+    ordenes). En esta sección presentamos la personalización del locale
+    y algunas formas de personalizar el interprete de ordenes
+    <span class="strong"><strong>ksh</strong></span>.
+  </p><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp409075584"></a>2.1. Locale</h3></div></div></div><p>
+      Un locale define una codificación y formas de presentar
+      información típicas de una región geográfica (números, valores
+      monetarios, fechas, horas, idioma y cotejación u ordenamiento
+      lexicográfico del mismo). adJ viene configurado por omisión con el
+      locale es-CO.UTF-8 es decir en español, para Colombia y con
+      codificación UTF-8.
+    </p><p>
+      En UTF-8 puede codificarse UNICODE, que a su vez permite
+      representar todos los lenguajes escritos –la mayoría de lenguajes
+      occidentales, incluyendo el español.
+    </p><p>
+      Los locales se ubican en el directorio
+      <code class="literal">/usr/share/locale</code> y puede examinar los más
+      comunes con
+    </p><pre class="programlisting">
+locale -a
+</pre><p>
+      Elija el locale más apropiado para su país. Recomendamos que
+      emplee codificación UTF-8 y que establezca el locale en sus
+      archivos <code class="literal">~/.fluxbox/startup</code> y
+      <code class="literal">~/.profile</code> agregando o cambiando la línea:
+    </p><pre class="programlisting">
+export LANG=es_CO.UTF-8
+</pre><p>
+      Los programas estándares emplearan esta variable (y otras
+      asociadas) para determinar el locale y modificaran la forma de
+      presentar:
+    </p><div class="itemizedlist"><ul type="disc" compact><li><p>
+          Los mensajes, menús y ayudas para que sean en su idioma. En
+          adJ esto se soporta vía el porte
+          <span class="strong"><strong>gettext</strong></span>.
+        </p></li><li><p>
+          La codificación de caracteres para que sea la que prefiere. En
+          adJ se emplea el soporte de LC_CTYPE de OpenBSD que es
+          suficiente para UTF-8.
+        </p></li><li><p>
+          Los ordenamientos alfabéticos serán apropiados para su idioma
+          (por ejemplo en español la á lexicográficamente equivale a la
+          a, y la ñ está entre la n y la o). En adJ se emplea una
+          implementación mejorada sobre la de FreeBSD que es suficiente
+          para el español en codificaciones ISO-8859-1, ISO-8859-15 y
+          UTF-8 (aunque no basta para otros lenguajes soportados por
+          UNICODE).
+        </p></li><li><p>
+          La forma de presentar números y valores monetarios será la
+          particular de la región geográfica elegida. En adJ empleamos
+          una implementación mejorada con base en la de FreeBSD que
+          soporta especialmente bien todos los países de latinoamérica.
+        </p></li><li><p>
+          También la forma de presentar fecha y hora se ve afectada por
+          el locale así como por la zona horaria.
+        </p></li></ul></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm913606912"></a>2.2. Personalización del interprete de ordenes ksh</h3></div></div></div><p>
+      Es función del intérprete de ordenes recibir ordenes que el
+      usuario ingrese por el teclado (o en general por entrada estándar)
+      y ejecutar los programas apropiados. Dada la importancia y
+      frecuencia de esta labor, los interpretes de ordenes (y en
+      particular <code class="literal">/bin/ksh</code>) suelen ser altamente
+      personalizables a los gustos de cada usuario.
+    </p><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm3044900224"></a>2.2.1. Ejecución de Programas</h4></div></div></div><p>
+        Desde un intérprete de ordenes un usuario puede teclear bien
+        nombres de programas o bien ordenes del intérprete de ordenes.
+        Los programas por ejecutar se especifican dando la ruta completa
+        de su ubicación en el sistema de archivos, o en caso de no dar
+        ruta se buscan en orden en los directorios especificados en la
+        variable de entorno <code class="literal">PATH</code>. Por ejemplo si
+        teclea:
+      </p><pre class="programlisting">
+$ banner Jesus
+</pre><p>
+        El intérprete de ordenes identifica que está intentando ejecutar
+        <code class="literal">banner</code> (para presentar en grande una cadena)
+        y que le pasa como primer parámetro Jesus. Como
+        <code class="literal">banner</code> no es una orden interno del intérprete
+        de ordenes busca un archivo con permiso de ejecución en las
+        rutas indicadas en la variable <code class="literal">PATH</code>, si el
+        valor de tal variable fuera
+      </p><pre class="programlisting">
+el intérprete de ordenes buscaría primero en ```/bin```, después en
+```/usr/X11R6/bin``` y así sucesivamente para encontrarlo en ```/usr/bin```. 
+Entonces pasaría el control a un programa del sistema operativo que se encarga 
+de cargar y ejecutar el programa pasándole los parámetros que reciba 
+(tal programa es ```/usr/libexec/ld.so```). El ejemplo anterior es equivalente 
+a
+</pre><p>
+        $ /usr/bin/banner Jesus
+      </p><pre class="programlisting">
+puede verificar que ```banner``` es un programa ubicado en el directorio 
+```/usr/bin``` con:
+</pre><p>
+        $ ls -l /usr/bin/b*
+      </p><pre class="programlisting">
+que mostrará todos los archivos de ese directorio que comiencen con la letra b.
+
+#### Variables de ambiente {#variables_de_ambiente}
+
+Puede personalizar algunos detalles del intérprete de ordenes o de algunos 
+programas empleando variables de ambiente. Las variables de ambiente son 
+palabras que tienen asociadas un valor, por ejemplo puede examinar el 
+valor de la variable de ambiente ```PATH``` con:
+</pre><p>
+        echo $PATH
+      </p><pre class="programlisting">
+y puede modificarlo con:
+</pre><p>
+        export
+        PATH=/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin
+      </p><pre class="programlisting">
+
+Si en su directorio personal a instalado programas en el subdirectorio bin y 
+desea agregar la ruta a la variable PATH puede usar:
+</pre><p>
+        export
+        PATH=<span class="emphasis"><em>P</em></span><span class="emphasis"><em>A</em></span><span class="emphasis"><em>T</em></span><span class="emphasis"><em>H</em></span> : /<span class="emphasis"><em>h</em></span><span class="emphasis"><em>o</em></span><span class="emphasis"><em>m</em></span><span class="emphasis"><em>e</em></span>/EUSER;/bin/
+      </p><pre class="programlisting">
+
+
+#### Variables de ambiente del intérprete de ordenes {#variables_de_ambiente_del_interprete_de_ordenes}
+
+Cada programa emplea sus propias variables de ambiente, en particular el 
+intérprete de ordenes. Recomendamos el uso de **ksh** como interprete de 
+ordenes por ser liviano y estándar en sistemas OpenBSD. Con este intérprete de 
+ordenes, puede establecerse el valor de la variable de ambiente ```VISUAL``` 
+con:
+</pre><p>
+        $ export VISUAL=vi
+      </p><pre class="programlisting">
+Esta variable es usada por **ksh** para determinar qué secuencias de teclas 
+utilizar para dar órdenes especiales desde la línea de ordenes. El valor 
+```vi``` indica que se usen las teclas que se usan con el editor vi (por 
+ejemplo en modo ordenes, es decir después de oprimir **ESC**, 
+pueden usarse **k** para ir a la instrucción anterior de la historia, **j** 
+para ir a la siguiente, **?** seguido de una cadena para buscar una orden 
+en la historia que incluya la cadena, **0** para ir al comienzo de la línea, 
+**$** para ir al final de la linea, **i** para insertar en la posición del 
+cursor y salir del modo ordenes). 
+Si prefiere otra forma de interacción emplee:
+</pre><p>
+        export VISUAL=gmacs
+      </p><pre class="programlisting">
+
+Otra variable usado por diversos programas es ```TERM``` que permite establecer 
+el tipo de terminal que se está usando.  por ejemplo:
+</pre><p>
+        $ export TERM=xterm-color
+      </p><pre class="programlisting">
+que permite presentar colores si trabaja directamente en el sistema 
+OpenBSD con X-Window o
+</pre><p>
+        $ export TERM=wsvt25
+      </p><pre class="programlisting">
+que permite presentar colores si emplea la consola tipo texto en un PC 
+ordinario o si se conecta con putty (por ejemplo cuando ingresa a vim).
+
+#### Configuración por omisión de sesiones con ksh
+
+Notará que el valor de las variables de ambiente que fije durante una sesión 
+se perderá cuando termine la sesión. Para lograr una configuración más 
+perdurable puede establecer la variable de ambiente a un archivo ejecutado 
+por el intérprete de ordenes automáticamente cada vez que inicia una sesión. 
+En el caso del intérprete ksh tal archivo es ```~/.profile```. 
+Un ejemplo de un archivo ```~/.profile``` es:
+</pre><p>
+        alias vi=vim export VISUAL=vi export
+        PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin:/usr/local/sbin:. if (test "$TERM"
+        = “<span class="quote">xterm</span>”) then { export TERM=xterm-color else {
+        export TERM=wsvt25 } fi; which colorls &gt; /dev/null if (test
+        “<span class="quote">$?" == "0") then {  export CLICOLOR=1  alias ls=colorls } fi; export PKG_PATH=ftp://rt.fm/pub/OpenBSD/5.7/packages/i386 export PS1="\h$</span>”
+        export LANG=“<span class="quote">es_CO.UTF-8</span>”
+      </p><pre class="programlisting">
+
+La orden alias ```vi=vim``` indica que cada vez que se ejecute la orden 
+```vi``` se llame al programa vim (ver Sección 7.3, “Editor vi”). Note que 
+también se establecen las variables de ambiente
+
+- ```VISUAL``` modo de edición en ksh.
+- ```PATH``` que establece rutas en la cual buscar programas (se separan 
+    unas de otras con dos puntos).
+- ```TERM``` que establece el tipo de terminal que está usando. Desde 
+    terminales gráficas será xterm o xterm-color, mientras que desde 
+    consolas tipo texto típicamente será vt220 o wsvt25.
+- ```PKG_PATH``` que establece ruta en la cual buscar paquetes por instalar 
+    --usado por administradores de sistemas OpenBSD.
+- ```LANG``` define el locale, es decir las identificaciones culturales y de 
+    idioma para un área geográfica.
+- ```PS1``` que establece el símbolo de espera de ordenes principal de 
+    **ksh**, el valor de este ejemplo ("\\h$ ") establece un símbolo de 
+    espera de ordenes que presenta el nombre de la máquina seguido del 
+    símbolo pesos y un espacio.
+  
+#### colorls {#colorls}
+
+En el ejemplo presentado si está instalado el programa ```colorls``` (del 
+paquete colorls), este se define como alias para la orden ```ls```, de forma 
+que la lista de archivos se presente con colores y como ha sido modificado
+para adJ presentará orden correcto en español. Esto ocurrirá desde consolas 
+tipo texto. Si está usando OpenBSD con X-Window y ```xterm```, además de lo 
+anterior necesita agregar a su archivo ```~/.Xdefaults`` (o crearlo 
+si no existe):
+</pre><p>
+        // Con base en
+        http://dentarg.starkast.net/files/configs/dot.zshrc
+      </p><p>
+        XTerm*color0: #000000
+      </p><p>
+        XTerm*color1: #bf7276
+      </p><p>
+        XTerm<span class="emphasis"><em>color2: #86af80 XTerm</em></span>color3: #968a38
+        XTerm<span class="emphasis"><em>color4: #3673b5 XTerm</em></span>color5: #9a70b2
+        XTerm<span class="emphasis"><em>color6: #7abecc XTerm</em></span>color7: #dbdbdb
+        XTerm<span class="emphasis"><em>color8: #6692af XTerm</em></span>color9: #e5505f
+        XTerm<span class="emphasis"><em>color10: #87bc87 XTerm</em></span>color11: #e0d95c
+        XTerm<span class="emphasis"><em>color12: #1b85d6 XTerm</em></span>color13: #ad73ba
+        XTerm<span class="emphasis"><em>color14: #338eaa XTerm</em></span>color15: #f4f4f4
+        XTerm<span class="emphasis"><em>colorBD: #ffffff XTerm</em></span>foreground:
+        #000000 XTerm<span class="emphasis"><em>background: #ffffff XTerm</em></span>font:
+        shine2.se XTerm<span class="emphasis"><em>boldMode: false
+        XTerm</em></span>scrollBar: false XTerm<span class="emphasis"><em>colorMode: on
+        XTerm</em></span>dynamicColors: on
+        XTerm<span class="emphasis"><em>highlightSelection: true
+        XTerm</em></span>eightBitInput: false
+        XTerm<span class="emphasis"><em>metaSendsEscape: false
+        XTerm</em></span>oldXtermFKeys: true
+      </p><pre class="programlisting">
+
+#### Lecturas recomendadas {#lecturas_recomendadas_personalizacion}
+
+Puede ver detalles de las variables de ambiente empleadas por ksh con 
+</pre><p>
+        man ksh ``` La configuración de colores es tomada de una
+        respuesta de Steve Jones en una lista de correo, está disponible
+        en
+        <a href="">http://mailman.theapt.org/pipermail/openbsd-newbies/2004-April/001806.html</a>.
+      </p></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm628436992"></a>2.3. Uso de zsh como interprete de ordenes</h3></div></div></div><p>
+      zsh se instala por omisión desde adJ 6.7, primero verifique que
+      está instalado en su adJ con:
+    </p><pre class="programlisting">
+  zsh
+</pre><p>
+      Después verifique que está registrado como uno de los interpretes
+      de ordenes aceptables con:
+    </p><pre class="programlisting">
+  cat /etc/shells
+</pre><p>
+      que debería presentar una línea con
+      <code class="literal">/usr/local/bin/zsh</code>
+    </p><p>
+      Si esto es así puede cambiar su interpete de órdenes por omisión
+      para que sea <code class="literal">zsh</code> con:
+    </p><pre class="programlisting">
+  csh -s /usr/local/bin/zsh
+</pre><p>
+      En el primer ingreso zsh le permitirá configurarlo mediante menús.
+    </p><p>
+      Aunque usted también puede manejar la configuración de zsh
+      poniendo unos archivos de configuración que recomendamos (ver
+      <a href="">https://github.com/pasosdeJesus/adJ/tree/master/arboldd/usr/local/share/adJ/archconf</a>)
+      mediante el programa <code class="literal">rcm</code>.
+    </p><p>
+      Como se indica en la página del manual
+      <code class="literal">zshroadmap</code>:
+    </p><p>
+      Para la interacción con el usuario zsh utiliza el Editor de Líneas
+      de Zsh ZLE, que le permitirá entre otras: 1. cambiar el modo de
+      uso del teclado. El modo emacs es más simple si no conoce vi, se
+      puede elegir con <code class="literal">bindkey -e</code> (y el modo vi se
+      elije con <code class="literal">bindkey -v</code>) 2. Un historial de las
+      ordenes que ha dado que puede navegar con flecha arriba y flecha
+      abajo 3. La característica de completación le permite teclear solo
+      parte de una palabra y que el interprete le complete el resto. zsh
+      tiene un sistema programable de completación en el que
+      practicamente cualquier cosa puede ser fuente de completación
+      dependiendo del contexto. 4. zsh es programable, incluye muchas
+      funciones útiles que puede revisar en el directorio
+      <code class="literal">/usr/local/share/zsh/5.8/functions/Misc/</code>, no
+      deje de probar
+      <code class="literal">. /usr/local/share/zsh/5.8/functions/Misc/tetriscurses</code>
+    </p><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm628437376"></a>2.3.1. Lecturas recomendadas</h4></div></div></div><div class="itemizedlist"><ul type="disc" compact><li><p>
+            Páginas del manual de zsh.
+          </p></li><li><p>
+            https://grml.org/zsh/zsh-lovers.pdf
+          </p></li></ul></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="uso_de_medios_de_almacenamiento.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="edicion_de_textos.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">4. Uso de medios de almacenamiento </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 5. Edición de textos</td></tr></table></div></body></html>
