@@ -250,3 +250,50 @@ La configuración de colores es tomada de una respuesta de Steve Jones en
 una lista de correo, está disponible en 
 <http://mailman.theapt.org/pipermail/openbsd-newbies/2004-April/001806.html>.
 
+### Uso de zsh como interprete de ordenes {#zsh}
+
+zsh se instala por omisión desde adJ 6.7, primero verifique que está 
+instalado en su adJ con:
+
+      zsh
+
+Después verifique que está registrado como uno de los interpretes de 
+ordenes aceptables con:
+
+      cat /etc/shells
+
+que debería presentar una línea con  `/usr/local/bin/zsh`
+
+Si esto es así puede cambiar su interpete de órdenes por omisión para
+que sea `zsh` con:
+
+      csh -s /usr/local/bin/zsh
+
+En el primer ingreso zsh le permitirá configurarlo mediante menús.
+
+Aunque usted también puede manejar la configuración de zsh poniendo unos 
+archivos de configuración que recomendamos (ver
+<https://github.com/pasosdeJesus/adJ/tree/master/arboldd/usr/local/share/adJ/archconf>) mediante el programa `rcm`.
+
+Como se indica en la página del manual `zshroadmap`:
+
+Para la interacción con el usuario zsh utiliza el Editor de Líneas de Zsh ZLE,
+que le permitirá entre otras:
+1. cambiar el modo de uso del teclado. El modo emacs
+   es más simple si no conoce vi, se puede elegir con `bindkey -e` (y el modo
+   vi se elije con `bindkey -v`)
+2. Un historial de las ordenes que ha dado que puede navegar con flecha arriba y
+   flecha abajo
+3. La característica de completación le permite teclear solo parte de una
+   palabra y que el interprete le complete el resto.  zsh tiene un sistema
+   programable de completación en el que practicamente cualquier cosa puede ser
+   fuente de completación dependiendo del contexto.
+4. zsh es programable, incluye muchas funciones útiles que puede revisar en 
+   el directorio  `/usr/local/share/zsh/5.8/functions/Misc/`, no deje de 
+   probar `. /usr/local/share/zsh/5.8/functions/Misc/tetriscurses`
+
+
+
+#### Lecturas recomendadas
+* Páginas del manual de zsh.
+* https://grml.org/zsh/zsh-lovers.pdf

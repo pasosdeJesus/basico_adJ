@@ -137,11 +137,11 @@ Para operar desde la terminal con más versatilidad es muy útil `tmux`
 que introduce conceptos de sesiones, ventanas y paneles que permiten operar
 muy efectivamente. 
 
-* Las sesiones le permiten retomara el trabajo que estaba haciendo 
+* Las sesiones le permiten retomar el trabajo que estaba haciendo 
   previamente.
 * Las ventanas permiten operar en varios interpretes de ordenes que ocupan
   el espacio completo donde visualiza la terminal.
-* Los paneles dividien una ventan en más áreas para ver simultaneamente
+* Los paneles dividien una ventana en más áreas para ver simultaneamente
   varios interpretes de ordenes.
 
 Puede probar el uso de sesiones de esta forma:
@@ -161,15 +161,19 @@ abiertas (una con `[0]` y la otra con `[1]`).
 Pase a la segunda ventana (con índice 1) con Control-b 1 y a la primera
 con Control-b 0.
 
+
 ![tmux con 6 ventanas. Visualizando la cuarta, con índice 3.](img/tmux-v.png)
 
-Para dividir una ventana (o panel) en 2 paneles separados por una línea 
+Para dividir una ventana (o un panel) en 2 paneles separados por una línea 
 vertical en la mitad use `Control-b %` y para dividir en 2 con una línea 
 horizontal use `Control-b "`.  Pase al panel de la derecha con
 `Control-b →`, pase al panel de la izquierda con `Control-b ←`,
 al de arriba con `Control-b ↑` y al de abajo con `Control-b ↓`
 
 ![Ventana de tmux dividida en 3 paneles](img/tmux-p.png)
+
+Puede cambiar el orden de una panel mediatne Control-b { y Control-b }.
+Puede convertir un panel en una nueva venta con Control-b !
 
 
 ### Lecturas recomendadas

@@ -1,3 +1,7 @@
+Version 6.7
+
+:  - Nueva [xref](#zsh) 
+
 Version 6.6
 
 :  - Nueva [xref](#tmux) 
