@@ -1,0 +1,311 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Primeras páginas HTML</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Edición de textos"
+HREF="x760.htm"><LINK
+REL="NEXT"
+TITLE="Transferencia de información a y desde el servidor"
+HREF="x1060.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x760.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1060.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="primeras_paginas_html"
+>Primeras páginas HTML</A
+></H1
+><P
+>&#13;    Las páginas web deben ubicarse en un directorio destinado para esto
+    (el cual debe haber sido configurado por el administrador con ese
+    propósito en el servidor web), generalmente es el subdirectorio
+    <TT
+CLASS="literal"
+>public_html</TT
+> de su directorio personal (e.g
+    /home/juan/public_html). Tal directorio y sus archivos deben tener
+    permiso de lectura para todos, y el directorio debe tener permiso de
+    ejecución para todos. Puede asegurarse de esto con:
+  </P
+><PRE
+CLASS="programlisting"
+>&#13;$ cd ~
+$ chmod -R a+r public_html
+$ chmod a+x public_html
+$ chmod a+x .
+</PRE
+><P
+>&#13;    La dirección (o URL) que se emplee para ver sus páginas desde un
+    navegador depende de la forma como se haya configurado el servidor
+    web (y eventualmente el DNS). Por ejemplo para ver el archivo
+    <TT
+CLASS="literal"
+>objetivo.html</TT
+> después de que lo haya ubicado en
+    el directorio apropiado del servidor
+    <TT
+CLASS="literal"
+>practica.pasosdeJesus.org</TT
+> podría ser una
+    dirección como
+    <TT
+CLASS="literal"
+>http://practica.pasosdeJesus.org/~juan/objetivo.html</TT
+>
+    o
+    <TT
+CLASS="literal"
+>http://practica.pasosdeJesus.org/juan/objetivo.html</TT
+>
+    o si tiene un dominio ya configurado, algo como
+    <TT
+CLASS="literal"
+>http://www.midominio.org/objetivo.html</TT
+>.
+  </P
+><P
+>&#13;    Si desde un navegador emplea una dirección, pero sin especificar un
+    nombre de archivo, el servidor buscará y presentará la información
+    de un archivo por omisión. Tal archivo usualmente es
+    <TT
+CLASS="literal"
+>index.html</TT
+> o <TT
+CLASS="literal"
+>index.php</TT
+>. Así
+    por ejemplo al emplear el URL
+    <TT
+CLASS="literal"
+>http://practica.pasosdeJesus.org/~juan</TT
+> desde un
+    navegador, se presentaría la misma información del URL:
+    <TT
+CLASS="literal"
+>http://practica.pasosdeJesus.org/~juan/index.html</TT
+>.
+  </P
+><P
+>&#13;    Para ubicar las páginas web en el directorio apropiado, puede bien
+    transferirlas desde otro computador (ver
+    <A
+HREF="x1060.htm"
+>la sección de nombre <I
+>Transferencia de información a y desde el servidor</I
+></A
+>)
+    o bien crearlas directamente en el servidor (por ejemplo con el
+    editor <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>vim</B
+></SPAN
+> que de configurarse
+    apropiadamente le facilitará la edición de HTML --ver
+    <A
+HREF="x760.htm#vim"
+>la sección de nombre <I
+>vim</I
+></A
+>).
+  </P
+><P
+>&#13;    Para elaborar su primera página HTML, puede basarse en la siguiente
+    página que ejemplifica cómo cambiar estilo de letra, colores,
+    tamaño, párrafos, cambios de línea y encabezados.
+  </P
+><PRE
+CLASS="programlisting"
+>&#13;&#60;html&#62;
+    &#60;head&#62;&#60;title&#62;
+        Página de agradecimiento
+    &#60;/title&#62;&#60;/head&#62;
+
+    &#60;body bgcolor="#FFFFFF"&#62;
+        &#60;h1&#62;Página de agradecimiento&#60;/h1&#62;
+        &#60;i&#62;Gracias a nuestro Padre Creador, Todo poderoso.&#60;/i&#62;
+        Yo no he creado nada, personalmente no creo que ser humano 
+        alguno haya creado este universo, más bien los humanos 
+        hemos transformado lo que ya está creado.
+        &#60;p&#62;
+        Se que nuestra carne dura poco, le creo a mi maestro único
+        &#60;font color="red"&#62;Jesús&#60;/font&#62; y 
+        de Él entiendo que nuestros espíritus son eternos.&#60;br&#62;
+        Yo creo que nuestros espíritus fueron creados por Dios,
+        así como este universo, que Él creó como nuestra escuela,
+        para que vivamos y aprendamos con amor, respeto, humildad
+        y preparemos nuestros espíritus para la eternidad más cerca a
+        Dios. Para eso creo que nos toca hacer nuestras tareas sin
+        excusas, tareas que nos pone nuestro &#60;b&#62;Creador&#60;/b&#62; 
+        (i.e. la voluntad de Dios).   Como nuestro Padre nos regaló 
+        libertad podemos escoger por desobedecerle y no hacer nuestras 
+        tareas, pero seremos nosotros mismos los perjudicados si 
+        decidimos no aprender.  ¿Habrá mayor castigo que estar
+        lejos de Dios que es la fuente del amor, de la verdad, de la
+        justicia, del bien y de la vida?
+        &#60;p&#62;
+        Por la vida que nos ha regalado Dios, por esta
+        escuela tan linda y grande, por la oportunidad de
+        aprender, por nuestro maestro Jesús y el Espíritu
+        Santo que nos ayuda a hacer las tareas, y por tantas
+            otras maravillas le doy hoy
+        y para siempre &#60;font size="+4"&#62;gracias a Dios!&#60;/font&#62;.
+    &#60;/body&#62;
+&#60;/html&#62;
+</PRE
+><P
+>&#13;    Al abrirla con un navegador se ve algo como:
+  </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN1049"
+></A
+><P
+><B
+>Figura 22. Visualización de página HTML</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/html1.png"></P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas_recomendadas_html"
+>Lecturas recomendadas</A
+></H2
+><P
+>&#13;      Puede aprender sobre HTML por ejemplo en:
+      <A
+HREF="http://www.w3.org/MarkUp"
+TARGET="_top"
+>http://www.w3.org/MarkUp</A
+>
+    </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x760.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1060.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Edición de textos</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Transferencia de información a y desde el servidor</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

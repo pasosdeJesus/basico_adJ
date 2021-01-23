@@ -1,0 +1,497 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Formatos de archivos</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Más formas de uso de ssh"
+HREF="x1201.htm"><LINK
+REL="NEXT"
+TITLE="Correo electrónico"
+HREF="x1339.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x1201.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1339.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="formatos_de_archivos"
+>Formatos de archivos</A
+></H1
+><P
+>&#13;    La forma de emplear un archivo que copie, cree o descargue , depende
+    del formato en el que esté. El formato usualmente se identifica con
+    la extensión (i.e las últimas letras que están después de un punto).
+  </P
+><P
+></P
+><UL
+><LI
+><P
+>&#13;        <TT
+CLASS="literal"
+>.txt</TT
+> Se trata de un texto plano. Típicamente
+        estará codificado en ASCII. En DOS/Windows los textos planos
+        indican fin de línea con dos caracteres: Retorno de
+        carro<A
+NAME="AEN1275"
+HREF="#FTN.AEN1275"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+> y nueva línea<A
+NAME="AEN1278"
+HREF="#FTN.AEN1278"
+><SPAN
+CLASS="footnote"
+>[2]</SPAN
+></A
+>, mientras que en sistemas tipo Unix basta se usa
+        sólo el caracter nueva línea. Para convertir textos DOS/Windows
+        a Unix puede emplear:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;$ cp carta.txt carta.txt.bak
+$ tr -d "\r" &#60; carta.txt.bak &#62; carta.txt
+</PRE
+><P
+>&#13;        Si el texto que tiene emplea una codificación que no sea ASCII
+        (por ejemplo Unicode, UTF-8, MAC, Código de Página 850) o
+        requiere convertir de ASCII a otra codificación puede emplear el
+        programa <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>recode</B
+></SPAN
+>. Por ejemplo
+        para convertir carta.txt de ASCII a UTF-8<A
+NAME="AEN1284"
+HREF="#FTN.AEN1284"
+><SPAN
+CLASS="footnote"
+>[3]</SPAN
+></A
+>:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;recode txt..utf-8 carta.txt
+</PRE
+></LI
+><LI
+><P
+>&#13;        <TT
+CLASS="literal"
+>.gz</TT
+> Es un archivo comprimido con
+        <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>gzip</B
+></SPAN
+>. Suponiendo que fuera
+        <TT
+CLASS="literal"
+>archivo.txt.gz</TT
+> (cuya extensión sugiere un
+        texto comprimido con <TT
+CLASS="literal"
+>gzip</TT
+>), lo descomprime
+        con:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;gzip -d archivo.txt.gz
+</PRE
+><P
+>&#13;        De forma análoga para comprimir el archivo
+        nombres.<TT
+CLASS="literal"
+>sql</TT
+> puede emplear:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;gzip nombres.sql
+</PRE
+><P
+>&#13;        Nota: <TT
+CLASS="literal"
+>gzip</TT
+> no comprime archivos muy pequeños
+        (digamos 10 bytes):
+      </P
+></LI
+><LI
+><P
+>&#13;        <TT
+CLASS="literal"
+>.tar.gz</TT
+> Se trata de un archivo empaquetado
+        con la utilidad <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>tar</B
+></SPAN
+> y después
+        comprimido con el algoritmo de
+        <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>gzip</B
+></SPAN
+>. Para descomprimirlo y
+        desempaquetarlo en el directorio en el que esté trabajando:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;tar xvfz archivo.tar.gz
+</PRE
+><P
+>&#13;        Si cuenta con un archivo con extensión <TT
+CLASS="literal"
+>.tar</TT
+>
+        para desempaquetarlo basta:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;tar xvf archivo.tar
+</PRE
+><P
+>&#13;        Para empaquetar un directorio digamos ./cartas en formato tar
+        emplearía:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;tar cvf cartas.tar ./cartas
+</PRE
+><P
+>&#13;        Y si además lo desea comprimir:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;tar cvfz cartas.tar.gz ./cartas
+</PRE
+></LI
+><LI
+><P
+>&#13;        <TT
+CLASS="literal"
+>.bz2</TT
+> Se trata de uno o más archivos
+        comprimidos con <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>bzip2</B
+></SPAN
+>. Se
+        descomprime con:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;bunzip2 archivo.bz2
+</PRE
+><P
+>&#13;        Para comprimir un archivo en este formato:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;bzip2 archivo.pdf
+</PRE
+><P
+>&#13;        que creará <TT
+CLASS="literal"
+>archivo.pdf.bz2</TT
+>
+      </P
+></LI
+><LI
+><P
+>&#13;        <TT
+CLASS="literal"
+>.rar</TT
+> Se descomprime con la utilidad
+        <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>unrar</B
+></SPAN
+>, por ejemplo con:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;unrar archivo.rar
+</PRE
+></LI
+><LI
+><P
+>&#13;        <TT
+CLASS="literal"
+>.7z</TT
+> Uno o más archivos comprimidos y
+        empaquetados con <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>7-Zip</B
+></SPAN
+>.
+        Descomprime y desempaqueta por ejemplo con:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;7z x archivo.7z
+</PRE
+><P
+>&#13;        y crea un comprimido con
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;7z a /tmp/resultado.7z archivo1.pdf archivo2.pdf
+</PRE
+><P
+>&#13;        Además al comprimir puede establecerse una clave por ejemplo
+        con:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;7z a -mhe=on -pSecreta /tmp/resultado.7z archivo1.pdf archivo2.pdf
+</PRE
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas_recomendadas_formato_de_archivos"
+>Lecturas recomendadas</A
+></H2
+><P
+>&#13;      La página del manual: <TT
+CLASS="literal"
+>man tar</TT
+>
+    </P
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN1275"
+HREF="x1268.htm#AEN1275"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;            El caracter retorno de carro tiene código ASCII 13, suele
+            llamarse CR (<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Carriage Return</I
+></SPAN
+>) y
+            diversos programas y lenguajes lo denotan con ''.
+          </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN1278"
+HREF="x1268.htm#AEN1278"
+><SPAN
+CLASS="footnote"
+>[2]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;            El caracter nueva línea tiene código ASCII 10, también se
+            llama LF (<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Line Feed</I
+></SPAN
+>) y diversos
+            programas y lenguajes lo denotan con ''.
+          </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN1284"
+HREF="x1268.htm#AEN1284"
+><SPAN
+CLASS="footnote"
+>[3]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;            UTF-8 es una de las posibles formas de codificar Unicode en
+            ASCII. Los caracteres Unicode con un ASCII equivalente con
+            código menor de 127 tienen la misma representación en UTF-8.
+            Otros caracteres Unicode emplean una secuencia de dos o más
+            caracteres ASCII para su codificación.
+          </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x1201.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1339.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Más formas de uso de ssh</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Correo electrónico</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
