@@ -65,30 +65,32 @@ programas o bien ordenes del intérprete de ordenes. Los programas por
 ejecutar se especifican dando la ruta completa de su ubicación en el sistema 
 de archivos, o en caso de no dar ruta se buscan en orden en los directorios 
 especificados en la variable de entorno `PATH`. Por ejemplo si teclea:
-```
-$ banner Jesus
-```
-El intérprete de ordenes identifica que está intentando ejecutar ```banner``` 
+
+        $ banner Jesus
+
+El intérprete de ordenes identifica que está intentando ejecutar `banner` 
 (para presentar en grande una cadena) y que le pasa como primer parámetro Jesus.
-Como ```banner``` no es una orden interno del intérprete de ordenes busca un 
+Como `banner` no es una orden interno del intérprete de ordenes busca un 
 archivo con permiso de ejecución en las rutas indicadas en la variable 
-```PATH```, si el valor de tal variable fuera 
-```/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin``` 
-el intérprete de ordenes buscaría primero en ```/bin```, después en
-```/usr/X11R6/bin``` y así sucesivamente para encontrarlo en ```/usr/bin```. 
+`PATH`, si el valor de tal variable fuera 
+
+        PATH=/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin
+
+el intérprete de ordenes buscaría primero en `/bin`, después en
+`/usr/X11R6/bin` y así sucesivamente para encontrarlo en `/usr/bin`. 
 Entonces pasaría el control a un programa del sistema operativo que se encarga 
 de cargar y ejecutar el programa pasándole los parámetros que reciba 
-(tal programa es ```/usr/libexec/ld.so```). El ejemplo anterior es equivalente 
-a
-```
-$ /usr/bin/banner Jesus
-```
-puede verificar que ```banner``` es un programa ubicado en el directorio 
-```/usr/bin``` con:
-```
-$ ls -l /usr/bin/b*
-```
-que mostrará todos los archivos de ese directorio que comiencen con la letra b.
+(tal programa es `/usr/libexec/ld.so`). El ejemplo anterior es equivalente a
+
+        $ /usr/bin/banner Jesus
+
+puede verificar que `banner` es un programa ubicado en el 
+directorio `/usr/bin` con:
+
+        $ ls -l /usr/bin/b*
+
+que mostrará todos los archivos de ese directorio que comiencen con la 
+letra `b`.
 
 #### Variables de ambiente {#variables_de_ambiente}
 
@@ -252,8 +254,8 @@ una lista de correo, está disponible en
 
 ### Uso de zsh como interprete de ordenes {#zsh}
 
-zsh se instala por omisión desde adJ 6.7. Puede verificar que
-ya está instalado en su adJ con:
+El paquete `zsh` se instala de manera predeterminada en adJ. 
+Puede verificar que ya está instalado en su adJ con:
 
       zsh
 
@@ -269,7 +271,7 @@ que sea `zsh` con:
 
       csh -s /usr/local/bin/zsh
 
-En el primer ingreso zsh le permitirá configurarlo mediante menús.
+En el primer ingreso `zsh` le permitirá configurarlo mediante menús.
 
 Aunque usted también puede manejar la configuración de zsh poniendo unos 
 archivos de configuración que recomendamos (ver
@@ -280,22 +282,40 @@ Como se indica en la página del manual `zshroadmap`:
 Para la interacción con el usuario zsh utiliza el Editor de Líneas de Zsh ZLE,
 que le permitirá entre otras:
 
-1. Cambiar el modo de uso del teclado. El modo emacs
-   es más simple si no conoce vi, se puede elegir con `bindkey -e` (y el modo
-   vi se elije con `bindkey -v`)
+1. Cambiar el modo de uso del teclado. El modo `emacs`
+   es más simple si no conoce `vi`, se puede elegir con `bindkey -e` (y el modo
+   `vi` se elije con `bindkey -v`)
 2. Contar con un historial de las ordenes que ha dado que puede navegar con 
    flecha arriba y flecha abajo
 3. Completar automáticamente palabras cundo usted digita parte de la misma
-   y presiona TAB. zsh tiene un sistema programable de completación en el 
+   y presiona TAB. `zsh` tiene un sistema programable de completación en el 
    que practicamente cualquier cosa puede ser fuente de completación 
    dependiendo del contexto.
-4. Programar `zsh` y ya incluye muchas funciones útiles contribuidas por
+4. Programar `zsh`.  Ya incluye muchas funciones útiles contribuidas por
    usuarios, las cuales puede revisar en el directorio  
   `/usr/local/share/zsh/5.8/functions/Misc/`, no deje de 
    probar `. /usr/local/share/zsh/5.8/functions/Misc/tetriscurses`
 
+Como se explican en {KENLON2019} al expandir rutas, el comodín `*` puede
+actuar como buscador (labor que tipicamente puede hacerse con `find` 
+pero de manera más verbosa).  Veamos ejemplos:
+
+* `ls *(/)` listar carpetas del directorio actual y su contenido.
+* `ls *(.)` listar archivos (que no son carpetas) del directorio actual.
+* `ls *(@)` listar enlaces del directorio actual
+* `ls /var/www/bundler/ruby/3.0/bin/*(*)` listar ejecutables del directorio
+  `/var/www/bundler/ruby/3.0/bin/`
+* `ls math/**/Makefile` busca archivos de nombre `Makefile` recursivamente
+   dentro del directorio `math` y sus subdirectorios.
+* `ls -lat ~/Downloads/*(mh-8)`  presenta archivos del directorio 
+  `~/Downloads` modificados en las últimas  8 horas.
+* `ls -lat ~/Downloads/*(md+30)` presenta archivos del directorio 
+  `~/Downloads` modificados por última vez hace más de 30 días (podría
+  valer la pena eliminarlos).
 
 
 #### Lecturas recomendadas
 * Páginas del manual de zsh.
 * https://grml.org/zsh/zsh-lovers.pdf
+* {KENLON2019} Seth Kenlon. Getting started with Zsh.
+  <https://opensource.com/article/19/9/getting-started-zsh>. 2019.
