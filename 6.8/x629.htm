@@ -12,7 +12,7 @@ REL="PREVIOUS"
 HREF="t1.htm"><LINK
 REL="NEXT"
 TITLE="Edición de textos"
-HREF="x762.htm"></HEAD
+HREF="x801.htm"></HEAD
 ><BODY
 CLASS="section"
 BGCOLOR="#FFFFFF"
@@ -54,7 +54,7 @@ WIDTH="10%"
 ALIGN="right"
 VALIGN="bottom"
 ><A
-HREF="x762.htm"
+HREF="x801.htm"
 ACCESSKEY="N"
 >Siguiente</A
 ></TD
@@ -598,8 +598,12 @@ NAME="AEN723"
 >Uso de zsh como interprete de ordenes</A
 ></H2
 ><P
->&#13;      zsh se instala por omisión desde adJ 6.7. Puede verificar que ya
-      está instalado en su adJ con:
+>&#13;      El paquete <TT
+CLASS="literal"
+>zsh</TT
+> se instala de manera
+      predeterminada en adJ. Puede verificar que ya está instalado en su
+      adJ con:
     </P
 ><PRE
 CLASS="programlisting"
@@ -632,7 +636,11 @@ CLASS="programlisting"
 >&#13;  csh -s /usr/local/bin/zsh
 </PRE
 ><P
->&#13;      En el primer ingreso zsh le permitirá configurarlo mediante menús.
+>&#13;      En el primer ingreso <TT
+CLASS="literal"
+>zsh</TT
+> le permitirá
+      configurarlo mediante menús.
     </P
 ><P
 >&#13;      Aunque usted también puede manejar la configuración de zsh
@@ -661,13 +669,23 @@ COMPACT="COMPACT"
 TYPE="1"
 ><LI
 ><P
->&#13;          Cambiar el modo de uso del teclado. El modo emacs es más
-          simple si no conoce vi, se puede elegir con
+>&#13;          Cambiar el modo de uso del teclado. El modo
+          <TT
+CLASS="literal"
+>emacs</TT
+> es más simple si no conoce
+          <TT
+CLASS="literal"
+>vi</TT
+>, se puede elegir con
           <TT
 CLASS="literal"
 >bindkey -e</TT
-> (y el modo vi se elije con
-          <TT
+> (y el modo <TT
+CLASS="literal"
+>vi</TT
+>
+          se elije con <TT
 CLASS="literal"
 >bindkey -v</TT
 >)
@@ -682,9 +700,13 @@ CLASS="literal"
 ><LI
 ><P
 >&#13;          Completar automáticamente palabras cundo usted digita parte de
-          la misma y presiona TAB. zsh tiene un sistema programable de
-          completación en el que practicamente cualquier cosa puede ser
-          fuente de completación dependiendo del contexto.
+          la misma y presiona TAB. <TT
+CLASS="literal"
+>zsh</TT
+> tiene un
+          sistema programable de completación en el que practicamente
+          cualquier cosa puede ser fuente de completación dependiendo
+          del contexto.
         </P
 ></LI
 ><LI
@@ -693,7 +715,7 @@ CLASS="literallayout"
 >Programar&nbsp;<TT
 CLASS="literal"
 >zsh</TT
->&nbsp;y&nbsp;ya&nbsp;incluye&nbsp;muchas&nbsp;funciones&nbsp;útiles&nbsp;contribuidas&nbsp;por&nbsp;usuarios,&nbsp;las&nbsp;cuales&nbsp;puede&nbsp;revisar&nbsp;en&nbsp;el&nbsp;directorio<br>
+>.&nbsp;Ya&nbsp;incluye&nbsp;muchas&nbsp;funciones&nbsp;útiles&nbsp;contribuidas&nbsp;por&nbsp;usuarios,&nbsp;las&nbsp;cuales&nbsp;puede&nbsp;revisar&nbsp;en&nbsp;el&nbsp;directorio<br>
 <TT
 CLASS="literal"
 >/usr/local/share/zsh/5.8/functions/Misc/</TT
@@ -703,12 +725,112 @@ CLASS="literal"
 ></P
 ></LI
 ></OL
+><P
+>&#13;      Como se explican en {KENLON2019} al expandir rutas, el comodín
+      <TT
+CLASS="literal"
+>*</TT
+> puede actuar como buscador (labor que
+      tipicamente puede hacerse con <TT
+CLASS="literal"
+>find</TT
+> pero de
+      manera más verbosa). Veamos ejemplos:
+    </P
+><P
+></P
+><UL
+COMPACT="COMPACT"
+><LI
+><P
+>&#13;          <TT
+CLASS="literal"
+>ls *(/)</TT
+> listar carpetas del directorio
+          actual y su contenido.
+        </P
+></LI
+><LI
+><P
+>&#13;          <TT
+CLASS="literal"
+>ls *(.)</TT
+> listar archivos (que no son
+          carpetas) del directorio actual.
+        </P
+></LI
+><LI
+><P
+>&#13;          <TT
+CLASS="literal"
+>ls *(@)</TT
+> listar enlaces del directorio
+          actual
+        </P
+></LI
+><LI
+><P
+>&#13;          <TT
+CLASS="literal"
+>ls /var/www/bundler/ruby/3.0/bin/*(*)</TT
+>
+          listar ejecutables del directorio
+          <TT
+CLASS="literal"
+>/var/www/bundler/ruby/3.0/bin/</TT
+>
+        </P
+></LI
+><LI
+><P
+>&#13;          <TT
+CLASS="literal"
+>ls math/**/Makefile</TT
+> busca archivos de
+          nombre <TT
+CLASS="literal"
+>Makefile</TT
+> recursivamente dentro del
+          directorio <TT
+CLASS="literal"
+>math</TT
+> y sus subdirectorios.
+        </P
+></LI
+><LI
+><P
+>&#13;          <TT
+CLASS="literal"
+>ls -lat ~/Downloads/*(mh-8)</TT
+> presenta
+          archivos del directorio <TT
+CLASS="literal"
+>~/Downloads</TT
+>
+          modificados en las últimas 8 horas.
+        </P
+></LI
+><LI
+><P
+>&#13;          <TT
+CLASS="literal"
+>ls -lat ~/Downloads/*(md+30)</TT
+> presenta
+          archivos del directorio <TT
+CLASS="literal"
+>~/Downloads</TT
+>
+          modificados por última vez hace más de 30 días (podría valer
+          la pena eliminarlos).
+        </P
+></LI
+></UL
 ><DIV
 CLASS="section"
 ><H3
 CLASS="section"
 ><A
-NAME="AEN755"
+NAME="AEN791"
 >Lecturas recomendadas</A
 ></H3
 ><P
@@ -723,6 +845,13 @@ COMPACT="COMPACT"
 ><LI
 ><P
 >&#13;            https://grml.org/zsh/zsh-lovers.pdf
+          </P
+></LI
+><LI
+><P
+>&#13;            {KENLON2019} Seth Kenlon. Getting started with Zsh.
+            https://opensource.com/article/19/9/getting-started-zsh.
+            2019.
           </P
 ></LI
 ></UL
@@ -763,7 +892,7 @@ WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
 ><A
-HREF="x762.htm"
+HREF="x801.htm"
 ACCESSKEY="N"
 >Siguiente</A
 ></TD

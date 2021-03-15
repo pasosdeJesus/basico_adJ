@@ -1,11 +1,11 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2. Personalización</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="uso_de_medios_de_almacenamiento.html" title="4. Uso de medios de almacenamiento"><link rel="next" href="edicion_de_textos.html" title="5. Edición de textos"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Personalización</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="uso_de_medios_de_almacenamiento.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="edicion_de_textos.html">Siguiente</a></td></tr></table><hr></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idm2788379648"></a>2. Personalización</h2></div></div></div><p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2. Personalización</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="uso_de_medios_de_almacenamiento.html" title="4. Uso de medios de almacenamiento"><link rel="next" href="edicion_de_textos.html" title="5. Edición de textos"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Personalización</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="uso_de_medios_de_almacenamiento.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="edicion_de_textos.html">Siguiente</a></td></tr></table><hr></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idm2434669440"></a>2. Personalización</h2></div></div></div><p>
     Como usuario puede personalizar diversos aspectos de su interacción
     con el sistema completo y con cada programa (como
     <span class="strong"><strong>fluxbox, xfe</strong></span> y el interprete de
     ordenes). En esta sección presentamos la personalización del locale
     y algunas formas de personalizar el interprete de ordenes
     <span class="strong"><strong>ksh</strong></span>.
-  </p><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp619923584"></a>2.1. Locale</h3></div></div></div><p>
+  </p><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm2434669696"></a>2.1. Locale</h3></div></div></div><p>
       Un locale define una codificación y formas de presentar
       información típicas de una región geográfica (números, valores
       monetarios, fechas, horas, idioma y cotejación u ordenamiento
@@ -57,14 +57,14 @@ export LANG=es_CO.UTF-8
         </p></li><li><p>
           También la forma de presentar fecha y hora se ve afectada por
           el locale así como por la zona horaria.
-        </p></li></ul></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm2756575360"></a>2.2. Personalización del interprete de ordenes ksh</h3></div></div></div><p>
+        </p></li></ul></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm920565888"></a>2.2. Personalización del interprete de ordenes ksh</h3></div></div></div><p>
       Es función del intérprete de ordenes recibir ordenes que el
       usuario ingrese por el teclado (o en general por entrada estándar)
       y ejecutar los programas apropiados. Dada la importancia y
       frecuencia de esta labor, los interpretes de ordenes (y en
       particular <code class="literal">/bin/ksh</code>) suelen ser altamente
       personalizables a los gustos de cada usuario.
-    </p><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm169782784"></a>2.2.1. Ejecución de Programas</h4></div></div></div><p>
+    </p><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm1525955328"></a>2.2.1. Ejecución de Programas</h4></div></div></div><p>
         Desde un intérprete de ordenes un usuario puede teclear bien
         nombres de programas o bien ordenes del intérprete de ordenes.
         Los programas por ejecutar se especifican dando la ruta completa
@@ -238,9 +238,10 @@ Puede ver detalles de las variables de ambiente empleadas por ksh con
         respuesta de Steve Jones en una lista de correo, está disponible
         en
         <a href="">http://mailman.theapt.org/pipermail/openbsd-newbies/2004-April/001806.html</a>.
-      </p></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm448776960"></a>2.3. Uso de zsh como interprete de ordenes</h3></div></div></div><p>
-      zsh se instala por omisión desde adJ 6.7. Puede verificar que ya
-      está instalado en su adJ con:
+      </p></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm1397287680"></a>2.3. Uso de zsh como interprete de ordenes</h3></div></div></div><p>
+      El paquete <code class="literal">zsh</code> se instala de manera
+      predeterminada en adJ. Puede verificar que ya está instalado en su
+      adJ con:
     </p><pre class="programlisting">
   zsh
 </pre><p>
@@ -257,7 +258,8 @@ Puede ver detalles de las variables de ambiente empleadas por ksh con
     </p><pre class="programlisting">
   csh -s /usr/local/bin/zsh
 </pre><p>
-      En el primer ingreso zsh le permitirá configurarlo mediante menús.
+      En el primer ingreso <code class="literal">zsh</code> le permitirá
+      configurarlo mediante menús.
     </p><p>
       Aunque usted también puede manejar la configuración de zsh
       poniendo unos archivos de configuración que recomendamos (ver
@@ -270,21 +272,58 @@ Puede ver detalles de las variables de ambiente empleadas por ksh con
       Para la interacción con el usuario zsh utiliza el Editor de Líneas
       de Zsh ZLE, que le permitirá entre otras:
     </p><div class="orderedlist"><ol type="1" compact><li><p>
-          Cambiar el modo de uso del teclado. El modo emacs es más
-          simple si no conoce vi, se puede elegir con
-          <code class="literal">bindkey -e</code> (y el modo vi se elije con
-          <code class="literal">bindkey -v</code>)
+          Cambiar el modo de uso del teclado. El modo
+          <code class="literal">emacs</code> es más simple si no conoce
+          <code class="literal">vi</code>, se puede elegir con
+          <code class="literal">bindkey -e</code> (y el modo <code class="literal">vi</code>
+          se elije con <code class="literal">bindkey -v</code>)
         </p></li><li><p>
           Contar con un historial de las ordenes que ha dado que puede
           navegar con flecha arriba y flecha abajo
         </p></li><li><p>
           Completar automáticamente palabras cundo usted digita parte de
-          la misma y presiona TAB. zsh tiene un sistema programable de
-          completación en el que practicamente cualquier cosa puede ser
-          fuente de completación dependiendo del contexto.
-        </p></li><li><div class="literallayout"><p>Programar <code class="literal">zsh</code> y ya incluye muchas funciones útiles contribuidas por usuarios, las cuales puede revisar en el directorio<br>
-<code class="literal">/usr/local/share/zsh/5.8/functions/Misc/</code>, no deje de probar <code class="literal">. /usr/local/share/zsh/5.8/functions/Misc/tetriscurses</code></p></div></li></ol></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2977206144"></a>2.3.1. Lecturas recomendadas</h4></div></div></div><div class="itemizedlist"><ul type="disc" compact><li><p>
+          la misma y presiona TAB. <code class="literal">zsh</code> tiene un
+          sistema programable de completación en el que practicamente
+          cualquier cosa puede ser fuente de completación dependiendo
+          del contexto.
+        </p></li><li><div class="literallayout"><p>Programar <code class="literal">zsh</code>. Ya incluye muchas funciones útiles contribuidas por usuarios, las cuales puede revisar en el directorio<br>
+<code class="literal">/usr/local/share/zsh/5.8/functions/Misc/</code>, no deje de probar <code class="literal">. /usr/local/share/zsh/5.8/functions/Misc/tetriscurses</code></p></div></li></ol></div><p>
+      Como se explican en {KENLON2019} al expandir rutas, el comodín
+      <code class="literal">*</code> puede actuar como buscador (labor que
+      tipicamente puede hacerse con <code class="literal">find</code> pero de
+      manera más verbosa). Veamos ejemplos:
+    </p><div class="itemizedlist"><ul type="disc" compact><li><p>
+          <code class="literal">ls *(/)</code> listar carpetas del directorio
+          actual y su contenido.
+        </p></li><li><p>
+          <code class="literal">ls *(.)</code> listar archivos (que no son
+          carpetas) del directorio actual.
+        </p></li><li><p>
+          <code class="literal">ls *(@)</code> listar enlaces del directorio
+          actual
+        </p></li><li><p>
+          <code class="literal">ls /var/www/bundler/ruby/3.0/bin/*(*)</code>
+          listar ejecutables del directorio
+          <code class="literal">/var/www/bundler/ruby/3.0/bin/</code>
+        </p></li><li><p>
+          <code class="literal">ls math/**/Makefile</code> busca archivos de
+          nombre <code class="literal">Makefile</code> recursivamente dentro del
+          directorio <code class="literal">math</code> y sus subdirectorios.
+        </p></li><li><p>
+          <code class="literal">ls -lat ~/Downloads/*(mh-8)</code> presenta
+          archivos del directorio <code class="literal">~/Downloads</code>
+          modificados en las últimas 8 horas.
+        </p></li><li><p>
+          <code class="literal">ls -lat ~/Downloads/*(md+30)</code> presenta
+          archivos del directorio <code class="literal">~/Downloads</code>
+          modificados por última vez hace más de 30 días (podría valer
+          la pena eliminarlos).
+        </p></li></ul></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm788474880"></a>2.3.1. Lecturas recomendadas</h4></div></div></div><div class="itemizedlist"><ul type="disc" compact><li><p>
             Páginas del manual de zsh.
           </p></li><li><p>
             https://grml.org/zsh/zsh-lovers.pdf
+          </p></li><li><p>
+            {KENLON2019} Seth Kenlon. Getting started with Zsh.
+            <a href="">https://opensource.com/article/19/9/getting-started-zsh</a>.
+            2019.
           </p></li></ul></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="uso_de_medios_de_almacenamiento.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="edicion_de_textos.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">4. Uso de medios de almacenamiento </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 5. Edición de textos</td></tr></table></div></body></html>
