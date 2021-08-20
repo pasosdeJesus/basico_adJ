@@ -1,10 +1,10 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>3. Conceptos básicos</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="ar01s02.html" title="2. Primer uso de adJ"><link rel="next" href="ar01s04.html" title="4. Soporte"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Conceptos básicos</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s02.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s04.html">Siguiente</a></td></tr></table><hr></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idp511745520"></a>3. Conceptos básicos</h2></div></div></div><p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>3. Conceptos básicos</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="ar01s02.html" title="2. Primer uso de adJ"><link rel="next" href="ar01s04.html" title="4. Soporte"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Conceptos básicos</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s02.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s04.html">Siguiente</a></td></tr></table><hr></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idp792752496"></a>3. Conceptos básicos</h2></div></div></div><p>
     Los conceptos y herramientas presentados desde esta sección se
     asimilan mejor practicando. Procure ejercitarlos desde un interprete
     de órdenes, bien operando directamente un sistema adJ o bien
     ingresando remotamente desde otro sistema como se explica en
     <a href="ar01s02.html" title="2. Primer uso de adJ">Sección 2, “Primer uso de adJ”</a>.
-  </p><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp511781616"></a>3.1. Definiciones iniciales</h3></div></div></div><p>
+  </p><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp792627056"></a>3.1. Definiciones iniciales</h3></div></div></div><p>
       Un <span class="emphasis"><em>archivo</em></span> es información delimitada y con
       atributos que ayudan a identificarla como nombre, fecha de
       creación y ubicación. Se ubica en alguna ruta o sitio del sistema
@@ -21,7 +21,7 @@
       Document Format (lo sugieren las últimas letras
       <code class="literal">.odt</code>). Para verla o modificarla debe usarse un
       programa que entienda ese formato, uno entre otros es LibreOffice.
-    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp511709680"></a>3.2. Intérprete de órdenes</h3></div></div></div><p>
+    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp792750576"></a>3.2. Intérprete de órdenes</h3></div></div></div><p>
       El intérprete de órdenes le permite usar varias órdenes internas,
       así como ejecutar programas. Es común que las órdenes o programas
       requieran algo de información como suministro (i.e parámetros o
@@ -75,7 +75,7 @@
         </p></li></ul></div><p>
       Después revise en detalle la ayuda de la orden man e intente con
       otros parámetros y opciones.
-    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp511803248"></a>3.3. Sistema de Archivos</h3></div></div></div><p>
+    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp792684784"></a>3.3. Sistema de Archivos</h3></div></div></div><p>
       En Unix la información se organiza en archivos dentro de
       directorios del sistema de archivos. El directorio inicial o raíz
       se denota por <code class="literal">/</code>, los nombres de archivos o
@@ -88,7 +88,7 @@
       directorio que llamamos <span class="emphasis"><em>directorio personal</em></span>
       cuya ruta normalmente es de la forma
       <code class="literal">/home/juan</code>.
-    </p><div class="figure"><a name="idp511657968"></a><p class="title"><b>Figura 15. Sistema de archivos</b></p><div class="mediaobject"><img src="img/arbol-archivos.png" alt="Sistema de archivos"></div></div><p>
+    </p><div class="figure"><a name="idp792723568"></a><p class="title"><b>Figura 15. Sistema de archivos</b></p><div class="mediaobject"><img src="img/arbol-archivos.png" alt="Sistema de archivos"></div></div><p>
       El intérprete de órdenes que emplee tendrá como parte de su estado
       un directorio de trabajo, un símbolo de espera de órdenes y
       variables de entorno. La manera de ver y alterar estos datos
@@ -169,7 +169,7 @@ cp -r traido/* public_html/
             El programa <code class="literal">mv</code> moverá (o en este caso
             renombra) el archivo
             <code class="literal">traido/juan.htm a traido/pedro.html</code>.
-          </p></dd></dl></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp511672304"></a>3.4. tmux</h3></div></div></div><p>
+          </p></dd></dl></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp792620656"></a>3.4. tmux</h3></div></div></div><p>
       Para operar desde la terminal con más versatilidad es muy útil
       <code class="literal">tmux</code> que introduce conceptos de sesiones,
       ventanas y paneles que permiten operar muy efectivamente.
@@ -206,7 +206,7 @@ cp -r traido/* public_html/
       abiertas (una con <code class="literal">[0]</code> y la otra con
       <code class="literal">[1]</code>). Pase a la segunda ventana (con índice 1)
       con Control-b 1 y a la primera con Control-b 0.
-    </p><div class="figure"><a name="idp511591664"></a><p class="title"><b>Figura 16. tmux con 6 ventanas. Visualizando la cuarta, con índice
+    </p><div class="figure"><a name="idp792795248"></a><p class="title"><b>Figura 16. tmux con 6 ventanas. Visualizando la cuarta, con índice
       3.</b></p><div class="mediaobject"><img src="img/tmux-v.png" alt="tmux con 6 ventanas. Visualizando la cuarta,
         con índice 3."></div></div><p>
       Para dividir una ventana (o un panel) en 2 paneles separados por
@@ -217,12 +217,12 @@ cp -r traido/* public_html/
       con <code class="literal">Control-b ←</code>, al de arriba con
       <code class="literal">Control-b ↑</code> y al de abajo con
       <code class="literal">Control-b ↓</code>
-    </p><div class="figure"><a name="idp511647344"></a><p class="title"><b>Figura 17. Ventana de tmux dividida en 3 paneles</b></p><div class="mediaobject"><img src="img/tmux-p.png" alt="Ventana de tmux dividida en 3
+    </p><div class="figure"><a name="idp792675440"></a><p class="title"><b>Figura 17. Ventana de tmux dividida en 3 paneles</b></p><div class="mediaobject"><img src="img/tmux-p.png" alt="Ventana de tmux dividida en 3
         paneles"></div></div><p>
       Puede cambiar el orden de una panel mediatne Control-b { y
       Control-b }. Puede convertir un panel en una nueva venta con
       Control-b !
-    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp511779056"></a>3.5. Lecturas recomendadas</h3></div></div></div><p>
+    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp792691056"></a>3.5. Lecturas recomendadas</h3></div></div></div><p>
       Páginas <code class="literal">man</code> de las órdenes /programas
       introducidos en este capítulo. Se han tomado porciones de la
       sección “<span class="quote">telnet y ssh</span>” de

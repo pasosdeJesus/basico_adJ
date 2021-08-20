@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>5. Uso de medios de almacenamiento</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="ar01s04.html" title="4. Soporte"><link rel="next" href="ar01s06.html" title="6. Personalización"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5. Uso de medios de almacenamiento</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s04.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s06.html">Siguiente</a></td></tr></table><hr></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idp958939376"></a>5. Uso de medios de almacenamiento</h2></div></div></div><p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>5. Uso de medios de almacenamiento</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="ar01s04.html" title="4. Soporte"><link rel="next" href="ar01s06.html" title="6. Personalización"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5. Uso de medios de almacenamiento</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s04.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s06.html">Siguiente</a></td></tr></table><hr></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idm118025232"></a>5. Uso de medios de almacenamiento</h2></div></div></div><p>
     En <a href="ar01s03.html" title="3. Conceptos básicos">Sección 3, “Conceptos básicos”</a> se definió archivo
     y sistema de archivos de manera general, en esta sección se aplican
     esos conceptos para utilizar USB y CD-ROM. En sistemas tipo Unix
@@ -9,12 +9,12 @@
     <code class="literal">/mnt/cdrom</code> respectivamente. Ni el montaje, ni el
     desmontaje se realizan automáticamente, sino por orden expresa del
     usuario.
-  </p><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp958937328"></a>5.1. Montaje y desmontaje en entorno gráfico</h3></div></div></div><p>
+  </p><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm118193552"></a>5.1. Montaje y desmontaje en entorno gráfico</h3></div></div></div><p>
       Para montar una unidad de USB debe bastar desde el menú de fluxbox
       (botón derecho del ratón sobre el escritorio) elegir
       Dispositivo-&gt;Montar USB (se emplea el análogo para montar un
       CD-ROM).
-    </p><div class="figure"><a name="idp958825840"></a><p class="title"><b>Figura 18. Menú Dispositivo-&gt;Montar USB</b></p><div class="mediaobject"><img src="img/montar.png" alt="Menú Dispositivo-&gt;Montar
+    </p><div class="figure"><a name="idm118192656"></a><p class="title"><b>Figura 18. Menú Dispositivo-&gt;Montar USB</b></p><div class="mediaobject"><img src="img/montar.png" alt="Menú Dispositivo-&gt;Montar
         USB"></div></div><div class="literallayout"><p>Una vez lo haga podrá ver el manejador de archivos <code class="literal">xfe</code> ubicado en el directorio donde queda montado el medio.<br>
 <span class="inlinemediaobject"><img src="img/xfecdrom.png"></span></p></div><p>
       Al montar estos medios, el dueño es el usuario administrador que
@@ -22,7 +22,7 @@
       los medios y en el caso de USB es quien podrá escribir. Una vez
       termine de emplear el medio de almacenamiento desmóntelo también
       desde el menú de fluxbox Dispositivo-&gt;Desmontar USB
-    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp958910704"></a>5.2. Montaje y desmontaje desde intérprete de órdenes</h3></div></div></div><p>
+    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm118195600"></a>5.2. Montaje y desmontaje desde intérprete de órdenes</h3></div></div></div><p>
       Para montar la USB debe bastar ejecutar desde una terminal:
     </p><pre class="programlisting">
 doas mount /mnt/usb
@@ -36,7 +36,7 @@ doas umount /mnt/usb
       y para desmontar un CD-ROM:
     </p><pre class="programlisting">
 doas umount /mnt/cdrom
-</pre></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp958909680"></a>5.3. Administrador de archivos Xfe</h3></div></div></div><p>
+</pre></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm118194448"></a>5.3. Administrador de archivos Xfe</h3></div></div></div><p>
       Con este sencillo programa podrá administrar archivos y
       directorios, es decir crear, copiar, renombrar, crear enlaces,
       cambiar permisos e incluso hacer estas operaciones como
@@ -55,7 +55,7 @@ doas umount /mnt/cdrom
           menú Editar/Preferencias/Tipo de letra
         </p></li><li><p>
           Incluye las siguientes aplicaciones: Editor de texto (X File
-          Write, xfw, ver <a href="ar01s07.html#idm2398725136" title="7.1. Editor xfw">Sección 7.1, “Editor xfw”</a>), Visor
+          Write, xfw, ver <a href="ar01s07.html#idm343671952" title="7.1. Editor xfw">Sección 7.1, “Editor xfw”</a>), Visor
           de texto (X File View, xfv), Visor de imágenes (X File Image,
           xfi), Visor/Instalador/Desinstalador de paquetes (rpm o deb)
           (X File Package, xfp).
@@ -101,7 +101,7 @@ el menú Herramientas-&gt;Ventana superusuario nueva.
           menú contextual sobre los elementos seleccionados. En los
           paneles <span class="strong"><strong>Ctrl +</strong></span> pulsación
           derecha abrirá un menú contextual con otras operaciones.
-        </p></li></ul></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idp958883440"></a>5.3.1. Atajos de teclado predeterminados</h4></div></div></div><p>
+        </p></li></ul></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm118118800"></a>5.3.1. Atajos de teclado predeterminados</h4></div></div></div><p>
         Los atajos de teclado pueden personalizarse en el cuadro de
         diálogo Preferencias. Los predeterminados para todas la
         aplicaciones integradas se listan a continuación (vea otros
@@ -178,7 +178,7 @@ el menú Herramientas-&gt;Ventana superusuario nueva.
           </p></li><li><p>
             <span class="strong"><strong>Mayúscula-Retroceso</strong></span>: Ir
             al directorio siguiente
-          </p></li></ul></div></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp958845808"></a>5.4. Particiones cifradas</h3></div></div></div><p>
+          </p></li></ul></div></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm118207376"></a>5.4. Particiones cifradas</h3></div></div></div><p>
       adJ soporta de manera predeterminada 2 particiones cifradas que se
       montan en <code class="literal">/var/postgresql</code> y
       <code class="literal">/var/www/resbase</code>. La clave de cifrado debe
@@ -245,6 +245,6 @@ doas xfe
 doas mount /mnt/usb 
 </pre><pre class="programlisting">
 doas cp /mnt/usb/fuentes.txt /var/www/resbase 
-</pre></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp958973296"></a>5.5. Lecturas recomendadas</h3></div></div></div><p>
+</pre></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm118046352"></a>5.5. Lecturas recomendadas</h3></div></div></div><p>
       Páginas del manual mount (8) y umount (8)
     </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s04.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s06.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">4. Soporte </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 6. Personalización</td></tr></table></div></body></html>

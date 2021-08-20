@@ -1,11 +1,11 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>6. Personalización</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="ar01s05.html" title="5. Uso de medios de almacenamiento"><link rel="next" href="ar01s07.html" title="7. Edición de textos"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">6. Personalización</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s05.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s07.html">Siguiente</a></td></tr></table><hr></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idp958918896"></a>6. Personalización</h2></div></div></div><p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>6. Personalización</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="ar01s05.html" title="5. Uso de medios de almacenamiento"><link rel="next" href="ar01s07.html" title="7. Edición de textos"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">6. Personalización</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s05.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s07.html">Siguiente</a></td></tr></table><hr></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idm2709740688"></a>6. Personalización</h2></div></div></div><p>
     Como usuario puede personalizar diversos aspectos de su interacción
     con el sistema completo y con cada programa (como
     <span class="strong"><strong>fluxbox, xfe</strong></span> y el interprete de
     órdenes). En esta sección presentamos la personalización del locale
     y algunas formas de personalizar el interprete de órdenes
     <span class="strong"><strong>ksh</strong></span>.
-  </p><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp958864112"></a>6.1. Locale</h3></div></div></div><p>
+  </p><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm2709715088"></a>6.1. Locale</h3></div></div></div><p>
       Un locale define una codificación y formas de presentar
       información típicas de una región geográfica (números, valores
       monetarios, fechas, horas, idioma y cotejación u ordenamiento
@@ -57,14 +57,14 @@ export LANG=es_CO.UTF-8
         </p></li><li><p>
           También la forma de presentar fecha y hora se ve afectada por
           el locale así como por la zona horaria.
-        </p></li></ul></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm2368602000"></a>6.2. Personalización del interprete de órdenes ksh</h3></div></div></div><p>
+        </p></li></ul></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm2709882256"></a>6.2. Personalización del interprete de órdenes ksh</h3></div></div></div><p>
       Es función del intérprete de órdenes recibir órdenes que el
       usuario ingrese por el teclado (o en general por entrada estándar)
       y ejecutar los programas apropiados. Dada la importancia y
       frecuencia de esta labor, los interpretes de órdenes (y en
       particular <code class="literal">/bin/ksh</code>) suelen ser altamente
       personalizables a los gustos de cada usuario.
-    </p><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2368756240"></a>6.2.1. Ejecución de Programas</h4></div></div></div><p>
+    </p><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2709742736"></a>6.2.1. Ejecución de Programas</h4></div></div></div><p>
         Desde un intérprete de órdenes un usuario puede teclear bien
         nombres de programas o bien órdenes del intérprete de órdenes.
         Los programas por ejecutar se especifican dando la ruta completa
@@ -103,7 +103,7 @@ export LANG=es_CO.UTF-8
 </pre><p>
         que mostrará todos los archivos de ese directorio que comiencen
         con la letra <code class="literal">b</code>.
-      </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2368601104"></a>6.2.2. Variables de ambiente</h4></div></div></div><p>
+      </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2709888400"></a>6.2.2. Variables de ambiente</h4></div></div></div><p>
         Puede personalizar algunos detalles del intérprete de órdenes o
         de algunos programas empleando variables de ambiente. Las
         variables de ambiente son palabras que tienen asociadas un
@@ -121,7 +121,7 @@ export PATH=/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/loc
         puede usar:
       </p><pre class="programlisting">
 export PATH=$PATH:/home/$EUSER;/bin/
-</pre></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2368599184"></a>6.2.3. Variables de ambiente del intérprete de órdenes</h4></div></div></div><p>
+</pre></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2709880848"></a>6.2.3. Variables de ambiente del intérprete de órdenes</h4></div></div></div><p>
         Cada programa emplea sus propias variables de ambiente, en
         particular el intérprete de órdenes. Recomendamos el uso de
         <span class="strong"><strong>ksh</strong></span> como interprete de
@@ -165,7 +165,7 @@ $ export TERM=wsvt25
         que permite presentar colores si emplea la consola tipo texto en
         un PC ordinario o si se conecta con putty (por ejemplo cuando
         ingresa a vim).
-      </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2368631952"></a>6.2.4. Configuración predeterminada de sesiones con ksh</h4></div></div></div><p>
+      </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2709945104"></a>6.2.4. Configuración predeterminada de sesiones con ksh</h4></div></div></div><p>
         Notará que el valor de las variables de ambiente que fije
         durante una sesión se perderá cuando termine la sesión. Para
         lograr una configuración más perdurable puede establecer la
@@ -220,7 +220,7 @@ export LANG="es_CO.UTF-8"
             el valor de este ejemplo (“<span class="quote">\h$</span>”) establece un
             símbolo de espera de órdenes que presenta el nombre de la
             máquina seguido del símbolo pesos y un espacio.
-          </p></li></ul></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2368664592"></a>6.2.5. colorls</h4></div></div></div><p>
+          </p></li></ul></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2709844240"></a>6.2.5. colorls</h4></div></div></div><p>
         En el ejemplo presentado si está instalado el programa
         <code class="literal">colorls</code> (del paquete colorls), este se define
         como alias para la orden <code class="literal">ls</code>, de forma que la
@@ -263,7 +263,7 @@ XTerm*highlightSelection:       true
 XTerm*eightBitInput:            false
 XTerm*metaSendsEscape:          false
 XTerm*oldXtermFKeys:            true
-</pre></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2368660624"></a>6.2.6. Lecturas recomendadas</h4></div></div></div><p>
+</pre></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2709763344"></a>6.2.6. Lecturas recomendadas</h4></div></div></div><p>
         Puede ver detalles de las variables de ambiente empleadas por
         ksh con
       </p><pre class="programlisting">
@@ -272,7 +272,7 @@ man ksh
         La configuración de colores es tomada de una respuesta de Steve
         Jones en una lista de correo, está disponible en
         <a href="">http://mailman.theapt.org/pipermail/openbsd-newbies/2004-April/001806.html</a>.
-      </p></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm2368621584"></a>6.3. Uso de zsh como interprete de órdenes</h3></div></div></div><p>
+      </p></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm2709900432"></a>6.3. Uso de zsh como interprete de órdenes</h3></div></div></div><p>
       El paquete <code class="literal">zsh</code> se instala de manera
       predeterminada en adJ. Puede verificar que ya está instalado en su
       adJ con:
@@ -352,7 +352,7 @@ man ksh
           archivos del directorio <code class="literal">~/Downloads</code>
           modificados por última vez hace más de 30 días (podría valer
           la pena eliminarlos).
-        </p></li></ul></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2368695696"></a>6.3.1. Lecturas recomendadas</h4></div></div></div><div class="itemizedlist"><ul type="disc" compact><li><p>
+        </p></li></ul></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idm2709921168"></a>6.3.1. Lecturas recomendadas</h4></div></div></div><div class="itemizedlist"><ul type="disc" compact><li><p>
             Páginas del manual de zsh.
           </p></li><li><p>
             https://grml.org/zsh/zsh-lovers.pdf
