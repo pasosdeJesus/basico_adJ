@@ -1,0 +1,109 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2. Formatos de archivos</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="ar01s09.html" title="9. Transferencia de información a y desde el servidor"><link rel="next" href="ar01s10.html" title="10. Correo electrónico"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Formatos de archivos</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s09.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s10.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="formatos_de_archivos"></a>2. Formatos de archivos</h2></div></div></div><p>
+    La forma de emplear un archivo que copie, cree o descargue , depende
+    del formato en el que esté. El formato usualmente se identifica con
+    la extensión (i.e las últimas letras que están después de un punto).
+  </p><div class="itemizedlist"><ul type="disc"><li><p>
+        <code class="literal">.txt</code> Se trata de un texto plano. Típicamente
+        estará codificado en ASCII. En DOS/Windows los textos planos
+        indican fin de línea con dos caracteres: Retorno de
+        carro<sup>[<a name="idm2937291664" href="#ftn.idm2937291664">14</a>]</sup> y nueva línea<sup>[<a name="idm2937426960" href="#ftn.idm2937426960">15</a>]</sup>, mientras que en sistemas tipo Unix basta se usa
+        sólo el caracter nueva línea. Para convertir textos DOS/Windows
+        a Unix puede emplear:
+      </p><pre class="programlisting">
+$ cp carta.txt carta.txt.bak
+$ tr -d "\r" &lt; carta.txt.bak &gt; carta.txt
+</pre><p>
+        Si el texto que tiene emplea una codificación que no sea ASCII
+        (por ejemplo Unicode, UTF-8, MAC, Código de Página 850) o
+        requiere convertir de ASCII a otra codificación puede emplear el
+        programa <span class="strong"><strong>recode</strong></span>. Por ejemplo
+        para convertir carta.txt de ASCII a UTF-8<sup>[<a name="idm2937446928" href="#ftn.idm2937446928">16</a>]</sup>:
+      </p><pre class="programlisting">
+recode txt..utf-8 carta.txt
+</pre></li><li><p>
+        <code class="literal">.gz</code> Es un archivo comprimido con
+        <span class="strong"><strong>gzip</strong></span>. Suponiendo que fuera
+        <code class="literal">archivo.txt.gz</code> (cuya extensión sugiere un
+        texto comprimido con <code class="literal">gzip</code>), lo descomprime
+        con:
+      </p><pre class="programlisting">
+gzip -d archivo.txt.gz
+</pre><p>
+        De forma análoga para comprimir el archivo
+        nombres.<code class="literal">sql</code> puede emplear:
+      </p><pre class="programlisting">
+gzip nombres.sql
+</pre><p>
+        Nota: <code class="literal">gzip</code> no comprime archivos muy pequeños
+        (digamos 10 bytes):
+      </p></li><li><p>
+        <code class="literal">.tar.gz</code> Se trata de un archivo empaquetado
+        con la utilidad <span class="strong"><strong>tar</strong></span> y después
+        comprimido con el algoritmo de
+        <span class="strong"><strong>gzip</strong></span>. Para descomprimirlo y
+        desempaquetarlo en el directorio en el que esté trabajando:
+      </p><pre class="programlisting">
+tar xvfz archivo.tar.gz
+</pre><p>
+        Si cuenta con un archivo con extensión <code class="literal">.tar</code>
+        para desempaquetarlo basta:
+      </p><pre class="programlisting">
+tar xvf archivo.tar
+</pre><p>
+        Para empaquetar un directorio digamos ./cartas en formato tar
+        emplearía:
+      </p><pre class="programlisting">
+tar cvf cartas.tar ./cartas
+</pre><p>
+        Y si además lo desea comprimir:
+      </p><pre class="programlisting">
+tar cvfz cartas.tar.gz ./cartas
+</pre></li><li><p>
+        <code class="literal">.bz2</code> Se trata de uno o más archivos
+        comprimidos con <span class="strong"><strong>bzip2</strong></span>. Se
+        descomprime con:
+      </p><pre class="programlisting">
+bunzip2 archivo.bz2
+</pre><p>
+        Para comprimir un archivo en este formato:
+      </p><pre class="programlisting">
+bzip2 archivo.pdf
+</pre><p>
+        que creará <code class="literal">archivo.pdf.bz2</code>
+      </p></li><li><p>
+        <code class="literal">.rar</code> Se descomprime con la utilidad
+        <span class="strong"><strong>unrar</strong></span>, por ejemplo con:
+      </p><pre class="programlisting">
+unrar archivo.rar
+</pre></li><li><p>
+        <code class="literal">.7z</code> Uno o más archivos comprimidos y
+        empaquetados con <span class="strong"><strong>7-Zip</strong></span>.
+        Descomprime y desempaqueta por ejemplo con:
+      </p><pre class="programlisting">
+7z x archivo.7z
+</pre><p>
+        y crea un comprimido con
+      </p><pre class="programlisting">
+7z a /tmp/resultado.7z archivo1.pdf archivo2.pdf
+</pre><p>
+        Además al comprimir puede establecerse una clave por ejemplo
+        con:
+      </p><pre class="programlisting">
+7z a -mhe=on -pSecreta /tmp/resultado.7z archivo1.pdf archivo2.pdf
+</pre></li></ul></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_formato_de_archivos"></a>2.1. Lecturas recomendadas</h3></div></div></div><p>
+      La página del manual: <code class="literal">man tar</code>
+    </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2937291664" href="#idm2937291664">14</a>] </sup>
+            El caracter retorno de carro tiene código ASCII 13, suele
+            llamarse CR (<span xmlns="" class="emphasis"><em>Carriage Return</em></span>) y
+            diversos programas y lenguajes lo denotan con ''.
+          </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2937426960" href="#idm2937426960">15</a>] </sup>
+            El caracter nueva línea tiene código ASCII 10, también se
+            llama LF (<span xmlns="" class="emphasis"><em>Line Feed</em></span>) y diversos
+            programas y lenguajes lo denotan con ''.
+          </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2937446928" href="#idm2937446928">16</a>] </sup>
+            UTF-8 es una de las posibles formas de codificar Unicode en
+            ASCII. Los caracteres Unicode con un ASCII equivalente con
+            código menor de 127 tienen la misma representación en UTF-8.
+            Otros caracteres Unicode emplean una secuencia de dos o más
+            caracteres ASCII para su codificación.
+          </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s09.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s10.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">9. Transferencia de información a y desde el servidor </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 10. Correo electrónico</td></tr></table></div></body></html>

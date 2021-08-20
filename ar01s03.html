@@ -1,0 +1,230 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>3. Conceptos básicos</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="ar01s02.html" title="2. Primer uso de adJ"><link rel="next" href="ar01s04.html" title="4. Soporte"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Conceptos básicos</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar01s02.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s04.html">Siguiente</a></td></tr></table><hr></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idp511745520"></a>3. Conceptos básicos</h2></div></div></div><p>
+    Los conceptos y herramientas presentados desde esta sección se
+    asimilan mejor practicando. Procure ejercitarlos desde un interprete
+    de órdenes, bien operando directamente un sistema adJ o bien
+    ingresando remotamente desde otro sistema como se explica en
+    <a href="ar01s02.html" title="2. Primer uso de adJ">Sección 2, “Primer uso de adJ”</a>.
+  </p><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp511781616"></a>3.1. Definiciones iniciales</h3></div></div></div><p>
+      Un <span class="emphasis"><em>archivo</em></span> es información delimitada y con
+      atributos que ayudan a identificarla como nombre, fecha de
+      creación y ubicación. Se ubica en alguna ruta o sitio del sistema
+      de archivos.
+    </p><p>
+      Un <span class="emphasis"><em>programa</em></span> es un archivo con instrucciones
+      que pueden ser efectuadas por el computador. La secuencia de
+      instrucciones determina lo que hará el programa. El
+      <span class="emphasis"><em>formato de un archivo</em></span> es la manera como está
+      organizada la información para que pueda ser empleada con
+      facilidad por el o los programas que pueden leer o escribir. Por
+      ejemplo un archivo de nombre <code class="literal">carta.odt</code>
+      posiblemente se trate de una carta escrita en formato de Open
+      Document Format (lo sugieren las últimas letras
+      <code class="literal">.odt</code>). Para verla o modificarla debe usarse un
+      programa que entienda ese formato, uno entre otros es LibreOffice.
+    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp511709680"></a>3.2. Intérprete de órdenes</h3></div></div></div><p>
+      El intérprete de órdenes le permite usar varias órdenes internas,
+      así como ejecutar programas. Es común que las órdenes o programas
+      requieran algo de información como suministro (i.e parámetros o
+      argumentos), así como opciones que modifiquen el comportamiento
+      predeterminado. Tal información suele darse a continuación del
+      nombre de la orden, separando un dato o una opción de otra con
+      espacios. Si es una de las primeras veces que ingresa al sistema,
+      recomendamos las siguientes órdenes:
+    </p><div class="variablelist"><dl><dt><span class="term">
+          <span class="strong"><strong>man man</strong></span>
+        </span></dt><dd><p>
+            El programa <span class="strong"><strong>man</strong></span> permite
+            ver un tema del manual del sistema. Puede recibir como
+            parámetro el tema sobre el cual desea ver la documentación.
+            Así que <span class="strong"><strong>man man</strong></span> presenta
+            la documentación de la orden
+            <span class="strong"><strong>man</strong></span>. Entre los temas
+            posibles puede emplear el nombre de un programa instalado o
+            de una función de la librería del sistema. Notará que man
+            por omisión ingresa aun paginador (llamado
+            <code class="literal">less</code>) que le permite desplazarse hacia
+            arriba y hacia abajo con las flechas y salir con la letra
+            <code class="literal">q</code>.
+          </p></dd><dt><span class="term">
+          <span class="strong"><strong>passwd</strong></span>
+        </span></dt><dd><p>
+            Permite cambiar su clave en el sistema. Por favor escoja una
+            buena clave que no aparezca en diccionario de idioma alguno,
+            preferiblemente que tenga mayúsculas y minúsculas, así como
+            números y/o caracteres de puntuación. Sugerimos las claves
+            generadas con programas especializados como
+            <span class="strong"><strong>apg</strong></span>. Tenga en cuenta que
+            si su clave llega a ser descubierta por un tercero, él/ella
+            podría actuar a nombre suyo.
+          </p></dd></dl></div><p>
+      Para comprender el uso de parámetros y opciones, intente también:
+    </p><div class="itemizedlist"><ul type="disc" compact><li><p>
+          <code class="literal">man passwd</code> con lo que iniciar la orden
+          <code class="literal">man</code> con parámetro <code class="literal">passwd</code>
+          con lo que verá el manual de la orden
+          <code class="literal">passwd</code> en el paginador
+        </p></li><li><p>
+          <code class="literal">man -c passwd</code> para ejecutar la orden
+          <code class="literal">man</code> con opción <code class="literal">-c</code> y
+          parámetro <code class="literal">passwd</code>, con lo cual verá el
+          manual de la orden <code class="literal">passwd</code> pero sin
+          paginador –el manual completo se presentará en pantalla pero
+          no alcanzará a ver el comienzo, ni podrá usar flechas para
+          navegar sobre el documento, sino que regresará a la línea de
+          ordenes.
+        </p></li></ul></div><p>
+      Después revise en detalle la ayuda de la orden man e intente con
+      otros parámetros y opciones.
+    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp511803248"></a>3.3. Sistema de Archivos</h3></div></div></div><p>
+      En Unix la información se organiza en archivos dentro de
+      directorios del sistema de archivos. El directorio inicial o raíz
+      se denota por <code class="literal">/</code>, los nombres de archivos o
+      directorios pueden especificarse indicando la ruta completa desde
+      la raíz, por ejemplo el archivo <code class="literal">/usr/bin/awk</code>
+      está en el directorio de nombre <code class="literal">bin</code> que a su
+      vez está en un directorio de nombre <code class="literal">usr</code> el cual
+      es un subdirectorio del directorio raíz <code class="literal">/</code>. Cada
+      usuario del sistema tiene además de su login y clave, un
+      directorio que llamamos <span class="emphasis"><em>directorio personal</em></span>
+      cuya ruta normalmente es de la forma
+      <code class="literal">/home/juan</code>.
+    </p><div class="figure"><a name="idp511657968"></a><p class="title"><b>Figura 15. Sistema de archivos</b></p><div class="mediaobject"><img src="img/arbol-archivos.png" alt="Sistema de archivos"></div></div><p>
+      El intérprete de órdenes que emplee tendrá como parte de su estado
+      un directorio de trabajo, un símbolo de espera de órdenes y
+      variables de entorno. La manera de ver y alterar estos datos
+      depende del intérprete de órdenes que emplee, nos limitaremos al
+      intérprete de órdenes <span class="strong"><strong>ksh</strong></span> (que
+      tiene bastantes cosas en común con otros intérpretes de órdenes
+      como <span class="strong"><strong>bash</strong></span>).
+    </p><p>
+      Podrá examinar el directorio de trabajo con
+      <code class="literal">pwd</code>, listar algunas variables de entorno (las
+      exportadas) con <span class="strong"><strong>export</strong></span> y
+      modificar el símbolo de espera de órdenes con la variable de
+      entorno <code class="literal">PS1</code>. A continuación se listan algunas
+      órdenes/programas relacionados con el sistema de archivos y un
+      mínimo del uso de cada uno. Sugerimos que mire la documentación
+      que corresponde a cada uno (e.g para ver documentación del
+      programa <span class="strong"><strong>ls</strong></span> ejecute desde un
+      intérprete de órdenes <span class="strong"><strong>man ls</strong></span>):
+    </p><div class="variablelist"><dl><dt><span class="term">
+          <code class="literal">pwd</code>
+        </span></dt><dd><p>
+            Muestra directorio de trabajo.
+          </p></dd><dt><span class="term">
+          <code class="literal">ls</code>
+        </span></dt><dd><p>
+            Muestra listado de archivos y directorios. Sin parámetros
+            muestra los del directorio de trabajo. Como parámetro puede
+            indicarse la ruta del directorio del cual se desea ver el
+            contenido y con la opción <code class="literal">-l</code> presenta
+            atributos adicionales de cada archivo (por ejemplo los
+            directorios inician con <code class="literal">d</code> mientras que
+            los archivos con <code class="literal">-</code>. También puede dar
+            como parámetro una ruta por listar (si no da una se lista el
+            directorio de trabajo).
+          </p></dd><dt><span class="term">
+          <code class="literal">mkdir public_html</code>
+        </span></dt><dd><p>
+            Permite crear un directorio (en este caso
+            <code class="literal">public_html</code>), si no se especifica la ruta
+            completa <span class="strong"><strong>mkdir</strong></span> lo crea en
+            el directorio de trabajo.
+          </p></dd><dt><span class="term">
+          <code class="literal">cd public_html</code>
+        </span></dt><dd><p>
+            Para cambiarse a otro directorio (en este caso al directorio
+            <code class="literal">public_html</code> que es subdirectorio del
+            directorio de trabajo). Sin parámetros,
+            <code class="literal">cd</code> cambia al directorio personal.
+          </p></dd><dt><span class="term">
+          <code class="literal">cp traido/index.htm public_html/index.html</code>
+        </span></dt><dd><p>
+            El programa <code class="literal">cp</code> permite copiar uno o más
+            archivos. En el ejemplo presentado el archivo
+            <code class="literal">index.htm</code> del subdirectorio
+            <code class="literal">traido</code> es copiado en el subdirectorio
+            <code class="literal">public_html</code> con el nombre index.html.
+            Note que ambos subdirectorios son subdirectorios del
+            directorio de trabajo y que debe existir el archivo
+            <code class="literal">traido/index.htm</code>. Pueden copiarse también
+            directorios junto con subdirectorios usando la opción
+            <code class="literal">-r</code>, por ejemplo:
+          </p><pre class="programlisting">
+cp -r traido/* public_html/
+</pre><p>
+            que copia todos los archivos y subdirectorios del directorio
+            traido de manera recursiva al directorio
+            <code class="literal">public_html</code>.
+          </p></dd><dt><span class="term">
+          <code class="literal">rm traido/index.htm</code>
+        </span></dt><dd><p>
+            Que elimina el archivo <code class="literal">traido/index.html</code>.
+            Pueden eliminarse directorios con todo su contenido de forma
+            recursiva con la opción <code class="literal">-rf</code> del programa
+            <code class="literal">rm</code>.
+          </p></dd><dt><span class="term">
+          <code class="literal">mv traido/juan.htm traido/pedro.html</code>
+        </span></dt><dd><p>
+            El programa <code class="literal">mv</code> moverá (o en este caso
+            renombra) el archivo
+            <code class="literal">traido/juan.htm a traido/pedro.html</code>.
+          </p></dd></dl></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp511672304"></a>3.4. tmux</h3></div></div></div><p>
+      Para operar desde la terminal con más versatilidad es muy útil
+      <code class="literal">tmux</code> que introduce conceptos de sesiones,
+      ventanas y paneles que permiten operar muy efectivamente.
+    </p><div class="itemizedlist"><ul type="disc" compact><li><p>
+          Las sesiones le permiten retomar el trabajo que estaba
+          haciendo previamente.
+        </p></li><li><p>
+          Las ventanas permiten operar en varios interpretes de órdenes
+          que ocupan el espacio completo donde visualiza la terminal.
+        </p></li><li><p>
+          Los paneles dividien una ventana en más áreas para ver
+          simultaneamente varios interpretes de órdenes.
+        </p></li></ul></div><p>
+      Puede probar el uso de sesiones de esta forma:
+    </p><div class="orderedlist"><ol type="1" compact><li><p>
+          Abra una terminal e inice tmux con <code class="literal">tmux</code>
+        </p></li><li><p>
+          Escribe por ejemplo <code class="literal">echo Hola mundo</code> y pulse
+          Enter, que debe imprimir en pantalla Hola Mundo
+        </p></li><li><p>
+          Cierre la terminal –por la forma de operación de tmux esto no
+          terminará la sesión que inició
+        </p></li><li><p>
+          Abra otra terminal e inice tmux pero indicando que se una a
+          una sesión existente con <code class="literal">tmux -a</code>. Debería
+          poder ver su sesión de terminal con Hola Mundo.
+        </p></li></ol></div><p>
+      Ya en tmux, puede enviar órdenes a tmux comenzando con la
+      secuencia de teclas Control-b, por ejemplo para crear una ventana
+      emplee Control-b y después la letra <code class="literal">c</code>
+      (minúscula).
+    </p><p>
+      Notará en la parte inferior izquierda indicadores de 2 ventanas
+      abiertas (una con <code class="literal">[0]</code> y la otra con
+      <code class="literal">[1]</code>). Pase a la segunda ventana (con índice 1)
+      con Control-b 1 y a la primera con Control-b 0.
+    </p><div class="figure"><a name="idp511591664"></a><p class="title"><b>Figura 16. tmux con 6 ventanas. Visualizando la cuarta, con índice
+      3.</b></p><div class="mediaobject"><img src="img/tmux-v.png" alt="tmux con 6 ventanas. Visualizando la cuarta,
+        con índice 3."></div></div><p>
+      Para dividir una ventana (o un panel) en 2 paneles separados por
+      una línea vertical en la mitad use <code class="literal">Control-b %</code>
+      y para dividir en 2 con una línea horizontal use
+      <code class="literal">Control-b "</code>. Pase al panel de la derecha
+      con <code class="literal">Control-b →</code>, pase al panel de la izquierda
+      con <code class="literal">Control-b ←</code>, al de arriba con
+      <code class="literal">Control-b ↑</code> y al de abajo con
+      <code class="literal">Control-b ↓</code>
+    </p><div class="figure"><a name="idp511647344"></a><p class="title"><b>Figura 17. Ventana de tmux dividida en 3 paneles</b></p><div class="mediaobject"><img src="img/tmux-p.png" alt="Ventana de tmux dividida en 3
+        paneles"></div></div><p>
+      Puede cambiar el orden de una panel mediatne Control-b { y
+      Control-b }. Puede convertir un panel en una nueva venta con
+      Control-b !
+    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp511779056"></a>3.5. Lecturas recomendadas</h3></div></div></div><p>
+      Páginas <code class="literal">man</code> de las órdenes /programas
+      introducidos en este capítulo. Se han tomado porciones de la
+      sección “<span class="quote">telnet y ssh</span>” de
+      <a href="bibliografia.html" title="B. Bibliografía">AALinux</a>
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar01s02.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s04.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">2. Primer uso de adJ </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 4. Soporte</td></tr></table></div></body></html>

@@ -1,0 +1,201 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><meta name="description" content="Estas notas buscan ayudar a usuarios que desean emplear
+	      por primera vez el sistema seguro adJ.  
+      "><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="next" href="ar01s02.html" title="2. Primer uso de adJ"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD</th></tr><tr><td width="20%" align="left"> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s02.html">Siguiente</a></td></tr></table><hr></div><div class="article" lang="es"><div class="titlepage"><div><div><h2 class="title"><a name="idm3173474448"></a>Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Vladimir</span> <span class="surname">Támara Patiño (vtamara@pasosdeJesus.org)</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Hernán</span> <span class="surname">Quishpe (ahquishpe@gmail.com)</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Blanca</span> <span class="surname">Acosta (blanca@pasosdeJesus.org)</span></h3></div></div></div><div><div class="legalnotice"><a name="idm2484818064"></a><p>Este documento y sus fuentes son obra de amor
+		    cedidas al dominio público desde 2004. </p><p>Esta es la versión 6.9 de este documento, 
+		    actualizada por última vez en 05/08/2021 para 
+		    que corresponda a la distribución adJ de 
+		    OpenBSD 6.9.</p><p>No se ofrece garantía alguna, por el contrario se 
+		    aprecia que se 
+		    envíen correcciones y sugerencias al autor. </p><p>Este escrito se 
+		    dedica a Dios: 
+		    `Alaba mi alma la grandeza del Señor'</p><p>Agradecemos los aportes de Carolina Pinzón, 
+		    Marly Mier Rinaldy, 
+		    William Rozo (wiroal@riseup.net), 
+		    Hector Jimenez (h3.hector@gmail.com).</p><p>
+		    La versión publicada más reciente está tanto
+		    <a href="http://pasosdeJesus.github.io/basico_adJ" target="_top">en línea</a>  como
+		    <a href="basico_adJ-6.9_html.tar.gz" target="_top">en archivo comprimido</a> 
+		    y como <a href="http://adJ.pasosdeJesus.org/pub/AprendiendoDeJesus/6.9/paquetes/basico_adJ-6.9.tar.gz" target="_top">paquete para adJ/OpenBSD</a>.
+		    
+		    Sus fuentes en DocBook están disponibles en 
+		    <a href="https://github.com/pasosdeJesus/basico_adJ/" target="_top">https://github.com/pasosdeJesus/basico_adJ/</a>.
+	    </p></div></div><div><div class="abstract"><p class="title"><b>Resumen</b></p><p>Estas notas buscan ayudar a usuarios que desean emplear
+	      por primera vez el sistema seguro adJ.  
+      </p></div></div></div><hr></div><div class="toc"><p><b>Tabla de contenidos</b></p><dl><dt><span class="section"><a href="index.html#idm2484746000">1. Introducción</a></span></dt><dt><span class="section"><a href="ar01s02.html">2. Primer uso de adJ</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s02.html#idm2484765328">2.1. Arranque</a></span></dt><dt><span class="section"><a href="ar01s02.html#idm2484678032">2.2. Operación con fluxbox</a></span></dt><dt><span class="section"><a href="ar01s02.html#idm2484905616">2.3. Conexión con ssh</a></span></dt></dl></dd><dt><span class="section"><a href="ar01s03.html">3. Conceptos básicos</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s03.html#idp511781616">3.1. Definiciones iniciales</a></span></dt><dt><span class="section"><a href="ar01s03.html#idp511709680">3.2. Intérprete de órdenes</a></span></dt><dt><span class="section"><a href="ar01s03.html#idp511803248">3.3. Sistema de Archivos</a></span></dt><dt><span class="section"><a href="ar01s03.html#idp511672304">3.4. tmux</a></span></dt><dt><span class="section"><a href="ar01s03.html#idp511779056">3.5. Lecturas recomendadas</a></span></dt></dl></dd><dt><span class="section"><a href="ar01s04.html">4. Soporte</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s04.html#idp511588080">4.1. Documentación</a></span></dt><dt><span class="section"><a href="ar01s04.html#idp958818160">4.2. Canal en gitter.im</a></span></dt></dl></dd><dt><span class="section"><a href="ar01s05.html">5. Uso de medios de almacenamiento</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s05.html#idp958937328">5.1. Montaje y desmontaje en entorno gráfico</a></span></dt><dt><span class="section"><a href="ar01s05.html#idp958910704">5.2. Montaje y desmontaje desde intérprete de órdenes</a></span></dt><dt><span class="section"><a href="ar01s05.html#idp958909680">5.3. Administrador de archivos Xfe</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s05.html#idp958883440">5.3.1. Atajos de teclado predeterminados</a></span></dt></dl></dd><dt><span class="section"><a href="ar01s05.html#idp958845808">5.4. Particiones cifradas</a></span></dt><dt><span class="section"><a href="ar01s05.html#idp958973296">5.5. Lecturas recomendadas</a></span></dt></dl></dd><dt><span class="section"><a href="ar01s06.html">6. Personalización</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s06.html#idp958864112">6.1. Locale</a></span></dt><dt><span class="section"><a href="ar01s06.html#idm2368602000">6.2. Personalización del interprete de órdenes ksh</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s06.html#idm2368756240">6.2.1. Ejecución de Programas</a></span></dt><dt><span class="section"><a href="ar01s06.html#idm2368601104">6.2.2. Variables de ambiente</a></span></dt><dt><span class="section"><a href="ar01s06.html#idm2368599184">6.2.3. Variables de ambiente del intérprete de órdenes</a></span></dt><dt><span class="section"><a href="ar01s06.html#idm2368631952">6.2.4. Configuración predeterminada de sesiones con ksh</a></span></dt><dt><span class="section"><a href="ar01s06.html#idm2368664592">6.2.5. colorls</a></span></dt><dt><span class="section"><a href="ar01s06.html#idm2368660624">6.2.6. Lecturas recomendadas</a></span></dt></dl></dd><dt><span class="section"><a href="ar01s06.html#idm2368621584">6.3. Uso de zsh como interprete de órdenes</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s06.html#idm2368695696">6.3.1. Lecturas recomendadas</a></span></dt></dl></dd></dl></dd><dt><span class="section"><a href="ar01s07.html">7. Edición de textos</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s07.html#idm2398725136">7.1. Editor xfw</a></span></dt><dt><span class="section"><a href="ar01s07.html#idm2398822160">7.2. Editor mg</a></span></dt><dt><span class="section"><a href="ar01s07.html#idm2398718352">7.3. Editor vi</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s07.html#idm2398747408">7.3.1. Modos de vi</a></span></dt><dt><span class="section"><a href="ar01s07.html#idm2398794768">7.3.2. Otras órdenes - Guardar y salir</a></span></dt><dt><span class="section"><a href="ar01s07.html#idm2398735376">7.3.3. vim</a></span></dt><dt><span class="section"><a href="ar01s07.html#idm2398632720">7.3.4. Lecturas recomendadas</a></span></dt></dl></dd></dl></dd><dt><span class="section"><a href="ar01s08.html">8. Primeras páginas HTML</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s08.html#idm2102923408">8.1. Lecturas recomendadas</a></span></dt></dl></dd><dt><span class="section"><a href="ar01s09.html">9. Transferencia de información a y desde el servidor</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s09.html#idm2102763536">9.1. ftp</a></span></dt><dt><span class="section"><a href="ar01s09.html#idm2102806160">9.2. curl</a></span></dt><dt><span class="section"><a href="ar01s09.html#idm2102862224">9.3. wget</a></span></dt><dt><span class="section"><a href="ar01s09.html#idm2102838288">9.4. Filezilla</a></span></dt><dt><span class="section"><a href="ar01s09.html#idm2102779792">9.5. Uso básico de scp</a></span></dt><dt><span class="section"><a href="ar01s09.html#idm2102760976">9.6. Uso básico de <code class="literal">rsync</code></a></span></dt><dt><span class="section"><a href="ar01s09.html#idm2102856464">9.7. Lecturas recomendadas sobre transferencia de archivos</a></span></dt></dl></dd><dt><span class="sect1"><a href="index.html#mas_formas_de_uso_de_ssh">1. Más formas de uso de ssh</a></span></dt><dd><dl><dt><span class="sect2"><a href="index.html#abrir_programas_con_interfaz_grafica">1.1. Abrir programas con interfaz gráfica</a></span></dt><dt><span class="sect2"><a href="index.html#tunel_reenviando_un_puerto">1.2. Túnel reenviando un puerto</a></span></dt><dt><span class="sect2"><a href="index.html#tunel_con_protocolo_socks">1.3. Túnel con protocolo SOCKS</a></span></dt><dt><span class="sect2"><a href="index.html#lecturas_recomendadas_ssh">1.4. Lecturas recomendadas</a></span></dt></dl></dd><dt><span class="sect1"><a href="formatos_de_archivos.html">2. Formatos de archivos</a></span></dt><dd><dl><dt><span class="sect2"><a href="formatos_de_archivos.html#lecturas_recomendadas_formato_de_archivos">2.1. Lecturas recomendadas</a></span></dt></dl></dd><dt><span class="section"><a href="ar01s10.html">10. Correo electrónico</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s10.html#idm2937326096">10.1. Uso de agentes de usuario para leer correo gráfico</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s10.html#idm2937400592">10.1.1. Mozilla Thunderbird</a></span></dt><dt><span class="section"><a href="ar01s10.html#idm2957553936">10.1.2. Evolution</a></span></dt></dl></dd><dt><span class="section"><a href="ar01s10.html#idm2957713552">10.2. mutt y procmail</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s10.html#idm2957674512">10.2.1. Localización</a></span></dt><dt><span class="section"><a href="ar01s10.html#idm2957694352">10.2.2. Procmail</a></span></dt><dt><span class="section"><a href="ar01s10.html#idm2957614608">10.2.3. fetchmail</a></span></dt></dl></dd><dt><span class="section"><a href="ar01s10.html#idm2957616784">10.3. Lecturas recomendadas</a></span></dt></dl></dd><dt><span class="section"><a href="ar01s11.html">11. Labores básicas de administración</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s11.html#idm2957526288">11.1. Manejo de usuarios</a></span></dt><dt><span class="section"><a href="ar01s11.html#idm2957747984">11.2. Bitácoras</a></span></dt><dd><dl><dt><span class="section"><a href="ar01s11.html#idm2957684240">11.2.1. Análisis simple con la herramienta
+      <code class="literal">auditabitacoras</code> y reportar una IP</a></span></dt><dt><span class="section"><a href="ar01s11.html#idm2957743632">11.2.2. Ejemplo de análisis usando herramientas UNIX</a></span></dt></dl></dd></dl></dd><dt><span class="appendix"><a href="novedades.html">A. Novedades</a></span></dt><dt><span class="appendix"><a href="bibliografia.html">B. Bibliografía</a></span></dt></dl></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idm2484746000"></a>1. Introducción</h2></div></div></div><p>
+    Un sistema operativo es un programa que facilita tanto a una persona
+    como a otros programas la utilización de un computador. OpenBSD y
+    Linux son sistemas operativos tipo Unix; este tipo de sistemas fue
+    cuidadosamente diseñado hacia 1960<sup>[<a name="idm2484850064" href="#ftn.idm2484850064">1</a>]</sup> inicialmente para programadores, sin embargo sus
+    implementaciones más comunes hoy en día (macOS, Linux, OpenBSD,
+    FreeBSD, NetBSD) además de seguir ofreciendo todas las ventajas y
+    potencialidades para programadores, incluyen interfaces gráficas y
+    facilidades para usuarios que se acercan por primera vez a un
+    computador.
+  </p><p>
+    De los sistemas tipos Unix actuales, OpenBSD se caracteriza por ser
+    de fuentes abiertas<sup>[<a name="idm2484741392" href="#ftn.idm2484741392">2</a>]</sup>, por los altos niveles de seguridad que brinda<sup>[<a name="idm2484849680" href="#ftn.idm2484849680">3</a>]</sup> y por el uso de criptografía fuerte<sup>[<a name="idm2484708240" href="#ftn.idm2484708240">4</a>]</sup>. Otros sistemas se han enfocado en usabilidad para
+    usuarios sin experiencia (por ejemplo macOS o la distribución Ubuntu
+    de Linux).
+  </p></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="mas_formas_de_uso_de_ssh"></a>1. Más formas de uso de ssh</h2></div></div></div><p>
+    El protocolo <span class="strong"><strong>ssh</strong></span> además de
+    permitirle conectarse a servidores en modo texto (ver
+    <a href="ar01s02.html#idm2484905616" title="2.3. Conexión con ssh">Sección 2.3, “Conexión con ssh”</a>) le permite iniciar
+    aplicaciones gráficas que se ejecuten en el servidor, hacer
+    redireccionamiento de puertos y conectarse sin necesidad de dar
+    clave (dando una clave sólo una vez en su computador).
+  </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="abrir_programas_con_interfaz_grafica"></a>1.1. Abrir programas con interfaz gráfica</h3></div></div></div><p>
+      Es posible ejecutar aplicaciones gráficas en el servidor y ver las
+      ventanas gráficas en otro computador. Para esto es necesario:
+    </p><div class="orderedlist"><ol type="1"><li><p>
+          Que en el archivo de configuración
+          <code class="literal">/etc/ssh/sshd_config</code> del servidor esté
+          habilitada la opción:
+        </p><pre class="programlisting">
+X11Forwarding yes
+</pre></li><li><p>
+          Que en el computador donde se desea ver la información esté
+          instalado un servidor de X-Window.
+        </p></li></ol></div><p>
+      En el caso de sistemas tipo Unix basta con tener X-Window
+      instalado (si ve el modo gráfico es porque ya está instalado).
+      Para otros sistemas operativos puede ser posible encontrar un
+      servidor de X-Window, por ejemplo para Windows, puede emplear
+      Cygwin-X (http://x.cygwin.com) o Xming
+      (http://www.straightrunning.com/XmingNotes/).
+    </p><p>
+      Una vez esté ejecutándo el servidor de X-Window en su computador
+      entre al servidor usando <span class="strong"><strong>ssh</strong></span>
+      con opción para hacer reenvío de X11. De esta manera toda la
+      información gráfica enviada por el servidor viajará por el canal
+      seguro que ssh establece cuando se conecta al servidor. En el caso
+      de OpenSSH esto se indica con la opción <code class="literal">-X</code>, i.e
+      se debe conectar con:
+    </p><pre class="programlisting">
+ssh -X juan@practica.pasosdeJesus.org
+</pre><p>
+      En el caso de <span class="strong"><strong>putty</strong></span> en el
+      dialogo de configuración que aparece antes de iniciar la conexión,
+      en el menú Connection-&gt;SSH-&gt;X11 marque 'Enable X11
+      forwarding'.
+    </p><div class="figure"><a name="idm2937346192"></a><p class="title"><b>Figura 25. Reenvío de X11 en putty</b></p><div class="mediaobject"><img src="img/putty-x11.png" alt="Reenvío de X11 en
+        putty"></div></div><p>
+      Una vez haga esto, las aplicaciones gráficas que inicie en la
+      sesión ssh que inició, se verán en su computador. Pruebe por
+      ejemplo con:
+    </p><pre class="programlisting">
+xeyes
+</pre></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="tunel_reenviando_un_puerto"></a>1.2. Túnel reenviando un puerto</h3></div></div></div><p>
+      Puede usar <span class="strong"><strong>ssh</strong></span> también para
+      crear un túnel entre un puerto local y un puerto accequible desde
+      el servidor al cual se conecta. Por ejemplo si en una organización
+      tienen un cortafuegos conectado a Internet (digamos que es
+      practica.pasosdeJesus.org) y en la red interna cuentan con un
+      servidor web SSL (por ejemplo <code class="literal">base</code>), podría
+      establecerse un túnel desde un computador fuera de la organización
+      y el servidor privado, ingresando al cortafuegos con:
+    </p><pre class="programlisting">
+ssh -L10443:base:443 juan@practica.pasosdeJesus.org
+</pre><p>
+      donde <code class="literal">base</code> es el nombre del servidor al
+      interior de la organización y 443 es el número de puerto de HTTPS
+      (protocolo HTTP sobre SSL, es decir conexiones web cifradas).
+    </p><p>
+      Si emplea <span class="strong"><strong>putty</strong></span> debe
+      especificar esta información en el diálogo de configuración
+      Connection-&gt;SSH-&gt;Tunnels como se presenta a continuación
+      presionando el botón Add para adicionar el túnel a la región
+      `Forwarded ports'.
+    </p><div class="figure"><a name="idm2937269648"></a><p class="title"><b>Figura 26. Configuración de túnel en putty</b></p><div class="mediaobject"><img src="img/putty-tunnel.png" alt="Configuración de túnel en
+        putty"></div></div><p>
+      Una vez inicie la conexión debe digitar la clave del usuario en el
+      cortafuegos. Con lo cual quedará establecido un túnel entre el
+      puerto 10443 del computador local y el puerto 443 del servidor
+      <code class="literal">base</code>. Este túnel puede usarse ingresando en un
+      navegador la dirección: <code class="literal">https://127.0.0.1:10443</code>
+    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="tunel_con_protocolo_socks"></a>1.3. Túnel con protocolo SOCKS</h3></div></div></div><p>
+      Otra forma de realizar un túnel, pero sin limitarlo a un puerto es
+      empleando un servidor SOCKS incluido con el programa ssh y
+      configurando su navegador para emplearlo.
+    </p><p>
+      Primero debe establecer la conexión indicando el puerto que usará
+      para el servidor socks con la opción -D, por ejemplo:
+    </p><pre class="programlisting">
+ssh -D8080 juan@practica.pasosdeJesus.org
+</pre><p>
+      donde 8080 es el número de puerto donde correrá el servidor SOCKS
+      en su computador.
+    </p><p>
+      Si emplea <span class="strong"><strong>putty</strong></span> debe
+      especificar esta información en el diálogo de configuración
+      Connection-&gt;SSH-&gt;Tunnels, marcando Dynamic y escribiendo un
+      puerto como 8080 en "Local Port," y proceder a
+      conectarse al servidor.
+    </p><p>
+      A continuación debe configurar su navegador para que utilice ese
+      servidor SOCKS en su propio computador en el puerto que específico
+      (8080 en este ejemplo). En el caso de Firefox puede hacerlo desde
+      Editar-&gt;Preferencias-&gt;Avanzado-&gt;Red-&gt;Configurar
+      especificar en servidor Socks 127.0.0.1 y en puerto 8080. Una vez
+      acepte toda navegación que intente realizar se hará por el
+      servidor al cual se conectó. Si por ejemplo ese servidor tiene
+      acceso en una red interna a un servidor con IP 192.168.1.2 puede
+      emplear esa URL en su navegador y llegará a ese computador en la
+      red interna donde está el servidor.
+    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_ssh"></a>1.4. Lecturas recomendadas</h3></div></div></div><p>
+      Puede aprender sobre <span class="strong"><strong>ssh</strong></span>
+      examinado la especificación del protocolo en uno de los borradores
+      de la especificación temporal "SSH Protocol
+      Architecture"
+      <a href="https://tools.ietf.org/html/draft-ietf-secsh-architecture-22" target="_top">https://tools.ietf.org/html/draft-ietf-secsh-architecture-22</a>.
+    </p><p>
+      Hay información sobre la implementación OpenSSH en
+      <a href="http://www.openssh.org" target="_top">http://www.openssh.org</a>.
+    </p></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2484850064" href="#idm2484850064">1</a>] </sup>
+        Prácticamente todos los sistemas operativos actuales han tomado
+        ideas de ese diseño que fue planeado para ser multitarea,
+        multiusuario con una política de permisos y para operación en
+        red. Incluso MSDOS implementado hacía 1980 tomó unas pocas ideas
+        del interprete de órdenes , sobre este Windows 3.1 adaptó
+        funcionalidad multitarea y una interfaz gráfica, sobre este
+        Windows 98 empezó a adaptar funcionalidad multiusuario y
+        operación en red, mientras que XP y Vista adaptaron el sistema
+        de permisos.
+      </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2484741392" href="#idm2484741392">2</a>] </sup>
+        Las fuentes de un programa son las instrucciones para humanos,
+        que permiten construir el programa. Al ser abiertas se pueden
+        estudiar para aprender como se construyó el programa y pueden
+        cambiarse para mejorarlo. Además de estas posibilidades la
+        licencia de un programa de fuentes abiertas debe permitir su
+        redistribución sin tener que pagar regalías. Esta es una gran
+        diferencia con sistemas operativos como macOS y Windows que son
+        de fuentes cerradas y sus licencias no permiten redistribuir
+        copias.
+      </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2484849680" href="#idm2484849680">3</a>] </sup>
+        Las 2 políticas que lo han caracterizado son apertura total y
+        auditorías. Apertura total se refiere a transparencia total en
+        cuanto a fallas de seguridad, indicando claramente las
+        vulnerabilidades detectadas y las soluciones implementadas con
+        fechas. Auditorías se refiere a inspecciones de las fuentes que
+        buscan garantizar ausencia de vulnerabilidades.
+      </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2484708240" href="#idm2484708240">4</a>] </sup>
+        Criptografía fuerte: Se refiere a una comunicación secreta. Es
+        una manera de guardar información para que no todo el mundo
+        tenga acceso directo a ella. Cifrar es transformar información
+        para hacerla ilegible, buscando garantizar confidencialidad.
+        Típicamente se requiere una clave para cifrar. Un ejemplo de un
+        cifrado débil llamado Cesar es aumentar cierta cantidad fija a
+        cada carácter del mensaje por cifrar, podemos pensar que la
+        cantidad que se aumente es la clave. Por ejemplo el mensaje
+        “<span xmlns="" class="quote">Dios te ama</span>” aumentando 2 letras a cada una (es
+        decir cifrado con clave 2), quedaría “<span xmlns="" class="quote">Fkqu vg coc</span>”
+        –aumentar una letra a la D la convierte en E, aumentar dos
+        letras la convierte en F, por eso el primer caracter es F, lo
+        análogo se hace con los demás. Es un cifrado débil porque hay
+        técnicas para determinar cuando una información usa este cifrado
+        y dado un texto cifrado con este cifrado hay técnicas rápidas
+        para encontrar la clave y descifrar el mensaje. Un cifrado es
+        fuerte cuando no se conocen métodos rápidos para encontrar la
+        clave y descifrarlo. Son ejemplos de cifrados fuertes AES, RSA y
+        Blowfish
+      </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s02.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"> </td><td width="40%" align="right" valign="top"> 2. Primer uso de adJ</td></tr></table></div></body></html>

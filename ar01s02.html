@@ -1,363 +1,196 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2. Personalización</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="uso_de_medios_de_almacenamiento.html" title="4. Uso de medios de almacenamiento"><link rel="next" href="edicion_de_textos.html" title="5. Edición de textos"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Personalización</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="uso_de_medios_de_almacenamiento.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="edicion_de_textos.html">Siguiente</a></td></tr></table><hr></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idp481217152"></a>2. Personalización</h2></div></div></div><p>
-    Como usuario puede personalizar diversos aspectos de su interacción
-    con el sistema completo y con cada programa (como
-    <span class="strong"><strong>fluxbox, xfe</strong></span> y el interprete de
-    ordenes). En esta sección presentamos la personalización del locale
-    y algunas formas de personalizar el interprete de ordenes
-    <span class="strong"><strong>ksh</strong></span>.
-  </p><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp2174943616"></a>2.1. Locale</h3></div></div></div><p>
-      Un locale define una codificación y formas de presentar
-      información típicas de una región geográfica (números, valores
-      monetarios, fechas, horas, idioma y cotejación u ordenamiento
-      lexicográfico del mismo). adJ viene configurado por omisión con el
-      locale es-CO.UTF-8 es decir en español, para Colombia y con
-      codificación UTF-8.
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2. Primer uso de adJ</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="next" href="ar01s03.html" title="3. Conceptos básicos"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Primer uso de adJ</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="index.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s03.html">Siguiente</a></td></tr></table><hr></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idm2484739344"></a>2. Primer uso de adJ</h2></div></div></div><p>
+    Un servidor adJ puede operarse tanto directamente (sentado frente al
+    computador donde se instaló y configuró), como remotamente por
+    ejemplo con <code class="literal">ssh</code>. En esta sección cubrimos ambos
+    escenarios.
+  </p><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm2484765328"></a>2.1. Arranque</h3></div></div></div><p>
+      Al iniciar un computador con adJ el núcleo de OpenBSD comenzará
+      con una interfaz de texto, detectará el hardware (se ven letras
+      con fondo azul), iniciará los procesos básicos (se ven letras con
+      fondo negro) y ejecutará los archivos de arranque.
     </p><p>
-      En UTF-8 puede codificarse UNICODE, que a su vez permite
-      representar todos los lenguajes escritos –la mayoría de lenguajes
-      occidentales, incluyendo el español.
+      Típicamente la distribución adJ pide claves de imágenes
+      cifradas<sup>[<a name="idm2484739728" href="#ftn.idm2484739728">5</a>]</sup> que se montan durante el arranque.
+    </p><div class="figure"><a name="idm2484679696"></a><p class="title"><b>Figura 1. Interfaz de texto</b></p><div class="mediaobject"><img src="img/consola.png" alt="Interfaz de texto"></div></div><p>
+      Al dar la clave de cifrado correcta debe ver el mensaje
+      <code class="literal">File system is clean</code> o un chequeo de la imagen.
+      En caso de dar una clave equivocada, continuará la secuencia de
+      arranque pero no podrá acceder a los directorios
+      cifrados<sup>[<a name="idm2484763536" href="#ftn.idm2484763536">6</a>]</sup>.
     </p><p>
-      Los locales se ubican en el directorio
-      <code class="literal">/usr/share/locale</code> y puede examinar los más
-      comunes con
+      Después se iniciará un escritorio gráfico (X-Window<sup>[<a name="idm2484725776" href="#ftn.idm2484725776">7</a>]</sup>) y un aplicación (<code class="literal">xenodm</code><sup>[<a name="idm2484764688" href="#ftn.idm2484764688">8</a>]</sup>) que pide su usuario y su clave para iniciar una
+      sesión:
+    </p><div class="figure"><a name="idm2484762896"></a><p class="title"><b>Figura 2. xenodm solicitando nombre de cuenta y clave</b></p><div class="mediaobject"><img src="img/xenodm.png" alt="xenodm solicitando nombre de cuenta y
+        clave"></div></div><div class="literallayout"><p>Si durante la instalación, no se instaló X-Window o no se ha configurado para iniciar durante el arranque, lo que verá será una consola virtual tipo texto, como la del arranque.<br>
+De manera predeterminada hay 4 consolas virtuales tipo texto a las cuales pasa con las secuencias de teclas <span class="strong"><strong>Ctrl-Alt-F1, Ctrl-Alt-F2, Ctrl-Alt-F3 y Ctrl-Alt-F4</strong></span>. La secuencia <span class="strong"><strong>Ctrl-Alt-F5</strong></span> lo dejará en el entorno gráfico.</p></div><p>
+      Las instrucciones para operación remota
+      <a href="ar01s02.html#idm2484905616" title="2.3. Conexión con ssh">(Conexión con ssh)</a> le
+      servirán para operar directamente en una consola virtual, una vez
+      se autentique con su usuario y clave.
+    </p><p>
+      En entorno gráfico si se autentica correctamente se iniciará el
+      administrador de ventanas <code class="literal">fluxbox</code> que se
+      presenta brevemente en la siguiente sección.
+    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm2484678032"></a>2.2. Operación con fluxbox</h3></div></div></div><p>
+      <span class="strong"><strong>Fluxbox</strong></span> es un estético
+      administrador de ventanas, muy liviano y por lo tanto veloz.
+      Administra decoración de ventanas, espacios de trabajo, tiene un
+      menú general (que ve pulsando el botón derecho sobre el
+      escritorio), una barra de herramientas y un lanzador de
+      aplicaciones. A continuación se presenta el escritorio con el menú
+      que aparece al presionar el botón derecho sobre el escritorio.
+    </p><div class="figure"><a name="idm2484915728"></a><p class="title"><b>Figura 3. Menú inicial</b></p><div class="mediaobject"><img src="img/fluxbox_inicio.png" alt="Menú inicial"></div></div><p>
+      Observe las distintas posibilidades del menú. Puede navegar en
+      Internet utilizando chrome o midori.
+    </p><p>
+      Si elije <span class="strong"><strong>Espiritualidad-&gt;Evangelios de
+      Dominio Público</strong></span> podrá consultar en chrome una
+      traducción de los evangelios.
+    </p><div class="figure"><a name="idm2484822160"></a><p class="title"><b>Figura 4. Escritorio fluxbox con navegador Chrome</b></p><div class="mediaobject"><img src="img/primerflux.png" alt="Escritorio fluxbox con navegador
+        Chrome"></div></div><p>
+      Desde el menú Oficina puede elegir LibreOffice que es el paquete
+      de fuentes abiertas con aplicaciones de oficina. La gráfica
+      muestra la interfaz de LibreOffice.org Writer<sup>[<a name="idm2484751504" href="#ftn.idm2484751504">9</a>]</sup> —con el que puede abrir y guardar documentos en el
+      formato de MS-Word.
+    </p><div class="figure"><a name="idm2484795664"></a><p class="title"><b>Figura 5. LibreOffice Writer</b></p><div class="mediaobject"><img src="img/openoffice_writer.png" alt="LibreOffice Writer"></div></div><p>
+      También puede trabajar con la hoja de cálculo Calc<sup>[<a name="idm2484701584" href="#ftn.idm2484701584">10</a>]</sup>, que le permite abrir y guardar en el formato de
+      Excel.
+    </p><div class="figure"><a name="idm2484701328"></a><p class="title"><b>Figura 6. LibreOffice.org Calc</b></p><div class="mediaobject"><img src="img/openoffice_calc.png" alt="LibreOffice.org Calc"></div></div><p>
+      Puede elaborar presentaciones y abrir las que se han hecho con
+      PowerPoint con Impress<sup>[<a name="idm2484776976" href="#ftn.idm2484776976">11</a>]</sup>.
+    </p><div class="figure"><a name="idm2484796944"></a><p class="title"><b>Figura 7. Presentación</b></p><div class="mediaobject"><img src="img/openoffice_presentacion.png" alt="Presentación"></div></div><p>
+      Puede acceder a la documentación para adJ a través del menú de
+      fluxbox. Los tutoriales incluidos son: Uso básico, uso como
+      sistema de escritorio y uso como servidor y cortafuegos.
+    </p><div class="figure"><a name="idm2484686480"></a><p class="title"><b>Figura 8. Documentación</b></p><div class="mediaobject"><img src="img/documentacion.png" alt="Documentación"></div></div><p>
+      Para reproducir CDs de audio puede utilizar
+      <span class="strong"><strong>xcdplayer</strong></span> cuya interfaz gráfica
+      se presenta a continuación.
+    </p><div class="figure"><a name="idm2484685840"></a><p class="title"><b>Figura 9. Interfaz gráfica de xcdplayer</b></p><div class="mediaobject"><img src="img/xcdplayer.png" alt="Interfaz gráfica de
+        xcdplayer"></div></div><p>
+      Sin embargo en caso de que su reproductor de CD no esté conectado
+      a una salida de audio,
+      <span class="strong"><strong>xcdplayer</strong></span> no será útil. Pero en
+      tal caso puede escuchar un CD de audio, abriendo una terminal y
+      tecleando:
     </p><pre class="programlisting">
-locale -a
+doas cdio cdplay
 </pre><p>
-      Elija el locale más apropiado para su país. Recomendamos que
-      emplee codificación UTF-8 y que establezca el locale en sus
-      archivos <code class="literal">~/.fluxbox/startup</code> y
-      <code class="literal">~/.profile</code> agregando o cambiando la línea:
-    </p><pre class="programlisting">
-export LANG=es_CO.UTF-8
-</pre><p>
-      Los programas estándares emplearan esta variable (y otras
-      asociadas) para determinar el locale y modificaran la forma de
-      presentar:
-    </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-          Los mensajes, menús y ayudas para que sean en su idioma. En
-          adJ esto se soporta vía el porte
-          <span class="strong"><strong>gettext</strong></span>.
-        </p></li><li><p>
-          La codificación de caracteres para que sea la que prefiere. En
-          adJ se emplea el soporte de LC_CTYPE de OpenBSD que es
-          suficiente para UTF-8.
-        </p></li><li><p>
-          Los ordenamientos alfabéticos serán apropiados para su idioma
-          (por ejemplo en español la á lexicográficamente equivale a la
-          a, y la ñ está entre la n y la o). En adJ se emplea una
-          implementación mejorada sobre la de FreeBSD que es suficiente
-          para el español en codificaciones ISO-8859-1, ISO-8859-15 y
-          UTF-8 (aunque no basta para otros lenguajes soportados por
-          UNICODE).
-        </p></li><li><p>
-          La forma de presentar números y valores monetarios será la
-          particular de la región geográfica elegida. En adJ empleamos
-          una implementación mejorada con base en la de FreeBSD que
-          soporta especialmente bien todos los países de latinoamérica.
-        </p></li><li><p>
-          También la forma de presentar fecha y hora se ve afectada por
-          el locale así como por la zona horaria.
-        </p></li></ul></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp1679331328"></a>2.2. Personalización del interprete de ordenes ksh</h3></div></div></div><p>
-      Es función del intérprete de ordenes recibir ordenes que el
-      usuario ingrese por el teclado (o en general por entrada estándar)
-      y ejecutar los programas apropiados. Dada la importancia y
-      frecuencia de esta labor, los interpretes de ordenes (y en
-      particular <code class="literal">/bin/ksh</code>) suelen ser altamente
-      personalizables a los gustos de cada usuario.
-    </p><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idp691328384"></a>2.2.1. Ejecución de Programas</h4></div></div></div><p>
-        Desde un intérprete de ordenes un usuario puede teclear bien
-        nombres de programas o bien ordenes del intérprete de ordenes.
-        Los programas por ejecutar se especifican dando la ruta completa
-        de su ubicación en el sistema de archivos, o en caso de no dar
-        ruta se buscan en orden en los directorios especificados en la
-        variable de entorno <code class="literal">PATH</code>. Por ejemplo si
-        teclea:
-      </p><pre class="programlisting">
-    $ banner Jesus
-</pre><p>
-        El intérprete de ordenes identifica que está intentando ejecutar
-        <code class="literal">banner</code> (para presentar en grande una cadena)
-        y que le pasa como primer parámetro Jesus. Como
-        <code class="literal">banner</code> no es una orden interno del intérprete
-        de ordenes busca un archivo con permiso de ejecución en las
-        rutas indicadas en la variable <code class="literal">PATH</code>, si el
-        valor de tal variable fuera
-      </p><pre class="programlisting">
-    PATH=/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin
-</pre><p>
-        el intérprete de ordenes buscaría primero en
-        <code class="literal">/bin</code>, después en
-        <code class="literal">/usr/X11R6/bin</code> y así sucesivamente para
-        encontrarlo en <code class="literal">/usr/bin</code>. Entonces pasaría el
-        control a un programa del sistema operativo que se encarga de
-        cargar y ejecutar el programa pasándole los parámetros que
-        reciba (tal programa es <code class="literal">/usr/libexec/ld.so</code>).
-        El ejemplo anterior es equivalente a
-      </p><pre class="programlisting">
-    $ /usr/bin/banner Jesus
-</pre><p>
-        puede verificar que <code class="literal">banner</code> es un programa
-        ubicado en el directorio <code class="literal">/usr/bin</code> con:
-      </p><pre class="programlisting">
-    $ ls -l /usr/bin/b*
-</pre><p>
-        que mostrará todos los archivos de ese directorio que comiencen
-        con la letra <code class="literal">b</code>.
-      </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idp1093166720"></a>2.2.2. Variables de ambiente</h4></div></div></div><p>
-        Puede personalizar algunos detalles del intérprete de ordenes o
-        de algunos programas empleando variables de ambiente. Las
-        variables de ambiente son palabras que tienen asociadas un
-        valor, por ejemplo puede examinar el valor de la variable de
-        ambiente <code class="literal">PATH</code> con:
-      </p><pre class="programlisting">
-echo $PATH
-</pre><p>
-        y puede modificarlo con:
-      </p><pre class="programlisting">
-export PATH=/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin
-</pre><p>
-        Si en su directorio personal a instalado programas en el
-        subdirectorio bin y desea agregar la ruta a la variable PATH
-        puede usar:
-      </p><pre class="programlisting">
-export PATH=$PATH:/home/$EUSER;/bin/
-</pre></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idp1093166208"></a>2.2.3. Variables de ambiente del intérprete de ordenes</h4></div></div></div><p>
-        Cada programa emplea sus propias variables de ambiente, en
-        particular el intérprete de ordenes. Recomendamos el uso de
-        <span class="strong"><strong>ksh</strong></span> como interprete de
-        ordenes por ser liviano y estándar en sistemas OpenBSD. Con este
-        intérprete de ordenes, puede establecerse el valor de la
-        variable de ambiente <code class="literal">VISUAL</code> con:
-      </p><pre class="programlisting">
-$ export VISUAL=vi
-</pre><p>
-        Esta variable es usada por
-        <span class="strong"><strong>ksh</strong></span> para determinar qué
-        secuencias de teclas utilizar para dar órdenes especiales desde
-        la línea de ordenes. El valor <code class="literal">vi</code> indica que
-        se usen las teclas que se usan con el editor vi (por ejemplo en
-        modo ordenes, es decir después de oprimir
-        <span class="strong"><strong>ESC</strong></span>, pueden usarse
-        <span class="strong"><strong>k</strong></span> para ir a la instrucción
-        anterior de la historia, <span class="strong"><strong>j</strong></span>
-        para ir a la siguiente, <span class="strong"><strong>?</strong></span>
-        seguido de una cadena para buscar una orden en la historia que
-        incluya la cadena, <span class="strong"><strong>0</strong></span> para ir
-        al comienzo de la línea, <span class="strong"><strong>$</strong></span>
-        para ir al final de la linea,
-        <span class="strong"><strong>i</strong></span> para insertar en la
-        posición del cursor y salir del modo ordenes). Si prefiere otra
-        forma de interacción emplee:
-      </p><pre class="programlisting">
-export VISUAL=gmacs
-</pre><p>
-        Otra variable usado por diversos programas es
-        <code class="literal">TERM</code> que permite establecer el tipo de
-        terminal que se está usando. por ejemplo:
-      </p><pre class="programlisting">
-$ export TERM=xterm-color
-</pre><p>
-        que permite presentar colores si trabaja directamente en el
-        sistema OpenBSD con X-Window o
-      </p><pre class="programlisting">
-$ export TERM=wsvt25
-</pre><p>
-        que permite presentar colores si emplea la consola tipo texto en
-        un PC ordinario o si se conecta con putty (por ejemplo cuando
-        ingresa a vim).
-      </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idp1019582208"></a>2.2.4. Configuración por omisión de sesiones con ksh</h4></div></div></div><p>
-        Notará que el valor de las variables de ambiente que fije
-        durante una sesión se perderá cuando termine la sesión. Para
-        lograr una configuración más perdurable puede establecer la
-        variable de ambiente a un archivo ejecutado por el intérprete de
-        ordenes automáticamente cada vez que inicia una sesión. En el
-        caso del intérprete ksh tal archivo es
-        <code class="literal">~/.profile</code>. Un ejemplo de un archivo
-        <code class="literal">~/.profile</code> es:
-      </p><pre class="programlisting">
-alias vi=vim
-export VISUAL=vi
-export PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin:/usr/local/sbin:.
-if (test "$TERM" = "xterm") then {
-    export TERM=xterm-color
-else {
-    export TERM=wsvt25
-} fi;
-which colorls &gt; /dev/null
-if (test "$?" == "0") then {
-    export CLICOLOR=1
-    alias ls=colorls
-} fi;
-export  PKG_PATH=ftp://rt.fm/pub/OpenBSD/5.7/packages/i386
-export PS1="\h$ "
-export LANG="es_CO.UTF-8"
-</pre><p>
-        La orden alias <code class="literal">vi=vim</code> indica que cada vez que
-        se ejecute la orden <code class="literal">vi</code> se llame al programa
-        vim (ver Sección 7.3, “<span class="quote">Editor vi</span>”). Note que
-        también se establecen las variables de ambiente
-      </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-            <code class="literal">VISUAL</code> modo de edición en ksh.
-          </p></li><li><p>
-            <code class="literal">PATH</code> que establece rutas en la cual
-            buscar programas (se separan unas de otras con dos puntos).
-          </p></li><li><p>
-            <code class="literal">TERM</code> que establece el tipo de terminal
-            que está usando. Desde terminales gráficas será xterm o
-            xterm-color, mientras que desde consolas tipo texto
-            típicamente será vt220 o wsvt25.
-          </p></li><li><p>
-            <code class="literal">PKG_PATH</code> que establece ruta en la cual
-            buscar paquetes por instalar –usado por administradores de
-            sistemas OpenBSD.
-          </p></li><li><p>
-            <code class="literal">LANG</code> define el locale, es decir las
-            identificaciones culturales y de idioma para un área
-            geográfica.
-          </p></li><li><p>
-            <code class="literal">PS1</code> que establece el símbolo de espera de
-            ordenes principal de <span class="strong"><strong>ksh</strong></span>,
-            el valor de este ejemplo (“<span class="quote">\h$</span>”) establece un
-            símbolo de espera de ordenes que presenta el nombre de la
-            máquina seguido del símbolo pesos y un espacio.
-          </p></li></ul></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idp2371175040"></a>2.2.5. colorls</h4></div></div></div><p>
-        En el ejemplo presentado si está instalado el programa
-        <code class="literal">colorls</code> (del paquete colorls), este se define
-        como alias para la orden <code class="literal">ls</code>, de forma que la
-        lista de archivos se presente con colores y como ha sido
-        modificado para adJ presentará orden correcto en español. Esto
-        ocurrirá desde consolas tipo texto. Si está usando OpenBSD con
-        X-Window y <code class="literal">xterm</code>, además de lo anterior
-        necesita agregar a su archivo `<code class="literal">~/.Xdefaults</code>
-        (o crearlo si no existe):
-      </p><pre class="programlisting">
-// Con base en http://dentarg.starkast.net/files/configs/dot.zshrc
-
-XTerm*color0:                   #000000
-
-XTerm*color1:                   #bf7276
-
-XTerm*color2:                   #86af80
-XTerm*color3:                   #968a38
-XTerm*color4:                   #3673b5
-XTerm*color5:                   #9a70b2
-XTerm*color6:                    #7abecc
-XTerm*color7:                   #dbdbdb
-XTerm*color8:                   #6692af
-XTerm*color9:                   #e5505f
-XTerm*color10:                  #87bc87
-XTerm*color11:                  #e0d95c
-XTerm*color12:                  #1b85d6
-XTerm*color13:                  #ad73ba
-XTerm*color14:                  #338eaa
-XTerm*color15:                  #f4f4f4
-XTerm*colorBD:                  #ffffff
-XTerm*foreground:               #000000
-XTerm*background:               #ffffff
-XTerm*font:                     shine2.se
-XTerm*boldMode:                 false
-XTerm*scrollBar:                false
-XTerm*colorMode:                on
-XTerm*dynamicColors:            on
-XTerm*highlightSelection:       true
-XTerm*eightBitInput:            false
-XTerm*metaSendsEscape:          false
-XTerm*oldXtermFKeys:            true
-</pre></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idp2371175936"></a>2.2.6. Lecturas recomendadas</h4></div></div></div><p>
-        Puede ver detalles de las variables de ambiente empleadas por
-        ksh con
-      </p><pre class="programlisting">
-man ksh
-</pre><p>
-        La configuración de colores es tomada de una respuesta de Steve
-        Jones en una lista de correo, está disponible en
-        <a href="">http://mailman.theapt.org/pipermail/openbsd-newbies/2004-April/001806.html</a>.
-      </p></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idp445322240"></a>2.3. Uso de zsh como interprete de ordenes</h3></div></div></div><p>
-      El paquete <code class="literal">zsh</code> se instala de manera
-      predeterminada en adJ. Puede verificar que ya está instalado en su
-      adJ con:
-    </p><pre class="programlisting">
-  zsh
-</pre><p>
-      Después verifique que está registrado como uno de los interpretes
-      de ordenes aceptables con:
-    </p><pre class="programlisting">
-  cat /etc/shells
-</pre><p>
-      que debería presentar una línea con
-      <code class="literal">/usr/local/bin/zsh</code>
+      Desde el menú otros puede acceder a
+      <span class="strong"><strong>plan</strong></span> y
+      <span class="strong"><strong>vim</strong></span>. El primero de los cuales
+      es un calendario que permite programar actividades. Mientras que
+      <span class="strong"><strong>vim</strong></span> es un clásico y ágil editor
+      de texto en entornos tipo UNIX
+      <a href="ar01s07.html#idm2398718352" title="7.3. Editor vi">Sección 7.3, “Editor vi”</a>
+    </p><div class="figure"><a name="idm2484812176"></a><p class="title"><b>Figura 10. plan</b></p><div class="mediaobject"><img src="img/plan.png" alt="plan"></div></div><p>
+      Por el menú de fluxbox puede configurar Estilos del sistema. La
+      imagen muestra el Estilo de sistema Meta.
+    </p><div class="figure"><a name="idm2484877200"></a><p class="title"><b>Figura 11. Estilos del sistema</b></p><div class="mediaobject"><img src="img/fluxbox_menu.png" alt="Estilos del sistema"></div></div><p>
+      Elija el Estilo del sistema que más le guste. Por ejemplo, a
+      continuación se presenta este el estilo llamado
+      <span class="strong"><strong>Makro</strong></span>.
+    </p><div class="figure"><a name="idm2484672400"></a><p class="title"><b>Figura 12. Ejemplo de Estilo de sistema</b></p><div class="mediaobject"><img src="img/estilo1.png" alt="Ejemplo de Estilo de
+        sistema"></div></div><p>
+      La figura anterior presenta también un intérprete de órdenes, que
+      puede iniciar desde el menú eligiendo xterm, aunque también puede
+      emplear uno desde las consolas virtuales después de autenticarse.
     </p><p>
-      Si esto es así puede cambiar su interpete de órdenes por omisión
-      para que sea <code class="literal">zsh</code> con:
+      En sistemas operativos tipos Unix es usual emplear un intérprete
+      de órdenes para interactuar. Su operación es la misma bien inicie
+      desde el entorno gráfico o en una consola virtual o remotamente
+      como se explica en la siguiente sección. Aunque ciertamente un
+      intérprete de órdenes exige más memoria y atención del usuario,
+      también le dará más opciones, más agilidad y la posibilidad de
+      plena operación remota.
+    </p></div><div class="section" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="idm2484905616"></a>2.3. Conexión con ssh</h3></div></div></div><p>
+      Dado que la interacción con un intérprete de órdenes se basa en
+      órdenes ingresadas por teclado y respuestas tipo texto, estos
+      intérpretes hacen muy efectiva la operación remota. La operación
+      remota puede hacerse de forma segura con el protocolo SSH 2,
+      empleando el servidor OpenSSH del servidor y un cliente de ssh en
+      el computador desde el cual hará la conexión (la ventaja de este
+      protocolo es que además de requerir autenticación, verifica
+      autenticidad del servidor al cual se conecta y sólo transmite
+      información cifrada –lo cual hace muy difícil descifrarla a un
+      tercero que pueda llegar a interceptar la comunicación).
+    </p><p>
+      Si realiza la conexión desde un sistema tipo Unix, recomendamos
+      que emplee el cliente de OpenSSH, si se conecta desde un sistema
+      tipo Windows puede emplear el programa
+      <span class="strong"><strong>putty</strong></span> (descárguelo de
+      [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html]).
+    </p><p>
+      En el primer caso puede iniciar la conexión con:
     </p><pre class="programlisting">
-  csh -s /usr/local/bin/zsh
+$ ssh juan@www2.pasosdeJesus.org
 </pre><p>
-      En el primer ingreso <code class="literal">zsh</code> le permitirá
-      configurarlo mediante menús.
+      reemplazando <code class="literal">juan</code> por el login que tenga en el
+      sistema y <code class="literal">www2.pasosdeJesus.org</code> por el nombre
+      del servidor. Note que con el símbolo <code class="literal">$</code>,
+      representamos el símbolo del sistema (del inglés
+      <span class="emphasis"><em>prompt</em></span>) –no debe teclearlo.
     </p><p>
-      Aunque usted también puede manejar la configuración de zsh
-      poniendo unos archivos de configuración que recomendamos (ver
-      <a href="">https://github.com/pasosdeJesus/adJ/tree/master/arboldd/usr/local/share/adJ/archconf</a>)
-      mediante el programa <code class="literal">rcm</code>.
+      La conexión con putty se ejemplifica a continuación:
+    </p><div class="figure"><a name="idm2484919952"></a><p class="title"><b>Figura 13. Configuración de putty</b></p><div class="mediaobject"><img src="img/putty1.png" alt="Configuración de putty"></div></div><p>
+      <span class="inlinemediaobject"><img src="img/warning.png"></span> Aviso: Con Putty asegúrese de emplear el
+      protocolo SSH 2 y para ver bien algunos caracteres es posible que
+      en Window-&gt;Translation deba elegir traducción de Latin1 o
+      ISO-8895-1.
     </p><p>
-      Como se indica en la página del manual
-      <code class="literal">zshroadmap</code>:
-    </p><p>
-      Para la interacción con el usuario zsh utiliza el Editor de Líneas
-      de Zsh ZLE, que le permitirá entre otras:
-    </p><div class="orderedlist"><ol type="1" compact><li><p>
-          Cambiar el modo de uso del teclado. El modo
-          <code class="literal">emacs</code> es más simple si no conoce
-          <code class="literal">vi</code>, se puede elegir con
-          <code class="literal">bindkey -e</code> (y el modo <code class="literal">vi</code>
-          se elije con <code class="literal">bindkey -v</code>)
-        </p></li><li><p>
-          Contar con un historial de las ordenes que ha dado que puede
-          navegar con flecha arriba y flecha abajo
-        </p></li><li><p>
-          Completar automáticamente palabras cundo usted digita parte de
-          la misma y presiona TAB. <code class="literal">zsh</code> tiene un
-          sistema programable de completación en el que practicamente
-          cualquier cosa puede ser fuente de completación dependiendo
-          del contexto.
-        </p></li><li><div class="literallayout"><p>Programar <code class="literal">zsh</code>. Ya incluye muchas funciones útiles contribuidas por usuarios, las cuales puede revisar en el directorio<br>
-<code class="literal">/usr/local/share/zsh/5.8/functions/Misc/</code>, no deje de probar <code class="literal">. /usr/local/share/zsh/5.8/functions/Misc/tetriscurses</code></p></div></li></ol></div><p>
-      Como se explican en {KENLON2019} al expandir rutas, el comodín
-      <code class="literal">*</code> puede actuar como buscador (labor que
-      tipicamente puede hacerse con <code class="literal">find</code> pero de
-      manera más verbosa). Veamos ejemplos:
-    </p><div class="itemizedlist"><ul type="disc" compact><li><p>
-          <code class="literal">ls *(/)</code> listar carpetas del directorio
-          actual y su contenido.
-        </p></li><li><p>
-          <code class="literal">ls *(.)</code> listar archivos (que no son
-          carpetas) del directorio actual.
-        </p></li><li><p>
-          <code class="literal">ls *(@)</code> listar enlaces del directorio
-          actual
-        </p></li><li><p>
-          <code class="literal">ls /var/www/bundler/ruby/3.0/bin/*(*)</code>
-          listar ejecutables del directorio
-          <code class="literal">/var/www/bundler/ruby/3.0/bin/</code>
-        </p></li><li><p>
-          <code class="literal">ls math/**/Makefile</code> busca archivos de
-          nombre <code class="literal">Makefile</code> recursivamente dentro del
-          directorio <code class="literal">math</code> y sus subdirectorios.
-        </p></li><li><p>
-          <code class="literal">ls -lat ~/Downloads/*(mh-8)</code> presenta
-          archivos del directorio <code class="literal">~/Downloads</code>
-          modificados en las últimas 8 horas.
-        </p></li><li><p>
-          <code class="literal">ls -lat ~/Downloads/*(md+30)</code> presenta
-          archivos del directorio <code class="literal">~/Downloads</code>
-          modificados por última vez hace más de 30 días (podría valer
-          la pena eliminarlos).
-        </p></li></ul></div><div class="section" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="idp2408114304"></a>2.3.1. Lecturas recomendadas</h4></div></div></div><div class="itemizedlist"><ul type="disc" compact><li><p>
-            Páginas del manual de zsh.
-          </p></li><li><p>
-            https://grml.org/zsh/zsh-lovers.pdf
-          </p></li><li><p>
-            {KENLON2019} Seth Kenlon. Getting started with Zsh.
-            <a href="">https://opensource.com/article/19/9/getting-started-zsh</a>.
-            2019.
-          </p></li></ul></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="uso_de_medios_de_almacenamiento.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="edicion_de_textos.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">4. Uso de medios de almacenamiento </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 5. Edición de textos</td></tr></table></div></body></html>
+      <span class="strong"><strong>ssh</strong></span> autenticará la máquina a la
+      cual se está conectado, comparando la llave pública de esa máquina
+      con alguna de las que conozca, si es la primera vez que se conecta
+      a ese sitio, <span class="strong"><strong>ssh</strong></span> le pedirá
+      confirmar la nueva llave pública<sup>[<a name="idm2484901392" href="#ftn.idm2484901392">12</a>]</sup>. Después le pedirá su clave en ese servidor (o si ha
+      configurado autenticación con llaves simétricas pedirá su clave
+      RSA/DSA o incluso nada si ha configurado un agente que maneje sus
+      llaves RSA/DSA i.e <span class="strong"><strong>ssh-agent</strong></span> en
+      el caso de OpenSSH) para finalmente dejarlo en una sesión en modo
+      texto.
+    </p><div class="figure"><a name="idm2484919184"></a><p class="title"><b>Figura 14. Inicio de una sesión con putty en pasosdeJesus.org</b></p><div class="mediaobject"><img src="img/putty2.png" alt="Inicio de una sesión con putty en
+        pasosdeJesus.org"></div></div><p>
+      Al iniciar la sesión podrá ver el mensaje del día
+      (<span class="strong"><strong>motd</strong></span> – <span class="emphasis"><em>message of
+      the day</em></span>) que el administrador haya configurado, se
+      ejecutarán los archivos de órdenes de inicio y quedará en el
+      intérprete de órdenes que esté configurado en su cuenta.
+    </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2484739728" href="#idm2484739728">5</a>] </sup>
+          En las imágenes cifradas se almacena los archivos que el
+          usuario quiera cifrar. Para poder guardar y recuperar los
+          archivos se debe dar una clave
+        </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2484763536" href="#idm2484763536">6</a>] </sup>
+          Una vez en operación puede volver a dar estas claves
+          ejecutando
+        </p><pre class="programlisting">
+doas sh /etc/rc.local
+</pre><p>
+          desde un intérprete de órdenes, o desde el menú de Fluxbox
+          Dispositivos-&gt;Reiniciar Servicios Faltantes
+        </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2484725776" href="#idm2484725776">7</a>] </sup>
+          X-Window es un sistema estandarizado para manejo de las
+          aplicaciones gráficas en los sistemas operativos de la familia
+          de los Unix
+        </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2484764688" href="#idm2484764688">8</a>] </sup>
+          <code xmlns="" class="literal">xenodm</code> es un gestor de pantalla que
+          presenta al usuario con una pantalla de autenticación
+          (<span xmlns="" class="emphasis"><em>login</em></span>) que solicita el nombre de usuario
+          y su contraseña
+        </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2484751504" href="#idm2484751504">9</a>] </sup>
+          Desde la línea de órdenes puede iniciar Writer con
+          <code xmlns="" class="literal">/usr/local/bin/swriter</code> o puede abrir
+          LibreOffice completo con
+          <code xmlns="" class="literal">/usr/local/bin/soffice</code>
+        </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2484701584" href="#idm2484701584">10</a>] </sup>
+          Desde la línea de órdenes puede iniciar Calc con
+          <code xmlns="" class="literal">/usr/local/bin/scalc</code>
+        </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2484776976" href="#idm2484776976">11</a>] </sup>
+          Desde la línea de órdenes inicia Impress con
+          <code xmlns="" class="literal">/usr/local/bin/simpress.</code>
+        </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm2484901392" href="#idm2484901392">12</a>] </sup>
+          Si la llave de la máquina a la que se conecta ha cambiado (por
+          ejemplo si se instaló otro sistema operativo o se actualizó
+          sin cuidado), para que el cliente de ssh reconozca la nueva
+          clave debe primero borrar la llave anterior del archivo
+          <code xmlns="" class="literal">~/.ssh/known_hosts</code>
+        </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="index.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s03.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 3. Conceptos básicos</td></tr></table></div></body></html>
