@@ -88,7 +88,7 @@
     </legalnotice>
 
   </articleinfo>
-  
+
   &introduccion;
   &primer_uso_de_adJ;
   &conceptos_basicos;
@@ -102,6 +102,7 @@
   &formatos_de_archivos;
   &correo_electronico;
   &labores_basicas_de_administracion;
+
   <appendix id="novedades">
 	   <title>Novedades</title>
      <para>
