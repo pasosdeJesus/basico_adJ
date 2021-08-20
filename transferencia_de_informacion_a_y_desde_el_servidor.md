@@ -14,7 +14,7 @@ los mismos ```ftp```, ```curl``` o ```wget```.
 Para enviar y recibir información cifrada utilice el protocolo 
 **ssh** (o su protocolo asociado **sftp**).  Para emplear este método 
 desde un sistema adJ/OpenBSD (o otro sistema tipo Unix que cuente con 
-OpenSSH) se puede usar bien ```scp``` desde la línea de ordenes o el 
+OpenSSH) se puede usar bien ```scp``` desde la línea de órdenes o el 
 programa ```filezilla```.
 
 También puede mantener sincronía entre directorios de un par de servidores
@@ -113,7 +113,8 @@ pueden estar en otra máquina.
 [^transferencia.1]: Incluso scp implementa la funcionalidad de cp al permitir 
 	copiar localmente un archivo.
 
-Dado que Windows no tiene un servidor **ssh** por omisión, es posible 
+Dado que Windows no tiene un servidor **ssh** de manera predeterminada, 
+es posible 
 transmitir archivos a y desde sistemas Windows sólo desde el computador con 
 Windows usando un programa como **winscp** (disponible en <http://winscp.sf.net> 
 o **pscp** que se distribuye junto con **putty** ([xref](#conceptos_basicos)).

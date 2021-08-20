@@ -2,9 +2,9 @@
 
 Los conceptos y herramientas presentados desde esta sección se asimilan mejor
 practicando.
-Procure ejercitarlos desde un interprete de ordenes (bien operando
-directamente un sistema tipo Unix o bien ingresando remotamente desde otro
-sistema como se explicó, (ver [xref](#primer_uso_de_adJ)).
+Procure ejercitarlos desde un interprete de órdenes, bien operando
+directamente un sistema adJ o bien ingresando remotamente desde otro
+sistema como se explica en [xref](#primer_uso_de_adJ).
 
 ### Definiciones iniciales {#definiciones_iniciales}
 
@@ -15,23 +15,24 @@ ruta o sitio del sistema de archivos.
 Un *programa* es un archivo con instrucciones que pueden ser efectuadas
 por el computador.  La secuencia de instrucciones determina lo que hará el
 programa.  El *formato de un archivo* es la manera como está organizada la
-información para que pueda ser empleada con facilidad por el programa con el
-que fue creado.  Por ejemplo un archivo de nombre `carta.odt` posiblemente
+información para que pueda ser empleada con facilidad por el  o los programas
+que pueden leer o escribir. 
+Por ejemplo un archivo de nombre `carta.odt` posiblemente
 se trate de una carta escrita en formato de Open Document Format
 (lo sugieren las últimas letras `.odt`).
-Para verla debe usarse un programa que entienda ese formato, uno entre otros
-es LibreOffice.
+Para verla o modificarla debe usarse un programa que entienda ese formato, 
+uno entre otros es LibreOffice.
 
-### Intérprete de ordenes {#interprete_de_ordenes}
+### Intérprete de órdenes {#interprete_de_ordenes}
 
-El intérprete de ordenes le permite usar varias ordenes internos, así
+El intérprete de órdenes le permite usar varias órdenes internas, así
 como ejecutar programas.
-Es común que las ordenes o programas requieran algo de información como
+Es común que las órdenes o programas requieran algo de información como
 suministro (i.e parámetros o argumentos), así como opciones que modifiquen
-el comportamiento por omisión.
+el comportamiento predeterminado.
 Tal información suele darse a continuación del nombre de la orden, separando
 un dato o una opción de otra con espacios. Si es una de las primeras veces
-que ingresa al sistema, recomendamos los siguientes ordenes/programas:
+que ingresa al sistema, recomendamos los siguientes órdenes/programas:
 
 **man man**
 
@@ -64,19 +65,19 @@ llamamos *directorio personal* cuya ruta normalmente es de la forma
 
 ![Sistema de archivos](img/arbol-archivos.png)
 
-El intérprete de ordenes que emplee tendrá como parte de su estado un
-directorio de trabajo, un símbolo de espera de ordenes y variables de entorno.
-La manera de ver y alterar estos datos depende del intérprete de ordenes que
-emplee, nos limitaremos al intérprete de ordenes **ksh** (que tiene bastantes
-cosas en común con otros intérpretes de ordenes como **bash**).
+El intérprete de órdenes que emplee tendrá como parte de su estado un
+directorio de trabajo, un símbolo de espera de órdenes y variables de entorno.
+La manera de ver y alterar estos datos depende del intérprete de órdenes que
+emplee, nos limitaremos al intérprete de órdenes **ksh** (que tiene bastantes
+cosas en común con otros intérpretes de órdenes como **bash**).
 
 Podrá examinar el directorio de trabajo con `pwd`, listar algunas
 variables de entorno (las exportadas) con **export** y modificar el
-símbolo de espera de ordenes con la variable de entorno `PS1`.
-A continuación se listan algunas ordenes/programas relacionados con el
+símbolo de espera de órdenes con la variable de entorno `PS1`.
+A continuación se listan algunas órdenes/programas relacionados con el
 sistema de archivos y un mínimo del uso de cada uno. Sugerimos que mire la
 documentación que corresponde a cada uno (e.g para ver documentación del
-programa **ls** ejecute desde un intérprete de ordenes **man ls**):
+programa **ls** ejecute desde un intérprete de órdenes **man ls**):
 
 `pwd`
 
@@ -135,10 +136,10 @@ muy efectivamente.
 
 * Las sesiones le permiten retomar el trabajo que estaba haciendo
   previamente.
-* Las ventanas permiten operar en varios interpretes de ordenes que ocupan
+* Las ventanas permiten operar en varios interpretes de órdenes que ocupan
   el espacio completo donde visualiza la terminal.
 * Los paneles dividien una ventana en más áreas para ver simultaneamente
-  varios interpretes de ordenes.
+  varios interpretes de órdenes.
 
 Puede probar el uso de sesiones de esta forma:
 
@@ -147,7 +148,7 @@ Puede probar el uso de sesiones de esta forma:
 3. Cierre la terminal  --por la forma de operación de tmux esto no terminará la sesión que inició
 4. Abra otra terminal e inice tmux pero indicando que se una a una sesión existente con `tmux -a`.  Debería poder ver su sesión de terminal con Hola Mundo.
 
-Ya en tmux, puede enviar ordenes a tmux comenzando con la secuencia de teclas
+Ya en tmux, puede enviar órdenes a tmux comenzando con la secuencia de teclas
 Control-b, por ejemplo  para crear una ventana emplee Control-b y después
 la letra `c` (minúscula).
 

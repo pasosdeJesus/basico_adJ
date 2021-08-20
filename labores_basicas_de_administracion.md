@@ -13,7 +13,7 @@ $ su -
 Típicamente al pasar a la cuenta root el prompt cambiará a ```#```.
 
 Si **doas** se configura para permitir su utilización por parte de usuarios 
-que estén en el grupo ```wheel``` sin clave, podrán ejecutarse ordenes como 
+que estén en el grupo ```wheel``` sin clave, podrán ejecutarse órdenes como 
 si se tratara de la cuenta ```root``` precediéndolos con **doas**. 
 Por ejemplo para listar el directorio del usuario ```root```:
 
@@ -34,8 +34,8 @@ El administrador puede agregar usuarios con la orden ```adduser```.
 Su uso típico se esboza a continuación[^admin.1]
 
 [^admin.1]: Tenga en cuenta que la primera vez que ejecute ```adduser``` tras 
-	instalar un sistema adJ, este programa preguntará valores por 
-	omisión por emplear durante la creación de cuentas.
+	instalar un sistema adJ, este programa preguntará valores predeterminados
+	por emplear durante la creación de cuentas.
 
 ```
 doas adduser
@@ -76,7 +76,7 @@ Un GID
 : O número que identifica al grupo principal al que pertenece el usuario 
 	(1003 en el ejemplo).
 
-Un intérprete de ordenes 
+Un intérprete de órdenes 
 : Que será el que tendrá el usuario al iniciar nuevas sesiones 
 	(en el ejemplo es /bin/ksh).
 
@@ -93,7 +93,7 @@ Eventualmente uno o más grupos secundarios
 Un directorio personal
 : Cuyo propietario será el usuario y quedará como directorio de trabajo cada 
 	vez que inicie una sesión. En el ejemplo es ```/home/juan``` 
-	(note que por omisión todos los directorios de usuarios son 
+	(note que de manera predeterminada los directorios de usuarios son 
 	subdirectorios de ```/home```).
 
 Para eliminar un usuario y su directorio personal:
@@ -125,7 +125,7 @@ conocidos como bitácoras. Algunos son:
 
 - ```authlog```: Muestra los accesos de los usuarios permitidos y rechazados
 
-- ```secure```: Muestra las ordenes ejecutadas por administradores 
+- ```secure```: Muestra las órdenes ejecutadas por administradores 
 
 - ```servicio```: Los programas que están corriendo en la máquina
 

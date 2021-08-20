@@ -28,7 +28,7 @@ pero no podrá acceder a los directorios cifrados[^primer.2].
 ```
 doas sh /etc/rc.local
 ```
-desde un intérprete de ordenes, o desde el menú de 
+desde un intérprete de órdenes, o desde el menú de 
 Fluxbox Dispositivos->Reiniciar Servicios Faltantes
 
 
@@ -47,8 +47,8 @@ su contraseña
 Si durante la instalación, no se instaló X-Window o no se ha configurado
 para iniciar durante el arranque, lo que verá será una consola virtual tipo 
 texto, como la del arranque.  
-Por omisión hay 4 consolas virtuales tipo texto a las cuales pasa con las 
-secuencias de teclas 
+De manera predeterminada hay 4 consolas virtuales tipo texto a las cuales 
+pasa con las secuencias de teclas 
 **Ctrl-Alt-F1, Ctrl-Alt-F2, Ctrl-Alt-F3 y Ctrl-Alt-F4**. 
 La secuencia **Ctrl-Alt-F5** lo dejará en el entorno gráfico.
 
@@ -86,7 +86,7 @@ en el formato de MS-Word.
  
 ![LibreOffice Writer](img/openoffice_writer.png)
 
-[^primer.5]: Desde la línea de ordenes puede iniciar Writer con 
+[^primer.5]: Desde la línea de órdenes puede iniciar Writer con 
 	```/usr/local/bin/swriter``` o puede abrir LibreOffice completo con 
 	```/usr/local/bin/soffice```
 
@@ -96,7 +96,7 @@ abrir y guardar en el formato de Excel.
 
 ![LibreOffice.org Calc](img/openoffice_calc.png)
 
-[^primer.6]: Desde la línea de ordenes puede iniciar Calc con 
+[^primer.6]: Desde la línea de órdenes puede iniciar Calc con 
 	```/usr/local/bin/scalc```
               
 Puede elaborar presentaciones y abrir las que se han hecho con PowerPoint con 
@@ -105,7 +105,7 @@ Impress[^primer.7].
 
 ![Presentación](img/openoffice_presentacion.png)
 
-[^primer.7]: Desde la línea de ordenes inicia Impress con 
+[^primer.7]: Desde la línea de órdenes inicia Impress con 
 	```/usr/local/bin/simpress.```
  
 Puede acceder a la documentación para adJ a través del menú de fluxbox. 
@@ -144,21 +144,21 @@ se presenta este el estilo llamado **Makro**.
 
 ![Ejemplo de Estilo de sistema](img/estilo1.png)
 
-La figura anterior presenta también un intérprete de ordenes, que puede 
+La figura anterior presenta también un intérprete de órdenes, que puede 
 iniciar desde el menú eligiendo xterm, aunque también puede emplear uno 
 desde las consolas virtuales después de autenticarse.
 
  
-En sistemas operativos tipos Unix es usual emplear un intérprete de ordenes 
+En sistemas operativos tipos Unix es usual emplear un intérprete de órdenes 
 para interactuar. Su operación es la misma bien inicie desde el entorno
 gráfico o en una consola virtual o remotamente como se explica en la siguiente 
-sección. Aunque ciertamente un intérprete de ordenes exige más memoria 
+sección. Aunque ciertamente un intérprete de órdenes exige más memoria 
 y atención del usuario, también le dará más opciones, más agilidad y 
 la posibilidad de plena operación remota.
 
 ### Conexión con ssh {#conexion_con_ssh}
 
-Dado que la interacción con un intérprete de ordenes se basa en ordenes 
+Dado que la interacción con un intérprete de órdenes se basa en órdenes 
 ingresadas por teclado y respuestas tipo texto, estos intérpretes hacen muy 
 efectiva la operación remota. La operación remota puede hacerse de forma segura 
 con el protocolo SSH 2, empleando el servidor OpenSSH del servidor y un 
@@ -212,8 +212,8 @@ para finalmente dejarlo en una sesión en modo texto.
 
 Al iniciar la sesión podrá ver el mensaje del día (**motd** --
  *message of the day*) 
-que el administrador haya configurado, se ejecutarán los archivos de ordenes 
-de inicio y quedará en el intérprete de ordenes que esté configurado en su 
+que el administrador haya configurado, se ejecutarán los archivos de órdenes 
+de inicio y quedará en el intérprete de órdenes que esté configurado en su 
 cuenta.
 
  

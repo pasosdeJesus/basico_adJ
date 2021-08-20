@@ -1,3 +1,7 @@
+Version 6.9
+
+:  - Ortografía
+
 Version 6.8
 
 :  - Aumentada [xref](#zsh) 

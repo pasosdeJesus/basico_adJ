@@ -93,7 +93,7 @@ electrónico.
 Al iniciar ```mutt``` presenta los correos que estén en su casilla, le permite 
 desplazarse de uno a otro con flechas o con las letras ```j``` y ```k``` 
 (cómo en vi), podrá consultar uno con ```Retorno```, salir con ```q```, 
-ver ayuda sobre ordenes con ```?```, 
+ver ayuda sobre órdenes con ```?```, 
 eliminar uno con ```d```, iniciar un correo (o continuar editando algún correo 
 pospuesto) con ```m```. 
 Una vez esté viendo un correo puede responder con ```r```, 
@@ -104,13 +104,13 @@ o emplear programas como PGP o GPG para firmar o cifrar sus mensajes
 
 Para organizar los correos que reciba, puede emplear carpetas, para pasar de 
 una carpeta a otra emplee ```c```, para organizar una carpeta (por fecha, 
-emisor, destinatario, tamaño, tema o hilos) emplee o. 
-Si ordena una carpeta por hilos, podrá emplear otras ordenes como ```Ctrl-D``` 
+emisor, destinatario, tamaño, tema o hilos) emplee `o`. 
+Si ordena una carpeta por hilos, podrá emplear otras órdenes como ```Ctrl-D``` 
 para borrar un hilo completo, ```Ctrl-P``` para pasar al anterior, ```Ctrl-N``` 
 para pasar al siguiente.
 
-mutt puede configurarse en el archivo ```~/.muttrc```. Un ejemplo se presenta a 
-continuación (las líneas iniciadas con # son comentarios):
+`mutt` puede configurarse en el archivo ```~/.muttrc```. Un ejemplo se 
+presenta a continuación (las líneas iniciadas con # son comentarios):
 
 ```
 # Para establecer una dirección en la que se prefieren respuestas
@@ -153,7 +153,7 @@ procmail puede manejar automáticamente todo correo que reciba en una cuenta y
 realizar con este las acciones que usted describa. Para que separe 
 automáticamente los correos en las carpetas del ejemplo anterior, debe 
 configurar y crear varios archivos. Cree la carpeta ```~/.procmail```, en ella 
-el archivo r```c.maillists``` con la configuración de los patrones por 
+el archivo `rc.maillists` con la configuración de los patrones por 
 buscar en los correos y la carpeta en la que deben quedar:
 
 ```
@@ -175,8 +175,8 @@ tareas
 ```
 
 La última línea indica que deben dejarse correos enviados a direcciones 
-que incluyan la palabra structio en la carpeta tareas; mientras que las 
-que van a las otras direcciones mostradas, irán a la carpeta paz .
+que incluyan la palabra `structio` en la carpeta `tareas`; mientras que las 
+que van a las otras direcciones mostradas, irán a la carpeta `paz`.
 
 El archivo ```~/.procmailrc``` debe contener algo como:
 
@@ -196,10 +196,10 @@ procmail en ```~/.procmail/log```. Después de configurar este servicio
 puede ser mejor quitarla.
 
 Si en su sistema procmail fue configurado para ser llamado por el MTA, no 
-tendrá que hacer más (e.g en la configuración por omisión de `exim` así 
+tendrá que hacer más (e.g en la configuración predeterminada de `exim` así 
 ocurre). 
-Si su MTA no fue configurado para ejecutar procmail puede crear el archivo 
- ```~/.forward``` con:
+Si su MTA no fue configurado para ejecutar procmail puede ejecutarlo, desde
+un archivo ```~/.forward``` con:
 
 ```
 "|IFS=' ' && exec /usr/bin/procmail -f- || exit 75 "

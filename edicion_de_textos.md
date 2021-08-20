@@ -15,7 +15,7 @@ en modo gráfico. Viene incluido con el administrador de archivos
 xfe (ver [xref](#administrador_de_archivos_xfe)) desarrollado por Roland Baudin.
 
 Se inicia desde el menú de fluxbox (botón derecho sobre el escritorio), desde 
-Oficina->xfw o bien desde un interprete de ordenes con
+Oficina->xfw o bien desde un interprete de órdenes con
 ```
 xfw
 ```
@@ -41,7 +41,7 @@ cambiar con la tecla **INS** o marcando en el menú Preferencias->Sobreescribir.
 **mg** es un editor de texto simple, pequeño, veloz y portable con fuentes 
 en el dominio público, mantenidas por el equipo de desarrollo de OpenBSD 
 y que opera en la terminal. Las combinaciones de teclas que emplea como 
-ordenes provienen del editor Emacs, aunque mg no está vinculado con el 
+órdenes provienen del editor Emacs, aunque mg no está vinculado con el 
 proyecto GNU.
 
 Desde un interprete de órdenes lo inicia con **mg** o puede a continuación 
@@ -58,7 +58,7 @@ por ejemplo ```vim```.
 
 Notará que los caracteres que digite estando en mg serán introducidos en el 
 buffer que esté operando, y que podrá usar las flechas para desplazarse. 
-Las ordenes más típicos se dan combinando la tecla Control simultáneamente 
+Las órdenes más típicos se dan combinando la tecla Control simultáneamente 
 con una y después con otra tecla. Por ejemplo para guardar use 
 **Control x** y después **Control s**. Esto suele denotarse en la documentación 
 de mg con: **C-x C-s**
@@ -79,27 +79,27 @@ Guardar con **C-x C-s** y salir con **C-x C-c**.
 ### Editor vi {#editor_vi}
 
 **vi** es un clásico editor en entorno tipo UNIX cuya prioridad es la 
-eficiencia. Por lo mismo no requiere el uso de ratón sino de breves ordenes 
+eficiencia. Por lo mismo no requiere el uso de ratón sino de breves órdenes 
 que a medida que se memoricen y usen harán más rápida la edición de textos.
 
 Para editar un archivo (digamos ```ma.txt```) con el editor vi, teclee desde 
-un intérprete de ordenes:
+un intérprete de órdenes:
 ```
 $ vi ma.txt
 ```
 
 #### Modos de vi {#modos_de_vi}
 
-##### Modo ordenes {#modo_ordenes}
+##### Modo órdenes {#modo_ordenes}
 
 Cuando **vi** cargue, se observará en la pantalla una parte del archivo de 
 texto que va a editar. Al arrancar **vi**, está en un modo especial llamado 
-**modo ordenes** ó **modo normal** . Esto significa, por ejemplo, que si 
+**modo órdenes** ó **modo normal** . Esto significa, por ejemplo, que si 
 presiona **l** en el teclado, en vez de introducir una **l** en la posición 
 actual del cursor, el cursor se va a mover un carácter a la derecha. En este 
-modo, los caracteres del teclado sirven para enviar ordenes a **vi**.
+modo, los caracteres del teclado sirven para enviar órdenes a **vi**.
 
-##### Ordenes de movimiento - Movimientos del cursor {#ordenes_movimiento}
+##### Órdenes de movimiento - Movimientos del cursor {#ordenes_movimiento}
 
 Para mover el cursor, pulse las teclas: **h** (mueve a la izquierda), 
 **j** (mueve hacia abajo), **k** (mueve hacia arriba), **l** 
@@ -139,8 +139,8 @@ Puede insertar texto con varias teclas:
 
 ##### Edición de texto - Borrar {#edicion_de_texto_borrar}
 
-Debemos estar en **modo ordenes**. Pulsar **ESC** para pasar de 
-**modo inserción** a **modo ordenes**.
+Debemos estar en **modo órdenes**. Pulsar **ESC** para pasar de 
+**modo inserción** a **modo órdenes**.
 
 Mover el cursor y colocarlo sobre el caracter que va ser borrado y pulsar **x**.
 
@@ -153,7 +153,7 @@ Si por alguna razón desea deshacer los cambios realizados en el texto, estando
 en modo normal,	pulse **u** para deshacer el último cambio. Con **U** se 
 deshace todos los cambios realizados en la línea actual.
 
-#### Otras ordenes - Guardar y salir {#otras_ordenes_guardar_y_salir}
+#### Otras órdenes - Guardar y salir {#otras_ordenes_guardar_y_salir}
 
 Pulse la tecla **ESC** (para asegurarse de que está en modo normal).
 
@@ -167,12 +167,12 @@ Para guardar los cambios realizados sin salir de **vi** y seguir trabajando,
 escriba **:w** y ejecute **ENTER**.
 
 Estando en el modo normal, pulsamos la orden **:** para pasar al 
-**modo línea de ordenes** y el cursor se traslada a la última línea de la 
+**modo línea de órdenes** y el cursor se traslada a la última línea de la 
 pantalla. Allí escribimos el nombre de la orden y pulsamos 
 **RETORNO** para ejecutarlo.
 
 ![](img/warning.png) **Aviso** Recuerde: Para pasar de **modo inserción** a 
-	**modo ordenes** pulsamos la tecla **ESC**. Puede desplazarse sobre el 
+	**modo órdenes** pulsamos la tecla **ESC**. Puede desplazarse sobre el 
 	archivo, empleando las flechas, PgUp, PgDn ó bien para mantener los 
 	dedos mejor posicionados en el teclado puede emplear las teclas 
 	**h**, **j**, **k** y **l**, como lo vimos anteriormente.
@@ -187,7 +187,7 @@ que ofrece extensa ayuda y cuenta con varias extensiones.
 En el **modo visual** "resaltamos" el texto para ser eliminado o copiado 
 para luego pegarlo.
 
-Asegúrese que esté en modo ordenes. Pulse **v** para entrar en modo visual. 
+Asegúrese que esté en modo órdenes. Pulse **v** para entrar en modo visual. 
 Mueva el cursor con las teclas de desplazamiento para resaltar o remarcar el 
 texto a copiar.
 
@@ -203,7 +203,7 @@ Dígrafos
 	del mismo no lo permiten. Presione **Control-K** y después una 
 	secuencia de dos teclas de acuerdo al caracter, e.g 'a produce á, 
 	n? produce ñ, u: produce ü, !I produce ¡, ?I produce ¿. 
-	Pueden verse otros caracteres desde la línea de ordenes con 
+	Pueden verse otros caracteres desde la línea de órdenes con 
  	```:digraphs```.
 
 Resaltado de sintaxis
@@ -235,8 +235,8 @@ Numeración de líneas
 
 Archivo de configuración
 : Cada usuario puede tener sus propias configuraciones en el archivo	
-	```~/.vimrc```, que consta de líneas con ordenes o comentarios. 
-	Las ordenes no deben iniciar con ':' y los comentarios se colocan en 
+	```~/.vimrc```, que consta de líneas con órdenes o comentarios. 
+	Las órdenes no deben iniciar con ':' y los comentarios se colocan en 
 	líneas completas o al final de una línea iniciando con comillas. 
 	Por ejemplo:
 ```
@@ -263,12 +263,12 @@ archivos.
 
 Puede establecer el idioma de los mensajes que vim presenta con la orden
  ```:language```, por ejemplo para establecer español de Colombia, desde el 
-modo ordenes teclee: 
+modo órdenes teclee: 
 ```
 :language es_CO
 ```
 
-Puede establecer esta configuración por omisión agregando la orden al 
+Puede establecer esta configuración predeterminada agregando la orden al 
 archivo ```~/.vimrc```.
 
 **vim** puede emplear codificaciones diferentes para la terminal y para los 
@@ -278,7 +278,7 @@ cada uno en particular con ```termencoding``` (o ```tenc```) y
 Los valores típicos para codificar español son latin1 (que corresponde a 
 codificicación en un byte ISO8859-1) o utf8 (que corresponde a codificación 
 multibyte UTF-8 --típicamente 4 bytes). Por ejemplo para establecer la 
-codificación de la termina en UTF-8, desde modo ordenes teclee:
+codificación de la termina en UTF-8, desde modo órdenes teclee:
 ```
 :set tenc=utf8
 ```
@@ -302,6 +302,6 @@ que se consulta presionando la tecla ```F1```.
 Esta documentación también está disponible en Internet en: 
 <http://vimdoc.sourceforge.net/htmldoc/usr_toc.html>
 
-Hay numerosos archivos de ordenes (scripts) para **vim** en 
+Hay numerosos archivos de órdenes (scripts) para **vim** en 
 <http://www.vim.org/scripts/index.php>
 

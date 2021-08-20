@@ -18,7 +18,7 @@ encuentra solo en inglés, recomendamos:
 
 * El manual oficial de cada orden, controlador y archivo de configuración 
 	puede leerse con la orden ```man```.  Tal manual consta de varias 
-	secciones: 1 ordenes generales, 2 llamadas al sistema y números de 
+	secciones: 1 órdenes generales, 2 llamadas al sistema y números de 
 	error, 3 librerías de C, 4 archivos especiales y soporte de hardware, 
 	5 formatos de archivos, 6 juegos, 7 miscelánea, 8 operación y 
 	mantenimiento del sistema, 9 kernel. Puede ver por ejemplo la 

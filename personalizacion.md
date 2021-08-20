@@ -2,16 +2,16 @@
 
 Como usuario puede personalizar diversos aspectos de su interacción con el 
 sistema completo y con cada programa (como **fluxbox, xfe** y el interprete de 
-ordenes). En esta sección presentamos la personalización del locale y 
-algunas formas de personalizar el interprete de ordenes **ksh**.
+órdenes). En esta sección presentamos la personalización del locale y 
+algunas formas de personalizar el interprete de órdenes **ksh**.
 
 ### Locale {#locale}
 
 Un locale define una codificación y formas de presentar información típicas 
 de una región geográfica (números, valores monetarios, fechas, horas, idioma 
 y cotejación u ordenamiento lexicográfico del mismo). adJ viene configurado 
-por omisión con el locale es-CO.UTF-8 es decir en español, para Colombia 
-y con codificación UTF-8. 
+de manera predeterminada con el locale es-CO.UTF-8 es decir en español, 
+para Colombia y con codificación UTF-8. 
 
 En UTF-8 puede codificarse UNICODE, que a su vez permite representar todos los 
 lenguajes escritos --la mayoría de lenguajes occidentales, incluyendo el 
@@ -50,33 +50,33 @@ determinar el locale y modificaran la forma de presentar:
 - También la forma de presentar fecha y hora se ve afectada por el locale así 
 	como por la zona horaria.
 
-### Personalización del interprete de ordenes ksh {#personalizacion_del_interprete_de_ordenes_ksh}
+### Personalización del interprete de órdenes ksh {#personalizacion_del_interprete_de_ordenes_ksh}
 
-Es función del intérprete de ordenes recibir ordenes que el usuario ingrese 
+Es función del intérprete de órdenes recibir órdenes que el usuario ingrese 
 por el teclado (o en general por entrada estándar) y ejecutar los programas 
 apropiados. Dada la importancia y frecuencia de esta labor, los interpretes de 
-ordenes (y en particular ```/bin/ksh```) 
+órdenes (y en particular ```/bin/ksh```) 
 suelen ser altamente personalizables a los gustos de cada usuario.
 
 #### Ejecución de Programas {#ejecucion_de_programas}
 
-Desde un intérprete de ordenes un usuario puede teclear bien nombres de 
-programas o bien ordenes del intérprete de ordenes. Los programas por 
+Desde un intérprete de órdenes un usuario puede teclear bien nombres de 
+programas o bien órdenes del intérprete de órdenes. Los programas por 
 ejecutar se especifican dando la ruta completa de su ubicación en el sistema 
 de archivos, o en caso de no dar ruta se buscan en orden en los directorios 
 especificados en la variable de entorno `PATH`. Por ejemplo si teclea:
 
         $ banner Jesus
 
-El intérprete de ordenes identifica que está intentando ejecutar `banner` 
+El intérprete de órdenes identifica que está intentando ejecutar `banner` 
 (para presentar en grande una cadena) y que le pasa como primer parámetro Jesus.
-Como `banner` no es una orden interno del intérprete de ordenes busca un 
+Como `banner` no es una orden interno del intérprete de órdenes busca un 
 archivo con permiso de ejecución en las rutas indicadas en la variable 
 `PATH`, si el valor de tal variable fuera 
 
         PATH=/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin
 
-el intérprete de ordenes buscaría primero en `/bin`, después en
+el intérprete de órdenes buscaría primero en `/bin`, después en
 `/usr/X11R6/bin` y así sucesivamente para encontrarlo en `/usr/bin`. 
 Entonces pasaría el control a un programa del sistema operativo que se encarga 
 de cargar y ejecutar el programa pasándole los parámetros que reciba 
@@ -94,7 +94,7 @@ letra `b`.
 
 #### Variables de ambiente {#variables_de_ambiente}
 
-Puede personalizar algunos detalles del intérprete de ordenes o de algunos 
+Puede personalizar algunos detalles del intérprete de órdenes o de algunos 
 programas empleando variables de ambiente. Las variables de ambiente son 
 palabras que tienen asociadas un valor, por ejemplo puede examinar el 
 valor de la variable de ambiente ```PATH``` con:
@@ -113,25 +113,25 @@ export PATH=$PATH:/home/$EUSER;/bin/
 ```
 
 
-#### Variables de ambiente del intérprete de ordenes {#variables_de_ambiente_del_interprete_de_ordenes}
+#### Variables de ambiente del intérprete de órdenes {#variables_de_ambiente_del_interprete_de_ordenes}
 
 Cada programa emplea sus propias variables de ambiente, en particular el 
-intérprete de ordenes. Recomendamos el uso de **ksh** como interprete de 
-ordenes por ser liviano y estándar en sistemas OpenBSD. Con este intérprete de 
-ordenes, puede establecerse el valor de la variable de ambiente ```VISUAL``` 
+intérprete de órdenes. Recomendamos el uso de **ksh** como interprete de 
+órdenes por ser liviano y estándar en sistemas OpenBSD. Con este intérprete de 
+órdenes, puede establecerse el valor de la variable de ambiente ```VISUAL``` 
 con:
 ```
 $ export VISUAL=vi
 ```
 Esta variable es usada por **ksh** para determinar qué secuencias de teclas 
-utilizar para dar órdenes especiales desde la línea de ordenes. El valor 
+utilizar para dar órdenes especiales desde la línea de órdenes. El valor 
 ```vi``` indica que se usen las teclas que se usan con el editor vi (por 
-ejemplo en modo ordenes, es decir después de oprimir **ESC**, 
+ejemplo en modo órdenes, es decir después de oprimir **ESC**, 
 pueden usarse **k** para ir a la instrucción anterior de la historia, **j** 
 para ir a la siguiente, **?** seguido de una cadena para buscar una orden 
 en la historia que incluya la cadena, **0** para ir al comienzo de la línea, 
 **$** para ir al final de la linea, **i** para insertar en la posición del 
-cursor y salir del modo ordenes). 
+cursor y salir del modo órdenes). 
 Si prefiere otra forma de interacción emplee:
 ```
 export VISUAL=gmacs
@@ -150,12 +150,12 @@ $ export TERM=wsvt25
 que permite presentar colores si emplea la consola tipo texto en un PC 
 ordinario o si se conecta con putty (por ejemplo cuando ingresa a vim).
 
-#### Configuración por omisión de sesiones con ksh
+#### Configuración predeterminada de sesiones con ksh
 
 Notará que el valor de las variables de ambiente que fije durante una sesión 
 se perderá cuando termine la sesión. Para lograr una configuración más 
 perdurable puede establecer la variable de ambiente a un archivo ejecutado 
-por el intérprete de ordenes automáticamente cada vez que inicia una sesión. 
+por el intérprete de órdenes automáticamente cada vez que inicia una sesión. 
 En el caso del intérprete ksh tal archivo es ```~/.profile```. 
 Un ejemplo de un archivo ```~/.profile``` es:
 
@@ -192,9 +192,9 @@ también se establecen las variables de ambiente
 	--usado por administradores de sistemas OpenBSD.
 - ```LANG``` define el locale, es decir las identificaciones culturales y de 
 	idioma para un área geográfica.
-- ```PS1``` que establece el símbolo de espera de ordenes principal de 
+- ```PS1``` que establece el símbolo de espera de órdenes principal de 
 	**ksh**, el valor de este ejemplo ("\\h$ ") establece un símbolo de 
-	espera de ordenes que presenta el nombre de la máquina seguido del 
+	espera de órdenes que presenta el nombre de la máquina seguido del 
 	símbolo pesos y un espacio.
   
 #### colorls {#colorls}
@@ -252,7 +252,7 @@ La configuración de colores es tomada de una respuesta de Steve Jones en
 una lista de correo, está disponible en 
 <http://mailman.theapt.org/pipermail/openbsd-newbies/2004-April/001806.html>.
 
-### Uso de zsh como interprete de ordenes {#zsh}
+### Uso de zsh como interprete de órdenes {#zsh}
 
 El paquete `zsh` se instala de manera predeterminada en adJ. 
 Puede verificar que ya está instalado en su adJ con:
@@ -260,13 +260,13 @@ Puede verificar que ya está instalado en su adJ con:
       zsh
 
 Después verifique que está registrado como uno de los interpretes de 
-ordenes aceptables con:
+órdenes aceptables con:
 
       cat /etc/shells
 
 que debería presentar una línea con  `/usr/local/bin/zsh`
 
-Si esto es así puede cambiar su interpete de órdenes por omisión para
+Si esto es así puede cambiar su interpete de órdenes predeterminado para
 que sea `zsh` con:
 
       csh -s /usr/local/bin/zsh
@@ -285,7 +285,7 @@ que le permitirá entre otras:
 1. Cambiar el modo de uso del teclado. El modo `emacs`
    es más simple si no conoce `vi`, se puede elegir con `bindkey -e` (y el modo
    `vi` se elije con `bindkey -v`)
-2. Contar con un historial de las ordenes que ha dado que puede navegar con 
+2. Contar con un historial de las órdenes que ha dado que puede navegar con 
    flecha arriba y flecha abajo
 3. Completar automáticamente palabras cundo usted digita parte de la misma
    y presiona TAB. `zsh` tiene un sistema programable de completación en el 
@@ -318,4 +318,4 @@ pero de manera más verbosa).  Veamos ejemplos:
 * Páginas del manual de zsh.
 * https://grml.org/zsh/zsh-lovers.pdf
 * {KENLON2019} Seth Kenlon. Getting started with Zsh.
-  <https://opensource.com/article/19/9/getting-started-zsh>. 2019.
+  <https://opensource.com/article/19/9/getting-started-zsh>. 2019

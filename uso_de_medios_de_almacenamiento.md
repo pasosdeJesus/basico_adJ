@@ -29,7 +29,7 @@ Este podrá leer de los medios y en el caso de USB es quien podrá escribir.
 Una vez termine de emplear el medio de almacenamiento desmóntelo también 
 desde el menú de fluxbox Dispositivo->Desmontar USB
 
-### Montaje y desmontaje desde intérprete de ordenes {#montaje_y_desmontaje_desde_interprete_de_ordenes}
+### Montaje y desmontaje desde intérprete de órdenes {#montaje_y_desmontaje_desde_interprete_de_ordenes}
 
 Para montar la USB debe bastar ejecutar desde una terminal:
 ```
@@ -139,21 +139,21 @@ en el menú Ayuda).
 
 ### Particiones cifradas {#particiones_cifradas}
 
-adJ soporta por omisión 2 particiones cifradas que se montan 
+adJ soporta de manera predeterminada 2 particiones cifradas que se montan 
 en  ```/var/postgresql ``` y  ```/var/www/resbase ```. 
 La clave de cifrado debe suministrarse durante el arranque, y sólo si esta es 
 correcta podrá ver el contenido de esas carpetas y escribir (si durante el 
 arranque no le solicita clave de cifrado faltó activar particiones cifradas 
 en la instalación --aunque podrá hacerlo actualizando adJ). 
 Así que puede verificar si la clave fue correcta examinando esas rutas bien 
-con xfe o bien desde un intérprete de ordenes:
+con xfe o bien desde un intérprete de órdenes:
 
 - xfe: Inicie **xfe**, asegúrese de ver Árbol y Panel desde el menú Ver. 
 	En el Árbol de directorios de la izquierda elija el directorio raíz 
 	(primero marcado con /) con doble pulsación del botón izquierdo, bajé 
 	para elegir var, a continuación  ```www ``` y a continuación  
 	```resbase ```.
-- Intérprete de ordenes: Inicie una terminal y teclee 
+- Intérprete de órdenes: Inicie una terminal y teclee 
 ```
 ls /var/www/resbase
 ```
@@ -163,7 +163,7 @@ de la configuración de su servidor, una carpeta para cada usuario.
 Si no ve información en este directorio ni en  ```/var/postgresql ``` es 
 posible que haya dado mal la clave de cifrado en el arranque, en tal caso 
 desde el menú de Fluxbox (botón derecho sobre el escritorio) elija 
-Dispositivo->Iniciar Servicios Faltantes o desde un intérprete de ordenes 
+Dispositivo->Iniciar Servicios Faltantes o desde un intérprete de órdenes 
 teclee
 ```
 doas sh /etc/rc.local
@@ -197,7 +197,7 @@ USB, con una ventana de superusuario en xfe siga estos pasos:
 	derecho y del menú emergente elegir Pegar.
 
 
-El mismo procedimiento desde un intérprete de ordenes lo realiza con:
+El mismo procedimiento desde un intérprete de órdenes lo realiza con:
 ```
 doas mount /mnt/usb 
 ```
