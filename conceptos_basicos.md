@@ -32,7 +32,7 @@ suministro (i.e parámetros o argumentos), así como opciones que modifiquen
 el comportamiento predeterminado.
 Tal información suele darse a continuación del nombre de la orden, separando
 un dato o una opción de otra con espacios. Si es una de las primeras veces
-que ingresa al sistema, recomendamos los siguientes órdenes/programas:
+que ingresa al sistema, recomendamos las siguientes órdenes:
 
 **man man**
 
@@ -40,7 +40,10 @@ que ingresa al sistema, recomendamos los siguientes órdenes/programas:
 recibir como parámetro el tema sobre el cual desea ver la documentación.
 Así que **man man** presenta la documentación de la orden **man**.
 Entre los temas posibles puede emplear el nombre de un programa instalado o
-de una función de la librería del sistema.
+de una función de la librería del sistema. 
+Notará que man por omisión ingresa aun paginador (llamado `less`) que le 
+permite desplazarse hacia arriba y hacia abajo con las flechas y salir con 
+la letra `q`.
 
 **passwd**
 
@@ -51,13 +54,26 @@ Sugerimos las claves generadas con programas especializados como **apg**.
 Tenga en cuenta que si su clave llega a ser descubierta por un tercero,
 él/ella podría actuar a nombre suyo.
 
+Para comprender el uso de parámetros y opciones, intente también:
+
+* `man passwd` con lo que iniciar la orden `man` con parámetro `passwd` con lo
+   que verá el manual de la orden `passwd` en el paginador
+* `man -c passwd` para ejecutar la orden `man` con opción `-c` y 
+  parámetro `passwd`, con lo cual verá el manual de la orden `passwd` pero
+  sin paginador --el manual completo se presentará en pantalla pero no
+  alcanzará a ver el comienzo, ni podrá usar flechas para navegar sobre el
+  documento, sino que regresará a la línea de ordenes.
+
+Después revise en detalle la ayuda de la orden man e intente con otros
+parámetros y opciones.
+
 ### Sistema de Archivos
 
 En Unix la información se organiza en archivos dentro de directorios del
 sistema de archivos.  El directorio inicial o raíz se denota por `/`, los
 nombres de archivos o directorios pueden especificarse indicando la ruta
 completa desde la raíz, por ejemplo el archivo `/usr/bin/awk` está en el
-directorio de nombre bin que a su vez está en un directorio de nombre
+directorio de nombre `bin` que a su vez está en un directorio de nombre
 `usr` el cual es un subdirectorio del directorio raíz `/`.
 Cada usuario del sistema tiene además de su login y clave, un directorio que
 llamamos *directorio personal* cuya ruta normalmente es de la forma
