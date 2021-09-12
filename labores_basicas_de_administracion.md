@@ -169,29 +169,29 @@ unas líneas del estilo:
 
 Estos archivos pueden analizarse con algunas herramientas básicas como:
 
-```less```
-: Examinar una archivo. En ```less``` la tecla ```G``` (mayúscula) lo lleva al 
+`less`
+: Examinar una archivo. En `less` la tecla `G` (mayúscula) lo lleva al 
 	final del archivo.
 
-```grep```
+`grep`
 : Muestra cadenas en un archivo
 
-```find```
+`find`
 : Busca una cadena en un archivo o directorio
 
-```wc```
+`wc`
 : Cuenta palabras/líneas/caracteres en una archivo
 
-```dig```
+`dig`
 : Muestra información de un dominio
 
-```geoiplookup```
+`geoiplookup`
 : Muestra localización de una IP. No es muy precisa
 
-```gzip```
+`gzip`
 : Descomprime archivos
 
-A continuación un ejemplo de auditoría de la bitácora ```auth```:
+A continuación un ejemplo de auditoría de la bitácora `auth`:
 
   1. Como usuario root hacer una copia de las bitácoras de ```/var/log``` 
 	en un directorio personal y descomprimir bitácoras comprimidas.
