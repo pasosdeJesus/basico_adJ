@@ -1,7 +1,7 @@
 Version 6.9
 
 :  - Ortografía, mejorada sección de conceptos
-   - Usa pandoc reciente del sistema base
+   - Usa pandoc reciente de portes de OpenBSD
 
 Version 6.8
 
