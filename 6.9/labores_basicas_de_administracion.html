@@ -30,7 +30,7 @@ $ doas ls /root
     </p><p>
       El administrador puede agregar usuarios con la orden
       <code class="literal">adduser</code>. Su uso típico se esboza a
-      continuación<sup>[<a name="idm249301008" href="#ftn.idm249301008">16</a>]</sup>
+      continuación<sup>[<a name="idp1381870192" href="#ftn.idp1381870192">16</a>]</sup>
     </p><pre class="programlisting">
 doas adduser
 ...
@@ -165,111 +165,122 @@ Debe prestar especial atención a posibles ataques dirigidos a un usua
 </pre></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="ejemplo_bitacoras"></a>13.2.2. Ejemplo de análisis usando herramientas UNIX</h4></div></div></div><p>
         Estos archivos pueden analizarse con algunas herramientas
         básicas como:
-      </p><pre class="programlisting">
-: Examinar una archivo. En ```less``` la tecla ```G``` (mayúscula) lo lleva al 
-    final del archivo.
-
-```grep```
-: Muestra cadenas en un archivo
-
-```find```
-: Busca una cadena en un archivo o directorio
-
-```wc```
-: Cuenta palabras/líneas/caracteres en una archivo
-
-```dig```
-: Muestra información de un dominio
-
-```geoiplookup```
-: Muestra localización de una IP. No es muy precisa
-
-```gzip```
-: Descomprime archivos
-
-A continuación un ejemplo de auditoría de la bitácora ```auth```:
-
-  1. Como usuario root hacer una copia de las bitácoras de ```/var/log``` 
-    en un directorio personal y descomprimir bitácoras comprimidas.
-</pre><p>
-        cd mkdir audita # Crea un directorio para copiar cd audita #
-        Pasa al directorio creado mkdir 30sep2006 # Crear un directorio
-        con la fecha cd 30sep2006 # Pasa al directorio creado cp -rf
-        /var/log/* . # Copia todas las bitácoras (debe ser root) gzip -d
-        *.gz # Descomprime bitácoras comprimidas
-      </p><pre class="programlisting">
-            
-  2. Revisar la bitácora a fin de determinar puntos críticos:
-</pre><p>
-        less authlog
-      </p><pre class="programlisting">
-    buscando líneas como
-</pre><p>
-        invalid user test from 211.157.113.89
-      </p><pre class="programlisting">
-    que revelan intento desde una IP por ingresar como usuario ```test```
-    (que no existe en el sistema).
-
-  3. Para ver las líneas en las que aparece una cadena en especial, una 
-    IP por ejemplo puede usarse:
-</pre><p>
-        grep “<span class="quote">211.157.113.89</span>” authlog
-      </p><pre class="programlisting">
-    De forma que podemos ver datos importantes relacionados con la IP 
-    como fecha y hora. En el caso de auth la IP corresponde a direcciones 
-    desde donde se hacen intentos de ingreso).
-
-  4. Para mostrar cuántas veces está esa IP en ese archivo:
-</pre><p>
-        grep “<span class="quote">211.157.113.89</span>” authlog | wc -l
-      </p><pre class="programlisting">
-            
-  5. Para determinar en qué archivos de la bitácora hay información de esta 
-    IP
-</pre><p>
-        find . -exec grep -l “<span class="quote">211.157.113.89</span>” {}
-        “<span class="quote">;</span>”
-      </p><pre class="programlisting">
-            
-  6. Para determinar ubicación geográfica de una IP y datos sobre el dominio 
-    asociado:
-</pre><p>
-        geoiplookup 211.157.113.89 dig -x 211.157.113.89
-      </p><pre class="programlisting">
-            
-    El primero indica China, el segundo mail.chinacomm.com.cn. Con el 
-    segundo ya podemos buscar información sobre el registro DNS de 
-    chinacomm.com.cn:
-</pre><p>
-        whois chinacomm.com.cn
-      </p><pre class="programlisting">
-    donde encontramos una dirección de correo: ```wjy@chncomm.com```
-
-  7. Si se ubica el dominio de la IP de donde proviene un ataque, así como una 
-    dirección de correo, se recomienda enviar un mensaje en inglés a tal 
-    dirección y/o por ejemplo a las cuentas webmaster y root informando 
-    sobre el incidente con un tema como:
-</pre><p>
-        Attempt to login at practica.pasosdeJesus.org from your IP on
-        16.Aug.2006 at 7:10:41
-      </p><pre class="programlisting">
-            
-### Lecturas recomendadas {#lecturas_recomendadas_admin}
-
-- Documentación del sistema **man adduser, man userdel**
-
-- Para instalar y comenzar a administrar un sistema adJ 
-  sugerimos [usuario_adJ](#bibliografia).
-
-- Para administrar un servidor adJ conectado a Internet recomendamos 
-  [servidor_adJ](#bibliografia)
-
-Todas las herramientas mencionadas **less**, **find**, **grep**, **wc** tienen 
-sus respectivos manuales, los cuales se pueden consultar con **man**, 
-por ejemplo
-</pre><p>
-        man grep ```
-      </p></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm249301008" href="#idm249301008">16</a>] </sup>
+      </p><div class="variablelist"><dl><dt><span class="term">
+            <code class="literal">less</code>
+          </span></dt><dd><p>
+              Examinar una archivo. En <code class="literal">less</code> la tecla
+              <code class="literal">G</code> (mayúscula) lo lleva al final del
+              archivo.
+            </p></dd><dt><span class="term">
+            <code class="literal">grep</code>
+          </span></dt><dd><p>
+              Muestra cadenas en un archivo
+            </p></dd><dt><span class="term">
+            <code class="literal">find</code>
+          </span></dt><dd><p>
+              Busca una cadena en un archivo o directorio
+            </p></dd><dt><span class="term">
+            <code class="literal">wc</code>
+          </span></dt><dd><p>
+              Cuenta palabras/líneas/caracteres en una archivo
+            </p></dd><dt><span class="term">
+            <code class="literal">dig</code>
+          </span></dt><dd><p>
+              Muestra información de un dominio
+            </p></dd><dt><span class="term">
+            <code class="literal">geoiplookup</code>
+          </span></dt><dd><p>
+              Muestra localización de una IP. No es muy precisa
+            </p></dd><dt><span class="term">
+            <code class="literal">gzip</code>
+          </span></dt><dd><p>
+              Descomprime archivos
+            </p></dd></dl></div><p>
+        A continuación un ejemplo de auditoría de la bitácora
+        <code class="literal">auth</code>:
+      </p><div class="orderedlist"><ol type="1" compact><li><p>
+            Como usuario root hacer una copia de las bitácoras de
+            <code class="literal">/var/log</code> en un directorio personal y
+            descomprimir bitácoras comprimidas.
+          </p></li></ol></div><pre class="programlisting">
+cd
+mkdir audita          # Crea un directorio para copiar
+cd audita             # Pasa al directorio creado
+mkdir 30sep2006       # Crear un directorio con la fecha
+cd 30sep2006          # Pasa al directorio creado
+cp -rf /var/log/* .   # Copia todas las bitácoras (debe ser root)
+gzip -d *.gz          # Descomprime bitácoras comprimidas
+</pre><div class="orderedlist"><ol type="1" compact><li value="2"><p>
+            Revisar la bitácora a fin de determinar puntos críticos:
+          </p></li></ol></div><pre class="programlisting">
+less authlog
+</pre><pre class="programlisting">
+buscando líneas como
+</pre><pre class="programlisting">
+invalid user test from 211.157.113.89
+</pre><pre class="programlisting">
+que revelan intento desde una IP por ingresar como usuario ```test```
+(que no existe en el sistema).
+</pre><div class="orderedlist"><ol type="1" compact><li value="3"><p>
+            Para ver las líneas en las que aparece una cadena en
+            especial, una IP por ejemplo puede usarse:
+          </p></li></ol></div><pre class="programlisting">
+grep "211.157.113.89" authlog
+</pre><pre class="programlisting">
+De forma que podemos ver datos importantes relacionados con la IP 
+como fecha y hora. En el caso de auth la IP corresponde a direcciones 
+desde donde se hacen intentos de ingreso).
+</pre><div class="orderedlist"><ol type="1" compact><li value="4"><p>
+            Para mostrar cuántas veces está esa IP en ese archivo:
+          </p></li></ol></div><pre class="programlisting">
+grep "211.157.113.89" authlog | wc -l
+</pre><div class="orderedlist"><ol type="1" compact><li value="5"><p>
+            Para determinar en qué archivos de la bitácora hay
+            información de esta IP
+          </p></li></ol></div><pre class="programlisting">
+find . -exec grep -l "211.157.113.89" {} ';'
+</pre><div class="orderedlist"><ol type="1" compact><li value="6"><p>
+            Para determinar ubicación geográfica de una IP y datos sobre
+            el dominio asociado:
+          </p></li></ol></div><pre class="programlisting">
+geoiplookup  211.157.113.89
+dig -x 211.157.113.89
+</pre><pre class="programlisting">
+El primero indica China, el segundo mail.chinacomm.com.cn. Con el 
+segundo ya podemos buscar información sobre el registro DNS de 
+chinacomm.com.cn:
+</pre><pre class="programlisting">
+whois chinacomm.com.cn
+</pre><pre class="programlisting">
+donde encontramos una dirección de correo: ```wjy@chncomm.com```
+</pre><div class="orderedlist"><ol type="1" compact><li value="7"><p>
+            Si se ubica el dominio de la IP de donde proviene un ataque,
+            así como una dirección de correo, se recomienda enviar un
+            mensaje en inglés a tal dirección y/o por ejemplo a las
+            cuentas webmaster y root informando sobre el incidente con
+            un tema como:
+          </p></li></ol></div><pre class="programlisting">
+Attempt to login at practica.pasosdeJesus.org from your IP on 16.Aug.2006 at 7:10:41
+</pre></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_admin"></a>13.3. Lecturas recomendadas</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>
+          Documentación del sistema <span class="strong"><strong>man adduser,
+          man userdel</strong></span>
+        </p></li><li><p>
+          Para instalar y comenzar a administrar un sistema adJ
+          sugerimos <a href="bibliografia.html" title="B. Bibliografía">usuario_adJ</a>.
+        </p></li><li><p>
+          Para administrar un servidor adJ conectado a Internet
+          recomendamos <a href="bibliografia.html" title="B. Bibliografía">servidor_adJ</a>
+        </p></li></ul></div><p>
+      Todas las herramientas mencionadas
+      <span class="strong"><strong>less</strong></span>,
+      <span class="strong"><strong>find</strong></span>,
+      <span class="strong"><strong>grep</strong></span>,
+      <span class="strong"><strong>wc</strong></span> tienen sus respectivos
+      manuales, los cuales se pueden consultar con
+      <span class="strong"><strong>man</strong></span>, por ejemplo
+    </p><pre class="programlisting">
+man grep
+</pre></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp1381870192" href="#idp1381870192">16</a>] </sup>
           Tenga en cuenta que la primera vez que ejecute
           <code xmlns="" class="literal">adduser</code> tras instalar un sistema adJ, este
           programa preguntará valores predeterminados por emplear
