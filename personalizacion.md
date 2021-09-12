@@ -314,7 +314,7 @@ pero de manera más verbosa).  Veamos ejemplos:
   valer la pena eliminarlos).
 
 
-#### Lecturas recomendadas
+#### Lecturas recomendadas {#lecturas_recomendadas_zsh}
 * Páginas del manual de zsh.
 * https://grml.org/zsh/zsh-lovers.pdf
 * {KENLON2019} Seth Kenlon. Getting started with Zsh.

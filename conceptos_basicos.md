@@ -31,7 +31,7 @@ Es común que las órdenes o programas requieran algo de información como
 suministro (i.e parámetros o argumentos), así como opciones que modifiquen
 el comportamiento predeterminado.
 Tal información suele darse a continuación del nombre de la orden, separando
-un dato o una opción de otra con espacios. Si es una de las primeras veces
+un parámetro o una opción de otra con espacios. Si es una de las primeras veces
 que ingresa al sistema, recomendamos las siguientes órdenes:
 
 **man man**
@@ -41,7 +41,7 @@ recibir como parámetro el tema sobre el cual desea ver la documentación.
 Así que **man man** presenta la documentación de la orden **man**.
 Entre los temas posibles puede emplear el nombre de un programa instalado o
 de una función de la librería del sistema. 
-Notará que man por omisión ingresa aun paginador (llamado `less`) que le 
+Notará que `man` por omisión ingresa a un paginador (llamado `less`) que le 
 permite desplazarse hacia arriba y hacia abajo con las flechas y salir con 
 la letra `q`.
 
@@ -56,15 +56,16 @@ Tenga en cuenta que si su clave llega a ser descubierta por un tercero,
 
 Para comprender el uso de parámetros y opciones, intente también:
 
-* `man passwd` con lo que iniciar la orden `man` con parámetro `passwd` con lo
-   que verá el manual de la orden `passwd` en el paginador
-* `man -c passwd` para ejecutar la orden `man` con opción `-c` y 
+* `man passwd` ejecutará la orden `man` con parámetro `passwd`. Así
+  verá el manual de la orden `passwd` en el paginador.
+* `man -c passwd` ejecutará la orden `man` con opción `-c` y 
   parámetro `passwd`, con lo cual verá el manual de la orden `passwd` pero
   sin paginador --el manual completo se presentará en pantalla pero no
-  alcanzará a ver el comienzo, ni podrá usar flechas para navegar sobre el
-  documento, sino que regresará a la línea de ordenes.
+  alcanzará a ver el comienzo por la cantidad de información, ni podrá usar 
+  flechas para navegar sobre el documento, sino que regresará a la línea 
+  de órdenes.
 
-Después revise en detalle la ayuda de la orden man e intente con otros
+Después revise en detalle el manual de la orden `man` e intente con otros
 parámetros y opciones.
 
 ### Sistema de Archivos
@@ -85,7 +86,7 @@ El intérprete de órdenes que emplee tendrá como parte de su estado un
 directorio de trabajo, un símbolo de espera de órdenes y variables de entorno.
 La manera de ver y alterar estos datos depende del intérprete de órdenes que
 emplee, nos limitaremos al intérprete de órdenes **ksh** (que tiene bastantes
-cosas en común con otros intérpretes de órdenes como **bash**).
+cosas en común con otros intérpretes de órdenes como **bash** y **zsh**).
 
 Podrá examinar el directorio de trabajo con `pwd`, listar algunas
 variables de entorno (las exportadas) con **export** y modificar el
@@ -160,7 +161,7 @@ muy efectivamente.
 Puede probar el uso de sesiones de esta forma:
 
 1. Abra una terminal e inice tmux con `tmux`
-2. Escribe por ejemplo `echo Hola mundo` y pulse Enter, que debe imprimir en pantalla Hola Mundo
+2. Escriba por ejemplo `echo Hola mundo` y pulse Enter, que debe imprimir en pantalla Hola Mundo
 3. Cierre la terminal  --por la forma de operación de tmux esto no terminará la sesión que inició
 4. Abra otra terminal e inice tmux pero indicando que se una a una sesión existente con `tmux -a`.  Debería poder ver su sesión de terminal con Hola Mundo.
 
@@ -189,7 +190,7 @@ Puede cambiar el orden de una panel mediatne Control-b { y Control-b }.
 Puede convertir un panel en una nueva venta con Control-b !
 
 
-### Lecturas recomendadas
+### Lecturas recomendadas {#lecturas_recomendadas_conceptos_basicos}
 
 Páginas `man` de las órdenes /programas introducidos en este capítulo.
 Se han tomado porciones de la sección "telnet y ssh" de [AALinux](#bibliografia)

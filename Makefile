@@ -107,6 +107,7 @@ limpiamas: limpia
 limpia:
 	rm -rf *bak *~ *tmp confaux.tmp $(PROYECTO)-$(PRY_VERSION)_html.tar.gz
 	rm -f $(PROYECTO)-4.1.*
+	rm -f $(FUENTESDB)
 
 
 Derechos.txt: $(PROYECTO).$(EXT_DOCBOOK)

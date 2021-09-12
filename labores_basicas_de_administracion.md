@@ -6,7 +6,7 @@ programa ```doas```.
 Desde las diversas cuentas del sistema que estén en el grupo ```wheel``` es 
 posible pasar a la cuenta root con la orden:
 
-```sh
+```
 $ su -
 ```
 	  

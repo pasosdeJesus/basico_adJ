@@ -1,15 +1,18 @@
 ## Primer uso de adJ {#primer_uso_de_adJ}
 
 Un servidor adJ puede operarse tanto directamente (sentado frente al computador 
-donde se instaló y configuró), como remotamente por ejemplo con ```ssh```. 
+donde se instaló y configuró), como remotamente (típicamente y de manera
+segura mediante el programa `ssh`). 
 En esta sección cubrimos ambos escenarios.
 
 ### Arranque   {#arranque}
 
-Al iniciar un computador con adJ el núcleo de OpenBSD comenzará con una
-interfaz de texto, detectará el hardware (se ven letras con fondo azul), 
-iniciará los procesos básicos (se ven letras con fondo negro) 
-y ejecutará los archivos de arranque. 
+Al iniciar un computador con adJ se verán primero mensajes del BIOS 
+preprogramados en el hardware, después el control pasará al arranque del disco 
+con adJ que presentará `boot>` y tras un momento el control pasará al núcleo 
+de OpenBSD adJ, que detectará el hardware (se ven letras con fondo azul), 
+revisará discos e iniciará los procesos básicos (se ven letras con fondo negro) 
+y tras esto ejecutará los archivos de arranque. 
 
 Típicamente la distribución adJ pide claves de imágenes cifradas[^primer.1] 
 que se montan durante el arranque.
@@ -48,7 +51,7 @@ Si durante la instalación, no se instaló X-Window o no se ha configurado
 para iniciar durante el arranque, lo que verá será una consola virtual tipo 
 texto, como la del arranque.  
 De manera predeterminada hay 4 consolas virtuales tipo texto a las cuales 
-pasa con las secuencias de teclas 
+puede transferirse con las secuencias de teclas 
 **Ctrl-Alt-F1, Ctrl-Alt-F2, Ctrl-Alt-F3 y Ctrl-Alt-F4**. 
 La secuencia **Ctrl-Alt-F5** lo dejará en el entorno gráfico.
 
@@ -72,7 +75,7 @@ escritorio.
 ![Menú inicial](img/fluxbox_inicio.png)
 
 Observe las distintas posibilidades del menú. Puede navegar en Internet 
-utilizando chrome o midori. 
+utilizando chrome o firefox. 
 
 Si elije __Espiritualidad->Evangelios de Dominio Público__ podrá
 consultar en chrome una traducción de los evangelios.
@@ -171,7 +174,8 @@ llegar a interceptar la comunicación).
 Si realiza la conexión desde un sistema tipo Unix, recomendamos que emplee el 
 cliente de OpenSSH, si se conecta desde un sistema tipo Windows puede emplear 
 el programa **putty** (descárguelo de 
-[http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html]).
+<http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>).
+Desde un celular Android puede usar ConnectBot.
 
 En el primer caso puede iniciar la conexión con:
 
@@ -180,20 +184,20 @@ $ ssh juan@www2.pasosdeJesus.org
 ```
 
 reemplazando ```juan``` por el login que tenga en el sistema y 
- ```www2.pasosdeJesus.org``` por el nombre del servidor. 
-Note que con el símbolo ```$```, representamos el símbolo del sistema 
+`www2.pasosdeJesus.org` por el nombre del servidor. 
+Note que con el símbolo `$`, representamos el símbolo del sistema 
 (del inglés *prompt*) --no debe teclearlo.
 
- 
+
 La conexión con putty se ejemplifica a continuación:
- 
+
 ![Configuración de putty](img/putty1.png)
- 
+
 ![Aviso](img/warning.png) Aviso: Con Putty asegúrese de emplear el 
 	protocolo SSH 2 y para ver bien algunos caracteres es
 	posible que en Window->Translation deba elegir traducción
 	de Latin1 o ISO-8895-1.
- 
+
 **ssh** autenticará la máquina a la cual se está conectado, comparando la llave 
 pública de esa máquina con alguna de las que conozca, si es la primera vez que 
 se conecta a ese sitio, **ssh** le pedirá confirmar la nueva llave 

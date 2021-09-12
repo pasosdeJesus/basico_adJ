@@ -228,7 +228,7 @@ Indentación automática
 ```
 /* vim: set expandtab tabstop=4 shiftwidth=4 foldmethod=marker: */
 ```
-		
+
 Numeración de líneas
 : Pueden verse el número de cada línea con :**set number** y esta característica
 	se deshabilita con ```:set nonumber```.

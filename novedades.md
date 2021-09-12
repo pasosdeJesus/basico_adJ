@@ -1,6 +1,6 @@
 Version 6.9
 
-:  - Ortografía
+:  - Ortografía, mejorada sección de conceptos
 
 Version 6.8
 
