@@ -1,6 +1,7 @@
 Version 6.9
 
 :  - Ortografía, mejorada sección de conceptos
+   - Usa pandoc reciente del sistema base
 
 Version 6.8
 
