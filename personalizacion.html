@@ -2,19 +2,19 @@
     Como usuario puede personalizar diversos aspectos de su interacción
     con el sistema completo y con cada programa (como
     <span class="strong"><strong>fluxbox, xfe</strong></span> y el interprete de
-    ordenes). En esta sección presentamos la personalización del locale
-    y algunas formas de personalizar el interprete de ordenes
+    órdenes). En esta sección presentamos la personalización del locale
+    y algunas formas de personalizar el interprete de órdenes
     <span class="strong"><strong>ksh</strong></span>.
   </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="locale"></a>6.1. Locale</h3></div></div></div><p>
       Un locale define una codificación y formas de presentar
       información típicas de una región geográfica (números, valores
       monetarios, fechas, horas, idioma y cotejación u ordenamiento
-      lexicográfico del mismo). adJ viene configurado por omisión con el
-      locale es-CO.UTF-8 es decir en español, para Colombia y con
-      codificación UTF-8.
+      lexicográfico del mismo). adJ viene configurado de manera
+      predeterminada con el locale es-CO.UTF-8 es decir en español, para
+      Colombia y con codificación UTF-8.
     </p><p>
       En UTF-8 puede codificarse UNICODE, que a su vez permite
-      representar todos los lenguajes escritos --la mayoría de lenguajes
+      representar todos los lenguajes escritos –la mayoría de lenguajes
       occidentales, incluyendo el español.
     </p><p>
       Los locales se ubican en el directorio
@@ -57,33 +57,35 @@ export LANG=es_CO.UTF-8
         </p></li><li><p>
           También la forma de presentar fecha y hora se ve afectada por
           el locale así como por la zona horaria.
-        </p></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="personalizacion_del_interprete_de_ordenes_ksh"></a>6.2. Personalización del interprete de ordenes ksh</h3></div></div></div><p>
-      Es función del intérprete de ordenes recibir ordenes que el
+        </p></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="personalizacion_del_interprete_de_ordenes_ksh"></a>6.2. Personalización del interprete de órdenes ksh</h3></div></div></div><p>
+      Es función del intérprete de órdenes recibir órdenes que el
       usuario ingrese por el teclado (o en general por entrada estándar)
       y ejecutar los programas apropiados. Dada la importancia y
-      frecuencia de esta labor, los interpretes de ordenes (y en
+      frecuencia de esta labor, los interpretes de órdenes (y en
       particular <code class="literal">/bin/ksh</code>) suelen ser altamente
       personalizables a los gustos de cada usuario.
     </p><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="ejecucion_de_programas"></a>6.2.1. Ejecución de Programas</h4></div></div></div><p>
-        Desde un intérprete de ordenes un usuario puede teclear bien
-        nombres de programas o bien ordenes del intérprete de ordenes.
+        Desde un intérprete de órdenes un usuario puede teclear bien
+        nombres de programas o bien órdenes del intérprete de órdenes.
         Los programas por ejecutar se especifican dando la ruta completa
         de su ubicación en el sistema de archivos, o en caso de no dar
         ruta se buscan en orden en los directorios especificados en la
         variable de entorno <code class="literal">PATH</code>. Por ejemplo si
         teclea:
       </p><pre class="programlisting">
-$ banner Jesus
+    $ banner Jesus
 </pre><p>
-        El intérprete de ordenes identifica que está intentando ejecutar
+        El intérprete de órdenes identifica que está intentando ejecutar
         <code class="literal">banner</code> (para presentar en grande una cadena)
         y que le pasa como primer parámetro Jesus. Como
         <code class="literal">banner</code> no es una orden interno del intérprete
-        de ordenes busca un archivo con permiso de ejecución en las
+        de órdenes busca un archivo con permiso de ejecución en las
         rutas indicadas en la variable <code class="literal">PATH</code>, si el
         valor de tal variable fuera
-        <code class="literal">/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin</code>
-        el intérprete de ordenes buscaría primero en
+      </p><pre class="programlisting">
+    PATH=/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games:/sbin:/usr/sbin
+</pre><p>
+        el intérprete de órdenes buscaría primero en
         <code class="literal">/bin</code>, después en
         <code class="literal">/usr/X11R6/bin</code> y así sucesivamente para
         encontrarlo en <code class="literal">/usr/bin</code>. Entonces pasaría el
@@ -92,17 +94,17 @@ $ banner Jesus
         reciba (tal programa es <code class="literal">/usr/libexec/ld.so</code>).
         El ejemplo anterior es equivalente a
       </p><pre class="programlisting">
-$ /usr/bin/banner Jesus
+    $ /usr/bin/banner Jesus
 </pre><p>
         puede verificar que <code class="literal">banner</code> es un programa
         ubicado en el directorio <code class="literal">/usr/bin</code> con:
       </p><pre class="programlisting">
-$ ls -l /usr/bin/b*
+    $ ls -l /usr/bin/b*
 </pre><p>
         que mostrará todos los archivos de ese directorio que comiencen
-        con la letra b.
+        con la letra <code class="literal">b</code>.
       </p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="variables_de_ambiente"></a>6.2.2. Variables de ambiente</h4></div></div></div><p>
-        Puede personalizar algunos detalles del intérprete de ordenes o
+        Puede personalizar algunos detalles del intérprete de órdenes o
         de algunos programas empleando variables de ambiente. Las
         variables de ambiente son palabras que tienen asociadas un
         valor, por ejemplo puede examinar el valor de la variable de
@@ -119,12 +121,12 @@ export PATH=/bin:/usr/X11R6/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/loc
         puede usar:
       </p><pre class="programlisting">
 export PATH=$PATH:/home/$EUSER;/bin/
-</pre></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="variables_de_ambiente_del_interprete_de_ordenes"></a>6.2.3. Variables de ambiente del intérprete de ordenes</h4></div></div></div><p>
+</pre></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="variables_de_ambiente_del_interprete_de_ordenes"></a>6.2.3. Variables de ambiente del intérprete de órdenes</h4></div></div></div><p>
         Cada programa emplea sus propias variables de ambiente, en
-        particular el intérprete de ordenes. Recomendamos el uso de
+        particular el intérprete de órdenes. Recomendamos el uso de
         <span class="strong"><strong>ksh</strong></span> como interprete de
-        ordenes por ser liviano y estándar en sistemas OpenBSD. Con este
-        intérprete de ordenes, puede establecerse el valor de la
+        órdenes por ser liviano y estándar en sistemas OpenBSD. Con este
+        intérprete de órdenes, puede establecerse el valor de la
         variable de ambiente <code class="literal">VISUAL</code> con:
       </p><pre class="programlisting">
 $ export VISUAL=vi
@@ -132,9 +134,9 @@ $ export VISUAL=vi
         Esta variable es usada por
         <span class="strong"><strong>ksh</strong></span> para determinar qué
         secuencias de teclas utilizar para dar órdenes especiales desde
-        la línea de ordenes. El valor <code class="literal">vi</code> indica que
+        la línea de órdenes. El valor <code class="literal">vi</code> indica que
         se usen las teclas que se usan con el editor vi (por ejemplo en
-        modo ordenes, es decir después de oprimir
+        modo órdenes, es decir después de oprimir
         <span class="strong"><strong>ESC</strong></span>, pueden usarse
         <span class="strong"><strong>k</strong></span> para ir a la instrucción
         anterior de la historia, <span class="strong"><strong>j</strong></span>
@@ -144,7 +146,7 @@ $ export VISUAL=vi
         al comienzo de la línea, <span class="strong"><strong>$</strong></span>
         para ir al final de la linea,
         <span class="strong"><strong>i</strong></span> para insertar en la
-        posición del cursor y salir del modo ordenes). Si prefiere otra
+        posición del cursor y salir del modo órdenes). Si prefiere otra
         forma de interacción emplee:
       </p><pre class="programlisting">
 export VISUAL=gmacs
@@ -163,12 +165,12 @@ $ export TERM=wsvt25
         que permite presentar colores si emplea la consola tipo texto en
         un PC ordinario o si se conecta con putty (por ejemplo cuando
         ingresa a vim).
-      </p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="configuraci%C3%B3n-por-omisi%C3%B3n-de-sesiones-con-ksh"></a>6.2.4. Configuración por omisión de sesiones con ksh</h4></div></div></div><p>
+      </p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="configuraci%C3%B3n-predeterminada-de-sesiones-con-ksh"></a>6.2.4. Configuración predeterminada de sesiones con ksh</h4></div></div></div><p>
         Notará que el valor de las variables de ambiente que fije
         durante una sesión se perderá cuando termine la sesión. Para
         lograr una configuración más perdurable puede establecer la
         variable de ambiente a un archivo ejecutado por el intérprete de
-        ordenes automáticamente cada vez que inicia una sesión. En el
+        órdenes automáticamente cada vez que inicia una sesión. En el
         caso del intérprete ksh tal archivo es
         <code class="literal">~/.profile</code>. Un ejemplo de un archivo
         <code class="literal">~/.profile</code> es:
@@ -192,8 +194,8 @@ export LANG="es_CO.UTF-8"
 </pre><p>
         La orden alias <code class="literal">vi=vim</code> indica que cada vez que
         se ejecute la orden <code class="literal">vi</code> se llame al programa
-        vim (ver Sección 7.3, “Editor vi”). Note que también se
-        establecen las variables de ambiente
+        vim (ver Sección 7.3, “<span class="quote">Editor vi</span>”). Note que
+        también se establecen las variables de ambiente
       </p><div class="itemizedlist"><ul type="disc" compact><li><p>
             <code class="literal">VISUAL</code> modo de edición en ksh.
           </p></li><li><p>
@@ -206,7 +208,7 @@ export LANG="es_CO.UTF-8"
             típicamente será vt220 o wsvt25.
           </p></li><li><p>
             <code class="literal">PKG_PATH</code> que establece ruta en la cual
-            buscar paquetes por instalar --usado por administradores de
+            buscar paquetes por instalar –usado por administradores de
             sistemas OpenBSD.
           </p></li><li><p>
             <code class="literal">LANG</code> define el locale, es decir las
@@ -214,9 +216,9 @@ export LANG="es_CO.UTF-8"
             geográfica.
           </p></li><li><p>
             <code class="literal">PS1</code> que establece el símbolo de espera de
-            ordenes principal de <span class="strong"><strong>ksh</strong></span>,
-            el valor de este ejemplo ("\h$ ") establece un
-            símbolo de espera de ordenes que presenta el nombre de la
+            órdenes principal de <span class="strong"><strong>ksh</strong></span>,
+            el valor de este ejemplo (“<span class="quote">\h$</span>”) establece un
+            símbolo de espera de órdenes que presenta el nombre de la
             máquina seguido del símbolo pesos y un espacio.
           </p></li></ul></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="colorls"></a>6.2.5. colorls</h4></div></div></div><p>
         En el ejemplo presentado si está instalado el programa
@@ -270,4 +272,92 @@ man ksh
         La configuración de colores es tomada de una respuesta de Steve
         Jones en una lista de correo, está disponible en
         <a href="http://mailman.theapt.org/pipermail/openbsd-newbies/2004-April/001806.html" target="_top">http://mailman.theapt.org/pipermail/openbsd-newbies/2004-April/001806.html</a>.
-      </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="uso_de_medios_de_almacenamiento.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="edicion_de_textos.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">5. Uso de medios de almacenamiento </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 7. Edición de textos</td></tr></table></div></body></html>
+      </p></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="zsh"></a>6.3. Uso de zsh como interprete de órdenes</h3></div></div></div><p>
+      El paquete <code class="literal">zsh</code> se instala de manera
+      predeterminada en adJ. Puede verificar que ya está instalado en su
+      adJ con:
+    </p><pre class="programlisting">
+  zsh
+</pre><p>
+      Después verifique que está registrado como uno de los interpretes
+      de órdenes aceptables con:
+    </p><pre class="programlisting">
+  cat /etc/shells
+</pre><p>
+      que debería presentar una línea con
+      <code class="literal">/usr/local/bin/zsh</code>
+    </p><p>
+      Si esto es así puede cambiar su interpete de órdenes
+      predeterminado para que sea <code class="literal">zsh</code> con:
+    </p><pre class="programlisting">
+  csh -s /usr/local/bin/zsh
+</pre><p>
+      En el primer ingreso <code class="literal">zsh</code> le permitirá
+      configurarlo mediante menús.
+    </p><p>
+      Aunque usted también puede manejar la configuración de zsh
+      poniendo unos archivos de configuración que recomendamos (ver
+      <a href="https://github.com/pasosdeJesus/adJ/tree/master/arboldd/usr/local/share/adJ/archconf" target="_top">https://github.com/pasosdeJesus/adJ/tree/master/arboldd/usr/local/share/adJ/archconf</a>)
+      mediante el programa <code class="literal">rcm</code>.
+    </p><p>
+      Como se indica en la página del manual
+      <code class="literal">zshroadmap</code>:
+    </p><p>
+      Para la interacción con el usuario zsh utiliza el Editor de Líneas
+      de Zsh ZLE, que le permitirá entre otras:
+    </p><div class="orderedlist"><ol type="1" compact><li><p>
+          Cambiar el modo de uso del teclado. El modo
+          <code class="literal">emacs</code> es más simple si no conoce
+          <code class="literal">vi</code>, se puede elegir con
+          <code class="literal">bindkey -e</code> (y el modo <code class="literal">vi</code>
+          se elije con <code class="literal">bindkey -v</code>)
+        </p></li><li><p>
+          Contar con un historial de las órdenes que ha dado que puede
+          navegar con flecha arriba y flecha abajo
+        </p></li><li><p>
+          Completar automáticamente palabras cundo usted digita parte de
+          la misma y presiona TAB. <code class="literal">zsh</code> tiene un
+          sistema programable de completación en el que practicamente
+          cualquier cosa puede ser fuente de completación dependiendo
+          del contexto.
+        </p></li><li><div class="literallayout"><p>Programar <code class="literal">zsh</code>. Ya incluye muchas funciones útiles contribuidas por usuarios, las cuales puede revisar en el directorio<br>
+<code class="literal">/usr/local/share/zsh/5.8/functions/Misc/</code>, no deje de probar <code class="literal">. /usr/local/share/zsh/5.8/functions/Misc/tetriscurses</code></p></div></li></ol></div><p>
+      Como se explican en {KENLON2019} al expandir rutas, el comodín
+      <code class="literal">*</code> puede actuar como buscador (labor que
+      tipicamente puede hacerse con <code class="literal">find</code> pero de
+      manera más verbosa). Veamos ejemplos:
+    </p><div class="itemizedlist"><ul type="disc" compact><li><p>
+          <code class="literal">ls *(/)</code> listar carpetas del directorio
+          actual y su contenido.
+        </p></li><li><p>
+          <code class="literal">ls *(.)</code> listar archivos (que no son
+          carpetas) del directorio actual.
+        </p></li><li><p>
+          <code class="literal">ls *(@)</code> listar enlaces del directorio
+          actual
+        </p></li><li><p>
+          <code class="literal">ls /var/www/bundler/ruby/3.0/bin/*(*)</code>
+          listar ejecutables del directorio
+          <code class="literal">/var/www/bundler/ruby/3.0/bin/</code>
+        </p></li><li><p>
+          <code class="literal">ls math/**/Makefile</code> busca archivos de
+          nombre <code class="literal">Makefile</code> recursivamente dentro del
+          directorio <code class="literal">math</code> y sus subdirectorios.
+        </p></li><li><p>
+          <code class="literal">ls -lat ~/Downloads/*(mh-8)</code> presenta
+          archivos del directorio <code class="literal">~/Downloads</code>
+          modificados en las últimas 8 horas.
+        </p></li><li><p>
+          <code class="literal">ls -lat ~/Downloads/*(md+30)</code> presenta
+          archivos del directorio <code class="literal">~/Downloads</code>
+          modificados por última vez hace más de 30 días (podría valer
+          la pena eliminarlos).
+        </p></li></ul></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="lecturas_recomendadas_zsh"></a>6.3.1. Lecturas recomendadas</h4></div></div></div><div class="itemizedlist"><ul type="disc" compact><li><p>
+            Páginas del manual de zsh.
+          </p></li><li><p>
+            https://grml.org/zsh/zsh-lovers.pdf
+          </p></li><li><p>
+            {KENLON2019} Seth Kenlon. Getting started with Zsh.
+            <a href="https://opensource.com/article/19/9/getting-started-zsh" target="_top">https://opensource.com/article/19/9/getting-started-zsh</a>.
+            2019
+          </p></li></ul></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="uso_de_medios_de_almacenamiento.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="edicion_de_textos.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">5. Uso de medios de almacenamiento </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 7. Edición de textos</td></tr></table></div></body></html>

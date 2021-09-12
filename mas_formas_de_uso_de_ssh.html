@@ -1,20 +1,20 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>8. Más formas de uso de ssh</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="transferencia_de_informacion_a_y_desde_el_servidor.html" title="7. Transferencia de información a y desde el servidor"><link rel="next" href="formatos_de_archivos.html" title="9. Formatos de archivos"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">8. Más formas de uso de ssh</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="transferencia_de_informacion_a_y_desde_el_servidor.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="formatos_de_archivos.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="mas_formas_de_uso_de_ssh"></a>8. Más formas de uso de ssh</h2></div></div></div><p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>10. Más formas de uso de ssh</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="transferencia_de_informacion_a_y_desde_el_servidor.html" title="9. Transferencia de información a y desde el servidor"><link rel="next" href="formatos_de_archivos.html" title="11. Formatos de archivos"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">10. Más formas de uso de ssh</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="transferencia_de_informacion_a_y_desde_el_servidor.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="formatos_de_archivos.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="mas_formas_de_uso_de_ssh"></a>10. Más formas de uso de ssh</h2></div></div></div><p>
     El protocolo <span class="strong"><strong>ssh</strong></span> además de
     permitirle conectarse a servidores en modo texto (ver
     <a href="primer_uso_de_adJ.html#conexion_con_ssh" title="2.3. Conexión con ssh">Sección 2.3, “Conexión con ssh”</a>) le permite iniciar
     aplicaciones gráficas que se ejecuten en el servidor, hacer
     redireccionamiento de puertos y conectarse sin necesidad de dar
     clave (dando una clave sólo una vez en su computador).
-  </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="abrir_programas_con_interfaz_grafica"></a>8.1. Abrir programas con interfaz gráfica</h3></div></div></div><p>
+  </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="abrir_programas_con_interfaz_grafica"></a>10.1. Abrir programas con interfaz gráfica</h3></div></div></div><p>
       Es posible ejecutar aplicaciones gráficas en el servidor y ver las
       ventanas gráficas en otro computador. Para esto es necesario:
-    </p><div class="orderedlist"><ol type="1"><li><p>
+    </p><div class="orderedlist"><ol type="1" compact><li><p>
           Que en el archivo de configuración
           <code class="literal">/etc/ssh/sshd_config</code> del servidor esté
           habilitada la opción:
-        </p><pre class="programlisting">
+        </p></li></ol></div><pre class="programlisting">
 X11Forwarding yes
-</pre></li><li><p>
+</pre><div class="orderedlist"><ol type="1" compact><li value="2"><p>
           Que en el computador donde se desea ver la información esté
           instalado un servidor de X-Window.
         </p></li></ol></div><p>
@@ -37,16 +37,16 @@ ssh -X juan@practica.pasosdeJesus.org
 </pre><p>
       En el caso de <span class="strong"><strong>putty</strong></span> en el
       dialogo de configuración que aparece antes de iniciar la conexión,
-      en el menú Connection-&gt;SSH-&gt;X11 marque 'Enable X11
-      forwarding'.
-    </p><div class="figure"><a name="idp880008704"></a><p class="title"><b>Figura 25. Reenvío de X11 en putty</b></p><div class="mediaobject"><img src="img/putty-x11.png" alt="Reenvío de X11 en
+      en el menú Connection-&gt;SSH-&gt;X11 marque “<span class="quote">Enable X11
+      forwarding</span>”.
+    </p><div class="figure"><a name="idp360793072"></a><p class="title"><b>Figura 25. Reenvío de X11 en putty</b></p><div class="mediaobject"><img src="img/putty-x11.png" alt="Reenvío de X11 en
         putty"></div></div><p>
       Una vez haga esto, las aplicaciones gráficas que inicie en la
       sesión ssh que inició, se verán en su computador. Pruebe por
       ejemplo con:
     </p><pre class="programlisting">
 xeyes
-</pre></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="tunel_reenviando_un_puerto"></a>8.2. Túnel reenviando un puerto</h3></div></div></div><p>
+</pre></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="tunel_reenviando_un_puerto"></a>10.2. Túnel reenviando un puerto</h3></div></div></div><p>
       Puede usar <span class="strong"><strong>ssh</strong></span> también para
       crear un túnel entre un puerto local y un puerto accequible desde
       el servidor al cual se conecta. Por ejemplo si en una organización
@@ -66,15 +66,15 @@ ssh -L10443:base:443 juan@practica.pasosdeJesus.org
       especificar esta información en el diálogo de configuración
       Connection-&gt;SSH-&gt;Tunnels como se presenta a continuación
       presionando el botón Add para adicionar el túnel a la región
-      `Forwarded ports'.
-    </p><div class="figure"><a name="idp1933038720"></a><p class="title"><b>Figura 26. Configuración de túnel en putty</b></p><div class="mediaobject"><img src="img/putty-tunnel.png" alt="Configuración de túnel en
+      `Forwarded ports’.
+    </p><div class="figure"><a name="idp361011312"></a><p class="title"><b>Figura 26. Configuración de túnel en putty</b></p><div class="mediaobject"><img src="img/putty-tunnel.png" alt="Configuración de túnel en
         putty"></div></div><p>
       Una vez inicie la conexión debe digitar la clave del usuario en el
       cortafuegos. Con lo cual quedará establecido un túnel entre el
       puerto 10443 del computador local y el puerto 443 del servidor
       <code class="literal">base</code>. Este túnel puede usarse ingresando en un
       navegador la dirección: <code class="literal">https://127.0.0.1:10443</code>
-    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="tunel_con_protocolo_socks"></a>8.3. Túnel con protocolo SOCKS</h3></div></div></div><p>
+    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="tunel_con_protocolo_socks"></a>10.3. Túnel con protocolo SOCKS</h3></div></div></div><p>
       Otra forma de realizar un túnel, pero sin limitarlo a un puerto es
       empleando un servidor SOCKS incluido con el programa ssh y
       configurando su navegador para emplearlo.
@@ -90,7 +90,7 @@ ssh -D8080 juan@practica.pasosdeJesus.org
       Si emplea <span class="strong"><strong>putty</strong></span> debe
       especificar esta información en el diálogo de configuración
       Connection-&gt;SSH-&gt;Tunnels, marcando Dynamic y escribiendo un
-      puerto como 8080 en "Local Port," y proceder a
+      puerto como 8080 en “<span class="quote">Local Port,</span>” y proceder a
       conectarse al servidor.
     </p><p>
       A continuación debe configurar su navegador para que utilice ese
@@ -103,13 +103,13 @@ ssh -D8080 juan@practica.pasosdeJesus.org
       acceso en una red interna a un servidor con IP 192.168.1.2 puede
       emplear esa URL en su navegador y llegará a ese computador en la
       red interna donde está el servidor.
-    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_ssh"></a>8.4. Lecturas recomendadas</h3></div></div></div><p>
+    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_ssh"></a>10.4. Lecturas recomendadas</h3></div></div></div><p>
       Puede aprender sobre <span class="strong"><strong>ssh</strong></span>
       examinado la especificación del protocolo en uno de los borradores
-      de la especificación temporal "SSH Protocol
-      Architecture"
+      de la especificación temporal “<span class="quote">SSH Protocol
+      Architecture</span>”
       <a href="https://tools.ietf.org/html/draft-ietf-secsh-architecture-22" target="_top">https://tools.ietf.org/html/draft-ietf-secsh-architecture-22</a>.
     </p><p>
       Hay información sobre la implementación OpenSSH en
       <a href="http://www.openssh.org" target="_top">http://www.openssh.org</a>.
-    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="transferencia_de_informacion_a_y_desde_el_servidor.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="formatos_de_archivos.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">7. Transferencia de información a y desde el servidor </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 9. Formatos de archivos</td></tr></table></div></body></html>
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="transferencia_de_informacion_a_y_desde_el_servidor.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="formatos_de_archivos.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">9. Transferencia de información a y desde el servidor </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 11. Formatos de archivos</td></tr></table></div></body></html>

@@ -2,18 +2,18 @@
 <HTML
 ><HEAD
 ><TITLE
->Correo electrónico</TITLE
+>Formatos de archivos</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
 HREF="t1.htm"><LINK
 REL="PREVIOUS"
-TITLE="Formatos de archivos"
+TITLE="Más formas de uso de ssh"
 HREF="x1309.htm"><LINK
 REL="NEXT"
-TITLE="Labores básicas de administración"
-HREF="x1555.htm"></HEAD
+TITLE="Correo electrónico"
+HREF="x1450.htm"></HEAD
 ><BODY
 CLASS="sect1"
 BGCOLOR="#FFFFFF"
@@ -55,7 +55,7 @@ WIDTH="10%"
 ALIGN="right"
 VALIGN="bottom"
 ><A
-HREF="x1555.htm"
+HREF="x1450.htm"
 ACCESSKEY="N"
 >Siguiente</A
 ></TD
@@ -69,690 +69,356 @@ CLASS="sect1"
 ><H1
 CLASS="sect1"
 ><A
-NAME="correo_electronico"
->Correo electrónico</A
+NAME="formatos_de_archivos"
+>Formatos de archivos</A
 ></H1
 ><P
->&#13;    El correo que reciba en un servidor OpenBSD puede consultarlo por lo
-    menos de tres formas:
+>&#13;    La forma de emplear un archivo que copie, cree o descargue , depende
+    del formato en el que esté. El formato usualmente se identifica con
+    la extensión (i.e las últimas letras que están después de un punto).
   </P
 ><P
 ></P
 ><UL
+COMPACT="COMPACT"
 ><LI
 ><P
->&#13;        Empleando un agente de usuario para leer correo (o cliente de
-        correo o MUA) que soporte alguno de los protocolos soportados
-        (podrían ser POP3, IMAP, IMAP-SSL y POP3S) y configurándolo para
-        extraer/examinar correo del servidor.
-      </P
-></LI
-><LI
-><P
->&#13;        Ingresando con <SPAN
-CLASS="strong"
-><B
-CLASS="emphasis"
->ssh</B
-></SPAN
-> al
-        servidor al cual llega el correo y consultándolo localmente con
-        un cliente de correo o MUA. Dos programas típicos para esto que
-        operan en modo texto en sistemas tipo Unix como OpenBSD son
-        <SPAN
-CLASS="strong"
-><B
-CLASS="emphasis"
->mail</B
-></SPAN
-> y
-        <SPAN
-CLASS="strong"
-><B
-CLASS="emphasis"
->mutt</B
-></SPAN
->.
-      </P
-></LI
-><LI
-><P
->&#13;        Empleando un webmail desde un navegador.
+>&#13;        <TT
+CLASS="literal"
+>.txt</TT
+> Se trata de un texto plano. Típicamente
+        estará codificado en ASCII. En DOS/Windows los textos planos
+        indican fin de línea con dos caracteres: Retorno de
+        carro<A
+NAME="AEN1387"
+HREF="#FTN.AEN1387"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+> y nueva línea<A
+NAME="AEN1391"
+HREF="#FTN.AEN1391"
+><SPAN
+CLASS="footnote"
+>[2]</SPAN
+></A
+>, mientras que en sistemas tipo Unix basta se usa
+        sólo el caracter nueva línea. Para convertir textos DOS/Windows
+        a Unix puede emplear:
       </P
 ></LI
 ></UL
-><P
->&#13;    Otra posibilidad que tiene es reenviar el correo a otro servidor, lo
-    cual puede lograr fácilmente creando un archivo
-    <TT
-CLASS="literal"
->~/.forward</TT
-> en el cual basta que ponga la
-    dirección a la cual quiere reenviar el correo que reciba.
-  </P
-><P
->&#13;    Con respecto a protocolos para extraer/examinar correos, algunas
-    diferencias entre los mencionados son:
-  </P
-><DIV
-CLASS="informaltable"
-><P
-></P
-><A
-NAME="AEN1396"
-></A
-><TABLE
-BORDER="1"
-CLASS="CALSTABLE"
-><COL
-WIDTH="1*"
-ALIGN="center"><COL
-WIDTH="1*"
-ALIGN="center"><COL
-WIDTH="1*"
-ALIGN="center"><COL
-WIDTH="1*"
-ALIGN="center"><THEAD
-><TR
-><TH
->&#13;            Protocolo
-          </TH
-><TH
->&#13;            Cifrado SSL
-          </TH
-><TH
->&#13;            Carpetas
-          </TH
-><TH
->&#13;            Saca correo del servidor
-          </TH
-></TR
-></THEAD
-><TBODY
-><TR
-><TD
->&#13;            POP3
-          </TD
-><TD
->&#13;            No
-          </TD
-><TD
->&#13;            No
-          </TD
-><TD
->&#13;            Si
-          </TD
-></TR
-><TR
-><TD
->&#13;            POP3S
-          </TD
-><TD
->&#13;            Si
-          </TD
-><TD
->&#13;            No
-          </TD
-><TD
->&#13;            Si
-          </TD
-></TR
-><TR
-><TD
->&#13;            IMAP
-          </TD
-><TD
->&#13;            No
-          </TD
-><TD
->&#13;            Si
-          </TD
-><TD
->&#13;            No
-          </TD
-></TR
-><TR
-><TD
->&#13;            IMAP-SSL
-          </TD
-><TD
->&#13;            Si
-          </TD
-><TD
->&#13;            Si
-          </TD
-><TD
->&#13;            No
-          </TD
-></TR
-></TBODY
-></TABLE
+><PRE
+CLASS="programlisting"
+>&#13;$ cp carta.txt carta.txt.bak
+$ tr -d "\r" &#60; carta.txt.bak &#62; carta.txt
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;Si el texto que tiene emplea una codificación que no sea ASCII (por 
+ejemplo Unicode, UTF-8, MAC, Código de Página 850) o requiere convertir 
+de ASCII a otra codificación puede emplear el programa **recode**. 
+Por ejemplo para convertir carta.txt de ASCII a UTF-8[^formatos.3]:
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;recode txt..utf-8 carta.txt
+</PRE
 ><P
 ></P
-></DIV
+><UL
+COMPACT="COMPACT"
+><LI
 ><P
->&#13;    En resumen si desea sacar su correo del servidor prefiera POP3S,
-    pero si prefiere dejar su correo en el servidor (para accederlo
-    desde varias localizaciones) prefiera IMAP-SSL.
-  </P
-><P
->&#13;    Fuera de esos protocolos para extraer/examinar correo en servidores,
-    el protocolo SMTP permite enviar correo a través de un servidor.
-  </P
-><P
->&#13;    En cuanto a clientes de correos para el web (webmails), hay varios
-    (e.g roundcubemail), prefiera emplearlos desde computadores sin
-    virus ni spyware y sobre el protocolo HTTPS (<TT
+>&#13;        <TT
 CLASS="literal"
->i.e</TT
->
-    la dirección a la que se conecta desde su navegador de comenzar con
-    <TT
-CLASS="literal"
->https://</TT
->).
-  </P
-><P
->&#13;    En el resto de esta guía se presenta la forma de configuración de
-    algunos MUA usando el protocolo IMAP-SSL y el uso básico del MUA
-    <SPAN
+>.gz</TT
+> Es un archivo comprimido con
+        <SPAN
 CLASS="strong"
 ><B
 CLASS="emphasis"
->mutt</B
+>gzip</B
 ></SPAN
-> (tomado de
-    <A
-HREF="a1978.htm"
->AALinux</A
->).
-  </P
+>. Suponiendo que fuera
+        <TT
+CLASS="literal"
+>archivo.txt.gz</TT
+> (cuya extensión sugiere un
+        texto comprimido con <TT
+CLASS="literal"
+>gzip</TT
+>), lo descomprime
+        con:
+      </P
+></LI
+></UL
+><PRE
+CLASS="programlisting"
+>&#13;gzip -d archivo.txt.gz
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;De forma análoga para comprimir el archivo nombres.```sql``` puede 
+emplear:
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;gzip nombres.sql
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;Nota: ```gzip``` no comprime archivos muy pequeños (digamos 10 bytes):
+</PRE
+><P
+></P
+><UL
+COMPACT="COMPACT"
+><LI
+><P
+>&#13;        <TT
+CLASS="literal"
+>.tar.gz</TT
+> Se trata de un archivo empaquetado
+        con la utilidad <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>tar</B
+></SPAN
+> y después
+        comprimido con el algoritmo de
+        <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>gzip</B
+></SPAN
+>. Para descomprimirlo y
+        desempaquetarlo en el directorio en el que esté trabajando:
+      </P
+></LI
+></UL
+><PRE
+CLASS="programlisting"
+>&#13;tar xvfz archivo.tar.gz
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;Si cuenta con un archivo con extensión ```.tar``` para 
+desempaquetarlo basta:
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;tar xvf archivo.tar
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;Para empaquetar un directorio digamos ./cartas en formato tar emplearía:
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;tar cvf cartas.tar ./cartas
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;Y si además lo desea comprimir:
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;tar cvfz cartas.tar.gz ./cartas
+</PRE
+><P
+></P
+><UL
+COMPACT="COMPACT"
+><LI
+><P
+>&#13;        <TT
+CLASS="literal"
+>.bz2</TT
+> Se trata de uno o más archivos
+        comprimidos con <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>bzip2</B
+></SPAN
+>. Se
+        descomprime con:
+      </P
+></LI
+></UL
+><PRE
+CLASS="programlisting"
+>&#13;bunzip2 archivo.bz2
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;Para comprimir un archivo en este formato:
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;bzip2 archivo.pdf
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;que creará ```archivo.pdf.bz2```
+</PRE
+><P
+></P
+><UL
+COMPACT="COMPACT"
+><LI
+><P
+>&#13;        <TT
+CLASS="literal"
+>.rar</TT
+> Se descomprime con la utilidad
+        <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>unrar</B
+></SPAN
+>, por ejemplo con:
+      </P
+></LI
+></UL
+><PRE
+CLASS="programlisting"
+>&#13;unrar archivo.rar
+</PRE
+><P
+></P
+><UL
+COMPACT="COMPACT"
+><LI
+><P
+>&#13;        <TT
+CLASS="literal"
+>.7z</TT
+> Uno o más archivos comprimidos y
+        empaquetados con <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>7-Zip</B
+></SPAN
+>.
+        Descomprime y desempaqueta por ejemplo con:
+      </P
+></LI
+></UL
+><PRE
+CLASS="programlisting"
+>&#13;7z x archivo.7z
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;y crea un comprimido con
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;7z a /tmp/resultado.7z archivo1.pdf archivo2.pdf
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;Además al comprimir puede establecerse una clave por ejemplo con:
+</PRE
+><PRE
+CLASS="programlisting"
+>&#13;7z a -mhe=on -pSecreta /tmp/resultado.7z archivo1.pdf archivo2.pdf
+</PRE
 ><DIV
 CLASS="sect2"
 ><H2
 CLASS="sect2"
 ><A
-NAME="correo_grafico"
->Uso de agentes de usuario para leer correo gráfico</A
-></H2
-><P
->&#13;      Hay diversos agentes de usuario para leer correo gráficos, tanto
-      de fuentes abiertas (Mozilla Thunderbird, Evolution) como de
-      fuentes cerradas (Outlook). Típicamente soportan extracción de
-      correo de la cola local o extracción/consulta desde un servidor
-      remoto con POP3, POP3S, IMAP o IMAP-SSL.
-    </P
-><P
->&#13;      Cada uno tiene diálogos propios para configurar el protocolo, los
-      servidores y otros detalles.
-    </P
-><DIV
-CLASS="sect3"
-><H3
-CLASS="sect3"
-><A
-NAME="mozilla_thunderbird"
->Mozilla Thunderbird</A
-></H3
-><P
->&#13;        Por ejemplo, en el caso de Thunderbird configure una nueva
-        cuenta de correo (Archivo/Nuevo/Cuenta) empleando los datos del
-        servidor que usa. Para el dominio
-        <TT
-CLASS="literal"
->practica.pasosdeJesus.org</TT
-> puede usar como
-        servidor de correo:
-        <TT
-CLASS="literal"
->correo2.practica.pasosdeJesus.org</TT
-> e IMAP-SSL.
-      </P
-><DIV
-CLASS="figure"
-><A
-NAME="AEN1446"
-></A
-><P
-><B
->Figura 27. Configuración de IMAP en Thunderbird</B
-></P
-><DIV
-CLASS="mediaobject"
-><P
-><IMG
-SRC="img/imaps-1-thunderbird.png"></P
-></DIV
-></DIV
-><P
->&#13;        Después de la configuración básica de IMAP, ingrese a la
-        configuración de la cuenta y del servidor para activar IMAP-SSL:
-      </P
-><DIV
-CLASS="figure"
-><A
-NAME="AEN1454"
-></A
-><P
-><B
->Figura 28. Configuración de IMAP-SSL en Thunderbird</B
-></P
-><DIV
-CLASS="mediaobject"
-><P
-><IMG
-SRC="img/imaps-2-thunderbird.png"></P
-></DIV
-></DIV
-><P
->&#13;        Finalmente configure el servidor de salida de correo (protocolo
-        SMTP).
-      </P
-><DIV
-CLASS="figure"
-><A
-NAME="AEN1462"
-></A
-><P
-><B
->Figura 29. Configuración de servidor SMTP en Thunderbird</B
-></P
-><DIV
-CLASS="mediaobject"
-><P
-><IMG
-SRC="img/imaps-3-thunderbird.png"></P
-></DIV
-></DIV
-></DIV
-><DIV
-CLASS="sect3"
-><H3
-CLASS="sect3"
-><A
-NAME="evolution"
->Evolution</A
-></H3
-><P
->&#13;        Otro cliente de correo que se puede configurar para extraer
-        correo con POP3 seguro es evolution. A continuación se presenta
-        una de las pantallas de configuración del mismo:
-      </P
-><DIV
-CLASS="figure"
-><A
-NAME="AEN1472"
-></A
-><P
-><B
->Figura 30. Configuración de POP3S en Evolution</B
-></P
-><DIV
-CLASS="mediaobject"
-><P
-><IMG
-SRC="img/evolution.png"></P
-></DIV
-></DIV
-></DIV
-></DIV
-><DIV
-CLASS="sect2"
-><H2
-CLASS="sect2"
-><A
-NAME="mutt_y_procmail"
->mutt y procmail</A
-></H2
-><DIV
-CLASS="figure"
-><A
-NAME="AEN1481"
-></A
-><P
-><B
->Figura 31. Cliente de correo mutt</B
-></P
-><DIV
-CLASS="mediaobject"
-><P
-><IMG
-SRC="img/mutt.png"></P
-></DIV
-></DIV
-><P
->&#13;      <TT
-CLASS="literal"
->mutt</TT
-> es un MUA que opera en modo texto, fácil
-      de manejar y altamente configurable. Opcionalmente, si en el
-      servidor donde ejecute <TT
-CLASS="literal"
->mutt</TT
-> también está
-      <TT
-CLASS="literal"
->procmail</TT
->, podrá automatizar bastante la
-      organización de su correo electrónico.
-    </P
-><P
->&#13;      Al iniciar <TT
-CLASS="literal"
->mutt</TT
-> presenta los correos que estén
-      en su casilla, le permite desplazarse de uno a otro con flechas o
-      con las letras <TT
-CLASS="literal"
->j</TT
-> y <TT
-CLASS="literal"
->k</TT
-> (cómo
-      en vi), podrá consultar uno con <TT
-CLASS="literal"
->Retorno</TT
->, salir
-      con <TT
-CLASS="literal"
->q</TT
->, ver ayuda sobre ordenes con
-      <TT
-CLASS="literal"
->?</TT
->, eliminar uno con <TT
-CLASS="literal"
->d</TT
->,
-      iniciar un correo (o continuar editando algún correo pospuesto)
-      con <TT
-CLASS="literal"
->m</TT
->. Una vez esté viendo un correo puede
-      responder con <TT
-CLASS="literal"
->r</TT
->, reenviarlo con
-      <TT
-CLASS="literal"
->f</TT
-> o pasarlo como entrada a una orden con
-      <TT
-CLASS="literal"
->|</TT
->. Cuando componga un mensaje puede posponer,
-      puede poner adjuntos (con <TT
-CLASS="literal"
->a</TT
->) o emplear
-      programas como PGP o GPG para firmar o cifrar sus mensajes (con
-      <TT
-CLASS="literal"
->p</TT
->).
-    </P
-><P
->&#13;      Para organizar los correos que reciba, puede emplear carpetas,
-      para pasar de una carpeta a otra emplee <TT
-CLASS="literal"
->c</TT
->, para
-      organizar una carpeta (por fecha, emisor, destinatario, tamaño,
-      tema o hilos) emplee o. Si ordena una carpeta por hilos, podrá
-      emplear otras ordenes como <TT
-CLASS="literal"
->Ctrl-D</TT
-> para borrar
-      un hilo completo, <TT
-CLASS="literal"
->Ctrl-P</TT
-> para pasar al
-      anterior, <TT
-CLASS="literal"
->Ctrl-N</TT
-> para pasar al siguiente.
-    </P
-><P
->&#13;      mutt puede configurarse en el archivo
-      <TT
-CLASS="literal"
->~/.muttrc</TT
->. Un ejemplo se presenta a
-      continuación (las líneas iniciadas con # son comentarios):
-    </P
-><PRE
-CLASS="programlisting"
->&#13;# Para establecer una dirección en la que se prefieren respuestas
-my_hdr Reply-To: Juan Valdez
-set reply_to=yes
-unset reply_self
-
-# Para emplear vim como editor de mensajes y editar el encabezado también
-set edit_headers=yes
-set editor=vim
-
-# Para establecer algunas carpetas
-mailboxes =/var/mail/juan
-mailboxes =/home/juan/Mail/tareas
-mailboxes =/home/juan/Mail/familia
-mailboxes =/home/juan/Mail/paz
-</PRE
-><DIV
-CLASS="sect3"
-><H3
-CLASS="sect3"
-><A
-NAME="localización"
->Localización</A
-></H3
-><P
->&#13;        Es posible localizar mutt al español, lo recomendable es emplear
-        en el sistema operativo el locale apropiado para su país con
-        codificación UTF-8 y una terminal que soporte UTF-8. En tal caso
-        mutt podrá enviar correos con esta codificación y presentar
-        correos con tal codificación, agregando las siguientes líneas a
-        su archivo <TT
-CLASS="literal"
->~/.muttrc</TT
-> (que se espera
-        codificado en UTF-8, ver Sección 7.3, “Editor vi”):
-      </P
-><PRE
-CLASS="programlisting"
->&#13;set config_charset=utf-8
-set locale=es_CO.UTF-8
-my_hdr Content-Type: text/plain\; charset=UTF-8\; format=flowed
-my_hdr Content-Transfer-Encoding: 8bit
-</PRE
-></DIV
-><DIV
-CLASS="sect3"
-><H3
-CLASS="sect3"
-><A
-NAME="procmail"
->Procmail</A
-></H3
-><P
->&#13;        Si desea que su correo sea automáticamente organizado en
-        carpetas, cuando llegue puede emplear procmail y sincronizarlo
-        con su configuración de mutt. procmail puede manejar
-        automáticamente todo correo que reciba en una cuenta y realizar
-        con este las acciones que usted describa. Para que separe
-        automáticamente los correos en las carpetas del ejemplo
-        anterior, debe configurar y crear varios archivos. Cree la
-        carpeta <TT
-CLASS="literal"
->~/.procmail</TT
->, en ella el archivo
-        r<TT
-CLASS="literal"
->c.maillists</TT
-> con la configuración de los
-        patrones por buscar en los correos y la carpeta en la que deben
-        quedar:
-      </P
-><PRE
-CLASS="programlisting"
->&#13;:0:
-* ^FROM.*fip@ideaspaz.org.*
-paz
-
-:0:
-* ^TO.*colombia-paz@colnodo.apc.org.*
-paz
-
-:0:
-* ^TO.*colombia@derechos.net.*
-paz
-
-:0:
-* ^TOstructio.*
-tareas
-</PRE
-><P
->&#13;        La última línea indica que deben dejarse correos enviados a
-        direcciones que incluyan la palabra structio en la carpeta
-        tareas; mientras que las que van a las otras direcciones
-        mostradas, irán a la carpeta paz .
-      </P
-><P
->&#13;        El archivo <TT
-CLASS="literal"
->~/.procmailrc</TT
-> debe contener algo
-        como:
-      </P
-><PRE
-CLASS="programlisting"
->&#13;LINEBUF=4096
-VERBOSE=off
-MAILDIR=$HOME/Mail/
-FORMAIL=/usr/local/bin/formail
-SENDMAIL=/usr/sbin/sendmail
-PMDIR=$HOME/.procmail
-LOGFILE=$PMDIR/log
-INCLUDERC=$PMDIR/rc.maillists
-</PRE
-><P
->&#13;        La línea <TT
-CLASS="literal"
->LOGFILE=$PMDIR/log</TT
-> indica que debe
-        registrarse toda acción de procmail en
-        <TT
-CLASS="literal"
->~/.procmail/log</TT
->. Después de configurar este
-        servicio puede ser mejor quitarla.
-      </P
-><P
->&#13;        Si en su sistema procmail fue configurado para ser llamado por
-        el MTA, no tendrá que hacer más (e.g en la configuración por
-        omisión de <TT
-CLASS="literal"
->exim</TT
-> así ocurre). Si su MTA no fue
-        configurado para ejecutar procmail puede crear el archivo
-        <TT
-CLASS="literal"
->~/.forward</TT
-> con:
-      </P
-><PRE
-CLASS="programlisting"
->&#13;"|IFS=' ' &#38;&#38; exec /usr/bin/procmail -f- || exit 75 "
-</PRE
-></DIV
-><DIV
-CLASS="sect3"
-><H3
-CLASS="sect3"
-><A
-NAME="fetchmail"
->fetchmail</A
-></H3
-><P
->&#13;        Este programa, para sistemas tipo UNIX, le permite descargar el
-        correo de uno o más servidores empleando protocolos POP3, POP3S,
-        IMAP o IMAP-SSL y dejarlos en la cola de correos local de su
-        computador para examinarlos posteriormente con mutt o con algún
-        MUA gráfico, configurado para leer correo local.
-      </P
-><P
->&#13;        A continuación se presenta un ejemplo del archivo de
-        configuración <TT
-CLASS="literal"
->~/.fetchmailrc</TT
-> para extraer
-        correo del servidor
-        <TT
-CLASS="literal"
->correo2.practica.pasosdeJesus.org</TT
-> con el
-        protocolo IMAP-SSL, suponiendo que tanto en el computador que
-        recibe como en el servidor el usuario es
-        <TT
-CLASS="literal"
->juan</TT
->:
-      </P
-><PRE
-CLASS="programlisting"
->&#13;set postmaster "postmaster"
-set bouncemail
-set properties ""
-
-poll correo2.practica.pasosdeJesus.org port 993 with proto IMAP 
-no dns
-user juan there is juan here 
-ssl
-</PRE
-><P
->&#13;        Con esta configuración puede iniciarse la extracción de correo
-        ejecutando:
-      </P
-><PRE
-CLASS="programlisting"
->&#13;fetchmail -a
-</PRE
-></DIV
-></DIV
-><DIV
-CLASS="sect2"
-><H2
-CLASS="sect2"
-><A
-NAME="lecturas_recomendadas_correo"
+NAME="lecturas_recomendadas_formato_de_archivos"
 >Lecturas recomendadas</A
 ></H2
 ><P
->&#13;      Puede consultar más sobre <TT
+>&#13;      La página del manual: <TT
 CLASS="literal"
->mutt</TT
-> con
-      <TT
-CLASS="literal"
->man mutt</TT
->, y en el manual HTML disponible en
-      <TT
-CLASS="literal"
->/usr/local/share/doc/mutt/html</TT
->.
-    </P
-><P
->&#13;      Puede ver más sobre el archivo <TT
-CLASS="literal"
->.forward</TT
-> (que
-      puede usar también para ejecutar un programa cada vez que llega un
-      correo) con <TT
-CLASS="literal"
->man forward</TT
+>man tar</TT
 >
     </P
 ></DIV
 ></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN1387"
+HREF="x1380.htm#AEN1387"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;            El caracter retorno de carro tiene código ASCII 13, suele
+            llamarse CR (<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Carriage Return</I
+></SPAN
+>) y
+            diversos programas y lenguajes lo denotan con
+            <SPAN
+CLASS="QUOTE"
+>""</SPAN
+>.
+          </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN1391"
+HREF="x1380.htm#AEN1391"
+><SPAN
+CLASS="footnote"
+>[2]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;            El caracter nueva línea tiene código ASCII 10, también se
+            llama LF (<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Line Feed</I
+></SPAN
+>) y diversos
+            programas y lenguajes lo denotan con ’.
+          </P
+></TD
+></TR
+></TABLE
 ><DIV
 CLASS="NAVFOOTER"
 ><HR
@@ -787,7 +453,7 @@ WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
 ><A
-HREF="x1555.htm"
+HREF="x1450.htm"
 ACCESSKEY="N"
 >Siguiente</A
 ></TD
@@ -797,7 +463,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->Formatos de archivos</TD
+>Más formas de uso de ssh</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -807,7 +473,7 @@ VALIGN="top"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->Labores básicas de administración</TD
+>Correo electrónico</TD
 ></TR
 ></TABLE
 ></DIV

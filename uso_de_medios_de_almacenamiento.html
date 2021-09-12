@@ -1,5 +1,5 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>4. Uso de medios de almacenamiento</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="soporte.html" title="3. Soporte"><link rel="next" href="ar01s02.html" title="2. Personalización"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4. Uso de medios de almacenamiento</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="soporte.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ar01s02.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="uso_de_medios_de_almacenamiento"></a>4. Uso de medios de almacenamiento</h2></div></div></div><p>
-    En <a href="index.html#idp2824895872" title="1. Conceptos básicos">Sección 1, “Conceptos básicos”</a> se definió archivo
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>5. Uso de medios de almacenamiento</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="soporte.html" title="4. Soporte"><link rel="next" href="personalizacion.html" title="6. Personalización"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5. Uso de medios de almacenamiento</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="soporte.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="personalizacion.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="uso_de_medios_de_almacenamiento"></a>5. Uso de medios de almacenamiento</h2></div></div></div><p>
+    En <a href="conceptos_basicos.html" title="3. Conceptos básicos">Sección 3, “Conceptos básicos”</a> se definió archivo
     y sistema de archivos de manera general, en esta sección se aplican
     esos conceptos para utilizar USB y CD-ROM. En sistemas tipo Unix
     como adJ es necesario montar los medios de almacenamientos en algún
@@ -9,12 +9,12 @@
     <code class="literal">/mnt/cdrom</code> respectivamente. Ni el montaje, ni el
     desmontaje se realizan automáticamente, sino por orden expresa del
     usuario.
-  </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="montaje_y_desmontaje_en_entorno_grafico"></a>4.1. Montaje y desmontaje en entorno gráfico</h3></div></div></div><p>
+  </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="montaje_y_desmontaje_en_entorno_grafico"></a>5.1. Montaje y desmontaje en entorno gráfico</h3></div></div></div><p>
       Para montar una unidad de USB debe bastar desde el menú de fluxbox
       (botón derecho del ratón sobre el escritorio) elegir
       Dispositivo-&gt;Montar USB (se emplea el análogo para montar un
       CD-ROM).
-    </p><div class="figure"><a name="idp2980832000"></a><p class="title"><b>Figura 18. Menú Dispositivo-&gt;Montar USB</b></p><div class="mediaobject"><img src="img/montar.png" alt="Menú Dispositivo-&gt;Montar
+    </p><div class="figure"><a name="idm2411644048"></a><p class="title"><b>Figura 18. Menú Dispositivo-&gt;Montar USB</b></p><div class="mediaobject"><img src="img/montar.png" alt="Menú Dispositivo-&gt;Montar
         USB"></div></div><div class="literallayout"><p>Una vez lo haga podrá ver el manejador de archivos <code class="literal">xfe</code> ubicado en el directorio donde queda montado el medio.<br>
 <span class="inlinemediaobject"><img src="img/xfecdrom.png"></span></p></div><p>
       Al montar estos medios, el dueño es el usuario administrador que
@@ -22,7 +22,7 @@
       los medios y en el caso de USB es quien podrá escribir. Una vez
       termine de emplear el medio de almacenamiento desmóntelo también
       desde el menú de fluxbox Dispositivo-&gt;Desmontar USB
-    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="montaje_y_desmontaje_desde_interprete_de_ordenes"></a>4.2. Montaje y desmontaje desde intérprete de ordenes</h3></div></div></div><p>
+    </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="montaje_y_desmontaje_desde_interprete_de_ordenes"></a>5.2. Montaje y desmontaje desde intérprete de órdenes</h3></div></div></div><p>
       Para montar la USB debe bastar ejecutar desde una terminal:
     </p><pre class="programlisting">
 doas mount /mnt/usb
@@ -36,13 +36,13 @@ doas umount /mnt/usb
       y para desmontar un CD-ROM:
     </p><pre class="programlisting">
 doas umount /mnt/cdrom
-</pre></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="administrador_de_archivos_xfe"></a>4.3. Administrador de archivos Xfe</h3></div></div></div><p>
+</pre></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="administrador_de_archivos_xfe"></a>5.3. Administrador de archivos Xfe</h3></div></div></div><p>
       Con este sencillo programa podrá administrar archivos y
       directorios, es decir crear, copiar, renombrar, crear enlaces,
       cambiar permisos e incluso hacer estas operaciones como
       superusuario. Entre las características del porte de adJ
       destacamos, las siguientes adaptadas y traducidas de la ayuda
-      oficial --que podrá consultar desde el menú Ayuda:
+      oficial –que podrá consultar desde el menú Ayuda:
     </p><div class="itemizedlist"><ul type="disc"><li><p>
           Interfaz gráfica de usuario muy rápida con cuatro formas de
           administrar archivos: un panel; árbol y panel; dos paneles;
@@ -55,7 +55,7 @@ doas umount /mnt/cdrom
           menú Editar/Preferencias/Tipo de letra
         </p></li><li><p>
           Incluye las siguientes aplicaciones: Editor de texto (X File
-          Write, xfw, ver <a href="edicion_de_textos.html#editor_xfw" title="5.1. Editor xfw">Sección 5.1, “Editor xfw”</a>), Visor
+          Write, xfw, ver <a href="edicion_de_textos.html#editor_xfw" title="7.1. Editor xfw">Sección 7.1, “Editor xfw”</a>), Visor
           de texto (X File View, xfv), Visor de imágenes (X File Image,
           xfi), Visor/Instalador/Desinstalador de paquetes (rpm o deb)
           (X File Package, xfp).
@@ -69,13 +69,12 @@ doas umount /mnt/cdrom
         </p></li><li><p>
           Permite realizar operaciones como superusuario, bien iniciando
           desde una terminal con:
-        </p><pre class="programlisting">
+        </p></li></ul></div><pre class="programlisting">
 doas xfe
-</pre><p>
-          o si está bien configurado puede iniciarse una ventan
-          superusuario desde el menú Herramientas-&gt;Ventana
-          superusuario nueva.
-        </p></li><li><p>
+</pre><pre class="programlisting">
+o si está bien configurado puede iniciarse una ventan superusuario desde 
+el menú Herramientas-&gt;Ventana superusuario nueva.
+</pre><div class="itemizedlist"><ul type="disc"><li><p>
           Maneja paquetes de OpenBSD: seleccionando cualquier archivo y
           pulsando botón derecho podrá elegir en el menú emergente
           Consultar Paquetes que buscará el paquete que contiene el
@@ -102,7 +101,7 @@ doas xfe
           menú contextual sobre los elementos seleccionados. En los
           paneles <span class="strong"><strong>Ctrl +</strong></span> pulsación
           derecha abrirá un menú contextual con otras operaciones.
-        </p></li></ul></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="atajos_de_teclado_predeterminados"></a>4.3.1. Atajos de teclado predeterminados</h4></div></div></div><p>
+        </p></li></ul></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="atajos_de_teclado_predeterminados"></a>5.3.1. Atajos de teclado predeterminados</h4></div></div></div><p>
         Los atajos de teclado pueden personalizarse en el cuadro de
         diálogo Preferencias. Los predeterminados para todas la
         aplicaciones integradas se listan a continuación (vea otros
@@ -179,22 +178,22 @@ doas xfe
           </p></li><li><p>
             <span class="strong"><strong>Mayúscula-Retroceso</strong></span>: Ir
             al directorio siguiente
-          </p></li></ul></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="particiones_cifradas"></a>4.4. Particiones cifradas</h3></div></div></div><p>
-      adJ soporta por omisión 2 particiones cifradas que se montan en
-      <code class="literal">/var/postgresql</code> y
+          </p></li></ul></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="particiones_cifradas"></a>5.4. Particiones cifradas</h3></div></div></div><p>
+      adJ soporta de manera predeterminada 2 particiones cifradas que se
+      montan en <code class="literal">/var/postgresql</code> y
       <code class="literal">/var/www/resbase</code>. La clave de cifrado debe
       suministrarse durante el arranque, y sólo si esta es correcta
       podrá ver el contenido de esas carpetas y escribir (si durante el
       arranque no le solicita clave de cifrado faltó activar particiones
-      cifradas en la instalación --aunque podrá hacerlo actualizando
+      cifradas en la instalación –aunque podrá hacerlo actualizando
       adJ). Así que puede verificar si la clave fue correcta examinando
-      esas rutas bien con xfe o bien desde un intérprete de ordenes:
-    </p><div class="itemizedlist"><ul type="disc"><li><div class="literallayout"><p>xfe: Inicie <span class="strong"><strong>xfe</strong></span>, asegúrese de ver Árbol y Panel desde el menú Ver. En el Árbol de directorios de la izquierda elija el directorio raíz (primero marcado con /) con doble pulsación del botón izquierdo, bajé para elegir var, a continuación <code class="literal">www</code> y a continuación<br>
+      esas rutas bien con xfe o bien desde un intérprete de órdenes:
+    </p><div class="itemizedlist"><ul type="disc" compact><li><div class="literallayout"><p>xfe: Inicie <span class="strong"><strong>xfe</strong></span>, asegúrese de ver Árbol y Panel desde el menú Ver. En el Árbol de directorios de la izquierda elija el directorio raíz (primero marcado con /) con doble pulsación del botón izquierdo, bajé para elegir var, a continuación <code class="literal">www</code> y a continuación<br>
 <code class="literal">resbase</code>.</p></div></li><li><p>
-          Intérprete de ordenes: Inicie una terminal y teclee
-        </p><pre class="programlisting">
+          Intérprete de órdenes: Inicie una terminal y teclee
+        </p></li></ul></div><pre class="programlisting">
 ls /var/www/resbase
-</pre></li></ul></div><p>
+</pre><p>
       Allí debe ver directorios como AD o anexos o copias de respaldo o
       dependiendo de la configuración de su servidor, una carpeta para
       cada usuario. Si no ve información en este directorio ni en
@@ -202,7 +201,7 @@ ls /var/www/resbase
       clave de cifrado en el arranque, en tal caso desde el menú de
       Fluxbox (botón derecho sobre el escritorio) elija
       Dispositivo-&gt;Iniciar Servicios Faltantes o desde un intérprete
-      de ordenes teclee
+      de órdenes teclee
     </p><pre class="programlisting">
 doas sh /etc/rc.local
 </pre><p>
@@ -240,12 +239,12 @@ doas xfe
           Sobre el directorio resbase en el árbol de directorios pulsar
           el botón derecho y del menú emergente elegir Pegar.
         </p></li></ul></div><p>
-      El mismo procedimiento desde un intérprete de ordenes lo realiza
+      El mismo procedimiento desde un intérprete de órdenes lo realiza
       con:
     </p><pre class="programlisting">
 doas mount /mnt/usb 
 </pre><pre class="programlisting">
 doas cp /mnt/usb/fuentes.txt /var/www/resbase 
-</pre></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_medios"></a>4.5. Lecturas recomendadas</h3></div></div></div><p>
+</pre></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_medios"></a>5.5. Lecturas recomendadas</h3></div></div></div><p>
       Páginas del manual mount (8) y umount (8)
-    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="soporte.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ar01s02.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">3. Soporte </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 2. Personalización</td></tr></table></div></body></html>
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="soporte.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="personalizacion.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">4. Soporte </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 6. Personalización</td></tr></table></div></body></html>

@@ -12,9 +12,9 @@ REL="PREVIOUS"
 HREF="t1.htm"><LINK
 REL="NEXT"
 TITLE="Conceptos básicos"
-HREF="x233.htm"></HEAD
+HREF="x235.htm"></HEAD
 ><BODY
-CLASS="section"
+CLASS="sect1"
 BGCOLOR="#FFFFFF"
 TEXT="#000000"
 LINK="#0000FF"
@@ -54,7 +54,7 @@ WIDTH="10%"
 ALIGN="right"
 VALIGN="bottom"
 ><A
-HREF="x233.htm"
+HREF="x235.htm"
 ACCESSKEY="N"
 >Siguiente</A
 ></TD
@@ -64,41 +64,48 @@ ACCESSKEY="N"
 ALIGN="LEFT"
 WIDTH="100%"></DIV
 ><DIV
-CLASS="section"
+CLASS="sect1"
 ><H1
-CLASS="section"
+CLASS="sect1"
 ><A
-NAME="AEN41"
+NAME="primer_uso_de_adJ"
 >Primer uso de adJ</A
 ></H1
 ><P
 >&#13;    Un servidor adJ puede operarse tanto directamente (sentado frente al
-    computador donde se instaló y configuró), como remotamente por
-    ejemplo con <TT
+    computador donde se instaló y configuró), como remotamente
+    (típicamente y de manera segura mediante el programa
+    <TT
 CLASS="literal"
 >ssh</TT
->. En esta sección cubrimos ambos
-    escenarios.
+>). En esta sección cubrimos ambos escenarios.
   </P
 ><DIV
-CLASS="section"
+CLASS="sect2"
 ><H2
-CLASS="section"
+CLASS="sect2"
 ><A
-NAME="AEN45"
+NAME="arranque"
 >Arranque</A
 ></H2
 ><P
->&#13;      Al iniciar un computador con adJ el núcleo de OpenBSD comenzará
-      con una interfaz de texto, detectará el hardware (se ven letras
-      con fondo azul), iniciará los procesos básicos (se ven letras con
-      fondo negro) y ejecutará los archivos de arranque.
+>&#13;      Al iniciar un computador con adJ se verán primero mensajes del
+      BIOS preprogramados en el hardware, después el control pasará al
+      arranque del disco con adJ que presentará
+      <TT
+CLASS="literal"
+>boot&#62;</TT
+> y tras un momento el control pasará al
+      núcleo de OpenBSD adJ, que detectará el hardware (se ven letras
+      con fondo azul), revisará discos e iniciará los procesos básicos
+      (se ven letras con fondo negro) y tras esto ejecutará los archivos
+      de arranque.
     </P
 ><P
 >&#13;      Típicamente la distribución adJ pide claves de imágenes
       cifradas<A
-NAME="AEN49"
-HREF="#FTN.AEN49"
+NAME="AEN50"
+HREF="#FTN.AEN50"
 ><SPAN
 CLASS="footnote"
 >[1]</SPAN
@@ -108,7 +115,7 @@ CLASS="footnote"
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN51"
+NAME="AEN52"
 ></A
 ><P
 ><B
@@ -130,8 +137,8 @@ CLASS="literal"
       En caso de dar una clave equivocada, continuará la secuencia de
       arranque pero no podrá acceder a los directorios
       cifrados<A
-NAME="AEN60"
-HREF="#FTN.AEN60"
+NAME="AEN61"
+HREF="#FTN.AEN61"
 ><SPAN
 CLASS="footnote"
 >[2]</SPAN
@@ -140,8 +147,8 @@ CLASS="footnote"
     </P
 ><P
 >&#13;      Después se iniciará un escritorio gráfico (X-Window<A
-NAME="AEN65"
-HREF="#FTN.AEN65"
+NAME="AEN66"
+HREF="#FTN.AEN66"
 ><SPAN
 CLASS="footnote"
 >[3]</SPAN
@@ -150,8 +157,8 @@ CLASS="footnote"
 CLASS="literal"
 >xenodm</TT
 ><A
-NAME="AEN68"
-HREF="#FTN.AEN68"
+NAME="AEN69"
+HREF="#FTN.AEN69"
 ><SPAN
 CLASS="footnote"
 >[4]</SPAN
@@ -162,7 +169,7 @@ CLASS="footnote"
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN72"
+NAME="AEN73"
 ></A
 ><P
 ><B
@@ -178,7 +185,7 @@ SRC="img/xenodm.png"></P
 ><P
 CLASS="literallayout"
 >Si&nbsp;durante&nbsp;la&nbsp;instalación,&nbsp;no&nbsp;se&nbsp;instaló&nbsp;X-Window&nbsp;o&nbsp;no&nbsp;se&nbsp;ha&nbsp;configurado&nbsp;para&nbsp;iniciar&nbsp;durante&nbsp;el&nbsp;arranque,&nbsp;lo&nbsp;que&nbsp;verá&nbsp;será&nbsp;una&nbsp;consola&nbsp;virtual&nbsp;tipo&nbsp;texto,&nbsp;como&nbsp;la&nbsp;del&nbsp;arranque.<br>
-De&nbsp;manera&nbsp;predeterminada&nbsp;hay&nbsp;4&nbsp;consolas&nbsp;virtuales&nbsp;tipo&nbsp;texto&nbsp;a&nbsp;las&nbsp;cuales&nbsp;pasa&nbsp;con&nbsp;las&nbsp;secuencias&nbsp;de&nbsp;teclas&nbsp;<SPAN
+De&nbsp;manera&nbsp;predeterminada&nbsp;hay&nbsp;4&nbsp;consolas&nbsp;virtuales&nbsp;tipo&nbsp;texto&nbsp;a&nbsp;las&nbsp;cuales&nbsp;puede&nbsp;transferirse&nbsp;con&nbsp;las&nbsp;secuencias&nbsp;de&nbsp;teclas&nbsp;<SPAN
 CLASS="strong"
 ><B
 CLASS="emphasis"
@@ -193,7 +200,10 @@ CLASS="emphasis"
 >&nbsp;lo&nbsp;dejará&nbsp;en&nbsp;el&nbsp;entorno&nbsp;gráfico.</P
 ><P
 >&#13;      Las instrucciones para operación remota
-      (Conexión con ssh) le
+      <A
+HREF="x41.htm#conexion_con_ssh"
+>(Conexión con ssh)</A
+> le
       servirán para operar directamente en una consola virtual, una vez
       se autentique con su usuario y clave.
     </P
@@ -207,11 +217,11 @@ CLASS="literal"
     </P
 ></DIV
 ><DIV
-CLASS="section"
+CLASS="sect2"
 ><H2
-CLASS="section"
+CLASS="sect2"
 ><A
-NAME="AEN86"
+NAME="operacion_con_fluxbox"
 >Operación con fluxbox</A
 ></H2
 ><P
@@ -232,7 +242,7 @@ CLASS="emphasis"
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN90"
+NAME="AEN91"
 ></A
 ><P
 ><B
@@ -247,7 +257,7 @@ SRC="img/fluxbox_inicio.png"></P
 ></DIV
 ><P
 >&#13;      Observe las distintas posibilidades del menú. Puede navegar en
-      Internet utilizando chrome o midori.
+      Internet utilizando chrome o firefox.
     </P
 ><P
 >&#13;      Si elije <SPAN
@@ -263,7 +273,7 @@ CLASS="emphasis"
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN100"
+NAME="AEN101"
 ></A
 ><P
 ><B
@@ -280,8 +290,8 @@ SRC="img/primerflux.png"></P
 >&#13;      Desde el menú Oficina puede elegir LibreOffice que es el paquete
       de fuentes abiertas con aplicaciones de oficina. La gráfica
       muestra la interfaz de LibreOffice.org Writer<A
-NAME="AEN108"
-HREF="#FTN.AEN108"
+NAME="AEN109"
+HREF="#FTN.AEN109"
 ><SPAN
 CLASS="footnote"
 >[5]</SPAN
@@ -292,7 +302,7 @@ CLASS="footnote"
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN112"
+NAME="AEN113"
 ></A
 ><P
 ><B
@@ -307,8 +317,8 @@ SRC="img/openoffice_writer.png"></P
 ></DIV
 ><P
 >&#13;      También puede trabajar con la hoja de cálculo Calc<A
-NAME="AEN120"
-HREF="#FTN.AEN120"
+NAME="AEN121"
+HREF="#FTN.AEN121"
 ><SPAN
 CLASS="footnote"
 >[6]</SPAN
@@ -319,7 +329,7 @@ CLASS="footnote"
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN123"
+NAME="AEN124"
 ></A
 ><P
 ><B
@@ -335,8 +345,8 @@ SRC="img/openoffice_calc.png"></P
 ><P
 >&#13;      Puede elaborar presentaciones y abrir las que se han hecho con
       PowerPoint con Impress<A
-NAME="AEN131"
-HREF="#FTN.AEN131"
+NAME="AEN132"
+HREF="#FTN.AEN132"
 ><SPAN
 CLASS="footnote"
 >[7]</SPAN
@@ -346,7 +356,7 @@ CLASS="footnote"
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN134"
+NAME="AEN135"
 ></A
 ><P
 ><B
@@ -367,7 +377,7 @@ SRC="img/openoffice_presentacion.png"></P
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN142"
+NAME="AEN143"
 ></A
 ><P
 ><B
@@ -394,7 +404,7 @@ CLASS="emphasis"
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN151"
+NAME="AEN152"
 ></A
 ><P
 ><B
@@ -449,12 +459,17 @@ CLASS="emphasis"
 ></SPAN
 > es un clásico y ágil editor
       de texto en entornos tipo UNIX
-      
+      <A
+HREF="x866.htm#editor_vi"
+>la sección de nombre <I
+>Editor vi</I
+></A
+>
     </P
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN166"
+NAME="AEN167"
 ></A
 ><P
 ><B
@@ -474,7 +489,7 @@ SRC="img/plan.png"></P
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN174"
+NAME="AEN175"
 ></A
 ><P
 ><B
@@ -501,7 +516,7 @@ CLASS="emphasis"
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN183"
+NAME="AEN184"
 ></A
 ><P
 ><B
@@ -530,11 +545,11 @@ SRC="img/estilo1.png"></P
     </P
 ></DIV
 ><DIV
-CLASS="section"
+CLASS="sect2"
 ><H2
-CLASS="section"
+CLASS="sect2"
 ><A
-NAME="AEN192"
+NAME="conexion_con_ssh"
 >Conexión con ssh</A
 ></H2
 ><P
@@ -560,7 +575,12 @@ CLASS="emphasis"
 >putty</B
 ></SPAN
 > (descárguelo de
-      [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html]).
+      <A
+HREF="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html"
+TARGET="_top"
+>http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</A
+>).
+      Desde un celular Android puede usar ConnectBot.
     </P
 ><P
 >&#13;      En el primer caso puede iniciar la conexión con:
@@ -597,7 +617,7 @@ CLASS="emphasis"
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN205"
+NAME="AEN207"
 ></A
 ><P
 ><B
@@ -638,8 +658,8 @@ CLASS="emphasis"
 ></SPAN
 > le pedirá
       confirmar la nueva llave pública<A
-NAME="AEN219"
-HREF="#FTN.AEN219"
+NAME="AEN221"
+HREF="#FTN.AEN221"
 ><SPAN
 CLASS="footnote"
 >[8]</SPAN
@@ -660,7 +680,7 @@ CLASS="emphasis"
 ><DIV
 CLASS="figure"
 ><A
-NAME="AEN223"
+NAME="AEN225"
 ></A
 ><P
 ><B
@@ -707,8 +727,8 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="5%"
 ><A
-NAME="FTN.AEN49"
-HREF="x41.htm#AEN49"
+NAME="FTN.AEN50"
+HREF="x41.htm#AEN50"
 ><SPAN
 CLASS="footnote"
 >[1]</SPAN
@@ -731,8 +751,8 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="5%"
 ><A
-NAME="FTN.AEN60"
-HREF="x41.htm#AEN60"
+NAME="FTN.AEN61"
+HREF="x41.htm#AEN61"
 ><SPAN
 CLASS="footnote"
 >[2]</SPAN
@@ -762,8 +782,8 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="5%"
 ><A
-NAME="FTN.AEN65"
-HREF="x41.htm#AEN65"
+NAME="FTN.AEN66"
+HREF="x41.htm#AEN66"
 ><SPAN
 CLASS="footnote"
 >[3]</SPAN
@@ -786,8 +806,8 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="5%"
 ><A
-NAME="FTN.AEN68"
-HREF="x41.htm#AEN68"
+NAME="FTN.AEN69"
+HREF="x41.htm#AEN69"
 ><SPAN
 CLASS="footnote"
 >[4]</SPAN
@@ -820,8 +840,8 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="5%"
 ><A
-NAME="FTN.AEN108"
-HREF="x41.htm#AEN108"
+NAME="FTN.AEN109"
+HREF="x41.htm#AEN109"
 ><SPAN
 CLASS="footnote"
 >[5]</SPAN
@@ -851,8 +871,8 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="5%"
 ><A
-NAME="FTN.AEN120"
-HREF="x41.htm#AEN120"
+NAME="FTN.AEN121"
+HREF="x41.htm#AEN121"
 ><SPAN
 CLASS="footnote"
 >[6]</SPAN
@@ -877,8 +897,8 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="5%"
 ><A
-NAME="FTN.AEN131"
-HREF="x41.htm#AEN131"
+NAME="FTN.AEN132"
+HREF="x41.htm#AEN132"
 ><SPAN
 CLASS="footnote"
 >[7]</SPAN
@@ -903,8 +923,8 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="5%"
 ><A
-NAME="FTN.AEN219"
-HREF="x41.htm#AEN219"
+NAME="FTN.AEN221"
+HREF="x41.htm#AEN221"
 ><SPAN
 CLASS="footnote"
 >[8]</SPAN
@@ -961,7 +981,7 @@ WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
 ><A
-HREF="x233.htm"
+HREF="x235.htm"
 ACCESSKEY="N"
 >Siguiente</A
 ></TD

@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>11. Labores básicas de administración</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="correo_electronico.html" title="10. Correo electrónico"><link rel="next" href="novedades.html" title="A. Novedades"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">11. Labores básicas de administración</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="correo_electronico.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="novedades.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="labores_basicas_de_administracion"></a>11. Labores básicas de administración</h2></div></div></div><p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>13. Labores básicas de administración</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="correo_electronico.html" title="12. Correo electrónico"><link rel="next" href="novedades.html" title="A. Novedades"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">13. Labores básicas de administración</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="correo_electronico.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="novedades.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="labores_basicas_de_administracion"></a>13. Labores básicas de administración</h2></div></div></div><p>
     Un sistema adJ se administra desde la cuenta <code class="literal">root</code>
     o bien con ayuda del programa <code class="literal">doas</code>.
   </p><p>
@@ -13,7 +13,7 @@ $ su -
   </p><p>
     Si <span class="strong"><strong>doas</strong></span> se configura para
     permitir su utilización por parte de usuarios que estén en el grupo
-    <code class="literal">wheel</code> sin clave, podrán ejecutarse ordenes como
+    <code class="literal">wheel</code> sin clave, podrán ejecutarse órdenes como
     si se tratara de la cuenta <code class="literal">root</code> precediéndolos
     con <span class="strong"><strong>doas</strong></span>. Por ejemplo para listar
     el directorio del usuario <code class="literal">root</code>:
@@ -24,13 +24,13 @@ $ doas ls /root
     <span class="strong"><strong>doas</strong></span>, así como cambios de un
     usuario a otro, quedarán registradas en la bitácora
     <code class="literal">/var/log/secure</code>
-  </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="manejo_de_usuarios"></a>11.1. Manejo de usuarios</h3></div></div></div><p>
+  </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="manejo_de_usuarios"></a>13.1. Manejo de usuarios</h3></div></div></div><p>
       Entre las labores del administrador está agregar, eliminar y
       modificar información de usuarios del sistema.
     </p><p>
       El administrador puede agregar usuarios con la orden
       <code class="literal">adduser</code>. Su uso típico se esboza a
-      continuación<sup>[<a name="idp2921659136" href="#ftn.idp2921659136">17</a>]</sup>
+      continuación<sup>[<a name="idm1236951184" href="#ftn.idm1236951184">16</a>]</sup>
     </p><pre class="programlisting">
 doas adduser
 ...
@@ -72,7 +72,7 @@ OK? (y/n) [y]:
             O número que identifica al grupo principal al que pertenece
             el usuario (1003 en el ejemplo).
           </p></dd><dt><span class="term">
-          Un intérprete de ordenes
+          Un intérprete de órdenes
         </span></dt><dd><p>
             Que será el que tendrá el usuario al iniciar nuevas sesiones
             (en el ejemplo es /bin/ksh).
@@ -95,9 +95,9 @@ OK? (y/n) [y]:
         </span></dt><dd><p>
             Cuyo propietario será el usuario y quedará como directorio
             de trabajo cada vez que inicie una sesión. En el ejemplo es
-            <code class="literal">/home/juan</code> (note que por omisión todos
-            los directorios de usuarios son subdirectorios de
-            <code class="literal">/home</code>).
+            <code class="literal">/home/juan</code> (note que de manera
+            predeterminada los directorios de usuarios son
+            subdirectorios de <code class="literal">/home</code>).
           </p></dd></dl></div><p>
       Para eliminar un usuario y su directorio personal:
     </p><pre class="programlisting">
@@ -111,7 +111,7 @@ doas userdel -r juan
         </p></li><li><p>
           Con la orden <code class="literal">chfn usuario</code> podrá modificar
           algunos datos del perfil del usuario.
-        </p></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="bitacoras"></a>11.2. Bitácoras</h3></div></div></div><p>
+        </p></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="bitacoras"></a>13.2. Bitácoras</h3></div></div></div><p>
       Una de las labores típicas de un administrador de un sistema adJ
       es revisar bitácoras del sistema en búsqueda de vulneraciones de
       seguridad. En la mayoría de las veces se trata de ataques a través
@@ -126,7 +126,7 @@ doas userdel -r juan
           <code class="literal">authlog</code>: Muestra los accesos de los
           usuarios permitidos y rechazados
         </p></li><li><p>
-          <code class="literal">secure</code>: Muestra las ordenes ejecutadas por
+          <code class="literal">secure</code>: Muestra las órdenes ejecutadas por
           administradores
         </p></li><li><p>
           <code class="literal">servicio</code>: Los programas que están corriendo
@@ -136,7 +136,7 @@ doas userdel -r juan
       mismo directorio también se encuentra archivadas algunas bitácoras
       recientes, comprimidas (terminan con nombres como
       .<code class="literal">0.gz</code>).
-    </p><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="auditabitacoras"></a>11.2.1. Análisis simple con la herramienta
+    </p><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="auditabitacoras"></a>13.2.1. Análisis simple con la herramienta
       <code class="literal">auditabitacoras</code> y reportar una IP</h4></div></div></div><p>
         adJ incluye un sencillo analizador de bitácoras que se inicia
         con:
@@ -162,129 +162,116 @@ Debe prestar especial atención a posibles ataques dirigidos a un usua
       </p><pre class="programlisting">
     # IP de China reportada el 28 de Junio en https://www.abuseipdb.com/check/58.218.198.142
     block quick on egress from 58.218.198.142
-</pre></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="ejemplo_bitacoras"></a>11.2.2. Ejemplo de análisis usando herramientas UNIX</h4></div></div></div><p>
+</pre></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="ejemplo_bitacoras"></a>13.2.2. Ejemplo de análisis usando herramientas UNIX</h4></div></div></div><p>
         Estos archivos pueden analizarse con algunas herramientas
         básicas como:
-      </p><div class="variablelist"><dl><dt><span class="term">
-            <code class="literal">less</code>
-          </span></dt><dd><p>
-              Examinar una archivo. En <code class="literal">less</code> la tecla
-              <code class="literal">G</code> (mayúscula) lo lleva al final del
-              archivo.
-            </p></dd><dt><span class="term">
-            <code class="literal">grep</code>
-          </span></dt><dd><p>
-              Muestra cadenas en un archivo
-            </p></dd><dt><span class="term">
-            <code class="literal">find</code>
-          </span></dt><dd><p>
-              Busca una cadena en un archivo o directorio
-            </p></dd><dt><span class="term">
-            <code class="literal">wc</code>
-          </span></dt><dd><p>
-              Cuenta palabras/líneas/caracteres en una archivo
-            </p></dd><dt><span class="term">
-            <code class="literal">dig</code>
-          </span></dt><dd><p>
-              Muestra información de un dominio
-            </p></dd><dt><span class="term">
-            <code class="literal">geoiplookup</code>
-          </span></dt><dd><p>
-              Muestra localización de una IP. No es muy precisa
-            </p></dd><dt><span class="term">
-            <code class="literal">gzip</code>
-          </span></dt><dd><p>
-              Descomprime archivos
-            </p></dd></dl></div><p>
-        A continuación un ejemplo de auditoría de la bitácora
-        <code class="literal">auth</code>:
-      </p><div class="orderedlist"><ol type="1"><li><p>
-            Como usuario root hacer una copia de las bitácoras de
-            <code class="literal">/var/log</code> en un directorio personal y
-            descomprimir bitácoras comprimidas.
-          </p><pre class="programlisting">
-cd
-mkdir audita          # Crea un directorio para copiar
-cd audita             # Pasa al directorio creado
-mkdir 30sep2006       # Crear un directorio con la fecha
-cd 30sep2006          # Pasa al directorio creado
-cp -rf /var/log/* .   # Copia todas las bitácoras (debe ser root)
-gzip -d *.gz          # Descomprime bitácoras comprimidas
-</pre></li><li><p>
-            Revisar la bitácora a fin de determinar puntos críticos:
-          </p><pre class="programlisting">
-less authlog
+      </p><pre class="programlisting">
+: Examinar una archivo. En ```less``` la tecla ```G``` (mayúscula) lo lleva al 
+    final del archivo.
+
+```grep```
+: Muestra cadenas en un archivo
+
+```find```
+: Busca una cadena en un archivo o directorio
+
+```wc```
+: Cuenta palabras/líneas/caracteres en una archivo
+
+```dig```
+: Muestra información de un dominio
+
+```geoiplookup```
+: Muestra localización de una IP. No es muy precisa
+
+```gzip```
+: Descomprime archivos
+
+A continuación un ejemplo de auditoría de la bitácora ```auth```:
+
+  1. Como usuario root hacer una copia de las bitácoras de ```/var/log``` 
+    en un directorio personal y descomprimir bitácoras comprimidas.
 </pre><p>
-            buscando líneas como
-          </p><pre class="programlisting">
-invalid user test from 211.157.113.89
+        cd mkdir audita # Crea un directorio para copiar cd audita #
+        Pasa al directorio creado mkdir 30sep2006 # Crear un directorio
+        con la fecha cd 30sep2006 # Pasa al directorio creado cp -rf
+        /var/log/* . # Copia todas las bitácoras (debe ser root) gzip -d
+        *.gz # Descomprime bitácoras comprimidas
+      </p><pre class="programlisting">
+            
+  2. Revisar la bitácora a fin de determinar puntos críticos:
 </pre><p>
-            que revelan intento desde una IP por ingresar como usuario
-            <code class="literal">test</code> (que no existe en el sistema).
-          </p></li><li><p>
-            Para ver las líneas en las que aparece una cadena en
-            especial, una IP por ejemplo puede usarse:
-          </p><pre class="programlisting">
-grep "211.157.113.89" authlog
+        less authlog
+      </p><pre class="programlisting">
+    buscando líneas como
 </pre><p>
-            De forma que podemos ver datos importantes relacionados con
-            la IP como fecha y hora. En el caso de auth la IP
-            corresponde a direcciones desde donde se hacen intentos de
-            ingreso).
-          </p></li><li><p>
-            Para mostrar cuántas veces está esa IP en ese archivo:
-          </p><pre class="programlisting">
-grep "211.157.113.89" authlog | wc -l
-</pre></li><li><p>
-            Para determinar en qué archivos de la bitácora hay
-            información de esta IP
-          </p><pre class="programlisting">
-find . -exec grep -l "211.157.113.89" {} ';'
-</pre></li><li><p>
-            Para determinar ubicación geográfica de una IP y datos sobre
-            el dominio asociado:
-          </p><pre class="programlisting">
-geoiplookup  211.157.113.89
-dig -x 211.157.113.89
+        invalid user test from 211.157.113.89
+      </p><pre class="programlisting">
+    que revelan intento desde una IP por ingresar como usuario ```test```
+    (que no existe en el sistema).
+
+  3. Para ver las líneas en las que aparece una cadena en especial, una 
+    IP por ejemplo puede usarse:
 </pre><p>
-            El primero indica China, el segundo mail.chinacomm.com.cn.
-            Con el segundo ya podemos buscar información sobre el
-            registro DNS de chinacomm.com.cn:
-          </p><pre class="programlisting">
-whois chinacomm.com.cn
+        grep “<span class="quote">211.157.113.89</span>” authlog
+      </p><pre class="programlisting">
+    De forma que podemos ver datos importantes relacionados con la IP 
+    como fecha y hora. En el caso de auth la IP corresponde a direcciones 
+    desde donde se hacen intentos de ingreso).
+
+  4. Para mostrar cuántas veces está esa IP en ese archivo:
 </pre><p>
-            donde encontramos una dirección de correo:
-            <code class="literal">wjy@chncomm.com</code>
-          </p></li><li><p>
-            Si se ubica el dominio de la IP de donde proviene un ataque,
-            así como una dirección de correo, se recomienda enviar un
-            mensaje en inglés a tal dirección y/o por ejemplo a las
-            cuentas webmaster y root informando sobre el incidente con
-            un tema como:
-          </p><pre class="programlisting">
-Attempt to login at practica.pasosdeJesus.org from your IP on 16.Aug.2006 at 7:10:41
-</pre></li></ol></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_admin"></a>11.3. Lecturas recomendadas</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>
-          Documentación del sistema <span class="strong"><strong>man adduser,
-          man userdel</strong></span>
-        </p></li><li><p>
-          Para instalar y comenzar a administrar un sistema adJ
-          sugerimos <a href="bibliografia.html" title="B. Bibliografía">usuario_adJ</a>.
-        </p></li><li><p>
-          Para administrar un servidor adJ conectado a Internet
-          recomendamos <a href="bibliografia.html" title="B. Bibliografía">servidor_adJ</a>
-        </p></li></ul></div><p>
-      Todas las herramientas mencionadas
-      <span class="strong"><strong>less</strong></span>,
-      <span class="strong"><strong>find</strong></span>,
-      <span class="strong"><strong>grep</strong></span>,
-      <span class="strong"><strong>wc</strong></span> tienen sus respectivos
-      manuales, los cuales se pueden consultar con
-      <span class="strong"><strong>man</strong></span>, por ejemplo
-    </p><pre class="programlisting">
-man grep
-</pre></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idp2921659136" href="#idp2921659136">17</a>] </sup>
+        grep “<span class="quote">211.157.113.89</span>” authlog | wc -l
+      </p><pre class="programlisting">
+            
+  5. Para determinar en qué archivos de la bitácora hay información de esta 
+    IP
+</pre><p>
+        find . -exec grep -l “<span class="quote">211.157.113.89</span>” {}
+        “<span class="quote">;</span>”
+      </p><pre class="programlisting">
+            
+  6. Para determinar ubicación geográfica de una IP y datos sobre el dominio 
+    asociado:
+</pre><p>
+        geoiplookup 211.157.113.89 dig -x 211.157.113.89
+      </p><pre class="programlisting">
+            
+    El primero indica China, el segundo mail.chinacomm.com.cn. Con el 
+    segundo ya podemos buscar información sobre el registro DNS de 
+    chinacomm.com.cn:
+</pre><p>
+        whois chinacomm.com.cn
+      </p><pre class="programlisting">
+    donde encontramos una dirección de correo: ```wjy@chncomm.com```
+
+  7. Si se ubica el dominio de la IP de donde proviene un ataque, así como una 
+    dirección de correo, se recomienda enviar un mensaje en inglés a tal 
+    dirección y/o por ejemplo a las cuentas webmaster y root informando 
+    sobre el incidente con un tema como:
+</pre><p>
+        Attempt to login at practica.pasosdeJesus.org from your IP on
+        16.Aug.2006 at 7:10:41
+      </p><pre class="programlisting">
+            
+### Lecturas recomendadas {#lecturas_recomendadas_admin}
+
+- Documentación del sistema **man adduser, man userdel**
+
+- Para instalar y comenzar a administrar un sistema adJ 
+  sugerimos [usuario_adJ](#bibliografia).
+
+- Para administrar un servidor adJ conectado a Internet recomendamos 
+  [servidor_adJ](#bibliografia)
+
+Todas las herramientas mencionadas **less**, **find**, **grep**, **wc** tienen 
+sus respectivos manuales, los cuales se pueden consultar con **man**, 
+por ejemplo
+</pre><p>
+        man grep ```
+      </p></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.idm1236951184" href="#idm1236951184">16</a>] </sup>
           Tenga en cuenta que la primera vez que ejecute
           <code xmlns="" class="literal">adduser</code> tras instalar un sistema adJ, este
-          programa preguntará valores por omisión por emplear durante la
-          creación de cuentas.
-        </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="correo_electronico.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="novedades.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">10. Correo electrónico </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> A. Novedades</td></tr></table></div></body></html>
+          programa preguntará valores predeterminados por emplear
+          durante la creación de cuentas.
+        </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="correo_electronico.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="novedades.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">12. Correo electrónico </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> A. Novedades</td></tr></table></div></body></html>
