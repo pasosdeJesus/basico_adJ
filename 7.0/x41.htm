@@ -1,0 +1,1010 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Primer uso de adJ</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+HREF="t1.htm"><LINK
+REL="NEXT"
+TITLE="Conceptos básicos"
+HREF="x235.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="t1.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x235.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="primer_uso_de_adJ"
+>Primer uso de adJ</A
+></H1
+><P
+>&#13;    Un servidor adJ puede operarse tanto directamente (sentado frente al
+    computador donde se instaló y configuró), como remotamente
+    (típicamente y de manera segura mediante el programa
+    <TT
+CLASS="literal"
+>ssh</TT
+>). En esta sección cubrimos ambos escenarios.
+  </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="arranque"
+>Arranque</A
+></H2
+><P
+>&#13;      Al iniciar un computador con adJ se verán primero mensajes del
+      BIOS preprogramados en el hardware, después el control pasará al
+      arranque del disco con adJ que presentará
+      <TT
+CLASS="literal"
+>boot&#62;</TT
+> y tras un momento el control pasará al
+      núcleo de OpenBSD adJ, que detectará el hardware (se ven letras
+      con fondo azul), revisará discos e iniciará los procesos básicos
+      (se ven letras con fondo negro) y tras esto ejecutará los archivos
+      de arranque.
+    </P
+><P
+>&#13;      Típicamente la distribución adJ pide claves de imágenes
+      cifradas<A
+NAME="AEN50"
+HREF="#FTN.AEN50"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+> que se montan durante el arranque.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN52"
+></A
+><P
+><B
+>Figura 1. Interfaz de texto</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/consola.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Al dar la clave de cifrado correcta debe ver el mensaje
+      <TT
+CLASS="literal"
+>File system is clean</TT
+> o un chequeo de la imagen.
+      En caso de dar una clave equivocada, continuará la secuencia de
+      arranque pero no podrá acceder a los directorios
+      cifrados<A
+NAME="AEN61"
+HREF="#FTN.AEN61"
+><SPAN
+CLASS="footnote"
+>[2]</SPAN
+></A
+>.
+    </P
+><P
+>&#13;      Después se iniciará un escritorio gráfico (X-Window<A
+NAME="AEN66"
+HREF="#FTN.AEN66"
+><SPAN
+CLASS="footnote"
+>[3]</SPAN
+></A
+>) y un aplicación (<TT
+CLASS="literal"
+>xenodm</TT
+><A
+NAME="AEN69"
+HREF="#FTN.AEN69"
+><SPAN
+CLASS="footnote"
+>[4]</SPAN
+></A
+>) que pide su usuario y su clave para iniciar una
+      sesión:
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN73"
+></A
+><P
+><B
+>Figura 2. xenodm solicitando nombre de cuenta y clave</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/xenodm.png"></P
+></DIV
+></DIV
+><P
+CLASS="literallayout"
+>Si&nbsp;durante&nbsp;la&nbsp;instalación,&nbsp;no&nbsp;se&nbsp;instaló&nbsp;X-Window&nbsp;o&nbsp;no&nbsp;se&nbsp;ha&nbsp;configurado&nbsp;para&nbsp;iniciar&nbsp;durante&nbsp;el&nbsp;arranque,&nbsp;lo&nbsp;que&nbsp;verá&nbsp;será&nbsp;una&nbsp;consola&nbsp;virtual&nbsp;tipo&nbsp;texto,&nbsp;como&nbsp;la&nbsp;del&nbsp;arranque.<br>
+De&nbsp;manera&nbsp;predeterminada&nbsp;hay&nbsp;4&nbsp;consolas&nbsp;virtuales&nbsp;tipo&nbsp;texto&nbsp;a&nbsp;las&nbsp;cuales&nbsp;puede&nbsp;transferirse&nbsp;con&nbsp;las&nbsp;secuencias&nbsp;de&nbsp;teclas&nbsp;<SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-Alt-F1, Ctrl-Alt-F2, Ctrl-Alt-F3 y Ctrl-Alt-F4</B
+></SPAN
+>.&nbsp;La&nbsp;secuencia&nbsp;<SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Ctrl-Alt-F5</B
+></SPAN
+>&nbsp;lo&nbsp;dejará&nbsp;en&nbsp;el&nbsp;entorno&nbsp;gráfico.</P
+><P
+>&#13;      Las instrucciones para operación remota
+      <A
+HREF="x41.htm#conexion_con_ssh"
+>(Conexión con ssh)</A
+> le
+      servirán para operar directamente en una consola virtual, una vez
+      se autentique con su usuario y clave.
+    </P
+><P
+>&#13;      En entorno gráfico si se autentica correctamente se iniciará el
+      administrador de ventanas <TT
+CLASS="literal"
+>fluxbox</TT
+> que se
+      presenta brevemente en la siguiente sección.
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="operacion_con_fluxbox"
+>Operación con fluxbox</A
+></H2
+><P
+>&#13;      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Fluxbox</B
+></SPAN
+> es un estético
+      administrador de ventanas, muy liviano y por lo tanto veloz.
+      Administra decoración de ventanas, espacios de trabajo, tiene un
+      menú general (que ve pulsando el botón derecho sobre el
+      escritorio), una barra de herramientas y un lanzador de
+      aplicaciones. A continuación se presenta el escritorio con el menú
+      que aparece al presionar el botón derecho sobre el escritorio.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN91"
+></A
+><P
+><B
+>Figura 3. Menú inicial</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/fluxbox_inicio.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Observe las distintas posibilidades del menú. Puede navegar en
+      Internet utilizando chrome o firefox.
+    </P
+><P
+>&#13;      Si elije <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Espiritualidad-&#62;Evangelios de
+      Dominio Público</B
+></SPAN
+> podrá consultar en chrome una
+      traducción de los evangelios.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN101"
+></A
+><P
+><B
+>Figura 4. Escritorio fluxbox con navegador Chrome</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/primerflux.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Desde el menú Oficina puede elegir LibreOffice que es el paquete
+      de fuentes abiertas con aplicaciones de oficina. La gráfica
+      muestra la interfaz de LibreOffice.org Writer<A
+NAME="AEN109"
+HREF="#FTN.AEN109"
+><SPAN
+CLASS="footnote"
+>[5]</SPAN
+></A
+> —con el que puede abrir y guardar documentos en el
+      formato de MS-Word.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN113"
+></A
+><P
+><B
+>Figura 5. LibreOffice Writer</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/openoffice_writer.png"></P
+></DIV
+></DIV
+><P
+>&#13;      También puede trabajar con la hoja de cálculo Calc<A
+NAME="AEN121"
+HREF="#FTN.AEN121"
+><SPAN
+CLASS="footnote"
+>[6]</SPAN
+></A
+>, que le permite abrir y guardar en el formato de
+      Excel.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN124"
+></A
+><P
+><B
+>Figura 6. LibreOffice.org Calc</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/openoffice_calc.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Puede elaborar presentaciones y abrir las que se han hecho con
+      PowerPoint con Impress<A
+NAME="AEN132"
+HREF="#FTN.AEN132"
+><SPAN
+CLASS="footnote"
+>[7]</SPAN
+></A
+>.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN135"
+></A
+><P
+><B
+>Figura 7. Presentación</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/openoffice_presentacion.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Puede acceder a la documentación para adJ a través del menú de
+      fluxbox. Los tutoriales incluidos son: Uso básico, uso como
+      sistema de escritorio y uso como servidor y cortafuegos.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN143"
+></A
+><P
+><B
+>Figura 8. Documentación</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/documentacion.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Para reproducir CDs de audio puede utilizar
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>xcdplayer</B
+></SPAN
+> cuya interfaz gráfica
+      se presenta a continuación.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN152"
+></A
+><P
+><B
+>Figura 9. Interfaz gráfica de xcdplayer</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/xcdplayer.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Sin embargo en caso de que su reproductor de CD no esté conectado
+      a una salida de audio,
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>xcdplayer</B
+></SPAN
+> no será útil. Pero en
+      tal caso puede escuchar un CD de audio, abriendo una terminal y
+      tecleando:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;doas cdio cdplay
+</PRE
+><P
+>&#13;      Desde el menú otros puede acceder a
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>plan</B
+></SPAN
+> y
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>vim</B
+></SPAN
+>. El primero de los cuales
+      es un calendario que permite programar actividades. Mientras que
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>vim</B
+></SPAN
+> es un clásico y ágil editor
+      de texto en entornos tipo UNIX
+      <A
+HREF="x866.htm#editor_vi"
+>la sección de nombre <I
+>Editor vi</I
+></A
+>
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN167"
+></A
+><P
+><B
+>Figura 10. plan</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/plan.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Por el menú de fluxbox puede configurar Estilos del sistema. La
+      imagen muestra el Estilo de sistema Meta.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN175"
+></A
+><P
+><B
+>Figura 11. Estilos del sistema</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/fluxbox_menu.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Elija el Estilo del sistema que más le guste. Por ejemplo, a
+      continuación se presenta este el estilo llamado
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>Makro</B
+></SPAN
+>.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN184"
+></A
+><P
+><B
+>Figura 12. Ejemplo de Estilo de sistema</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/estilo1.png"></P
+></DIV
+></DIV
+><P
+>&#13;      La figura anterior presenta también un intérprete de órdenes, que
+      puede iniciar desde el menú eligiendo xterm, aunque también puede
+      emplear uno desde las consolas virtuales después de autenticarse.
+    </P
+><P
+>&#13;      En sistemas operativos tipos Unix es usual emplear un intérprete
+      de órdenes para interactuar. Su operación es la misma bien inicie
+      desde el entorno gráfico o en una consola virtual o remotamente
+      como se explica en la siguiente sección. Aunque ciertamente un
+      intérprete de órdenes exige más memoria y atención del usuario,
+      también le dará más opciones, más agilidad y la posibilidad de
+      plena operación remota.
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="conexion_con_ssh"
+>Conexión con ssh</A
+></H2
+><P
+>&#13;      Dado que la interacción con un intérprete de órdenes se basa en
+      órdenes ingresadas por teclado y respuestas tipo texto, estos
+      intérpretes hacen muy efectiva la operación remota. La operación
+      remota puede hacerse de forma segura con el protocolo SSH 2,
+      empleando el servidor OpenSSH del servidor y un cliente de ssh en
+      el computador desde el cual hará la conexión (la ventaja de este
+      protocolo es que además de requerir autenticación, verifica
+      autenticidad del servidor al cual se conecta y sólo transmite
+      información cifrada –lo cual hace muy difícil descifrarla a un
+      tercero que pueda llegar a interceptar la comunicación).
+    </P
+><P
+>&#13;      Si realiza la conexión desde un sistema tipo Unix, recomendamos
+      que emplee el cliente de OpenSSH, si se conecta desde un sistema
+      tipo Windows puede emplear el programa
+      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>putty</B
+></SPAN
+> (descárguelo de
+      <A
+HREF="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html"
+TARGET="_top"
+>http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</A
+>).
+      Desde un celular Android puede usar ConnectBot.
+    </P
+><P
+>&#13;      En el primer caso puede iniciar la conexión con:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;$ ssh juan@www2.pasosdeJesus.org
+</PRE
+><P
+>&#13;      reemplazando <TT
+CLASS="literal"
+>juan</TT
+> por el login que tenga en el
+      sistema y <TT
+CLASS="literal"
+>www2.pasosdeJesus.org</TT
+> por el nombre
+      del servidor. Note que con el símbolo <TT
+CLASS="literal"
+>$</TT
+>,
+      representamos el símbolo del sistema (del inglés
+      <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>prompt</I
+></SPAN
+>) –no debe teclearlo.
+    </P
+><P
+>&#13;      La conexión con putty se ejemplifica a continuación:
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN207"
+></A
+><P
+><B
+>Figura 13. Configuración de putty</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/putty1.png"></P
+></DIV
+></DIV
+><P
+>&#13;      <SPAN
+CLASS="inlinemediaobject"
+><IMG
+SRC="img/warning.png"></SPAN
+> Aviso: Con Putty asegúrese de emplear el
+      protocolo SSH 2 y para ver bien algunos caracteres es posible que
+      en Window-&#62;Translation deba elegir traducción de Latin1 o
+      ISO-8895-1.
+    </P
+><P
+>&#13;      <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ssh</B
+></SPAN
+> autenticará la máquina a la
+      cual se está conectado, comparando la llave pública de esa máquina
+      con alguna de las que conozca, si es la primera vez que se conecta
+      a ese sitio, <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ssh</B
+></SPAN
+> le pedirá
+      confirmar la nueva llave pública<A
+NAME="AEN221"
+HREF="#FTN.AEN221"
+><SPAN
+CLASS="footnote"
+>[8]</SPAN
+></A
+>. Después le pedirá su clave en ese servidor (o si ha
+      configurado autenticación con llaves simétricas pedirá su clave
+      RSA/DSA o incluso nada si ha configurado un agente que maneje sus
+      llaves RSA/DSA i.e <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ssh-agent</B
+></SPAN
+> en
+      el caso de OpenSSH) para finalmente dejarlo en una sesión en modo
+      texto.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN225"
+></A
+><P
+><B
+>Figura 14. Inicio de una sesión con putty en pasosdeJesus.org</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/putty2.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Al iniciar la sesión podrá ver el mensaje del día
+      (<SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>motd</B
+></SPAN
+> – <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>message of
+      the day</I
+></SPAN
+>) que el administrador haya configurado, se
+      ejecutarán los archivos de órdenes de inicio y quedará en el
+      intérprete de órdenes que esté configurado en su cuenta.
+    </P
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN50"
+HREF="x41.htm#AEN50"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;          En las imágenes cifradas se almacena los archivos que el
+          usuario quiera cifrar. Para poder guardar y recuperar los
+          archivos se debe dar una clave
+        </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN61"
+HREF="x41.htm#AEN61"
+><SPAN
+CLASS="footnote"
+>[2]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;          Una vez en operación puede volver a dar estas claves
+          ejecutando
+        </P
+><PRE
+CLASS="programlisting"
+>&#13;doas sh /etc/rc.local
+</PRE
+><P
+>&#13;          desde un intérprete de órdenes, o desde el menú de Fluxbox
+          Dispositivos-&#62;Reiniciar Servicios Faltantes
+        </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN66"
+HREF="x41.htm#AEN66"
+><SPAN
+CLASS="footnote"
+>[3]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;          X-Window es un sistema estandarizado para manejo de las
+          aplicaciones gráficas en los sistemas operativos de la familia
+          de los Unix
+        </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN69"
+HREF="x41.htm#AEN69"
+><SPAN
+CLASS="footnote"
+>[4]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;          <TT
+CLASS="literal"
+>xenodm</TT
+> es un gestor de pantalla que
+          presenta al usuario con una pantalla de autenticación
+          (<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>login</I
+></SPAN
+>) que solicita el nombre de usuario
+          y su contraseña
+        </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN109"
+HREF="x41.htm#AEN109"
+><SPAN
+CLASS="footnote"
+>[5]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;          Desde la línea de órdenes puede iniciar Writer con
+          <TT
+CLASS="literal"
+>/usr/local/bin/swriter</TT
+> o puede abrir
+          LibreOffice completo con
+          <TT
+CLASS="literal"
+>/usr/local/bin/soffice</TT
+>
+        </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN121"
+HREF="x41.htm#AEN121"
+><SPAN
+CLASS="footnote"
+>[6]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;          Desde la línea de órdenes puede iniciar Calc con
+          <TT
+CLASS="literal"
+>/usr/local/bin/scalc</TT
+>
+        </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN132"
+HREF="x41.htm#AEN132"
+><SPAN
+CLASS="footnote"
+>[7]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;          Desde la línea de órdenes inicia Impress con
+          <TT
+CLASS="literal"
+>/usr/local/bin/simpress.</TT
+>
+        </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN221"
+HREF="x41.htm#AEN221"
+><SPAN
+CLASS="footnote"
+>[8]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;          Si la llave de la máquina a la que se conecta ha cambiado (por
+          ejemplo si se instaló otro sistema operativo o se actualizó
+          sin cuidado), para que el cliente de ssh reconozca la nueva
+          clave debe primero borrar la llave anterior del archivo
+          <TT
+CLASS="literal"
+>~/.ssh/known_hosts</TT
+>
+        </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x235.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Conceptos básicos</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
