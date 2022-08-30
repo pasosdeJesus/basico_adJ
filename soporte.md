@@ -26,7 +26,7 @@ encuentra solo en inglés, recomendamos:
 	puede consultar este manual en <http://www.openbsd.org/cgi-bin/man.cgi>
 * [Documentation and Frequently Asked Questions](http://www.openbsd.org/faq/index.html)
 
-Entre los sitios donde se documentan configuraciones o se evalúan algunas herramientas: <http://dhobsd.pasosdeJesus.org>, <http://www.openbsdcolombia.org>, <https://calomel.org/>
+Entre los sitios donde se documentan configuraciones o se evalúan algunas herramientas: <http://dhobsd.pasosdeJesus.org>, <https://calomel.org/>
 
 Para realizar preguntas por correo electrónico recomendamos la lista de 
 distribución OpenBSD-Colombia 
