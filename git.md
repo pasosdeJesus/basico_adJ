@@ -47,7 +47,7 @@ emplear llaves ssh es el método que presentamos a continuacion:
      ssh-keygen
 
   que le solicitará una frase clave en una sesión como la siguiente (que dejará
-  la llave pública en `~/.ssh/id_rsa.pub` y la privada en `~.ssh/id_rsa`:
+  la llave pública en `~/.ssh/id_rsa.pub` y la privada en `~/.ssh/id_rsa`:
 
   ```
   % ssh-keygen       
