@@ -1,3 +1,7 @@
+Versión 7.1
+
+:  - Se comienza sección sobre git [xref](#rsync)
+
 Version 6.9
 
 :  - Ortografía, mejorada sección de conceptos
