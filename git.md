@@ -75,13 +75,17 @@ emplear llaves ssh es el método que presentamos a continuacion:
   +----[SHA256]-----+
   ```
 
-2. Ingrese a su cuenta en gitlab y dirijase a Perfil.
-3. Desde allí a la izquierda eliga Llaves SSH
-4. Edite la llave pública que genró en el paso 1, por ejemplo con
-   `$EDITOR ~/.ssh.id_rsa.pub` y copiela en el portapapeles
+2. Ingrese a su cuenta en gitlab y dirijase a "Editar Perfil".
+3. Desde allí a la izquierda eliga "Llaves SSH"
+4. Examine la llave pública que generó en el paso 1, por ejemplo con
+   ```
+   cat ~/.ssh.id_rsa.pub
+   ```
+   y copiela en el portapapeles
 5. Pegue lo que copió en el área de texto que gitlab presentará para la llave
    pública.
-6. Presione `Agregar`  para añadir la llave suministrada.
+6. Presione `Agregar`  para añadir la llave suministrada (puede
+   poner una fecha de expiracíon superior a un año).
 
 
 Al clonar repositorios fijese en las direcciones de repositorios que
