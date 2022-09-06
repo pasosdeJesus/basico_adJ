@@ -77,20 +77,25 @@ The key's randomart image is:
 |      ...B *     |
 |       .  o .    |
 +----[SHA256]-----+
-</pre><div class="orderedlist"><ol type="1" compact><li value="2"><p>
-          Ingrese a su cuenta en gitlab y dirijase a Perfil.
+</pre><div class="orderedlist"><ol type="1"><li value="2"><p>
+          Ingrese a su cuenta en gitlab y dirijase a “<span class="quote">Editar
+          Perfil</span>”.
         </p></li><li><p>
-          Desde allí a la izquierda eliga Llaves SSH
+          Desde allí a la izquierda eliga “<span class="quote">Llaves SSH</span>”
         </p></li><li><p>
-          Edite la llave pública que genró en el paso 1, por ejemplo con
-          <code class="literal">$EDITOR ~/.ssh.id_rsa.pub</code> y copiela en el
-          portapapeles
+          Examine la llave pública que generó en el paso 1, por ejemplo
+          con
+        </p><pre class="programlisting">
+cat ~/.ssh.id_rsa.pub
+</pre><p>
+          y copiela en el portapapeles
         </p></li><li><p>
           Pegue lo que copió en el área de texto que gitlab presentará
           para la llave pública.
         </p></li><li><p>
           Presione <code class="literal">Agregar</code> para añadir la llave
-          suministrada.
+          suministrada (puede poner una fecha de expiracíon superior a
+          un año).
         </p></li></ol></div><p>
       Al clonar repositorios fijese en las direcciones de repositorios
       que comienzan con git@ pues esas son las que usarán la llave ssh.
