@@ -78,7 +78,7 @@
 		    La versión publicada más reciente está tanto
 		    <ulink url="&URLSITE;">en línea</ulink>  como
 		    <ulink url="&PROYECTO;-&PRY-VERSION;_html.tar.gz">en archivo comprimido</ulink> 
-		    y como <ulink url="http://adJ.pasosdeJesus.org/pub/AprendiendoDeJesus/&PRY-VERSION;/paquetes/&PROYECTO;-&PRY-VERSION;.tar.gz">paquete para adJ/OpenBSD</ulink>.
+		    y como <ulink url="http://adJ.pasosdeJesus.org/pub/AprendiendoDeJesus/&PRY-VERSION;-amd64/paquetes/&PROYECTO;-&PRY-VERSION;.tar.gz">paquete para adJ/OpenBSD</ulink>.
 		    <!--, como <ulink
 			    url="&URLSITE;/&PROYECTO;-&PRY-VERSION;.ps.gz">PostScript
 			    comprimido</ulink> y como 

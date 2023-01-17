@@ -122,16 +122,16 @@ o **pscp** que se distribuye junto con **putty** ([xref](#conceptos_basicos)).
 
 ### Uso básico de `rsync` {#rsync}
 
-rsync busca sincronizar un par de directorios en servidores diferente
+`rsync` busca sincronizar un par de directorios en servidores diferente
 transmitiendo sólo la información que sea diferente.
 
 Aunque es posible emplearlo con un protocolo propio (también llamado `rsync`),
 este sólo es recomendable para datos públicos porque no es cifrado.  Por
 lo mismo la operación típica de rsync es sobre el protocolo ssh.
 
-Por ejemplo si en el servidor con ip 10.11.12.13 tiene una
-carpeta /var/micopia/  que necesita traer a un servidor en el que está
-operando (digamos a la carpeta local /home/juan/micopia/):
+Por ejemplo si en el servidor con ip `10.11.12.13` tiene una
+carpeta `/var/micopia/`  que necesita traer a un servidor en el que está
+operando (digamos a la carpeta local `/home/juan/micopia/`):
 
 ```
 cd /home/juan/micopia/

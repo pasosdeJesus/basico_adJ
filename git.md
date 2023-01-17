@@ -16,7 +16,8 @@ versiones de otras "fuentes" que se almacenen como textos planos también pueden
 manejarse con git.
 
 Unas características por tener en cuenta al operar con git:
-* el conjunto de archivos manejados por git estarán en un directorio el cual
+
+* El conjunto de archivos manejados por git estarán en un directorio el cual
   será tratado como una "foto" y se mantendrá la historia de "fotos" anteriores.
   Para economizar espacio cuando un archivo no cambia de una versión a otra
   sólo se mantiene un enlace a la versión anterior.
@@ -25,6 +26,10 @@ Unas características por tener en cuenta al operar con git:
 * Mantiene un condensado de cada "foto" que sirve tanto para preservar
   integridad como para referenciar. Se representa como un número hexadecimal
   de 40 dígitos, por ejemplo: `260ac9c71372a1d72c6bba9ef2c223895e79f767`
+  (corresponde al resultado de una función de condnsando SHA1 aplicada
+   al árbol de Merkle con la base de datos git, por lo que
+   es prácticamente improbable que dos árboles diferentes tengan el mismo
+   condensado logrando indentificar cada árbol de manera única).
 
 
 ### Configuración para trabajar en gitlab.com y github.com con llaves ssh
@@ -38,7 +43,7 @@ Recomendamos crear una cuenta en gitlab.org o en github.com para practicar.
 
 Para autenticarse desde la terminal ante gitlab o github debe usar llaves ssh
 o un token generado por esas plataformas.  Cómo es común y más práctico
-emplear llaves ssh es el método que presentamos a continuacion:
+emplear llaves ssh, es el método que presentamos a continuación:
 
 1. Una llave RSA consta de una parte privada y una parte pública. La parte
    pública es la que se comparte, la parte privada no la debe compartir
@@ -46,9 +51,9 @@ emplear llaves ssh es el método que presentamos a continuacion:
 
      ssh-keygen
 
-  lo cual le solicitará una frase clave en una sesión como la siguiente (que dejará
-  la llave pública en `~/.ssh/id_rsa.pub` y la privada en `~/.ssh/id_rsa` como 
-  se ve en los mensajes de respuesta):
+  lo cual le solicitará una frase clave en una sesión como la siguiente 
+  (que dejará la llave pública en `~/.ssh/id_rsa.pub` y la privada en 
+  `~/.ssh/id_rsa` como se ve en los mensajes de respuesta):
 
   ```
   % ssh-keygen
@@ -75,22 +80,23 @@ emplear llaves ssh es el método que presentamos a continuacion:
   +----[SHA256]-----+
   ```
 
-2. Ingrese a su cuenta en gitlab y dirijase a "Editar Perfil".
-3. Desde allí a la izquierda eliga "Llaves SSH"
+2. Ingrese a su cuenta en gitlab y diríjase a "Editar Perfil".
+3. Desde allí a la izquierda elija "Llaves SSH"
 4. Examine la llave pública que generó en el paso 1, por ejemplo con
    ```
    cat ~/.ssh.id_rsa.pub
    ```
-   y copiela en el portapapeles
+   y cópiela en el porta-papeles
 5. Pegue lo que copió en el área de texto que gitlab presentará para la llave
    pública.
 6. Presione `Agregar`  para añadir la llave suministrada (puede
-   poner una fecha de expiracíon superior a un año).
+   poner una fecha de expiración superior a un año).
 
 
-Al clonar repositorios fijese en las direcciones de repositorios que
-comienzan con git@ pues esas son las que usarán la llave ssh. Por ejemplo
-git@gitlab.com:pasosdeJesus/si_jrscol.git
+Al clonar algún repositorio verifique que la dirección del
+repositorio comience con `git@` pues esas son las que usarán la llave ssh. 
+Por ejemplo
+`git@gitlab.com:pasosdeJesus/si_jrscol.git`
 
 
 ### Lecturas recomendadas {#lecturas_recomendadas_git}

@@ -1,6 +1,10 @@
+Versión 7.2
+
+:  - Mejorada [xref](#git)
+
 Versión 7.1
 
-:  - Se comienza sección sobre git [xref](#rsync)
+:  - Se comienza sección sobre [xref](#git)
 
 Version 6.9
 
