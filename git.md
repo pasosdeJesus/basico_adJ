@@ -26,10 +26,11 @@ Unas características por tener en cuenta al operar con git:
 * Mantiene un condensado de cada "foto" que sirve tanto para preservar
   integridad como para referenciar. Se representa como un número hexadecimal
   de 40 dígitos, por ejemplo: `260ac9c71372a1d72c6bba9ef2c223895e79f767`
-  (corresponde al resultado de una función de condnsando SHA1 aplicada
+  (corresponde al resultado de una función de condensando SHA1 aplicada
    al árbol de Merkle con la base de datos git, por lo que
    es prácticamente improbable que dos árboles diferentes tengan el mismo
-   condensado logrando indentificar cada árbol de manera única).
+   condensado logrando identificar cada árbol de manera única y garantizando
+   que no hay cambios --de haberlos daría un condensado diferente).
 
 
 ### Configuración para trabajar en gitlab.com y github.com con llaves ssh
