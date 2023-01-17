@@ -1,0 +1,381 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Control de versiones con git</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Labores básicas de administración"
+HREF="x1634.htm"><LINK
+REL="NEXT"
+TITLE="Novedades"
+HREF="a1900.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x1634.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="a1900.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="git"
+>Control de versiones con git</A
+></H1
+><P
+>&#13;    Se trata de un sistema para control de versiones distribuido, rápido
+    y que facilita trabajar con ramas. Fue creado en el año 2005 por
+    Linus Torvalds (el mismo creador del kernel Linux) y se ha
+    convertido casi que en un estándar por su versatilidad y porque es
+    el sistema usado por varias plataformas para hospedar gratuitamente
+    el código fuente de proyectos de código abierto particularmente
+    gitlab.com y github.com
+  </P
+><P
+>&#13;    Como se indica en Chacon,Straub, 2014, un sistema para control de
+    versiones permite registrar cambios a un archivo o a un grupo de
+    archivos a lo largo del tiempo de manera que usted pueda recuperar
+    versiones específicas después de un tiempo. Suele emplearse con las
+    fuentes de programas, pero las versiones de otras
+    <SPAN
+CLASS="QUOTE"
+>"fuentes"</SPAN
+> que se almacenen como textos planos también
+    pueden manejarse con git.
+  </P
+><P
+>&#13;    Unas características por tener en cuenta al operar con git:
+  </P
+><P
+></P
+><UL
+COMPACT="COMPACT"
+><LI
+><P
+>&#13;        El conjunto de archivos manejados por git estarán en un
+        directorio el cual será tratado como una <SPAN
+CLASS="QUOTE"
+>"foto"</SPAN
+> y
+        se mantendrá la historia de <SPAN
+CLASS="QUOTE"
+>"fotos"</SPAN
+> anteriores.
+        Para economizar espacio cuando un archivo no cambia de una
+        versión a otra sólo se mantiene un enlace a la versión anterior.
+      </P
+></LI
+><LI
+><P
+>&#13;        Casi todas las operaciones son locales y se reflejaran en el
+        subdirectorio <TT
+CLASS="literal"
+>.git</TT
+> del directorio del
+        repositorio.
+      </P
+></LI
+><LI
+><P
+>&#13;        Mantiene un condensado de cada <SPAN
+CLASS="QUOTE"
+>"foto"</SPAN
+> que sirve
+        tanto para preservar integridad como para referenciar. Se
+        representa como un número hexadecimal de 40 dígitos, por
+        ejemplo:
+        <TT
+CLASS="literal"
+>260ac9c71372a1d72c6bba9ef2c223895e79f767</TT
+>
+        (corresponde al resultado de una función de condnsando SHA1
+        aplicada al árbol de Merkle con la base de datos git, por lo que
+        es prácticamente improbable que dos árboles diferentes tengan el
+        mismo condensado logrando indentificar cada árbol de manera
+        única).
+      </P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="configuración-para-trabajar-en-gitlab.com-y-github.com-con-llaves-ssh"
+>Configuración para trabajar en gitlab.com y github.com con
+    llaves ssh</A
+></H2
+><P
+>&#13;      git ya viene como paquete en adJ, pero si requiere actualizar
+      puede intentar el paquete más reciente con:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;doas pkg_add -r git
+</PRE
+><P
+>&#13;      Recomendamos crear una cuenta en gitlab.org o en github.com para
+      practicar.
+    </P
+><P
+>&#13;      Para autenticarse desde la terminal ante gitlab o github debe usar
+      llaves ssh o un token generado por esas plataformas. Cómo es común
+      y más práctico emplear llaves ssh, es el método que presentamos a
+      continuación:
+    </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;          Una llave RSA consta de una parte privada y una parte pública.
+          La parte pública es la que se comparte, la parte privada no la
+          debe compartir –quien la tenga puede impersonarlo(a)–. Genere
+          un par con:
+        </P
+><P
+>&#13;          ssh-keygen
+        </P
+></LI
+></OL
+><P
+>&#13;      lo cual le solicitará una frase clave en una sesión como la
+      siguiente (que dejará la llave pública en
+      <TT
+CLASS="literal"
+>~/.ssh/id_rsa.pub</TT
+> y la privada en
+      <TT
+CLASS="literal"
+>~/.ssh/id_rsa</TT
+> como se ve en los mensajes de
+      respuesta):
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;% ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/usuario/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/usuario/.ssh/id_rsa
+Your public key has been saved in /home/usuario/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:2ocPN6cNiYX8JhL0AHk8mIWUL3p/gTfXFk1achQauS0
+usuario@servidor.pasosdeJesus.org
+The key's randomart image is:
++---[RSA 3072]----+
+|   .oO.     .oo. |
+|    *.+     oo+  |
+|     oo.    .X   |
+|    ...+ .  E o  |
+|   . ...S .. o   |
+|  . . .++=..o    |
+|   . .o.*+O..    |
+|      ...B *     |
+|       .  o .    |
++----[SHA256]-----+
+</PRE
+><P
+></P
+><OL
+TYPE="1"
+><LI
+STYLE="list-style-type: 2"
+><P
+>&#13;          Ingrese a su cuenta en gitlab y diríjase a <SPAN
+CLASS="QUOTE"
+>"Editar
+          Perfil"</SPAN
+>.
+        </P
+></LI
+><LI
+><P
+>&#13;          Desde allí a la izquierda elija <SPAN
+CLASS="QUOTE"
+>"Llaves SSH"</SPAN
+>
+        </P
+></LI
+><LI
+><P
+>&#13;          Examine la llave pública que generó en el paso 1, por ejemplo
+          con
+        </P
+><PRE
+CLASS="programlisting"
+>&#13;cat ~/.ssh.id_rsa.pub
+</PRE
+><P
+>&#13;          y cópiela en el porta-papeles
+        </P
+></LI
+><LI
+><P
+>&#13;          Pegue lo que copió en el área de texto que gitlab presentará
+          para la llave pública.
+        </P
+></LI
+><LI
+><P
+>&#13;          Presione <TT
+CLASS="literal"
+>Agregar</TT
+> para añadir la llave
+          suministrada (puede poner una fecha de expiración superior a
+          un año).
+        </P
+></LI
+></OL
+><P
+>&#13;      Al clonar algún repositorio verifique que la dirección del
+      repositorio comience con <TT
+CLASS="literal"
+>git@</TT
+> pues esas son las
+      que usarán la llave ssh. Por ejemplo
+      <TT
+CLASS="literal"
+>git@gitlab.com:pasosdeJesus/si_jrscol.git</TT
+>
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas_recomendadas_git"
+>Lecturas recomendadas</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>&#13;          Scott Chacon, Ben Straub. Pro Git Book.
+          https://git-scm.com/book/en/v2/
+        </P
+></LI
+><LI
+><P
+>&#13;          GitLab - SSH Key Setup
+          https://www.tutorialspoint.com/gitlab/gitlab_ssh_key_setup.htm
+        </P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x1634.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="a1900.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Labores básicas de administración</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Novedades</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

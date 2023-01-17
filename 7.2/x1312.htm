@@ -1,0 +1,444 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Más formas de uso de ssh</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Transferencia de información a y desde el servidor"
+HREF="x1167.htm"><LINK
+REL="NEXT"
+TITLE="Formatos de archivos"
+HREF="x1383.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x1167.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1383.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mas_formas_de_uso_de_ssh"
+>Más formas de uso de ssh</A
+></H1
+><P
+>&#13;    El protocolo <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ssh</B
+></SPAN
+> además de
+    permitirle conectarse a servidores en modo texto (ver
+    <A
+HREF="x41.htm#conexion_con_ssh"
+>la sección de nombre <I
+>Conexión con ssh</I
+></A
+>) le permite iniciar
+    aplicaciones gráficas que se ejecuten en el servidor, hacer
+    redireccionamiento de puertos y conectarse sin necesidad de dar
+    clave (dando una clave sólo una vez en su computador).
+  </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="abrir_programas_con_interfaz_grafica"
+>Abrir programas con interfaz gráfica</A
+></H2
+><P
+>&#13;      Es posible ejecutar aplicaciones gráficas en el servidor y ver las
+      ventanas gráficas en otro computador. Para esto es necesario:
+    </P
+><P
+></P
+><OL
+COMPACT="COMPACT"
+TYPE="1"
+><LI
+><P
+>&#13;          Que en el archivo de configuración
+          <TT
+CLASS="literal"
+>/etc/ssh/sshd_config</TT
+> del servidor esté
+          habilitada la opción:
+        </P
+></LI
+></OL
+><PRE
+CLASS="programlisting"
+>&#13;X11Forwarding yes
+</PRE
+><P
+></P
+><OL
+COMPACT="COMPACT"
+TYPE="1"
+><LI
+STYLE="list-style-type: 2"
+><P
+>&#13;          Que en el computador donde se desea ver la información esté
+          instalado un servidor de X-Window.
+        </P
+></LI
+></OL
+><P
+>&#13;      En el caso de sistemas tipo Unix basta con tener X-Window
+      instalado (si ve el modo gráfico es porque ya está instalado).
+      Para otros sistemas operativos puede ser posible encontrar un
+      servidor de X-Window, por ejemplo para Windows, puede emplear
+      Cygwin-X (http://x.cygwin.com) o Xming
+      (http://www.straightrunning.com/XmingNotes/).
+    </P
+><P
+>&#13;      Una vez esté ejecutándo el servidor de X-Window en su computador
+      entre al servidor usando <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ssh</B
+></SPAN
+>
+      con opción para hacer reenvío de X11. De esta manera toda la
+      información gráfica enviada por el servidor viajará por el canal
+      seguro que ssh establece cuando se conecta al servidor. En el caso
+      de OpenSSH esto se indica con la opción <TT
+CLASS="literal"
+>-X</TT
+>, i.e
+      se debe conectar con:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;ssh -X juan@practica.pasosdeJesus.org
+</PRE
+><P
+>&#13;      En el caso de <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>putty</B
+></SPAN
+> en el
+      dialogo de configuración que aparece antes de iniciar la conexión,
+      en el menú Connection-&#62;SSH-&#62;X11 marque <SPAN
+CLASS="QUOTE"
+>"Enable X11
+      forwarding"</SPAN
+>.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN1336"
+></A
+><P
+><B
+>Figura 25. Reenvío de X11 en putty</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/putty-x11.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Una vez haga esto, las aplicaciones gráficas que inicie en la
+      sesión ssh que inició, se verán en su computador. Pruebe por
+      ejemplo con:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;xeyes
+</PRE
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="tunel_reenviando_un_puerto"
+>Túnel reenviando un puerto</A
+></H2
+><P
+>&#13;      Puede usar <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ssh</B
+></SPAN
+> también para
+      crear un túnel entre un puerto local y un puerto accequible desde
+      el servidor al cual se conecta. Por ejemplo si en una organización
+      tienen un cortafuegos conectado a Internet (digamos que es
+      practica.pasosdeJesus.org) y en la red interna cuentan con un
+      servidor web SSL (por ejemplo <TT
+CLASS="literal"
+>base</TT
+>), podría
+      establecerse un túnel desde un computador fuera de la organización
+      y el servidor privado, ingresando al cortafuegos con:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;ssh -L10443:base:443 juan@practica.pasosdeJesus.org
+</PRE
+><P
+>&#13;      donde <TT
+CLASS="literal"
+>base</TT
+> es el nombre del servidor al
+      interior de la organización y 443 es el número de puerto de HTTPS
+      (protocolo HTTP sobre SSL, es decir conexiones web cifradas).
+    </P
+><P
+>&#13;      Si emplea <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>putty</B
+></SPAN
+> debe
+      especificar esta información en el diálogo de configuración
+      Connection-&#62;SSH-&#62;Tunnels como se presenta a continuación
+      presionando el botón Add para adicionar el túnel a la región
+      `Forwarded ports’.
+    </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN1355"
+></A
+><P
+><B
+>Figura 26. Configuración de túnel en putty</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="img/putty-tunnel.png"></P
+></DIV
+></DIV
+><P
+>&#13;      Una vez inicie la conexión debe digitar la clave del usuario en el
+      cortafuegos. Con lo cual quedará establecido un túnel entre el
+      puerto 10443 del computador local y el puerto 443 del servidor
+      <TT
+CLASS="literal"
+>base</TT
+>. Este túnel puede usarse ingresando en un
+      navegador la dirección: <TT
+CLASS="literal"
+>https://127.0.0.1:10443</TT
+>
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="tunel_con_protocolo_socks"
+>Túnel con protocolo SOCKS</A
+></H2
+><P
+>&#13;      Otra forma de realizar un túnel, pero sin limitarlo a un puerto es
+      empleando un servidor SOCKS incluido con el programa ssh y
+      configurando su navegador para emplearlo.
+    </P
+><P
+>&#13;      Primero debe establecer la conexión indicando el puerto que usará
+      para el servidor socks con la opción -D, por ejemplo:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;ssh -D8080 juan@practica.pasosdeJesus.org
+</PRE
+><P
+>&#13;      donde 8080 es el número de puerto donde correrá el servidor SOCKS
+      en su computador.
+    </P
+><P
+>&#13;      Si emplea <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>putty</B
+></SPAN
+> debe
+      especificar esta información en el diálogo de configuración
+      Connection-&#62;SSH-&#62;Tunnels, marcando Dynamic y escribiendo un
+      puerto como 8080 en <SPAN
+CLASS="QUOTE"
+>"Local Port,"</SPAN
+> y proceder a
+      conectarse al servidor.
+    </P
+><P
+>&#13;      A continuación debe configurar su navegador para que utilice ese
+      servidor SOCKS en su propio computador en el puerto que específico
+      (8080 en este ejemplo). En el caso de Firefox puede hacerlo desde
+      Editar-&#62;Preferencias-&#62;Avanzado-&#62;Red-&#62;Configurar
+      especificar en servidor Socks 127.0.0.1 y en puerto 8080. Una vez
+      acepte toda navegación que intente realizar se hará por el
+      servidor al cual se conectó. Si por ejemplo ese servidor tiene
+      acceso en una red interna a un servidor con IP 192.168.1.2 puede
+      emplear esa URL en su navegador y llegará a ese computador en la
+      red interna donde está el servidor.
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas_recomendadas_ssh"
+>Lecturas recomendadas</A
+></H2
+><P
+>&#13;      Puede aprender sobre <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>ssh</B
+></SPAN
+>
+      examinado la especificación del protocolo en uno de los borradores
+      de la especificación temporal <SPAN
+CLASS="QUOTE"
+>"SSH Protocol
+      Architecture"</SPAN
+>
+      <A
+HREF="https://tools.ietf.org/html/draft-ietf-secsh-architecture-22"
+TARGET="_top"
+>https://tools.ietf.org/html/draft-ietf-secsh-architecture-22</A
+>.
+    </P
+><P
+>&#13;      Hay información sobre la implementación OpenSSH en
+      <A
+HREF="http://www.openssh.org"
+TARGET="_top"
+>http://www.openssh.org</A
+>.
+    </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x1167.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1383.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Transferencia de información a y desde el servidor</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Formatos de archivos</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
