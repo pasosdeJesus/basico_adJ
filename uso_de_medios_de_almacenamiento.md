@@ -74,9 +74,9 @@ y traducidas de la ayuda oficial --que podrá consultar desde el menú Ayuda:
 
 - Permite realizar operaciones como superusuario, bien iniciando desde una 
 	terminal con:
-```
-doas xfe
-```
+
+    doas xfe
+
 	o si está bien configurado puede iniciarse una ventan superusuario desde 
 	el menú Herramientas->Ventana superusuario nueva.
 

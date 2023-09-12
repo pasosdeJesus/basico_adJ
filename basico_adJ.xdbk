@@ -4,9 +4,11 @@
 <!ENTITY % confv SYSTEM "confv.ent">
 <!ENTITY % personaliza SYSTEM "personaliza.ent">
 <!ENTITY % infoversion SYSTEM "infoversion.ent">
+<!ENTITY % masversiones SYSTEM "masversiones.ent">
 %confv;
 %personaliza;
 %infoversion;
+%masversiones;
 
 <!ENTITY introduccion SYSTEM "introduccion.xdbk">
 <!ENTITY primer_uso_de_adJ SYSTEM "primer_uso_de_adJ.xdbk">

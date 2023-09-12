@@ -132,3 +132,8 @@ infoversion.ent:
 		cp ../servidor_adJ/infoversion.ent .; \
 	} fi;
 
+masversiones.ent:
+	if (test -f ../usuario_adJ/masversiones.ent) then { \
+		cp ../usuario_adJ/masversiones.ent .; \
+	} fi;
+

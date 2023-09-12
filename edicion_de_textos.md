@@ -5,8 +5,8 @@ simple (o plano).
 
 A medida que administre su sistema adJ, notará que es más y más necesaria la 
 labor de editar textos. La primera vez posiblemente querrá usar el editor más 
-gráfico y sencillo: ```xfw```. Pero si no tiene un entorno gráfica puede 
-emplear ```mg```, y si desea eficiencia posiblemente le servirá ```vim```.
+gráfico y sencillo: `xfw`. Pero si no tiene un entorno gráfica puede 
+emplear `mg`, y si desea eficiencia posiblemente le servirá `vim`.
 
 ### Editor xfw {#editor_xfw}
 
@@ -53,8 +53,8 @@ a continuación.
 ![mg editando esta documentación](img/mg.png)
 
 Notara que mg no soporta UTF-8, así que su propósito es hacer breves 
-ediciones a archivos de configuración cuando no puede usar ```xfw``` o 
-por ejemplo ```vim```.
+ediciones a archivos de configuración cuando no puede usar `xfw` o 
+por ejemplo `vim`.
 
 Notará que los caracteres que digite estando en mg serán introducidos en el 
 buffer que esté operando, y que podrá usar las flechas para desplazarse. 
@@ -82,7 +82,7 @@ Guardar con **C-x C-s** y salir con **C-x C-c**.
 eficiencia. Por lo mismo no requiere el uso de ratón sino de breves órdenes 
 que a medida que se memoricen y usen harán más rápida la edición de textos.
 
-Para editar un archivo (digamos ```ma.txt```) con el editor vi, teclee desde 
+Para editar un archivo (digamos `ma.txt`) con el editor vi, teclee desde 
 un intérprete de órdenes:
 ```
 $ vi ma.txt
@@ -157,22 +157,22 @@ deshace todos los cambios realizados en la línea actual.
 
 Pulse la tecla **ESC** (para asegurarse de que está en modo normal).
 
-Escriba **:q!** y ejecute **ENTER** para salir de vi sin guardar ningún cambio 
+Escriba **:q!** y presione **RETORNO** para salir de vi sin guardar ningún cambio 
 que se haya hecho.
 
-Para guardar los cambios realizados y salir, escriba **:wq** y ejecute 
-**ENTER**.
+Para guardar los cambios realizados y salir, escriba **:wq** y presione
+**RETORNO**.
 
 Para guardar los cambios realizados sin salir de **vi** y seguir trabajando, 
-escriba **:w** y ejecute **ENTER**.
+escriba **:w** y presione **RETORNO**.
 
-Estando en el modo normal, pulsamos la orden **:** para pasar al 
+Estando en el modo normal, pulse la orden **:** para pasar al 
 **modo línea de órdenes** y el cursor se traslada a la última línea de la 
-pantalla. Allí escribimos el nombre de la orden y pulsamos 
-**RETORNO** para ejecutarlo.
+pantalla. Allí escribimos el nombre de la orden y pulse
+**RETORNO** para ejecutarla.
 
 ![](img/warning.png) **Aviso** Recuerde: Para pasar de **modo inserción** a 
-	**modo órdenes** pulsamos la tecla **ESC**. Puede desplazarse sobre el 
+	**modo órdenes** pulse la tecla **ESC**. Puede desplazarse sobre el 
 	archivo, empleando las flechas, PgUp, PgDn ó bien para mantener los 
 	dedos mejor posicionados en el teclado puede emplear las teclas 
 	**h**, **j**, **k** y **l**, como lo vimos anteriormente.
@@ -184,17 +184,17 @@ que ofrece extensa ayuda y cuenta con varias extensiones.
 
 ##### Modo visual - Copiar, cortar y pegar {#modo_visual_copiar_cortar_y_pegar}
 
-En el **modo visual** "resaltamos" el texto para ser eliminado o copiado 
-para luego pegarlo.
+En el **modo visual** "resalte" el texto que desea eliminar o copiar --y pegar
+en otra parte.
 
 Asegúrese que esté en modo órdenes. Pulse **v** para entrar en modo visual. 
 Mueva el cursor con las teclas de desplazamiento para resaltar o remarcar el 
 texto a copiar.
 
-Pulse **y** para copiar la sección remarcada. Si desea cortar digite **d**.
+Pulse **y** para copiar la sección remarcada. Si desea cortar presione **d**.
 
-Ahora ubica el cursor en el lugar donde desea insertar el texto copiado o 
-cortado **y** pulsa **p** para insertar el texto, después del cursor.
+Ahora ubique el cursor en el lugar donde desea insertar el texto copiado o 
+cortado **y** pulse **p** para insertar el texto, después del cursor.
 
 ##### Otras características de vim {#otras_caracteristicas_de_vim}
 
@@ -203,24 +203,23 @@ Dígrafos
 	del mismo no lo permiten. Presione **Control-K** y después una 
 	secuencia de dos teclas de acuerdo al caracter, e.g 'a produce á, 
 	n? produce ñ, u: produce ü, !I produce ¡, ?I produce ¿. 
-	Pueden verse otros caracteres desde la línea de órdenes con 
- 	```:digraphs```.
+	Puede ver otros caracteres desde la línea de órdenes con `:digraphs`.
 
 Resaltado de sintaxis
 : Permite ver con colores que resaltan la sintaxis de algunos tipos de archivos 
 	(por ejemplo fuentes de Ruby, C, Javascript). Se activa con 
-	```:syntax enable```. Para que se vean los colores de este editor, 
-	asegúrese de que su variable de entorno ```TERM``` tenga el valor de 
+	`:syntax enable`. Para que se vean los colores de este editor, 
+	asegúrese de que su variable de entorno `TERM` tenga el valor de 
 	una terminal que soporte color, por ejemplo las terminales gráficas 
-	soportan ```xterm-color``` y desde consolas tipo texto por ejemplo 
-	```VT220```. Vea como establecer la variable ```TERM``` en cada inicio 
+	soportan `xterm-color` y desde consolas tipo texto por ejemplo 
+	`VT220`. Vea como establecer la variable `TERM` en cada inicio 
 	de sesión en [xref](#personalizacion).
 
 Indentación automática
 : Permite indentar automáticamente diversos tipos de archivos como XML, C, 
-	Ruby, Javascript. Se activa con ```:filetype indent on```. Para 
+	Ruby, Javascript. Se activa con `:filetype indent on`. Para 
 	modificar tal indentación pueden establecerse variables de **vim**, 
-	bien en la sesión abierta, bien en ```~/.vimrc``` o bien en cada 
+	bien en la sesión abierta, bien en `~/.vimrc` o bien en cada 
 	archivo. 
 	Para fijar una configuración particular que se tome al editar cierto 
 	archivo, basta agregar al comienzo una línea (puede ser un comentario 
@@ -230,12 +229,12 @@ Indentación automática
 ```
 
 Numeración de líneas
-: Pueden verse el número de cada línea con :**set number** y esta característica
-	se deshabilita con ```:set nonumber```.
+: Puede ver el número de cada línea con :`set number` y deshabilitar
+  esta característica `:set nonumber`.
 
 Archivo de configuración
 : Cada usuario puede tener sus propias configuraciones en el archivo	
-	```~/.vimrc```, que consta de líneas con órdenes o comentarios. 
+	`~/.vimrc`, que consta de líneas con órdenes o comentarios. 
 	Las órdenes no deben iniciar con ':' y los comentarios se colocan en 
 	líneas completas o al final de una línea iniciando con comillas. 
 	Por ejemplo:
@@ -249,32 +248,32 @@ filetype indent on
 	Puede resultar instructivo que copie y examine un archivo de ejemplo 
 	distribuido con **vim** así:
 ```
-$ cp /usr/local/share/vim/vim63/vimrc_example.vim ~/.vimrc
+$ cp /usr/local/share/vim/&dirvim;/vimrc_example.vim ~/.vimrc
 ```
 		
 ![Sesión de vim](img/vim.png)
 
 ##### Locale en vim {#locale_en_vim}
 
-**vim** empleará el locale establecido en la variable de entorno LANG 
+**vim** empleará el locale establecido en la variable de entorno `LANG`
 (ver [xref](#locale)). Sin embargo si prefiere también puede establecer idioma 
 de los mensajes que presenta, así como codificación de la terminal y de los 
 archivos.
 
 Puede establecer el idioma de los mensajes que vim presenta con la orden
- ```:language```, por ejemplo para establecer español de Colombia, desde el 
+`:language`, por ejemplo para establecer español de Colombia, desde el 
 modo órdenes teclee: 
 ```
 :language es_CO
 ```
 
 Puede establecer esta configuración predeterminada agregando la orden al 
-archivo ```~/.vimrc```.
+archivo `~/.vimrc`.
 
 **vim** puede emplear codificaciones diferentes para la terminal y para los 
-archivos, ambos se establecen con la variable ```encoding``` (o ```enc```) y 
-cada uno en particular con ```termencoding``` (o ```tenc```) y 
-```fileencoding``` (o ```fenc```). 
+archivos, ambos se establecen con la variable `encoding` (o `enc`) y 
+cada uno en particular con `termencoding` (o `tenc`) y `fileencoding` 
+(o `fenc`). 
 Los valores típicos para codificar español son latin1 (que corresponde a 
 codificicación en un byte ISO8859-1) o utf8 (que corresponde a codificación 
 multibyte UTF-8 --típicamente 4 bytes). Por ejemplo para establecer la 
@@ -285,11 +284,11 @@ codificación de la termina en UTF-8, desde modo órdenes teclee:
 
 **vim** detectará la codificación de los archivos que edite, o 
 empleará su codificación preferida en archivos nuevos. Puede deshabilitarse 
-la autodetección dejando vacía la variable ```fileencoding``` (lo cual no 
+la autodetección dejando vacía la variable `fileencoding` (lo cual no 
 recomendamos). La forma recomendada y por omisión en `vim` es emplear una 
 terminal que soporte la codificación especificada en LANG y dejar que vim la 
 emplee y que autodetecte la codificación de archivos. Si no opera de esta 
-forma puede intentar agregar a su archivo ```~/.vimrc```:
+forma puede intentar agregar a su archivo `~/.vimrc`:
 ```
 set encoding&           " juego de caracteres de la terminal: sigue locale
 set fileencoding&       " juego de caracteres determinado automáticamente
@@ -298,7 +297,7 @@ set fileencoding&       " juego de caracteres determinado automáticamente
 #### Lecturas recomendadas {#lecturas_recomendadas_edicion_de_textos}
 
 Puede aprender sobre **vim** y su configuración en el manual de este programa 
-que se consulta presionando la tecla ```F1```. 
+que se consulta presionando la tecla `F1`. 
 Esta documentación también está disponible en Internet en: 
 <http://vimdoc.sourceforge.net/htmldoc/usr_toc.html>
 
