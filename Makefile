@@ -137,3 +137,5 @@ masversiones.ent:
 		cp ../usuario_adJ/masversiones.ent .; \
 	} fi;
 
+actpdJ: all $(PROYECTO)-$(PRY_VERSION)_html.tar.gz 
+	rsync --delete -ravzp $(PROYECTO)-$(PRY_VERSION)_html.tar.gz html/* pasosdeJesus.org:/var/www/pasosdeJesus/doc/$(ACTDIR)

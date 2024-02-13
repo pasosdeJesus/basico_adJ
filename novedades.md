@@ -1,6 +1,6 @@
 Versión 7.3
 
-:  - Mejoradas [xref](#vi) y [xref](#labores_basicas_de_administracion)
+:  - Mejoradas [xref](#editor_vi) y [xref](#labores_basicas_de_administracion)
 
 
 Versión 7.2
