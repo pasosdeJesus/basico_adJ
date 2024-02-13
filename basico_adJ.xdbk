@@ -37,20 +37,17 @@
   <articleinfo>
     <authorgroup>
       <author>
-	      
-	     <firstname>Vladimir</firstname>
-	<surname>Támara Patiño (vtamara@pasosdeJesus.org)</surname>
-</author> 
-      <author>
-	<firstname>Hernán</firstname>
-	<surname>Quishpe (ahquishpe@gmail.com)</surname>
+        <firstname>Vladimir</firstname>
+        <surname>Támara Patiño (vtamara@pasosdeJesus.org)</surname>
       </author> 
-
       <author>
-	<firstname>Blanca</firstname>
-	<surname>Acosta (blanca@pasosdeJesus.org)</surname>
+        <firstname>Hernán</firstname>
+        <surname>Quishpe (ahquishpe@gmail.com)</surname>
       </author> 
-
+      <author>
+        <firstname>Blanca</firstname>
+        <surname>Acosta (blanca@pasosdeJesus.org)</surname>
+      </author> 
     </authorgroup>
     
     <abstract>
@@ -75,7 +72,9 @@
 	    <para>Agradecemos los aportes de Carolina Pinzón, 
 		    Marly Mier Rinaldy, 
 		    William Rozo (wiroal@riseup.net), 
-		    Hector Jimenez (h3.hector@gmail.com).</para>
+      Hector Jimenez (h3.hector@gmail.com) y 
+      Juan Sebastian Cabrera.
+        .</para>
 	    <para>
 		    La versión publicada más reciente está tanto
 		    <ulink url="&URLSITE;">en línea</ulink>  como
