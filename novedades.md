@@ -1,3 +1,7 @@
+Versión 7.4
+
+:  - Mejorada [xref](#formatos-de-archivos)
+
 Versión 7.3
 
 :  - Mejoradas [xref](#editor_vi) y [xref](#labores_basicas_de_administracion)
