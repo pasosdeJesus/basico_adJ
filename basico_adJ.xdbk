@@ -86,7 +86,7 @@
 			    comprimido</ulink> y como 
 		    <ulink url="&URLSITE;/&PROYECTO;-&PRY-VERSION;.pdf">PDF</ulink>. -->
 		    Sus fuentes en DocBook están disponibles en 
-		    <ulink url="https://github.com/pasosdeJesus/&PROYECTO;/">https://github.com/pasosdeJesus/&PROYECTO;/</ulink>.
+		    <ulink url="https://gitlab.com/pasosdeJesus/&PROYECTO;/">https://gitlab.com/pasosdeJesus/&PROYECTO;/</ulink>.
 	    </para>
     </legalnotice>
 
