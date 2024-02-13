@@ -1,0 +1,146 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>11. Formatos de archivos</title><meta name="generator" content="DocBook XSL Stylesheets V1.68.1"><link rel="start" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="up" href="index.html" title="Uso Básico de la distribución Aprendiendo de Jesús de OpenBSD"><link rel="prev" href="mas_formas_de_uso_de_ssh.html" title="10. Más formas de uso de ssh"><link rel="next" href="correo_electronico.html" title="12. Correo electrónico"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">11. Formatos de archivos</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="mas_formas_de_uso_de_ssh.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="correo_electronico.html">Siguiente</a></td></tr></table><hr></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="formatos-de-archivos"></a>11. Formatos de archivos</h2></div></div></div><p>
+    La forma de emplear un archivo que copie, cree o descargue , depende
+    del formato en el que esté.
+  </p><p>
+    El formato usualmente se identifica con la extensión (i.e las
+    últimas letras que están después del último punto) o mediante los
+    primeros bytes del contenido. Para identificar el formato mediante
+    el contenido puede usarse un programa como <code class="literal">file</code> o
+    en caso de formatos gráficos <code class="literal">identify</code>. Por
+    ejemplo
+  </p><pre class="programlisting">
+    file foto.jpg
+</pre><p>
+    podría responder con
+  </p><pre class="programlisting">
+    foto.jpg: JPEG image data, JFIF standard 1.01
+</pre><p>
+    que indicaría que se trata de una imagen en formato JPEG que sigue
+    el estándar JFIF 1.01.
+  </p><p>
+    Mientras que
+  </p><pre class="programlisting">
+    identify foto.jpg
+</pre><p>
+    podria responder con más detalles de la imagen como las dimensiones
+    y la codificación del color:
+  </p><pre class="programlisting">
+    foto.jpeg JPEG 720x1280 720x1280+0+0 8-bit sRGB 85137B 0.010u 0:00.000
+</pre><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="formatos-legibles"></a>11.1. Formatos Legibles</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>
+          <code class="literal">.txt</code> Se trata de un texto plano.
+          Típicamente estará codificado en ASCII. En DOS/Windows los
+          textos planos indican fin de línea con dos caracteres: Retorno
+          de carro<sup>[<a name="id1428" href="#ftn.id1428">14</a>]</sup> y nueva línea<sup>[<a name="id1432" href="#ftn.id1432">15</a>]</sup>, mientras que en sistemas tipo Unix basta se usa
+          sólo el caracter nueva línea. Para convertir textos
+          DOS/Windows a Unix puede emplear:
+        </p><pre class="programlisting">
+    $ cp carta.txt carta.txt.bak
+    $ tr -d "\r" &lt; carta.txt.bak &gt; carta.txt
+</pre><p>
+          Si el texto que tiene emplea una codificación que no sea ASCII
+          (por ejemplo Unicode, UTF-8, MAC, Código de Página 850) o
+          requiere convertir de ASCII a otra codificación puede emplear
+          el programa <span class="strong"><strong>recode</strong></span>. Por
+          ejemplo para convertir carta.txt de ASCII a UTF-8<sup>[<a name="id1438" href="#ftn.id1438">16</a>]</sup>:
+        </p><pre class="programlisting">
+    recode txt..utf-8 carta.txt
+</pre></li><li><p>
+          <code class="literal">.md</code> o <code class="literal">.markdown</code> se trata
+          de texto planos pero con algo de formato que permite
+          presentarlos con estilos al transformarlos a HTML.
+        </p></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="comprimidos-o-empaquetados"></a>11.2. Comprimidos o empaquetados</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>
+          <code class="literal">.gz</code> Es un archivo comprimido con
+          <span class="strong"><strong>gzip</strong></span>. Suponiendo que fuera
+          <code class="literal">archivo.txt.gz</code> (cuya extensión sugiere un
+          texto comprimido con <code class="literal">gzip</code>), lo descomprime
+          con:
+        </p><pre class="programlisting">
+    gzip -d archivo.txt.gz
+</pre><p>
+          De forma análoga para comprimir el archivo
+          nombres.<code class="literal">sql</code> puede emplear:
+        </p><pre class="programlisting">
+    gzip nombres.sql
+</pre><p>
+          Nota: <code class="literal">gzip</code> no comprime archivos muy
+          pequeños (digamos 10 bytes):
+        </p></li><li><p>
+          <code class="literal">.tar.gz</code> Se trata de un archivo empaquetado
+          con la utilidad <span class="strong"><strong>tar</strong></span> y
+          después comprimido con el algoritmo de
+          <span class="strong"><strong>gzip</strong></span>. Para descomprimirlo y
+          desempaquetarlo en el directorio en el que esté trabajando:
+        </p><pre class="programlisting">
+    tar xvfz archivo.tar.gz
+</pre><p>
+          Si cuenta con un archivo con extensión <code class="literal">.tar</code>
+          para desempaquetarlo basta:
+        </p><pre class="programlisting">
+    tar xvf archivo.tar
+</pre><p>
+          Para empaquetar un directorio digamos ./cartas en formato tar
+          emplearía:
+        </p><pre class="programlisting">
+    tar cvf cartas.tar ./cartas
+</pre><p>
+          Y si además lo desea comprimir:
+        </p><pre class="programlisting">
+    tar cvfz cartas.tar.gz ./cartas
+</pre></li><li><p>
+          <code class="literal">.bz2</code> Se trata de uno o más archivos
+          comprimidos con <span class="strong"><strong>bzip2</strong></span>. Se
+          descomprime con:
+        </p><pre class="programlisting">
+  bunzip2 archivo.bz2
+</pre><p>
+          Para comprimir un archivo en este formato:
+        </p><pre class="programlisting">
+    bzip2 archivo.pdf
+</pre><p>
+          que creará <code class="literal">archivo.pdf.bz2</code>
+        </p></li><li><p>
+          <code class="literal">.rar</code> Se descomprime con la utilidad
+          <span class="strong"><strong>unrar</strong></span>, por ejemplo con:
+        </p><pre class="programlisting">
+    unrar archivo.rar
+</pre></li><li><p>
+          <code class="literal">.7z</code> Uno o más archivos comprimidos y
+          empaquetados con <span class="strong"><strong>7-Zip</strong></span>.
+          Descomprime y desempaqueta por ejemplo con:
+        </p><pre class="programlisting">
+    7z x archivo.7z
+</pre><p>
+          y crea un comprimido con
+        </p><pre class="programlisting">
+    7z a /tmp/resultado.7z archivo1.pdf archivo2.pdf
+</pre><p>
+          Además al comprimir puede establecerse una clave por ejemplo
+          con:
+        </p><pre class="programlisting">
+    7z a -mhe=on -pSecreta /tmp/resultado.7z archivo1.pdf archivo2.pdf
+</pre></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="gr%C3%A1ficos"></a>11.3. Gráficos</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li><div class="literallayout"><p><code class="literal">.jpg</code> o <code class="literal">.jpeg</code> Formato comprimido tipícamente con perdidas (es decir la imagen comprimida pierde un poco de fidelidad respecto a la orginal) que puede ser bien JPEG/Exif (común en cámaras) o JEPG/JFIF (común en gráficas para el web). No conviene usarlo cuando la imagen tiene textos, lineas o bordes muy definidos (aunque hay variantes como JPEG 20000 que pueden almacenar imágenes sin perdidas).<br>
+En general este formato es apropiado para fotografías porque comprime más (a costa de las perdidas) y porque no maneja transparencias. Puede ver una imagen en este formato con</p></div><pre class="programlisting">
+    display mifoto.jpg
+</pre><p>
+          Para convertir, editar y otras operaciones vea la sección de
+          ImageMagick en el manual de usuario.
+        </p></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="lecturas_recomendadas_formato_de_archivos"></a>11.4. Lecturas recomendadas</h3></div></div></div><div class="itemizedlist"><ul type="disc" compact><li><p>
+          La página del manual: <code class="literal">man tar</code>
+        </p></li><li><p>
+          https://es.wikipedia.org/wiki/Joint_Photographic_Experts_Group
+        </p></li></ul></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.id1428" href="#id1428">14</a>] </sup>
+              El caracter retorno de carro tiene código ASCII 13, suele
+              llamarse CR (<span xmlns="" class="emphasis"><em>Carriage Return</em></span>) y
+              diversos programas y lenguajes lo denotan con
+              “<span xmlns="" class="quote"></span>”.
+            </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.id1432" href="#id1432">15</a>] </sup>
+              El caracter nueva línea tiene código ASCII 10, también se
+              llama LF (<span xmlns="" class="emphasis"><em>Line Feed</em></span>) y diversos
+              programas y lenguajes lo denotan con ’.
+            </p></div><div class="footnote"><p xmlns="http://www.w3.org/TR/xhtml1/transitional"><sup>[<a name="ftn.id1438" href="#id1438">16</a>] </sup>
+              UTF-8 es una de las posibles formas de codificar Unicode
+              en ASCII. Los caracteres Unicode con un ASCII equivalente
+              con código menor de 127 tienen la misma representación en
+              UTF-8. Otros caracteres Unicode emplean una secuencia de
+              dos o más caracteres ASCII para su codificación.
+            </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="mas_formas_de_uso_de_ssh.html">Anterior</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="correo_electronico.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">10. Más formas de uso de ssh </td><td width="20%" align="center"><a accesskey="h" href="index.html">Inicio</a></td><td width="40%" align="right" valign="top"> 12. Correo electrónico</td></tr></table></div></body></html>
