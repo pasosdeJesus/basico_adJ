@@ -4,9 +4,11 @@
 <!ENTITY % confv SYSTEM "confv.ent">
 <!ENTITY % personaliza SYSTEM "personaliza.ent">
 <!ENTITY % infoversion SYSTEM "infoversion.ent">
+<!ENTITY % masversiones SYSTEM "masversiones.ent">
 %confv;
 %personaliza;
 %infoversion;
+%masversiones;
 
 <!ENTITY introduccion SYSTEM "introduccion.xdbk">
 <!ENTITY primer_uso_de_adJ SYSTEM "primer_uso_de_adJ.xdbk">
@@ -21,6 +23,7 @@
 <!ENTITY formatos_de_archivos SYSTEM "formatos_de_archivos.xdbk">
 <!ENTITY correo_electronico SYSTEM "correo_electronico.xdbk">
 <!ENTITY labores_basicas_de_administracion SYSTEM "labores_basicas_de_administracion.xdbk">
+<!ENTITY git SYSTEM "git.xdbk">
 <!ENTITY novedades SYSTEM "novedades.xdbk">
 <!ENTITY bibliografia SYSTEM "bibliografia.xdbk">
   
@@ -58,32 +61,37 @@
 
     <legalnotice>
 	    <para>Este documento y sus fuentes son obra de amor
-		    cedidas al dominio público desde 2004. 
-		    Esta es la versión &PRY-VERSION; de este documento, 
-actualizada por última vez en &FECHA-ACT; para que corresponda a 
-la distribución adJ de OpenBSD &VER-OPENBSD;.
-	No se ofrece garantía alguna, por el contrario se aprecia que se 
-	envíen correcciones y sugerencias al autor.  Este escrito se 
-	dedica a Dios: `Alaba mi alma la grandeza del Señor'</para>
-<para>Agradecemos los aportes de Carolina Pinzón, Marly Mier Rinaldy, 
-	William Rozo (wiroal@riseup.net), 
-	Hector Jimenez (h3.hector@gmail.com).</para>
-<para>
-	La versión publicada más reciente está tanto
-	<ulink url="&URLSITE;">en línea</ulink>  como
-	<ulink url="&PROYECTO;-&PRY-VERSION;_html.tar.gz">en archivo comprimido</ulink> 
-	y como <ulink url="http://adJ.pasosdeJesus.org/pub/AprendiendoDeJesus/&PRY-VERSION;/paquetes/&PROYECTO;-&PRY-VERSION;.tar.gz">paquete para adJ/OpenBSD</ulink>.
-	<!--, como <ulink
-	  url="&URLSITE;/&PROYECTO;-&PRY-VERSION;.ps.gz">PostScript
-	  comprimido</ulink> y como 
-  <ulink url="&URLSITE;/&PROYECTO;-&PRY-VERSION;.pdf">PDF</ulink>. -->
-	Sus fuentes en DocBook están disponibles en 
-	<ulink url="https://github.com/pasosdeJesus/&PROYECTO;/">https://github.com/pasosdeJesus/&PROYECTO;/</ulink>.
-      </para>
+		    cedidas al dominio público. </para>
+	    <para>Esta es la versión &PRY-VERSION; de este documento, 
+		    actualizada por última vez en &FECHA-ACT; para 
+		    que corresponda a la distribución adJ de 
+		    OpenBSD &VER-OPENBSD;.</para>
+	    <para>No se ofrece garantía alguna, por el contrario se 
+		    aprecia que se 
+		    envíen correcciones y sugerencias al autor. </para>
+	    <para>Este escrito se 
+		    dedica a Dios: 
+		    `Alaba mi alma la grandeza del Señor'</para>
+	    <para>Agradecemos los aportes de Carolina Pinzón, 
+		    Marly Mier Rinaldy, 
+		    William Rozo (wiroal@riseup.net), 
+		    Hector Jimenez (h3.hector@gmail.com).</para>
+	    <para>
+		    La versión publicada más reciente está tanto
+		    <ulink url="&URLSITE;">en línea</ulink>  como
+		    <ulink url="&PROYECTO;-&PRY-VERSION;_html.tar.gz">en archivo comprimido</ulink> 
+		    y como <ulink url="http://adJ.pasosdeJesus.org/pub/AprendiendoDeJesus/&PRY-VERSION;-amd64/paquetes/&PROYECTO;-&PRY-VERSION;.tar.gz">paquete para adJ/OpenBSD</ulink>.
+		    <!--, como <ulink
+			    url="&URLSITE;/&PROYECTO;-&PRY-VERSION;.ps.gz">PostScript
+			    comprimido</ulink> y como 
+		    <ulink url="&URLSITE;/&PROYECTO;-&PRY-VERSION;.pdf">PDF</ulink>. -->
+		    Sus fuentes en DocBook están disponibles en 
+		    <ulink url="https://gitlab.com/pasosdeJesus/&PROYECTO;/">https://gitlab.com/pasosdeJesus/&PROYECTO;/</ulink>.
+	    </para>
     </legalnotice>
 
   </articleinfo>
-  
+
   &introduccion;
   &primer_uso_de_adJ;
   &conceptos_basicos;
@@ -97,6 +105,8 @@ la distribución adJ de OpenBSD &VER-OPENBSD;.
   &formatos_de_archivos;
   &correo_electronico;
   &labores_basicas_de_administracion;
+  &git;
+
   <appendix id="novedades">
 	   <title>Novedades</title>
      <para>

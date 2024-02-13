@@ -13,7 +13,7 @@ por primera vez a un computador.
 	ideas de ese diseño que fue planeado para ser multitarea, multiusuario 
 	con una política de permisos y para operación en red.  Incluso MSDOS 
 	implementado hacía 1980 tomó unas pocas ideas del interprete de 
-	ordenes , sobre este Windows 3.1 adaptó funcionalidad multitarea y 
+	órdenes , sobre este Windows 3.1 adaptó funcionalidad multitarea y 
 	una interfaz gráfica, sobre este Windows 98 empezó a adaptar 
 	funcionalidad multiusuario y operación en red, mientras que XP y 
 	Vista adaptaron el sistema de permisos.
@@ -22,7 +22,7 @@ De los sistemas tipos Unix actuales, OpenBSD se caracteriza por ser de fuentes
 abiertas[^intro.2], por los altos niveles de seguridad que brinda[^intro.3] 
 y por el uso de criptografía fuerte[^intro.4]. 
 Otros sistemas se han enfocado en usabilidad para usuarios sin experiencia 
-(por ejemplo macOS o la distribución Ubuntu CE de Linux).
+(por ejemplo macOS o la distribución Ubuntu de Linux).
 
 [^intro.2]: Las fuentes de un programa son las instrucciones para humanos, que 
 	permiten construir el programa. Al ser abiertas se pueden estudiar 
@@ -44,7 +44,7 @@ Otros sistemas se han enfocado en usabilidad para usuarios sin experiencia
         Es una manera de guardar información para que no todo el mundo tenga 
 	acceso directo a ella. Cifrar es transformar información para 
 	hacerla ilegible, buscando garantizar confidencialidad. 
-	Tipicamente se requiere una clave 
+	Típicamente se requiere una clave 
 	para cifrar. Un ejemplo de un cifrado débil llamado Cesar es aumentar 
 	cierta cantidad fija a cada carácter del mensaje por cifrar, podemos 
 	pensar que la cantidad que se aumente es la clave. Por ejemplo el 

@@ -23,8 +23,8 @@ como ```http://practica.pasosdeJesus.org/~juan/objetivo.html``` o
 dominio ya configurado, algo como ```http://www.midominio.org/objetivo.html```.
 
 Si desde un navegador emplea una dirección, pero sin especificar un nombre de 
-archivo, el servidor buscará y presentará la información de un archivo por 
-defecto. Tal archivo usualmente es ```index.html``` o ```index.php```. 
+archivo, el servidor buscará y presentará la información de un archivo 
+predeterminado. Tal archivo usualmente es ```index.html``` o ```index.php```. 
 Así por ejemplo al emplear el URL ```http://practica.pasosdeJesus.org/~juan``` 
 desde un navegador, se presentaría la misma información del URL: 
  ```http://practica.pasosdeJesus.org/~juan/index.html```.

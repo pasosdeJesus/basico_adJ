@@ -8,13 +8,13 @@ include Make.inc
 
 EXT_DOCBOOK=xdbk
 
-FUENTESDB=introduccion.xdbk primer_uso_de_adJ.xdbk conceptos_basicos.xdbk soporte.xdbk uso_de_medios_de_almacenamiento.xdbk personalizacion.xdbk edicion_de_textos.xdbk primeras_paginas_html.xdbk transferencia_de_informacion_a_y_desde_el_servidor.xdbk mas_formas_de_uso_de_ssh.xdbk formatos_de_archivos.xdbk correo_electronico.xdbk labores_basicas_de_administracion.xdbk novedades.xdbk bibliografia.xdbk
+FUENTESDB=introduccion.xdbk primer_uso_de_adJ.xdbk conceptos_basicos.xdbk soporte.xdbk uso_de_medios_de_almacenamiento.xdbk personalizacion.xdbk edicion_de_textos.xdbk primeras_paginas_html.xdbk transferencia_de_informacion_a_y_desde_el_servidor.xdbk mas_formas_de_uso_de_ssh.xdbk formatos_de_archivos.xdbk correo_electronico.xdbk git.xdbk labores_basicas_de_administracion.xdbk novedades.xdbk bibliografia.xdbk
 
 
 SOURCES=$(PROYECTO).$(EXT_DOCBOOK) $(FUENTESDB)
 # Listado de fuentes XML. Preferiblmente en el orden de inclusión.
 
-IMAGES=img/primerflux.png img/putty1.png img/putty2.png img/pop3s-mozilla.png img/evolution.png img/mutt.png img/vim.png img/html1.png img/home.png img/prev.png img/toc-minus.png img/blank.png img/important.png img/toc-plus.png img/caution.png img/next.png img/tip.png img/up.png img/draft.png img/note.png img/toc-blank.png img/warning.png img/arbol-archivos.png img/putty-tunnel.png img/putty-x11.png img/imaps-1-thunderbird.png img/imaps-2-thunderbird.png img/imaps-3-thunderbird.png img/fluxbox_inicio.png img/mozilla_firefox.png img/espiritualidad.png img/openoffice_writer.png img/openoffice_calc.png img/openoffice_presentacion.png img/documentacion.png img/multimedia.png img/mplayer.png img/xcdplayer.png img/otros.png img/plan.png img/vim1.png img/fluxbox_menu.png img/estilo1.png img/partencr.png img/xenodm.png img/consola.png img/pidgin1.png img/pidgin2.png img/pidgin3.png img/pidgin4.png img/pidgin5.png img/pidgin6.png img/pidgin7.png img/silc.png img/filezillaconexion.png img/filezilla.png img/xfecdrom.png img/montar.png img/xfepaq.png img/xfw-p.png img/mg.png
+IMAGES=img/primerflux.png img/putty1.png img/putty2.png img/pop3s-mozilla.png img/evolution.png img/mutt.png img/vim.png img/html1.png img/home.png img/prev.png img/toc-minus.png img/blank.png img/important.png img/toc-plus.png img/caution.png img/next.png img/tip.png img/up.png img/draft.png img/note.png img/toc-blank.png img/warning.png img/arbol-archivos.png img/putty-tunnel.png img/putty-x11.png img/imaps-1-thunderbird.png img/imaps-2-thunderbird.png img/imaps-3-thunderbird.png img/fluxbox_inicio.png img/mozilla_firefox.png img/espiritualidad.png img/openoffice_writer.png img/openoffice_calc.png img/openoffice_presentacion.png img/documentacion.png img/multimedia.png img/mplayer.png img/xcdplayer.png img/otros.png img/plan.png img/vim1.png img/fluxbox_menu.png img/estilo1.png img/partencr.png img/xenodm.png img/consola.png img/pidgin1.png img/pidgin2.png img/pidgin3.png img/pidgin4.png img/pidgin5.png img/pidgin6.png img/pidgin7.png img/silc.png img/filezillaconexion.png img/filezilla.png img/xfecdrom.png img/montar.png img/xfepaq.png img/xfw-p.png img/mg.png img/tmux-p.png img/tmux-v.png
 
 # Listado de imagenes, preferiblemente en formato PNG
 
@@ -58,7 +58,7 @@ ACTDIR=basico_adJ
 #USER=$(LOGNAME),structio
 # Usuario en $(ACTHOST).  Si es el mismo que en la máquina local comentar.
 
-GENACT=ghtodo $(PROYECTO)-$(PRY_VERSION)_html.tar.gz $(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).ps.gz $(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).pdf 
+GENACT=ghtodo $(PROYECTO)-$(PRY_VERSION)_html.tar.gz # $(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).ps.gz $(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).pdf 
 # Dependencias por cumplir antes de actualizar sitio en Internet al publicar
 
 FILESACT=$(PROYECTO)-$(PRY_VERSION).tar.gz $(PROYECTO)-$(PRY_VERSION)_html.tar.gz $(HTML_DIR)/* #$(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).ps.gz $(PRINT_DIR)/$(PROYECTO)-$(PRY_VERSION).pdf 
@@ -107,11 +107,13 @@ limpiamas: limpia
 limpia:
 	rm -rf *bak *~ *tmp confaux.tmp $(PROYECTO)-$(PRY_VERSION)_html.tar.gz
 	rm -f $(PROYECTO)-4.1.*
+	rm -f $(FUENTESDB)
 
 
 Derechos.txt: $(PROYECTO).$(EXT_DOCBOOK)
 	make html/index.html
-	$(W3M) %(W3M_OPT) -dump html/index.html | awk -f herram_confsh/conthtmldoc.awk > Derechos.txt
+	$(W3M) $(W3M_OPT) -dump html/index.html | awk -f herram_confsh/conthtmldoc.awk | awk '/Agradecemos/ { e = 1; } /.*/ { if (e != 1) { print $0; }}' | fmt > Derechos.txt
+
 
 instala:
 	@mkdir -p $(DESTDIR)$(INSDOC)/img/
@@ -130,3 +132,10 @@ infoversion.ent:
 		cp ../servidor_adJ/infoversion.ent .; \
 	} fi;
 
+masversiones.ent:
+	if (test -f ../usuario_adJ/masversiones.ent) then { \
+		cp ../usuario_adJ/masversiones.ent .; \
+	} fi;
+
+actpdJ: all $(PROYECTO)-$(PRY_VERSION)_html.tar.gz 
+	rsync --delete -ravzp $(PROYECTO)-$(PRY_VERSION)_html.tar.gz html/* pasosdeJesus.org:/var/www/pasosdeJesus/doc/$(ACTDIR)

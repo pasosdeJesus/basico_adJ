@@ -1,3 +1,42 @@
+Versión 7.4
+
+:  - Mejorada [xref](#formatos-de-archivos)
+
+Versión 7.3
+
+:  - Mejoradas [xref](#editor_vi) y [xref](#labores_basicas_de_administracion)
+
+
+Versión 7.2
+
+:  - Mejorada [xref](#git)
+
+Versión 7.1
+
+:  - Se comienza sección sobre [xref](#git)
+
+Version 6.9
+
+:  - Ortografía, mejorada sección de conceptos
+   - Usa pandoc reciente de portes de OpenBSD
+
+Version 6.8
+
+:  - Aumentada [xref](#zsh) 
+
+Version 6.7
+
+:  - Nueva [xref](#zsh) 
+
+Version 6.6
+
+:  - Nueva [xref](#tmux) 
+
+Version 6.5
+
+:  - Retirada sección sobre SILC
+   - Nueva [xref](#rsync) 
+
 Version 6.4
 
 :  - Mejorado formato
@@ -66,7 +105,7 @@ Versión 5.1
 
 Versión 4.9
 
-:  - Tuneles dinámicos con ssh ([xref](#tunel_con_protocolo_socks)).
+:  - Túneles dinámicos con ssh ([xref](#tunel_con_protocolo_socks)).
 
 Versión 4.8
 
@@ -96,7 +135,7 @@ Versión 1.4.2
 
 Versión 1.4
 
-:  - Tuneles con SSH. Inicialmente contribuida por Carolina Pinzón.
+:  - Túneles con SSH. Inicialmente contribuida por Carolina Pinzón.
  - Revisión de Bitácoras. Inicialmente contribuido por wiroal.
  - Utilización de **colorls**
  - Corrección de fallas menores

@@ -10,13 +10,13 @@ donde se montan USBs y CD-ROMs son ```/mnt/usb``` y ```/mnt/cdrom```
 respectivamente. Ni el montaje, ni el desmontaje se realizan automáticamente, 
 sino por orden expresa del usuario.
 
-### Montaje y desmontaje en ambiente gráfico {#montaje_y_desmontaje_en_ambiente_grafico}
+### Montaje y desmontaje en entorno gráfico {#montaje_y_desmontaje_en_entorno_grafico}
 
 Para montar una unidad de USB debe bastar desde el menú de fluxbox (botón 
 derecho del ratón sobre el escritorio) elegir Dispositivo->Montar USB (se 
 emplea el análogo para montar un CD-ROM).
 
-![Menu Dispositivo->Montar USB](img/montar.png)
+![Menú Dispositivo->Montar USB](img/montar.png)
 
 
 Una vez lo haga podrá ver el manejador de archivos ```xfe``` ubicado en el 
@@ -26,21 +26,21 @@ directorio donde queda montado el medio.
 Al montar estos medios, el dueño es el usuario administrador que se especificó 
 durante la instalación de adJ. 
 Este podrá leer de los medios y en el caso de USB es quien podrá escribir.
-Una vez termine de emplear el medio de alamacenamiento desmontelo también 
+Una vez termine de emplear el medio de almacenamiento desmóntelo también 
 desde el menú de fluxbox Dispositivo->Desmontar USB
 
-### Montaje y desmontaje desde intérprete de ordenes {#montaje_y_desmontaje_desde_interprete_de_ordenes}
+### Montaje y desmontaje desde intérprete de órdenes {#montaje_y_desmontaje_desde_interprete_de_ordenes}
 
 Para montar la USB debe bastar ejecutar desde una terminal:
 ```
 doas mount /mnt/usb
 ```
 El CD-ROM se monta de la misma forma cambiando ```usb``` por ```cdrom```.
-Para demonstar la USB basta:
+Para desmontar la USB basta:
 ```
 doas umount /mnt/usb
 ```
-y para demonstar un CD-ROM:
+y para desmontar un CD-ROM:
 ```
 doas umount /mnt/cdrom
 ```
@@ -51,14 +51,14 @@ Con este sencillo programa podrá administrar archivos y directorios, es decir
 crear, copiar, renombrar, crear enlaces, cambiar permisos e incluso hacer estas 
 operaciones como superusuario.
 Entre las características del porte de adJ destacamos, las siguientes adaptadas 
-y traducidas de la ayuda oficial --que podrá consultar desde el menu Ayuda:
+y traducidas de la ayuda oficial --que podrá consultar desde el menú Ayuda:
 
 - Interfaz gráfica de usuario muy rápida con cuatro formas de administrar 
-	archivos: un panel; árbol y panel; dos páneles; árbol y dos paneles.
+	archivos: un panel; árbol y panel; dos paneles; árbol y dos paneles.
 
 - Soporta codificación UTF-8 y se ha traducido a 20 idiomas (incluyendo español 
 	de Colombia). Puede presentar la interfaz con caracteres no latinos 
-	(como chino o japónes) siempre y cuando configure un tipo de letra que 
+	(como chino o japonés) siempre y cuando configure un tipo de letra que 
 	soporte Unicode desde el menú Editar/Preferencias/Tipo de letra
 
 - Incluye las siguientes aplicaciones: Editor de texto (X File Write, xfw, 
@@ -67,18 +67,18 @@ y traducidas de la ayuda oficial --que podrá consultar desde el menu Ayuda:
 	de paquetes (rpm o deb) (X File Package, xfp).
 
 - La interfaz gráfica soporta temas con posibilidad de cambiar colores, 
-	íconos y apariencia. Cuenta con Barras de herramientas, Marcadores e 
+	iconos y apariencia. Cuenta con Barras de herramientas, Marcadores e 
 	Historial.
 
 - Papelera para operaciones de eliminación de archivos. Se ubica en ```~/local/share/Trash/files```
 
-- Permite realizar operaciones como superusuario, bien iniciando de`sde una 
+- Permite realizar operaciones como superusuario, bien iniciando desde una 
 	terminal con:
-```
-doas xfe
-```
-	o si está bien configurado puede inicarse una ventan superusuario desde 
-	el menu Herramientas->Ventana superusuario nueva.
+
+    doas xfe
+
+	o si está bien configurado puede iniciarse una ventan superusuario desde 
+	el menú Herramientas->Ventana superusuario nueva.
 
 - Maneja paquetes de OpenBSD: seleccionando cualquier archivo y pulsando botón 
 	derecho podrá elegir en el menú emergente Consultar Paquetes que 
@@ -87,7 +87,7 @@ doas xfe
 	podrá elegir Ver el contenido del paquete Si usa una ventana 
 	superusuario de Xfe también podrá   instalarlo/actualizarlo o 
 	desinstalarlo, pulsando botón derecho sobre el paquete y eligiendo 
-	en el menú emergente Instalar/Actualizar o Desistalar respectivamente.
+	en el menú emergente Instalar/Actualizar o Desinstalar respectivamente.
 	![Uso de Xfe para manejar paquetes en adJ](img/xfepaq.png)
 
 - Permite comprimir en formatos tar, compress, zip, gzip, bzip2, xz y 7zip 
@@ -101,13 +101,13 @@ doas xfe
 
 - En listados y en el árbol de directorios puede seleccionar varios elementos 
 	y al hacer pulsación derecha se abrirá un menú contextual sobre los 
-	elementos seleccionados. En los panels **Ctrl +** pulsación derecha 
+	elementos seleccionados. En los paneles **Ctrl +** pulsación derecha 
 	abrirá un menú contextual con otras operaciones.
  
 #### Atajos de teclado predeterminados {#atajos_de_teclado_predeterminados}
 
 Los atajos de teclado pueden personalizarse en el cuadro de diálogo Preferencias. Los predeterminados para todas 
-la aplicaciones integradas se listan a continuación (vea otros atajos de teclado partículares de cada Aplicación 
+la aplicaciones integradas se listan a continuación (vea otros atajos de teclado particulares de cada Aplicación 
 en el menú Ayuda).
 
 - **Ctrl-A**: Seleccionar todo
@@ -139,21 +139,21 @@ en el menú Ayuda).
 
 ### Particiones cifradas {#particiones_cifradas}
 
-adJ soporta por defecto 2 particiones cifradas que se montan 
+adJ soporta de manera predeterminada 2 particiones cifradas que se montan 
 en  ```/var/postgresql ``` y  ```/var/www/resbase ```. 
 La clave de cifrado debe suministrarse durante el arranque, y sólo si esta es 
 correcta podrá ver el contenido de esas carpetas y escribir (si durante el 
 arranque no le solicita clave de cifrado faltó activar particiones cifradas 
 en la instalación --aunque podrá hacerlo actualizando adJ). 
 Así que puede verificar si la clave fue correcta examinando esas rutas bien 
-con xfe o bien desde un intérprete de ordenes:
+con xfe o bien desde un intérprete de órdenes:
 
-- xfe: Inicie **xfe**, asegurese de ver Árbol y Panel desde el menú Ver. 
-	En el Árbol de directorios de la izquierda elija el directorio raiz 
+- xfe: Inicie **xfe**, asegúrese de ver Árbol y Panel desde el menú Ver. 
+	En el Árbol de directorios de la izquierda elija el directorio raíz 
 	(primero marcado con /) con doble pulsación del botón izquierdo, bajé 
-	para elejir var, a continuación  ```www ``` y a continuación  
+	para elegir var, a continuación  ```www ``` y a continuación  
 	```resbase ```.
-- Intérpete de ordenes: Inicide una terminal y teclee 
+- Intérprete de órdenes: Inicie una terminal y teclee 
 ```
 ls /var/www/resbase
 ```
@@ -163,7 +163,7 @@ de la configuración de su servidor, una carpeta para cada usuario.
 Si no ve información en este directorio ni en  ```/var/postgresql ``` es 
 posible que haya dado mal la clave de cifrado en el arranque, en tal caso 
 desde el menú de Fluxbox (botón derecho sobre el escritorio) elija 
-Dispositivo->Iniciar Servicios Faltantes o desde un intérprete de ordenes 
+Dispositivo->Iniciar Servicios Faltantes o desde un intérprete de órdenes 
 teclee
 ```
 doas sh /etc/rc.local
@@ -197,7 +197,7 @@ USB, con una ventana de superusuario en xfe siga estos pasos:
 	derecho y del menú emergente elegir Pegar.
 
 
-El mismo procedimiento desde un intérprete de ordenes lo realiza con:
+El mismo procedimiento desde un intérprete de órdenes lo realiza con:
 ```
 doas mount /mnt/usb 
 ```

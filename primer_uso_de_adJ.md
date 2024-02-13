@@ -1,20 +1,23 @@
 ## Primer uso de adJ {#primer_uso_de_adJ}
 
 Un servidor adJ puede operarse tanto directamente (sentado frente al computador 
-donde se instaló y configuró), como remotamente por ejemplo con ```ssh```. 
+donde se instaló y configuró), como remotamente (típicamente y de manera
+segura mediante el programa `ssh`). 
 En esta sección cubrimos ambos escenarios.
 
 ### Arranque   {#arranque}
 
-Al iniciar un computador con adJ el núcleo de OpenBSD comenzará con una
-interfaz de texto, detectará el hardware (se ven letras con fondo azul), 
-iniciará los procesos básicos (se ven letras con fondo negro) 
-y ejecutará los archivos de arranque. 
+Al iniciar un computador con adJ se verán primero mensajes del BIOS 
+preprogramados en el hardware, después el control pasará al arranque del disco 
+con adJ que presentará `boot>` y tras un momento el control pasará al núcleo 
+de OpenBSD adJ, que detectará el hardware (se ven letras con fondo azul), 
+revisará discos e iniciará los procesos básicos (se ven letras con fondo negro) 
+y tras esto ejecutará los archivos de arranque. 
 
 Típicamente la distribución adJ pide claves de imágenes cifradas[^primer.1] 
 que se montan durante el arranque.
 
-[^primer.1]: En las imagénes cifradas se almacena los archivos que el usuario quiera 
+[^primer.1]: En las imágenes cifradas se almacena los archivos que el usuario quiera 
 cifrar. Para poder guardar y recuperar los archivos se debe dar una clave 
 
 ![Interfaz de texto](img/consola.png)
@@ -28,7 +31,7 @@ pero no podrá acceder a los directorios cifrados[^primer.2].
 ```
 doas sh /etc/rc.local
 ```
-desde un intérprete de ordenes, o desde el menú de 
+desde un intérprete de órdenes, o desde el menú de 
 Fluxbox Dispositivos->Reiniciar Servicios Faltantes
 
 
@@ -47,8 +50,8 @@ su contraseña
 Si durante la instalación, no se instaló X-Window o no se ha configurado
 para iniciar durante el arranque, lo que verá será una consola virtual tipo 
 texto, como la del arranque.  
-Por defecto hay 4 consolas virtuales tipo texto a las cuales pasa con las 
-secuencias de teclas 
+De manera predeterminada hay 4 consolas virtuales tipo texto a las cuales 
+puede transferirse con las secuencias de teclas 
 **Ctrl-Alt-F1, Ctrl-Alt-F2, Ctrl-Alt-F3 y Ctrl-Alt-F4**. 
 La secuencia **Ctrl-Alt-F5** lo dejará en el entorno gráfico.
 
@@ -72,7 +75,7 @@ escritorio.
 ![Menú inicial](img/fluxbox_inicio.png)
 
 Observe las distintas posibilidades del menú. Puede navegar en Internet 
-utilizando chrome o midori. 
+utilizando chrome o firefox. 
 
 Si elije __Espiritualidad->Evangelios de Dominio Público__ podrá
 consultar en chrome una traducción de los evangelios.
@@ -86,7 +89,7 @@ en el formato de MS-Word.
  
 ![LibreOffice Writer](img/openoffice_writer.png)
 
-[^primer.5]: Desde la línea de ordenes puede iniciar Writer con 
+[^primer.5]: Desde la línea de órdenes puede iniciar Writer con 
 	```/usr/local/bin/swriter``` o puede abrir LibreOffice completo con 
 	```/usr/local/bin/soffice```
 
@@ -96,7 +99,7 @@ abrir y guardar en el formato de Excel.
 
 ![LibreOffice.org Calc](img/openoffice_calc.png)
 
-[^primer.6]: Desde la línea de ordenes puede iniciar Calc con 
+[^primer.6]: Desde la línea de órdenes puede iniciar Calc con 
 	```/usr/local/bin/scalc```
               
 Puede elaborar presentaciones y abrir las que se han hecho con PowerPoint con 
@@ -105,7 +108,7 @@ Impress[^primer.7].
 
 ![Presentación](img/openoffice_presentacion.png)
 
-[^primer.7]: Desde la línea de ordenes inicia Impress con 
+[^primer.7]: Desde la línea de órdenes inicia Impress con 
 	```/usr/local/bin/simpress.```
  
 Puede acceder a la documentación para adJ a través del menú de fluxbox. 
@@ -129,7 +132,7 @@ doas cdio cdplay
 
 Desde el menú otros puede acceder a **plan** y **vim**. El primero de los 
 cuales es un calendario que permite programar actividades. 
-Mientras que **vim** es un clásico y ágil editor de texto en ambientes tipo 
+Mientras que **vim** es un clásico y ágil editor de texto en entornos tipo 
 UNIX  [xref](#editor_vi)
 
 ![plan](img/plan.png)
@@ -144,22 +147,22 @@ se presenta este el estilo llamado **Makro**.
 
 ![Ejemplo de Estilo de sistema](img/estilo1.png)
 
-La figura anterior presenta también un intérprete de ordenes, que puede 
+La figura anterior presenta también un intérprete de órdenes, que puede 
 iniciar desde el menú eligiendo xterm, aunque también puede emplear uno 
 desde las consolas virtuales después de autenticarse.
 
  
-En sistemas operativos tipos Unix es usual emplear un intérprete de ordenes 
-para interactuar. Su operación es la misma bien inicie desde el ambiente 
+En sistemas operativos tipos Unix es usual emplear un intérprete de órdenes 
+para interactuar. Su operación es la misma bien inicie desde el entorno
 gráfico o en una consola virtual o remotamente como se explica en la siguiente 
-sección. Aunque ciertamente un intérprete de ordenes exige más memoria 
+sección. Aunque ciertamente un intérprete de órdenes exige más memoria 
 y atención del usuario, también le dará más opciones, más agilidad y 
 la posibilidad de plena operación remota.
 
 ### Conexión con ssh {#conexion_con_ssh}
 
-Dado que la interacción con un intérprete de ordenes se basa en ordenes 
-ingresados por teclado y respuestas tipo texto, estos intérpretes hacen muy 
+Dado que la interacción con un intérprete de órdenes se basa en órdenes 
+ingresadas por teclado y respuestas tipo texto, estos intérpretes hacen muy 
 efectiva la operación remota. La operación remota puede hacerse de forma segura 
 con el protocolo SSH 2, empleando el servidor OpenSSH del servidor y un 
 cliente de ssh en el computador desde el cual hará la conexión (la ventaja 
@@ -170,8 +173,9 @@ llegar a interceptar la comunicación).
 
 Si realiza la conexión desde un sistema tipo Unix, recomendamos que emplee el 
 cliente de OpenSSH, si se conecta desde un sistema tipo Windows puede emplear 
-el programa **putty** (descarguelo de 
-[http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html]).
+el programa **putty** (descárguelo de 
+<http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>).
+Desde un celular Android puede usar ConnectBot.
 
 En el primer caso puede iniciar la conexión con:
 
@@ -180,18 +184,20 @@ $ ssh juan@www2.pasosdeJesus.org
 ```
 
 reemplazando ```juan``` por el login que tenga en el sistema y 
- ```www2.pasosdeJesus.org``` por el nombre del servidor. 
-Note que con el símbolo ```$```, representamos el símbolo del sistema 
+`www2.pasosdeJesus.org` por el nombre del servidor. 
+Note que con el símbolo `$`, representamos el símbolo del sistema 
 (del inglés *prompt*) --no debe teclearlo.
 
- 
+
 La conexión con putty se ejemplifica a continuación:
- 
+
 ![Configuración de putty](img/putty1.png)
- 
+
 ![Aviso](img/warning.png) Aviso: Con Putty asegúrese de emplear el 
-	protocolo SSH 2.
- 
+	protocolo SSH 2 y para ver bien algunos caracteres es
+	posible que en Window->Translation deba elegir traducción
+	de Latin1 o ISO-8895-1.
+
 **ssh** autenticará la máquina a la cual se está conectado, comparando la llave 
 pública de esa máquina con alguna de las que conozca, si es la primera vez que 
 se conecta a ese sitio, **ssh** le pedirá confirmar la nueva llave 
@@ -210,8 +216,8 @@ para finalmente dejarlo en una sesión en modo texto.
 
 Al iniciar la sesión podrá ver el mensaje del día (**motd** --
  *message of the day*) 
-que el administrador haya configurado, se ejecutarán los archivos de ordenes 
-de inicio y quedará en el intérprete de ordenes que esté configurado en su 
+que el administrador haya configurado, se ejecutarán los archivos de órdenes 
+de inicio y quedará en el intérprete de órdenes que esté configurado en su 
 cuenta.
 
  
