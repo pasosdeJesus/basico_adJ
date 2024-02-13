@@ -49,7 +49,7 @@ INDEX=genindice.$(EXT_DOCBOOK)
 GENDIST=Derechos.txt $(SOURCES) $(IMAGES)
 # Dependencias por cumplir antes de generar distribución
 
-ACTHOST=git@github.com:pasosdeJesus/
+ACTHOST=git@gitlab.com:pasosdeJesus/
 # Sitio en Internet donde actualizar. Método indicado por $(ACT_PROC) de confv.sh
 
 ACTDIR=basico_adJ
