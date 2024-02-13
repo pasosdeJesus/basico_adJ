@@ -4,7 +4,7 @@ La forma de emplear un archivo que copie, cree o descargue , depende
 del formato en el que esté. 
 
 El formato usualmente se identifica con la extensión (i.e las últimas 
-letras que están después de un punto) o mediante los primeros bytes
+letras que están después del último punto) o mediante los primeros bytes
 del contenido.  Para identificar el formato mediante el contenido
 puede usarse un programa como `file` o en caso de formatos gráficos
 `identify`.  Por ejemplo
@@ -27,7 +27,8 @@ y la codificación del color:
 
         foto.jpeg JPEG 720x1280 720x1280+0+0 8-bit sRGB 85137B 0.010u 0:00.000
 
-### Legibles
+
+### Formatos Legibles
 
 - `.txt` Se trata de un texto plano. Típicamente estará codificado en 
   ASCII. En DOS/Windows los textos planos indican fin de línea con dos 
@@ -48,6 +49,19 @@ y la codificación del color:
 - `.md` o `.markdown` se trata de texto planos pero con algo 
   de formato que permite presentarlos con estilos al transformarlos
   a HTML.
+
+[^formatos.1]: El caracter retorno de carro tiene código ASCII 13, suele 
+	llamarse CR (*Carriage Return*) y diversos programas y lenguajes lo 
+	denotan con '\n'.
+
+[^formatos.2]: El caracter nueva línea tiene código ASCII 10, también se llama 
+	LF (*Line Feed*) y diversos programas y lenguajes lo denotan con '\r'.
+
+[^formatos.3]: UTF-8 es una de las posibles formas de codificar Unicode en 
+	ASCII. Los caracteres Unicode con un ASCII equivalente con código menor 
+	de 127 tienen la misma representación en UTF-8. Otros caracteres 
+	Unicode emplean una secuencia de dos o más caracteres ASCII para su 
+	codificación.
 
 ### Comprimidos o empaquetados
 
@@ -135,15 +149,3 @@ y la codificación del color:
 * https://es.wikipedia.org/wiki/Joint_Photographic_Experts_Group
 
 
-[^formatos.1]: El caracter retorno de carro tiene código ASCII 13, suele 
-	llamarse CR (*Carriage Return*) y diversos programas y lenguajes lo 
-	denotan con '\n'.
-
-[^formatos.2]: El caracter nueva línea tiene código ASCII 10, también se llama 
-	LF (*Line Feed*) y diversos programas y lenguajes lo denotan con '\r'.
-
-[^formatos.3]: UTF-8 es una de las posibles formas de codificar Unicode en 
-	ASCII. Los caracteres Unicode con un ASCII equivalente con código menor 
-	de 127 tienen la misma representación en UTF-8. Otros caracteres 
-	Unicode emplean una secuencia de dos o más caracteres ASCII para su 
-	codificación.

@@ -75,6 +75,15 @@ inet 192.168.1.1 255.255.255.0 NONE
 ```
 		
 Guardar con **C-x C-s** y salir con **C-x C-c**.
+...
+
+Otras opciones disponibles en **mg** son las siguientes:
+Ir a la linea que deseemos con **+ numero_linea**,de la misma manera podemos devolvernos de la siguinete manera **+ -2**.
+Desactivar la opcion de archivos de respaldo con **mg -n**
+Abrir lineas en modo lectura con la opcion **mg -R**
+Comando de shell con **!**
+Crear directorio con el signo **+**
+Salir de la ventana con **q**.
 
 ### Editor vi {#editor_vi}
 
