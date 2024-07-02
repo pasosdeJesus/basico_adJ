@@ -317,14 +317,15 @@ pero de manera más verbosa).  Veamos ejemplos:
 
 #### Resaltado de sintaxis
 
-Puede instalar el resaltado de sintaxis con:
+Como se explica en https://linuxhandbook.com/zsh-syntax-highlighting/ 
+puede instalar el resaltado de sintaxis con:
+
 ```
 cd ~
 mkdir -p .zsh
 cd .zsh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >>
-${ZDOTDIR:-$HOME}/.zshrc
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
 
