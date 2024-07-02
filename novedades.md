@@ -1,3 +1,7 @@
+Versión 7.5
+
+:  - Ampliada [xref](#zsh)
+
 Versión 7.4
 
 :  - Mejorada [xref](#formatos-de-archivos)

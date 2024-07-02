@@ -289,12 +289,14 @@ que le permitirá entre otras:
    flecha arriba y flecha abajo
 3. Completar automáticamente palabras cundo usted digita parte de la misma
    y presiona TAB. `zsh` tiene un sistema programable de completación en el 
-   que practicamente cualquier cosa puede ser fuente de completación 
+   que prácticamente cualquier cosa puede ser fuente de completación 
    dependiendo del contexto.
 4. Programar `zsh`.  Ya incluye muchas funciones útiles contribuidas por
    usuarios, las cuales puede revisar en el directorio  
   `/usr/local/share/zsh/5.8/functions/Misc/`, no deje de 
    probar `. /usr/local/share/zsh/5.8/functions/Misc/tetriscurses`
+
+#### Expansiones
 
 Como se explican en {KENLON2019} al expandir rutas, el comodín `*` puede
 actuar como buscador (labor que tipicamente puede hacerse con `find` 
@@ -313,6 +315,20 @@ pero de manera más verbosa).  Veamos ejemplos:
   `~/Downloads` modificados por última vez hace más de 30 días (podría
   valer la pena eliminarlos).
 
+#### Resaltado de sintaxis
+
+Puede instalar el resaltado de sintaxis con:
+```
+cd ~
+mkdir -p .zsh
+cd .zsh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >>
+${ZDOTDIR:-$HOME}/.zshrc
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+```
+
+Tras esto pruebe `echo "hola"` 
 
 #### Lecturas recomendadas {#lecturas_recomendadas_zsh}
 * Páginas del manual de zsh.
