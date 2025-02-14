@@ -1,3 +1,7 @@
+Versión 7.6
+
+:  - Reescrita [xref](#conexion_con_ssh)
+
 Versión 7.5
 
 :  - Ampliada [xref](#zsh)
@@ -59,7 +63,7 @@ Versión 6.1
 
 :  - Ampliada sección sobre bitácoras [xref](#auditabitacoras)
  - Mejorada explicación de formato tar, agradecimiento a Daniel Cardona 
-    	<dcardona@cinep.org.co>.  [xref](#formatos_de_archivos)
+    	<dcardona@cinep.org.co>.  [xref](#formatos-de-archivos)
 
 Versión 6.0
 
@@ -67,7 +71,7 @@ Versión 6.0
 
 Versión 5.9
 
-:  - Más formatos comprimidos (.bz2, .rar, .7z) [xref](#formatos_de_archivos)
+:  - Más formatos comprimidos (.bz2, .rar, .7z) [xref](#formatos-de-archivos)
 
 Versión 5.8
 
