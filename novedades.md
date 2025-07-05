@@ -1,3 +1,7 @@
+Versión 7.7
+
+:  - Amplia [xref](#git)
+
 Versión 7.6
 
 :  - Reescrita [xref](#conexion_con_ssh)

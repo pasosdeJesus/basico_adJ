@@ -33,6 +33,154 @@ Unas características por tener en cuenta al operar con git:
    que no hay cambios --de haberlos daría un condensado diferente).
 
 
+### Contribuir en proyectos de fuentes abiertas
+
+Consideramos que tu contribución a proyectos de fuentes
+abiertas será más ordenada si sigues los lineamientos de uso de FreeCodeCamp
+(ver <https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-setup-freecodecamp-locally.md>), que procuramos resumir inicialmente en
+<https://github.com/pasosdeJesus/sip/blob/v2.1/CONTRIBUTING.md>
+y ahora aquí:
+
+#### Configuración inicial
+
+1. Bifurca (del inglés __fork__) el repositorio en el que vas a contribuir.
+   Por ejemplo este manual (<https://gitlab.com/pasosdeJesus/basico_adJ>)
+   a tu cuenta personal.
+2. En el computador de desarrollo clona tu bifurcación:
+  ```
+  git clone git@gitlab.com/miusuario/basico_adJ.git
+  ```
+3. En la nueva copia en el computador de desarrollo asegurate de tener
+   2 repositorios remotos: (1) `origin` que apunte a tu bifurcación y (2)
+   por ejemplo `upstream` que apunte a las fuentes originales.
+   Puedes ver tus repositorios actuales con `git remote -v` y agrega las
+   fuentes del origina como `upstream` con:
+  ```
+  cd sip
+  git remote add upstream https://gitlab.com/pasosdeJesus/basico_adJ.git
+  ```
+
+Procura mantener la rama `main` de tu bifurcación "sincronizada" con la
+rama `main` del repositorio `upstream` (por lo mismo no debes hacer cambios
+a la rama `main` de tu bifuración).  Lo puedes hacer ejecutando con
+regularidad:
+  ```
+  git checkout main
+  git pull --rebase upstream main
+  git push -f origin main
+  ```
+
+#### Iniciar una contribución
+
+Cuando desees hacer una contribución, comienza por sincronizar tu rama
+`main` y desde esta crear una nueva rama donde propondrás el cambio
+y pon un título que le ayude a limitar el alcance del cambio (si deseas
+hacer cambios diferentes es mejor que hagas ramas diferentes a partir
+de la rama `main` sincronizada), por ejemplo si fuera una rama 
+`mejora-documentacion`:
+  ```
+  git checkout main
+  git pull --rebase upstream main
+  git push -f origin main
+  git checkout -b mejora-documentacion
+  ```
+En la nueva rama agrega, edita y/o elimina archivos. Puedes examinar
+modificaciones a archivos con:
+  ```
+  git status -s
+  ```
+agrega archivos que hayas introducido con:
+  ```
+  git add _archivo_
+  ```
+Cuando completes los cambios realiza un __commit__ (como contribución)
+con comentario que describa tu contribución, por ejemplo:
+  ```
+  git commit -m "Mejorando sección sobre sistema de archivos" -a
+  ```
+Puedes continuar trabajando y hacer otras contribuciones en la misma rama,
+pero nos parece más ordenado cuando tu solicitud de cambio (__pull request__)
+tiene una sola contribución (__commit__) y no muchas que sobreescriben otras.
+Si tienes varias contribuciones para un mismo pull-request más bien
+fusiónalas (del inglés __squash__) en una sola.
+Por ejemplo puedes fusionar los 2 últimos commits con:
+  ```
+  git rebase -i HEAD~2
+  ```
+Esto abrirá un archivo con los mensajes de las 2 últimas contribuciones
+y frente a cada uno la palabra `pick` que podrías cambiar por `squash`
+en la segunda contribución para fusionarla con la primera.  Después de guardar
+y salir volverás a un editor para modificar el mensaje que tendrá la
+contribución fusionada
+
+Tras esto si ves la historia de contribuciones notarás la fusión:
+  ```
+  git log
+  ```
+Una vez tengas bien tu contribución en orden, empuja (__push__) el cambio 
+a la rama que creaste en tu bifurcación:
+  ```
+  git push -f origin mejora-documentacion
+  ```
+Y desde la interfaz de github/gitlab examinando tu repositorio bifurcado o el
+original verás un botón para crear la solicitud de
+cambio (pull-request).  Úsalo, revisa lo que enviarás, pon un comentario
+que justifique el cambio y envíalo.
+
+Cuando hagas un pull request se iniciarán sobre el mismo las tareas de
+integración continua que estuvieran configuradas y que en general
+tu cambio debe pasar. Después los desarrolladores revisarán tu cambio
+y si se requiere escribirán sugerencias de cambio, que debes hacer o
+justificar por que no conviene antes de que tu contribución sea aceptada.
+Es decir habrá un diálogo en la parte de comentarios de tu solicitud de
+cambio que debe continuar.
+
+
+#### Mejorar una contribución
+
+Con la retroalimentación de las tareas de integración continúa y de
+desarrolladores debes realizar los cambios en la misma rama donde
+hiciste la propuesta inicial, pero antes debes sincronizarla con la
+rama `main` del repositorio original por si otros desarrolladores
+han hecho cambios recientes. Para eso primero sincroniza tu rama `main`:
+```
+git checkout main
+git pull --rebase upstream main
+git push -f origin main
+```
+Y de inmediato adopta en tu rama donde hiciste la propuesta, los cambios que
+pudiera haber en la rama `main` ya sincronizada:
+```
+git checkout mejora-documentacion
+git pull --rebase origin main
+```
+Esta última operación podría revelar colisiones entre cambios ya aceptados
+en el repositorio principal y los que tú habías propuesto (por eso es bueno
+tratar de hacer rápido el diálogo con desarrolladores y las propuestas de
+cambio).  En caso de colisiones debes arreglarlas (en algunos casos editando
+archivos que tienen marcados los cambios con `<<<<` y `>>>>`, en otros
+añadiendo o eliminando archivos).
+Después aplica las sugerencias y/o fusiona contribuciones y/o arregla tu
+código para que pase tareas de integración continua.
+```
+vi README.md
+....
+git commit -m "Aplicando sugerencias de revisor" -a
+git rebase -i HEAD~2
+git push -f origin mejora-documentacion
+```
+Después de empujar tus cambios (push) en la misma rama, github/gitlab notará
+el cambio y actualizará la solicitud de cambio ya hecha, volviendo a
+lanzar las tareas de integración continua y los desarrolladores
+volverán a auditar tu contribución y continuarán el diálogo en la sección
+de comentarios.
+
+Este proceso debe iterarse hasta que tu cambio sea aceptado (o rechazado),
+por lo que debes visitar con frecuencia tu solicitud de cambio y ver
+nuevos comentarios que puedan haber (los comentarios más recientes
+quedan al final de la pestaña de comentarios).
+
+
 ### Configuración para trabajar en gitlab.com y github.com con llaves ssh
 
 git ya viene como paquete en adJ, pero si requiere actualizar puede intentar
@@ -52,8 +200,8 @@ emplear llaves ssh, es el método que presentamos a continuación:
 
      ssh-keygen
 
-  lo cual le solicitará una frase clave en una sesión como la siguiente 
-  (que dejará la llave pública en `~/.ssh/id_rsa.pub` y la privada en 
+  lo cual le solicitará una frase clave en una sesión como la siguiente
+  (que dejará la llave pública en `~/.ssh/id_rsa.pub` y la privada en
   `~/.ssh/id_rsa` como se ve en los mensajes de respuesta):
 
   ```
@@ -95,7 +243,7 @@ emplear llaves ssh, es el método que presentamos a continuación:
 
 
 Al clonar algún repositorio verifique que la dirección del
-repositorio comience con `git@` pues esas son las que usarán la llave ssh. 
+repositorio comience con `git@` pues esas son las que usarán la llave ssh.
 Por ejemplo
 `git@gitlab.com:pasosdeJesus/si_jrscol.git`
 
