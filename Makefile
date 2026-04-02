@@ -114,6 +114,9 @@ Derechos.txt: $(PROYECTO).$(EXT_DOCBOOK)
 	make html/index.html
 	$(W3M) $(W3M_OPT) -dump html/index.html | awk -f herram_confsh/conthtmldoc.awk | awk '/Agradecemos/ { e = 1; } /.*/ { if (e != 1) { print $0; }}' | fmt > Derechos.txt
 
+genmd: 
+	rm -f tmp/uno.md
+	for i in $(FUENTESDB) ;do echo $$i; md=`echo $$i | sed -e "s/.xdbk/.md/g"`; echo $$md; cat $$md >> tmp/uno.md; done
 
 instala:
 	@mkdir -p $(DESTDIR)$(INSDOC)/img/
