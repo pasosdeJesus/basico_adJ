@@ -1,0 +1,727 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Control de versiones con git</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+HREF="t1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Labores básicas de administración"
+HREF="x1708.htm"><LINK
+REL="NEXT"
+TITLE="Novedades"
+HREF="a2046.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+></TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x1708.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="a2046.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="git"
+>Control de versiones con git</A
+></H1
+><P
+>&#13;    Se trata de un sistema para control de versiones distribuido, rápido
+    y que facilita trabajar con ramas. Fue creado en el año 2005 por
+    Linus Torvalds (el mismo creador del kernel Linux) y se ha
+    convertido casi que en un estándar por su versatilidad y porque es
+    el sistema usado por varias plataformas para hospedar gratuitamente
+    el código fuente de proyectos de código abierto particularmente
+    gitlab.com y github.com
+  </P
+><P
+>&#13;    Como se indica en Chacon,Straub, 2014, un sistema para control de
+    versiones permite registrar cambios a un archivo o a un grupo de
+    archivos a lo largo del tiempo de manera que usted pueda recuperar
+    versiones específicas después de un tiempo. Suele emplearse con las
+    fuentes de programas, pero las versiones de otras
+    <SPAN
+CLASS="QUOTE"
+>"fuentes"</SPAN
+> que se almacenen como textos planos también
+    pueden manejarse con git.
+  </P
+><P
+>&#13;    Unas características por tener en cuenta al operar con git:
+  </P
+><P
+></P
+><UL
+COMPACT="COMPACT"
+><LI
+><P
+>&#13;        El conjunto de archivos manejados por git estarán en un
+        directorio el cual será tratado como una <SPAN
+CLASS="QUOTE"
+>"foto"</SPAN
+> y
+        se mantendrá la historia de <SPAN
+CLASS="QUOTE"
+>"fotos"</SPAN
+> anteriores.
+        Para economizar espacio cuando un archivo no cambia de una
+        versión a otra sólo se mantiene un enlace a la versión anterior.
+      </P
+></LI
+><LI
+><P
+>&#13;        Casi todas las operaciones son locales y se reflejaran en el
+        subdirectorio <TT
+CLASS="literal"
+>.git</TT
+> del directorio del
+        repositorio.
+      </P
+></LI
+><LI
+><P
+>&#13;        Mantiene un condensado de cada <SPAN
+CLASS="QUOTE"
+>"foto"</SPAN
+> que sirve
+        tanto para preservar integridad como para referenciar. Se
+        representa como un número hexadecimal de al menos 40 digitos,
+        por ejemplo:
+        <TT
+CLASS="literal"
+>260ac9c71372a1d72c6bba9ef2c223895e79f767</TT
+>
+        (corresponde al resultado de una función de condensando SHA1 o
+        SHA256 aplicada al árbol de Merkle con la base de datos git, por
+        lo que es prácticamente imposible que dos árboles diferentes
+        tengan el mismo condensado logrando identificar cada árbol de
+        manera única y garantizando que no hay cambios –de haberlos
+        daría un condensado diferente).
+      </P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="contribuir-en-proyectos-de-fuentes-abiertas"
+>Contribuir en proyectos de fuentes abiertas</A
+></H2
+><P
+>&#13;      Consideramos que tu contribución a proyectos de fuentes abiertas
+      será más ordenada si sigues los lineamientos de uso de
+      FreeCodeCamp (ver
+      <A
+HREF="https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-setup-freecodecamp-locally.md"
+TARGET="_top"
+>https://github.com/freeCodeCamp/freeCodeCamp/blob/main/docs/how-to-setup-freecodecamp-locally.md</A
+>),
+      que procuramos resumir inicialmente en
+      <A
+HREF="https://github.com/pasosdeJesus/sip/blob/v2.1/CONTRIBUTING.md"
+TARGET="_top"
+>https://github.com/pasosdeJesus/sip/blob/v2.1/CONTRIBUTING.md</A
+>
+      y ahora aquí:
+    </P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="configuración-inicial"
+>Configuración inicial</A
+></H3
+><P
+></P
+><OL
+COMPACT="COMPACT"
+TYPE="1"
+><LI
+><P
+>&#13;            Bifurca (del inglés <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>fork</B
+></SPAN
+>)
+            el repositorio en el que vas a contribuir. Por ejemplo este
+            manual
+            (<A
+HREF="https://gitlab.com/pasosdeJesus/basico_adJ"
+TARGET="_top"
+>https://gitlab.com/pasosdeJesus/basico_adJ</A
+>)
+            a tu cuenta personal.
+          </P
+></LI
+><LI
+><P
+>&#13;            En el computador de desarrollo clona tu bifurcación:
+          </P
+></LI
+></OL
+><PRE
+CLASS="programlisting"
+>&#13;git clone git@gitlab.com/miusuario/basico_adJ.git
+</PRE
+><P
+></P
+><OL
+COMPACT="COMPACT"
+TYPE="1"
+><LI
+><P
+>&#13;            En la nueva copia en el computador de desarrollo asegurate
+            de tener 2 repositorios remotos: (1)
+            <TT
+CLASS="literal"
+>origin</TT
+> que apunte a tu bifurcación y (2)
+            por ejemplo <TT
+CLASS="literal"
+>upstream</TT
+> que apunte a las
+            fuentes originales. Puedes ver tus repositorios actuales con
+            <TT
+CLASS="literal"
+>git remote -v</TT
+> y agrega las fuentes del
+            origina como <TT
+CLASS="literal"
+>upstream</TT
+> con:
+          </P
+></LI
+></OL
+><PRE
+CLASS="programlisting"
+>&#13;cd sip
+git remote add upstream https://gitlab.com/pasosdeJesus/basico_adJ.git
+</PRE
+><P
+>&#13;        Procura mantener la rama <TT
+CLASS="literal"
+>main</TT
+> de tu
+        bifurcación <SPAN
+CLASS="QUOTE"
+>"sincronizada"</SPAN
+> con la rama
+        <TT
+CLASS="literal"
+>main</TT
+> del repositorio
+        <TT
+CLASS="literal"
+>upstream</TT
+> (por lo mismo no debes hacer cambios
+        a la rama <TT
+CLASS="literal"
+>main</TT
+> de tu bifuración). Lo puedes
+        hacer ejecutando con regularidad:
+        <TT
+CLASS="literal"
+>git checkout main   git pull --rebase upstream main   git push -f origin main</TT
+>
+      </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="iniciar-una-contribución"
+>Iniciar una contribución</A
+></H3
+><P
+>&#13;        Cuando desees hacer una contribución, comienza por sincronizar
+        tu rama <TT
+CLASS="literal"
+>main</TT
+> y desde esta crear una nueva
+        rama donde propondrás el cambio y pon un título que le ayude a
+        limitar el alcance del cambio (si deseas hacer cambios
+        diferentes es mejor que hagas ramas diferentes a partir de la
+        rama <TT
+CLASS="literal"
+>main</TT
+> sincronizada), por ejemplo si fuera
+        una rama <TT
+CLASS="literal"
+>mejora-documentacion</TT
+>:
+        <TT
+CLASS="literal"
+>git checkout main   git pull --rebase upstream main   git push -f origin main   git checkout -b mejora-documentacion</TT
+>
+        En la nueva rama agrega, edita y/o elimina archivos. Puedes
+        examinar modificaciones a archivos con:
+        <TT
+CLASS="literal"
+>git status -s</TT
+> agrega archivos que hayas
+        introducido con: <TT
+CLASS="literal"
+>git add _archivo_</TT
+> Cuando
+        completes los cambios realiza un
+        <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>commit</B
+></SPAN
+> (como contribución)
+        con comentario que describa tu contribución, por ejemplo:
+        <TT
+CLASS="literal"
+>git commit -m "Mejorando sección sobre sistema de archivos" -a</TT
+>
+        Puedes continuar trabajando y hacer otras contribuciones en la
+        misma rama, pero nos parece más ordenado cuando tu solicitud de
+        cambio (<SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>pull request</B
+></SPAN
+>) tiene
+        una sola contribución
+        (<SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>commit</B
+></SPAN
+>) y no muchas que
+        sobreescriben otras. Si tienes varias contribuciones para un
+        mismo pull-request más bien fusiónalas (del inglés
+        <SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>squash</B
+></SPAN
+>) en una sola. Por
+        ejemplo puedes fusionar los 2 últimos commits con:
+        <TT
+CLASS="literal"
+>git rebase -i HEAD~2</TT
+> Esto abrirá un archivo
+        con los mensajes de las 2 últimas contribuciones y frente a cada
+        uno la palabra <TT
+CLASS="literal"
+>pick</TT
+> que podrías cambiar por
+        <TT
+CLASS="literal"
+>squash</TT
+> en la segunda contribución para
+        fusionarla con la primera. Después de guardar y salir volverás a
+        un editor para modificar el mensaje que tendrá la contribución
+        fusionada
+      </P
+><P
+>&#13;        Tras esto si ves la historia de contribuciones notarás la
+        fusión: <TT
+CLASS="literal"
+>git log</TT
+> Una vez tengas bien tu
+        contribución en orden, empuja
+        (<SPAN
+CLASS="strong"
+><B
+CLASS="emphasis"
+>push</B
+></SPAN
+>) el cambio a la rama
+        que creaste en tu bifurcación:
+        <TT
+CLASS="literal"
+>git push -f origin mejora-documentacion</TT
+> Y
+        desde la interfaz de github/gitlab examinando tu repositorio
+        bifurcado o el original verás un botón para crear la solicitud
+        de cambio (pull-request). Úsalo, revisa lo que enviarás, pon un
+        comentario que justifique el cambio y envíalo.
+      </P
+><P
+>&#13;        Cuando hagas un pull request se iniciarán sobre el mismo las
+        tareas de integración continua que estuvieran configuradas y que
+        en general tu cambio debe pasar. Después los desarrolladores
+        revisarán tu cambio y si se requiere escribirán sugerencias de
+        cambio, que debes hacer o justificar por que no conviene antes
+        de que tu contribución sea aceptada. Es decir habrá un diálogo
+        en la parte de comentarios de tu solicitud de cambio que debe
+        continuar.
+      </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="mejorar-una-contribución"
+>Mejorar una contribución</A
+></H3
+><P
+>&#13;        Con la retroalimentación de las tareas de integración continúa y
+        de desarrolladores debes realizar los cambios en la misma rama
+        donde hiciste la propuesta inicial, pero antes debes
+        sincronizarla con la rama <TT
+CLASS="literal"
+>main</TT
+> del
+        repositorio original por si otros desarrolladores han hecho
+        cambios recientes. Para eso primero sincroniza tu rama
+        <TT
+CLASS="literal"
+>main</TT
+>:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;git checkout main
+git pull --rebase upstream main
+git push -f origin main
+</PRE
+><P
+>&#13;        Y de inmediato adopta en tu rama donde hiciste la propuesta, los
+        cambios que pudiera haber en la rama <TT
+CLASS="literal"
+>main</TT
+> ya
+        sincronizada:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;git checkout mejora-documentacion
+git pull --rebase origin main
+</PRE
+><P
+>&#13;        Esta última operación podría revelar colisiones entre cambios ya
+        aceptados en el repositorio principal y los que tú habías
+        propuesto (por eso es bueno tratar de hacer rápido el diálogo
+        con desarrolladores y las propuestas de cambio). En caso de
+        colisiones debes arreglarlas (en algunos casos editando archivos
+        que tienen marcados los cambios con
+        <TT
+CLASS="literal"
+>&#60;&#60;&#60;&#60;</TT
+> y
+        <TT
+CLASS="literal"
+>&#62;&#62;&#62;&#62;</TT
+>, en otros añadiendo o
+        eliminando archivos). Después aplica las sugerencias y/o fusiona
+        contribuciones y/o arregla tu código para que pase tareas de
+        integración continua.
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;vi README.md
+....
+git commit -m "Aplicando sugerencias de revisor" -a
+git rebase -i HEAD~2
+git push -f origin mejora-documentacion
+</PRE
+><P
+>&#13;        Después de empujar tus cambios (push) en la misma rama,
+        github/gitlab notará el cambio y actualizará la solicitud de
+        cambio ya hecha, volviendo a lanzar las tareas de integración
+        continua y los desarrolladores volverán a auditar tu
+        contribución y continuarán el diálogo en la sección de
+        comentarios.
+      </P
+><P
+>&#13;        Este proceso debe iterarse hasta que tu cambio sea aceptado (o
+        rechazado), por lo que debes visitar con frecuencia tu solicitud
+        de cambio y ver nuevos comentarios que puedan haber (los
+        comentarios más recientes quedan al final de la pestaña de
+        comentarios).
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="configuración-para-trabajar-en-gitlab.com-y-github.com-con-llaves-ssh"
+>Configuración para trabajar en gitlab.com y github.com con
+    llaves ssh</A
+></H2
+><P
+>&#13;      git ya viene como paquete en adJ, pero si requiere actualizar
+      puede intentar el paquete más reciente con:
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;doas pkg_add -r git
+</PRE
+><P
+>&#13;      Recomendamos crear una cuenta en gitlab.org o en github.com para
+      practicar.
+    </P
+><P
+>&#13;      Para autenticarse desde la terminal ante gitlab o github debe usar
+      llaves ssh o un token generado por esas plataformas. Cómo es común
+      y más práctico emplear llaves ssh, es el método que presentamos a
+      continuación:
+    </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;          Una llave RSA consta de una parte privada y una parte pública.
+          La parte pública es la que se comparte, la parte privada no la
+          debe compartir –quien la tenga puede impersonarlo(a)–. Genere
+          un par con:
+        </P
+><P
+>&#13;          ssh-keygen -t ed25519
+        </P
+></LI
+></OL
+><P
+>&#13;      lo cual le solicitará una frase clave en una sesión como la
+      siguiente (que dejará la llave pública en
+      <TT
+CLASS="literal"
+>~/.ssh/id_ed25519.pub</TT
+> y la privada en
+      <TT
+CLASS="literal"
+>~/.ssh/id_ed25519</TT
+> como se ve en los mensajes de
+      respuesta):
+    </P
+><PRE
+CLASS="programlisting"
+>&#13;% ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/usuario/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/usuario/.ssh/id_ed25519
+Your public key has been saved in /home/usuario/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:2ocPN6cNiYX8JhL0AHk8mIWUL3p/gTfXFk1achQauS0
+usuario@servidor.pasosdeJesus.org
+The key's randomart image is:
++---[RSA 3072]----+
+|   .oO.     .oo. |
+|    *.+     oo+  |
+|     oo.    .X   |
+|    ...+ .  E o  |
+|   . ...S .. o   |
+|  . . .++=..o    |
+|   . .o.*+O..    |
+|      ...B *     |
+|       .  o .    |
++----[SHA256]-----+
+</PRE
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;          Ingrese a su cuenta en gitlab y diríjase a <SPAN
+CLASS="QUOTE"
+>"Editar
+          Perfil"</SPAN
+>.
+        </P
+></LI
+><LI
+><P
+>&#13;          Desde allí a la izquierda elija <SPAN
+CLASS="QUOTE"
+>"Llaves SSH"</SPAN
+>
+        </P
+></LI
+><LI
+><P
+>&#13;          Examine la llave pública que generó en el paso 1, por ejemplo
+          con
+        </P
+><PRE
+CLASS="programlisting"
+>&#13;cat ~/.ssh.id_ed25519.pub
+</PRE
+><P
+>&#13;          y cópiela en el porta-papeles
+        </P
+></LI
+><LI
+><P
+>&#13;          Pegue lo que copió en el área de texto que gitlab presentará
+          para la llave pública.
+        </P
+></LI
+><LI
+><P
+>&#13;          Presione <TT
+CLASS="literal"
+>Agregar</TT
+> para añadir la llave
+          suministrada (puede poner una fecha de expiración superior a
+          un año).
+        </P
+></LI
+></OL
+><P
+>&#13;      Al clonar algún repositorio verifique que la dirección del
+      repositorio comience con <TT
+CLASS="literal"
+>git@</TT
+> pues esas son las
+      que usarán la llave ssh. Por ejemplo
+      <TT
+CLASS="literal"
+>git@gitlab.com:pasosdeJesus/si_jrscol.git</TT
+>
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas_recomendadas_git"
+>Lecturas recomendadas</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>&#13;          Scott Chacon, Ben Straub. Pro Git Book.
+          https://git-scm.com/book/en/v2/
+        </P
+></LI
+><LI
+><P
+>&#13;          GitLab - SSH Key Setup
+          https://www.tutorialspoint.com/gitlab/gitlab_ssh_key_setup.htm
+        </P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x1708.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="a2046.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Labores básicas de administración</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Novedades</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
