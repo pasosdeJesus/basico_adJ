@@ -203,8 +203,8 @@ En el ejemplo presentado si está instalado el programa ```colorls``` (del
 paquete colorls), este se define como alias para la orden ```ls```, de forma 
 que la lista de archivos se presente con colores y como ha sido modificado
 para adJ presentará orden correcto en español. Esto ocurrirá desde consolas 
-tipo texto. Si está usando OpenBSD con X-Window y ```xterm```, además de lo 
-anterior necesita agregar a su archivo ```~/.Xdefaults`` (o crearlo 
+tipo texto. Si está usando adJ/OpenBSD con X-Window y ```xterm```, además de 
+lo anterior necesita agregar a su archivo ```~/.Xresources`` (o crearlo 
 si no existe):
 
 ```

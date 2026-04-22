@@ -25,10 +25,11 @@ Unas características por tener en cuenta al operar con git:
   `.git` del directorio del repositorio.
 * Mantiene un condensado de cada "foto" que sirve tanto para preservar
   integridad como para referenciar. Se representa como un número hexadecimal
-  de 40 dígitos, por ejemplo: `260ac9c71372a1d72c6bba9ef2c223895e79f767`
-  (corresponde al resultado de una función de condensando SHA1 aplicada
-   al árbol de Merkle con la base de datos git, por lo que
-   es prácticamente improbable que dos árboles diferentes tengan el mismo
+  de al menos 40 digitos,
+  por ejemplo: `260ac9c71372a1d72c6bba9ef2c223895e79f767`
+  (corresponde al resultado de una función de condensando SHA1 o SHA256 
+   aplicada al árbol de Merkle con la base de datos git, por lo que
+   es prácticamente imposible que dos árboles diferentes tengan el mismo
    condensado logrando identificar cada árbol de manera única y garantizando
    que no hay cambios --de haberlos daría un condensado diferente).
 
@@ -198,20 +199,20 @@ emplear llaves ssh, es el método que presentamos a continuación:
    pública es la que se comparte, la parte privada no la debe compartir
    --quien la tenga puede impersonarlo(a)--.  Genere un par con:
 
-     ssh-keygen
+     ssh-keygen -t ed25519
 
   lo cual le solicitará una frase clave en una sesión como la siguiente
-  (que dejará la llave pública en `~/.ssh/id_rsa.pub` y la privada en
-  `~/.ssh/id_rsa` como se ve en los mensajes de respuesta):
+  (que dejará la llave pública en `~/.ssh/id_ed25519.pub` y la privada en
+  `~/.ssh/id_ed25519` como se ve en los mensajes de respuesta):
 
   ```
-  % ssh-keygen
-  Generating public/private rsa key pair.
-  Enter file in which to save the key (/home/usuario/.ssh/id_rsa):
+  % ssh-keygen -t ed25519
+  Generating public/private ed25519 key pair.
+  Enter file in which to save the key (/home/usuario/.ssh/id_ed25519):
   Enter passphrase (empty for no passphrase):
   Enter same passphrase again:
-  Your identification has been saved in /home/usuario/.ssh/id_rsa
-  Your public key has been saved in /home/usuario/.ssh/id_rsa.pub
+  Your identification has been saved in /home/usuario/.ssh/id_ed25519
+  Your public key has been saved in /home/usuario/.ssh/id_ed25519.pub
   The key fingerprint is:
   SHA256:2ocPN6cNiYX8JhL0AHk8mIWUL3p/gTfXFk1achQauS0
   usuario@servidor.pasosdeJesus.org
@@ -233,7 +234,7 @@ emplear llaves ssh, es el método que presentamos a continuación:
 3. Desde allí a la izquierda elija "Llaves SSH"
 4. Examine la llave pública que generó en el paso 1, por ejemplo con
    ```
-   cat ~/.ssh.id_rsa.pub
+   cat ~/.ssh.id_ed25519.pub
    ```
    y cópiela en el porta-papeles
 5. Pegue lo que copió en el área de texto que gitlab presentará para la llave

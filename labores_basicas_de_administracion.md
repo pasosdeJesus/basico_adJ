@@ -1,19 +1,19 @@
 ## Labores básicas de administración {#labores_basicas_de_administracion}
 
 Un sistema adJ se administra desde la cuenta `root` o bien con ayuda del 
-programa `doas`.
+programa `doas`.  En adJ **doas** se configura para permitir 
+su uso sin clave por parte de usuarios que estén en el grupo `wheel`;
+podrán ejecutarse órdenes como si se tratara de la cuenta `root` 
+precediéndolos con **doas**. 
 
-Desde las diversas cuentas del sistema que estén en el grupo `wheel` es 
-posible pasar a la cuenta root con la orden:
+Por ejemplo un usuario en el grupo `wheel` podrá pasar a la
+cuenta root sin clave con:
 
-        $ su -
+        $ doas su -
 
 Típicamente al pasar a la cuenta root el prompt cambiará a `#`.
 
-Si **doas** se configura para permitir su utilización por parte de usuarios 
-que estén en el grupo `wheel` sin clave, podrán ejecutarse órdenes como 
-si se tratara de la cuenta `root` precediéndolos con **doas**. 
-Por ejemplo para listar el directorio del usuario `root`:
+O podrá listar el directorio del usuario `root` sin clave con:
 
         $ doas ls /root
 

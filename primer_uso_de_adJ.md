@@ -179,7 +179,7 @@ en `/usr/sbin/sshd` (típicamente será iniciado automáticamente durante el
 arranque, ver
 [Servidor ssh](https://pasosdejesus.org/doc/servidor_adJ/protocolos_de_soporte_y_de_usuario.html#servidor-ssh)).
 
-Linux y otros sistemas tipo Unix incluyuen el cliente de OpenSSH.
+Linux y otros sistemas tipo Unix incluyen el cliente de OpenSSH.
 Para Windows está disponible el cliente ssh **putty** (descárguelo de
 <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>).
 Desde un celular Android puede usar como cliente ssh las app

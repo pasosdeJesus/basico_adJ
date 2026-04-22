@@ -172,7 +172,7 @@ Puede probar el uso de sesiones de esta forma:
 1. Abra una terminal e inice tmux con `tmux`
 2. Escriba por ejemplo `echo Hola mundo` y pulse Enter, que debe imprimir en pantalla Hola Mundo
 3. Cierre la terminal  --por la forma de operación de tmux esto no terminará la sesión que inició
-4. Abra otra terminal e inice tmux pero indicando que se una a una sesión existente con `tmux -a`.  Debería poder ver su sesión de terminal con Hola Mundo.
+4. Abra otra terminal e inice tmux pero indicando que se una a una sesión existente con `tmux a`.  Debería poder ver su sesión de terminal con Hola Mundo.
 
 Ya en tmux, puede enviar órdenes a tmux comenzando con la secuencia de teclas
 Control-b, por ejemplo  para crear una ventana emplee Control-b y después

@@ -24,7 +24,7 @@ encuentra solo en inglés, recomendamos:
 	mantenimiento del sistema, 9 kernel. Puede ver por ejemplo la 
 	introducción a la sección 6 con man 6 intro. En Internet también 
 	puede consultar este manual en <http://www.openbsd.org/cgi-bin/man.cgi>
-* [Documentation and Frequently Asked Questions](http://www.openbsd.org/faq/index.html)
+* [Documentation and Frequently Asked Questions](https://www.openbsd.org/faq/index.html)
 
 Entre los sitios donde se documentan configuraciones o se evalúan algunas herramientas: <http://dhobsd.pasosdeJesus.org>, <https://calomel.org/>
 
